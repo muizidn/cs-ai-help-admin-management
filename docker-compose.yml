@@ -1,0 +1,27 @@
+services:
+  admin-management:
+    image: docker-registry.kerjaremoteluarnegeri.com/admin-management:latest
+    container_name: admin-management
+    restart: unless-stopped
+    ports:
+      - "3030:3000"
+    env_file:
+      - .env
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:3000/api/health",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  admin-management-data:
+    name: admin-management-data

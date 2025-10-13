@@ -1,0 +1,49 @@
+# dependencies
+node_modules/
+.pnpm/
+.package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# build output
+/build
+/.svelte-kit
+/.vercel
+/.netlify
+
+# production
+dist/
+*.local
+
+# environment variables
+.env
+.env.*
+
+# system files
+.DS_Store
+Thumbs.db
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE/editor config
+.vscode/
+.idea/
+*.swp
+
+# SvelteKit preview cache
+.svelte-kit-output/
+
+# Optional: Turbo / Nx / Monorepo caches
+turbo/
+nx-cache/
+
+# Optional: Playwright (if using for testing)
+playwright-report/
+test-results/
+
+# vite
+vite.config.js.timestamp*
