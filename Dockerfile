@@ -41,10 +41,10 @@ RUN bun install --frozen-lockfile --production
 COPY --from=builder --chown=sveltekit:nodejs /app/build ./build
 COPY --from=builder --chown=sveltekit:nodejs /app/package.json ./package.json
 
-# Copy static files if they exist
+# Copy static files if they exist (optional, may not exist)
 COPY --from=builder --chown=sveltekit:nodejs /app/static ./static
 
-# Set environment variables
+# Set environment variables for production
 ENV NODE_ENV=production
 ENV PORT=3000
 ENV HOST=0.0.0.0
@@ -54,9 +54,10 @@ USER sveltekit
 
 EXPOSE 3000
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD bun --version || exit 1
+# Health check - test if the app is responding
+HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:3000/api/health || exit 1
 
-# Start the application
-CMD ["bun", "run", "build/index.js"]
+# Start the application using the production build
+# Note: Environment variables will be loaded at runtime from docker-compose
+CMD ["bun", "build/index.js"]

@@ -9,9 +9,12 @@ yarn-error.log*
 build
 dist
 
-# Environment files
+# Environment files - NEVER include in Docker image
+.env*
 .env
 .env.local
+.env.dev
+.env.prod
 .env.development
 .env.test
 .env.production

@@ -6,7 +6,9 @@ const config = {
   preprocess: vitePreprocess(),
   kit: {
     adapter: adapter({
-      out: 'build'
+      out: "build",
+      // Configure the adapter to use environment variables for host and port
+      envPrefix: "",
     }),
   },
 }

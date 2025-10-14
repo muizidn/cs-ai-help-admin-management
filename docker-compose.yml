@@ -1,6 +1,6 @@
 services:
   admin-management:
-    image: docker-registry.kerjaremoteluarnegeri.com/admin-management:latest
+    image: ${ADMIN_MANAGEMENT_IMAGE:-admin-management:latest}
     container_name: admin-management
     restart: unless-stopped
     ports:
