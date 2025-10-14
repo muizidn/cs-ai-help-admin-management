@@ -6,7 +6,7 @@ services:
     ports:
       - "3030:3000"
     env_file:
-      - .env
+      - ${ENV_FILE:-.env}
     healthcheck:
       test:
         [
