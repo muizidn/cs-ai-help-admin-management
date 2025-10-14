@@ -1,8 +1,26 @@
-# System Prompts Management
+# CS AI Admin Management
 
-A comprehensive backoffice system for managing CS AI general prompts used in the backend, eliminating the need to change prompts directly in source code.
+A comprehensive admin dashboard for managing AI system prompts and monitoring execution logs from the CS AI application.
 
 ## Features
+
+### AI Execution Logs
+
+- **Execution Monitoring**: View and analyze execution logs from the AI inference engine
+- **Detailed Views**: Step-by-step execution breakdown with timing information
+- **Filtering & Search**: Advanced filtering by status, context, date range, and more
+- **Statistics Dashboard**: Execution metrics, success rates, and performance analytics
+- **Real-time Status**: Live status indicators and duration formatting
+
+### System Prompts (Redis)
+
+- **Redis Integration**: Manage technical and admin behavior prompts stored in Redis
+- **Live Editing**: Edit prompts directly in the admin interface without code changes
+- **Multi-locale Support**: Support for English and Indonesian prompts
+- **Real-time Status**: Visual indicators for prompt existence and size
+- **Business-specific Prompts**: Manage prompts for specific business contexts
+
+### Traditional System Prompts
 
 - **CRUD Operations**: Create, read, update, and delete system prompts
 - **Query Expansion**: Insert queries to AI based on user queries
@@ -12,7 +30,6 @@ A comprehensive backoffice system for managing CS AI general prompts used in the
 - **Search & Filtering**: Full-text search with advanced filtering options
 - **Tagging System**: Organize prompts with custom tags
 - **Priority System**: Set priority levels (0-100) for prompt execution order
-- **Statistics Dashboard**: View usage statistics and prompt distribution
 
 ## Project Structure
 
@@ -38,27 +55,66 @@ src/
     └── +page.svelte                          # Redirect to system prompts
 ```
 
-## Getting Started
+## Quick Start
 
-1. **Install dependencies**:
+### 1. Environment Setup
 
-   ```bash
-   npm install
-   ```
+```bash
+# Copy environment template
+bun run setup
 
-2. **Initialize database**:
+# Edit the .env file with your configuration
+nano .env
+```
 
-   ```bash
-   npm run db:init
-   ```
+### 2. Required Configuration
 
-3. **Start development server**:
+Edit `.env` with your MongoDB and Redis connection details:
 
-   ```bash
-   npm run dev
-   ```
+```env
+# MongoDB (same database as ai-inference)
+MONGODB_URI=mongodb://localhost:27017
+MONGODB_DATABASE=cs_ai_app
 
-4. **Open your browser** and navigate to `http://localhost:5173`
+# Redis (for system prompts)
+REDIS_URL=redis://localhost:6379
+
+# Application settings
+NODE_ENV=development
+HOST=localhost
+PORT=3000
+```
+
+### 3. Install Dependencies
+
+```bash
+bun install
+```
+
+### 4. Start Development Server
+
+```bash
+bun run dev
+```
+
+### 5. Test Connections
+
+```bash
+# Test database connections
+bun run test:connections
+
+# Or visit: http://localhost:5173/api/test-connections
+```
+
+The application will be available at `http://localhost:5173`
+
+## Application Routes
+
+- **Home**: `http://localhost:5173/`
+- **AI Execution Logs**: `http://localhost:5173/ai-execution-log`
+- **System Prompts (Redis)**: `http://localhost:5173/system-prompts-redis`
+- **System Prompts**: `http://localhost:5173/system-prompts`
+- **Library Templates**: `http://localhost:5173/library-templates`
 
 ## Usage
 
@@ -81,22 +137,53 @@ src/
 - **Safety Filter**: Content safety and moderation prompts
 - **Custom**: Custom prompts for specific use cases
 
-## Configuration
+## Environment Configuration
 
-### Environment Variables
+The application supports multiple environment file formats:
 
-```env
-# MongoDB Configuration
-MONGODB_URI=mongodb://localhost:27017/cs-ai-prompts
+1. `.env` - Base configuration
+2. `.env.local` - Local overrides (gitignored)
+3. System environment variables
 
-# Application Settings
-NODE_ENV=development
+See [ENVIRONMENT_SETUP.md](./ENVIRONMENT_SETUP.md) for detailed configuration guide.
+
+### Available Scripts
+
+```bash
+# Development
+bun run dev              # Start development server
+bun run build            # Build for production
+bun run preview          # Preview production build
+
+# Environment
+bun run setup            # Create .env from .env.example
+bun run test:connections # Test database connections
+
+# Code Quality
+bun run check            # Type checking
+bun run check:watch      # Type checking in watch mode
+
+# Database
+bun run db:init          # Initialize database
+bun run db:reset         # Reset database
 ```
+
+## Data Sources
+
+### MongoDB Collections
+
+- `ai_inference_engine_execution_logs` - Execution logs from ai-inference service
+
+### Redis Keys
+
+- `technical-system-prompt:default:{locale}` - Technical system prompts
+- `admin-behavior-system-prompt:default:{locale}` - Admin behavior prompts
+- `business-behavior-system-prompt:{businessId}` - Business-specific prompts
 
 ## Build for Production
 
 ```bash
-npm run build
+bun run build
 ```
 
 The built files will be in the `build/` directory.

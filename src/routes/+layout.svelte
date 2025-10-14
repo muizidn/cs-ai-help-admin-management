@@ -1,7 +1,7 @@
 <script lang="ts">
   import "../app.css"
   import { page } from "$app/stores"
-  import { Settings, Library } from "lucide-svelte"
+  import { Settings, Library, Activity, Database } from "lucide-svelte"
 
   $: currentPath = $page.url.pathname
 </script>
@@ -15,9 +15,27 @@
 
     <div class="nav-menu">
       <a
+        href="/ai-execution-log"
+        class="nav-item"
+        class:active={currentPath.startsWith("/ai-execution-log")}
+      >
+        <Activity size={20} />
+        <span>AI Execution Logs</span>
+      </a>
+
+      <a
+        href="/system-prompts-redis"
+        class="nav-item"
+        class:active={currentPath.startsWith("/system-prompts-redis")}
+      >
+        <Database size={20} />
+        <span>System Prompts (Redis)</span>
+      </a>
+
+      <a
         href="/system-prompts"
         class="nav-item"
-        class:active={currentPath.startsWith("/system-prompts") ||
+        class:active={currentPath.startsWith("/system-prompts") && !currentPath.startsWith("/system-prompts-redis") ||
           currentPath === "/"}
       >
         <Settings size={20} />

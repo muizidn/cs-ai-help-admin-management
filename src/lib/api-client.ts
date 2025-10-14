@@ -1,4 +1,4 @@
-import { browser } from '$app/environment'
+import { browser } from "$app/environment"
 
 interface ApiRequestOptions {
   method?: string
@@ -16,18 +16,18 @@ interface ApiResponse<T = any> {
 class ApiClient {
   private baseUrl: string
 
-  constructor(baseUrl: string = '') {
+  constructor(baseUrl: string = "") {
     this.baseUrl = baseUrl
   }
 
-  private log(level: 'info' | 'warn' | 'error', message: string, data?: any) {
+  private log(level: "info" | "warn" | "error", message: string, data?: any) {
     if (!browser) return
 
     const timestamp = new Date().toISOString()
     const logData = {
       timestamp,
-      service: 'system-prompts-client',
-      ...data
+      service: "admin-management-client",
+      ...data,
     }
 
     // Log to console with structured format
@@ -39,32 +39,34 @@ class ApiClient {
 
   private async makeRequest<T = any>(
     endpoint: string,
-    options: ApiRequestOptions = {}
+    options: ApiRequestOptions = {},
   ): Promise<ApiResponse<T>> {
     const start = Date.now()
     const url = `${this.baseUrl}${endpoint}`
-    const method = options.method || 'GET'
+    const method = options.method || "GET"
 
-    const requestId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
+    const requestId =
+      Math.random().toString(36).substring(2, 15) +
+      Math.random().toString(36).substring(2, 15)
 
-    this.log('info', `API Request Started`, {
+    this.log("info", `API Request Started`, {
       requestId,
       method,
       url,
-      type: 'api_request_start'
+      type: "api_request_start",
     })
 
     try {
       const requestOptions: RequestInit = {
         method,
         headers: {
-          'Content-Type': 'application/json',
-          'X-Request-ID': requestId,
-          ...options.headers
-        }
+          "Content-Type": "application/json",
+          "X-Request-ID": requestId,
+          ...options.headers,
+        },
       }
 
-      if (options.body && method !== 'GET') {
+      if (options.body && method !== "GET") {
         requestOptions.body = JSON.stringify(options.body)
       }
 
@@ -82,20 +84,20 @@ class ApiClient {
         data: responseData,
         status: response.status,
         statusText: response.statusText,
-        headers: response.headers
+        headers: response.headers,
       }
 
       if (response.ok) {
-        this.log('info', `API Request Successful`, {
+        this.log("info", `API Request Successful`, {
           requestId,
           method,
           url,
           status: response.status,
           duration,
-          type: 'api_request_success'
+          type: "api_request_success",
         })
       } else {
-        this.log('warn', `API Request Failed`, {
+        this.log("warn", `API Request Failed`, {
           requestId,
           method,
           url,
@@ -103,7 +105,7 @@ class ApiClient {
           statusText: response.statusText,
           duration,
           responseData,
-          type: 'api_request_failed'
+          type: "api_request_failed",
         })
       }
 
@@ -111,13 +113,13 @@ class ApiClient {
     } catch (error) {
       const duration = Date.now() - start
 
-      this.log('error', `API Request Error`, {
+      this.log("error", `API Request Error`, {
         requestId,
         method,
         url,
         duration,
         error: error instanceof Error ? error.message : String(error),
-        type: 'api_request_error'
+        type: "api_request_error",
       })
 
       throw error
@@ -125,20 +127,34 @@ class ApiClient {
   }
 
   // Convenience methods
-  async get<T = any>(endpoint: string, headers?: Record<string, string>): Promise<ApiResponse<T>> {
-    return this.makeRequest<T>(endpoint, { method: 'GET', headers })
+  async get<T = any>(
+    endpoint: string,
+    headers?: Record<string, string>,
+  ): Promise<ApiResponse<T>> {
+    return this.makeRequest<T>(endpoint, { method: "GET", headers })
   }
 
-  async post<T = any>(endpoint: string, body?: any, headers?: Record<string, string>): Promise<ApiResponse<T>> {
-    return this.makeRequest<T>(endpoint, { method: 'POST', body, headers })
+  async post<T = any>(
+    endpoint: string,
+    body?: any,
+    headers?: Record<string, string>,
+  ): Promise<ApiResponse<T>> {
+    return this.makeRequest<T>(endpoint, { method: "POST", body, headers })
   }
 
-  async put<T = any>(endpoint: string, body?: any, headers?: Record<string, string>): Promise<ApiResponse<T>> {
-    return this.makeRequest<T>(endpoint, { method: 'PUT', body, headers })
+  async put<T = any>(
+    endpoint: string,
+    body?: any,
+    headers?: Record<string, string>,
+  ): Promise<ApiResponse<T>> {
+    return this.makeRequest<T>(endpoint, { method: "PUT", body, headers })
   }
 
-  async delete<T = any>(endpoint: string, headers?: Record<string, string>): Promise<ApiResponse<T>> {
-    return this.makeRequest<T>(endpoint, { method: 'DELETE', headers })
+  async delete<T = any>(
+    endpoint: string,
+    headers?: Record<string, string>,
+  ): Promise<ApiResponse<T>> {
+    return this.makeRequest<T>(endpoint, { method: "DELETE", headers })
   }
 
   // Helper method to build query strings
@@ -146,9 +162,9 @@ class ApiClient {
     const searchParams = new URLSearchParams()
 
     Object.entries(params).forEach(([key, value]) => {
-      if (value !== undefined && value !== null && value !== '') {
+      if (value !== undefined && value !== null && value !== "") {
         if (Array.isArray(value)) {
-          searchParams.set(key, value.join(','))
+          searchParams.set(key, value.join(","))
         } else {
           searchParams.set(key, String(value))
         }
@@ -156,7 +172,7 @@ class ApiClient {
     })
 
     const queryString = searchParams.toString()
-    return queryString ? `?${queryString}` : ''
+    return queryString ? `?${queryString}` : ""
   }
 }
 
