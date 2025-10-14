@@ -53,7 +53,7 @@ export interface ExecutionLog {
   steps: ExecutionStep[]
 
   // Final result
-  final_response?: string
+  final_response?: Record<string, any>
   error_message?: string
 
   // Metadata
