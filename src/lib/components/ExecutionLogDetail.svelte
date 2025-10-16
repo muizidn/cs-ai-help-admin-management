@@ -8,6 +8,7 @@
     Bot, Brain, Target, CheckCircle2, AlertTriangle
   } from 'lucide-svelte'
   import type { ExecutionLogDetail } from '$lib/types/execution-logs'
+  import GenericComments from './GenericComments.svelte'
 
   export let executionId: string
 
@@ -826,6 +827,18 @@
         {/if}
       {/if}
     </div>
+
+    <!-- Comments Section -->
+    {#if executionLog}
+      <div class="section">
+        <h2>Review Comments</h2>
+        <GenericComments
+          entityType="execution-log"
+          entityId={executionLog.execution_id}
+          entityLogId={executionLog.id}
+        />
+      </div>
+    {/if}
   {/if}
 </div>
 

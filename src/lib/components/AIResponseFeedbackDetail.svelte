@@ -15,6 +15,7 @@
     UserIcon
   } from 'lucide-svelte'
   import type { AIResponseFeedback } from '$lib/types/ai-response-feedback'
+  import GenericComments from './GenericComments.svelte'
 
   export let feedbackId: string
 
@@ -313,6 +314,19 @@
           </div>
         </div>
       {/if}
+
+      <!-- Comments Section -->
+      <div class="bg-white rounded-lg shadow">
+        <div class="px-6 py-4 border-b border-gray-200">
+          <h3 class="text-lg font-medium text-gray-900">Review Comments</h3>
+        </div>
+        <div class="p-6">
+          <GenericComments
+            entityType="ai-response-feedback"
+            entityId={feedback.id}
+          />
+        </div>
+      </div>
 
       <!-- JSON Data Section (for debugging) -->
       <details class="bg-white rounded-lg shadow">
