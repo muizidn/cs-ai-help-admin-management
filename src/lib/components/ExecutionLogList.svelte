@@ -3,6 +3,7 @@
   import { Clock, CheckCircle, XCircle, AlertCircle, Eye, Search, Filter, ChevronDown, ChevronRight, Expand, Minimize } from 'lucide-svelte'
   import type { ExecutionLogResponse, ExecutionLogQuery, ExecutionLogStats } from '$lib/types/execution-logs'
   import { extractFinalDecision, extractAiResponseText, getFinalDecisionLabel, getFinalDecisionClass } from '$lib/utils/final-decision-extractor'
+  import GenericComments from './GenericComments.svelte'
 
   export let searchQuery = ''
   export let statusFilter = 'all'
@@ -461,6 +462,13 @@
                     <div class="ai-response-text">
                       {aiResponse || 'No AI response available'}
                     </div>
+
+                    <!-- Comments Section -->
+                    <GenericComments
+                      entityType="execution-log"
+                      entityId={log.execution_id}
+                      entityLogId={log.id}
+                    />
                   </div>
                 </td>
               </tr>
