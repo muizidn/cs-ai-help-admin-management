@@ -1,6 +1,10 @@
 import { executionLogRepository } from "../repositories/execution-logs"
 import { redisClient } from "../redis"
 import { logger } from "../logger"
+import {
+  extractFinalDecision,
+  extractAiResponseText,
+} from "../utils/final-decision-extractor"
 import type {
   ExecutionLog,
   ExecutionLogQuery,
@@ -77,6 +81,8 @@ export class ExecutionLogService {
           ? this.formatDuration(executionLog.total_duration_ms)
           : undefined,
         steps_by_type: this.groupStepsByType(executionLog.steps),
+        final_decision: extractFinalDecision(executionLog),
+        ai_response_text: extractAiResponseText(executionLog),
       }
 
       logger.info(
@@ -129,6 +135,8 @@ export class ExecutionLogService {
           ? this.formatDuration(executionLog.total_duration_ms)
           : undefined,
         steps_by_type: this.groupStepsByType(executionLog.steps),
+        final_decision: extractFinalDecision(executionLog),
+        ai_response_text: extractAiResponseText(executionLog),
       }
 
       return {

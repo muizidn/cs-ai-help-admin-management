@@ -1,12 +1,20 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import { Clock, CheckCircle, XCircle, AlertCircle, Eye, Search, Filter } from 'lucide-svelte'
+  import { Clock, CheckCircle, XCircle, AlertCircle, Eye, Search, Filter, ChevronDown, ChevronRight, Expand, Minimize } from 'lucide-svelte'
   import type { ExecutionLogResponse, ExecutionLogQuery, ExecutionLogStats } from '$lib/types/execution-logs'
+  import { extractFinalDecision, extractAiResponseText, getFinalDecisionLabel, getFinalDecisionClass } from '$lib/utils/final-decision-extractor'
 
   export let searchQuery = ''
   export let statusFilter = 'all'
   export let contextFilter = ''
   export let dateRangeFilter = { start: '', end: '' }
+  export let finalDecisionFilter = 'all'
+  export let customerMessageFilter = ''
+  export let aiResponseFilter = ''
+
+  // Expandable rows state
+  let expandedRows = new Set<string>()
+  let showAllExpanded = false
 
   let executionLogs: ExecutionLogResponse | null = null
   let stats: ExecutionLogStats | null = null
@@ -20,6 +28,16 @@
     { value: 'running', label: 'Running' },
     { value: 'completed', label: 'Completed' },
     { value: 'failed', label: 'Failed' }
+  ]
+
+  const finalDecisionOptions = [
+    { value: 'all', label: 'All Decisions' },
+    { value: 'DIRECT_REPLY', label: 'Direct Reply' },
+    { value: 'REQUEST_HUMAN_ASSISTANCE', label: 'Human Assistance' },
+    { value: 'NO_ANSWER_GIVEN', label: 'No Answer' },
+    { value: 'FALLBACK_REPLY', label: 'Fallback Reply' },
+    { value: 'FAILED', label: 'Failed' },
+    { value: 'RUNNING', label: 'Running' }
   ]
 
   async function loadExecutionLogs() {
@@ -52,6 +70,18 @@
       
       if (dateRangeFilter.end) {
         params.append('end_date', dateRangeFilter.end)
+      }
+
+      if (finalDecisionFilter && finalDecisionFilter !== 'all') {
+        params.append('final_decision', finalDecisionFilter)
+      }
+
+      if (customerMessageFilter.trim()) {
+        params.append('customer_message', customerMessageFilter.trim())
+      }
+
+      if (aiResponseFilter.trim()) {
+        params.append('ai_response', aiResponseFilter.trim())
       }
       
       const response = await fetch(`/api/ai-execution-log?${params}`)
@@ -106,6 +136,27 @@
     currentPage = 1
     loadExecutionLogs()
     loadStats()
+  }
+
+  // Expandable row functions
+  function toggleRow(executionId: string) {
+    if (expandedRows.has(executionId)) {
+      expandedRows.delete(executionId)
+    } else {
+      expandedRows.add(executionId)
+    }
+    expandedRows = expandedRows // Trigger reactivity
+  }
+
+  function toggleAllRows() {
+    showAllExpanded = !showAllExpanded
+    if (showAllExpanded) {
+      // Expand all current rows
+      expandedRows = new Set(executionLogs?.items.map(log => log.execution_id) || [])
+    } else {
+      // Collapse all rows
+      expandedRows = new Set()
+    }
   }
 
   function handlePageChange(page: number) {
@@ -262,6 +313,37 @@
           />
         </div>
       </div>
+
+      <div class="filter-row">
+        <div class="filter-group">
+          <label>Final Decision</label>
+          <select bind:value={finalDecisionFilter} on:change={handleFilterChange}>
+            {#each finalDecisionOptions as option}
+              <option value={option.value}>{option.label}</option>
+            {/each}
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Customer Message</label>
+          <input
+            type="text"
+            placeholder="Filter by customer message..."
+            bind:value={customerMessageFilter}
+            on:change={handleFilterChange}
+          />
+        </div>
+
+        <div class="filter-group">
+          <label>AI Response</label>
+          <input
+            type="text"
+            placeholder="Filter by AI response..."
+            bind:value={aiResponseFilter}
+            on:change={handleFilterChange}
+          />
+        </div>
+      </div>
     </div>
   {/if}
 
@@ -275,51 +357,118 @@
         {error}
       </div>
     {:else if executionLogs && executionLogs.items.length > 0}
-      <table class="logs-table">
+      <!-- Table Controls -->
+      <div class="table-controls">
+        <div class="table-info">
+          <span class="results-count">
+            Showing {executionLogs.items.length} of {executionLogs.total} results
+          </span>
+        </div>
+        <div class="table-actions">
+          <button
+            class="expand-toggle-btn"
+            on:click={toggleAllRows}
+            title={showAllExpanded ? 'Collapse all AI responses' : 'Expand all AI responses'}
+          >
+            {#if showAllExpanded}
+              <Minimize size={16} />
+              Hide All Responses
+            {:else}
+              <Expand size={16} />
+              Show All Responses
+            {/if}
+          </button>
+        </div>
+      </div>
+
+      <div class="table-scroll-wrapper">
+        <table class="logs-table">
         <thead>
           <tr>
-            <th>Status</th>
-            <th>Execution ID</th>
-            <th>Context</th>
-            <th>Message</th>
-            <th>Duration</th>
-            <th>Start Time</th>
-            <th>Steps</th>
-            <th>Actions</th>
+            <th class="expand-col"></th>
+            <th class="status-col">Status</th>
+            <th class="id-col">Execution ID</th>
+            <th class="context-col">Context</th>
+            <th class="message-col">Message</th>
+            <th class="decision-col">Final Decision</th>
+            <th class="duration-col">Duration</th>
+            <th class="time-col">Start Time</th>
+            <th class="steps-col">Steps</th>
+            <th class="actions-col">Actions</th>
           </tr>
         </thead>
         <tbody>
           {#each executionLogs.items as log}
-            <tr>
-              <td>
+            {@const finalDecision = extractFinalDecision(log)}
+            {@const aiResponse = extractAiResponseText(log)}
+            {@const isExpanded = expandedRows.has(log.execution_id)}
+
+            <!-- Main row -->
+            <tr class="main-row" class:expanded={isExpanded}>
+              <td class="expand-col">
+                <button
+                  class="expand-btn"
+                  on:click={() => toggleRow(log.execution_id)}
+                  title={isExpanded ? 'Hide AI response' : 'Show AI response'}
+                >
+                  {#if isExpanded}
+                    <ChevronDown size={16} />
+                  {:else}
+                    <ChevronRight size={16} />
+                  {/if}
+                </button>
+              </td>
+              <td class="status-col">
                 <div class="status-badge {getStatusClass(log.status)}">
                   <svelte:component this={getStatusIcon(log.status)} size={16} />
                   {log.status}
                 </div>
               </td>
-              <td>
+              <td class="id-col">
                 <div class="execution-id">{log.execution_id}</div>
                 <div class="conversation-id">Conv: {log.conversation_id}</div>
               </td>
-              <td>{log.context}</td>
-              <td>
+              <td class="context-col">{log.context}</td>
+              <td class="message-col">
                 <div class="message" title={log.original_message}>
                   {truncateMessage(log.original_message)}
                 </div>
               </td>
-              <td>{formatDuration(log.total_duration_ms)}</td>
-              <td>{formatDateTime(log.start_time)}</td>
-              <td>{log.steps.length}</td>
-              <td>
+              <td class="decision-col">
+                <div class="decision-badge {getFinalDecisionClass(finalDecision)}">
+                  {getFinalDecisionLabel(finalDecision)}
+                </div>
+              </td>
+              <td class="duration-col">{formatDuration(log.total_duration_ms)}</td>
+              <td class="time-col">{formatDateTime(log.start_time)}</td>
+              <td class="steps-col">{log.steps.length}</td>
+              <td class="actions-col">
                 <a href="/ai-execution-log/{log.id}" class="view-btn">
                   <Eye size={16} />
                   View
                 </a>
               </td>
             </tr>
+
+            <!-- Expandable AI response row -->
+            {#if isExpanded}
+              <tr class="expanded-row">
+                <td colspan="10" class="ai-response-cell">
+                  <div class="ai-response-content">
+                    <div class="ai-response-header">
+                      <h4>AI Response</h4>
+                    </div>
+                    <div class="ai-response-text">
+                      {aiResponse || 'No AI response available'}
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            {/if}
           {/each}
         </tbody>
       </table>
+      </div>
 
       <!-- Pagination -->
       {#if executionLogs.total_pages > 1}
@@ -330,12 +479,12 @@
           >
             Previous
           </button>
-          
+
           <span class="page-info">
-            Page {currentPage} of {executionLogs.total_pages} 
+            Page {currentPage} of {executionLogs.total_pages}
             ({executionLogs.total.toLocaleString()} total)
           </span>
-          
+
           <button
             disabled={currentPage === executionLogs.total_pages}
             on:click={() => handlePageChange(currentPage + 1)}
@@ -493,34 +642,254 @@
 
   .table-container {
     background: white;
-    border: 1px solid #e5e7eb;
     border-radius: 0.5rem;
-    overflow: hidden;
+  }
+
+  /* Table Controls */
+  .table-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 1rem;
+  }
+
+  .table-info .results-count {
+    font-size: 0.875rem;
+    color: #6b7280;
+    font-weight: 500;
+  }
+
+  .expand-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    color: #374151;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .expand-toggle-btn:hover {
+    background: #e5e7eb;
+    border-color: #9ca3af;
+  }
+
+  /* Table Scroll Wrapper */
+  .table-scroll-wrapper {
+    overflow-x: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    /* Smooth scrolling */
+    scroll-behavior: smooth;
+    /* Custom scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: #d1d5db #f9fafb;
+  }
+
+  .table-scroll-wrapper::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .table-scroll-wrapper::-webkit-scrollbar-track {
+    background: #f9fafb;
+    border-radius: 4px;
+  }
+
+  .table-scroll-wrapper::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 4px;
+  }
+
+  .table-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
   }
 
   .logs-table {
     width: 100%;
+    min-width: 1200px; /* Minimum width for horizontal scroll */
     border-collapse: collapse;
+    background: white;
   }
+
+  .logs-table th,
+  .logs-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 0.875rem;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  /* Column widths */
+  .expand-col { width: 50px; min-width: 50px; }
+  .status-col { width: 120px; min-width: 120px; }
+  .id-col { width: 200px; min-width: 200px; }
+  .context-col { width: 120px; min-width: 120px; }
+  .message-col { width: 300px; min-width: 300px; }
+  .decision-col { width: 150px; min-width: 150px; }
+  .duration-col { width: 100px; min-width: 100px; }
+  .time-col { width: 180px; min-width: 180px; }
+  .steps-col { width: 80px; min-width: 80px; }
+  .actions-col { width: 100px; min-width: 100px; }
 
   .logs-table th {
     background: #f9fafb;
-    padding: 1rem;
-    text-align: left;
     font-weight: 600;
     color: #374151;
-    border-bottom: 1px solid #e5e7eb;
-    font-size: 0.875rem;
+    border-bottom: 2px solid #e5e7eb;
   }
 
-  .logs-table td {
-    padding: 1rem;
-    border-bottom: 1px solid #f3f4f6;
-    font-size: 0.875rem;
+  .main-row {
+    transition: background-color 0.2s ease;
   }
 
-  .logs-table tr:hover {
+  .main-row:hover {
     background: #f9fafb;
+  }
+
+  .main-row.expanded {
+    background: #f0f9ff;
+  }
+
+  /* Expand Button */
+  .expand-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .expand-btn:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+    color: #374151;
+  }
+
+  /* Expandable Row */
+  .expanded-row {
+    background: #f8fafc;
+    border-top: none;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .ai-response-cell {
+    padding: 0 !important;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  .ai-response-content {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-left: 4px solid #3b82f6;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-response-header {
+    margin-bottom: 1rem;
+  }
+
+  .ai-response-header h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .ai-response-header h4::before {
+    content: "🤖";
+    font-size: 1.2rem;
+  }
+
+  .ai-response-text {
+    background: white;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    border: 1px solid #e5e7eb;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #374151;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 300px;
+    overflow-y: auto;
+    /* Custom scrollbar for AI response */
+    scrollbar-width: thin;
+    scrollbar-color: #d1d5db #f9fafb;
+  }
+
+  .ai-response-text::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .ai-response-text::-webkit-scrollbar-track {
+    background: #f9fafb;
+    border-radius: 3px;
+  }
+
+  .ai-response-text::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 3px;
+  }
+
+  .ai-response-text::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .table-controls {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .expand-toggle-btn {
+      justify-content: center;
+    }
+
+    .logs-table {
+      min-width: 800px; /* Reduced minimum width for mobile */
+    }
+
+    .ai-response-content {
+      margin: 0.25rem;
+      padding: 1rem;
+    }
+
+    .ai-response-text {
+      max-height: 200px; /* Reduced height on mobile */
+    }
   }
 
   .status-badge {
@@ -550,6 +919,8 @@
     max-width: 300px;
     word-break: break-word;
   }
+
+
 
   .view-btn {
     display: inline-flex;
@@ -622,5 +993,47 @@
   .empty-state h3 {
     margin: 1rem 0 0.5rem;
     color: #374151;
+  }
+
+  .decision-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .decision-badge.decision-success {
+    background: #dcfce7;
+    color: #16a34a;
+  }
+
+  .decision-badge.decision-warning {
+    background: #fef3c7;
+    color: #d97706;
+  }
+
+  .decision-badge.decision-info {
+    background: #dbeafe;
+    color: #2563eb;
+  }
+
+  .decision-badge.decision-error {
+    background: #fee2e2;
+    color: #dc2626;
+  }
+
+  .decision-badge.decision-pending {
+    background: #f3f4f6;
+    color: #6b7280;
+  }
+
+  .decision-badge.decision-unknown {
+    background: #f9fafb;
+    color: #9ca3af;
   }
 </style>

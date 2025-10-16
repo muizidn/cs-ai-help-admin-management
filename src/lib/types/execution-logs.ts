@@ -74,6 +74,10 @@ export interface ExecutionLogQuery {
   step_type?: StepType
   sort_by?: "start_time" | "end_time" | "total_duration_ms" | "created_at"
   sort_order?: "asc" | "desc"
+  // New filter fields
+  final_decision?: string
+  customer_message?: string
+  ai_response?: string
 }
 
 export interface ExecutionLogResponse {
@@ -135,6 +139,8 @@ export interface ExecutionLogListItem {
   business_id?: string
   steps_count: number
   error_message?: string
+  final_decision?: string
+  ai_response_text?: string
 }
 
 // For the execution log detail view
@@ -143,6 +149,27 @@ export interface ExecutionLogDetail extends ExecutionLog {
   formatted_end_time?: string
   formatted_duration?: string
   steps_by_type: Record<string, ExecutionStep[]>
+  final_decision?: string
+  ai_response_text?: string
+}
+
+// Final decision types based on AI workflow steps
+export type FinalDecisionType =
+  | "DIRECT_REPLY"
+  | "FALLBACK_REPLY"
+  | "SENT_ANSWER"
+  | "REQUEST_HUMAN_ASSISTANCE"
+  | "NO_ANSWER_GIVEN"
+  | "FAILED"
+  | "RUNNING"
+  | "UNKNOWN"
+
+// Utility functions for extracting final decision
+export interface FinalDecisionExtractor {
+  extractFinalDecision(log: ExecutionLog): string
+  extractAiResponseText(log: ExecutionLog): string
+  getFinalDecisionFromSteps(steps: ExecutionStep[]): string
+  getFinalDecisionFromResponse(final_response?: Record<string, any>): string
 }
 
 // System prompt types for Redis integration
