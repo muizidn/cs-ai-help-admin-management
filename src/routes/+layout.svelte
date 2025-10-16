@@ -1,7 +1,7 @@
 <script lang="ts">
   import "../app.css"
   import { page } from "$app/stores"
-  import { Settings, Library, Activity, Database } from "lucide-svelte"
+  import { Settings, Library, Activity, Database, MessageSquare } from "lucide-svelte"
 
   $: currentPath = $page.url.pathname
 </script>
@@ -21,6 +21,15 @@
       >
         <Activity size={20} />
         <span>AI Execution Logs</span>
+      </a>
+
+      <a
+        href="/ai-response-feedback"
+        class="nav-item"
+        class:active={currentPath.startsWith("/ai-response-feedback")}
+      >
+        <MessageSquare size={20} />
+        <span>AI Response Feedback</span>
       </a>
 
       <a
