@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { Settings, Library, Plus } from "lucide-svelte"
+  import { Settings, Library, Plus, Users, CreditCard } from "lucide-svelte"
 </script>
 
 <div class="dashboard">
   <div class="dashboard-header">
     <h1>CS AI System Management</h1>
-    <p>Manage system prompts and library templates for your AI application</p>
+    <p>Manage system prompts, library templates, user billing, and transactions for your AI application</p>
   </div>
 
   <div class="dashboard-grid">
@@ -30,6 +30,28 @@
         <p>Create and manage reusable library templates</p>
       </div>
     </a>
+
+    <!-- User Billing Card -->
+    <a href="/user-billing" class="dashboard-card">
+      <div class="card-icon">
+        <Users size={32} />
+      </div>
+      <div class="card-content">
+        <h3>User Billing</h3>
+        <p>Manage user accounts and billing information</p>
+      </div>
+    </a>
+
+    <!-- Transactions Card -->
+    <a href="/transactions" class="dashboard-card">
+      <div class="card-icon">
+        <CreditCard size={32} />
+      </div>
+      <div class="card-content">
+        <h3>Transactions</h3>
+        <p>Monitor and manage payment transactions</p>
+      </div>
+    </a>
   </div>
 
   <div class="quick-actions">
@@ -42,6 +64,14 @@
       <a href="/library-templates" class="action-button">
         <Plus size={20} />
         <span>New Library Template</span>
+      </a>
+      <a href="/user-billing" class="action-button">
+        <Users size={20} />
+        <span>View Users</span>
+      </a>
+      <a href="/transactions" class="action-button">
+        <CreditCard size={20} />
+        <span>View Transactions</span>
       </a>
     </div>
   </div>

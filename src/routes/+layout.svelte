@@ -1,7 +1,7 @@
 <script lang="ts">
   import "../app.css"
   import { page } from "$app/stores"
-  import { Settings, Library, Activity, Database, MessageSquare } from "lucide-svelte"
+  import { Settings, Library, Activity, Database, MessageSquare, Users, CreditCard } from "lucide-svelte"
 
   $: currentPath = $page.url.pathname
 </script>
@@ -58,6 +58,24 @@
       >
         <Library size={20} />
         <span>Library Templates</span>
+      </a>
+
+      <a
+        href="/user-billing"
+        class="nav-item"
+        class:active={currentPath.startsWith("/user-billing")}
+      >
+        <Users size={20} />
+        <span>User Billing</span>
+      </a>
+
+      <a
+        href="/transactions"
+        class="nav-item"
+        class:active={currentPath.startsWith("/transactions")}
+      >
+        <CreditCard size={20} />
+        <span>Transactions</span>
       </a>
     </div>
 
