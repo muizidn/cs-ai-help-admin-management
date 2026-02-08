@@ -31,36 +31,31 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-# Define allowed branches and their suffixes
-declare -A BRANCH_SUFFIX_MAP=(
-  ["main"]=""
-  ["develop"]="-develop"
-  ["staging"]="-staging"
-)
-
 # Get current git branch name
 CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
-# Check if current branch is in the allowed list
-if [[ -z "${BRANCH_SUFFIX_MAP[$CURRENT_BRANCH]}" && "$CURRENT_BRANCH" != "main" ]]; then
-  echo "🚫 Not on a taggable branch. Skipping tag. Allowed branches: ${!BRANCH_SUFFIX_MAP[@]}"
-  exit 0
-fi
+# Allow all branches
+echo "ℹ️ Branch: $CURRENT_BRANCH" >&2
 
-SUFFIX="${BRANCH_SUFFIX_MAP[$CURRENT_BRANCH]}"
+if [ "$CURRENT_BRANCH" == "main" ]; then
+  SUFFIX=""
+else
+  SAFE_BRANCH=${CURRENT_BRANCH//\//-}
+  SUFFIX="-${SAFE_BRANCH}"
+fi
 
 # Get latest semver tag (excluding build metadata)
 LATEST_TAG=$(git tag --list "v*" --sort=-version:refname | grep -Ev '\-build\.' | head -1)
 
 if [ -z "$LATEST_TAG" ]; then
   if [ "$DRY_RUN" != true ]; then
-    echo "No existing tags found. Starting at v0.1.0"
+    echo "No existing tags found. Starting at v0.1.0" >&2
   fi
   BASE_VERSION="v0.1.0"
   TAG_COMMIT=""
 else
   if [ "$DRY_RUN" != true ]; then
-    echo "Latest tag: $LATEST_TAG"
+    echo "Latest tag: $LATEST_TAG" >&2
   fi
   BASE_VERSION="${LATEST_TAG%%-*}" # Strip suffix like -develop or -staging
   TAG_COMMIT=$(git rev-list -n 1 "$LATEST_TAG")
@@ -90,36 +85,64 @@ if [ "$CURRENT_COMMIT" == "$TAG_COMMIT" ]; then
     echo "$NEW_TAG"
     exit 0
   elif [ -n "$COMMIT_TAG" ]; then
-    echo "🔁 Creating build metadata tag: $COMMIT_TAG"
+    echo "🔁 Creating build metadata tag: $COMMIT_TAG" >&2
     git tag "$COMMIT_TAG"
     git push origin "$COMMIT_TAG" 2>/dev/null || echo "⚠️ Warning: Could not push tag (may be running locally)"
-    echo "✅ Tagged as: $COMMIT_TAG"
+    echo "✅ Tagged as: $COMMIT_TAG" >&2
     exit 0
   else
-    echo "🔁 Same commit as latest tag. Creating build metadata tag: $NEW_TAG"
+    echo "🔁 Same commit as latest tag. Creating build metadata tag: $NEW_TAG" >&2
     git tag "$NEW_TAG"
     git push origin "$NEW_TAG" 2>/dev/null || echo "⚠️ Warning: Could not push tag (may be running locally)"
-    echo "✅ Tagged as: $NEW_TAG"
+    echo "✅ Tagged as: $NEW_TAG" >&2
     exit 0
   fi
 fi
 
-# New commit: bump patch version
+# Parse version components
 IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
-PATCH=$((PATCH + 1))
-NEW_TAG="v${MAJOR}.${MINOR}.${PATCH}${SUFFIX}"
+
+if [ "$CURRENT_BRANCH" == "main" ]; then
+  # On main: Bump patch version
+  PATCH=$((PATCH + 1))
+  NEW_TAG="v${MAJOR}.${MINOR}.${PATCH}"
+  
+  echo "🏷️ [main] New commit. Bumping version: $NEW_TAG" >&2
+else
+  # On other branches: Keep same version, append branch and build metadata
+  # Sanitize branch name (replace / with -)
+  SAFE_BRANCH=${CURRENT_BRANCH//\//-}
+  
+  DATE=$(date +%Y%m%d)
+  
+  # Prefix for searching existing build tags for this branch today
+  SEARCH_PREFIX="v${MAJOR}.${MINOR}.${PATCH}-${SAFE_BRANCH}-build.${DATE}."
+  
+  EXISTING_TAGS=$(git tag --list "${SEARCH_PREFIX}*")
+  
+  if [ -z "$EXISTING_TAGS" ]; then
+    COUNT=0
+  else
+    COUNT=$(echo "$EXISTING_TAGS" | wc -l)
+  fi
+  
+  NEXT_BUILD_NUM=$((COUNT + 1))
+  NEW_TAG="v${MAJOR}.${MINOR}.${PATCH}-${SAFE_BRANCH}-build.${DATE}.${NEXT_BUILD_NUM}"
+  
+  echo "🏷️ [${CURRENT_BRANCH}] New commit. Generated build tag: $NEW_TAG" >&2
+fi
 
 if [ "$DRY_RUN" = true ]; then
   echo "$NEW_TAG"
   exit 0
 elif [ -n "$COMMIT_TAG" ]; then
-  echo "🏷️ Creating new version tag: $COMMIT_TAG"
+  echo "🏷️ Creating tag: $COMMIT_TAG" >&2
   git tag "$COMMIT_TAG"
   git push origin "$COMMIT_TAG" 2>/dev/null || echo "⚠️ Warning: Could not push tag (may be running locally)"
-  echo "✅ Version bumped to: $COMMIT_TAG"
+  echo "✅ Tagged as: $COMMIT_TAG" >&2
 else
-  echo "🏷️ New commit. Creating new version tag: $NEW_TAG"
+  echo "🏷️ Creating tag: $NEW_TAG" >&2
   git tag "$NEW_TAG"
   git push origin "$NEW_TAG" 2>/dev/null || echo "⚠️ Warning: Could not push tag (may be running locally)"
-  echo "✅ Version bumped to: $NEW_TAG"
+  echo "✅ Tagged as: $NEW_TAG" >&2
 fi
