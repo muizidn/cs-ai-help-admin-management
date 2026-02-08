@@ -374,6 +374,7 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -443,4 +444,28 @@
 .actions {
   display: flex;
   gap: 0.5rem;
+}
+
+/* Voucher Info in Table */
+.voucher-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
+.text-green-600 {
+  color: #059669;
+}
+
+.font-bold {
+  font-weight: 700;
 }

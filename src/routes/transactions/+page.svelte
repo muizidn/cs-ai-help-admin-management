@@ -346,6 +346,18 @@
                 <div class="amount-info">
                   {transaction.amount > 0 ? formatCurrency(transaction.amount) : "-"}
                 </div>
+                {#if transaction.voucher}
+                  <div class="voucher-info mt-1">
+                    <span class="badge badge-secondary text-xs">
+                      🎟️ {transaction.voucher.code}
+                    </span>
+                    <div class="text-xs text-green-600 font-bold">
+                      -{transaction.voucher.discountType === 'PERCENTAGE' 
+                        ? `${transaction.voucher.discountValue}%` 
+                        : formatCurrency(transaction.voucher.discountValue)}
+                    </div>
+                  </div>
+                {/if}
               </td>
               <td>
                 <span class="badge {getStatusBadgeClass(transaction.status)}">

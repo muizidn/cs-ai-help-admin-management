@@ -77,6 +77,15 @@
         <CreditCard size={20} />
         <span>Transactions</span>
       </a>
+
+      <a
+        href="/vouchers"
+        class="nav-item"
+        class:active={currentPath.startsWith("/vouchers")}
+      >
+        <Database size={20} />
+        <span>Voucher Management</span>
+      </a>
     </div>
 
     <div class="sidebar-footer">

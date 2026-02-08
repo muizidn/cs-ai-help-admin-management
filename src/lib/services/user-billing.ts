@@ -68,6 +68,7 @@ export class UserBillingService {
       status,
       transactionCode: transaction.transactionCode || transaction.gatewayTransactionId || `TRX-${transaction.id?.substring(0, 8) || "UNK"}`,
       currency: transaction.currency || "IDR",
+      voucherCode: transaction.voucherCode,
     } as Transaction
   }
 
@@ -399,16 +400,25 @@ export class UserBillingService {
         .limit(limit)
         .toArray()
 
-      // Enrich transactions with user data
+      // Enrich transactions with user and voucher data
       const userIds = [...new Set(transactions.map((t) => t.userId))]
+      const voucherCodes = [...new Set(transactions.map((t) => t.voucherCode).filter(Boolean))] as string[]
+
       const userDocs = await usersCollection
         .find({ id: { $in: userIds } })
         .toArray()
       const userMap = new Map(userDocs.map((u) => [u.id, this.mapUser(u)]))
 
+      const vouchersCollection = await this.getCollection("vouchers")
+      const voucherDocs = await vouchersCollection
+        .find({ code: { $in: voucherCodes }, deletedAt: { $exists: false } })
+        .toArray()
+      const voucherMap = new Map(voucherDocs.map((v) => [v.code, v]))
+
       const enrichedTransactions = transactions.map((transactionDoc) => {
         const transaction = this.mapTransaction(transactionDoc)
         const user = userMap.get(transaction.userId)
+        const voucherDoc = voucherMap.get(transaction.voucherCode!)
 
         return {
           ...transaction,
@@ -417,6 +427,13 @@ export class UserBillingService {
               id: user.id,
               name: user.name,
               email: user.email,
+            }
+            : undefined,
+          voucher: voucherDoc
+            ? {
+              code: voucherDoc.code,
+              discountType: voucherDoc.discountType,
+              discountValue: voucherDoc.discountValue,
             }
             : undefined,
         }

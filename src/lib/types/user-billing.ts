@@ -32,6 +32,7 @@ export interface Transaction {
   currency: string
   status: "COMPLETED" | "PENDING" | "FAILED"
   transactionCode: string
+  voucherCode?: string
   paymentProof?: string
   notes?: string
   createdAt: Date | string
@@ -43,6 +44,11 @@ export interface Transaction {
     id: string
     name: string
     email: string
+  }
+  voucher?: {
+    code: string
+    discountType: "PERCENTAGE" | "AMOUNT"
+    discountValue: number
   }
 }
 
