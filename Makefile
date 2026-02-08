@@ -105,9 +105,9 @@ deploy:
 		$(MAKE) list_images; \
 		exit 1; \
 	fi; \
-	CS_AI_CONTAINER_NAME=$(CONTAINER_NAME) \
-	CS_AI_APP_IMAGE="$$DEPLOY_TAG" \
-	CS_AI_ENV_FILE=$(ENV_FILE) \
+	ADMIN_MANAGEMENT_CONTAINER_NAME=$(CONTAINER_NAME) \
+	ADMIN_MANAGEMENT_IMAGE="$$DEPLOY_TAG" \
+	ADMIN_MANAGEMENT_ENV_FILE=$(ENV_FILE) \
 	docker compose -p $(COMPOSE_PROJECT_NAME) -f docker-compose.yml --env-file $(ENV_FILE) up -d; \
 	echo "$(GREEN)[SUCCESS]$(NC) Deployed to $(APP_ENVIRONMENT)"
 
@@ -252,8 +252,8 @@ push_to_registry:
 	echo "$(GREEN)[SUCCESS]$(NC) Pushed: $$TARGET_IMAGE"
 
 
-NETWORK_NAME = csai-net-dev
-CS_AI_CONTAINER = admin-management-app-dev
+NETWORK_NAME = csaiadminmanagement-net-dev
+ADMIN_MANAGEMENT_CONTAINER = admin-management-app-dev
 AI_INF_CONTAINER = ai-inference-ai-inference-1
 
 .PHONY: network_create attach_network detach_if_exists status_network
@@ -274,17 +274,6 @@ detach_if_exists:
 	else \
 		echo "ℹ️  $(CONTAINER) not yet in $(NETWORK_NAME), skipping detach"; \
 	fi
-
-attach_network: network_create
-	@echo "🔌 Attaching containers to $(NETWORK_NAME)..."
-
-	@$(MAKE) CONTAINER=$(CS_AI_CONTAINER) detach_if_exists
-	@docker network connect $(NETWORK_NAME) $(CS_AI_CONTAINER) || true
-
-	@$(MAKE) CONTAINER=$(AI_INF_CONTAINER) detach_if_exists
-	@docker network connect $(NETWORK_NAME) $(AI_INF_CONTAINER) || true
-
-	@echo "✅ Containers attached cleanly!"
 
 status_network:
 	@echo "📌 Containers in $(NETWORK_NAME):"
