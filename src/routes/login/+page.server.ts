@@ -10,12 +10,7 @@ import crypto from 'crypto'
  * ADMIN_USERNAME=admin
  * ADMIN_PASSWORD_HASH=$2a$10$....
  */
-const ADMIN_USERNAME = env.ADMIN_USERNAME
-const ADMIN_PASSWORD_HASH = env.ADMIN_PASSWORD_HASH
 
-if (!ADMIN_USERNAME || !ADMIN_PASSWORD_HASH) {
-    throw new Error('ADMIN_USERNAME / ADMIN_PASSWORD_HASH not set')
-}
 
 /* ──────────────────────────────
    Simple in-memory rate limiter
@@ -96,6 +91,15 @@ export const actions: Actions = {
                 'Admin login rate limited'
             )
             return fail(429, { rateLimited: true })
+        }
+
+
+        const ADMIN_USERNAME = env.ADMIN_USERNAME
+        const ADMIN_PASSWORD_HASH = env.ADMIN_PASSWORD_HASH
+
+        if (!ADMIN_USERNAME || !ADMIN_PASSWORD_HASH) {
+            logger.error({ requestId }, 'ADMIN_USERNAME / ADMIN_PASSWORD_HASH not set')
+            return fail(500, { error: 'Server configuration error' })
         }
 
         /* Credential check */
