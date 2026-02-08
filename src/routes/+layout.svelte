@@ -7,111 +7,113 @@
 </script>
 
 <div class="app-layout">
-  <nav class="sidebar">
-    <div class="sidebar-header">
-      <h1 class="app-title">CS AI Admin</h1>
-      <p class="app-subtitle">System Management</p>
-    </div>
+  {#if currentPath !== '/login'}
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="app-title">CS AI Admin</h1>
+        <p class="app-subtitle">System Management</p>
+      </div>
 
-    <div class="nav-menu">
-      <a
-        href="/ai-execution-log"
-        class="nav-item"
-        class:active={currentPath.startsWith("/ai-execution-log")}
-      >
-        <Activity size={20} />
-        <span>AI Execution Logs</span>
-      </a>
+      <div class="nav-menu">
+        <a
+          href="/ai-execution-log"
+          class="nav-item"
+          class:active={currentPath.startsWith("/ai-execution-log")}
+        >
+          <Activity size={20} />
+          <span>AI Execution Logs</span>
+        </a>
 
-      <a
-        href="/ai-response-feedback"
-        class="nav-item"
-        class:active={currentPath.startsWith("/ai-response-feedback")}
-      >
-        <MessageSquare size={20} />
-        <span>AI Response Feedback</span>
-      </a>
+        <a
+          href="/ai-response-feedback"
+          class="nav-item"
+          class:active={currentPath.startsWith("/ai-response-feedback")}
+        >
+          <MessageSquare size={20} />
+          <span>AI Response Feedback</span>
+        </a>
 
-      <a
-        href="/system-prompts-redis"
-        class="nav-item"
-        class:active={currentPath.startsWith("/system-prompts-redis")}
-      >
-        <Database size={20} />
-        <span>System Prompts (Redis)</span>
-      </a>
+        <a
+          href="/system-prompts-redis"
+          class="nav-item"
+          class:active={currentPath.startsWith("/system-prompts-redis")}
+        >
+          <Database size={20} />
+          <span>System Prompts (Redis)</span>
+        </a>
 
-      <a
-        href="/system-prompts"
-        class="nav-item"
-        class:active={currentPath.startsWith("/system-prompts") && !currentPath.startsWith("/system-prompts-redis") ||
-          currentPath === "/"}
-      >
-        <Settings size={20} />
-        <span>System Prompts</span>
-      </a>
+        <a
+          href="/system-prompts"
+          class="nav-item"
+          class:active={currentPath.startsWith("/system-prompts") && !currentPath.startsWith("/system-prompts-redis") ||
+            currentPath === "/"}
+        >
+          <Settings size={20} />
+          <span>System Prompts</span>
+        </a>
 
-      <a
-        href="/library-templates"
-        class="nav-item"
-        class:active={currentPath.startsWith("/library-templates")}
-      >
-        <Library size={20} />
-        <span>Library Templates</span>
-      </a>
+        <a
+          href="/library-templates"
+          class="nav-item"
+          class:active={currentPath.startsWith("/library-templates")}
+        >
+          <Library size={20} />
+          <span>Library Templates</span>
+        </a>
 
-      <a
-        href="/user-billing"
-        class="nav-item"
-        class:active={currentPath.startsWith("/user-billing")}
-      >
-        <Users size={20} />
-        <span>User Billing</span>
-      </a>
+        <a
+          href="/user-billing"
+          class="nav-item"
+          class:active={currentPath.startsWith("/user-billing")}
+        >
+          <Users size={20} />
+          <span>User Billing</span>
+        </a>
 
-      <a
-        href="/transactions"
-        class="nav-item"
-        class:active={currentPath.startsWith("/transactions")}
-      >
-        <CreditCard size={20} />
-        <span>Transactions</span>
-      </a>
+        <a
+          href="/transactions"
+          class="nav-item"
+          class:active={currentPath.startsWith("/transactions")}
+        >
+          <CreditCard size={20} />
+          <span>Transactions</span>
+        </a>
 
-      <a
-        href="/vouchers"
-        class="nav-item"
-        class:active={currentPath.startsWith("/vouchers")}
-      >
-        <Database size={20} />
-        <span>Voucher Management</span>
-      </a>
+        <a
+          href="/vouchers"
+          class="nav-item"
+          class:active={currentPath.startsWith("/vouchers")}
+        >
+          <Database size={20} />
+          <span>Voucher Management</span>
+        </a>
 
-      <a
-        href="/pricing"
-        class="nav-item"
-        class:active={currentPath.startsWith("/pricing")}
-      >
-        <CreditCard size={20} />
-        <span>Pricing Configuration</span>
-      </a>
+        <a
+          href="/pricing"
+          class="nav-item"
+          class:active={currentPath.startsWith("/pricing")}
+        >
+          <CreditCard size={20} />
+          <span>Pricing Configuration</span>
+        </a>
 
-      <a
-        href="/organizations"
-        class="nav-item"
-        class:active={currentPath.startsWith("/organizations")}
-      >
-        <Building size={20} />
-        <span>Organizations</span>
-      </a>
-    </div>
+        <a
+          href="/organizations"
+          class="nav-item"
+          class:active={currentPath.startsWith("/organizations")}
+        >
+          <Building size={20} />
+          <span>Organizations</span>
+        </a>
+      </div>
 
-    <div class="sidebar-footer">
-      <p class="version">v1.0.0</p>
-    </div>
-  </nav>
+      <div class="sidebar-footer">
+        <p class="version">v1.0.0</p>
+      </div>
+    </nav>
+  {/if}
 
-  <main class="main-content">
+  <main class={currentPath === '/login' ? 'w-full' : 'main-content'}>
     <slot />
   </main>
 </div>

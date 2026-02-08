@@ -1,6 +1,40 @@
 import type { Handle, HandleServerError } from '@sveltejs/kit'
 import { logger, logApiRequest, logAppEvent } from '$lib/logger'
 import { sequence } from '@sveltejs/kit/hooks'
+import { redirect } from '@sveltejs/kit'
+
+// Hook to check authentication
+const authHook: Handle = async ({ event, resolve }) => {
+  const { url, cookies } = event
+  const isLoginPage = url.pathname === '/login'
+  const isApiRoute = url.pathname.startsWith('/api')
+  const authCookie = cookies.get('admin_auth')
+
+  // Allow access to login page
+  if (isLoginPage) {
+    // If already logged in, redirect to home (handled in +page.server.ts load function too, but good as backup)
+    if (authCookie === 'true') {
+      throw redirect(303, '/')
+    }
+    return resolve(event)
+  }
+
+  // Protect all other routes
+  if (authCookie !== 'true') {
+    // For API routes, return 401
+    if (isApiRoute) {
+      return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+        status: 401,
+        headers: { 'Content-Type': 'application/json' }
+      })
+    }
+
+    // For page routes, redirect to login
+    throw redirect(303, '/login')
+  }
+
+  return resolve(event)
+}
 
 // Hook to log all API requests
 const loggingHook: Handle = async ({ event, resolve }) => {
@@ -10,7 +44,7 @@ const loggingHook: Handle = async ({ event, resolve }) => {
 
   // Create request ID for tracing
   const requestId = crypto.randomUUID()
-  
+
   // Add request ID to event locals for use in API routes
   event.locals.requestId = requestId
 
@@ -30,7 +64,10 @@ const loggingHook: Handle = async ({ event, resolve }) => {
 
     // Log API requests (routes starting with /api/)
     if (pathname.startsWith('/api/')) {
-      logApiRequest(method, pathname, response.status, duration)
+      // Don't log if it's just a 401 from authHook (already handled or not needed to log as success)
+      if (response.status !== 401) {
+        logApiRequest(method, pathname, response.status, duration)
+      }
     }
 
     // Log general request completion
@@ -83,7 +120,12 @@ const startupHook: Handle = async ({ event, resolve }) => {
 // Error handling hook
 export const handleError: HandleServerError = ({ error, event }) => {
   const requestId = event.locals?.requestId || 'unknown'
-  
+
+  // Don't log 404s or redirects as errors
+  if (error instanceof Error && (error.message.includes('Not found') || error.message.includes('Redirect'))) {
+    return;
+  }
+
   logger.error({
     requestId,
     method: event.request.method,
@@ -103,8 +145,8 @@ export const handleError: HandleServerError = ({ error, event }) => {
   }
 }
 
-// Combine all hooks
-export const handle = sequence(startupHook, loggingHook)
+// Combine all hooks - Auth first, then others
+export const handle = sequence(startupHook, authHook, loggingHook)
 
 // Extend global type for startup tracking
 declare global {
