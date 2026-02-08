@@ -203,3 +203,9 @@ For detailed documentation, see [SYSTEM_PROMPTS_README.md](./SYSTEM_PROMPTS_READ
 ## Browser Support
 
 Modern browsers that support ES6+ features.
+
+
+## Generate Password Hash
+```
+node -e "const bcrypt=require('bcryptjs'); console.log(bcrypt.hashSync('PASSWORD_PLAINTEXT', 10))"
+```
