@@ -257,11 +257,10 @@
         <thead>
           <tr>
             <th>User</th>
-            <th>Billing Plan</th>
-            <th>Status</th>
+            <th>Subscription</th>
             <th>Credits</th>
-            <th>Expires</th>
-            <th>Last Payment</th>
+            <th>Total Spent</th>
+            <th>Last Transaction</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -274,7 +273,6 @@
                   <div class="user-email">{user.email}</div>
                   <div class="user-meta">
                     ID: {user.id} • 
-                    {user.isActive ? "Active" : "Inactive"} • 
                     Joined {formatDate(user.createdAt)}
                   </div>
                 </div>
@@ -283,47 +281,40 @@
                 <span class="badge {getPlanBadgeClass(user.billingSummary?.plan || 'basic')}">
                   {(user.billingSummary?.plan || 'basic').toUpperCase()}
                 </span>
-              </td>
-              <td>
-                <span class="badge {getStatusBadgeClass(user.billingSummary?.status || 'active')}">
+                <div class="badge-sub-info {getStatusBadgeClass(user.billingSummary?.status || 'active').replace('badge-', 'text-')}">
                   {(user.billingSummary?.status || 'active').toUpperCase()}
-                </span>
-                {#if user.billingSummary?.daysUntilExpiry !== null && user.billingSummary?.daysUntilExpiry !== undefined}
-                  <div class="expiry-info">
-                    {user.billingSummary.daysUntilExpiry > 0 
-                      ? `${user.billingSummary.daysUntilExpiry} days left`
-                      : user.billingSummary.daysUntilExpiry === 0
-                      ? "Expires today"
-                      : `Expired ${Math.abs(user.billingSummary.daysUntilExpiry)} days ago`
-                    }
-                  </div>
-                {/if}
+                </div>
               </td>
               <td>
-                <InlineCreditEditor
-                  userId={user.id}
-                  currentCredit={user.billingSummary?.creditBalance || 0}
-                  userName={user.name}
-                  on:updated={handleCreditUpdate}
-                />
+                <div class="credits-display">
+                  <InlineCreditEditor
+                    userId={user.id}
+                    currentCredit={user.billingSummary?.creditBalance || 0}
+                    userName={user.name}
+                    on:updated={handleCreditUpdate}
+                  />
+                  {#if (user.billingSummary?.transactionCount || 0) > 0}
+                    <div class="transaction-count">
+                      {user.billingSummary?.transactionCount} txns
+                    </div>
+                  {/if}
+                </div>
               </td>
               <td>
-                {#if user.billingSummary?.isLifetime}
-                  <span class="lifetime-badge">Lifetime</span>
-                {:else if user.billingSummary?.expiresAt}
-                  {formatDate(user.billingSummary.expiresAt)}
-                {:else}
-                  <span class="no-expiry">No expiry</span>
-                {/if}
+                <div class="spent-info">
+                  {formatCurrency(user.billingSummary?.totalSpent || 0)}
+                </div>
               </td>
               <td>
                 {#if user.billingSummary?.lastPayment}
                   <div class="payment-info">
-                    <div>{formatCurrency(user.billingSummary.lastPayment.amount)}</div>
-                    <div class="payment-date">{formatDate(user.billingSummary.lastPayment.date)}</div>
+                    <div class="payment-amount">{formatCurrency(user.billingSummary.lastPayment.amount)}</div>
+                    <div class="payment-meta">
+                      {user.billingSummary.lastPayment.type.replace('_', ' ')} • {formatDate(user.billingSummary.lastPayment.date)}
+                    </div>
                   </div>
                 {:else}
-                  <span class="no-payment">No payments</span>
+                  <span class="no-payment">-</span>
                 {/if}
               </td>
               <td>

@@ -23,9 +23,13 @@ export interface User {
 export interface Transaction {
   id: string
   userId: string
-  type: "CREDIT_PURCHASE" | "PLAN_UPGRADE"
+  type: "CREDIT_PURCHASE" | "PLAN_UPGRADE" | "CREDIT_UPDATE"
+  planId?: string
   plan?: "BASIC" | "PRO" | "ENTERPRISE"
+  quantity?: number
+  credits?: number
   amount: number
+  currency: string
   status: "COMPLETED" | "PENDING" | "FAILED"
   transactionCode: string
   paymentProof?: string

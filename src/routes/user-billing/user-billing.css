@@ -373,6 +373,86 @@
   color: #6b7280;
 }
 
+/* New Billing Styles */
+.badge-sub-info {
+  font-size: 0.65rem;
+  font-weight: 700;
+  margin-top: 0.25rem;
+  text-align: left;
+}
+
+.credits-display {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.transaction-count {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.spent-info {
+  font-weight: 600;
+  color: #111827;
+}
+
+.expiry-date {
+  font-weight: 500;
+  color: #374151;
+}
+
+.expiry-relative {
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.text-danger {
+  color: #dc2626;
+}
+
+.payment-amount {
+  font-weight: 600;
+  color: #059669;
+}
+
+.payment-meta {
+  font-size: 0.7rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+/* Transaction Page Specifics */
+.items-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tokens-value {
+  font-weight: 600;
+  color: #10b981;
+}
+
+.qty-info {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.transaction-code {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #4b5563;
+  background: #f3f4f6;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+.proof-link {
+  font-size: 0.75rem;
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .page-container {
@@ -396,6 +476,6 @@
   }
   
   .users-table {
-    min-width: 800px;
+    min-width: 1000px;
   }
 }

@@ -103,6 +103,7 @@
     switch (type) {
       case "CREDIT_PURCHASE": return "badge-primary"
       case "PLAN_UPGRADE": return "badge-premium"
+      case "CREDIT_UPDATE": return "badge-warning"
       default: return "badge-secondary"
     }
   }
@@ -280,7 +281,8 @@
             <th>Date</th>
             <th>User</th>
             <th>Type</th>
-            <th>Amount</th>
+            <th>Items/Credits</th>
+            <th>Cost</th>
             <th>Status</th>
             <th>Transaction Code</th>
             <th>Notes</th>
@@ -310,15 +312,39 @@
               </td>
               <td>
                 <span class="badge {getTypeBadgeClass(transaction.type)}">
-                  {transaction.type === "CREDIT_PURCHASE" ? "Credit Purchase" : "Plan Upgrade"}
+                  {#if transaction.type === "CREDIT_PURCHASE"}
+                    Credit Purchase
+                  {:else if transaction.type === "PLAN_UPGRADE"}
+                    Plan Upgrade
+                  {:else if transaction.type === "CREDIT_UPDATE"}
+                    Manual Update
+                  {:else}
+                    {transaction.type}
+                  {/if}
                 </span>
                 {#if transaction.plan}
                   <div class="plan-info">{transaction.plan}</div>
+                {:else if transaction.planId}
+                  <div class="plan-info">{transaction.planId}</div>
                 {/if}
               </td>
               <td>
+                <div class="items-info">
+                  {#if transaction.credits}
+                    <span class="tokens-value">{transaction.credits > 0 ? "+" : ""}{transaction.credits} Credits</span>
+                  {:else if transaction.type === "PLAN_UPGRADE"}
+                    1 Subscription
+                  {:else}
+                    -
+                  {/if}
+                  {#if transaction.quantity && transaction.quantity > 1}
+                    <div class="qty-info">Qty: {transaction.quantity}</div>
+                  {/if}
+                </div>
+              </td>
+              <td>
                 <div class="amount-info">
-                  {formatCurrency(transaction.amount)}
+                  {transaction.amount > 0 ? formatCurrency(transaction.amount) : "-"}
                 </div>
               </td>
               <td>

@@ -20,6 +20,57 @@ export class UserBillingService {
     return db.collection(name)
   }
 
+  private mapUser(user: any): User {
+    const { _id, ...rest } = user
+    return {
+      ...rest,
+      id: user.id || (_id ? _id.toString() : ""),
+    } as User
+  }
+
+  private mapTransaction(transaction: any): Transaction {
+    const { _id, ...rest } = transaction
+
+    // Infer type if missing or from main app
+    let type = transaction.type
+    if (!type) {
+      if (transaction.planId?.includes("pro_") || transaction.planId === "pro") {
+        type = "PLAN_UPGRADE"
+      } else if (transaction.planId?.includes("credits_") || transaction.planId === "credit") {
+        type = "CREDIT_PURCHASE"
+      } else if (transaction.notes?.toLowerCase().includes("manual credit update")) {
+        type = "CREDIT_UPDATE"
+      } else {
+        type = "CREDIT_PURCHASE" // Default fallback
+      }
+    } else if (type === "credit") {
+      type = "CREDIT_PURCHASE"
+    } else if (type === "subscription") {
+      type = "PLAN_UPGRADE"
+    }
+
+    // Normalize status to uppercase
+    let status = transaction.status
+    if (status) {
+      status = status.toUpperCase()
+      if (status === "COMPLETED") status = "COMPLETED"
+      else if (status === "PENDING") status = "PENDING"
+      else if (status === "FAILED") status = "FAILED"
+      else if (status === "CANCELLED") status = "FAILED" // Map cancelled to failed
+    } else {
+      status = "PENDING"
+    }
+
+    return {
+      ...rest,
+      id: transaction.id || (_id ? _id.toString() : ""),
+      type,
+      status,
+      transactionCode: transaction.transactionCode || transaction.gatewayTransactionId || `TRX-${transaction.id?.substring(0, 8) || "UNK"}`,
+      currency: transaction.currency || "IDR",
+    } as Transaction
+  }
+
   // Get all users with billing information
   async getUsers(
     query: UserBillingQuery,
@@ -70,13 +121,17 @@ export class UserBillingService {
 
       // Enrich users with billing summary
       const enrichedUsers: UserWithBilling[] = await Promise.all(
-        users.map(async (user) => {
+        users.map(async (userDoc) => {
+          const user = this.mapUser(userDoc)
           const userTransactions = await transactionsCollection
             .find({ userId: user.id })
             .sort({ createdAt: -1 })
             .toArray()
 
-          const completedTransactions = userTransactions.filter(
+          // Map all transactions first to normalize status and type
+          const mappedTransactions = userTransactions.map(t => this.mapTransaction(t))
+
+          const completedTransactions = mappedTransactions.filter(
             (t) => t.status === "COMPLETED",
           )
           const totalSpent = completedTransactions.reduce(
@@ -91,31 +146,31 @@ export class UserBillingService {
             : null
           const daysUntilExpiry = billingExpiresAt
             ? Math.ceil(
-                (billingExpiresAt.getTime() - now.getTime()) /
-                  (1000 * 60 * 60 * 24),
-              )
-            : null
+              (billingExpiresAt.getTime() - now.getTime()) /
+              (1000 * 60 * 60 * 24),
+            )
+            : undefined
 
           return {
             ...user,
             billingSummary: {
               plan: user.billingPlan || "basic",
               status: user.billingStatus || "active",
-              expiresAt: user.billingExpiresAt,
+              expiresAt: user.billingExpiresAt ? String(user.billingExpiresAt) : undefined,
               isLifetime: user.isLifetimeBilling || false,
               creditBalance: user.creditBalance || 0,
               daysUntilExpiry,
               totalSpent,
               lastPayment: lastPayment
                 ? {
-                    date: lastPayment.createdAt,
-                    amount: lastPayment.amount,
-                    type: lastPayment.type,
-                  }
+                  date: String(lastPayment.createdAt),
+                  amount: lastPayment.amount,
+                  type: lastPayment.type,
+                }
                 : undefined,
-              transactionCount: userTransactions.length,
+              transactionCount: mappedTransactions.length,
             },
-            recentTransactions: userTransactions.slice(0, 3),
+            recentTransactions: mappedTransactions.slice(0, 3),
           }
         }),
       )
@@ -123,19 +178,19 @@ export class UserBillingService {
       // Calculate stats
       const stats: UserBillingStats = {
         totalUsers: total,
-        activeUsers: users.filter((u) => u.isActive).length,
+        activeUsers: enrichedUsers.filter((u) => u.isActive).length,
         billingPlans: {
-          basic: users.filter((u) => u.billingPlan === "basic").length,
-          pro: users.filter((u) => u.billingPlan === "pro").length,
-          enterprise: users.filter((u) => u.billingPlan === "enterprise")
+          basic: enrichedUsers.filter((u) => u.billingPlan === "basic").length,
+          pro: enrichedUsers.filter((u) => u.billingPlan === "pro").length,
+          enterprise: enrichedUsers.filter((u) => u.billingPlan === "enterprise")
             .length,
         },
         billingStatus: {
-          active: users.filter((u) => u.billingStatus === "active").length,
-          expired: users.filter((u) => u.billingStatus === "expired").length,
-          pending: users.filter((u) => u.billingStatus === "pending").length,
+          active: enrichedUsers.filter((u) => u.billingStatus === "active").length,
+          expired: enrichedUsers.filter((u) => u.billingStatus === "expired").length,
+          pending: enrichedUsers.filter((u) => u.billingStatus === "pending").length,
         },
-        totalCredits: users.reduce((sum, u) => sum + (u.creditBalance || 0), 0),
+        totalCredits: enrichedUsers.reduce((sum, u) => sum + (u.creditBalance || 0), 0),
       }
 
       return {
@@ -152,7 +207,7 @@ export class UserBillingService {
         },
       }
     } catch (error) {
-      logger.error("Error getting users:", error)
+      logger.error("Error getting users:", error as any)
       return {
         success: false,
         error: ["Failed to retrieve users"],
@@ -166,16 +221,18 @@ export class UserBillingService {
       const usersCollection = await this.getCollection("users")
       const transactionsCollection = await this.getCollection("transactions")
 
-      const user = await usersCollection.findOne({
+      const userDoc = await usersCollection.findOne({
         id: userId,
         deletedAt: { $exists: false },
       })
-      if (!user) {
+      if (!userDoc) {
         return {
           success: false,
           error: ["User not found"],
         }
       }
+
+      const user = this.mapUser(userDoc)
 
       // Get all user transactions
       const transactions = await transactionsCollection
@@ -183,7 +240,10 @@ export class UserBillingService {
         .sort({ createdAt: -1 })
         .toArray()
 
-      const completedTransactions = transactions.filter(
+      // Map all transactions first to normalize status and type
+      const mappedTransactions = transactions.map(t => this.mapTransaction(t))
+
+      const completedTransactions = mappedTransactions.filter(
         (t) => t.status === "COMPLETED",
       )
       const totalSpent = completedTransactions.reduce(
@@ -198,31 +258,31 @@ export class UserBillingService {
         : null
       const daysUntilExpiry = billingExpiresAt
         ? Math.ceil(
-            (billingExpiresAt.getTime() - now.getTime()) /
-              (1000 * 60 * 60 * 24),
-          )
-        : null
+          (billingExpiresAt.getTime() - now.getTime()) /
+          (1000 * 60 * 60 * 24),
+        )
+        : undefined
 
       const enrichedUser: UserWithBilling = {
         ...user,
         billingSummary: {
           plan: user.billingPlan || "basic",
           status: user.billingStatus || "active",
-          expiresAt: user.billingExpiresAt,
+          expiresAt: user.billingExpiresAt ? String(user.billingExpiresAt) : undefined,
           isLifetime: user.isLifetimeBilling || false,
           creditBalance: user.creditBalance || 0,
           daysUntilExpiry,
           totalSpent,
           lastPayment: lastPayment
             ? {
-                date: lastPayment.createdAt,
-                amount: lastPayment.amount,
-                type: lastPayment.type,
-              }
+              date: String(lastPayment.createdAt),
+              amount: lastPayment.amount,
+              type: lastPayment.type,
+            }
             : undefined,
-          transactionCount: transactions.length,
+          transactionCount: mappedTransactions.length,
         },
-        recentTransactions: transactions,
+        recentTransactions: mappedTransactions,
       }
 
       return {
@@ -230,7 +290,7 @@ export class UserBillingService {
         data: enrichedUser,
       }
     } catch (error) {
-      logger.error("Error getting user by ID:", error)
+      logger.error("Error getting user by ID:", error as any)
       return {
         success: false,
         error: ["Failed to retrieve user"],
@@ -271,13 +331,13 @@ export class UserBillingService {
         }
       }
 
-      const updatedUser = await usersCollection.findOne({ id: userId })
+      const updatedUserDoc = await usersCollection.findOne({ id: userId })
       return {
         success: true,
-        data: updatedUser,
+        data: updatedUserDoc ? this.mapUser(updatedUserDoc) : undefined,
       }
     } catch (error) {
-      logger.error("Error updating user:", error)
+      logger.error("Error updating user:", error as any)
       return {
         success: false,
         error: ["Failed to update user"],
@@ -341,40 +401,45 @@ export class UserBillingService {
 
       // Enrich transactions with user data
       const userIds = [...new Set(transactions.map((t) => t.userId))]
-      const users = await usersCollection
+      const userDocs = await usersCollection
         .find({ id: { $in: userIds } })
         .toArray()
-      const userMap = new Map(users.map((u) => [u.id, u]))
+      const userMap = new Map(userDocs.map((u) => [u.id, this.mapUser(u)]))
 
-      const enrichedTransactions = transactions.map((transaction) => ({
-        ...transaction,
-        user: userMap.get(transaction.userId)
-          ? {
-              id: userMap.get(transaction.userId)!.id,
-              name: userMap.get(transaction.userId)!.name,
-              email: userMap.get(transaction.userId)!.email,
+      const enrichedTransactions = transactions.map((transactionDoc) => {
+        const transaction = this.mapTransaction(transactionDoc)
+        const user = userMap.get(transaction.userId)
+
+        return {
+          ...transaction,
+          user: user
+            ? {
+              id: user.id,
+              name: user.name,
+              email: user.email,
             }
-          : null,
-      }))
+            : undefined,
+        }
+      })
 
       // Calculate stats
       const stats: TransactionStats = {
         totalTransactions: total,
-        totalAmount: transactions.reduce((sum, t) => sum + t.amount, 0),
+        totalAmount: enrichedTransactions.reduce((sum, t) => sum + t.amount, 0),
         byStatus: {
-          completed: transactions.filter((t) => t.status === "COMPLETED")
+          completed: enrichedTransactions.filter((t) => t.status === "COMPLETED")
             .length,
-          pending: transactions.filter((t) => t.status === "PENDING").length,
-          failed: transactions.filter((t) => t.status === "FAILED").length,
+          pending: enrichedTransactions.filter((t) => t.status === "PENDING").length,
+          failed: enrichedTransactions.filter((t) => t.status === "FAILED").length,
         },
         byType: {
-          creditPurchase: transactions.filter(
+          creditPurchase: enrichedTransactions.filter(
             (t) => t.type === "CREDIT_PURCHASE",
           ).length,
-          planUpgrade: transactions.filter((t) => t.type === "PLAN_UPGRADE")
+          planUpgrade: enrichedTransactions.filter((t) => t.type === "PLAN_UPGRADE")
             .length,
         },
-        completedAmount: transactions
+        completedAmount: enrichedTransactions
           .filter((t) => t.status === "COMPLETED")
           .reduce((sum, t) => sum + t.amount, 0),
       }
@@ -393,7 +458,7 @@ export class UserBillingService {
         },
       }
     } catch (error) {
-      logger.error("Error getting transactions:", error)
+      logger.error("Error getting transactions:", error as any)
       return {
         success: false,
         error: ["Failed to retrieve transactions"],
@@ -426,15 +491,15 @@ export class UserBillingService {
         }
       }
 
-      const updatedTransaction = await transactionsCollection.findOne({
+      const updatedTransactionDoc = await transactionsCollection.findOne({
         id: transactionId,
       })
       return {
         success: true,
-        data: updatedTransaction,
+        data: updatedTransactionDoc ? this.mapTransaction(updatedTransactionDoc) : undefined,
       }
     } catch (error) {
-      logger.error("Error updating transaction:", error)
+      logger.error("Error updating transaction:", error as any)
       return {
         success: false,
         error: ["Failed to update transaction"],
@@ -451,41 +516,31 @@ export class UserBillingService {
       const usersCollection = await this.getCollection("users")
 
       // Find transaction by transaction ID
-      const transaction = await transactionsCollection.findOne({
+      const transactionDoc = await transactionsCollection.findOne({
         id: transactionId,
       })
 
-      if (!transaction) {
+      if (!transactionDoc) {
         return {
           success: false,
           error: ["Transaction not found"],
         }
       }
 
+      const transaction = this.mapTransaction(transactionDoc)
+
       // Get user information
-      const user = await usersCollection.findOne({ id: transaction.userId })
+      const userDoc = await usersCollection.findOne({ id: transaction.userId })
+      const user = userDoc ? this.mapUser(userDoc) : undefined
 
       const enrichedTransaction: Transaction = {
-        id: transaction._id.toString(),
-        userId: transaction.userId,
-        type: transaction.type,
-        plan: transaction.plan,
-        amount: transaction.amount,
-        status: transaction.status,
-        transactionCode: transaction.transactionCode,
-        notes: transaction.notes,
-        paymentProof: transaction.paymentProof,
-        createdAt: transaction.createdAt,
-        updatedAt: transaction.updatedAt,
-        expiredAt: transaction.expiredAt,
-        createdBy: transaction.createdBy,
-        updatedBy: transaction.updatedBy,
+        ...transaction,
         user: user
           ? {
-              id: user.id,
-              name: user.name,
-              email: user.email,
-            }
+            id: user.id,
+            name: user.name,
+            email: user.email,
+          }
           : undefined,
       }
 
@@ -510,6 +565,20 @@ export class UserBillingService {
   ): Promise<ApiResponse<User>> {
     try {
       const usersCollection = await this.getCollection("users")
+      const transactionsCollection = await this.getCollection("transactions")
+
+      // Get current user to get current balance for notes
+      const userDoc = await usersCollection.findOne({ id: userId })
+      if (!userDoc) {
+        return {
+          success: false,
+          error: ["User not found"],
+        }
+      }
+
+      const user = this.mapUser(userDoc)
+      const previousBalance = user.creditBalance || 0
+      const diff = creditBalance - previousBalance
 
       const result = await usersCollection.updateOne(
         { id: userId, deletedAt: { $exists: false } },
@@ -529,10 +598,30 @@ export class UserBillingService {
         }
       }
 
-      const updatedUser = await usersCollection.findOne({ id: userId })
+      // Create a transaction record for the manual update
+      const now = new Date()
+      const transactionId = `tx-${now.getTime()}-${Math.random().toString(36).substring(2, 7)}`
+      const transactionCode = `ADM-${now.getTime().toString().substring(7)}`
+
+      await transactionsCollection.insertOne({
+        id: transactionId,
+        userId: userId,
+        type: "CREDIT_UPDATE",
+        amount: 0, // No monetary cost for manual update
+        currency: "IDR",
+        status: "COMPLETED",
+        transactionCode: transactionCode,
+        notes: `Manual credit update: ${previousBalance} -> ${creditBalance} (Delta: ${diff > 0 ? "+" : ""}${diff})`,
+        credits: diff,
+        createdAt: now,
+        updatedAt: now,
+        createdBy: updatedBy,
+      })
+
+      const updatedUserDoc = await usersCollection.findOne({ id: userId })
       return {
         success: true,
-        data: updatedUser as unknown as User,
+        data: updatedUserDoc ? this.mapUser(updatedUserDoc) : undefined,
       }
     } catch (error) {
       logger.error("Error updating user credit:", error as any)

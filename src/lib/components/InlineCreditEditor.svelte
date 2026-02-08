@@ -61,14 +61,6 @@
     }
   }
 
-  // Format currency
-  function formatCurrency(amount: number): string {
-    return new Intl.NumberFormat("id-ID", {
-      style: "currency",
-      currency: "IDR",
-      minimumFractionDigits: 0,
-    }).format(amount)
-  }
 </script>
 
 <div class="credit-editor">
@@ -108,7 +100,7 @@
     {/if}
   {:else}
     <div class="credit-display" on:click={startEdit} role="button" tabindex="0" on:keydown={(e) => e.key === "Enter" && startEdit()}>
-      <span class="credit-amount">{formatCurrency(currentCredit)}</span>
+      <span class="credit-amount">{currentCredit.toLocaleString("id-ID")} Credits</span>
       <span class="edit-hint">Click to edit</span>
     </div>
   {/if}

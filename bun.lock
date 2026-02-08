@@ -4,7 +4,7 @@
     "": {
       "name": "chat-client",
       "dependencies": {
-        "dotenv": "^17.2.3",
+        "dotenv": "^17.2.1",
         "lucide-svelte": "^0.541.0",
         "mongodb": "^6.18.0",
         "pino": "^9.10.0",
