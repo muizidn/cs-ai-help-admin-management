@@ -101,6 +101,8 @@ export const getServerEnv: any = () => {
     NODE_ENV: envFiles.NODE_ENV || process.env.NODE_ENV,
     PORT: envFiles.PORT || process.env.PORT,
     HOST: envFiles.HOST || process.env.HOST,
+    ADMIN_USERNAME: envFiles.ADMIN_USERNAME || process.env.ADMIN_USERNAME,
+    ADMIN_PASSWORD: envFiles.ADMIN_PASSWORD || process.env.ADMIN_PASSWORD,
   }
   console.log("Development mode result:", result)
   return result

@@ -107,7 +107,7 @@ deploy:
 	fi; \
 	ADMIN_MANAGEMENT_CONTAINER_NAME=$(CONTAINER_NAME) \
 	ADMIN_MANAGEMENT_IMAGE="$$DEPLOY_TAG" \
-	ADMIN_MANAGEMENT_ENV_FILE=$(ENV_FILE) \
+	ENV_FILE=$(ENV_FILE) \
 	docker compose -p $(COMPOSE_PROJECT_NAME) -f docker-compose.yml --env-file $(ENV_FILE) up -d; \
 	echo "$(GREEN)[SUCCESS]$(NC) Deployed to $(APP_ENVIRONMENT)"
 
@@ -118,6 +118,7 @@ deploy_dev:
 		exit 1; \
 	fi; \
 	COMPOSE_PROJECT_NAME=$(COMPOSE_PROJECT_NAME) \
+	ENV_FILE=$(ENV_FILE) \
 	docker compose --env-file $(ENV_FILE) up -d; \
 	echo "$(GREEN)[SUCCESS]$(NC) Development environment deployed"
 
