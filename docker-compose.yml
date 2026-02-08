@@ -1,7 +1,7 @@
 services:
   admin-management:
     image: ${ADMIN_MANAGEMENT_IMAGE:-admin-management:latest}
-    container_name: admin-management
+    container_name: ${ADMIN_MANAGEMENT_CONTAINER_NAME:-admin-management}
     restart: unless-stopped
     ports:
       - "3030:3000"
