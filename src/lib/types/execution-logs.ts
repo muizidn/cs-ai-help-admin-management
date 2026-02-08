@@ -43,7 +43,7 @@ export interface ExecutionLog {
 
   // Request data
   original_message: string
-  previous_messages: Array<{ role: string; content: string }>
+  messages_sequence: Array<{ role: string; content: string }>
   request_data: Record<string, any>
 
   // Headers from the request

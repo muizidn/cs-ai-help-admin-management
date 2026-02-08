@@ -4,7 +4,6 @@ export type LibraryTemplateType =
   | "message_template"
   | "ai_rule"
   | "datasource"
-  | "knowledge_base"
   | "tool"
 
 export type BusinessCategory =
@@ -136,10 +135,6 @@ export interface DatasourceContent {
   accessKey?: string
 }
 
-export interface KnowledgeBaseContent {
-  content: string
-}
-
 export interface ToolContent {
   name: string
   toolId: string // The tool ID from the registry
@@ -197,7 +192,7 @@ export const LIBRARY_TEMPLATE_TYPE_LABELS: Record<LibraryTemplateType, string> =
     message_template: "Message Template",
     ai_rule: "AI Rule",
     datasource: "Datasource",
-    knowledge_base: "Knowledge Base",
+
     tool: "Tool",
   }
 
@@ -227,6 +222,6 @@ export const LIBRARY_TEMPLATE_TYPE_DESCRIPTIONS: Record<
     "Pre-built message templates for common communication scenarios",
   ai_rule: "AI behavior rules and conditions for automated responses",
   datasource: "Data source configurations for external integrations",
-  knowledge_base: "Knowledge base entries and documentation",
+
   tool: "Tool configurations for data access and external services",
 }
