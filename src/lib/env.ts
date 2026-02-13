@@ -82,9 +82,8 @@ export const getServerEnv: any = () => {
       PORT: process.env.PORT,
       HOST: process.env.HOST,
       ADMIN_USERNAME: process.env.ADMIN_USERNAME,
-      ADMIN_PASSWORD: process.env.ADMIN_PASSWORD,
+      ADMIN_PASSWORD_HASH_BASE64: process.env.ADMIN_PASSWORD_HASH_BASE64,
     }
-    console.log("Production mode result:", result)
     return result
   }
 
