@@ -16,6 +16,11 @@
 
   export let onDelete: (template: LibraryTemplate) => void = () => {}
 
+  const languages: Record<string, string> = {
+    id: "Indonesia 🇮🇩",
+    en: "English 🇬🇧",
+  }
+
   let templates: LibraryTemplate[] = []
   let loading = false
   let error: string | null = null
@@ -227,6 +232,11 @@
                     >
                       {LIBRARY_TEMPLATE_TYPE_LABELS[template.type]}
                     </span>
+                    {#if template.language}
+                      <div class="text-sm text-gray-600">
+                        {languages[template.language]}
+                      </div>
+                    {/if}
                   </div>
                   <p class="mt-1 text-sm text-gray-600 line-clamp-2">
                     {template.description}

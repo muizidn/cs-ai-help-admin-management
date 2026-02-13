@@ -14,6 +14,7 @@
   } from "$lib/types/library-templates"
   import { Plus, Save, X, FileText, Code } from "lucide-svelte"
   import { createEventDispatcher } from "svelte"
+  import KnowledgeBaseContentEditor from "./library-templates/KnowledgeBaseContent.svelte"
 
   export let template: LibraryTemplate | null = null
 
@@ -63,81 +64,79 @@
   let activeTab: "form" | "json" = "form"
   let contentJson = ""
 
-  // Knowledge Base specific state
-  let newKbKeyword = ""
+  function initializeForm(t: LibraryTemplate | null) {
+    if (t) {
+      formData = {
+        title: t.title,
+        description: t.description,
+        type: t.type,
+        category: t.category,
+        tags: [...t.tags],
+        language: t.language || "en",
+        content: { ...t.content },
+        preview: t.preview || "",
+        version: t.version,
+        metadata: {
+          variables: t.metadata?.variables ? [...t.metadata.variables] : [],
+          conditions: t.metadata?.conditions ? [...t.metadata.conditions] : [],
+          actions: t.metadata?.actions ? [...t.metadata.actions] : [],
+          dataSourceType: t.metadata?.dataSourceType || "",
+          keywords: t.metadata?.keywords ? [...t.metadata.keywords] : [],
+          requiredPermissions: t.metadata?.requiredPermissions
+            ? [...t.metadata.requiredPermissions]
+            : [],
+          exampleUseCases: t.metadata?.exampleUseCases
+            ? [...t.metadata.exampleUseCases]
+            : [],
+        },
+      }
 
-  $: if (template) {
-    formData = {
-      title: template.title,
-      description: template.description,
-      type: template.type,
-      category: template.category,
-      tags: [...template.tags],
-      language: template.language || "en",
-      content: { ...template.content },
-      preview: template.preview || "",
-      version: template.version,
-      metadata: {
-        variables: template.metadata?.variables
-          ? [...template.metadata.variables]
-          : [],
-        conditions: template.metadata?.conditions
-          ? [...template.metadata.conditions]
-          : [],
-        actions: template.metadata?.actions
-          ? [...template.metadata.actions]
-          : [],
-        dataSourceType: template.metadata?.dataSourceType || "",
-        keywords: template.metadata?.keywords
-          ? [...template.metadata.keywords]
-          : [],
-        requiredPermissions: template.metadata?.requiredPermissions
-          ? [...template.metadata.requiredPermissions]
-          : [],
-        exampleUseCases: template.metadata?.exampleUseCases
-          ? [...template.metadata.exampleUseCases]
-          : [],
-      },
+      // Set active tab based on template type preference or default
+      activeTab = "form"
+      contentJson = JSON.stringify(t.content, null, 2)
+    } else {
+      // Reset form for new template
+      formData = {
+        title: "",
+        description: "",
+        type: "knowledge_base",
+        category: "general",
+        tags: [],
+        language: "en",
+        content: {
+          sections: [
+            {
+              content: "## Section Title\nSection content goes here.",
+            },
+          ],
+          keywords: [],
+        },
+        preview: "",
+        version: "1.0.0",
+        metadata: {
+          variables: [],
+          conditions: [],
+          actions: [],
+          dataSourceType: "",
+          keywords: [],
+          requiredPermissions: [],
+          exampleUseCases: [],
+        },
+      }
+      activeTab = "form"
+      contentJson = JSON.stringify(formData.content, null, 2)
     }
-
-    // Set active tab based on template type preference or default
-    activeTab = "form"
-    contentJson = JSON.stringify(template.content, null, 2)
-  } else {
-    // Reset form for new template
-    formData = {
-      title: "",
-      description: "",
-      type: "knowledge_base",
-      category: "general",
-      tags: [],
-      language: "en",
-      content: {
-        sections: [
-          {
-            content: "## Section Title\nSection content goes here.",
-          },
-        ],
-        keywords: [],
-      },
-      preview: "",
-      version: "1.0.0",
-      metadata: {
-        variables: [],
-        conditions: [],
-        actions: [],
-        dataSourceType: "",
-        keywords: [],
-        requiredPermissions: [],
-        exampleUseCases: [],
-      },
-    }
-    activeTab = "form"
-    contentJson = JSON.stringify(formData.content, null, 2)
   }
+
+  // Reactively initialize form when template changes
+  $: initializeForm(template)
+
+  // Create a typed version of content for the KnowledgeBaseContentEditor
+  $: kbContent = formData.content as unknown as KnowledgeBaseContent
 
   // Effect to sync content to JSON when form data changes (if in form mode)
   $: if (activeTab === "form") {
+    // Only update JSON if formData really changed (deep check might be too expensive, but simple stringify is fine)
     contentJson = JSON.stringify(formData.content, null, 2)
   }
 
@@ -149,44 +148,6 @@
     } catch (e) {
       // Don't update content if JSON is invalid, just show error
       errors.content = "Invalid JSON"
-    }
-  }
-
-  function addKbSection() {
-    const content = formData.content as KnowledgeBaseContent
-    if (!content.sections) content.sections = []
-    content.sections = [
-      ...content.sections,
-      { content: "## New Section\nContent..." },
-    ]
-    formData.content = content
-  }
-
-  function removeKbSection(index: number) {
-    const content = formData.content as KnowledgeBaseContent
-    if (content.sections) {
-      content.sections = content.sections.filter((_, i) => i !== index)
-      formData.content = content
-    }
-  }
-
-  function addKbKeyword() {
-    if (newKbKeyword.trim()) {
-      const content = formData.content as KnowledgeBaseContent
-      if (!content.keywords) content.keywords = []
-      if (!content.keywords.includes(newKbKeyword.trim())) {
-        content.keywords = [...content.keywords, newKbKeyword.trim()]
-        formData.content = content
-      }
-      newKbKeyword = ""
-    }
-  }
-
-  function removeKbKeyword(index: number) {
-    const content = formData.content as KnowledgeBaseContent
-    if (content.keywords) {
-      content.keywords = content.keywords.filter((_, i) => i !== index)
-      formData.content = content
     }
   }
 
@@ -242,11 +203,13 @@
       errors.description = "Description is required"
     }
 
-    try {
-      formData.content = JSON.parse(contentJson)
-    } catch (e) {
-      errors.content = "Content must be valid JSON"
-      console.error("error json validation content", e)
+    if (activeTab === "json") {
+      try {
+        formData.content = JSON.parse(contentJson)
+      } catch (e) {
+        errors.content = "Content must be valid JSON"
+        console.error("error json validation content", e)
+      }
     }
 
     return Object.keys(errors).length === 0
@@ -488,91 +451,12 @@
           <div
             class="space-y-4 border border-gray-200 rounded-md p-4 bg-gray-50"
           >
-            <!-- KB Sections -->
-            <div>
-              <div class="flex justify-between items-center mb-2">
-                <label class="text-sm font-medium text-gray-700">Sections</label
-                >
-                <button
-                  type="button"
-                  on:click={addKbSection}
-                  class="text-xs text-blue-600 hover:text-blue-800 flex items-center"
-                >
-                  <Plus class="w-3 h-3 mr-1" /> Add Section
-                </button>
-              </div>
-
-              {#if formData.content.sections && formData.content.sections.length > 0}
-                <div class="space-y-3">
-                  {#each formData.content.sections as section, i}
-                    <div class="flex gap-2">
-                      <textarea
-                        bind:value={section.content}
-                        rows="3"
-                        class="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-                        placeholder="## Section Title&#10;Content..."
-                        aria-label="Section Content"
-                      ></textarea>
-                      <button
-                        type="button"
-                        on:click={() => removeKbSection(i)}
-                        class="text-red-500 hover:text-red-700 self-start p-1"
-                        aria-label="Remove Section"
-                      >
-                        <X class="w-4 h-4" />
-                      </button>
-                    </div>
-                  {/each}
-                </div>
-              {:else}
-                <p class="text-sm text-gray-500 italic">No sections added.</p>
-              {/if}
-            </div>
-
-            <!-- KB Keywords -->
-            <div>
-              <label class="block text-sm font-medium text-gray-700"
-                >Keywords in Content</label
-              >
-              <div class="mt-1 flex flex-wrap gap-2 mb-2">
-                {#if formData.content.keywords}
-                  {#each formData.content.keywords as keyword, index}
-                    <span
-                      class="inline-flex items-center px-2 py-1 rounded-md text-sm font-medium bg-green-100 text-green-800"
-                    >
-                      {keyword}
-                      <button
-                        type="button"
-                        on:click={() => removeKbKeyword(index)}
-                        class="ml-1 text-green-600 hover:text-green-800"
-                        aria-label="Remove Keyword"
-                      >
-                        <X class="w-3 h-3" />
-                      </button>
-                    </span>
-                  {/each}
-                {/if}
-              </div>
-              <div class="flex">
-                <input
-                  type="text"
-                  bind:value={newKbKeyword}
-                  on:keydown={(e) =>
-                    e.key === "Enter" && (e.preventDefault(), addKbKeyword())}
-                  placeholder="Add a content keyword..."
-                  class="flex-1 px-3 py-2 border border-gray-300 rounded-l-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-sm"
-                  aria-label="Add a content keyword"
-                />
-                <button
-                  type="button"
-                  on:click={addKbKeyword}
-                  class="px-3 py-2 border border-l-0 border-gray-300 rounded-r-md bg-gray-50 text-gray-700 hover:bg-gray-100"
-                  aria-label="Add Keyword"
-                >
-                  <Plus class="w-4 h-4" />
-                </button>
-              </div>
-            </div>
+            <KnowledgeBaseContentEditor
+              content={kbContent}
+              on:change={(e) => {
+                formData.content = e.detail
+              }}
+            />
           </div>
         {:else}
           <div
