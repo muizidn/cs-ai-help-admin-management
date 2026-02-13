@@ -5,6 +5,7 @@ export type LibraryTemplateType =
   | "ai_rule"
   | "datasource"
   | "tool"
+  | "knowledge_base"
 
 export type BusinessCategory =
   | "customer-service"
@@ -31,6 +32,7 @@ export interface LibraryTemplate {
   category: BusinessCategory
   tags: string[]
   content: Record<string, any> // The actual template content (varies by type)
+  language?: string // "en", "id", etc.
   preview?: string // Optional preview text
   isActive: boolean
   downloadCount: number
@@ -58,6 +60,7 @@ export interface LibraryTemplateCreateInput {
   category: BusinessCategory
   tags: string[]
   content: Record<string, any>
+  language?: string
   preview?: string
   version?: string
   metadata?: {
@@ -78,6 +81,7 @@ export interface LibraryTemplateUpdateInput {
   category?: BusinessCategory
   tags?: string[]
   content?: Record<string, any>
+  language?: string
   preview?: string
   isActive?: boolean
   version?: string
@@ -151,6 +155,13 @@ export interface ToolContent {
   }
 }
 
+export interface KnowledgeBaseContent {
+  sections: Array<{
+    content: string
+  }>
+  keywords: string[]
+}
+
 // API Response Types
 export interface ApiResponse<T> {
   status: "success" | "error"
@@ -188,13 +199,13 @@ export interface LibraryTemplateListState {
 
 // Constants
 export const LIBRARY_TEMPLATE_TYPE_LABELS: Record<LibraryTemplateType, string> =
-  {
-    message_template: "Message Template",
-    ai_rule: "AI Rule",
-    datasource: "Datasource",
-
-    tool: "Tool",
-  }
+{
+  message_template: "Message Template",
+  ai_rule: "AI Rule",
+  datasource: "Datasource",
+  tool: "Tool",
+  knowledge_base: "Knowledge Base",
+}
 
 export const BUSINESS_CATEGORY_LABELS: Record<BusinessCategory, string> = {
   "customer-service": "Customer Service",
@@ -224,4 +235,5 @@ export const LIBRARY_TEMPLATE_TYPE_DESCRIPTIONS: Record<
   datasource: "Data source configurations for external integrations",
 
   tool: "Tool configurations for data access and external services",
+  knowledge_base: "Structured knowledge base articles/guides with sections",
 }

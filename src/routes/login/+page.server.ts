@@ -1,14 +1,14 @@
 import { fail, redirect } from '@sveltejs/kit'
 import type { Actions, PageServerLoad } from './$types'
 import { logger } from '$lib/logger'
-import { env } from '$env/dynamic/private'
+import { getServerEnv } from '$lib/env'
 import bcrypt from 'bcryptjs'
 import crypto from 'crypto'
 
 /**
  * ENV
  * ADMIN_USERNAME=admin
- * ADMIN_PASSWORD_HASH=$2a$10$....
+ * ADMIN_PASSWORD_HASH_BASE64=JDJiJD....
  */
 
 
@@ -93,17 +93,18 @@ export const actions: Actions = {
             return fail(429, { rateLimited: true })
         }
 
-
+        const env = getServerEnv()
         const ADMIN_USERNAME = env.ADMIN_USERNAME
-        const ADMIN_PASSWORD_HASH = env.ADMIN_PASSWORD_HASH
+        const ADMIN_PASSWORD_HASH_BASE64 = env.ADMIN_PASSWORD_HASH_BASE64
 
-        if (!ADMIN_USERNAME || !ADMIN_PASSWORD_HASH) {
-            logger.error({ requestId }, 'ADMIN_USERNAME / ADMIN_PASSWORD_HASH not set')
+        if (!ADMIN_USERNAME || !ADMIN_PASSWORD_HASH_BASE64) {
+            logger.error({ requestId }, 'ADMIN_USERNAME / ADMIN_PASSWORD_HASH_BASE64 not set')
             return fail(500, { error: 'Server configuration error' })
         }
 
         /* Credential check */
         const validUser = username === ADMIN_USERNAME
+        const ADMIN_PASSWORD_HASH = Buffer.from(ADMIN_PASSWORD_HASH_BASE64, 'base64').toString('utf-8')
         const validPass =
             validUser && (await bcrypt.compare(password, ADMIN_PASSWORD_HASH))
 
@@ -122,7 +123,7 @@ export const actions: Actions = {
             path: '/',
             httpOnly: true,
             sameSite: 'strict',
-            secure: true,
+            secure: process.env.NODE_ENV === 'production',
             maxAge: 60 * 60 * 8 // 8 hours
         })
 

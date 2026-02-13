@@ -8,19 +8,19 @@ const authHook: Handle = async ({ event, resolve }) => {
   const { url, cookies } = event
   const isLoginPage = url.pathname === '/login'
   const isApiRoute = url.pathname.startsWith('/api')
-  const authCookie = cookies.get('admin_auth')
+  const sessionCookie = cookies.get('admin_session')
 
   // Allow access to login page
   if (isLoginPage) {
     // If already logged in, redirect to home (handled in +page.server.ts load function too, but good as backup)
-    if (authCookie === 'true') {
+    if (sessionCookie) {
       throw redirect(303, '/')
     }
     return resolve(event)
   }
 
   // Protect all other routes
-  if (authCookie !== 'true') {
+  if (!sessionCookie) {
     // For API routes, return 401
     if (isApiRoute) {
       return new Response(JSON.stringify({ error: 'Unauthorized' }), {

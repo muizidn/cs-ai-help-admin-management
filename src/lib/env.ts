@@ -41,7 +41,7 @@ function loadEnvFiles(): Record<string, string> {
   const envVars: Record<string, string> = {}
 
   // Load in order of precedence: .env.local > .env
-  const envFiles = [".env", ".env.local"]
+  const envFiles = [".env"]
 
   for (const envFile of envFiles) {
     try {
@@ -102,9 +102,8 @@ export const getServerEnv: any = () => {
     PORT: envFiles.PORT || process.env.PORT,
     HOST: envFiles.HOST || process.env.HOST,
     ADMIN_USERNAME: envFiles.ADMIN_USERNAME || process.env.ADMIN_USERNAME,
-    ADMIN_PASSWORD: envFiles.ADMIN_PASSWORD || process.env.ADMIN_PASSWORD,
+    ADMIN_PASSWORD_HASH_BASE64: envFiles.ADMIN_PASSWORD_HASH_BASE64 || process.env.ADMIN_PASSWORD_HASH_BASE64,
   }
-  console.log("Development mode result:", result)
   return result
 }
 

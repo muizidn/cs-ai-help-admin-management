@@ -2,19 +2,20 @@
   import type {
     BusinessCategory,
     LibraryTemplate,
-    LibraryTemplateCreateInput,
     LibraryTemplateType,
+    LibraryTemplateCreateInput,
     LibraryTemplateUpdateInput,
+    KnowledgeBaseContent,
   } from "$lib/types/library-templates"
   import {
     BUSINESS_CATEGORY_LABELS,
     LIBRARY_TEMPLATE_TYPE_LABELS,
+    LIBRARY_TEMPLATE_TYPE_DESCRIPTIONS,
   } from "$lib/types/library-templates"
-  import { Plus, Save, X } from "lucide-svelte"
+  import { Plus, Save, X, FileText, Code } from "lucide-svelte"
   import { createEventDispatcher } from "svelte"
 
   export let template: LibraryTemplate | null = null
-  export let isOpen = false
 
   const dispatch = createEventDispatcher<{
     save: LibraryTemplateCreateInput | LibraryTemplateUpdateInput
@@ -28,10 +29,14 @@
   let formData = {
     title: "",
     description: "",
-    type: "message_template" as LibraryTemplateType,
-    category: "general" as BusinessCategory,
+    type: "knowledge_base" as LibraryTemplateType,
+    category: "technology" as BusinessCategory,
     tags: [] as string[],
-    content: {} as Record<string, any>,
+    language: "en",
+    content: {
+      sections: [],
+      keywords: [],
+    } as Record<string, any>,
     preview: "",
     version: "1.0.0",
     metadata: {
@@ -55,7 +60,11 @@
   let newUseCase = ""
 
   // Content as JSON string for editing
+  let activeTab: "form" | "json" = "form"
   let contentJson = ""
+
+  // Knowledge Base specific state
+  let newKbKeyword = ""
 
   $: if (template) {
     formData = {
@@ -64,6 +73,7 @@
       type: template.type,
       category: template.category,
       tags: [...template.tags],
+      language: template.language || "en",
       content: { ...template.content },
       preview: template.preview || "",
       version: template.version,
@@ -89,16 +99,27 @@
           : [],
       },
     }
+
+    // Set active tab based on template type preference or default
+    activeTab = "form"
     contentJson = JSON.stringify(template.content, null, 2)
   } else {
     // Reset form for new template
     formData = {
       title: "",
       description: "",
-      type: "message_template",
+      type: "knowledge_base",
       category: "general",
       tags: [],
-      content: {},
+      language: "en",
+      content: {
+        sections: [
+          {
+            content: "## Section Title\nSection content goes here.",
+          },
+        ],
+        keywords: [],
+      },
       preview: "",
       version: "1.0.0",
       metadata: {
@@ -111,7 +132,62 @@
         exampleUseCases: [],
       },
     }
-    contentJson = "{}"
+    activeTab = "form"
+    contentJson = JSON.stringify(formData.content, null, 2)
+  }
+
+  // Effect to sync content to JSON when form data changes (if in form mode)
+  $: if (activeTab === "form") {
+    contentJson = JSON.stringify(formData.content, null, 2)
+  }
+
+  // Effect to sync JSON to content when JSON changes (if in JSON mode)
+  function handleJsonChange() {
+    try {
+      formData.content = JSON.parse(contentJson)
+      errors.content = ""
+    } catch (e) {
+      // Don't update content if JSON is invalid, just show error
+      errors.content = "Invalid JSON"
+    }
+  }
+
+  function addKbSection() {
+    const content = formData.content as KnowledgeBaseContent
+    if (!content.sections) content.sections = []
+    content.sections = [
+      ...content.sections,
+      { content: "## New Section\nContent..." },
+    ]
+    formData.content = content
+  }
+
+  function removeKbSection(index: number) {
+    const content = formData.content as KnowledgeBaseContent
+    if (content.sections) {
+      content.sections = content.sections.filter((_, i) => i !== index)
+      formData.content = content
+    }
+  }
+
+  function addKbKeyword() {
+    if (newKbKeyword.trim()) {
+      const content = formData.content as KnowledgeBaseContent
+      if (!content.keywords) content.keywords = []
+      if (!content.keywords.includes(newKbKeyword.trim())) {
+        content.keywords = [...content.keywords, newKbKeyword.trim()]
+        formData.content = content
+      }
+      newKbKeyword = ""
+    }
+  }
+
+  function removeKbKeyword(index: number) {
+    const content = formData.content as KnowledgeBaseContent
+    if (content.keywords) {
+      content.keywords = content.keywords.filter((_, i) => i !== index)
+      formData.content = content
+    }
   }
 
   function addTag() {
@@ -197,209 +273,364 @@
   }
 </script>
 
-{#if isOpen}
-  <div
-    class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50"
-  >
-    <div
-      class="relative top-20 mx-auto p-5 border w-11/12 max-w-4xl shadow-lg rounded-md bg-white"
-    >
-      <!-- Header -->
-      <div class="flex justify-between items-center mb-6">
-        <h3 class="text-lg font-medium text-gray-900">
-          {template ? "Edit Template" : "Create New Template"}
-        </h3>
-        <button
-          on:click={handleCancel}
-          class="text-gray-400 hover:text-gray-600"
+<div class="bg-white shadow rounded-lg p-6">
+  <!-- Header -->
+  <div class="mb-6">
+    <h3 class="text-lg font-medium text-gray-900">
+      {template ? "Edit Template" : "Create New Template"}
+    </h3>
+    <p class="mt-1 text-sm text-gray-500">
+      {template
+        ? "Modify existing template details."
+        : "Fill in the details for the new template."}
+    </p>
+  </div>
+
+  <!-- Form -->
+  <form on:submit|preventDefault={handleSave} class="space-y-6">
+    <!-- Title & Version -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <label for="title" class="block text-sm font-medium text-gray-700"
+          >Title</label
         >
-          <X class="w-6 h-6" />
-        </button>
+        <input
+          type="text"
+          id="title"
+          bind:value={formData.title}
+          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 {errors.title
+            ? 'border-red-300'
+            : ''}"
+        />
+        {#if errors.title}
+          <p class="mt-1 text-sm text-red-600">{errors.title}</p>
+        {/if}
       </div>
 
-      <!-- Form -->
-      <form on:submit|preventDefault={handleSave} class="space-y-6">
-        <!-- Title & Version -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label for="title" class="block text-sm font-medium text-gray-700"
-              >Title</label
-            >
-            <input
-              type="text"
-              id="title"
-              bind:value={formData.title}
-              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 {errors.title
-                ? 'border-red-300'
-                : ''}"
-            />
-            {#if errors.title}
-              <p class="mt-1 text-sm text-red-600">{errors.title}</p>
-            {/if}
-          </div>
+      <div>
+        <label for="version" class="block text-sm font-medium text-gray-700"
+          >Version</label
+        >
+        <input
+          type="text"
+          id="version"
+          bind:value={formData.version}
+          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+    </div>
 
-          <div>
-            <label for="version" class="block text-sm font-medium text-gray-700"
-              >Version</label
-            >
-            <input
-              type="text"
-              id="version"
-              bind:value={formData.version}
-              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-            />
-          </div>
-        </div>
+    <!-- Language -->
+    <div>
+      <label for="language" class="block text-sm font-medium text-gray-700"
+        >Language</label
+      >
+      <select
+        id="language"
+        bind:value={formData.language}
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+      >
+        <option value="en">English (en)</option>
+        <option value="id">Indonesian (id)</option>
+        <!-- Add more languages as needed -->
+      </select>
+    </div>
 
-        <!-- Description -->
-        <div>
-          <label
-            for="description"
-            class="block text-sm font-medium text-gray-700">Description</label
-          >
-          <textarea
-            id="description"
-            rows="3"
-            bind:value={formData.description}
-            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 {errors.description
-              ? 'border-red-300'
-              : ''}"
-          ></textarea>
-          {#if errors.description}
-            <p class="mt-1 text-sm text-red-600">{errors.description}</p>
+    <!-- Description -->
+    <div>
+      <label for="description" class="block text-sm font-medium text-gray-700"
+        >Description</label
+      >
+      <textarea
+        id="description"
+        rows="3"
+        bind:value={formData.description}
+        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 {errors.description
+          ? 'border-red-300'
+          : ''}"
+      ></textarea>
+      {#if errors.description}
+        <p class="mt-1 text-sm text-red-600">{errors.description}</p>
+      {/if}
+    </div>
+
+    <!-- Type & Category -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <label for="type" class="block text-sm font-medium text-gray-700"
+          >Type</label
+        >
+        <select
+          id="type"
+          bind:value={formData.type}
+          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-gray-100"
+          disabled={true}
+        >
+          <option value="knowledge_base">Knowledge Base</option>
+          {#if formData.type !== "knowledge_base"}
+            <option value={formData.type}
+              >{LIBRARY_TEMPLATE_TYPE_LABELS[formData.type]}</option
+            >
           {/if}
-        </div>
+        </select>
+        <p class="mt-1 text-xs text-gray-500">
+          Only Knowledge Base templates can be created at this time.
+        </p>
+      </div>
 
-        <!-- Type & Category -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label for="type" class="block text-sm font-medium text-gray-700"
-              >Type</label
-            >
-            <select
-              id="type"
-              bind:value={formData.type}
-              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-            >
-              {#each Object.entries(LIBRARY_TEMPLATE_TYPE_LABELS) as [value, label]}
-                <option {value}>{label}</option>
-              {/each}
-            </select>
-          </div>
+      <div>
+        <label for="category" class="block text-sm font-medium text-gray-700"
+          >Category</label
+        >
+        <select
+          id="category"
+          bind:value={formData.category}
+          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+        >
+          {#each Object.entries(BUSINESS_CATEGORY_LABELS) as [value, label]}
+            <option {value}>{label}</option>
+          {/each}
+        </select>
+      </div>
+    </div>
 
-          <div>
-            <label
-              for="category"
-              class="block text-sm font-medium text-gray-700">Category</label
-            >
-            <select
-              id="category"
-              bind:value={formData.category}
-              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-            >
-              {#each Object.entries(BUSINESS_CATEGORY_LABELS) as [value, label]}
-                <option {value}>{label}</option>
-              {/each}
-            </select>
-          </div>
-        </div>
+    <!-- Preview -->
+    <div>
+      <label for="preview" class="block text-sm font-medium text-gray-700"
+        >Preview Text</label
+      >
+      <textarea
+        id="preview"
+        rows="2"
+        bind:value={formData.preview}
+        placeholder="Optional preview text for the template..."
+        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+        aria-label="Preview Text"
+      ></textarea>
+    </div>
 
-        <!-- Preview -->
-        <div>
-          <label for="preview" class="block text-sm font-medium text-gray-700"
-            >Preview Text</label
+    <!-- Tags -->
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Tags</label>
+      <div class="mt-1 flex flex-wrap gap-2">
+        {#each formData.tags as tag, index}
+          <span
+            class="inline-flex items-center px-2 py-1 rounded-md text-sm font-medium bg-blue-100 text-blue-800"
           >
-          <textarea
-            id="preview"
-            rows="2"
-            bind:value={formData.preview}
-            placeholder="Optional preview text for the template..."
-            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-          ></textarea>
-        </div>
-
-        <!-- Tags -->
-        <div>
-          <label class="block text-sm font-medium text-gray-700">Tags</label>
-          <div class="mt-1 flex flex-wrap gap-2">
-            {#each formData.tags as tag, index}
-              <span
-                class="inline-flex items-center px-2 py-1 rounded-md text-sm font-medium bg-blue-100 text-blue-800"
-              >
-                {tag}
-                <button
-                  type="button"
-                  on:click={() => removeTag(index)}
-                  class="ml-1 text-blue-600 hover:text-blue-800"
-                >
-                  <X class="w-3 h-3" />
-                </button>
-              </span>
-            {/each}
-          </div>
-          <div class="mt-2 flex">
-            <input
-              type="text"
-              bind:value={newTag}
-              on:keydown={(e) =>
-                e.key === "Enter" && (e.preventDefault(), addTag())}
-              placeholder="Add a tag..."
-              class="flex-1 px-3 py-2 border border-gray-300 rounded-l-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-            />
+            {tag}
             <button
               type="button"
-              on:click={addTag}
-              class="px-3 py-2 border border-l-0 border-gray-300 rounded-r-md bg-gray-50 text-gray-700 hover:bg-gray-100"
+              on:click={() => removeTag(index)}
+              class="ml-1 text-blue-600 hover:text-blue-800"
             >
-              <Plus class="w-4 h-4" />
+              <X class="w-3 h-3" />
             </button>
-          </div>
-        </div>
+          </span>
+        {/each}
+      </div>
+      <div class="mt-2 flex">
+        <input
+          type="text"
+          bind:value={newTag}
+          on:keydown={(e) =>
+            e.key === "Enter" && (e.preventDefault(), addTag())}
+          placeholder="Add a tag..."
+          class="flex-1 px-3 py-2 border border-gray-300 rounded-l-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+          aria-label="Add a tag"
+        />
+        <button
+          type="button"
+          on:click={addTag}
+          class="px-3 py-2 border border-l-0 border-gray-300 rounded-r-md bg-gray-50 text-gray-700 hover:bg-gray-100"
+          aria-label="Add Tag"
+        >
+          <Plus class="w-4 h-4" />
+        </button>
+      </div>
+    </div>
 
-        <!-- Content (JSON) -->
-        <div>
-          <label for="content" class="block text-sm font-medium text-gray-700"
-            >Content (JSON)</label
-          >
-          <textarea
-            id="content"
-            rows="10"
-            bind:value={contentJson}
-            placeholder={JSON.stringify({ key: "value" }, null, 2)}
-            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 font-mono text-sm {errors.content
-              ? 'border-red-300'
-              : ''}"
-          ></textarea>
-          {#if errors.content}
-            <p class="mt-1 text-sm text-red-600">{errors.content}</p>
-          {/if}
-        </div>
-
-        <!-- Actions -->
-        <div class="flex justify-end space-x-3 pt-6 border-t">
+    <!-- Content Editor -->
+    <div>
+      <div class="flex items-center justify-between mb-2">
+        <label class="block text-sm font-medium text-gray-700">Content</label>
+        <div class="flex space-x-2 bg-gray-100 p-1 rounded-lg">
           <button
             type="button"
-            on:click={handleCancel}
-            class="px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            class="px-3 py-1 text-xs font-medium rounded-md transition-colors {activeTab ===
+            'form'
+              ? 'bg-white text-blue-600 shadow-sm'
+              : 'text-gray-500 hover:text-gray-700'}"
+            on:click={() => (activeTab = "form")}
           >
-            Cancel
+            <div class="flex items-center space-x-1">
+              <FileText class="w-3 h-3" />
+              <span>Form</span>
+            </div>
           </button>
           <button
-            type="submit"
-            disabled={loading}
-            class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
+            type="button"
+            class="px-3 py-1 text-xs font-medium rounded-md transition-colors {activeTab ===
+            'json'
+              ? 'bg-white text-blue-600 shadow-sm'
+              : 'text-gray-500 hover:text-gray-700'}"
+            on:click={() => (activeTab = "json")}
           >
-            {#if loading}
-              <div
-                class="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"
-              ></div>
-            {:else}
-              <Save class="w-4 h-4 mr-2" />
-            {/if}
-            {template ? "Update" : "Create"} Template
+            <div class="flex items-center space-x-1">
+              <Code class="w-3 h-3" />
+              <span>JSON</span>
+            </div>
           </button>
         </div>
-      </form>
+      </div>
+
+      {#if activeTab === "form"}
+        {#if formData.type === "knowledge_base"}
+          <div
+            class="space-y-4 border border-gray-200 rounded-md p-4 bg-gray-50"
+          >
+            <!-- KB Sections -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-sm font-medium text-gray-700">Sections</label
+                >
+                <button
+                  type="button"
+                  on:click={addKbSection}
+                  class="text-xs text-blue-600 hover:text-blue-800 flex items-center"
+                >
+                  <Plus class="w-3 h-3 mr-1" /> Add Section
+                </button>
+              </div>
+
+              {#if formData.content.sections && formData.content.sections.length > 0}
+                <div class="space-y-3">
+                  {#each formData.content.sections as section, i}
+                    <div class="flex gap-2">
+                      <textarea
+                        bind:value={section.content}
+                        rows="3"
+                        class="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                        placeholder="## Section Title&#10;Content..."
+                        aria-label="Section Content"
+                      ></textarea>
+                      <button
+                        type="button"
+                        on:click={() => removeKbSection(i)}
+                        class="text-red-500 hover:text-red-700 self-start p-1"
+                        aria-label="Remove Section"
+                      >
+                        <X class="w-4 h-4" />
+                      </button>
+                    </div>
+                  {/each}
+                </div>
+              {:else}
+                <p class="text-sm text-gray-500 italic">No sections added.</p>
+              {/if}
+            </div>
+
+            <!-- KB Keywords -->
+            <div>
+              <label class="block text-sm font-medium text-gray-700"
+                >Keywords in Content</label
+              >
+              <div class="mt-1 flex flex-wrap gap-2 mb-2">
+                {#if formData.content.keywords}
+                  {#each formData.content.keywords as keyword, index}
+                    <span
+                      class="inline-flex items-center px-2 py-1 rounded-md text-sm font-medium bg-green-100 text-green-800"
+                    >
+                      {keyword}
+                      <button
+                        type="button"
+                        on:click={() => removeKbKeyword(index)}
+                        class="ml-1 text-green-600 hover:text-green-800"
+                        aria-label="Remove Keyword"
+                      >
+                        <X class="w-3 h-3" />
+                      </button>
+                    </span>
+                  {/each}
+                {/if}
+              </div>
+              <div class="flex">
+                <input
+                  type="text"
+                  bind:value={newKbKeyword}
+                  on:keydown={(e) =>
+                    e.key === "Enter" && (e.preventDefault(), addKbKeyword())}
+                  placeholder="Add a content keyword..."
+                  class="flex-1 px-3 py-2 border border-gray-300 rounded-l-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-sm"
+                  aria-label="Add a content keyword"
+                />
+                <button
+                  type="button"
+                  on:click={addKbKeyword}
+                  class="px-3 py-2 border border-l-0 border-gray-300 rounded-r-md bg-gray-50 text-gray-700 hover:bg-gray-100"
+                  aria-label="Add Keyword"
+                >
+                  <Plus class="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+        {:else}
+          <div
+            class="p-8 text-center border-2 border-dashed border-gray-300 rounded-lg"
+          >
+            <p class="text-gray-500">
+              Form view not available for this template type.
+            </p>
+            <button
+              type="button"
+              class="mt-2 text-blue-600 hover:underline text-sm"
+              on:click={() => (activeTab = "json")}
+            >
+              Switch to JSON view
+            </button>
+          </div>
+        {/if}
+      {:else}
+        <!-- JSON Editor -->
+        <textarea
+          id="content"
+          rows="12"
+          bind:value={contentJson}
+          on:input={handleJsonChange}
+          placeholder={JSON.stringify({ key: "value" }, null, 2)}
+          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 font-mono text-sm {errors.content
+            ? 'border-red-300'
+            : ''}"
+        ></textarea>
+        {#if errors.content}
+          <p class="mt-1 text-sm text-red-600">{errors.content}</p>
+        {/if}
+      {/if}
     </div>
-  </div>
-{/if}
+
+    <!-- Actions -->
+    <div class="flex justify-end space-x-3 pt-6 border-t">
+      <button
+        type="button"
+        on:click={handleCancel}
+        class="px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+      >
+        Cancel
+      </button>
+      <button
+        type="submit"
+        disabled={loading}
+        class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
+      >
+        {#if loading}
+          <div
+            class="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"
+          ></div>
+        {:else}
+          <Save class="w-4 h-4 mr-2" />
+        {/if}
+        {template ? "Update" : "Create"} Template
+      </button>
+    </div>
+  </form>
+</div>
