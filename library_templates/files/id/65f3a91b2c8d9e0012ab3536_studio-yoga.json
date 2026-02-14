@@ -1,30 +1,58 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3536",
     "title": "Studio Yoga",
-    "description": "Template untuk studio yoga, mencakup jenis kelas (Hatha/Vinyasa), jadwal, paket member, fasilitas, dan pendaftaran."
-    ,"type": "knowledge_base",
+    "description": "Template untuk studio yoga, mencakup jenis kelas (Hatha/Vinyasa), jadwal, paket member, fasilitas, dan pendaftaran.",
+    "type": "knowledge_base",
     "category": "general",
-    "tags": ["lifestyle", "yoga", "studio", "member"],
+    "tags": [
+        "lifestyle",
+        "yoga",
+        "studio",
+        "member"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang Studio Yoga\nKelas yoga untuk pemula hingga advance dengan instruktur tersertifikasi. Fokus pada pernapasan, fleksibilitas, dan ketenangan.\n\nContoh:\n\"CalmNest Yoga\" kelas Hatha & Vinyasa."
-        },
-        {"content": "## Lokasi & Alamat\nContoh: Jl. Sejuk No. 5, Jakarta Selatan.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Atas kafe Sejuk."
-        },
-        {"content": "## Jenis Kelas\n- Hatha (pemula).\n- Vinyasa (menengah).\n- Yin (relaksasi).\n\nContoh:\nDrop-in class tersedia."
-        },
-        {"content": "## Jadwal & Durasi\n60-90 menit per sesi.\n\nContoh:\nSenin 18.00 (Hatha), Rabu 19.00 (Vinyasa)."
-        },
-        {"content": "## Paket & Harga\nDrop-in Rp [Isi], Bulanan Rp [Isi].\n\nContoh:\nDrop-in Rp 50.000, Bulanan Rp 350.000 (8x kelas)."
-        },
-        {"content": "## Fasilitas\nMatras, ruang ber-AC, locker, shower.\n\nContoh:\nMatras tersedia, bisa bawa sendiri."
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @calmnest_yoga\n\nContoh:\nWA Admin: 0812-1000-2020"
-        }
-    ], "keywords": ["studio yoga jakarta", "kelas hatha vinyasa", "harga drop in yoga", "member yoga bulanan", "fasilitas studio yoga"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Studio Yoga\nKelas yoga untuk pemula hingga advance dengan instruktur tersertifikasi. Fokus pada pernapasan, fleksibilitas, dan ketenangan.\n\nContoh:\n\"CalmNest Yoga\" kelas Hatha & Vinyasa."
+            },
+            {
+                "content": "## Lokasi & Alamat\nContoh: Jl. Sejuk No. 5, Jakarta Selatan.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Atas kafe Sejuk."
+            },
+            {
+                "content": "## Jenis Kelas\n- Hatha (pemula).\n- Vinyasa (menengah).\n- Yin (relaksasi).\n\nContoh:\nDrop-in class tersedia."
+            },
+            {
+                "content": "## Jadwal & Durasi\n60-90 menit per sesi.\n\nContoh:\nSenin 18.00 (Hatha), Rabu 19.00 (Vinyasa)."
+            },
+            {
+                "content": "## Paket & Harga\nDrop-in Rp [Isi], Bulanan Rp [Isi].\n\nContoh:\nDrop-in Rp 50.000, Bulanan Rp 350.000 (8x kelas)."
+            },
+            {
+                "content": "## Fasilitas\nMatras, ruang ber-AC, locker, shower.\n\nContoh:\nMatras tersedia, bisa bawa sendiri."
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @calmnest_yoga\n\nContoh:\nWA Admin: 0812-1000-2020"
+            }
+        ],
+        "keywords": [
+            "studio yoga jakarta",
+            "kelas hatha vinyasa",
+            "harga drop in yoga",
+            "member yoga bulanan",
+            "fasilitas studio yoga"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3536",
     "isActive": true,
     "downloadCount": 0,

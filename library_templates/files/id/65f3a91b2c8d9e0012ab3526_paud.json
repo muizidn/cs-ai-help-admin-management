@@ -1,32 +1,60 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3526",
     "title": "PAUD",
     "description": "Template untuk lembaga PAUD, mencakup program belajar, jadwal, fasilitas, biaya, dan syarat pendaftaran anak usia dini.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["pendidikan", "paud", "anak usia dini"],
+    "tags": [
+        "pendidikan",
+        "paud",
+        "anak usia dini"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang PAUD Kami\nProgram pendidikan anak usia dini fokus stimulasi kognitif, bahasa, motorik, dan sosial. Guru ramah, lingkungan aman.\n\nContoh:\n\"PAUD Bintang Kecil\" menerima usia 3-6 tahun."
-        },
-        {"content": "## Lokasi & Alamat\nContoh: Jl. Angsana No. 20, RT 001/RW 001, Kel. Sukaasih, Bandung.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Dekat lapangan RW."
-        },
-        {"content": "## Program & Kegiatan\n- Calistung sesuai usia.\n- Seni & kerajinan.\n- Outing edukatif.\n\nContoh:\nTema minggu ini: Binatang, warna, angka 1-10."
-        },
-        {"content": "## Jadwal & Durasi\nSenin-Jumat 08.00-10.30 (2,5 jam).\n\nContoh:\nUpacara pagi, doa, belajar tematik, bermain, pulang."
-        },
-        {"content": "## Fasilitas\n- Kelas ber-AC.\n- Alat peraga edukatif.\n- Area bermain outdoor.\n\nContoh:\nPlayground mini dan perpustakaan kecil."
-        },
-        {"content": "## Biaya & Pendaftaran\n- Pendaftaran Rp [Isi].\n- Bulanan Rp [Isi].\n- Seragam Rp [Isi].\n\nContoh:\nDaftar Rp 200.000, Bulanan Rp 300.000, Seragam Rp 150.000."
-        },
-        {"content": "## Syarat\nFotokopi KK/KTP, Akta Lahir, Kartu Imunisasi, 2 foto 3x4.\n\nContoh:\nFormulir dapat diambil di sekolah atau via WA."
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @paud_bintang_kecil\n\nContoh:\nWA Admin: 0812-1111-2222"
-        }
-    ], "keywords": ["paud terdekat bandung", "biaya paud murah", "program paud harian", "fasilitas paud lengkap", "pendaftaran paud"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang PAUD Kami\nProgram pendidikan anak usia dini fokus stimulasi kognitif, bahasa, motorik, dan sosial. Guru ramah, lingkungan aman.\n\nContoh:\n\"PAUD Bintang Kecil\" menerima usia 3-6 tahun."
+            },
+            {
+                "content": "## Lokasi & Alamat\nContoh: Jl. Angsana No. 20, RT 001/RW 001, Kel. Sukaasih, Bandung.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Dekat lapangan RW."
+            },
+            {
+                "content": "## Program & Kegiatan\n- Calistung sesuai usia.\n- Seni & kerajinan.\n- Outing edukatif.\n\nContoh:\nTema minggu ini: Binatang, warna, angka 1-10."
+            },
+            {
+                "content": "## Jadwal & Durasi\nSenin-Jumat 08.00-10.30 (2,5 jam).\n\nContoh:\nUpacara pagi, doa, belajar tematik, bermain, pulang."
+            },
+            {
+                "content": "## Fasilitas\n- Kelas ber-AC.\n- Alat peraga edukatif.\n- Area bermain outdoor.\n\nContoh:\nPlayground mini dan perpustakaan kecil."
+            },
+            {
+                "content": "## Biaya & Pendaftaran\n- Pendaftaran Rp [Isi].\n- Bulanan Rp [Isi].\n- Seragam Rp [Isi].\n\nContoh:\nDaftar Rp 200.000, Bulanan Rp 300.000, Seragam Rp 150.000."
+            },
+            {
+                "content": "## Syarat\nFotokopi KK/KTP, Akta Lahir, Kartu Imunisasi, 2 foto 3x4.\n\nContoh:\nFormulir dapat diambil di sekolah atau via WA."
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @paud_bintang_kecil\n\nContoh:\nWA Admin: 0812-1111-2222"
+            }
+        ],
+        "keywords": [
+            "paud terdekat bandung",
+            "biaya paud murah",
+            "program paud harian",
+            "fasilitas paud lengkap",
+            "pendaftaran paud"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3526",
     "isActive": true,
     "downloadCount": 0,

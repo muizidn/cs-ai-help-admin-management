@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34d0",
     "title": "Klinik Terapi Bekam",
     "description": "Template basis pengetahuan untuk pusat terapi bekam (Cupping Therapy), mencakup jenis bekam, manfaat kesehatan, dan prosedur sterilisasi.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["kesehatan", "terapi", "bekam", "thibbun-nabawi"],
+    "tags": [
+        "kesehatan",
+        "terapi",
+        "bekam",
+        "thibbun-nabawi"
+    ],
     "language": "id",
     "content": {
         "sections": [

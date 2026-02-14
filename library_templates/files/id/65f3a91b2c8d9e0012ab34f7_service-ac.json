@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34f7",
     "title": "Service AC & Cuci AC",
     "description": "Template basis pengetahuan untuk jasa service AC, cuci AC rutin, tambah freon, perbaikan AC tidak dingin, dan bongkar pasang AC.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["jasa", "service-ac", "cuci-ac", "elektronik"],
+    "tags": [
+        "jasa",
+        "service-ac",
+        "cuci-ac",
+        "elektronik"
+    ],
     "language": "id",
     "content": {
         "sections": [

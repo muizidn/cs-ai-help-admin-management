@@ -1,30 +1,59 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3521",
     "title": "Kursus Mengaji",
     "description": "Template untuk kursus mengaji (IQRO/Tahsin/Tahfidz), mencakup level, metode, jadwal, biaya, dan pendaftaran.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["pendidikan", "kursus", "mengaji", "tahsin", "tahfidz"],
+    "tags": [
+        "pendidikan",
+        "kursus",
+        "mengaji",
+        "tahsin",
+        "tahfidz"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang Kursus Mengaji\nPembelajaran Al-Qur'an untuk anak dan dewasa: IQRO, Tahsin (perbaikan bacaan), dan Tahfidz (hafalan). Guru bersertifikat.\n\nContoh:\n\"Rumah Tahsin Nur\" fokus makhraj dan tajwid yang benar."
-        },
-        {"content": "## Lokasi & Alamat\nContoh: Mushola Al-Hidayah, Jl. Kenanga No. 10, Jakarta Timur.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Samping TK Al-Hidayah."
-        },
-        {"content": "## Program & Level\n- IQRO Anak (Level 1-6).\n- Tahsin Dewasa.\n- Tahfidz Juz 30.\n\nContoh:\nTarget hafalan 1 juz dalam 6 bulan untuk pemula."
-        },
-        {"content": "## Jadwal & Durasi\n- 2-3x per minggu, 60-90 menit.\n\nContoh:\nSenin-Rabu-Jumat 18.30-20.00 (Tahsin)."
-        },
-        {"content": "## Biaya & Fasilitas\n- Pendaftaran: Rp [Isi].\n- Bulanan: Rp [Isi].\n- Sertifikat kelulusan.\n\nContoh:\nDaftar Rp 100.000. Bulanan Rp 250.000."
-        },
-        {"content": "## Pendaftaran\nWA: [Isi], format: NAMA # PROGRAM # JADWAL.\n\nContoh:\n\"Daftar Tahsin Dewasa, jadwal Senin-Rabu-Jumat.\""
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @rumah_tahsin_nur\n\nContoh:\nWA Admin: 0812-8888-7777"
-        }
-    ], "keywords": ["kursus mengaji anak", "tahsin dewasa jakarta", "tahfidz juz 30", "belajar iqro cepat", "biaya kursus mengaji"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Kursus Mengaji\nPembelajaran Al-Qur'an untuk anak dan dewasa: IQRO, Tahsin (perbaikan bacaan), dan Tahfidz (hafalan). Guru bersertifikat.\n\nContoh:\n\"Rumah Tahsin Nur\" fokus makhraj dan tajwid yang benar."
+            },
+            {
+                "content": "## Lokasi & Alamat\nContoh: Mushola Al-Hidayah, Jl. Kenanga No. 10, Jakarta Timur.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Samping TK Al-Hidayah."
+            },
+            {
+                "content": "## Program & Level\n- IQRO Anak (Level 1-6).\n- Tahsin Dewasa.\n- Tahfidz Juz 30.\n\nContoh:\nTarget hafalan 1 juz dalam 6 bulan untuk pemula."
+            },
+            {
+                "content": "## Jadwal & Durasi\n- 2-3x per minggu, 60-90 menit.\n\nContoh:\nSenin-Rabu-Jumat 18.30-20.00 (Tahsin)."
+            },
+            {
+                "content": "## Biaya & Fasilitas\n- Pendaftaran: Rp [Isi].\n- Bulanan: Rp [Isi].\n- Sertifikat kelulusan.\n\nContoh:\nDaftar Rp 100.000. Bulanan Rp 250.000."
+            },
+            {
+                "content": "## Pendaftaran\nWA: [Isi], format: NAMA # PROGRAM # JADWAL.\n\nContoh:\n\"Daftar Tahsin Dewasa, jadwal Senin-Rabu-Jumat.\""
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @rumah_tahsin_nur\n\nContoh:\nWA Admin: 0812-8888-7777"
+            }
+        ],
+        "keywords": [
+            "kursus mengaji anak",
+            "tahsin dewasa jakarta",
+            "tahfidz juz 30",
+            "belajar iqro cepat",
+            "biaya kursus mengaji"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3521",
     "isActive": true,
     "downloadCount": 0,

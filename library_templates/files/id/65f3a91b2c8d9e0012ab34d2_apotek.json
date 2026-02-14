@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34d2",
     "title": "Apotek",
     "description": "Template basis pengetahuan untuk apotek retail, mencakup informasi stok obat, penebusan resep dokter, konsultasi apoteker, dan layanan antar.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["kesehatan", "obat", "apotek", "farmasi"],
+    "tags": [
+        "kesehatan",
+        "obat",
+        "apotek",
+        "farmasi"
+    ],
     "language": "id",
     "content": {
         "sections": [

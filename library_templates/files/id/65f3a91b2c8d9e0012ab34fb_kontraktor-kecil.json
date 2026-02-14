@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34fb",
     "title": "Kontraktor Kecil",
     "description": "Template basis pengetahuan untuk jasa kontraktor bangunan skala kecil, mencakup pembangunan rumah dari nol, penambahan lantai (dak), pengerjaan baja ringan, dan pengurusan IMB sederhana.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["jasa", "kontraktor", "bangunan", "properti"],
+    "tags": [
+        "jasa",
+        "kontraktor",
+        "bangunan",
+        "properti"
+    ],
     "language": "id",
     "content": {
         "sections": [

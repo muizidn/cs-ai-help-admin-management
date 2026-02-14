@@ -1,30 +1,58 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3528",
     "title": "Jasa Pembuatan CV",
     "description": "Template untuk jasa pembuatan CV profesional, mencakup paket penulisan, desain template, revisi, dan cara pemesanan.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["jasa", "cv", "resume", "profesional"],
+    "tags": [
+        "jasa",
+        "cv",
+        "resume",
+        "profesional"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang Jasa CV\nMembantu menyusun CV profesional yang menarik HRD dengan penulisan yang rapi dan template modern.\n\nContoh:\n\"CV Craft\" fokus ATS-friendly dan bahasa yang kuat."
-        },
-        {"content": "## Paket Layanan\n- Penulisan CV dari nol.\n- Review & revisi CV existing.\n- Desain template premium.\n\nContoh Harga:\nCV Baru: Rp 150.000. Review: Rp 75.000. Template Premium: Rp 50.000."
-        },
-        {"content": "## Proses Kerja\n- Kirim data (riwayat pendidikan, pengalaman).\n- Draft awal 24-48 jam.\n- Revisi 1-2 kali.\n\nContoh:\nPaket ekspres selesai 24 jam."
-        },
-        {"content": "## Format & File\nPDF + DOCX, siap cetak dan kirim email.\n\nContoh:\nFile final dikirim via email & WA."
-        },
-        {"content": "## Cara Order\nWA: [Isi], format: NAMA # TUJUAN (Fresh Graduate/Experienced).\n\nContoh:\n\"Order CV, fresh graduate, target admin kantor.\""
-        },
-        {"content": "## Pembayaran\nTransfer, QRIS.\n\nContoh:\nBayar DP 50%, sisanya setelah draft disetujui."
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @cv_craft\n\nContoh:\nWA Admin: 0812-1212-3434"
-        }
-    ], "keywords": ["jasa pembuatan cv murah", "cv ats friendly", "review cv profesional", "template cv modern", "order cv online"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Jasa CV\nMembantu menyusun CV profesional yang menarik HRD dengan penulisan yang rapi dan template modern.\n\nContoh:\n\"CV Craft\" fokus ATS-friendly dan bahasa yang kuat."
+            },
+            {
+                "content": "## Paket Layanan\n- Penulisan CV dari nol.\n- Review & revisi CV existing.\n- Desain template premium.\n\nContoh Harga:\nCV Baru: Rp 150.000. Review: Rp 75.000. Template Premium: Rp 50.000."
+            },
+            {
+                "content": "## Proses Kerja\n- Kirim data (riwayat pendidikan, pengalaman).\n- Draft awal 24-48 jam.\n- Revisi 1-2 kali.\n\nContoh:\nPaket ekspres selesai 24 jam."
+            },
+            {
+                "content": "## Format & File\nPDF + DOCX, siap cetak dan kirim email.\n\nContoh:\nFile final dikirim via email & WA."
+            },
+            {
+                "content": "## Cara Order\nWA: [Isi], format: NAMA # TUJUAN (Fresh Graduate/Experienced).\n\nContoh:\n\"Order CV, fresh graduate, target admin kantor.\""
+            },
+            {
+                "content": "## Pembayaran\nTransfer, QRIS.\n\nContoh:\nBayar DP 50%, sisanya setelah draft disetujui."
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @cv_craft\n\nContoh:\nWA Admin: 0812-1212-3434"
+            }
+        ],
+        "keywords": [
+            "jasa pembuatan cv murah",
+            "cv ats friendly",
+            "review cv profesional",
+            "template cv modern",
+            "order cv online"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3528",
     "isActive": true,
     "downloadCount": 0,

@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34e7",
     "title": "Toko Plastik",
     "description": "Template basis pengetahuan untuk toko spesialis plastik dan kemasan, mencakup kantong plastik, thinwall, bubble wrap, perlengkapan hajatan, dan kemasan UMKM.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["retail", "plastik", "kemasan", "umkm"],
+    "tags": [
+        "retail",
+        "plastik",
+        "kemasan",
+        "umkm"
+    ],
     "language": "id",
     "content": {
         "sections": [

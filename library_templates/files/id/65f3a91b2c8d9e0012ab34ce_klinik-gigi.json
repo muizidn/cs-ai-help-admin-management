@@ -1,10 +1,13 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34ce",
     "title": "Klinik Gigi",
     "description": "Template basis pengetahuan untuk praktek dokter gigi, mencakup layanan scaling, cabut gigi, behel, dan perawatan estetika gigi.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["kesehatan", "gigi", "dentist"],
+    "tags": [
+        "kesehatan",
+        "gigi",
+        "dentist"
+    ],
     "language": "id",
     "content": {
         "sections": [

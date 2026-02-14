@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34ea",
     "title": "Toko Listrik",
     "description": "Template basis pengetahuan untuk toko alat listrik, mencakup aneka lampu LED, kabel, saklar, stop kontak, peralatan instalasi, dan kipas angin.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["retail", "listrik", "elektronik", "peralatan-rumah"],
+    "tags": [
+        "retail",
+        "listrik",
+        "elektronik",
+        "peralatan-rumah"
+    ],
     "language": "id",
     "content": {
         "sections": [

@@ -1,28 +1,55 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3545",
     "title": "Pet Shop",
     "description": "Template untuk pet shop, mencakup penjualan pakan, aksesoris hewan, kandang, pasir, vitamin, dan layanan dasar.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["agribisnis", "pet shop", "hewan", "aksesoris"],
+    "tags": [
+        "agribisnis",
+        "pet shop",
+        "hewan",
+        "aksesoris"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang Pet Shop Kami\nToko kebutuhan hewan peliharaan lengkap: pakan, aksesoris, kandang, pasir, dan vitamin.\n\nContoh:\n\"Happy Paws\" fokus kucing & anjing."
-        },
-        {"content": "## Lokasi & Alamat\nContoh: Jl. Pawita No. 6, Jakarta Barat.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Samping klinik hewan."
-        },
-        {"content": "## Produk & Merek\n- Pakan (dry/wet): Whiskas, Royal Canin, Pedigree.\n- Pasir: Bentonite, Zeolit.\n- Aksesoris: Kalung, mainan, litter box.\n\nContoh Harga:\nWhiskas 1,2kg Rp 80.000, Pasir Bentonite 10kg Rp 90.000."
-        },
-        {"content": "## Layanan Dasar\n- Grooming ringan (opsional).\n- Konsultasi pakan.\n\nContoh:\nGanti makanan secara bertahap untuk menghindari diare."
-        },
-        {"content": "## Pembayaran\nTunai, QRIS, Transfer.\n\nContoh:\nPromo bundling pakan + pasir."
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @happypaws_shop\n\nContoh:\nWA Admin: 0812-3131-4242"
-        }
-    ], "keywords": ["toko pakan hewan", "pet shop terdekat", "pasir kucing bentonite", "aksesoris hewan murah", "pakan anjing kucing"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Pet Shop Kami\nToko kebutuhan hewan peliharaan lengkap: pakan, aksesoris, kandang, pasir, dan vitamin.\n\nContoh:\n\"Happy Paws\" fokus kucing & anjing."
+            },
+            {
+                "content": "## Lokasi & Alamat\nContoh: Jl. Pawita No. 6, Jakarta Barat.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Samping klinik hewan."
+            },
+            {
+                "content": "## Produk & Merek\n- Pakan (dry/wet): Whiskas, Royal Canin, Pedigree.\n- Pasir: Bentonite, Zeolit.\n- Aksesoris: Kalung, mainan, litter box.\n\nContoh Harga:\nWhiskas 1,2kg Rp 80.000, Pasir Bentonite 10kg Rp 90.000."
+            },
+            {
+                "content": "## Layanan Dasar\n- Grooming ringan (opsional).\n- Konsultasi pakan.\n\nContoh:\nGanti makanan secara bertahap untuk menghindari diare."
+            },
+            {
+                "content": "## Pembayaran\nTunai, QRIS, Transfer.\n\nContoh:\nPromo bundling pakan + pasir."
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @happypaws_shop\n\nContoh:\nWA Admin: 0812-3131-4242"
+            }
+        ],
+        "keywords": [
+            "toko pakan hewan",
+            "pet shop terdekat",
+            "pasir kucing bentonite",
+            "aksesoris hewan murah",
+            "pakan anjing kucing"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3545",
     "isActive": true,
     "downloadCount": 0,

@@ -1,10 +1,15 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3508",
     "title": "Studio Foto & Videografi",
     "description": "Template basis pengetahuan untuk studio foto dan jasa videografi, mencakup foto wisuda, pas foto, foto produk, dokumentasi event (wedding/birthday), dan editing video.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["lifestyle", "fotografi", "studio-foto", "videografi", "dokumentasi"],
+    "tags": [
+        "lifestyle",
+        "fotografi",
+        "studio-foto",
+        "videografi",
+        "dokumentasi"
+    ],
     "language": "id",
     "content": {
         "sections": [

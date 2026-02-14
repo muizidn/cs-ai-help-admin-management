@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34d5",
     "title": "Bidan Praktek Mandiri",
     "description": "Template basis pengetahuan untuk praktek bidan mandiri, mencakup pemeriksaan kehamilan (ANC), persalinan 24 jam, KB, dan imunisasi bayi.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["kesehatan", "ibu-dan-anak", "bidan", "kehamilan"],
+    "tags": [
+        "kesehatan",
+        "ibu-dan-anak",
+        "bidan",
+        "kehamilan"
+    ],
     "language": "id",
     "content": {
         "sections": [

@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34db",
     "title": "Coffee To Go",
     "description": "Template basis pengetahuan untuk booth kopi take-away, mencakup menu cepat saji, bundling promo, kemasan literan, dan integrasi ojek online.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["kuliner", "minuman", "kopi", "take-away"],
+    "tags": [
+        "kuliner",
+        "minuman",
+        "kopi",
+        "take-away"
+    ],
     "language": "id",
     "content": {
         "sections": [

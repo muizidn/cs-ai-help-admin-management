@@ -1,28 +1,55 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3543",
     "title": "Event Organizer Lokal",
-    "description": "Template untuk EO lokal, mencakup jenis event (seminar/pameran/komunitas), paket layanan, harga, dan booking."
-    ,"type": "knowledge_base",
+    "description": "Template untuk EO lokal, mencakup jenis event (seminar/pameran/komunitas), paket layanan, harga, dan booking.",
+    "type": "knowledge_base",
     "category": "general",
-    "tags": ["lifestyle", "event organizer", "eo", "event"],
+    "tags": [
+        "lifestyle",
+        "event organizer",
+        "eo",
+        "event"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang EO Kami\nMenyelenggarakan event kecil-menengah: seminar, pameran, gathering komunitas. Tim kreatif & operasional siap membantu.\n\nContoh:\n\"Local Event Co\" berpengalaman 50+ event."
-        },
-        {"content": "## Paket & Layanan\n- Konsep & desain materi.\n- Manajemen rundown & talent.\n- Perizinan acara lokal.\n\nContoh Harga:\nPaket koordinasi mulai Rp 5.000.000."
-        },
-        {"content": "## Peralatan & Vendor\nSound system, panggung, lighting, dokumentasi.\n\nContoh:\nVendor rekanan dengan kualitas baik."
-        },
-        {"content": "## Booking\nWA: [Isi], format: NAMA EVENT # TANGGAL # LOKASI.\n\nContoh:\n\"Seminar UMKM 12/03, aula kecamatan.\""
-        },
-        {"content": "## Pembayaran\nDP 30%, termin sesuai progres.\n\nContoh:\nPO & invoice transparan."
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @local_event_co\n\nContoh:\nWA Admin: 0812-2626-3737"
-        }
-    ], "keywords": ["event organizer murah", "paket eo seminar", "vendor sound panggung", "perizinan acara lokal", "booking eo"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang EO Kami\nMenyelenggarakan event kecil-menengah: seminar, pameran, gathering komunitas. Tim kreatif & operasional siap membantu.\n\nContoh:\n\"Local Event Co\" berpengalaman 50+ event."
+            },
+            {
+                "content": "## Paket & Layanan\n- Konsep & desain materi.\n- Manajemen rundown & talent.\n- Perizinan acara lokal.\n\nContoh Harga:\nPaket koordinasi mulai Rp 5.000.000."
+            },
+            {
+                "content": "## Peralatan & Vendor\nSound system, panggung, lighting, dokumentasi.\n\nContoh:\nVendor rekanan dengan kualitas baik."
+            },
+            {
+                "content": "## Booking\nWA: [Isi], format: NAMA EVENT # TANGGAL # LOKASI.\n\nContoh:\n\"Seminar UMKM 12/03, aula kecamatan.\""
+            },
+            {
+                "content": "## Pembayaran\nDP 30%, termin sesuai progres.\n\nContoh:\nPO & invoice transparan."
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @local_event_co\n\nContoh:\nWA Admin: 0812-2626-3737"
+            }
+        ],
+        "keywords": [
+            "event organizer murah",
+            "paket eo seminar",
+            "vendor sound panggung",
+            "perizinan acara lokal",
+            "booking eo"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3543",
     "isActive": true,
     "downloadCount": 0,

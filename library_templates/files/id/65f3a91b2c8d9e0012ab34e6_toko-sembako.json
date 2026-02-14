@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34e6",
     "title": "Toko Sembako",
     "description": "Template basis pengetahuan untuk toko sembako (Sembilan Bahan Pokok), mencakup stok beras, minyak goreng, telur, gas LPG, dan layanan antar jemput.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["retail", "sembako", "umkm", "kebutuhan-pokok"],
+    "tags": [
+        "retail",
+        "sembako",
+        "umkm",
+        "kebutuhan-pokok"
+    ],
     "language": "id",
     "content": {
         "sections": [

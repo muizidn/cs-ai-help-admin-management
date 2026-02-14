@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34f8",
     "title": "Tukang Ledeng Panggilan",
     "description": "Template basis pengetahuan untuk jasa perbaikan saluran air (plumbing), mencakup perbaikan pipa bocor, wastafel mampet, pasang tandon, dan kuras sumur.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["jasa", "tukang-ledeng", "plumbing", "rumah-tangga"],
+    "tags": [
+        "jasa",
+        "tukang-ledeng",
+        "plumbing",
+        "rumah-tangga"
+    ],
     "language": "id",
     "content": {
         "sections": [

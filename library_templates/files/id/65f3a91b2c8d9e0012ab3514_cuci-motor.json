@@ -1,30 +1,57 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3514",
     "title": "Cuci Motor",
     "description": "Template untuk layanan cuci motor, mencakup paket cuci standar, cuci detail, dan harga.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["otomotif", "cuci motor", "detailing"],
+    "tags": [
+        "otomotif",
+        "cuci motor",
+        "detailing"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang Cuci Motor Kami\nCuci motor cepat, bersih, dan rapi. Menggunakan shampo khusus dan sikat halus untuk area sulit.\n\nContoh:\n\"MotoClean\" fokus pada kebersihan detail (kolong, underbone, pelek)."
-        },
-        {"content": "## Lokasi & Alamat Lengkap\nContoh: Jl. Letjen Sutoyo No. 23, RT 006/RW 003, Kel. Karang Tengah, Kec. Serpong, Tangsel, 15310.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Dekat Polsek Serpong."
-        },
-        {"content": "## Paket Layanan\n- Cuci Standar (Eksterior).\n- Cuci Detail + Semir Ban.\n- Coating ringan bodi plastik.\n\nContoh Harga:\nStandar: Rp 15.000. Detail: Rp 25.000. Coating Ringan: Rp 40.000."
-        },
-        {"content": "## Jam Operasional\nSenin - Minggu: 07.00 - 20.00.\n\nContoh:\nLast order 19.30."
-        },
-        {"content": "## Metode Pembayaran\nTunai, QRIS.\n\nContoh:\nScan QR di kasir."
-        },
-        {"content": "## Cara Booking\nWA: [Isi], format: NAMA # MOTOR # JAM.\n\nContoh:\n\"Booking cuci detail, Vario 125, jam 17.00.\""
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @motoclean_serpong\n\nContoh:\nWA Admin: 0812-5566-7788"
-        }
-    ], "keywords": ["cuci motor terdekat", "harga cuci motor", "cuci detail motor", "semir ban motor", "coating plastik motor"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Cuci Motor Kami\nCuci motor cepat, bersih, dan rapi. Menggunakan shampo khusus dan sikat halus untuk area sulit.\n\nContoh:\n\"MotoClean\" fokus pada kebersihan detail (kolong, underbone, pelek)."
+            },
+            {
+                "content": "## Lokasi & Alamat Lengkap\nContoh: Jl. Letjen Sutoyo No. 23, RT 006/RW 003, Kel. Karang Tengah, Kec. Serpong, Tangsel, 15310.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Dekat Polsek Serpong."
+            },
+            {
+                "content": "## Paket Layanan\n- Cuci Standar (Eksterior).\n- Cuci Detail + Semir Ban.\n- Coating ringan bodi plastik.\n\nContoh Harga:\nStandar: Rp 15.000. Detail: Rp 25.000. Coating Ringan: Rp 40.000."
+            },
+            {
+                "content": "## Jam Operasional\nSenin - Minggu: 07.00 - 20.00.\n\nContoh:\nLast order 19.30."
+            },
+            {
+                "content": "## Metode Pembayaran\nTunai, QRIS.\n\nContoh:\nScan QR di kasir."
+            },
+            {
+                "content": "## Cara Booking\nWA: [Isi], format: NAMA # MOTOR # JAM.\n\nContoh:\n\"Booking cuci detail, Vario 125, jam 17.00.\""
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @motoclean_serpong\n\nContoh:\nWA Admin: 0812-5566-7788"
+            }
+        ],
+        "keywords": [
+            "cuci motor terdekat",
+            "harga cuci motor",
+            "cuci detail motor",
+            "semir ban motor",
+            "coating plastik motor"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3514",
     "isActive": true,
     "downloadCount": 0,

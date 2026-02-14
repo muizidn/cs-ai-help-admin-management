@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34dd",
     "title": "Jasa Nasi Box",
     "description": "Template basis pengetahuan untuk spesialis nasi kotak (Lunch Box), mencakup berbagai pilihan paket menu, sistem pesanan dalam jumlah besar, dan layanan pengiriman tepat waktu.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["kuliner", "makanan", "nasi-box", "event"],
+    "tags": [
+        "kuliner",
+        "makanan",
+        "nasi-box",
+        "event"
+    ],
     "language": "id",
     "content": {
         "sections": [

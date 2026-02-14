@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3505",
     "title": "Daycare & PAUD",
     "description": "Template basis pengetahuan untuk penitipan anak (daycare) dan pendidikan anak usia dini (PAUD), mencakup jadwal harian, menu makan, fasilitas bermain, dan laporan perkembangan anak.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["pendidikan", "daycare", "paud", "anak"],
+    "tags": [
+        "pendidikan",
+        "daycare",
+        "paud",
+        "anak"
+    ],
     "language": "id",
     "content": {
         "sections": [

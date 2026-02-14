@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34e1",
     "title": "Toko Kue Ulang Tahun",
     "description": "Template basis pengetahuan untuk toko kue spesialis ulang tahun, mencakup kue custom, dekorasi tart, pilihan rasa base cake, dan layanan delivery kue.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["kuliner", "kue", "ulang-tahun", "bakery"],
+    "tags": [
+        "kuliner",
+        "kue",
+        "ulang-tahun",
+        "bakery"
+    ],
     "language": "id",
     "content": {
         "sections": [

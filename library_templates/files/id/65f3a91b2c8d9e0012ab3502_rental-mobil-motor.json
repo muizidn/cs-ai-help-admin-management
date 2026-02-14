@@ -1,10 +1,15 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3502",
     "title": "Rental Mobil & Motor",
     "description": "Template basis pengetahuan untuk jasa penyewaan (rental) kendaraan, mencakup sewa mobil lepas kunci, sewa dengan supir, rental motor harian, dan paket tour.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["otomotif", "rental-mobil", "rental-motor", "sewa-kendaraan", "travel"],
+    "tags": [
+        "otomotif",
+        "rental-mobil",
+        "rental-motor",
+        "sewa-kendaraan",
+        "travel"
+    ],
     "language": "id",
     "content": {
         "sections": [

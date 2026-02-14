@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34ee",
     "title": "Toko Baju Lokal",
     "description": "Template basis pengetahuan untuk toko fashion (baju) lokal, mencakup koleksi pakaian pria/wanita, panduan ukuran (size chart), kebijakan retur, dan pengiriman.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["retail", "fashion", "baju", "umkm"],
+    "tags": [
+        "retail",
+        "fashion",
+        "baju",
+        "umkm"
+    ],
     "language": "id",
     "content": {
         "sections": [

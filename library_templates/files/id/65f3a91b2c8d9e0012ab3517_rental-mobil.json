@@ -1,32 +1,61 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3517",
     "title": "Rental Mobil",
     "description": "Template untuk jasa rental mobil, mencakup pilihan unit, sistem lepas kunci/driver, syarat, dan harga sewa harian.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["otomotif", "rental mobil", "sewa mobil", "transport"],
+    "tags": [
+        "otomotif",
+        "rental mobil",
+        "sewa mobil",
+        "transport"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang Rental Mobil Kami\nMenyediakan berbagai unit mobil untuk kebutuhan pribadi, bisnis, atau wisata. Opsi lepas kunci atau dengan sopir profesional.\n\nContoh:\n\"Depok RentCar\" unit Avanza, Xenia, Innova, HiAce."
-        },
-        {"content": "## Lokasi & Alamat Lengkap\nContoh: Jl. Kartini No. 5, RT 002/RW 003, Kel. Pancoran Mas, Depok, 16431.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Dekat GDC."
-        },
-        {"content": "## Pilihan Unit & Harga\n- Avanza/Xenia: Rp [Isi]/24 jam.\n- Innova: Rp [Isi]/24 jam.\n- HiAce: Rp [Isi]/24 jam.\n\nContoh:\nAvanza Rp 400.000, Innova Rp 650.000, HiAce Rp 1.200.000 (Driver + BBM)."
-        },
-        {"content": "## Syarat & Ketentuan\n- Lepas kunci: KTP, KK, SIM A, Deposit.\n- Dengan sopir: KTP + DP.\n\nContoh:\nDeposit Rp 1.000.000 (Dikembalikan setelah unit kembali)."
-        },
-        {"content": "## Sistem Sewa\n- 12 jam / 24 jam.\n- Overtime: Rp [Isi]/jam.\n\nContoh:\nOvertime Rp 50.000/jam (Avanza)."
-        },
-        {"content": "## Cara Booking\nWA: [Isi], format: NAMA # UNIT # TANGGAL # DURASI.\n\nContoh:\n\"Booking Innova, 22/02, 24 jam, lepas kunci.\""
-        },
-        {"content": "## Pembayaran\nTunai, Transfer, QRIS.\n\nContoh:\nPelunasan saat serah terima unit."
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @depok_rentcar\n\nContoh:\nWA Admin: 0812-3333-4444"
-        }
-    ], "keywords": ["rental mobil depok", "sewa avanza harian", "lepas kunci depok", "rental mobil dengan sopir", "harga rental innova"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Rental Mobil Kami\nMenyediakan berbagai unit mobil untuk kebutuhan pribadi, bisnis, atau wisata. Opsi lepas kunci atau dengan sopir profesional.\n\nContoh:\n\"Depok RentCar\" unit Avanza, Xenia, Innova, HiAce."
+            },
+            {
+                "content": "## Lokasi & Alamat Lengkap\nContoh: Jl. Kartini No. 5, RT 002/RW 003, Kel. Pancoran Mas, Depok, 16431.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Dekat GDC."
+            },
+            {
+                "content": "## Pilihan Unit & Harga\n- Avanza/Xenia: Rp [Isi]/24 jam.\n- Innova: Rp [Isi]/24 jam.\n- HiAce: Rp [Isi]/24 jam.\n\nContoh:\nAvanza Rp 400.000, Innova Rp 650.000, HiAce Rp 1.200.000 (Driver + BBM)."
+            },
+            {
+                "content": "## Syarat & Ketentuan\n- Lepas kunci: KTP, KK, SIM A, Deposit.\n- Dengan sopir: KTP + DP.\n\nContoh:\nDeposit Rp 1.000.000 (Dikembalikan setelah unit kembali)."
+            },
+            {
+                "content": "## Sistem Sewa\n- 12 jam / 24 jam.\n- Overtime: Rp [Isi]/jam.\n\nContoh:\nOvertime Rp 50.000/jam (Avanza)."
+            },
+            {
+                "content": "## Cara Booking\nWA: [Isi], format: NAMA # UNIT # TANGGAL # DURASI.\n\nContoh:\n\"Booking Innova, 22/02, 24 jam, lepas kunci.\""
+            },
+            {
+                "content": "## Pembayaran\nTunai, Transfer, QRIS.\n\nContoh:\nPelunasan saat serah terima unit."
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @depok_rentcar\n\nContoh:\nWA Admin: 0812-3333-4444"
+            }
+        ],
+        "keywords": [
+            "rental mobil depok",
+            "sewa avanza harian",
+            "lepas kunci depok",
+            "rental mobil dengan sopir",
+            "harga rental innova"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3517",
     "isActive": true,
     "downloadCount": 0,

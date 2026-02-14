@@ -1,28 +1,55 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3532",
     "title": "Percetakan Undangan",
     "description": "Template untuk percetakan undangan (nikah/aqiqah/ulang tahun), mencakup paket desain, bahan, jumlah, harga, dan cara order.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["jasa", "percetakan", "undangan", "desain"],
+    "tags": [
+        "jasa",
+        "percetakan",
+        "undangan",
+        "desain"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang Percetakan Undangan\nMelayani cetak undangan berbagai acara dengan desain custom dan bahan berkualitas.\n\nContoh:\n\"Print Invite\" menyediakan katalog 50+ template."
-        },
-        {"content": "## Paket & Bahan\n- Paket Hemat: Art paper 230 gsm.\n- Paket Premium: Fancy paper + emboss.\n\nContoh Harga:\n100 pcs mulai Rp 300.000 (hemat), premium mulai Rp 750.000."
-        },
-        {"content": "## Proses & Waktu\nDesain 2-3 hari, cetak 2-4 hari.\n\nContoh:\nRevisi desain maksimal 2 kali."
-        },
-        {"content": "## Cara Order\nWA: [Isi], format: NAMA ACARA # TANGGAL # JUMLAH.\n\nContoh:\n\"Undangan nikah, 10/03, 250 pcs, tema minimalis.\""
-        },
-        {"content": "## Pembayaran\nDP 50%, pelunasan saat selesai. Transfer/QRIS.\n\nContoh:\nBCA 2233445566 a.n. Print Invite."
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @print_invite\n\nContoh:\nWA Admin: 0812-5656-4545"
-        }
-    ], "keywords": ["cetak undangan murah", "undangan premium fancy paper", "desain undangan custom", "harga undangan 100 pcs", "cetak undangan nikah"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Percetakan Undangan\nMelayani cetak undangan berbagai acara dengan desain custom dan bahan berkualitas.\n\nContoh:\n\"Print Invite\" menyediakan katalog 50+ template."
+            },
+            {
+                "content": "## Paket & Bahan\n- Paket Hemat: Art paper 230 gsm.\n- Paket Premium: Fancy paper + emboss.\n\nContoh Harga:\n100 pcs mulai Rp 300.000 (hemat), premium mulai Rp 750.000."
+            },
+            {
+                "content": "## Proses & Waktu\nDesain 2-3 hari, cetak 2-4 hari.\n\nContoh:\nRevisi desain maksimal 2 kali."
+            },
+            {
+                "content": "## Cara Order\nWA: [Isi], format: NAMA ACARA # TANGGAL # JUMLAH.\n\nContoh:\n\"Undangan nikah, 10/03, 250 pcs, tema minimalis.\""
+            },
+            {
+                "content": "## Pembayaran\nDP 50%, pelunasan saat selesai. Transfer/QRIS.\n\nContoh:\nBCA 2233445566 a.n. Print Invite."
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @print_invite\n\nContoh:\nWA Admin: 0812-5656-4545"
+            }
+        ],
+        "keywords": [
+            "cetak undangan murah",
+            "undangan premium fancy paper",
+            "desain undangan custom",
+            "harga undangan 100 pcs",
+            "cetak undangan nikah"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3532",
     "isActive": true,
     "downloadCount": 0,

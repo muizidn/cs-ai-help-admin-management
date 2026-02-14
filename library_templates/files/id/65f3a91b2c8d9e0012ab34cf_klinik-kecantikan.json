@@ -1,10 +1,13 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34cf",
     "title": "Klinik Kecantikan",
     "description": "Template basis pengetahuan untuk klinik estetika, mencakup perawatan wajah, treatment laser, produk skincare, dan konsultasi dokter kecantikan.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["kecantikan", "estetika", "skincare"],
+    "tags": [
+        "kecantikan",
+        "estetika",
+        "skincare"
+    ],
     "language": "id",
     "content": {
         "sections": [

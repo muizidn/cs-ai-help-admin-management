@@ -1,32 +1,60 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3520",
     "title": "Kursus Bahasa Inggris",
     "description": "Template untuk kursus Bahasa Inggris, mencakup level kelas, metode pengajaran, jadwal, biaya, dan pendaftaran.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["pendidikan", "kursus", "bahasa inggris"],
+    "tags": [
+        "pendidikan",
+        "kursus",
+        "bahasa inggris"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang Kursus Inggris Kami\nProgram belajar bahasa Inggris untuk anak, remaja, dan dewasa dengan fokus speaking, grammar, dan listening.\n\nContoh:\n\"English Bright\" menggunakan metode komunikatif (role-play, presentation)."
-        },
-        {"content": "## Lokasi & Alamat\nContoh: Ruko Harmoni Blok A-3, Jl. Harmoni Raya, Bekasi.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Depan SDN Harmoni."
-        },
-        {"content": "## Level & Kurikulum\n- Kids Starter (7-9 th).\n- Teens Intermediate (10-15 th).\n- Adult General English.\n\nContoh:\nSilabus 12 minggu, evaluasi tengah dan akhir."
-        },
-        {"content": "## Jadwal & Durasi\n- 2x per minggu, 90 menit/sesi.\n- Kelas sore/malam.\n\nContoh:\nSelasa & Kamis 17.00-18.30 (Teens)."
-        },
-        {"content": "## Biaya & Promo\n- Pendaftaran: Rp [Isi].\n- Bulanan: Rp [Isi].\n- Paket 3 bulan: Diskon [Isi].\n\nContoh:\nDaftar Rp 150.000. Bulanan Rp 400.000. Paket 3 bulan Rp 1.100.000."
-        },
-        {"content": "## Metode Pembayaran\nTunai, Transfer, QRIS.\n\nContoh:\nBCA 1122334455 a.n. English Bright."
-        },
-        {"content": "## Pendaftaran\nWA: [Isi], format: NAMA # LEVEL # JADWAL.\n\nContoh:\n\"Daftar Teens Intermediate, jadwal Selasa-Kamis.\""
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @english_bright\n\nContoh:\nWA Admin: 0812-3456-0000"
-        }
-    ], "keywords": ["kursus bahasa inggris bekasi", "kelas speaking murah", "kursus english untuk anak", "biaya kursus inggris", "jadwal kursus sore"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Kursus Inggris Kami\nProgram belajar bahasa Inggris untuk anak, remaja, dan dewasa dengan fokus speaking, grammar, dan listening.\n\nContoh:\n\"English Bright\" menggunakan metode komunikatif (role-play, presentation)."
+            },
+            {
+                "content": "## Lokasi & Alamat\nContoh: Ruko Harmoni Blok A-3, Jl. Harmoni Raya, Bekasi.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Depan SDN Harmoni."
+            },
+            {
+                "content": "## Level & Kurikulum\n- Kids Starter (7-9 th).\n- Teens Intermediate (10-15 th).\n- Adult General English.\n\nContoh:\nSilabus 12 minggu, evaluasi tengah dan akhir."
+            },
+            {
+                "content": "## Jadwal & Durasi\n- 2x per minggu, 90 menit/sesi.\n- Kelas sore/malam.\n\nContoh:\nSelasa & Kamis 17.00-18.30 (Teens)."
+            },
+            {
+                "content": "## Biaya & Promo\n- Pendaftaran: Rp [Isi].\n- Bulanan: Rp [Isi].\n- Paket 3 bulan: Diskon [Isi].\n\nContoh:\nDaftar Rp 150.000. Bulanan Rp 400.000. Paket 3 bulan Rp 1.100.000."
+            },
+            {
+                "content": "## Metode Pembayaran\nTunai, Transfer, QRIS.\n\nContoh:\nBCA 1122334455 a.n. English Bright."
+            },
+            {
+                "content": "## Pendaftaran\nWA: [Isi], format: NAMA # LEVEL # JADWAL.\n\nContoh:\n\"Daftar Teens Intermediate, jadwal Selasa-Kamis.\""
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @english_bright\n\nContoh:\nWA Admin: 0812-3456-0000"
+            }
+        ],
+        "keywords": [
+            "kursus bahasa inggris bekasi",
+            "kelas speaking murah",
+            "kursus english untuk anak",
+            "biaya kursus inggris",
+            "jadwal kursus sore"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3520",
     "isActive": true,
     "downloadCount": 0,

@@ -1,30 +1,58 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3538",
     "title": "Barbershop",
-    "description": "Template untuk barbershop, mencakup layanan potong rambut, shaving, hairwash, paket, harga, dan booking."
-    ,"type": "knowledge_base",
+    "description": "Template untuk barbershop, mencakup layanan potong rambut, shaving, hairwash, paket, harga, dan booking.",
+    "type": "knowledge_base",
     "category": "general",
-    "tags": ["lifestyle", "barbershop", "grooming", "rambut"],
+    "tags": [
+        "lifestyle",
+        "barbershop",
+        "grooming",
+        "rambut"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang Barbershop\nLayanan potong rambut pria, shaving, hairwash dengan barber berpengalaman.\n\nContoh:\n\"Gentle Cut\" fokus gaya klasik dan modern."
-        },
-        {"content": "## Lokasi & Alamat\nContoh: Jl. Panglima No. 12, Yogyakarta.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Depan minimarket."
-        },
-        {"content": "## Layanan & Harga\n- Haircut: Rp [Isi].\n- Shaving: Rp [Isi].\n- Hairwash: Rp [Isi].\n\nContoh:\nHaircut Rp 35.000, Paket Haircut+Wash Rp 50.000."
-        },
-        {"content": "## Jam Operasional\nSenin - Minggu: 10.00-21.00.\n\nContoh:\nLast order 20.30."
-        },
-        {"content": "## Booking\nWA: [Isi], format: NAMA # JAM # LAYANAN.\n\nContoh:\n\"Booking 17.00, Haircut.\""
-        },
-        {"content": "## Pembayaran\nTunai, QRIS.\n\nContoh:\nDiskon 10% untuk pelajar."
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @gentle_cut\n\nContoh:\nWA Admin: 0812-1414-2323"
-        }
-    ], "keywords": ["barbershop jogja", "harga haircut", "shaving pria", "hairwash murah", "booking barber"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Barbershop\nLayanan potong rambut pria, shaving, hairwash dengan barber berpengalaman.\n\nContoh:\n\"Gentle Cut\" fokus gaya klasik dan modern."
+            },
+            {
+                "content": "## Lokasi & Alamat\nContoh: Jl. Panglima No. 12, Yogyakarta.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Depan minimarket."
+            },
+            {
+                "content": "## Layanan & Harga\n- Haircut: Rp [Isi].\n- Shaving: Rp [Isi].\n- Hairwash: Rp [Isi].\n\nContoh:\nHaircut Rp 35.000, Paket Haircut+Wash Rp 50.000."
+            },
+            {
+                "content": "## Jam Operasional\nSenin - Minggu: 10.00-21.00.\n\nContoh:\nLast order 20.30."
+            },
+            {
+                "content": "## Booking\nWA: [Isi], format: NAMA # JAM # LAYANAN.\n\nContoh:\n\"Booking 17.00, Haircut.\""
+            },
+            {
+                "content": "## Pembayaran\nTunai, QRIS.\n\nContoh:\nDiskon 10% untuk pelajar."
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @gentle_cut\n\nContoh:\nWA Admin: 0812-1414-2323"
+            }
+        ],
+        "keywords": [
+            "barbershop jogja",
+            "harga haircut",
+            "shaving pria",
+            "hairwash murah",
+            "booking barber"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3538",
     "isActive": true,
     "downloadCount": 0,

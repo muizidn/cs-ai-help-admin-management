@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3503",
     "title": "Bimbel & Les Privat",
     "description": "Template basis pengetahuan untuk lembaga bimbingan belajar (bimbel) atau jasa les privat, mencakup mata pelajaran SD-SMA, persiapan ujian, dan guru datang ke rumah.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["pendidikan", "bimbel", "les-privat", "kursus"],
+    "tags": [
+        "pendidikan",
+        "bimbel",
+        "les-privat",
+        "kursus"
+    ],
     "language": "id",
     "content": {
         "sections": [

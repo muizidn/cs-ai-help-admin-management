@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34f6",
     "title": "Jasa Cuci Sofa & Karpet",
     "description": "Template basis pengetahuan untuk jasa cuci sofa, karpet, springbed, dan jok mobil menggunakan metode wet-cleaning dan pengeringan cepat.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["jasa", "cuci-sofa", "cuci-karpet", "kebersihan"],
+    "tags": [
+        "jasa",
+        "cuci-sofa",
+        "cuci-karpet",
+        "kebersihan"
+    ],
     "language": "id",
     "content": {
         "sections": [

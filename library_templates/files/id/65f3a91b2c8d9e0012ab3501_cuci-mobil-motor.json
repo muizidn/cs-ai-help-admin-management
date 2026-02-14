@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3501",
     "title": "Cuci Mobil & Motor",
     "description": "Template basis pengetahuan untuk jasa cuci kendaraan, mencakup cuci salju, cuci hidrolik, detailing mesin, poles body, dan cuci interior.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["otomotif", "cuci-mobil", "cuci-motor", "detailing"],
+    "tags": [
+        "otomotif",
+        "cuci-mobil",
+        "cuci-motor",
+        "detailing"
+    ],
     "language": "id",
     "content": {
         "sections": [

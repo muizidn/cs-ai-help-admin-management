@@ -1,30 +1,59 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3524",
     "title": "Kursus Coding Anak",
     "description": "Template untuk kursus coding anak (Scratch/Blockly/Python dasar), mencakup kurikulum, jadwal, biaya, dan pendaftaran.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["pendidikan", "kursus", "coding", "anak", "scratch"],
+    "tags": [
+        "pendidikan",
+        "kursus",
+        "coding",
+        "anak",
+        "scratch"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang Kursus Coding Anak\nBelajar logika dan pemrograman dengan cara menyenangkan melalui game dan animasi. Cocok usia 7-14 tahun.\n\nContoh:\n\"Kids Code Fun\" menggunakan Scratch dan Blockly sebelum ke Python."
-        },
-        {"content": "## Lokasi & Alamat\nContoh: Lab Coding Jl. Kenari No. 3, Jogja.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Dekat SDN Kenari."
-        },
-        {"content": "## Kurikulum & Level\n- Starter: Scratch (game/animasi).\n- Intermediate: Blockly & konsep variabel/loop.\n- Intro Python: Dasar-dasar.\n\nContoh:\nProyek: Buat game \"Tangkap Bintang\" di Scratch."
-        },
-        {"content": "## Jadwal & Durasi\n1-2x per minggu, 90 menit.\n\nContoh:\nSabtu 10.00-11.30 (Starter). Rabu 16.00-17.30 (Intermediate)."
-        },
-        {"content": "## Biaya & Fasilitas\nPendaftaran Rp [Isi], Bulanan Rp [Isi]. PC/laptop, modul, sertifikat.\n\nContoh:\nDaftar Rp 150.000, Bulanan Rp 450.000."
-        },
-        {"content": "## Pendaftaran\nWA: [Isi], format: NAMA # LEVEL # JADWAL.\n\nContoh:\n\"Daftar Starter, jadwal Sabtu.\""
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @kids_code_fun\n\nContoh:\nWA Admin: 0812-5555-4444"
-        }
-    ], "keywords": ["kursus coding anak jogja", "belajar scratch untuk anak", "kursus python anak", "kelas coding pemula", "biaya kursus coding anak"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Kursus Coding Anak\nBelajar logika dan pemrograman dengan cara menyenangkan melalui game dan animasi. Cocok usia 7-14 tahun.\n\nContoh:\n\"Kids Code Fun\" menggunakan Scratch dan Blockly sebelum ke Python."
+            },
+            {
+                "content": "## Lokasi & Alamat\nContoh: Lab Coding Jl. Kenari No. 3, Jogja.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Dekat SDN Kenari."
+            },
+            {
+                "content": "## Kurikulum & Level\n- Starter: Scratch (game/animasi).\n- Intermediate: Blockly & konsep variabel/loop.\n- Intro Python: Dasar-dasar.\n\nContoh:\nProyek: Buat game \"Tangkap Bintang\" di Scratch."
+            },
+            {
+                "content": "## Jadwal & Durasi\n1-2x per minggu, 90 menit.\n\nContoh:\nSabtu 10.00-11.30 (Starter). Rabu 16.00-17.30 (Intermediate)."
+            },
+            {
+                "content": "## Biaya & Fasilitas\nPendaftaran Rp [Isi], Bulanan Rp [Isi]. PC/laptop, modul, sertifikat.\n\nContoh:\nDaftar Rp 150.000, Bulanan Rp 450.000."
+            },
+            {
+                "content": "## Pendaftaran\nWA: [Isi], format: NAMA # LEVEL # JADWAL.\n\nContoh:\n\"Daftar Starter, jadwal Sabtu.\""
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @kids_code_fun\n\nContoh:\nWA Admin: 0812-5555-4444"
+            }
+        ],
+        "keywords": [
+            "kursus coding anak jogja",
+            "belajar scratch untuk anak",
+            "kursus python anak",
+            "kelas coding pemula",
+            "biaya kursus coding anak"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3524",
     "isActive": true,
     "downloadCount": 0,

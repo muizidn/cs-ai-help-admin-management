@@ -1,30 +1,58 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3540",
     "title": "Nail Art",
     "description": "Template untuk layanan nail art/manicure pedicure, mencakup pilihan desain, paket, harga, dan booking.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["lifestyle", "nail art", "manicure", "pedicure"],
+    "tags": [
+        "lifestyle",
+        "nail art",
+        "manicure",
+        "pedicure"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang Nail Art\nLayanan manicure/pedicure, gel polish, dan nail art custom dengan bahan aman.\n\nContoh:\n\"Nail Bloom\" menyediakan 100+ katalog desain."
-        },
-        {"content": "## Lokasi & Alamat\nContoh: Jl. Anggraini No. 2, Jakarta Barat.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Atas salon wanita."
-        },
-        {"content": "## Layanan & Harga\n- Manicure/Pedicure.\n- Gel Polish.\n- Nail Art custom.\n\nContoh Harga:\nManicure Rp 60.000, Gel Polish Rp 120.000."
-        },
-        {"content": "## Paket\n- Paket Glow Nails: Manicure + Gel.\n\nContoh:\nPaket Rp 160.000."
-        },
-        {"content": "## Booking\nWA: [Isi], format: NAMA # LAYANAN # JAM.\n\nContoh:\n\"Booking Gel Polish 15.00.\""
-        },
-        {"content": "## Pembayaran\nTunai, QRIS.\n\nContoh:\nDiskon pertama kali kunjungan 10%."
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @nail_bloom\n\nContoh:\nWA Admin: 0812-1818-2929"
-        }
-    ], "keywords": ["nail art jakarta", "gel polish harga", "manicure pedicure", "desain kuku cantik", "booking nail art"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Nail Art\nLayanan manicure/pedicure, gel polish, dan nail art custom dengan bahan aman.\n\nContoh:\n\"Nail Bloom\" menyediakan 100+ katalog desain."
+            },
+            {
+                "content": "## Lokasi & Alamat\nContoh: Jl. Anggraini No. 2, Jakarta Barat.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Atas salon wanita."
+            },
+            {
+                "content": "## Layanan & Harga\n- Manicure/Pedicure.\n- Gel Polish.\n- Nail Art custom.\n\nContoh Harga:\nManicure Rp 60.000, Gel Polish Rp 120.000."
+            },
+            {
+                "content": "## Paket\n- Paket Glow Nails: Manicure + Gel.\n\nContoh:\nPaket Rp 160.000."
+            },
+            {
+                "content": "## Booking\nWA: [Isi], format: NAMA # LAYANAN # JAM.\n\nContoh:\n\"Booking Gel Polish 15.00.\""
+            },
+            {
+                "content": "## Pembayaran\nTunai, QRIS.\n\nContoh:\nDiskon pertama kali kunjungan 10%."
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @nail_bloom\n\nContoh:\nWA Admin: 0812-1818-2929"
+            }
+        ],
+        "keywords": [
+            "nail art jakarta",
+            "gel polish harga",
+            "manicure pedicure",
+            "desain kuku cantik",
+            "booking nail art"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3540",
     "isActive": true,
     "downloadCount": 0,

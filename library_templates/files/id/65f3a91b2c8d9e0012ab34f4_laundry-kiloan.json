@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34f4",
     "title": "Laundry Kiloan",
     "description": "Template basis pengetahuan untuk jasa laundry kiloan dan satuan, mencakup paket cuci kering lipat, cuci setrika, laundry bed cover, dan layanan antar-jemput.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["jasa", "laundry", "kiloan", "rumah-tangga"],
+    "tags": [
+        "jasa",
+        "laundry",
+        "kiloan",
+        "rumah-tangga"
+    ],
     "language": "id",
     "content": {
         "sections": [

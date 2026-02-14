@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34d4",
     "title": "Optik Kacamata",
     "description": "Template basis pengetahuan untuk optik kacamata, mencakup pemeriksaan mata gratis, koleksi frame, jenis lensa, dan lensa kontak.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["kesehatan", "mata", "optik", "kacamata"],
+    "tags": [
+        "kesehatan",
+        "mata",
+        "optik",
+        "kacamata"
+    ],
     "language": "id",
     "content": {
         "sections": [

@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34f1",
     "title": "Toko Hijab",
     "description": "Template basis pengetahuan untuk toko hijab dan busana muslimah, mencakup berbagai jenis hijab (pashmina, segi empat), ciput, manset, dan koleksi gamis.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["retail", "fashion", "hijab", "muslimah"],
+    "tags": [
+        "retail",
+        "fashion",
+        "hijab",
+        "muslimah"
+    ],
     "language": "id",
     "content": {
         "sections": [

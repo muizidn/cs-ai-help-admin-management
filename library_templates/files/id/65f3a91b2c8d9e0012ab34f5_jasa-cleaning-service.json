@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34f5",
     "title": "Jasa Cleaning Service",
     "description": "Template basis pengetahuan untuk jasa pembersihan (cleaning service) rumah dan kantor, mencakup daily cleaning, deep cleaning, vakum tungau, dan pembersihan pasca renovasi.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["jasa", "cleaning-service", "kebersihan", "rumah-tangga"],
+    "tags": [
+        "jasa",
+        "cleaning-service",
+        "kebersihan",
+        "rumah-tangga"
+    ],
     "language": "id",
     "content": {
         "sections": [

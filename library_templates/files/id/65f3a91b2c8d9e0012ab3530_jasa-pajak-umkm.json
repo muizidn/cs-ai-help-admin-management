@@ -1,30 +1,58 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3530",
     "title": "Jasa Pajak UMKM",
-    "description": "Template untuk jasa perpajakan UMKM, mencakup laporan SPT, pembukuan sederhana, NPWP, dan konsultasi pajak."
-    ,"type": "knowledge_base",
+    "description": "Template untuk jasa perpajakan UMKM, mencakup laporan SPT, pembukuan sederhana, NPWP, dan konsultasi pajak.",
+    "type": "knowledge_base",
     "category": "general",
-    "tags": ["jasa", "pajak", "umkm", "akuntansi"],
+    "tags": [
+        "jasa",
+        "pajak",
+        "umkm",
+        "akuntansi"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang Jasa Pajak\nMembantu UMKM mengelola kewajiban pajak: perhitungan, pelaporan SPT, dan pembukuan sederhana.\n\nContoh:\n\"Tax UMKM Care\" fokus pelaporan tepat waktu dan hemat pajak sesuai aturan."
-        },
-        {"content": "## Layanan Utama\n- Pembuatan NPWP & PKP.\n- Laporan SPT Tahunan/Masa.\n- Pembukuan sederhana.\n\nContoh Harga:\nPaket bulanan mulai Rp 500.000 (termasuk konsultasi)."
-        },
-        {"content": "## Dokumen Diperlukan\nInvoice, bukti transfer, daftar aset, data karyawan (jika ada).\n\nContoh:\nAkses akun DJP Online jika sudah punya."
-        },
-        {"content": "## Proses Kerja\nPengumpulan dokumen, perhitungan, review, pelaporan.\n\nContoh:\nSPT Masa PPh Final UMKM dilaporkan tiap bulan."
-        },
-        {"content": "## Cara Order\nWA: [Isi], format: NAMA USAHA # OMZET BULANAN.\n\nContoh:\n\"Warung Rujak, omzet 30 juta/bulan.\""
-        },
-        {"content": "## Pembayaran\nTransfer, QRIS.\n\nContoh:\nInvoice bulanan dikirim via email/WA."
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @tax_umkm_care\n\nContoh:\nWA Admin: 0812-9898-7878"
-        }
-    ], "keywords": ["jasa pajak umkm", "lapor spt tahunan umkm", "pembukuan sederhana umkm", "npwp usaha mikro", "konsultan pajak murah"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Jasa Pajak\nMembantu UMKM mengelola kewajiban pajak: perhitungan, pelaporan SPT, dan pembukuan sederhana.\n\nContoh:\n\"Tax UMKM Care\" fokus pelaporan tepat waktu dan hemat pajak sesuai aturan."
+            },
+            {
+                "content": "## Layanan Utama\n- Pembuatan NPWP & PKP.\n- Laporan SPT Tahunan/Masa.\n- Pembukuan sederhana.\n\nContoh Harga:\nPaket bulanan mulai Rp 500.000 (termasuk konsultasi)."
+            },
+            {
+                "content": "## Dokumen Diperlukan\nInvoice, bukti transfer, daftar aset, data karyawan (jika ada).\n\nContoh:\nAkses akun DJP Online jika sudah punya."
+            },
+            {
+                "content": "## Proses Kerja\nPengumpulan dokumen, perhitungan, review, pelaporan.\n\nContoh:\nSPT Masa PPh Final UMKM dilaporkan tiap bulan."
+            },
+            {
+                "content": "## Cara Order\nWA: [Isi], format: NAMA USAHA # OMZET BULANAN.\n\nContoh:\n\"Warung Rujak, omzet 30 juta/bulan.\""
+            },
+            {
+                "content": "## Pembayaran\nTransfer, QRIS.\n\nContoh:\nInvoice bulanan dikirim via email/WA."
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @tax_umkm_care\n\nContoh:\nWA Admin: 0812-9898-7878"
+            }
+        ],
+        "keywords": [
+            "jasa pajak umkm",
+            "lapor spt tahunan umkm",
+            "pembukuan sederhana umkm",
+            "npwp usaha mikro",
+            "konsultan pajak murah"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3530",
     "isActive": true,
     "downloadCount": 0,

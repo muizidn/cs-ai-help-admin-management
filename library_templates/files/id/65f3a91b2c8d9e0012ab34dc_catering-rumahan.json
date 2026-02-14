@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34dc",
     "title": "Catering Rumahan",
     "description": "Template basis pengetahuan untuk jasa katering rumahan, mencakup menu rantangan harian, catering diet, pesanan syukuran, dan sistem pengiriman.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["kuliner", "makanan", "catering", "rumahan"],
+    "tags": [
+        "kuliner",
+        "makanan",
+        "catering",
+        "rumahan"
+    ],
     "language": "id",
     "content": {
         "sections": [

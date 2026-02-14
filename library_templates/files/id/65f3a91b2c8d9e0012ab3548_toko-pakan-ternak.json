@@ -1,28 +1,55 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3548",
     "title": "Toko Pakan Ternak",
-    "description": "Template untuk toko pakan ternak (ayam/sapi/kambing), mencakup produk, grosir, pengiriman, harga, dan kontak."
-    ,"type": "knowledge_base",
+    "description": "Template untuk toko pakan ternak (ayam/sapi/kambing), mencakup produk, grosir, pengiriman, harga, dan kontak.",
+    "type": "knowledge_base",
     "category": "general",
-    "tags": ["agribisnis", "pakan ternak", "grosir", "peternakan"],
+    "tags": [
+        "agribisnis",
+        "pakan ternak",
+        "grosir",
+        "peternakan"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang Toko Pakan\nMenjual pakan ternak ayam/sapi/kambing, konsentrat, vitamin, dan suplemen pertumbuhan.\n\nContoh:\n\"Ternak Sejahtera\" grosir dan eceran."
-        },
-        {"content": "## Lokasi & Alamat\nContoh: Jl. Ternak No. 7, Sleman.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Dekat pasar hewan."
-        },
-        {"content": "## Produk & Harga\n- Konsentrat ayam pedaging.\n- Pakan sapi/kambing.\n- Vitamin & suplemen.\n\nContoh Harga:\nKonsentrat 50kg Rp 300.000, dedak halus 25kg Rp 80.000."
-        },
-        {"content": "## Grosir & Pengiriman\nHarga grosir untuk pembelian karungan. Pengiriman lokal pakai pick-up.\n\nContoh:\nGratis ongkir radius 5km min. 3 karung."
-        },
-        {"content": "## Pembayaran\nTunai, Transfer.\n\nContoh:\nInvoice untuk grosir dikirim via WA."
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @ternak_sejahtera\n\nContoh:\nWA Admin: 0812-4646-5757"
-        }
-    ], "keywords": ["pakan ternak grosir", "harga konsentrat ayam", "pakan sapi kambing", "vitamin ternak", "pengiriman pakan lokal"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Toko Pakan\nMenjual pakan ternak ayam/sapi/kambing, konsentrat, vitamin, dan suplemen pertumbuhan.\n\nContoh:\n\"Ternak Sejahtera\" grosir dan eceran."
+            },
+            {
+                "content": "## Lokasi & Alamat\nContoh: Jl. Ternak No. 7, Sleman.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Dekat pasar hewan."
+            },
+            {
+                "content": "## Produk & Harga\n- Konsentrat ayam pedaging.\n- Pakan sapi/kambing.\n- Vitamin & suplemen.\n\nContoh Harga:\nKonsentrat 50kg Rp 300.000, dedak halus 25kg Rp 80.000."
+            },
+            {
+                "content": "## Grosir & Pengiriman\nHarga grosir untuk pembelian karungan. Pengiriman lokal pakai pick-up.\n\nContoh:\nGratis ongkir radius 5km min. 3 karung."
+            },
+            {
+                "content": "## Pembayaran\nTunai, Transfer.\n\nContoh:\nInvoice untuk grosir dikirim via WA."
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @ternak_sejahtera\n\nContoh:\nWA Admin: 0812-4646-5757"
+            }
+        ],
+        "keywords": [
+            "pakan ternak grosir",
+            "harga konsentrat ayam",
+            "pakan sapi kambing",
+            "vitamin ternak",
+            "pengiriman pakan lokal"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3548",
     "isActive": true,
     "downloadCount": 0,

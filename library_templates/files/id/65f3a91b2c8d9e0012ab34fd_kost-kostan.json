@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34fd",
     "title": "Kost-kostan",
     "description": "Template basis pengetahuan untuk manajemen kost-kostan, mencakup info tipe kamar, fasilitas (WiFi, parkir, dapur), aturan kost, dan sistem pembayaran bulanan.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["akomodasi", "kost", "properti", "sewa-kamar"],
+    "tags": [
+        "akomodasi",
+        "kost",
+        "properti",
+        "sewa-kamar"
+    ],
     "language": "id",
     "content": {
         "sections": [

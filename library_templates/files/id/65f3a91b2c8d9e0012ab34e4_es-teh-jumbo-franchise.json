@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34e4",
     "title": "Es Teh Jumbo Franchise",
     "description": "Template basis pengetahuan untuk usaha kemitraan/franchise es teh jumbo, mencakup varian rasa, harga ekonomis, promo beli 2 gratis 1, dan peluang kemitraan.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["kuliner", "minuman", "es-teh", "franchise"],
+    "tags": [
+        "kuliner",
+        "minuman",
+        "es-teh",
+        "franchise"
+    ],
     "language": "id",
     "content": {
         "sections": [

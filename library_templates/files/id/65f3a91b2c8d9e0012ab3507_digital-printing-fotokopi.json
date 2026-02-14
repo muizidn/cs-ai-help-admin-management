@@ -1,10 +1,15 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3507",
     "title": "Digital Printing & Fotokopi",
     "description": "Template basis pengetahuan untuk jasa percetakan, mencakup cetak banner, undangan, kartu nama, fotokopi, penjilidan, dan cetak dokumen kilat.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["jasa", "percetakan", "digital-printing", "fotokopi", "undangan"],
+    "tags": [
+        "jasa",
+        "percetakan",
+        "digital-printing",
+        "fotokopi",
+        "undangan"
+    ],
     "language": "id",
     "content": {
         "sections": [

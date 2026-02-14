@@ -1,30 +1,58 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3534",
     "title": "Jasa Videografi Wedding",
     "description": "Template untuk jasa videografi pernikahan, mencakup paket liputan, durasi, deliverables, harga, dan cara booking.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["jasa", "videografi", "wedding", "liputan"],
+    "tags": [
+        "jasa",
+        "videografi",
+        "wedding",
+        "liputan"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang Videografi Wedding\nLiputan pernikahan dengan tim profesional, cinematic style, dan audio yang bersih.\n\nContoh:\n\"CineWedding\" menyediakan paket 1-2 kameramen."
-        },
-        {"content": "## Paket & Harga\n- Paket Silver: 1 kameramen, highlight 3-5 menit.\n- Paket Gold: 2 kameramen, full documentary + highlight.\n\nContoh Harga:\nSilver Rp 4.500.000, Gold Rp 8.500.000."
-        },
-        {"content": "## Durasi & Deliverables\nLiputan 6-10 jam. File: Highlight video, full ceremony, teaser IG.\n\nContoh:\nRevisi 1x untuk highlight."
-        },
-        {"content": "## Timeline & Proses\nBooking, meeting konsep, liputan, editing 2-4 minggu, delivery.\n\nContoh:\nTeaser 60 detik dikirim H+7."
-        },
-        {"content": "## Cara Booking\nWA: [Isi], format: NAMA # TANGGAL # LOKASI.\n\nContoh:\n\"Wedding 12/03, Gedung Serbaguna Depok.\""
-        },
-        {"content": "## Pembayaran\nDP 30-50%, pelunasan H-1. Transfer/QRIS.\n\nContoh:\nBCA 5566778899 a.n. CineWedding."
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @cinewedding.id\n\nContoh:\nWA Admin: 0812-8787-6767"
-        }
-    ], "keywords": ["videografi wedding depok", "harga liputan wedding", "highlight cinematic wedding", "video pernikahan full documentary", "booking videografer"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Videografi Wedding\nLiputan pernikahan dengan tim profesional, cinematic style, dan audio yang bersih.\n\nContoh:\n\"CineWedding\" menyediakan paket 1-2 kameramen."
+            },
+            {
+                "content": "## Paket & Harga\n- Paket Silver: 1 kameramen, highlight 3-5 menit.\n- Paket Gold: 2 kameramen, full documentary + highlight.\n\nContoh Harga:\nSilver Rp 4.500.000, Gold Rp 8.500.000."
+            },
+            {
+                "content": "## Durasi & Deliverables\nLiputan 6-10 jam. File: Highlight video, full ceremony, teaser IG.\n\nContoh:\nRevisi 1x untuk highlight."
+            },
+            {
+                "content": "## Timeline & Proses\nBooking, meeting konsep, liputan, editing 2-4 minggu, delivery.\n\nContoh:\nTeaser 60 detik dikirim H+7."
+            },
+            {
+                "content": "## Cara Booking\nWA: [Isi], format: NAMA # TANGGAL # LOKASI.\n\nContoh:\n\"Wedding 12/03, Gedung Serbaguna Depok.\""
+            },
+            {
+                "content": "## Pembayaran\nDP 30-50%, pelunasan H-1. Transfer/QRIS.\n\nContoh:\nBCA 5566778899 a.n. CineWedding."
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @cinewedding.id\n\nContoh:\nWA Admin: 0812-8787-6767"
+            }
+        ],
+        "keywords": [
+            "videografi wedding depok",
+            "harga liputan wedding",
+            "highlight cinematic wedding",
+            "video pernikahan full documentary",
+            "booking videografer"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3534",
     "isActive": true,
     "downloadCount": 0,

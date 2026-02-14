@@ -1,10 +1,13 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34d3",
     "title": "Toko Alat Kesehatan",
     "description": "Template basis pengetahuan untuk toko retail alat kesehatan (Alkes), mencakup stok kursi roda, tabung oksigen, alat cek kesehatan mandiri, dan layanan sewa.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["kesehatan", "alkes", "peralatan-medis"],
+    "tags": [
+        "kesehatan",
+        "alkes",
+        "peralatan-medis"
+    ],
     "language": "id",
     "content": {
         "sections": [

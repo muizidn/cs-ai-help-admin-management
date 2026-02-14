@@ -1,28 +1,55 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3533",
     "title": "Fotokopi & ATK",
-    "description": "Template untuk usaha fotokopi dan alat tulis kantor (ATK), mencakup layanan fotokopi, print, laminating, jilid, dan penjualan ATK."
-    ,"type": "knowledge_base",
+    "description": "Template untuk usaha fotokopi dan alat tulis kantor (ATK), mencakup layanan fotokopi, print, laminating, jilid, dan penjualan ATK.",
+    "type": "knowledge_base",
     "category": "general",
-    "tags": ["jasa", "fotokopi", "atk", "percetakan"],
+    "tags": [
+        "jasa",
+        "fotokopi",
+        "atk",
+        "percetakan"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang Fotokopi & ATK\nLayanan fotokopi cepat, print dokumen, laminating, jilid, serta menjual ATK lengkap.\n\nContoh:\n\"Copy Center Jaya\" dekat kampus dan perkantoran."
-        },
-        {"content": "## Layanan & Harga\n- Fotokopi A4: Rp [Isi]/lembar.\n- Print warna/hitam.\n- Laminating, Jilid spiral/lem panas.\n\nContoh Harga:\nFotokopi A4 Rp 300/lembar, Laminating Rp 5.000/lembar."
-        },
-        {"content": "## ATK Tersedia\nBolpoin, pensil, buku, map, kertas HVS, tinta printer.\n\nContoh:\nPaket alat tulis sekolah mulai Rp 25.000."
-        },
-        {"content": "## Jam Operasional\nSenin - Sabtu: 07.00-21.00, Minggu: 09.00-17.00.\n\nContoh:\nPrioritas layanan cepat untuk mahasiswa."
-        },
-        {"content": "## Pembayaran\nTunai, QRIS.\n\nContoh:\nScan QR di kasir."
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @copy_center_jaya\n\nContoh:\nWA Admin: 0812-2323-4545"
-        }
-    ], "keywords": ["fotokopi dekat kampus", "harga print warna", "laminating murah", "jilid spiral cepat", "toko atk lengkap"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Fotokopi & ATK\nLayanan fotokopi cepat, print dokumen, laminating, jilid, serta menjual ATK lengkap.\n\nContoh:\n\"Copy Center Jaya\" dekat kampus dan perkantoran."
+            },
+            {
+                "content": "## Layanan & Harga\n- Fotokopi A4: Rp [Isi]/lembar.\n- Print warna/hitam.\n- Laminating, Jilid spiral/lem panas.\n\nContoh Harga:\nFotokopi A4 Rp 300/lembar, Laminating Rp 5.000/lembar."
+            },
+            {
+                "content": "## ATK Tersedia\nBolpoin, pensil, buku, map, kertas HVS, tinta printer.\n\nContoh:\nPaket alat tulis sekolah mulai Rp 25.000."
+            },
+            {
+                "content": "## Jam Operasional\nSenin - Sabtu: 07.00-21.00, Minggu: 09.00-17.00.\n\nContoh:\nPrioritas layanan cepat untuk mahasiswa."
+            },
+            {
+                "content": "## Pembayaran\nTunai, QRIS.\n\nContoh:\nScan QR di kasir."
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @copy_center_jaya\n\nContoh:\nWA Admin: 0812-2323-4545"
+            }
+        ],
+        "keywords": [
+            "fotokopi dekat kampus",
+            "harga print warna",
+            "laminating murah",
+            "jilid spiral cepat",
+            "toko atk lengkap"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3533",
     "isActive": true,
     "downloadCount": 0,

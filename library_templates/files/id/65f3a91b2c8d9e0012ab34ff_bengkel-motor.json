@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34ff",
     "title": "Bengkel Motor",
     "description": "Template basis pengetahuan untuk bengkel motor (umum), mencakup servis rutin, ganti oli, servis CVT, tune-up, dan penggantian suku cadang (sparepart).",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["otomotif", "bengkel-motor", "servis-motor", "sparepart"],
+    "tags": [
+        "otomotif",
+        "bengkel-motor",
+        "servis-motor",
+        "sparepart"
+    ],
     "language": "id",
     "content": {
         "sections": [

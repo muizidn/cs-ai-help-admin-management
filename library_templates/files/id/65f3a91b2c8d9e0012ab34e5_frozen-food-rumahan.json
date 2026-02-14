@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34e5",
     "title": "Frozen Food Rumahan",
     "description": "Template basis pengetahuan untuk usaha frozen food rumahan, mencakup aneka nugget, dimsum, pempek, sosis, dan panduan penyimpanan serta penyajian.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["kuliner", "makanan", "frozen-food", "umkm"],
+    "tags": [
+        "kuliner",
+        "makanan",
+        "frozen-food",
+        "umkm"
+    ],
     "language": "id",
     "content": {
         "sections": [

@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34d9",
     "title": "Restoran Lokal",
     "description": "Template basis pengetahuan untuk restoran keluarga lokal, mencakup reservasi meja, menu paket keluarga, fasilitas VIP, dan paket acara ulang tahun.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["kuliner", "restoran", "makanan-lokal", "keluarga"],
+    "tags": [
+        "kuliner",
+        "restoran",
+        "makanan-lokal",
+        "keluarga"
+    ],
     "language": "id",
     "content": {
         "sections": [

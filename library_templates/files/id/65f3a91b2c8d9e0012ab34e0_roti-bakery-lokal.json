@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34e0",
     "title": "Roti Bakery Lokal",
     "description": "Template basis pengetahuan untuk toko roti (Bakery) lokal, mencakup roti manis, roti tawar, kue basah tradisional, dan pesanan snack box.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["kuliner", "makanan", "bakery", "roti"],
+    "tags": [
+        "kuliner",
+        "makanan",
+        "bakery",
+        "roti"
+    ],
     "language": "id",
     "content": {
         "sections": [

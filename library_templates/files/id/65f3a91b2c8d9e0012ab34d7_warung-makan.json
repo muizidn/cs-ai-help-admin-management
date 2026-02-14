@@ -1,10 +1,13 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34d7",
     "title": "Warung Makan",
     "description": "Template basis pengetahuan untuk warung makan sederhana, mencakup menu harian, pesanan nasi bungkus, dan layanan makan di tempat.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["kuliner", "makanan", "warung"],
+    "tags": [
+        "kuliner",
+        "makanan",
+        "warung"
+    ],
     "language": "id",
     "content": {
         "sections": [

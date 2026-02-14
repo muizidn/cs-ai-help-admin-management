@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34ed",
     "title": "Toko Aksesoris HP",
     "description": "Template basis pengetahuan untuk toko aksesoris smartphone, mencakup casing, tempered glass, charger, kabel data, headset, dan perlengkapan konten creator.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["retail", "gadget", "aksesoris-hp", "elektronik"],
+    "tags": [
+        "retail",
+        "gadget",
+        "aksesoris-hp",
+        "elektronik"
+    ],
     "language": "id",
     "content": {
         "sections": [

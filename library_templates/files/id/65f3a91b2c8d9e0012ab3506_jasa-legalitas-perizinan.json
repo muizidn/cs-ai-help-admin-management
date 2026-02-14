@@ -1,10 +1,15 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3506",
     "title": "Jasa Legalitas & Perizinan",
     "description": "Template basis pengetahuan untuk jasa pengurusan legalitas usaha, mencakup pembuatan PT/CV, NIB, NPWP, pendaftaran merek (HAKI), dan izin edar (PIRT/BPOM).",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["jasa", "legalitas", "perizinan", "bisnis", "notaris"],
+    "tags": [
+        "jasa",
+        "legalitas",
+        "perizinan",
+        "bisnis",
+        "notaris"
+    ],
     "language": "id",
     "content": {
         "sections": [

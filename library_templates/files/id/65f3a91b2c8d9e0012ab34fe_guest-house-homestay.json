@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34fe",
     "title": "Guest House & Homestay",
     "description": "Template basis pengetahuan untuk pengelolaan guest house atau homestay, mencakup sewa harian/mingguan, fasilitas rumah lengkap, prosedur check-in/out, dan paket wisata lokal.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["akomodasi", "homestay", "guest-house", "travel"],
+    "tags": [
+        "akomodasi",
+        "homestay",
+        "guest-house",
+        "travel"
+    ],
     "language": "id",
     "content": {
         "sections": [

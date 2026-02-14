@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34e8",
     "title": "Toko Bangunan Kecil",
     "description": "Template basis pengetahuan untuk toko bangunan skala UMKM, mencakup stok semen, cat, paku, pipa air, alat pertukangan, dan layanan antar barang.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["retail", "bangunan", "material", "pertukangan"],
+    "tags": [
+        "retail",
+        "bangunan",
+        "material",
+        "pertukangan"
+    ],
     "language": "id",
     "content": {
         "sections": [

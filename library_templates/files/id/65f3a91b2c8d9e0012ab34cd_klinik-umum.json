@@ -1,10 +1,13 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34cd",
     "title": "Klinik Umum",
     "description": "Template basis pengetahuan untuk operasional klinik umum, mencakup informasi pendaftaran, layanan dokter, dan prosedur pasien.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["kesehatan", "klinik", "dokter"],
+    "tags": [
+        "kesehatan",
+        "klinik",
+        "dokter"
+    ],
     "language": "id",
     "content": {
         "sections": [

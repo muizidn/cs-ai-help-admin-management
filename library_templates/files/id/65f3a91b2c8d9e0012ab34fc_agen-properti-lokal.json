@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34fc",
     "title": "Agen Properti Lokal",
     "description": "Template basis pengetahuan untuk agen properti lokal atau kantor broker properti, mencakup jasa jual-beli-sewa rumah, tanah, ruko, serta bantuan pengurusan KPR.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["jasa", "properti", "agen-properti", "rumah"],
+    "tags": [
+        "jasa",
+        "properti",
+        "agen-properti",
+        "rumah"
+    ],
     "language": "id",
     "content": {
         "sections": [

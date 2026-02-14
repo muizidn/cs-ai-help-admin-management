@@ -1,30 +1,58 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3539",
     "title": "Salon Wanita",
     "description": "Template untuk salon wanita, mencakup layanan potong/warna rambut, creambath, manicure pedicure, paket dan harga.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["lifestyle", "salon", "wanita", "rambut"],
+    "tags": [
+        "lifestyle",
+        "salon",
+        "wanita",
+        "rambut"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang Salon Wanita\nSalon khusus wanita dengan layanan lengkap untuk perawatan rambut dan tubuh.\n\nContoh:\n\"Beauty Aura\" fokus bahan aman dan stylist berpengalaman."
-        },
-        {"content": "## Lokasi & Alamat\nContoh: Jl. Kartini No. 15, Malang.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Samping butik Kartini."
-        },
-        {"content": "## Layanan & Harga\n- Haircut wanita: Rp [Isi].\n- Coloring/Highlight.\n- Creambath/Masker rambut.\n\nContoh Harga:\nHaircut Rp 60.000, Creambath Rp 80.000."
-        },
-        {"content": "## Paket\n- Paket Glow: Creambath + Blow.\n- Paket Warna: Coloring + Treatment.\n\nContoh:\nPaket Glow Rp 130.000."
-        },
-        {"content": "## Metode Pembayaran\nTunai, QRIS, Transfer.\n\nContoh:\nPromo weekdays 10%."
-        },
-        {"content": "## Booking\nWA: [Isi], format: NAMA # LAYANAN # JAM.\n\nContoh:\n\"Booking Coloring 14.00.\""
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @beauty_aura_salon\n\nContoh:\nWA Admin: 0812-1616-2727"
-        }
-    ], "keywords": ["salon wanita malang", "harga creambath", "coloring rambut", "paket salon glow", "booking salon wanita"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Salon Wanita\nSalon khusus wanita dengan layanan lengkap untuk perawatan rambut dan tubuh.\n\nContoh:\n\"Beauty Aura\" fokus bahan aman dan stylist berpengalaman."
+            },
+            {
+                "content": "## Lokasi & Alamat\nContoh: Jl. Kartini No. 15, Malang.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Samping butik Kartini."
+            },
+            {
+                "content": "## Layanan & Harga\n- Haircut wanita: Rp [Isi].\n- Coloring/Highlight.\n- Creambath/Masker rambut.\n\nContoh Harga:\nHaircut Rp 60.000, Creambath Rp 80.000."
+            },
+            {
+                "content": "## Paket\n- Paket Glow: Creambath + Blow.\n- Paket Warna: Coloring + Treatment.\n\nContoh:\nPaket Glow Rp 130.000."
+            },
+            {
+                "content": "## Metode Pembayaran\nTunai, QRIS, Transfer.\n\nContoh:\nPromo weekdays 10%."
+            },
+            {
+                "content": "## Booking\nWA: [Isi], format: NAMA # LAYANAN # JAM.\n\nContoh:\n\"Booking Coloring 14.00.\""
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @beauty_aura_salon\n\nContoh:\nWA Admin: 0812-1616-2727"
+            }
+        ],
+        "keywords": [
+            "salon wanita malang",
+            "harga creambath",
+            "coloring rambut",
+            "paket salon glow",
+            "booking salon wanita"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3539",
     "isActive": true,
     "downloadCount": 0,

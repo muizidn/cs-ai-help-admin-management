@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34df",
     "title": "Martabak",
     "description": "Template basis pengetahuan untuk outlet martabak, mencakup martabak manis (terang bulan) dengan berbagai topping premium dan martabak telur dengan pilihan daging.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["kuliner", "makanan", "martabak", "cemilan"],
+    "tags": [
+        "kuliner",
+        "makanan",
+        "martabak",
+        "cemilan"
+    ],
     "language": "id",
     "content": {
         "sections": [

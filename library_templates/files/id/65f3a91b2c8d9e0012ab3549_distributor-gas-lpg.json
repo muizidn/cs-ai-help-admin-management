@@ -1,30 +1,58 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3549",
     "title": "Distributor Gas LPG",
-    "description": "Template untuk distributor gas LPG (3kg/5.5kg/12kg), mencakup area layanan, harga, pengantaran, keamanan, dan pemesanan."
-    ,"type": "knowledge_base",
+    "description": "Template untuk distributor gas LPG (3kg/5.5kg/12kg), mencakup area layanan, harga, pengantaran, keamanan, dan pemesanan.",
+    "type": "knowledge_base",
     "category": "general",
-    "tags": ["agribisnis", "lpg", "gas", "distributor"],
+    "tags": [
+        "agribisnis",
+        "lpg",
+        "gas",
+        "distributor"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang Distributor LPG\nSuplai gas LPG untuk rumah tangga dan usaha kecil dengan pengantaran cepat dan aman.\n\nContoh:\n\"LPG Mitra Jaya\" melayani radius 10km."
-        },
-        {"content": "## Lokasi & Area Layanan\nContoh: Gudang: Jl. Gas No. 10, Kota Depok. Area: Depok, Cinere, Sawangan.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Dekat SPBU."
-        },
-        {"content": "## Produk & Harga\n- 3kg, 5.5kg, 12kg.\n\nContoh Harga:\n3kg Rp 22.000 (HET daerah), 12kg Rp 210.000 (estimasi)."
-        },
-        {"content": "## Pengantaran & Keamanan\nPengantaran ke rumah/warung, cek kebocoran, edukasi pemasangan regulator.\n\nContoh:\nGratis ongkir radius 3km min. 2 tabung."
-        },
-        {"content": "## Pemesanan\nWA: [Isi], format: NAMA # ALAMAT # JUMLAH # UKURAN.\n\nContoh:\n\"Order 2 tabung 3kg, alamat RT 003 RW 002.\""
-        },
-        {"content": "## Pembayaran\nTunai, Transfer, QRIS.\n\nContoh:\nBayar saat barang sampai."
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @lpg_mitra_jaya\n\nContoh:\nWA Admin: 0812-4747-5858"
-        }
-    ], "keywords": ["distributor lpg 3kg", "harga gas 12kg", "antar gas lpg depok", "cek kebocoran regulator", "order gas via wa"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Distributor LPG\nSuplai gas LPG untuk rumah tangga dan usaha kecil dengan pengantaran cepat dan aman.\n\nContoh:\n\"LPG Mitra Jaya\" melayani radius 10km."
+            },
+            {
+                "content": "## Lokasi & Area Layanan\nContoh: Gudang: Jl. Gas No. 10, Kota Depok. Area: Depok, Cinere, Sawangan.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Dekat SPBU."
+            },
+            {
+                "content": "## Produk & Harga\n- 3kg, 5.5kg, 12kg.\n\nContoh Harga:\n3kg Rp 22.000 (HET daerah), 12kg Rp 210.000 (estimasi)."
+            },
+            {
+                "content": "## Pengantaran & Keamanan\nPengantaran ke rumah/warung, cek kebocoran, edukasi pemasangan regulator.\n\nContoh:\nGratis ongkir radius 3km min. 2 tabung."
+            },
+            {
+                "content": "## Pemesanan\nWA: [Isi], format: NAMA # ALAMAT # JUMLAH # UKURAN.\n\nContoh:\n\"Order 2 tabung 3kg, alamat RT 003 RW 002.\""
+            },
+            {
+                "content": "## Pembayaran\nTunai, Transfer, QRIS.\n\nContoh:\nBayar saat barang sampai."
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @lpg_mitra_jaya\n\nContoh:\nWA Admin: 0812-4747-5858"
+            }
+        ],
+        "keywords": [
+            "distributor lpg 3kg",
+            "harga gas 12kg",
+            "antar gas lpg depok",
+            "cek kebocoran regulator",
+            "order gas via wa"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3549",
     "isActive": true,
     "downloadCount": 0,

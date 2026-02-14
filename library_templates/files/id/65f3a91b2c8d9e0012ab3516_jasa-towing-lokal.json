@@ -1,32 +1,61 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3516",
     "title": "Jasa Towing Lokal",
     "description": "Template untuk jasa towing/penderekan lokal, mencakup cakupan area, tipe kendaraan, harga per km, dan cara booking darurat.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["otomotif", "towing", "darurat", "penderekan"],
+    "tags": [
+        "otomotif",
+        "towing",
+        "darurat",
+        "penderekan"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang Jasa Towing\nLayanan towing lokal untuk mobil mogok, kecelakaan ringan, atau pengiriman kendaraan antarkota dekat. Armada derek hidrolik siap 24 jam (sesuai ketersediaan).\n\nContoh:\n\"Towing SafeRide\" melayani area Jabodetabek."
-        },
-        {"content": "## Area & Alamat\nContoh: Pool: Jl. Pahlawan No. 88, RT 001/RW 003, Kel. Sukmajaya, Depok, 16412.\nArea: Depok, Jakarta Selatan, Tangerang Selatan.\nMaps: https://maps.app.goo.gl/xxxx"
-        },
-        {"content": "## Tipe Kendaraan\n- City Car, MPV, SUV.\n- Mobil Sport (asuransi wajib).\n- Motor besar (di atas 250cc).\n\nContoh:\nArmada towing hidrolik 4 ton, pengikat roda aman."
-        },
-        {"content": "## Harga & Estimasi\n- Start fee: Rp [Isi].\n- Per km: Rp [Isi].\n- Biaya tunggu: Rp [Isi]/jam.\n\nContoh:\nStart Rp 250.000, Rp 15.000/km, tunggu Rp 100.000/jam."
-        },
-        {"content": "## Cara Booking Darurat\nWA/Telepon: [Isi]. Format: LOKASI # TUJUAN # KENDARAAN.\n\nContoh:\n\"Towing dari Cijago ke BSD, Xpander, sekarang.\""
-        },
-        {"content": "## Jam Layanan\nSenin-Minggu: 24 jam (on-call).\n\nContoh:\nRespon rata-rata 30-60 menit tergantung jarak."
-        },
-        {"content": "## Pembayaran\nTunai, Transfer, QRIS.\n\nContoh:\nPembayaran setelah kendaraan sampai tujuan."
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nTelepon: 021-xxxxxxx\n\nContoh:\nWA: 0812-9999-0000 (SafeRide)"
-        }
-    ], "keywords": ["towing depok 24 jam", "harga derek per km", "towing hidrolik aman", "towing jabodetabek", "towing darurat mobil mogok"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Jasa Towing\nLayanan towing lokal untuk mobil mogok, kecelakaan ringan, atau pengiriman kendaraan antarkota dekat. Armada derek hidrolik siap 24 jam (sesuai ketersediaan).\n\nContoh:\n\"Towing SafeRide\" melayani area Jabodetabek."
+            },
+            {
+                "content": "## Area & Alamat\nContoh: Pool: Jl. Pahlawan No. 88, RT 001/RW 003, Kel. Sukmajaya, Depok, 16412.\nArea: Depok, Jakarta Selatan, Tangerang Selatan.\nMaps: https://maps.app.goo.gl/xxxx"
+            },
+            {
+                "content": "## Tipe Kendaraan\n- City Car, MPV, SUV.\n- Mobil Sport (asuransi wajib).\n- Motor besar (di atas 250cc).\n\nContoh:\nArmada towing hidrolik 4 ton, pengikat roda aman."
+            },
+            {
+                "content": "## Harga & Estimasi\n- Start fee: Rp [Isi].\n- Per km: Rp [Isi].\n- Biaya tunggu: Rp [Isi]/jam.\n\nContoh:\nStart Rp 250.000, Rp 15.000/km, tunggu Rp 100.000/jam."
+            },
+            {
+                "content": "## Cara Booking Darurat\nWA/Telepon: [Isi]. Format: LOKASI # TUJUAN # KENDARAAN.\n\nContoh:\n\"Towing dari Cijago ke BSD, Xpander, sekarang.\""
+            },
+            {
+                "content": "## Jam Layanan\nSenin-Minggu: 24 jam (on-call).\n\nContoh:\nRespon rata-rata 30-60 menit tergantung jarak."
+            },
+            {
+                "content": "## Pembayaran\nTunai, Transfer, QRIS.\n\nContoh:\nPembayaran setelah kendaraan sampai tujuan."
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nTelepon: 021-xxxxxxx\n\nContoh:\nWA: 0812-9999-0000 (SafeRide)"
+            }
+        ],
+        "keywords": [
+            "towing depok 24 jam",
+            "harga derek per km",
+            "towing hidrolik aman",
+            "towing jabodetabek",
+            "towing darurat mobil mogok"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3516",
     "isActive": true,
     "downloadCount": 0,

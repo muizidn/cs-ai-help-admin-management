@@ -1,28 +1,55 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3537",
     "title": "Studio Pilates Kecil",
     "description": "Template untuk studio pilates skala kecil, mencakup kelas mat/reformer (opsional), jadwal, harga, dan pendaftaran.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["lifestyle", "pilates", "studio", "member"],
+    "tags": [
+        "lifestyle",
+        "pilates",
+        "studio",
+        "member"
+    ],
     "language": "id",
-    "content": {"sections": [
-        {"content": "## Tentang Studio Pilates\nKelas pilates untuk postur, kekuatan core, dan rehabilitasi ringan. Cocok pemula.\n\nContoh:\n\"CoreAlign Studio\" fokus pilates mat, private kecil."
-        },
-        {"content": "## Lokasi & Alamat\nContoh: Jl. Sehat No. 8, Surabaya.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Samping klinik fisioterapi."
-        },
-        {"content": "## Jenis Kelas\n- Pilates Mat (kelompok kecil).\n- Private session.\n\nContoh Harga:\nMat Rp 60.000/sesi, Private Rp 200.000/sesi."
-        },
-        {"content": "## Jadwal\nSenin & Kamis 18.00, Sabtu 09.00.\n\nContoh:\nSesi private by appointment."
-        },
-        {"content": "## Fasilitas\nMatras, props (ring, band), ruang ber-AC.\n\nContoh:\nBawa handuk pribadi."
-        },
-        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @corealign_studio\n\nContoh:\nWA Admin: 0812-3030-4040"
-        }
-    ], "keywords": ["studio pilates surabaya", "pilates mat murah", "private pilates", "jadwal kelas pilates", "fasilitas studio pilates"]},
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Studio Pilates\nKelas pilates untuk postur, kekuatan core, dan rehabilitasi ringan. Cocok pemula.\n\nContoh:\n\"CoreAlign Studio\" fokus pilates mat, private kecil."
+            },
+            {
+                "content": "## Lokasi & Alamat\nContoh: Jl. Sehat No. 8, Surabaya.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Samping klinik fisioterapi."
+            },
+            {
+                "content": "## Jenis Kelas\n- Pilates Mat (kelompok kecil).\n- Private session.\n\nContoh Harga:\nMat Rp 60.000/sesi, Private Rp 200.000/sesi."
+            },
+            {
+                "content": "## Jadwal\nSenin & Kamis 18.00, Sabtu 09.00.\n\nContoh:\nSesi private by appointment."
+            },
+            {
+                "content": "## Fasilitas\nMatras, props (ring, band), ruang ber-AC.\n\nContoh:\nBawa handuk pribadi."
+            },
+            {
+                "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @corealign_studio\n\nContoh:\nWA Admin: 0812-3030-4040"
+            }
+        ],
+        "keywords": [
+            "studio pilates surabaya",
+            "pilates mat murah",
+            "private pilates",
+            "jadwal kelas pilates",
+            "fasilitas studio pilates"
+        ]
+    },
     "preview": "",
     "version": "1.1.0",
-    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
     "id": "65f3a91b2c8d9e0012ab3537",
     "isActive": true,
     "downloadCount": 0,

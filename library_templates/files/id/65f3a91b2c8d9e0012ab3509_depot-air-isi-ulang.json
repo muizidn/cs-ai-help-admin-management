@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab3509",
     "title": "Depot Air Isi Ulang",
     "description": "Template basis pengetahuan untuk depot air minum isi ulang, mencakup info jenis air (mineral/RO), harga galon, layanan antar-jemput, dan hasil uji laboratorium kesehatan.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["agribisnis", "air-minum", "depot-air", "kebutuhan-pokok"],
+    "tags": [
+        "agribisnis",
+        "air-minum",
+        "depot-air",
+        "kebutuhan-pokok"
+    ],
     "language": "id",
     "content": {
         "sections": [

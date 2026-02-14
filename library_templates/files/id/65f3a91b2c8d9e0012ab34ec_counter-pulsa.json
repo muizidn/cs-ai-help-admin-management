@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34ec",
     "title": "Counter Pulsa",
     "description": "Template basis pengetahuan untuk counter pulsa dan kuota data, mencakup isi ulang pulsa, paket internet, pembayaran tagihan (PPOB), dan pendaftaran kartu perdana.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["retail", "pulsa", "kuota", "ppob"],
+    "tags": [
+        "retail",
+        "pulsa",
+        "kuota",
+        "ppob"
+    ],
     "language": "id",
     "content": {
         "sections": [

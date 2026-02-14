@@ -1,10 +1,14 @@
 {
-    "_id": "65f3a91b2c8d9e0012ab34de",
     "title": "Depot Ayam Geprek",
     "description": "Template basis pengetahuan untuk depot ayam geprek, mencakup variasi level pedas, aneka topping, menu paket hemat pelajar, dan layanan delivery.",
     "type": "knowledge_base",
     "category": "general",
-    "tags": ["kuliner", "makanan", "ayam-geprek", "pedas"],
+    "tags": [
+        "kuliner",
+        "makanan",
+        "ayam-geprek",
+        "pedas"
+    ],
     "language": "id",
     "content": {
         "sections": [
