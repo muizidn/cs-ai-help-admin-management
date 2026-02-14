@@ -18,7 +18,7 @@
     "test:connections": "curl http://localhost:5173/api/test-connections || echo 'Server not running. Start with: bun run dev'"
   },
   "devDependencies": {
-    "@sveltejs/adapter-node": "^2.0.0",
+    "@sveltejs/adapter-node": "^1.3.1",
     "@sveltejs/kit": "^1.20.4",
     "@sveltejs/vite-plugin-svelte": "^2.4.2",
     "autoprefixer": "^10.4.14",
@@ -28,9 +28,11 @@
     "tailwindcss": "^3.3.0",
     "tslib": "^2.4.1",
     "typescript": "~5.4.0",
+    "@types/adm-zip": "^0.5.5",
     "vite": "^4.4.2"
   },
   "dependencies": {
+    "adm-zip": "^0.5.10",
     "bcryptjs": "^3.0.3",
     "dotenv": "^17.2.1",
     "lucide-svelte": "^0.541.0",
