@@ -22,16 +22,15 @@ export class LibraryTemplateRepository {
   }
 
   async findById(id: string): Promise<LibraryTemplate | null> {
-    const start = Date.now()
     try {
       const collection = await this.getCollection()
-      const result = await collection.findOne({ id })
-      const duration = Date.now() - start
-      logDbOperation('findById', COLLECTION_NAME, duration)
-      return result
+      const libraryTemplate = await collection.findOne({ id })
+      if (libraryTemplate) {
+        return { ...libraryTemplate, id: libraryTemplate.id }
+      }
+      return null
     } catch (error) {
-      const duration = Date.now() - start
-      logDbOperation('findById', COLLECTION_NAME, duration, error)
+      console.error("Error finding library template by ID:", error)
       throw error
     }
   }
@@ -83,8 +82,17 @@ export class LibraryTemplateRepository {
         collection.countDocuments(mongoFilter)
       ])
 
+      // Map _id to id for each item
+      let cleanedItems: LibraryTemplate[] = []
+      for (const item of items) {
+        if (item._id) {
+          const {_id, ...rest} =item
+          cleanedItems.push({ ...rest})
+        }
+      }
+
       return {
-        items,
+        items: cleanedItems,
         total,
         limit,
         offset,
@@ -101,11 +109,9 @@ export class LibraryTemplateRepository {
     try {
       const collection = await this.getCollection()
       const now = new Date()
-      const id = new ObjectId().toString()
 
       const template: LibraryTemplate = {
         ...data,
-        id,
         isActive: true,
         downloadCount: 0,
         rating: 0,

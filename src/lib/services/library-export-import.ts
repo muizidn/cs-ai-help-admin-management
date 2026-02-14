@@ -23,8 +23,6 @@ export class LibraryExportImportService {
                 // Create a filename safe title
                 const safeTitle = item.title.replace(/[^a-z0-9]/gi, "_").toLowerCase();
                 const filename = `${item.id}_${safeTitle}.json`;
-
-                // Pretty print JSON
                 const content = JSON.stringify(item, null, 2);
                 zip.addFile(filename, Buffer.from(content, "utf8"));
             }
@@ -69,6 +67,8 @@ export class LibraryExportImportService {
                         ? await libraryTemplateRepository.findById(templateData.id)
                         : null;
 
+                    console.log("existing?", existing?.id, templateData.id)
+
                     if (existing) {
                         // Update existing
                         await libraryTemplateRepository.update(templateData.id, {
@@ -97,6 +97,7 @@ export class LibraryExportImportService {
                         // Existing logic: match by ID. If not found, create new.
 
                         const createInput: LibraryTemplateCreateInput = {
+                            id: templateData.id,
                             title: templateData.title,
                             description: templateData.description,
                             type: templateData.type,

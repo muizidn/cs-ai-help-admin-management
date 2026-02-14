@@ -54,6 +54,7 @@ export interface LibraryTemplate {
 }
 
 export interface LibraryTemplateCreateInput {
+  id: string
   title: string
   description: string
   type: LibraryTemplateType
