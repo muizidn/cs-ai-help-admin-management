@@ -1,0 +1,65 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3510",
+    "title": "Sewa Villa Lokal",
+    "description": "Template basis pengetahuan untuk penyewaan villa lokal, mencakup tipe unit, fasilitas lengkap, aturan menginap, dan prosedur booking.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["akomodasi", "villa", "sewa", "liburan"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Villa Kami\nVilla nyaman untuk liburan keluarga/rombongan di area [Isi Kota/Wilayah]. Lingkungan tenang, akses mudah ke destinasi wisata, dan fasilitas lengkap untuk kenyamanan tamu.\n\nContoh:\n\"Villa Batu Indah\" berkapasitas 12 orang, dekat Jatim Park dan Batu Night Spectacular. Cocok untuk keluarga besar."
+            },
+            {
+                "content": "## Lokasi & Alamat Lengkap\nMasukkan alamat lengkap agar tamu mudah menemukan lokasi.\n\nContoh: Jl. Mawar No. 7, RT 004/RW 002, Kelurahan Oro-oro Ombo, Kecamatan Batu, Kota Batu, 65316.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: 300 meter dari Jatim Park 2, samping Minimarket."
+            },
+            {
+                "content": "## Tipe Unit & Kapasitas\n- Full House: 3-5 kamar tidur.\n- Kapasitas standar & maksimal (dengan extra bed).\n\nContoh:\nFull House 4 Kamar Tidur + 3 Kamar Mandi. Kapasitas standar 8 orang, maksimal 12 orang (Extra bed Rp 50.000/set/malam)."
+            },
+            {
+                "content": "## Fasilitas Lengkap\n- WiFi [Isi Mbps].\n- Dapur lengkap (kompor, kulkas, alat masak & makan).\n- Water heater.\n- Smart TV/Netflix Ready.\n- Carport [Isi jumlah] mobil.\n\nContoh:\nWiFi 50Mbps (Indihome), Smart TV 43\". Dapur lengkap untuk 12 pax. Carport muat 2 mobil Innova."
+            },
+            {
+                "content": "## Harga Sewa\n- Weekday: Rp [Isi]/malam.\n- Weekend: Rp [Isi]/malam.\n- High Season: Rp [Isi]/malam.\n\nContoh:\nWeekday: Rp 1.200.000/malam. Weekend: Rp 1.500.000/malam. High Season (Lebaran/Natal): Rp 2.000.000/malam."
+            },
+            {
+                "content": "## Prosedur Booking\n- DP 50% untuk konfirmasi.\n- Pelunasan H-1 atau saat check-in.\n- Kirim KTP untuk registrasi.\n\nContoh:\nBooking via WA: \"Booking Villa Batu Indah, Check-in 20/02, 2 malam, 10 orang.\" DP 50% via transfer, pelunasan H-1."
+            },
+            {
+                "content": "## Aturan Menginap\n- Dilarang pesta miras/narkoba.\n- Jaga ketenangan lingkungan.\n- Merokok hanya di area luar.\n- Pasangan bukan muhrim dilarang sekamar (Syariah).\n\nContoh:\nLate check-out maksimal 13.00 (dikenakan charge Rp 100.000/jam jika melewati)."
+            },
+            {
+                "content": "## Metode Pembayaran\n- Tunai.\n- Transfer Bank (BCA/Mandiri).\n- QRIS.\n\nContoh:\nBCA 1234567890 a.n. Villa Batu Indah."
+            },
+            {
+                "content": "## Kontak Admin Reservasi\nWhatsApp: [Isi Nomor WA]\nInstagram: @[Isi Username IG]\n\nContoh:\nWA: 0812-5555-6666 (Admin Villa). IG: @villa_batu_indah"
+            }
+        ],
+        "keywords": [
+            "sewa villa batu",
+            "villa keluarga dekat wisata",
+            "harga villa per malam",
+            "villa full house kapasitas besar",
+            "booking villa weekend"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab3510",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T12:00:00.000Z",
+    "updatedAt": "2026-02-14T12:00:00.000Z",
+    "createdBy": "system"
+}

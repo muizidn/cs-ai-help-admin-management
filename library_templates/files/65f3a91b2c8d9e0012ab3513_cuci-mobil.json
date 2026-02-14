@@ -1,0 +1,35 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3513",
+    "title": "Cuci Mobil",
+    "description": "Template untuk layanan cuci mobil, mencakup paket cuci eksterior/interior, detailing ringan, dan estimasi harga.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["otomotif", "cuci mobil", "detailing", "salon"],
+    "language": "id",
+    "content": {"sections": [
+        {"content": "## Tentang Cuci Mobil Kami\nLayanan cuci mobil profesional dengan standar kebersihan tinggi, shampo pH balanced, dan microfiber berkualitas agar cat tidak baret.\n\nContoh:\n\"CleanCar Wash\" menyediakan paket cuci kilat dan premium."
+        },
+        {"content": "## Lokasi & Alamat Lengkap\nContoh: Jl. Ahmad Yani No. 101, RT 002/RW 001, Kel. Sukamaju, Kec. Cimanggis, Depok, 16452.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Sebelah dealer Toyota."
+        },
+        {"content": "## Paket Layanan\n- Cuci Eksterior.\n- Cuci Eksterior + Interior (Vacuum).\n- Wax/Polish ringan.\n\nContoh Harga:\nCuci Eksterior: Rp 35.000. Eksterior + Interior: Rp 60.000. Wax Ringan: Rp 120.000."
+        },
+        {"content": "## Jam Operasional\nSenin - Minggu: 08.00 - 20.00.\n\nContoh:\nLast order 19.30, antrean ditutup jika penuh."
+        },
+        {"content": "## Metode Pembayaran\nTunai, QRIS, Transfer Bank.\n\nContoh:\nQRIS tersedia, bank BCA untuk transfer."
+        },
+        {"content": "## Cara Booking\nWA: [Isi], format: NAMA # PLAT # JAM.\n\nContoh:\n\"Booking cuci interior-eksterior, Plat B 1234 CD, jam 15.00.\""
+        },
+        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @cleancar_wash\n\nContoh:\nWA Admin: 0812-3456-7890"
+        }
+    ], "keywords": ["cuci mobil terdekat", "harga cuci mobil", "wash and vacuum", "wax mobil murah", "salon mobil ringan"]},
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "id": "65f3a91b2c8d9e0012ab3513",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T12:00:00.000Z",
+    "updatedAt": "2026-02-14T12:00:00.000Z",
+    "createdBy": "system"
+}

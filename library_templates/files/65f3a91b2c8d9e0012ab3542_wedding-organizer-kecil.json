@@ -1,0 +1,33 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3542",
+    "title": "Wedding Organizer Kecil",
+    "description": "Template untuk WO skala kecil, mencakup paket, rundown, vendor rekanan, harga, dan cara booking."
+    ,"type": "knowledge_base",
+    "category": "general",
+    "tags": ["lifestyle", "wedding organizer", "wo", "event"],
+    "language": "id",
+    "content": {"sections": [
+        {"content": "## Tentang WO Kami\nMembantu merencanakan dan mengeksekusi acara pernikahan skala kecil-menengah dengan tim koordinasi berpengalaman.\n\nContoh:\n\"WO Simple Joy\" paket hemat & lengkap."
+        },
+        {"content": "## Paket & Harga\n- Paket Koordinasi D-Day.\n- Paket All-in (dekor, catering, MUA).\n\nContoh Harga:\nD-Day Rp 6.000.000, All-in mulai Rp 55.000.000."
+        },
+        {"content": "## Rundown & Vendor\nRundown detail, vendor rekanan terpercaya (dekor, foto, catering).\n\nContoh:\nRundown 6-10 jam, koordinasi MC & keluarga."
+        },
+        {"content": "## Booking\nWA: [Isi], format: NAMA # TANGGAL # LOKASI.\n\nContoh:\n\"WO D-Day 10/03, Gedung Serbaguna.\""
+        },
+        {"content": "## Pembayaran\nDP 30%, termin sesuai progres.\n\nContoh:\nKontrak kerja & invoice transparan."
+        },
+        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @wo_simplejoy\n\nContoh:\nWA Admin: 0812-2424-3535"
+        }
+    ], "keywords": ["wo murah depok", "paket wedding hemat", "rundown d day", "vendor wedding rekanan", "booking wedding organizer"]},
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "id": "65f3a91b2c8d9e0012ab3542",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T12:15:00.000Z",
+    "updatedAt": "2026-02-14T12:15:00.000Z",
+    "createdBy": "system"
+}

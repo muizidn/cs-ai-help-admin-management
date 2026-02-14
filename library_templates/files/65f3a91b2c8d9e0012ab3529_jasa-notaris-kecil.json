@@ -1,0 +1,35 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3529",
+    "title": "Jasa Notaris Kecil",
+    "description": "Template untuk jasa notaris skala kecil, mencakup layanan akta, legalisasi, balik nama, dan estimasi biaya.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["jasa", "notaris", "legal", "akta"],
+    "language": "id",
+    "content": {"sections": [
+        {"content": "## Tentang Jasa Notaris\nLayanan pembuatan akta sederhana, legalisasi dokumen, dan balik nama sertifikat melalui rekanan PPAT.\n\nContoh:\n\"Notaris Kencana\" fokus layanan UMKM dan keluarga."
+        },
+        {"content": "## Layanan Utama\n- Akta Kuasa, Akta Perjanjian Sewa.\n- Legalisasi dokumen.\n- Balik nama sertifikat via PPAT.\n\nContoh Harga:\nAkta sederhana mulai Rp 1.500.000. Legalisasi Rp 50.000/lembar."
+        },
+        {"content": "## Syarat Dokumen\nKTP, KK, NPWP (opsional), dokumen terkait.\n\nContoh:\nBawa softcopy dan hardcopy untuk percepatan."
+        },
+        {"content": "## Proses & Waktu\nKonsultasi, draft, penandatanganan, legalisasi.\n\nContoh:\nProses 3-7 hari kerja tergantung jenis akta."
+        },
+        {"content": "## Cara Booking\nWA: [Isi], format: NAMA # JENIS LAYANAN.\n\nContoh:\n\"Akta Sewa Ruko 3 tahun.\""
+        },
+        {"content": "## Pembayaran\nTransfer, Tunai.\n\nContoh:\nDP 50% saat draft, pelunasan saat tanda tangan."
+        },
+        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @notaris_kencana\n\nContoh:\nWA Admin: 0812-3434-5656"
+        }
+    ], "keywords": ["jasa notaris murah", "akta kuasa", "legalisasi dokumen notaris", "balik nama sertifikat ppat", "buat perjanjian sewa"]},
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "id": "65f3a91b2c8d9e0012ab3529",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T12:10:00.000Z",
+    "updatedAt": "2026-02-14T12:10:00.000Z",
+    "createdBy": "system"
+}

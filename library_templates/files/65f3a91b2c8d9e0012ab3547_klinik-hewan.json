@@ -1,0 +1,35 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3547",
+    "title": "Klinik Hewan",
+    "description": "Template untuk klinik hewan, mencakup layanan medis, vaksinasi, steril, konsultasi, harga, dan kontak darurat."
+    ,"type": "knowledge_base",
+    "category": "general",
+    "tags": ["agribisnis", "klinik hewan", "veteriner", "vaksin"],
+    "language": "id",
+    "content": {"sections": [
+        {"content": "## Tentang Klinik Hewan\nLayanan pemeriksaan dan perawatan hewan oleh dokter hewan profesional.\n\nContoh:\n\"VetCare Animal Clinic\" melayani kucing/anjing."
+        },
+        {"content": "## Lokasi & Alamat\nContoh: Jl. Fauna No. 3, Tangerang.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Dekat pasar Fauna."
+        },
+        {"content": "## Layanan Medis\n- Konsultasi & pemeriksaan.\n- Vaksinasi (rabies, parvo, distemper).\n- Steril (spay/neuter).\n\nContoh Harga:\nKonsultasi Rp 75.000, Vaksin Rp 120.000-180.000."
+        },
+        {"content": "## Jam Operasional\nSenin - Sabtu 09.00-20.00, Minggu 10.00-16.00.\n\nContoh:\nEmergency call sesuai ketersediaan."
+        },
+        {"content": "## Booking & Catatan\nWA: [Isi], format: NAMA HEWAN # KELUHAN # JAM.\n\nContoh:\n\"Kucing demam, jam 11.00.\""
+        },
+        {"content": "## Pembayaran\nTunai, QRIS, Transfer.\n\nContoh:\nBCA 3344556677 a.n. VetCare."
+        },
+        {"content": "## Kontak Darurat\nWA/Telepon: 0812-xxxx-xxxx (Emergency).\n\nContoh:\nEmergency malam +50% biaya."
+        }
+    ], "keywords": ["klinik hewan terdekat", "vaksin kucing anjing", "steril hewan harga", "dokter hewan tangerang", "emergency klinik hewan"]},
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "id": "65f3a91b2c8d9e0012ab3547",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T12:20:00.000Z",
+    "updatedAt": "2026-02-14T12:20:00.000Z",
+    "createdBy": "system"
+}

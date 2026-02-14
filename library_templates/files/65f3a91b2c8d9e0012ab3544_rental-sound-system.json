@@ -1,0 +1,33 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3544",
+    "title": "Rental Sound System",
+    "description": "Template untuk rental sound system, mencakup paket peralatan, harga sewa harian, teknisi operator, dan booking."
+    ,"type": "knowledge_base",
+    "category": "general",
+    "tags": ["lifestyle", "rental", "sound system", "event"],
+    "language": "id",
+    "content": {"sections": [
+        {"content": "## Tentang Rental Sound\nSewa sound system untuk acara kecil-menengah lengkap dengan operator (opsional).\n\nContoh:\n\"SoundGo Rental\" paket speaker aktif + mixer."
+        },
+        {"content": "## Paket & Harga\n- Paket Mini: 2 speaker aktif, 2 mic wireless.\n- Paket Standard: 4 speaker, mixer, 4 mic.\n\nContoh Harga:\nMini Rp 500.000/hari, Standard Rp 900.000/hari."
+        },
+        {"content": "## Operator & Setup\nOpsional operator teknisi, setup 1-2 jam sebelum acara.\n\nContoh:\nOperator Rp 300.000/hari."
+        },
+        {"content": "## Booking\nWA: [Isi], format: NAMA EVENT # TANGGAL # LOKASI # PAKET.\n\nContoh:\n\"Pengajian 15/03, aula RW, Paket Mini.\""
+        },
+        {"content": "## Pembayaran\nDP 30%, pelunasan H-1.\n\nContoh:\nInvoice via WA/email."
+        },
+        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @soundgo_rental\n\nContoh:\nWA Admin: 0812-2828-3939"
+        }
+    ], "keywords": ["rental sound system murah", "paket sound mini", "operator sound acara", "harga sewa sound harian", "booking sound system"]},
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "id": "65f3a91b2c8d9e0012ab3544",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T12:15:00.000Z",
+    "updatedAt": "2026-02-14T12:15:00.000Z",
+    "createdBy": "system"
+}

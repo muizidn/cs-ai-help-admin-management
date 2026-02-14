@@ -1,0 +1,35 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3535",
+    "title": "Gym Lokal",
+    "description": "Template untuk gym lokal, mencakup fasilitas alat, kelas, member bulanan, aturan, dan jam operasional.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["lifestyle", "gym", "fitness", "member"],
+    "language": "id",
+    "content": {"sections": [
+        {"content": "## Tentang Gym Kami\nGym lokal dengan peralatan lengkap untuk latihan beban dan kardio, cocok untuk pemula hingga advance.\n\nContoh:\n\"StrongFit Gym\" menyediakan trainer bersertifikat."
+        },
+        {"content": "## Lokasi & Alamat\nContoh: Jl. Atlet No. 10, Bandung.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Dekat GOR kota."
+        },
+        {"content": "## Fasilitas & Kelas\n- Alat beban, treadmill, sepeda statis.\n- Kelas Zumba/HIIT/Body Pump.\n\nContoh:\nFree induction untuk member baru."
+        },
+        {"content": "## Jam Operasional\nSenin - Minggu: 06.00 - 22.00.\n\nContoh:\nKelas Zumba tiap Selasa & Kamis 18.00."
+        },
+        {"content": "## Member & Harga\n- Harian: Rp [Isi].\n- Bulanan: Rp [Isi].\n- Paket 3 bulan: Diskon [Isi].\n\nContoh:\nHarian Rp 25.000, Bulanan Rp 200.000, 3 bulan Rp 550.000."
+        },
+        {"content": "## Aturan\nGunakan handuk, jaga kebersihan, kembalikan alat ke tempat semula.\n\nContoh:\nSepatu wajib untuk area beban."
+        },
+        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @strongfit_gym\n\nContoh:\nWA Admin: 0812-1234-0000"
+        }
+    ], "keywords": ["gym murah bandung", "member gym bulanan", "kelas zumba hiit", "alat fitness lengkap", "jam operasional gym"]},
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "id": "65f3a91b2c8d9e0012ab3535",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T12:15:00.000Z",
+    "updatedAt": "2026-02-14T12:15:00.000Z",
+    "createdBy": "system"
+}

@@ -1,0 +1,35 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3525",
+    "title": "Tempat Penitipan Anak",
+    "description": "Template untuk layanan penitipan anak harian, mencakup fasilitas, jadwal, keamanan, biaya, dan prosedur pendaftaran.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["pendidikan", "anak", "penitipan", "daycare"],
+    "language": "id",
+    "content": {"sections": [
+        {"content": "## Tentang Penitipan Anak\nLayanan penitipan anak harian setengah/full day dengan pengasuh terlatih. Kegiatan bermain edukatif dan jadwal makan teratur.\n\nContoh:\n\"Daycare Ceria\" kapasitas 20 anak, usia 2-6 tahun."
+        },
+        {"content": "## Lokasi & Alamat\nContoh: Jl. Cemara No. 12, RT 004/RW 002, Kel. Mekarsari, Bogor.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Belakang TK Mekarsari."
+        },
+        {"content": "## Fasilitas & Keamanan\n- Ruang bermain ber-AC.\n- CCTV area umum.\n- Menu makanan sehat.\n- Tempat tidur/nap room.\n\nContoh:\nMenu mingguan: Senin sup ayam, Selasa sayur bening + telur."
+        },
+        {"content": "## Jadwal & Program Harian\n- Full day: 07.00-17.00.\n- Half day: 07.00-12.00.\n- Kegiatan: Bernyanyi, mewarnai, motorik halus/kasar.\n\nContoh:\nJadwal nap 12.00-13.30, snack 15.00."
+        },
+        {"content": "## Biaya & Pendaftaran\n- Pendaftaran: Rp [Isi].\n- Bulanan: Rp [Isi].\n\nContoh:\nDaftar Rp 200.000, Bulanan Rp 1.200.000 (Full day)."
+        },
+        {"content": "## Syarat & Ketentuan\nFotokopi KK/KTP, Kartu Imunisasi, info alergi, perlengkapan pribadi anak.\n\nContoh:\nBawa diapers, baju ganti 2 pasang."
+        },
+        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @daycare_ceria\n\nContoh:\nWA Admin: 0812-9999-8888"
+        }
+    ], "keywords": ["penitipan anak bogor", "daycare full day", "menu daycare sehat", "biaya penitipan anak", "daycare dengan cctv"]},
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "id": "65f3a91b2c8d9e0012ab3525",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T12:05:00.000Z",
+    "updatedAt": "2026-02-14T12:05:00.000Z",
+    "createdBy": "system"
+}

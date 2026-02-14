@@ -1,0 +1,35 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3512",
+    "title": "Tambal Ban",
+    "description": "Template untuk usaha tambal ban mobil/motor, mencakup layanan tambal, isi angin, nitrogen, dan penjualan aksesori ban.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["otomotif", "ban", "tambal", "bengkel"],
+    "language": "id",
+    "content": {"sections": [
+        {"content": "## Tentang Usaha Tambal Ban\nKami melayani tambal ban mobil dan motor, isi angin, nitrogen, serta ganti pentil. Peralatan modern (press panas) untuk hasil maksimal dan tahan lama.\n\nContoh:\n\"Tambal Ban FastFix\" spesialis press panas untuk ban tubeless."
+        },
+        {"content": "## Lokasi & Alamat Lengkap\nContoh: Jl. Raya Seruni No. 15, RT 005/RW 003, Kel. Seruni, Kec. Serang, Kota Serang, 42111.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Samping SPBU Seruni."
+        },
+        {"content": "## Layanan Utama\n- Tambal Ban Tubeless (Press Panas).\n- Tambal Ban Dalam (Patch).\n- Isi Angin Biasa & Nitrogen.\n- Ganti Pentil Karet/Metal.\n\nContoh Harga:\nTambal Tubeless: Rp 20.000-30.000. Isi Nitrogen: Rp 10.000/ban."
+        },
+        {"content": "## Aksesori & Penjualan\n- Cairan Anti Bocor.\n- Pentil Metal.\n- Kompresor Angin Portable.\n\nContoh:\nPentil Metal: Rp 25.000/pcs. Anti Bocor: Rp 35.000/botol."
+        },
+        {"content": "## Jam Operasional\n- Senin - Minggu: 07.00 - 21.00.\n\nContoh:\nEmergency Call 24 Jam (Area dekat bengkel, +Rp 20.000)."
+        },
+        {"content": "## Metode Pembayaran\n- Tunai.\n- QRIS.\n\nContoh:\nQRIS tersedia di meja kasir."
+        },
+        {"content": "## Kontak & Lokasi\nWA: [Isi]\nTelepon: [Isi]\n\nContoh:\nWA: 0812-1234-5678 (FastFix Tambal Ban)"
+        }
+    ], "keywords": ["tambal ban tubeless", "isi nitrogen ban", "ganti pentil ban", "bengkel ban terdekat", "tambal ban press panas"]},
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "id": "65f3a91b2c8d9e0012ab3512",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T12:00:00.000Z",
+    "updatedAt": "2026-02-14T12:00:00.000Z",
+    "createdBy": "system"
+}

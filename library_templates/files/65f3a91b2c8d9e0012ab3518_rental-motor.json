@@ -1,0 +1,35 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3518",
+    "title": "Rental Motor",
+    "description": "Template untuk jasa rental motor, mencakup pilihan unit, syarat sewa, harga harian, dan cara booking.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["otomotif", "rental motor", "sewa motor", "transport"],
+    "language": "id",
+    "content": {"sections": [
+        {"content": "## Tentang Rental Motor Kami\nUnit motor matic/bebek harian untuk mobilitas praktis. Helm & jas hujan disediakan.\n\nContoh:\n\"MotoRent\" menyediakan Beat, Vario, NMax."
+        },
+        {"content": "## Lokasi & Alamat Lengkap\nContoh: Jl. Sudirman No. 77, RT 003/RW 005, Kel. Sukasari, Bandung, 40123.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Samping kampus UNPAD city."
+        },
+        {"content": "## Pilihan Unit & Harga\n- Beat/Vario: Rp [Isi]/24 jam.\n- NMax: Rp [Isi]/24 jam.\n\nContoh:\nBeat Rp 75.000, Vario Rp 90.000, NMax Rp 150.000 per 24 jam."
+        },
+        {"content": "## Syarat & Ketentuan\n- KTP + SIM C.\n- Deposit Rp [Isi].\n- Fuel policy: BBM kembali seperti awal.\n\nContoh:\nDeposit Rp 300.000 (dikembalikan saat unit kembali)."
+        },
+        {"content": "## Cara Booking\nWA: [Isi], format: NAMA # UNIT # TANGGAL # DURASI.\n\nContoh:\n\"Booking Vario, 23/02, 24 jam.\""
+        },
+        {"content": "## Pembayaran\nTunai, Transfer, QRIS.\n\nContoh:\nPelunasan saat pengambilan unit."
+        },
+        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @motorent_bandung\n\nContoh:\nWA Admin: 0812-7777-6666"
+        }
+    ], "keywords": ["rental motor bandung", "sewa beat harian", "harga rental vario", "rental nmax 24 jam", "sewa motor dekat kampus"]},
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "id": "65f3a91b2c8d9e0012ab3518",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T12:00:00.000Z",
+    "updatedAt": "2026-02-14T12:00:00.000Z",
+    "createdBy": "system"
+}

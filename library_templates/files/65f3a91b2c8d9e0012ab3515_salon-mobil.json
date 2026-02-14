@@ -1,0 +1,37 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3515",
+    "title": "Salon Mobil",
+    "description": "Template untuk layanan salon mobil, mencakup detailing interior-eksterior, poles, coating, dan paket harga.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["otomotif", "salon mobil", "detailing", "polish", "coating"],
+    "language": "id",
+    "content": {"sections": [
+        {"content": "## Tentang Salon Mobil Kami\nSpesialis detailing interior-eksterior, poles, dan coating untuk mengembalikan kilau mobil Anda. Peralatan profesional dan chemical aman.\n\nContoh:\n\"DetailPro\" menawarkan paket poles 2 step dan interior deep cleaning."
+        },
+        {"content": "## Lokasi & Alamat Lengkap\nContoh: Jl. Raya Margonda No. 200, RT 001/RW 002, Kel. Kemiri Muka, Kec. Beji, Depok, 16423.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Samping kampus UI."
+        },
+        {"content": "## Paket Layanan\n- Interior Deep Cleaning.\n- Eksterior Polishing (1-2 step).\n- Nano Ceramic Coating.\n\nContoh Harga:\nInterior Deep: Rp 450.000. Poles 2 step: Rp 750.000. Coating 1 tahun: Rp 2.500.000."
+        },
+        {"content": "## Estimasi Waktu\n- Interior Deep: 3-5 jam.\n- Poles 2 step: 4-6 jam.\n- Coating: 1-2 hari (curing).\n\nContoh:\nDrop off pagi, selesai sore."
+        },
+        {"content": "## Jam Operasional\nSenin - Minggu: 09.00 - 19.00.\n\nContoh:\nReservasi disarankan agar tidak menunggu lama."
+        },
+        {"content": "## Metode Pembayaran\nTunai, QRIS, Transfer.\n\nContoh:\nBCA 5566778899 a.n. DetailPro."
+        },
+        {"content": "## Cara Booking\nWA: [Isi], format: NAMA # TIPE MOBIL # PAKET # TANGGAL.\n\nContoh:\n\"Booking Poles 2 step, Avanza, 21/02.\""
+        },
+        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @detailpro_margonda\n\nContoh:\nWA Admin: 0813-1234-5678"
+        }
+    ], "keywords": ["salon mobil depok", "detailing interior eksterior", "poles mobil harga", "nano ceramic coating", "deep cleaning jok"]},
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "id": "65f3a91b2c8d9e0012ab3515",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T12:00:00.000Z",
+    "updatedAt": "2026-02-14T12:00:00.000Z",
+    "createdBy": "system"
+}

@@ -1,0 +1,35 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3519",
+    "title": "Showroom Mobil Bekas",
+    "description": "Template untuk showroom mobil bekas, mencakup stok unit, inspeksi, garansi, skema kredit, dan kontak sales.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["otomotif", "showroom", "mobil bekas", "kredit"],
+    "language": "id",
+    "content": {"sections": [
+        {"content": "## Tentang Showroom Kami\nMenjual mobil bekas pilihan dengan kondisi terawat, siap pakai. Unit terinspeksi dan bergaransi mesin/transmisi.\n\nContoh:\n\"AutoPrime Used Car\" fokus unit 5-8 tahun dengan riwayat servis."
+        },
+        {"content": "## Lokasi & Alamat Lengkap\nContoh: Jl. Veteran No. 99, RT 005/RW 002, Kel. Kebayoran, Jakarta Selatan, 12110.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Dekat dealer resmi Honda."
+        },
+        {"content": "## Stok Unit & Highlight\n- City Car, MPV, SUV, LCGC.\n- Kilometer rendah.\n- Siap kredit kerja sama leasing.\n\nContoh:\nAvanza G 2017, km 65rb, servis record, harga Rp 165jt."
+        },
+        {"content": "## Garansi & Inspeksi\n- Garansi mesin 1 bulan.\n- Cek 100 titik (eksterior, interior, mesin).\n\nContoh:\nUnit bebas bekas banjir/terbakar, bersurat lengkap."
+        },
+        {"content": "## Opsi Pembiayaan\n- Kredit via leasing (DP mulai 25%).\n- Simulasi cicilan.\n\nContoh:\nDP Rp 50jt, tenor 4 tahun, cicilan Rp 3,5jt/bulan."
+        },
+        {"content": "## Test Drive & Booking\n- Test drive by appointment.\n- Booking unit: DP tanda jadi Rp [Isi].\n\nContoh:\nTanda jadi Rp 5.000.000, refund jika unit tidak lolos inspeksi pembeli."
+        },
+        {"content": "## Kontak Sales\nWA: [Isi]\nInstagram: @[Isi]\n\nContoh:\nWA: 0812-4444-3333 (Andi - Sales). IG: @autoprime_usedcar"
+        }
+    ], "keywords": ["showroom mobil bekas jakarta", "garansi mesin mobil bekas", "kredit mobil bekas dp kecil", "cek 100 titik", "test drive showroom"]},
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "id": "65f3a91b2c8d9e0012ab3519",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T12:00:00.000Z",
+    "updatedAt": "2026-02-14T12:00:00.000Z",
+    "createdBy": "system"
+}

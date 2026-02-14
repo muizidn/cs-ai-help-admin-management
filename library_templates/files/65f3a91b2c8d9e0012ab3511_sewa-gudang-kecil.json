@@ -1,0 +1,42 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3511",
+    "title": "Sewa Gudang Kecil",
+    "description": "Template untuk penyewaan gudang kecil/mini storage, mencakup ukuran unit, akses, keamanan, dan syarat sewa.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["properti", "gudang", "sewa", "logistik"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {"content": "## Tentang Gudang Kami\nGudang kecil/mini storage untuk UMKM dan individu. Cocok untuk stok barang, arsip, peralatan proyek, atau pindahan rumah.\n\nContoh:\n\"Mini Storage Depok\" berlokasi strategis dekat tol, akses mobil box mudah."
+            },
+            {"content": "## Lokasi & Alamat Lengkap\nContoh: Jl. Nusantara No. 8, RT 003/RW 006, Kelurahan Sawangan Baru, Kecamatan Sawangan, Kota Depok, 16516.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Belakang SPBU Sawangan."
+            },
+            {"content": "## Ukuran Unit & Spesifikasi\n- 3x4m (12 m2).\n- 4x6m (24 m2).\n- Tinggi plafon 3m.\n- Lantai keramik/epoxy.\n\nContoh:\nUnit 3x4m muat 100 karton ukuran sedang."
+            },
+            {"content": "## Akses & Keamanan\n- Akses 24 jam (PIN gate).\n- CCTV area koridor.\n- Security malam.\n\nContoh:\nAkses gerbang otomatis dengan PIN unik, ganti setiap akhir bulan."
+            },
+            {"content": "## Harga Sewa & Deposit\n- Unit 3x4m: Rp [Isi]/bulan.\n- Unit 4x6m: Rp [Isi]/bulan.\n- Deposit: Rp [Isi] (dikembalikan).\n\nContoh:\n3x4m: Rp 1.200.000/bulan. 4x6m: Rp 2.500.000/bulan. Deposit Rp 1.000.000."
+            },
+            {"content": "## Syarat & Ketentuan\n- Dilarang menyimpan bahan berbahaya/berbau/p mudah terbakar.\n- Maksimal beban lantai [Isi] kg/m2.\n- Jaga kebersihan koridor.\n\nContoh:\nTidak menerima penyimpanan gas, bahan kimia, atau makanan basah."
+            },
+            {"content": "## Cara Booking\n- Kirim data KTP & NPWP (opsional).\n- Pilih unit & periode sewa.\n- Bayar DP 1 bulan + deposit.\n\nContoh:\n\"Booking unit 3x4m, 6 bulan, mulai 01/03.\""
+            },
+            {"content": "## Metode Pembayaran\n- Transfer Bank.\n- QRIS.\n\nContoh:\nBCA 9876543210 a.n. Mini Storage Depok."
+            },
+            {"content": "## Kontak Admin\nWA: [Isi]\nTelepon: [Isi]\n\nContoh:\nWA: 0812-7777-8888 (Admin Gudang)"
+            }
+        ],
+        "keywords": ["sewa gudang kecil", "mini storage depok", "harga gudang bulanan", "gudang aman cctv", "akses gudang 24 jam"]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "id": "65f3a91b2c8d9e0012ab3511",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T12:00:00.000Z",
+    "updatedAt": "2026-02-14T12:00:00.000Z",
+    "createdBy": "system"
+}

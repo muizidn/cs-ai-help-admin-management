@@ -1,0 +1,33 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3541",
+    "title": "Makeup Artist",
+    "description": "Template untuk jasa makeup artist (wisuda/engagement/wedding), mencakup paket, durasi, harga, dan booking."
+    ,"type": "knowledge_base",
+    "category": "general",
+    "tags": ["lifestyle", "makeup", "mua", "wedding"],
+    "language": "id",
+    "content": {"sections": [
+        {"content": "## Tentang Makeup Artist\nJasa MUA untuk acara spesial dengan produk aman dan teknik yang tahan lama.\n\nContoh:\n\"Glow MUA\" spesialis soft glam untuk wisuda dan wedding."
+        },
+        {"content": "## Paket & Harga\n- Wisuda: Rp [Isi].\n- Engagement: Rp [Isi].\n- Wedding: Rp [Isi].\n\nContoh:\nWisuda Rp 350.000, Engagement Rp 800.000, Wedding Rp 3.500.000."
+        },
+        {"content": "## Durasi & Include\nDurasi 1-3 jam. Sudah include bulu mata dan retouch ringan.\n\nContoh:\nTrial makeup tersedia untuk wedding."
+        },
+        {"content": "## Booking\nWA: [Isi], format: NAMA # TANGGAL # ACARA.\n\nContoh:\n\"Wisuda 21/02 pagi, lokasi rumah Depok.\""
+        },
+        {"content": "## Pembayaran\nDP 30-50%, pelunasan H-1.\n\nContoh:\nBCA 3344556677 a.n. Glow MUA."
+        },
+        {"content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @glow_mua\n\nContoh:\nWA Admin: 0812-2020-3131"
+        }
+    ], "keywords": ["makeup artist depok", "harga makeup wisuda", "mua wedding soft glam", "booking mua engagement", "trial makeup"]},
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {"variables": [], "conditions": [], "actions": [], "dataSourceType": "", "keywords": [], "requiredPermissions": [], "exampleUseCases": []},
+    "id": "65f3a91b2c8d9e0012ab3541",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T12:15:00.000Z",
+    "updatedAt": "2026-02-14T12:15:00.000Z",
+    "createdBy": "system"
+}
