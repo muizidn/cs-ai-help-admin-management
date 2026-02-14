@@ -1,0 +1,81 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34db",
+    "title": "Coffee To Go",
+    "description": "Template basis pengetahuan untuk booth kopi take-away, mencakup menu cepat saji, bundling promo, kemasan literan, dan integrasi ojek online.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kuliner", "minuman", "kopi", "take-away"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Coffee To Go Kami\nKami menyajikan kopi berkualitas dengan konsep grab-and-go yang cepat dan praktis. Sangat cocok bagi Anda yang sibuk dan membutuhkan asupan kafein harian tanpa harus mengantre lama. Rasa mantap, harga hemat!\n\nContoh: 'Kopi Kilat' hadir untuk para pekerja kantoran yang butuh booster pagi. Kopi kami diracik dengan biji Robusta-Arabika blend yang pas untuk lidah lokal, disajikan dalam cup yang handy."
+            },
+            {
+                "content": "## Lokasi Booth & Alamat\nInformasikan lokasi tepat booth Anda.\n\nContoh: Booth Kopi Kilat, Depan Alfamart Stasiun Tebet, Jl. Lapangan Ros Selatan No. 45, Jakarta Selatan.\nMaps: https://maps.app.goo.gl/xxxx\nPatokan: Tenda warna kuning hitam, sebelah gerobak gorengan."
+            },
+            {
+                "content": "## Jam Operasional Booth\nKami siap melayani pesanan Anda:\n- Senin - Sabtu: 07.00 - 20.00 WIB.\n- Minggu: 08.00 - 17.00 WIB.\n- Buka setiap hari (Tanggal merah tetap buka kecuali Lebaran)."
+            },
+            {
+                "content": "## Menu Andalan (Best Seller)\nMinuman favorit pelanggan kami:\n- Es Kopi Susu Mantap (Rp 15.000): Kopi + Susu + Gula Aren.\n- Es Kopi Hitam Dingin (Rp 12.000): Americano style, segar tanpa gula (bisa request gula).\n- Thai Tea Original (Rp 15.000): Teh Thailand asli yang creamy.\n- Matcha Milk Ice (Rp 18.000): Rasa matcha premium.\n- Choco Creamy (Rp 15.000): Cokelat kental yang manisnya pas."
+            },
+            {
+                "content": "## Kopi Kemasan Literan\nIngin stok kopi di rumah atau kantor? Kami menyediakan kemasan botol 1 Liter:\n- Es Kopi Susu Literan: Rp 75.000.\n- Es Cokelat Literan: Rp 80.000.\n- Tahan 3 hari di dalam kulkas. Botol kaca reusable (Bisa ditukar tambah diskon Rp 5.000)."
+            },
+            {
+                "content": "## Paket Bundling & Promo\nNikmati harga lebih hemat dengan paket bundling:\n- Paket Berdua (2 Cup Kopi Susu): Rp 25.000.\n- Paket Kerja (4 Cup Kopi Susu): Rp 50.000.\n- Promo Flash Sale (Jam 07.00-09.00): Diskon Rp 2.000 per cup untuk semua varian kopi (Khusus pembelian langsung)."
+            },
+            {
+                "content": "## Custom Order (Level Manis & Es)\nAnda bisa menyesuaikan pesanan sesuai selera:\n- Sugar Level: Less Sugar (50%) / Normal (100%) / Extra Sugar (120%).\n- Ice Level: Less Ice / Normal / No Ice (Isi cairan tetap sama, gelas tidak penuh).\n- Topping: Boba (+Rp 3.000) / Jelly (+Rp 3.000) / Cheese Cream (+Rp 5.000)."
+            },
+            {
+                "content": "## Pesanan via Ojek Online\nMalas keluar? Temukan kami di aplikasi favorit Anda:\n- GoFood / GrabFood / ShopeeFood: Cari 'Kopi Kilat Stasiun Tebet'.\n- Promo App: Sering ada diskon ongkir dan potongan harga s.d 40% di jam makan siang."
+            },
+            {
+                "content": "## Pemesanan Jumlah Banyak (Bulk Order)\nKami melayani pesanan untuk meeting kantor:\n- Minimal order 20 cup.\n- Harga spesial (Diskon 10%).\n- Bisa diantar langsung oleh kru kami (Radius 1km).\n- Pesan H-2 jam via WhatsApp."
+            },
+            {
+                "content": "## Metode Pembayaran Digital\nBooth kami mendukung pembayaran cashless:\n- QRIS (Gopay/OVO/Dana/BCA Mobile).\n- Tunai (Mohon siapkan uang pas untuk mempercepat antrean)."
+            },
+            {
+                "content": "## Hubungi Kami\nWhatsApp Order: 0856-xxxx-xxxx\nInstagram: @kopikilat_id\n\nFollow sosial media kami untuk info menu seasonal baru!"
+            }
+        ],
+        "keywords": [
+            "kopi take away terdekat",
+            "es kopi susu murah",
+            "kopi literan enak",
+            "kopi booth minimalis",
+            "kopi susu gula aren",
+            "promo kopi gajian",
+            "kopi gofood terlaris",
+            "minuman segar kekinian",
+            "thai tea botolan",
+            "kopi cepat saji",
+            "harga kopi susu 15rb",
+            "paket kopi kantor",
+            "kopi susu creamy",
+            "booth minuman franchise",
+            "order kopi via whatsapp"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34db",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:40:00.000Z",
+    "createdBy": "system"
+}

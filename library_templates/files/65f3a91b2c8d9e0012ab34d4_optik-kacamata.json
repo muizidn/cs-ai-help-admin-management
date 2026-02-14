@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34d4",
+    "title": "Optik Kacamata",
+    "description": "Template basis pengetahuan untuk optik kacamata, mencakup pemeriksaan mata gratis, koleksi frame, jenis lensa, dan lensa kontak.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kesehatan", "mata", "optik", "kacamata"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Optik Kami\nOptik kami menyediakan solusi penglihatan terbaik dengan koleksi frame kacamata yang modis dan lensa berkualitas tinggi. Kami berkomitmen memberikan pelayanan yang akurat dan kenyamanan bagi mata Anda melalui pemeriksaan mata profesional.\n\nContoh: Optik Jaya Vision telah melayani masyarakat sejak 2010. Kami menggunakan teknologi pemeriksaan mata digital terbaru untuk memastikan keakuratan ukuran lensa Anda."
+            },
+            {
+                "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap optik Anda agar pelanggan mudah menemukan lokasi.\n\nContoh: Mall Grand Indonesia Lantai LG No. 22, Jl. M.H. Thamrin No. 1, Kelurahan Kebon Melati, Kecamatan Tanah Abang, Jakarta Pusat, 10230.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: Depan supermarket Foodhall, di antara toko sepatu Adidas dan Nike."
+            },
+            {
+                "content": "## Jam Operasional\nInformasikan jam buka dan tutup optik Anda setiap harinya.\n\nContoh:\n- Senin - Sabtu: 10.00 - 21.00\n- Minggu: 10.00 - 19.00\n- Hari Libur Nasional: Tetap Buka (Kecuali Hari Raya Idul Fitri)"
+            },
+            {
+                "content": "## Pemeriksaan Mata Gratis\nJelaskan mengenai layanan periksa mata di optik Anda.\n\nContoh: Kami menyediakan GRATIS Pemeriksaan Mata untuk setiap pembelian kacamata. Pemeriksaan meliputi:\n1. Autoref (Cek komputer): Memberikan estimasi ukuran secara cepat.\n2. Manual Trial Lens: Menentukan kenyamanan penglihatan Anda secara nyata.\n3. Tes Buta Warna dasar.\nSemua dilakukan oleh Refraksionis Optisien (RO) berlisensi."
+            },
+            {
+                "content": "## Jenis Lensa yang Tersedia\nSebutkan pilihan lensa beserta fungsinya.\n\nContoh:\n- Lensa Anti Radiasi (Rp 150rb): Melindungi mata dari radiasi UV standar.\n- Lensa Blu-ray (Rp 250rb): Wajib bagi pengguna komputer/HP, memblokir sinar biru berbahaya.\n- Lensa Photocromic (Rp 300rb): Berubah menjadi gelap saat terkena sinar matahari (transisi).\n- Lensa Blue-chromic (Rp 450rb): Kombinasi perlindungan sinar biru dan fitur transisi gelap.\n- Lensa Progresif (Mulai Rp 600rb): Satu lensa untuk lihat jauh dan baca (tanpa garis pembatas)."
+            },
+            {
+                "content": "## Koleksi Frame Kacamata\nInformasikan pilihan frame yang tersedia.\n\nContoh: Kami memiliki koleksi frame untuk segala usia dan gaya:\n- Frame Metal: Merk ternama (Ray-Ban, Oakley) dan ekonomis.\n- Frame TR90 (Plastik Lentur): Ringan, anti-patah, sangat nyaman untuk harian.\n- Frame Titanium: Sangat ringan, anti-karat, dan awet.\n- Frame Anak: Pilihan warna cerah dengan bahan silicon yang aman."
+            },
+            {
+                "content": "## Lensa Kontak (Softlens)\nInformasikan ketersediaan lensa kontak.\n\nContoh: Tersedia berbagai merk (Acuvue, Freshkon, X2):\n- Softlens Bening (Clear): Harian atau Bulanan.\n- Softlens Warna: Tersedia berbagai diameter dan warna natural.\n- Cairan Pembersih (Solution): Ukuran 60ml hingga 360ml.\nHarga mulai dari Rp 65.000 per box."
+            },
+            {
+                "content": "## Estimasi Harga & Paket Hemat\nBerikan gambaran paket bundling yang menarik.\n\nContoh:\n- Paket Hemat: Frame + Lensa Anti Radiasi (Minus < 4.00) HANYA Rp 199.000.\n- Paket Digital: Frame + Lensa Blu-ray HANYA Rp 350.000.\n- Promo Beli 1 Gratis 1: Untuk koleksi frame tertentu (S&K berlaku)."
+            },
+            {
+                "content": "## Lama Proses Pembuatan\nJelaskan waktu tunggu bagi pelanggan.\n\nContoh:\n- Kacamata Standar (Minus/Silinder ready stok): Selesai dalam 20 menit (Bisa ditunggu).\n- Lensa Pesanan Khusus (Progresif/Minus Tinggi): 3 - 5 hari kerja.\nKami akan menginfokan via WhatsApp jika kacamata Anda sudah siap diambil."
+            },
+            {
+                "content": "## Layanan Purna Jual (Service)\nSebutkan layanan gratis yang diberikan setelah pembelian.\n\nContoh: Nikmati layanan purna jual seumur hidup kami:\n- GRATIS Cuci Kacamata (Ultrasonic Cleaner).\n- GRATIS Setel Frame (biar tidak miring atau melorot).\n- GRATIS Ganti Baut dan Nosepad (bantalan hidung).\n- Garansi kenyamanan lensa 1 minggu (Ganti baru jika ukuran tidak pas)."
+            }
+        ],
+        "keywords": [
+            "optik terdekat",
+            "periksa mata gratis",
+            "harga kacamata minus",
+            "kacamata anti radiasi",
+            "lensa photocromic",
+            "softlens warna",
+            "frame kacamata pria",
+            "kacamata anak",
+            "lensa progresif harga",
+            "ganti lensa kacamata",
+            "optik kacamata murah",
+            "cairan softlens",
+            "kacamata blue ray",
+            "service kacamata",
+            "kacamata gaya"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34d4",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:00:00.000Z",
+    "createdBy": "system"
+}

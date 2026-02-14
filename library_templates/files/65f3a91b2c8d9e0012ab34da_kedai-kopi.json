@@ -1,0 +1,81 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34da",
+    "title": "Kedai Kopi",
+    "description": "Template basis pengetahuan untuk kedai kopi (Coffee Shop), mencakup menu signature, beans yang tersedia, manual brew, snacks, dan fasilitas Wi-Fi.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kuliner", "minuman", "kopi", "cafe"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Kedai Kopi Kami\nKedai kopi kami adalah tempat favorit untuk bersantai, bekerja, atau sekadar berbincang dengan teman. Kami menyajikan kopi pilihan dari biji kopi lokal terbaik yang diproses oleh barista berpengalaman untuk menghadirkan aroma dan rasa yang istimewa.\n\nContoh: 'Senja Kopi Space' hadir sebagai ruang kreatif di Jakarta Selatan. Kami menggunakan 100% biji kopi Arabika Gayo untuk house blend kami, menciptakan rasa yang bold namun smooth."
+            },
+            {
+                "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap coffee shop Anda.\n\nContoh: Ruko Boulevard Blok A No. 5, Jl. Grand Depok City, Depok, 16412.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: Sebelah Toko Buku Gramedia, lantai 2 (di atas Barbershop)."
+            },
+            {
+                "content": "## Jam Operasional\nNikmati kopi kami setiap hari:\n- Senin - Kamis: 08.00 - 22.00 WIB.\n- Jumat - Minggu: 09.00 - 23.00 WIB (Last Order 22.30).\n- Hari Libur: Tetap buka sesuai jam operasional weekend."
+            },
+            {
+                "content": "## Menu Kopi Berbasis Espresso\nKami menyediakan berbagai minuman klasik (Hot/Ice):\n- Espresso (Rp 18.000).\n- Americano / Long Black (Rp 22.000).\n- Cafe Latte / Cappuccino (Rp 28.000).\n- Flat White (Rp 28.000).\n- Caramel Macchiato (Rp 35.000).\n- Mochaccino (Rp 32.000).\nExtra Shot: + Rp 5.000 | Ganti Oatmilk: + Rp 8.000."
+            },
+            {
+                "content": "## Manual Brew (Pour Over)\nBagi pecinta kopi murni, kami menyediakan pilihan single origin beans (Arabica) dengan metode seduh manual:\n- Metode: V60, Kalita Wave, AeroPress, French Press, Japanese Ice.\n- Pilihan Beans: Gayo Wine, Bali Kintamani, Ethiopia Yirgacheffe (Seasonal).\n- Harga: Rp 30.000 - Rp 45.000 (Tergantung jenis beans).\nSilakan tanyakan 'Beans of the Month' kami kepada barista di meja bar."
+            },
+            {
+                "content": "## Signature Coffee & Non-Coffee\nMenu spesial kami:\n- Es Kopi Susu Senja (Gula Aren): Rp 20.000 (Best Seller).\n- Sea Salt Caramel Latte: Rp 32.000.\n- Avocado Coffee: Rp 35.000.\n- Matcha Latte (Pure Matcha Jepang): Rp 30.000.\n- Artisan Tea (Chamomile/Earl Grey): Rp 25.000.\n- Red Velvet / Chocolate Signature: Rp 28.000."
+            },
+            {
+                "content": "## Snack & Makanan Ringan\nTeman minum kopi Anda:\n- Croissant (Butter/Chocolate/Almond): Mulai Rp 22.000.\n- French Fries / Mix Platter (Sosis+Nugget): Rp 25.000.\n- Pisang Goreng Keju: Rp 18.000.\n- Brownies Panggang (Slice): Rp 15.000.\n- Rice Bowl (Chicken Katsu/Beef Yakiniku): Rp 35.000 (Tersedia jam 11.00 - 20.00)."
+            },
+            {
+                "content": "## Fasilitas Kerja (Work from Cafe)\nKami mendukung produktivitas Anda dengan fasilitas:\n- Wi-Fi Kecepatan Tinggi (Up to 100 Mbps) - Password: kopisenja123\n- Colokan Listrik di setiap meja dan area bar.\n- Ruangan ber-AC (Indoor) yang dingin dan nyaman.\n- Smoking Area (Outdoor/Semi-outdoor) yang luas.\n- Musholla tersedia di Lantai 3."
+            },
+            {
+                "content": "## Biji Kopi & Bubuk (Beans for Home)\nAnda bisa membawa pulang rasa kopi kami. Kami menjual biji kopi sangrai (Roasted Beans):\n- House Blend (Espresso Base): Rp 85.000 / 200gr.\n- Single Origin (Arabica): Rp 110.000 / 200gr.\nKami bisa membantu menggiling (grind) biji kopi sesuai kebutuhan (Halus/Medium/Kasar) Gratis."
+            },
+            {
+                "content": "## Promo & Loyalty Program\nDapatkan keuntungan lebih:\n- Promo Morning Coffee: Diskon 20% semua menu kopi sebelum jam 11.00 siang.\n- Loyalty Card: Beli 9 cup kopi apa saja, GRATIS 1 cup (Cappuccino/Latte).\n- Diskon Pelajar: 10% dengan menunjukkan kartu pelajar/mahasiswa aktif."
+            },
+            {
+                "content": "## Kontak & Media Sosial\n- Instagram: @kopisenja_space\n- WhatsApp Reservasi: 0812-xxxx-xxxx\n- TikTok: @kopisenja_daily\nTag kami di story Anda untuk kesempatan mendapatkan voucher diskon!"
+            }
+        ],
+        "keywords": [
+            "kedai kopi terdekat",
+            "coffee shop instagramable",
+            "es kopi susu gula aren",
+            "manual brew v60",
+            "tempat nugas wifi kencang",
+            "harga kopi latte",
+            "biji kopi arabika",
+            "cafe buka sampai malam",
+            "matcha latte enak",
+            "snack cafe murah",
+            "promo kopi hari ini",
+            "barista indonesia",
+            "tempat nongkrong outdoor",
+            "roastery kopi lokal",
+            "menu coffee shop"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34da",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:30:00.000Z",
+    "createdBy": "system"
+}

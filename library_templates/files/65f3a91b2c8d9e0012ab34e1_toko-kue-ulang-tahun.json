@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34e1",
+    "title": "Toko Kue Ulang Tahun",
+    "description": "Template basis pengetahuan untuk toko kue spesialis ulang tahun, mencakup kue custom, dekorasi tart, pilihan rasa base cake, dan layanan delivery kue.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kuliner", "kue", "ulang-tahun", "bakery"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Toko Kue Kami\nKami spesialis dalam menciptakan momen manis untuk hari spesial Anda. Dengan desain kue yang cantik dan rasa yang premium, setiap kue ulang tahun kami dibuat dengan detail tinggi dan kasih sayang untuk memastikan perayaan Anda tak terlupakan.\n\nContoh:\n\"Sweet Moments Cake\" telah melayani lebih dari 1000 pesanan kue ulang tahun custom di area Jakarta Selatan sejak 2015."
+            },
+            {
+                "content": "## Jam Operasional & Pick-up\nKami melayani pesanan dan pengambilan kue:\n- Senin - Sabtu: 09.00 - 20.00\n- Minggu: 09.00 - 15.00\nLokasi: [Isi Alamat Toko]\n\nContoh:\nAlamat: Ruko Grand Galaxy City Blok RGA No. 11, Bekasi Selatan.\nGoogle Maps: https://maps.google.com/?q=cake_shop\nJam Pengambilan Terakhir: Pukul 19.30 (Senin-Sabtu)."
+            },
+            {
+                "content": "## Pilihan Base Cake (Rasa Kue)\nKami menyediakan berbagai pilihan rasa dasar kue yang lembut:\n- Lapis Surabaya Premium\n- Black Forest Klasik\n- Double Chocolate Fudge\n- Vanilla Cheese Cake\n- Red Velvet Cake\n- Rainbow Cake\n\nContoh:\nBase Cake Favorit Anak: Rainbow Cake atau Vanilla.\nBase Cake Favorit Dewasa: Black Forest (ada sedikit rasa rhum - opsional) atau Lapis Surabaya."
+            },
+            {
+                "content": "## Layanan Kue Custom (Pre-Order)\nIngin kue dengan desain khusus (karakter kartun, foto, atau tema tertentu)?\n- Pre-order minimal H-3 hingga H-7 (tergantung tingkat kesulitan).\n- Kirim referensi foto desain via WhatsApp.\n- Kami menggunakan teknik Buttercream, Fondant, atau Edible Image.\n\nContoh Request:\n\"Saya mau kue tema Spiderman untuk anak laki-laki umur 5 tahun, base cake cokelat, ukuran 20cm, tulisan 'Happy Birthday Arka'.\""
+            },
+            {
+                "content": "## Kue Ready Stock (Dadakan)\nButuh kue hari ini juga? Kami menyediakan kue tart ready stock setiap hari dengan dekorasi standar 'Happy Birthday'. Tersedia ukuran diameter 12cm, 15cm, dan 18cm. Silakan cek stok varian rasa yang tersedia via WhatsApp admin.\n\nContoh Stok Hari Ini:\n- Black Forest 15cm (2 pcs)\n- Red Velvet 18cm (1 pc)\n- Choco Mousse 20cm (habis)"
+            },
+            {
+                "content": "## Ukuran Kue & Estimasi Harga\n- Diameter 12cm (Mini): Mulai Rp 85.000\n- Diameter 15cm (Small): Mulai Rp 150.000\n- Diameter 18cm (Medium): Mulai Rp 220.000\n- Diameter 24cm (Large): Mulai Rp 350.000\n- Kue Tingkat: Harga menyesuaikan desain.\n\nContoh Harga Fix:\n- Black Forest 18cm: Rp 225.000\n- Custom Fondant 18cm (Tema Animal): Rp 450.000"
+            },
+            {
+                "content": "## Perlengkapan Pesta Gratis\nSetiap pembelian kue tart sudah termasuk:\n- 1 buah Lilin (Angka atau Batang standar)\n- 1 buah Pisau Potong Kue Plastik\n- Kartu Ucapan (Request tulisan)\n- Box Kue Eksklusif\n\nContoh:\nLilin Angka tambahan: Rp 5.000/angka.\nTopi Ulang Tahun: Rp 10.000/pack."
+            },
+            {
+                "content": "## Layanan Delivery Kue\nKami menyediakan pengiriman khusus kue tart menggunakan kurir internal/mobil agar dekorasi kue tetap aman (tidak rusak di jalan). Biaya kirim menyesuaikan jarak. Jangkauan area: [Isi Area Jangkauan].\n\nContoh:\n- Area Bekasi Barat & Selatan: Ongkir Flat Rp 20.000.\n- Jakarta Timur: Ongkir Rp 35.000 - Rp 50.000 (tergantung kelurahan).\n- Tidak disarankan menggunakan ojol motor untuk kue diameter >18cm."
+            },
+            {
+                "content": "## Kebijakan Pembatalan & DP\n- Untuk kue custom, wajib membayar DP minimal 50%.\n- Pembatalan H-2: DP kembali 50%.\n- Pembatalan H-1 atau hari H: DP hangus (karena bahan sudah diproses).\n\nContoh:\nTotal Harga Rp 400.000 -> DP Rp 200.000 via Transfer BCA."
+            },
+            {
+                "content": "## Hubungi Admin Kue\nWhatsApp: [Isi Nomor WA]\nInstagram: @[Isi Username IG]\n\nKonsultasikan tema kue impian Anda bersama admin kami!\n\nContoh:\nWhatsApp: 0858-1234-5678 (Admin Rina)\nInstagram: @sweetmoments_cake (DM untuk kirim contoh gambar)"
+            }
+        ],
+        "keywords": [
+            "toko kue ulang tahun terdekat",
+            "kue tart custom murah",
+            "harga kue ulang tahun anak",
+            "kue tart ready stock",
+            "kue ulang tahun karakter",
+            "black forest enak",
+            "kue tart delivery",
+            "lapis surabaya ulang tahun",
+            "kue ultah red velvet",
+            "toko kue tart terpercaya",
+            "kue ulang tahun mewah",
+            "kue foto edible",
+            "kue tart mini murah",
+            "pesan kue ultah mendadak",
+            "dekorasi kue ulang tahun"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34e1",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T10:00:00.000Z",
+    "createdBy": "system"
+}

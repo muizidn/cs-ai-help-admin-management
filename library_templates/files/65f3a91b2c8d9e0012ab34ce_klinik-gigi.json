@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34ce",
+    "title": "Klinik Gigi",
+    "description": "Template basis pengetahuan untuk praktek dokter gigi, mencakup layanan scaling, cabut gigi, behel, dan perawatan estetika gigi.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kesehatan", "gigi", "dentist"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Klinik Gigi Kami\nKami menyediakan perawatan gigi profesional dengan peralatan modern dan standar sterilisasi yang tinggi. Fokus kami adalah kesehatan mulut dan estetika senyum Anda, ditangani oleh dokter gigi yang berpengalaman dan ramah.\n\nContoh: Smile Dental Care telah melayani warga sejak 2015 dengan lebih dari 5.000 pasien puas. Kami mengutamakan prosedur tanpa rasa sakit (painless dental care)."
+            },
+            {
+                "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap klinik gigi Anda agar pasien mudah menemukan lokasi.\n\nContoh: Jl. Ahmad Yani No. 45, RT 02/RW 04, Kelurahan Padasuka, Kecamatan Cibeunying Kidul, Kota Bandung, 40125.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: Seberang Bank BCA Kantor Cabang Ahmad Yani, bangunan cat biru."
+            },
+            {
+                "content": "## Jam Operasional & Janji Temu\nInformasikan jam buka dan tutup klinik Anda setiap harinya.\n\nContoh:\n- Senin - Sabtu: 09.00 - 20.00\n- Minggu: 10.00 - 15.00 (Hanya dengan perjanjian)\n\nKami sangat menyarankan pasien untuk melakukan reservasi jadwal terlebih dahulu untuk meminimalkan waktu tunggu di klinik."
+            },
+            {
+                "content": "## Layanan Perawatan Gigi\nSebutkan layanan kesehatan gigi yang tersedia di klinik Anda.\n\nContoh:\n- Scaling (Pembersihan Karang Gigi): Mulai Rp 250.000\n- Penambalan Gigi (Composit/Estetika): Mulai Rp 300.000/lubang\n- Pencabutan Gigi (Biasa & Odontektomi): Mulai Rp 350.000\n- Perawatan Saluran Akar (PSA): Mulai Rp 800.000\n- Pemasangan Behel (Kawat Gigi): Mulai Rp 5.000.000 (Paket Cicilan tersedia)\n- Whitening (Pemutihan Gigi): Rp 2.500.000"
+            },
+            {
+                "content": "## Prosedur Reservasi\nJelaskan langkah-langkah bagi pasien untuk membuat janji temu.\n\nContoh: Untuk membuat janji temu, silakan hubungi kami melalui WhatsApp di 0812-9876-5432. \nFormat Pesan: RESERVASI # NAMA # KELUHAN # JADWAL PILIHAN (HARI/JAM).\nAdmin akan mengonfirmasi ketersediaan jadwal dalam waktu maksimal 15 menit."
+            },
+            {
+                "content": "## Biaya & Estimasi Perawatan\nBerikan gambaran harga layanan agar pasien dapat mempersiapkan budget.\n\nContoh:\n- Konsultasi & Cek Rutin: Rp 100.000 (Gratis jika lanjut tindakan)\n- Scaling: Rp 250.000 - Rp 500.000 (Tergantung ketebalan karang)\n- Tambal Gigi: Rp 300.000 - Rp 600.000\nBiaya pasti akan ditentukan setelah pemeriksaan langsung oleh dokter gigi menggunakan kamera intraoral."
+            },
+            {
+                "content": "## Perawatan Behel (Orthodontic)\nInformasikan prosedur awal bagi pasien yang berminat memasang kawat gigi.\n\nContoh: Prosedur awal behel meliputi:\n1. Konsultasi & Cetak Gigi: Rp 350.000\n2. Foto Rontgen Panoramik: Bisa dilakukan di Lab rekanan (estimasi Rp 200.000)\n3. Pembersihan Karang Gigi menyeluruh.\n4. Pemasangan Bracket: Mulai dari Rp 5.000.000 (DP 50%, sisa bisa dicicil 5x).\nTersedia pilihan jenis behel: Metal, Ceramic (warna gigi), dan Sapphire (transparan)."
+            },
+            {
+                "content": "## Instruksi Pasca Tindakan\nBerikan panduan singkat apa yang boleh dan tidak boleh dilakukan setelah tindakan.\n\nContoh: Setelah tindakan cabut gigi:\n- Gigit kapas selama 1 jam, jangan sering meludah.\n- Tidak berkumur terlalu kuat selama 24 jam.\n- Tidak mengonsumsi makanan/minuman panas selama 24 jam.\n- Jangan menyentuh area bekas cabutan dengan lidah atau jari."
+            },
+            {
+                "content": "## Fasilitas & Kenyamanan\nInformasikan sarana pendukung yang tersedia di klinik gigi Anda.\n\nContoh:\n- Dental Chair modern dengan layar monitor (pasien bisa melihat kondisi gigi)\n- Ruang tunggu ber-AC dengan Wi-Fi gratis\n- Area bermain anak (Kids Corner) yang aman\n- Sterilisator alat standar rumah sakit (Autoclave Kelas B)"
+            },
+            {
+                "content": "## Metode Pembayaran\nSebutkan pilihan cara pembayaran yang tersedia.\n\nContoh: Kami menerima pembayaran melalui:\n- Tunai / Cash\n- Debit Card (BCA, Mandiri, BNI, BRI)\n- QRIS (Gopay, OVO, ShopeePay, Dana)\n- Kartu Kredit: Cicilan 0% hingga 12 bulan untuk pengguna kartu kredit BCA/Mandiri (minimal transaksi Rp 5jt)"
+            }
+        ],
+        "keywords": [
+            "dokter gigi terdekat",
+            "biaya scaling gigi",
+            "harga pasang behel",
+            "cabut gigi berapa",
+            "tambal gigi estetika",
+            "klinik gigi buka minggu",
+            "sakit gigi geraham",
+            "pemutihan gigi",
+            "harga gigi palsu",
+            "dokter gigi anak",
+            "reservasi dokter gigi",
+            "promo scaling",
+            "kawat gigi transparan",
+            "behel metal",
+            "bau mulut karang gigi"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34ce",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:00:00.000Z",
+    "createdBy": "system"
+}

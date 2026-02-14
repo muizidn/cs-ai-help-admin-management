@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34e2",
+    "title": "Dessert Box Seller",
+    "description": "Template basis pengetahuan untuk penjual dessert box kekinian, mencakup berbagai varian rasa layer cake, sistem pengiriman cold-chain, dan paket gift box.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kuliner", "makanan", "dessert-box", "manis"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Dessert Box Kami\nKami menghadirkan kebahagiaan dalam kotak! Dessert box kami dibuat dengan lapisan cake yang lembut, krim yang ringan, dan topping melimpah. Menggunakan bahan premium (Real Butter & High Quality Chocolate) untuk memastikan setiap suapan terasa mewah dan nagih.\n\nContoh:\n\"Lumer Box ID\" menggunakan 100% Cokelat Belgia asli dan Keju New Zealand dalam setiap produknya."
+            },
+            {
+                "content": "## Jam Operasional & Pengiriman\nKami melayani pesanan setiap hari:\n- Senin - Minggu: 10.00 - 20.00\nPengiriman dilakukan dari dapur kami di [Isi Area].\n\nContoh:\nDapur Pusat: Apartemen Kalibata City, Tower Cendana.\nPengiriman via: GoSend/GrabExpress Instant & Sameday.\nBisa COD area lobi apartemen."
+            },
+            {
+                "content": "## Menu Varian Rasa (Best Seller)\n- Bittersweet Chocolate (Cokelat Belgia melimpah)\n- Lotus Biscoff Cheesecake (Crunchy & Creamy)\n- Tiramisu Signature (Aroma kopi asli)\n- Red Velvet Cheese (Asam manis segar)\n- Milk Bath / Tres Leches (Sangat lembut & milky)\n- Oreo Cookies & Cream\n\nContoh:\n- Lotus Biscoff: Layer biskuit Lotus, Cream Cheese, dan Selai Lotus lumer.\n- Milk Bath: Sponge cake vanilla disiram susu 3 rasa (evaporasi, kental manis, fresh milk) dengan topping keju."
+            },
+            {
+                "content": "## Ukuran Box & Harga\n- Small Box (200ml): Rp 25.000 - Rp 35.000\n- Medium Box (350ml): Rp 45.000 - Rp 60.000\n- Large Box (500ml): Rp 75.000 - Rp 95.000\n\nContoh Harga:\n- Choco Melt Small: Rp 25.000\n- Choco Melt Medium: Rp 45.000\n- Tiramisu Medium: Rp 55.000"
+            },
+            {
+                "content": "## Paket Gift & Hampers\nIngin memberikan kejutan untuk orang tersayang? Kami menyediakan paket hampers:\n- Paket Couple (2 Small Box + Greeting Card)\n- Paket Birthday (Medium Box + Lilin + Topper Happy Birthday)\n- Paket Family (4 Mix Small Box + Tas Eksklusif)\n\nContoh:\nPaket Hampers Lebaran (Isi 4 Box Medium + Pita + Kartu): Rp 250.000."
+            },
+            {
+                "content": "## Cara Penyimpanan\nDessert box kami paling nikmat dikonsumsi dalam keadaan dingin. \n- Suhu Ruang: Tahan 2-4 jam.\n- Kulkas (Chiller): Tahan 3-5 hari.\n- Freezer: Tahan hingga 2 minggu (tekstur akan seperti es krim).\n\nContoh:\n\"Segera masukkan kulkas saat paket tiba. Untuk kenikmatan maksimal, sajikan dingin (jangan beku).\""
+            },
+            {
+                "content": "## Layanan Delivery (Ojek Online)\nKami sangat menyarankan pengiriman menggunakan kurir instan (GoSend/GrabExpress) agar kondisi layer dessert tidak berantakan. Kami tersedia juga di GoFood/GrabFood/ShopeeFood dengan nama '[Isi Nama Toko]'.\n\nContoh:\nCari di GoFood: \"Lumer Box ID - Kalibata\".\nPromo Ongkir: Cek voucher di aplikasi masing-masing."
+            },
+            {
+                "content": "## Pemesanan Jumlah Banyak\nMelayani pesanan untuk acara kantor, arisan, atau wedding dessert corner. Untuk pemesanan di atas 20 box, harap melakukan konfirmasi minimal H-2 untuk mendapatkan harga spesial.\n\nContoh:\nDiskon 10% untuk pesanan minimal 50 box mini (150ml) untuk souvenir pernikahan."
+            },
+            {
+                "content": "## Metode Pembayaran\n- QRIS (All Payment)\n- Transfer Bank (BCA/Mandiri)\n- ShopeePay\n\nContoh:\nScan QRIS a.n. Lumer Box ID saat COD atau transfer ke BCA 12345678."
+            },
+            {
+                "content": "## Kontak Order\nWhatsApp: [Isi Nomor WA]\nInstagram: @[Isi Username IG]\n\nCek katalog lengkap dan testimoni pelanggan kami di highlight Instagram!\n\nContoh:\nWhatsApp: 0812-9988-7766\nLinktree: linktr.ee/lumerboxid"
+            }
+        ],
+        "keywords": [
+            "dessert box terdekat",
+            "harga dessert box murah",
+            "tiramisu dessert box",
+            "lotus biscoff dessert",
+            "bittersweet cokelat",
+            "cemilan manis kekinian",
+            "hampers dessert box",
+            "kue dalam kotak",
+            "dessert box lumer",
+            "red velvet dessert",
+            "dessert box delivery",
+            "kado ulang tahun unik",
+            "dessert premium enak",
+            "cheese cake box",
+            "promo dessert box"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34e2",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T10:00:00.000Z",
+    "createdBy": "system"
+}

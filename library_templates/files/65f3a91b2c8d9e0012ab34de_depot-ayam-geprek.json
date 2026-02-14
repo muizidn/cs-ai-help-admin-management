@@ -1,0 +1,75 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34de",
+    "title": "Depot Ayam Geprek",
+    "description": "Template basis pengetahuan untuk depot ayam geprek, mencakup variasi level pedas, aneka topping, menu paket hemat pelajar, dan layanan delivery.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kuliner", "makanan", "ayam-geprek", "pedas"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Depot Ayam Geprek Kami\nKami menyajikan ayam goreng tepung yang renyah (crispy) dan digeprek langsung dengan sambal korek bawang yang pedasnya nendang. Cocok bagi para pecinta makanan pedas yang mencari rasa autentik dengan harga yang ramah di kantong.\n\nContoh: 'Geprek Juara' menggunakan ayam segar pilihan dan cabai rawit merah asli (bukan bubuk). Slogan kami: Pedasnya Bikin Nagih!"
+            },
+            {
+                "content": "## Lokasi & Alamat\nSilakan datang ke outlet kami:\n- Alamat: Jl. Kampus Raya No. 12, Sekaran, Gunungpati (Depan Gerbang UNNES).\n- Google Maps: https://maps.app.goo.gl/xxxx\n- Jam Buka: 10.00 - 21.00 WIB (Setiap Hari)."
+            },
+            {
+                "content": "## Menu Utama Ayam Geprek\n- Ayam Geprek Original (Rp 12.000): Ayam + Sambal Bawang.\n- Ayam Geprek Keju (Rp 15.000): Topping Keju Parut Cheddar.\n- Ayam Geprek Mozzarella (Rp 18.000): Topping Keju Mozzarella Leleh (Dibakar).\n- Ayam Geprek Sambal Matah (Rp 14.000): Segar dengan irisan bawang merah & serai.\n- Ayam Geprek Sambal Ijo (Rp 13.000): Pedas gurih cabai hijau."
+            },
+            {
+                "content": "## Pilihan Level Pedas\nAnda bisa menentukan jumlah cabai sesuai keberanian Anda:\n- Level 0: Tanpa Cabai (Original).\n- Level 1-5: Pedas Santai (1-5 cabai).\n- Level 6-10: Pedas Nendang (6-10 cabai).\n- Level >10: Pedas Mampus (Tambah biaya Rp 1.000 per 5 cabai tambahan). Rekor kami: 50 Cabai!"
+            },
+            {
+                "content": "## Menu Paket Hemat (Paket Pelajar)\nSangat cocok untuk mahasiswa dan pelajar:\n- Paket Hemat 1 (Rp 15.000): Nasi + Ayam Geprek Orig + Es Teh.\n- Paket Hemat 2 (Rp 18.000): Nasi + Ayam Geprek Orig + Tahu/Tempe + Es Teh.\n- Paket Sultan (Rp 25.000): Nasi + Ayam Mozzarella + Kulit Crispy + Es Milo."
+            },
+            {
+                "content": "## Menu Pendamping (Side Dish)\nLengkapi makan Anda dengan:\n- Nasi Putih: Rp 4.000 (Refill sepuasnya kalau makan di tempat).\n- Tahu / Tempe Goreng: Rp 2.000/pcs.\n- Jamur Crispy: Rp 8.000/porsi.\n- Terong Goreng Crispy: Rp 6.000/porsi.\n- Kol Goreng: Rp 5.000/porsi.\n- Kulit Ayam Crispy: Rp 10.000/porsi."
+            },
+            {
+                "content": "## Pesanan via Online & Delivery\nTemukan kami di GoFood, GrabFood, dan ShopeeFood dengan nama 'Geprek Juara Kampus'.\n- Pesan Antar Manual (WA): Minimal order 3 porsi, ongkir Rp 5.000 (Radius 2km).\n- WhatsApp Delivery: 0857-xxxx-xxxx."
+            },
+            {
+                "content": "## Fasilitas Makan di Tempat\n- Area Lesehan luas (muat 30 orang).\n- Free WiFi.\n- Toilet & Musholla tersedia."
+            },
+            {
+                "content": "## Metode Pembayaran\n- Tunai.\n- QRIS (Gopay/ShopeePay/Dana) - Ada Cashback 10% (S&K)."
+            }
+        ],
+        "keywords": [
+            "ayam geprek terdekat",
+            "harga ayam geprek murah",
+            "ayam geprek mozarella",
+            "sambal bawang pedas",
+            "level pedas ayam geprek",
+            "nasi ayam geprek paket",
+            "kol goreng enak",
+            "jamur crispy geprek",
+            "makan siang pedas",
+            "promo ayam geprek",
+            "ayam geprek sambal matah",
+            "refill nasi sepuasnya",
+            "ayam geprek delivery",
+            "menu depot ayam",
+            "ayam tepung krispi"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34de",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:55:00.000Z",
+    "createdBy": "system"
+}

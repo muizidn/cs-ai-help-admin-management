@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34d0",
+    "title": "Klinik Terapi Bekam",
+    "description": "Template basis pengetahuan untuk pusat terapi bekam (Cupping Therapy), mencakup jenis bekam, manfaat kesehatan, dan prosedur sterilisasi.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kesehatan", "terapi", "bekam", "thibbun-nabawi"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Terapi Bekam Kami\nKami menyediakan layanan terapi bekam (cupping therapy) sesuai standar kesehatan dan prinsip Thibbun Nabawi. Terapi dilakukan oleh praktisi berpengalaman yang memahami titik-titik anatomi tubuh untuk membantu membuang darah kotor dan meningkatkan imunitas.\n\nContoh: Rumah Bekam Sehat telah melayani sejak 2017 dengan komitmen pada sterilisasi dan kenyamanan pasien. Kami memadukan kearifan thibbun nabawi dengan standar kebersihan medis."
+            },
+            {
+                "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap klinik bekam Anda agar pasien mudah menemukan lokasi.\n\nContoh: Jl. Kebon Jeruk No. 88, RT 01/RW 09, Kelurahan Palmerah, Kecamatan Palmerah, Jakarta Barat, 11480.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: Belakang Pasar Palmerah, gedung ruko warna hijau dengan plang \"Rumah Bekam\"."
+            },
+            {
+                "content": "## Jam Operasional & Jadwal\nInformasikan jam buka dan tutup klinik Anda setiap harinya.\n\nContoh:\n- Senin - Minggu: 09.00 - 20.00\n- Jumat: 13.30 - 20.00 (Istirahat Shalat Jumat)\n- Hari Libur Nasional: Konfirmasi via WhatsApp 0812-4444-5555\n\nSangat disarankan terapi dilakukan pada tanggal sunnah (17, 19, 21 Hijriah) sesuai anjuran medis dan spiritual."
+            },
+            {
+                "content": "## Jenis Layanan Bekam\nSebutkan jenis-jenis terapi yang tersedia beserta harganya.\n\nContoh:\n- Bekam Kering (Rp 50.000): Relaksasi otot tanpa pengeluaran darah.\n- Bekam Basah (Rp 85.000): Mengeluarkan darah kotor melalui sayatan tipis/jarum.\n- Bekam Meluncur (Rp 60.000): Pijat menggunakan kop bekam untuk melenturkan otot.\n- Bekam Api (Rp 75.000): Menggunakan api untuk daya sedot yang lebih kuat (bagus untuk masuk angin).\n- Paket Sehat (Rp 120.000): Bekam Basah + Pijat Relaksasi 15 menit."
+            },
+            {
+                "content": "## Standar Sterilisasi & Keamanan\nJelaskan prosedur kebersihan untuk meyakinkan pasien.\n\nContoh: Keamanan Anda adalah prioritas kami:\n- Jarum/Lancet: Menggunakan merk berkualitas dan PASTI sekali pakai (disposable).\n- Kop Bekam: Disterilisasi dengan larutan klorin dan diproses dalam UV Sterilizer.\n- APD Terapis: Selalu menggunakan masker, sarung tangan latex, dan apron medis.\n- Ruangan: Dipisah antara Laki-laki dan Perempuan dengan sekat permanen."
+            },
+            {
+                "content": "## Prosedur Sebelum Terapi\nBerikan panduan persiapan bagi calon pasien.\n\nContoh: Untuk hasil maksimal, mohon perhatikan hal berikut:\n1. Puasa makan berat minimal 2-3 jam sebelum bekam (perut tidak boleh terlalu kenyang/kosong).\n2. Berwudhu (disarankan).\n3. Informasikan kepada terapis jika Anda memiliki riwayat diabetes, anemia, atau sedang mengonsumsi obat pengencer darah."
+            },
+            {
+                "content": "## Perawatan Pasca Bekam\nBerikan instruksi apa yang harus dilakukan setelah terapi.\n\nContoh: Hal-hal yang perlu dilakukan setelah bekam:\n- Istirahat total minimal 30 menit setelah terapi.\n- Jangan mandi minimal 2-3 jam setelah bekam (agar pori-pori menutup kembali).\n- Hindari makanan berminyak, santan, dan pedas selama 12 jam ke depan.\n- Perbanyak minum air hangat."
+            },
+            {
+                "content": "## Reservasi & Kontak\nJelaskan cara pendaftaran agar pasien tidak perlu mengantre lama.\n\nContoh: Anda bisa melakukan reservasi jadwal melalui WhatsApp 0812-4444-5555.\nFormat Pesan: DAFTAR BEKAM # NAMA # L/P # TGL KUNJUNGAN # JAM.\nKami akan mengonfirmasi jadwal yang masih tersedia dalam 10 menit."
+            },
+            {
+                "content": "## FAQ - Pertanyaan Umum\nSediakan jawaban untuk pertanyaan yang sering diajukan.\n\nContoh:\nQ: Apakah bekas bekam susah hilang?\nA: Bekas merah/ungu biasanya hilang dalam 3-7 hari tergantung kondisi fisik.\nQ: Apakah bekam boleh untuk wanita haid?\nA: Sebaiknya ditunda hingga masa haid selesai untuk menjaga keseimbangan kondisi tubuh.\nQ: Bekam kepala harus botak?\nA: Kami memiliki alat khusus bekam kepala tanpa harus dicukur habis."
+            },
+            {
+                "content": "## Fasilitas Klinik\nInformasikan kenyamanan yang didapat pasien.\n\nContoh:\n- Ruang terapi ber-AC dan wangi aromaterapi.\n- Air minum (Teh/Jahe Hangat) gratis setelah terapi.\n- Ruang tunggu nyaman dengan literatur kesehatan thibbun nabawi.\n- Area parkir motor yang aman."
+            }
+        ],
+        "keywords": [
+            "tempat bekam terdekat",
+            "manfaat bekam",
+            "harga terapi bekam",
+            "bekam sunnah tanggal berapa",
+            "bekam kering vs basah",
+            "terapi darah kotor",
+            "bekam laki-laki perempuan",
+            "bekam untuk asam urat",
+            "bekam kolesterol",
+            "biaya bekam paket",
+            "sterilisasi bekam",
+            "efek samping bekam",
+            "bekam kepala tanpa cukur",
+            "titik bekam sunnah",
+            "terapi thibbun nabawi"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34d0",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:00:00.000Z",
+    "createdBy": "system"
+}

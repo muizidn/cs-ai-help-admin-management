@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34d8",
+    "title": "Warteg",
+    "description": "Template basis pengetahuan untuk Warteg (Warung Tegal), mencakup puluhan menu display, harga per lauk, dan layanan langganan makan karyawan.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kuliner", "makanan", "warteg", "ekonomis"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Warteg Kami\nWarteg kami menyajikan hidangan khas Tegal yang otentik dengan beragam pilihan lauk pauk (display kaca) yang selalu segar setiap hari. Kami mengedepankan porsi yang pas, rasa yang mantap, dan harga yang sangat bersahabat bagi semua kalangan.\n\nContoh: Warteg 'Bahari Jaya' dikelola asli oleh orang Tegal. Kami buka sejak 2018 dan menjadi favorit pekerja kantoran serta mahasiswa di area ini."
+            },
+            {
+                "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap Warteg Anda.\n\nContoh: Jl. Kebon Jeruk Raya No. 12, RT 05/RW 01, Kelurahan Palmerah, Jakarta Barat, 11480.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: 50 meter dari Kampus Binus Anggrek, cat tembok warna oranye cerah."
+            },
+            {
+                "content": "## Jam Operasional 24 Jam\nKami siap melayani kebutuhan perut Anda kapan saja:\n- Buka: 24 Jam (Senin - Minggu).\n- Istirahat Shift: 03.00 - 04.00 (Pembersihan area dan persiapan masak pagi).\n- Waktu Lauk Paling Lengkap: Jam 10.00 (Makan Siang) dan Jam 18.00 (Makan Malam)."
+            },
+            {
+                "content": "## Pilihan Lauk Pauk (Display)\nAnda bisa memilih lebih dari 20 jenis lauk setiap harinya:\n- Protein: Orek tempe (kering/basah), telur dadar, telur balado, ayam goreng, tongkol balado, perkedel kentang, ikan kembung.\n- Sayuran: Tumis kangkung, oseng buncis, sayur sop, urap, capcay, terong balado, sayur nangka (tewel).\n- Tambahan: Kerupuk kaleng, gorengan (bakwan/tahu), sambal tomat/bawang (Gratis)."
+            },
+            {
+                "content": "## Harga Per Porsi\nSistem harga kami adalah per lauk:\n- Nasi Putih (Setengah/Full): Rp 4.000 / Rp 5.000.\n- Lauk Sayur (Per sendok sayur): Rp 3.000.\n- Lauk Nabati (Tempe/Tahu/Perkedel): Rp 2.500 per potong.\n- Lauk Telur (Dadar/Ceplok/Balado): Rp 5.000.\n- Lauk Ayam/Ikan/Daging: Rp 10.000 - Rp 12.000.\n- Es Teh Manis: Rp 4.000."
+            },
+            {
+                "content": "## Layanan Langganan Karyawan\nKami melayani kerjasama makan siang untuk karyawan kantor atau proyek konstruksi dengan sistem:\n- Kupon makan bulanan (Bayar di belakang/akhir bulan).\n- Nasi bungkus antar rutin ke lokasi proyek (Minimal 10 bungkus).\n- Harga Flat: Misal Rp 15.000/porsi (Nasi + 1 Lauk Utama + 2 Sayur + Es Teh).\nHubungi pemilik untuk negosiasi kontrak: 0812-xxxx-xxxx (Pak Tarto)."
+            },
+            {
+                "content": "## Makan di Tempat (Dine-in)\nNikmati sensasi makan khas warteg:\n- Bangku panjang (bench) kayu yang muat hingga 15 orang.\n- Kipas angin dinding agar tidak gerah.\n- Gratis Air Putih / Teh Tawar hangat untuk yang makan di tempat.\n- Tersedia colokan listrik di pojok untuk charge HP sebentar."
+            },
+            {
+                "content": "## Kebersihan & Higienitas\nWalaupun berkonsep warung sederhana, kami sangat memperhatikan kebersihan:\n- Etalase kaca selalu tertutup rapat (bebas debu/lalat).\n- Makanan selalu dihangatkan jika sudah dingin.\n- Peralatan makan dicuci dengan sabun cuci piring standar higienis."
+            },
+            {
+                "content": "## Pesanan Nasi Kotak & Syukuran\nMelayani pesanan nasi kotak untuk acara syukuran, doa bersama, atau Jumat Berkah.\n- Harga Mulai: Rp 15.000/kotak.\n- Menu: Nasi, Ayam Goreng, Orek Tempe, Mie Goreng, Sambal.\n- Kemasan: Box kardus rapi + sendok + tisu."
+            },
+            {
+                "content": "## Metode Pembayaran\n- Tunai (Cash) - Diutamakan uang pas.\n- QRIS (Tersedia di meja kasir) - Scan barcode OVO/Gopay/Dana."
+            }
+        ],
+        "keywords": [
+            "warteg terdekat",
+            "warteg 24 jam",
+            "harga lauk warteg",
+            "menu warteg hari ini",
+            "orek tempe enak",
+            "nasi rames warteg",
+            "makan murah kenyang",
+            "warteg bersih",
+            "nasi kotak warteg",
+            "tongkol balado",
+            "teh tawar gratis",
+            "langganan makan kantor",
+            "warteg bahari",
+            "gorengan anget",
+            "makan siang karyawan"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34d8",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:20:00.000Z",
+    "createdBy": "system"
+}

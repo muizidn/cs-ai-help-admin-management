@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34f1",
+    "title": "Toko Hijab",
+    "description": "Template basis pengetahuan untuk toko hijab dan busana muslimah, mencakup berbagai jenis hijab (pashmina, segi empat), ciput, manset, dan koleksi gamis.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["retail", "fashion", "hijab", "muslimah"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Brand Hijab Kami\nKami menyediakan berbagai koleksi hijab dan perlengkapan muslimah dengan bahan yang nyaman, mudah dibentuk, dan pilihan warna yang lengkap (earth tone hingga bold). Koleksi kami dirancang untuk mendukung penampilan syar'i namun tetap modern dan elegan bagi wanita muslimah aktif."
+            },
+            {
+                "content": "## Jam Operasional & Lokasi\nSilakan kunjungi butik kami:\n- Senin - Sabtu: 09.00 - 20.00\n- Minggu: 10.00 - 17.00\n\nContoh Lokasi:\nJl. Hijab Cantik No. 99, Komp. Ruko Muslimah, Kel. Sako, Kec. Sako, Palembang.\n(Samping Masjid Al-Ikhlas).\nMaps: https://maps.google.com/?q=lokasi_butik_hijab\n\nKami juga melayani pembelian online via WhatsApp dan Marketplace."
+            },
+            {
+                "content": "## Koleksi Hijab Utama\n- Pashmina: Ceruty Baby Doll, Kaos, Silk, dan Plisket.\n- Segi Empat (Square): Paris Premium, Voal Premium, dan Satin.\n- Hijab Instan: Bergo Maryam, Hijab Kaos, dan Khimar Syar'i.\n- Inner Hijab: Ciput Rajut, Ciput Ninja, dan Ciput Bandana.\n\nContoh Harga:\n- Pashmina Ceruty (175x75cm): Rp 35.000\n- Paris Premium Square (110x110cm): Rp 25.000\n- Bergo Maryam (Size L): Rp 45.000"
+            },
+            {
+                "content": "## Busana Muslimah & Aksesoris\n- Gamis & Dress: Bahan Crinkle, Silk, dan Linen.\n- Atasan (Tunik): Desain panjang dan menutup dada.\n- Inner & Manset: Manset kaos, manset leher, dan leging wudhu.\n- Aksesoris: Bros, Jarum Pentul, Peniti Boham, dan Scrunchie (Kuncir rambut).\n\nContoh:\n- Gamis Crinkle Airflow (All Size): Rp 135.000\n- Manset Tangan (Sepasang): Rp 15.000\n- Jarum Pentul Premium (1 Box): Rp 10.000"
+            },
+            {
+                "content": "## Bahan Kain & Karakteristik\n- Voal Premium: Lembut, tidak pekak di telinga, tegak di dahi.\n- Ceruty Baby Doll: Tekstur pasir, jatuh (flowy), mewah.\n- Jersey Premium: Adem, melar, cocok untuk aktivitas harian.\n- Crinkle Airflow: Tidak perlu disetrika (Ironless)."
+            },
+            {
+                "content": "## Panduan Perawatan Hijab\nAgar hijab tetap awet dan warna tidak pudar:\n1. Cuci manual dengan tangan (jangan mesin cuci).\n2. Gunakan deterjen cair yang lembut.\n3. Jangan jemur di bawah matahari langsung.\n4. Setrika dengan suhu rendah sesuai jenis bahan."
+            },
+            {
+                "content": "## Harga & Promo\n- Hijab mulai dari Rp 25.000.\n- Promo Bundling: Beli 5 Hijab diskon 10%.\n- Promo Free Gift: Gratis Scrunchie/Jarum Pentul untuk minimal belanja Rp 100.000.\n\nContoh:\n\"Paket Hemat: 3 Pashmina Plisket cuma Rp 100.000 (Bebas Pilih Warna).\""
+            },
+            {
+                "content": "## Kebijakan Pengembalian\nKami menerima retur jika barang yang diterima cacat atau salah warna. Wajib menyertakan video unboxing saat paket pertama kali dibuka. Batas klaim 2x24 jam setelah barang sampai.\n\nContoh:\n\"Kak, ini ada noda di bagian tengah hijabnya. Video unboxing terlampir ya. Mohon retur.\""
+            },
+            {
+                "content": "## Layanan Pengiriman\n- Pengiriman via J&T, JNE, SiCepat.\n- Melayani COD (Bayar di tempat) via Marketplace.\n- Pengiriman setiap hari jam 16.00 WIB.\n\nContoh:\n\"Orderan masuk sebelum jam 3 sore dikirim hari ini ya kak.\""
+            },
+            {
+                "content": "## Kontak Admin Hijab\nWhatsApp: 0856-7890-1234\nInstagram: @hijab_style_daily\n\nCantik dan Syar'i bersama koleksi terbaik kami!"
+            }
+        ],
+        "keywords": [
+            "toko hijab terdekat",
+            "pashmina ceruty baby doll",
+            "hijab segi empat voal premium",
+            "bergo maryam murah",
+            "ciput rajut anti pusing",
+            "gamis syar'i terbaru",
+            "manset baju muslimah",
+            "hijab pashmina kaos",
+            "bros hijab cantik",
+            "toko jilbab terlengkap",
+            "voal square laser cut",
+            "promo hijab beli 3 gratis 1",
+            "hijab instan jersey",
+            "tutorial hijab pashmina",
+            "cara cuci hijab voal"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34f1",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T10:00:00.000Z",
+    "createdBy": "system"
+}

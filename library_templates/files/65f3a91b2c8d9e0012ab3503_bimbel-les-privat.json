@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3503",
+    "title": "Bimbel & Les Privat",
+    "description": "Template basis pengetahuan untuk lembaga bimbingan belajar (bimbel) atau jasa les privat, mencakup mata pelajaran SD-SMA, persiapan ujian, dan guru datang ke rumah.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["pendidikan", "bimbel", "les-privat", "kursus"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Lembaga Pendidikan Kami\nKami berkomitmen membantu siswa mencapai prestasi akademik terbaik melalui metode pembelajaran yang menyenangkan, mudah dipahami, dan fokus pada penguasaan konsep dasar.\n\nContoh: Bimbel Pintar Bangsa telah mendampingi lebih dari 500 siswa di Bandung sejak 2017. Kami fokus pada peningkatan nilai rapor dan kesiapan menghadapi ujian masuk PTN dengan pengajar yang kompeten dan sabar."
+            },
+            {
+                "content": "## Lokasi Kantor & Area Layanan Privat\nSilakan masukkan alamat kantor pusat bimbel Anda dan area cakupan guru privat.\n\nContoh: Jl. Dipati Ukur No. 45, Lantai 2, Kecamatan Coblong, Kota Bandung, 40132.\nArea Layanan Les Privat: Mencakup wilayah Dago, Coblong, Setiabudi, dan sekitarnya (Guru datang ke rumah siswa).\nLink Google Maps: https://maps.app.goo.gl/xxxx"
+            },
+            {
+                "content": "## Jenjang Pendidikan & Mata Pelajaran\nSebutkan tingkatan kelas dan mata pelajaran yang bisa tim Anda ajarkan.\n\nContoh:\n- SD (Kelas 1-6): Semua mata pelajaran (Matematika, IPA, Tematik).\n- SMP (Kelas 7-9): Matematika, IPA (Fisika/Biologi), Bahasa Inggris.\n- SMA (Kelas 10-12): Matematika (Wajib/Minat), Fisika, Kimia, Ekonomi.\n- Khusus: Persiapan UTBK/SNBT dan Calistung (Baca Tulis Hitung) untuk PAUD/TK."
+            },
+            {
+                "content": "## Program Les Privat (Guru ke Rumah)\nJelaskan layanan les privat eksklusif di rumah pelanggan.\n\nContoh: Layanan Les Privat kami memberikan kebebasan waktu bagi siswa. Durasi per sesi adalah 90 menit. Orang tua dapat memilih profil guru (mahasiswa/lulusan ITB/Unpad) dan fokus materi (PR sekolah atau persiapan ujian). Jadwal fleksibel, Senin - Minggu."
+            },
+            {
+                "content": "## Program Bimbel Kelas (Reguler)\nInformasikan jika tersedia kelas belajar kelompok di lokasi bimbel.\n\nContoh: Tersedia kelas kecil (maksimal 6 siswa per kelas) untuk interaksi yang lebih intens. Kelas diadakan 2-3 kali seminggu dengan durasi 120 menit. Ruangan ber-AC, tersedia WiFi, dan modul belajar cetak gratis."
+            },
+            {
+                "content": "## Biaya & Investasi Pendidikan\nBerikan gambaran biaya pendaftaran dan paket belajar.\n\nContoh:\n- Biaya Pendaftaran: Rp 150.000 (Berlaku selamanya).\n- Les Privat SD: Rp 75.000 per pertemuan (90 menit).\n- Les Privat SMA: Rp 100.000 per pertemuan (90 menit).\n- Paket Bimbel Kelas (6 Bulan): Rp 1.500.000 (Bisa dicicil 3x)."
+            },
+            {
+                "content": "## Jadwal Belajar Bimbel\nInformasikan pilihan waktu belajar yang tersedia.\n\nContoh:\n- Sesi Siang: 14.00 - 16.00\n- Sesi Sore: 16.00 - 18.00\n- Sesi Malam: 18.30 - 20.30\nSiswa bebas memilih sesi yang tidak bentrok dengan jadwal sekolah."
+            },
+            {
+                "content": "## Keunggulan & Fasilitas\nSebutkan kelebihan bimbel Anda dibandingkan yang lain.\n\nContoh:\n- Laporan Perkembangan Siswa (Learning Report) setiap bulan ke orang tua.\n- Gratis Konsultasi PR via WhatsApp setiap hari.\n- Try Out rutin berbasis komputer (CBT) setiap 2 bulan.\n- Konseling pemilihan jurusan kuliah dan strategi masuk PTN gratis."
+            },
+            {
+                "content": "## Prosedur Pendaftaran\nJelaskan langkah mudah bagi orang tua untuk mendaftarkan anaknya.\n\nContoh:\n1. Klik tombol WhatsApp untuk konsultasi mata pelajaran dan jadwal.\n2. Lakukan pengisian formulir digital.\n3. Pembayaran biaya pendaftaran dan paket bulan pertama.\n4. Penugasan guru pembimbing (untuk privat) atau penentuan kelas (untuk reguler).\n5. Siswa mulai belajar di hari yang disepakati."
+            },
+            {
+                "content": "## Kontak & Media Sosial\nBerikan kanal komunikasi yang aktif untuk informasi lebih lanjut.\n\nContoh:\n- WhatsApp Admin: 0812-3456-7890 (Fast Response)\n- Instagram: @bimbel_pintarbangsa_bdg\n- Website: www.pintarbangsa.sch.id"
+            }
+        ],
+        "keywords": [
+            "les privat terdekat guru ke rumah",
+            "bimbel sd smp sma terbaik",
+            "les matematika fisika kimia",
+            "persiapan utbk snbt intensif",
+            "harga les privat per jam",
+            "guru les privat datang ke rumah",
+            "bimbel murah berkualitas",
+            "les bahasa inggris untuk anak",
+            "kursus calistung guru ke rumah",
+            "bimbel intensif ujian sekolah",
+            "biaya les privat bulanan",
+            "cari guru les privat online",
+            "konsultasi pr tugas sekolah",
+            "try out snbt gratis",
+            "lembaga bimbingan belajar lokal"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab3503",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:30:00.000Z",
+    "createdBy": "system"
+}

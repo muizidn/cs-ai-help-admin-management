@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3501",
+    "title": "Cuci Mobil & Motor",
+    "description": "Template basis pengetahuan untuk jasa cuci kendaraan, mencakup cuci salju, cuci hidrolik, detailing mesin, poles body, dan cuci interior.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["otomotif", "cuci-mobil", "cuci-motor", "detailing"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Car Wash Kami\nKami memberikan layanan pencucian kendaraan yang detail dan bersih hingga ke bagian yang sulit dijangkau. Menggunakan sabun salju pH balanced yang aman untuk cat kendaraan dan alat hidrolik untuk memastikan kolong kendaraan Anda bebas dari kotoran dan potensi karat.\n\nContoh:\n\"Cling Car Wash menggunakan shampo premium 3M yang aman untuk cat. Kami memiliki 4 hidrolik mobil dan 2 hidrolik motor untuk pembersihan maksimal.\""
+            },
+            {
+                "content": "## Jam Operasional\nKendaraan bersih mengkilap setiap hari:\n- Senin - Minggu: 07.30 - 20.00\nLokasi: [Isi Alamat Car Wash]\n\nContoh:\n\"Buka setiap hari jam 07.00 - 21.00 WIB. Last order jam 20.30. Lokasi: Jl. Kaliurang Km 5, Sleman.\""
+            },
+            {
+                "content": "## Paket Cuci Mobil\n- Cuci Salju (Standard): Cuci body, vacum interior, semir ban.\n- Cuci Hidrolik: Termasuk cuci kolong mesin dan sasis.\n- Cuci Premium: Termasuk waxing body sederhana dan detailing velg.\n- Cuci Interior: Pembersihan jok, plafon, dan karpet secara mendalam.\n\nContoh:\n\"Paket Silver (Rp 40rb): Cuci Body + Vacum. Paket Gold (Rp 60rb): Cuci Hidrolik + Vacum + Semir Dashboard. Paket Platinum (Rp 100rb): Gold + Wax Body.\""
+            },
+            {
+                "content": "## Paket Cuci Motor\n- Cuci Salju Biasa.\n- Cuci Motor Besar (Moge).\n- Cuci Detailing Mesin Motor.\n- Semir Ban & Poles Body Halus.\n\nContoh:\n\"Cuci Motor Kecil (Beat/Vario): Rp 15.000. Motor Besar (Nmax/PCX): Rp 20.000. Motor Sport (Ninja/CBR): Rp 25.000. Tambah Wax: +Rp 10.000.\""
+            },
+            {
+                "content": "## Layanan Detailing & Poles\n- Poles Body (Menghilangkan baret halus & mengkilapkan).\n- Jamur Kaca (Menghilangkan bercak air di kaca).\n- Engine Detailing (Membersihkan ruang mesin mobil).\n- Headlamp Restoration (Mengembalikan bening lampu depan).\n\nContoh:\n\"Paket Salon Mobil Full (Interior+Eksterior+Mesin) mulai Rp 750.000. Poles Jamur Kaca Depan Rp 150.000. Nano Ceramic Coating mulai Rp 2.500.000.\""
+            },
+            {
+                "content": "## Daftar Harga Estimasi\n- Cuci Motor: Rp [Isi Harga].\n- Cuci Mobil (Standard): Rp [Isi Harga].\n- Cuci Mobil Hidrolik: Rp [Isi Harga].\n- Poles Body: Mulai dari Rp [Isi Harga].\n\nContoh Harga:\n- Cuci Mobil Hidrolik: Rp 50.000.\n- Cuci Motor Salju: Rp 15.000.\n- Fogging Anti Bakteri: Rp 100.000.\n- Cuci Jok Mobil (per seat): Rp 50.000.\""
+            },
+            {
+                "content": "## Fasilitas Ruang Tunggu\nSambil menunggu kendaraan Anda dibersihkan, nikmati fasilitas kami:\n- Ruang tunggu ber-AC.\n- WiFi gratis.\n- Kopi/Teh & Snack.\n- TV Hiburan.\n\nContoh:\n\"Tunggu nyaman di Cafe kami. Free WiFi 50Mbps, tersedia Kopi Kenangan & Indomie. Bisa lihat proses cuci dari kaca ruang tunggu.\""
+            },
+            {
+                "content": "## Program Loyalitas (Member)\nKumpulkan stempel setiap kali cuci kendaraan di tempat kami. Cuci ke-10 GRATIS 1 kali cuci salju standard!\n\nContoh:\n\"Dapatkan kartu member gratis. Kumpulkan 10 stamp untuk 1x Cuci Gratis. Diskon 10% saat ulang tahun.\""
+            },
+            {
+                "content": "## Keunggulan Kami\n- Menggunakan air tanah yang difilter (bebas kandungan besi).\n- Kain microfiber berkualitas (mencegah baret).\n- Tenaga cuci yang terlatih dan jujur.\n- Pengecekan akhir (Final QC) oleh supervisor.\n\nContoh:\n\"Kami menggunakan spons busa lembut dan lap microfiber terpisah untuk body dan kaki-kaki agar tidak baret. Garansi cuci ulang jika masih kotor.\""
+            },
+            {
+                "content": "## Kontak Admin Car Wash\nWhatsApp: [Isi Nomor WA]\nInstagram: @[Isi Username IG]\n\nKilapkan kendaraanmu sekarang juga!\n\nContoh:\n\"Booking slot detailing via WA: 0857-xxxx-xxxx. Follow IG @cling_carwash untuk promo terbaru.\""
+            }
+        ],
+        "keywords": [
+            "cuci mobil terdekat hidrolik",
+            "car wash 24 jam [kota]",
+            "harga cuci motor salju",
+            "cuci interior mobil murah",
+            "poles body mobil mengkilap",
+            "cuci kolong mobil hidrolik",
+            "detailing mesin mobil motor",
+            "hilangkan jamur kaca mobil",
+            "cuci mobil premium wax",
+            "tempat cuci motor moge",
+            "vacum interior mobil bersih",
+            "semir ban motor mobil",
+            "cuci mobil salju terdekat",
+            "promo cuci mobil member",
+            "salon mobil detailing murah"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab3501",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:45:00.000Z",
+    "createdBy": "system"
+}

@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34e0",
+    "title": "Roti Bakery Lokal",
+    "description": "Template basis pengetahuan untuk toko roti (Bakery) lokal, mencakup roti manis, roti tawar, kue basah tradisional, dan pesanan snack box.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kuliner", "makanan", "bakery", "roti"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Bakery Lokal Kami\nKami menghadirkan kehangatan roti yang dipanggang segar setiap pagi (fresh from the oven). Menggunakan resep tradisional yang dipadukan dengan bahan berkualitas tinggi, kami berkomitmen menyajikan roti yang lembut, harum, dan tanpa bahan pengawet buatan.\n\nContoh:\n\"Sari Roti Mama\" berdiri sejak 1998 di kawasan Tebet, terkenal dengan Roti Sisir Mentega yang selalu ludes sebelum jam 12 siang."
+            },
+            {
+                "content": "## Jam Operasional\nSilakan kunjungi outlet kami setiap hari:\n- Senin - Minggu: 07.00 - 21.00\n- Jam Roti Segar: 07.00 & 16.00 (Waktu terbaik untuk mendapatkan roti yang baru matang)\n\nContoh:\nOutlet Pusat: Jl. Raya Kebon Jeruk No. 10 (Buka 06.30 - 22.00).\nOutlet Cabang: Ruko Modernland (Buka 08.00 - 20.00)."
+            },
+            {
+                "content": "## Koleksi Roti Manis & Gurih\nNikmati berbagai pilihan roti satuan kami:\n- Roti Isi (Cokelat, Keju, Susu, Srikaya, Kacang Merah)\n- Roti Sobek (Berbagai varian rasa dalam satu loyang)\n- Roti Abon Sapi / Ayam\n- Roti Sosis & Pizza Mini\n- Roti Sisir Mentega\n\nContoh Harga:\n- Roti Cokelat/Keju: Rp 7.000\n- Roti Abon Floss: Rp 12.000\n- Roti Sobek Kombinasi: Rp 22.000"
+            },
+            {
+                "content": "## Roti Tawar & Gandum\nKebutuhan sarapan keluarga Anda:\n- Roti Tawar Kupas / Non-Kupas\n- Roti Tawar Gandum (Tinggi serat)\n- Roti Tawar Pandan\n- Roti Burger & Hotdog (Bisa dipesan untuk usaha kuliner)\n\nContoh Harga:\n- Roti Tawar Spesial (Tebal): Rp 16.000\n- Roti Gandum Utuh: Rp 22.000\n- Bun Burger (isi 6): Rp 18.000"
+            },
+            {
+                "content": "## Kue Basah & Jajanan Pasar\nSelain roti, kami menyediakan aneka kue tradisional (setiap pagi):\n- Risoles (Sayur/Mayo)\n- Lemper Ayam\n- Pastel Reborn\n- Lapis Legit / Lapis Surabaya (Potongan)\n- Bolu Kukus\n\nContoh:\n- Lemper Ayam Bakar: Rp 4.500\n- Risoles Smoked Beef Mayo: Rp 5.000\n- Pastel Tutup: Rp 6.000"
+            },
+            {
+                "content": "## Pesanan Snack Box\nKami melayani pesanan snack box untuk rapat, pengajian, atau acara sekolah. Paket mulai dari Rp 10.000 (isi 2 kue + 1 air mineral) hingga paket premium. Harap melakukan pemesanan minimal H-1 sebelum jam 15.00.\n\nContoh Paket:\n- Paket Hemat (Rp 12.000): Roti Cokelat + Risoles + Air Mineral Gelas.\n- Paket Rapat (Rp 18.000): Lemper Ayam + Soes Fla + Bolu Kukus + Air Mineral Botol.\n- Paket Premium (Rp 25.000): Roti Abon + Pastel + Lapis Surabaya + Buah Potong + Air Mineral."
+            },
+            {
+                "content": "## Estimasi Harga\n- Roti Satuan: Rp 6.000 - Rp 12.000\n- Roti Tawar: Rp 15.000 - Rp 25.000\n- Kue Basah: Rp 3.000 - Rp 5.000\n- Bolu Loyangan: Mulai Rp 45.000"
+            },
+            {
+                "content": "## Layanan Custom Cake\nKami juga menerima pesanan kue ulang tahun sederhana (Tart) dengan base cake cokelat atau vanilla. Desain bisa disesuaikan dengan permintaan pelanggan (pre-order minimal H-3).\n\nContoh:\n- Black Forest Diameter 20cm: Rp 180.000\n- Mocca Cake Diameter 20cm: Rp 160.000\n- Tulisan ucapan gratis."
+            },
+            {
+                "content": "## Metode Pembayaran\n- Tunai\n- Debit Card\n- QRIS\n- Transfer Bank (Khusus pesanan snack box)\n\nContoh:\nBCA 1234567890 a.n. Toko Roti Sejahtera."
+            },
+            {
+                "content": "## Lokasi & Kontak Admin\nAlamat: [Isi Alamat Lengkap Bakery]\nWhatsApp: [Isi Nomor WA]\n\nDapatkan diskon 20% untuk pembelian roti di atas jam 20.00 (selama persediaan masih ada)!\n\nContoh:\nAlamat: Jl. Pahlawan No. 45, Kel. Sukajadi, Kec. Sukasari, Bandung 40162 (Sebelah Apotek Kimia Farma).\nGoogle Maps: https://maps.google.com/?q=bakeries\nWhatsApp: 0812-3456-7890 (Admin Lina)."
+            }
+        ],
+        "keywords": [
+            "bakery terdekat",
+            "toko roti enak murah",
+            "roti tawar gandum",
+            "harga snack box",
+            "roti abon sapi",
+            "kue basah tradisional",
+            "bakery fresh from the oven",
+            "roti sobek cokelat keju",
+            "pesan kue ulang tahun",
+            "jajanan pasar pagi",
+            "roti sisir mentega",
+            "snack box rapat kantor",
+            "toko kue terpercaya",
+            "roti sehat tanpa pengawet",
+            "promo roti malam hari"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34e0",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T10:00:00.000Z",
+    "createdBy": "system"
+}

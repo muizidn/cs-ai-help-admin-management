@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34f3",
+    "title": "Toko Herbal",
+    "description": "Template basis pengetahuan untuk toko obat herbal dan suplemen alami, mencakup madu, habbatussauda, minyak zaitun, jamu tradisional, dan perlengkapan terapi.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["retail", "kesehatan", "herbal", "alami"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Toko Herbal Kami\nKami menyediakan berbagai macam produk herbal dan suplemen alami berkualitas untuk menjaga kesehatan dan membantu proses pemulihan secara alami (thibbun nabawi). Semua produk kami dijamin keasliannya dan telah memiliki izin edar resmi (POM TR) sehingga aman untuk dikonsumsi."
+            },
+            {
+                "content": "## Jam Operasional\nKunjungi toko kami:\n- Senin - Sabtu: 08.00 - 20.00\n- Minggu: 09.00 - 15.00\n\nContoh Lokasi:\nJl. Kebun Raya No. 12, Kel. Rejowinangun, Kec. Kotagede, Yogyakarta.\n(Sebelah Apotek Kimia Farma).\nMaps: https://maps.google.com/?q=lokasi_toko_herbal"
+            },
+            {
+                "content": "## Produk Unggulan: Madu\n- Madu Murni (Hutan & Ternak).\n- Madu Hitam Pahit (Untuk diabetes/kolesterol).\n- Madu Anak (Penambah nafsu makan & imun).\n- Madu Spesifik (Madu Lambung, Madu Asma, dll).\n\nContoh Harga:\n- Madu Hutan Liar 500ml: Rp 85.000\n- Madu Hitam Pahit Ar-Rohmah 470gr: Rp 60.000\n- Madu TJ Murni 150gr: Rp 25.000"
+            },
+            {
+                "content": "## Suplemen Alami (Kapsul & Minyak)\n- Habbatussauda (Jintan Hitam): Kapsul serbuk atau minyak.\n- Minyak Zaitun (Extra Virgin Olive Oil) untuk minum atau oles.\n- Sari Kurma & Propolis.\n- Kapsul Herbal: Ekstrak Daun Kelor, Temulawak, Sambiloto, Kumis Kucing.\n\nContoh:\n- Habbatussauda Oil Softcapsule (Isi 100): Rp 65.000\n- Minyak Zaitun RS 250ml: Rp 45.000\n- Sari Kurma Tamr: Rp 35.000"
+            },
+            {
+                "content": "## Jamu Tradisional & Teh Herbal\n- Jamu Seduh & Instan (Beras Kencur, Kunyit Asam).\n- Teh Herbal: Teh Jati Cina (Pelangsing), Teh Daun Kelor, Teh Bunga Telang.\n- Rempah-rempah Murni: Jahe Merah bubuk, Kayu Manis, Ketumbar, dll.\n\nContoh:\n- Teh Jati Cina (Isi 20 celup): Rp 15.000\n- Jahe Merah Bubuk Instan 200gr: Rp 30.000"
+            },
+            {
+                "content": "## Perlengkapan Terapi & Perawatan\n- Minyak Balur / Minyak Urut.\n- Alat Bekam (Kop) & Jarum Bekam.\n- Sabun Herbal (Bidara, Madu, Sereh).\n- Pasta Gigi Herbal.\n\nContoh:\n- Minyak Kutus Kutus (Asli Bali): Rp 170.000\n- Sabun Bidara: Rp 10.000\n- Alat Bekam Sammora (Isi 12 Kop): Rp 350.000"
+            },
+            {
+                "content": "## Konsultasi Penggunaan\nSetiap produk herbal memiliki cara pakai dan dosis yang berbeda. Staf kami siap memberikan penjelasan mengenai cara konsumsi yang tepat dan anjuran pantangan makanan selama terapi herbal.\n\nContoh:\n\"Untuk Habbatussauda kapsul minyak, diminum 2x2 kapsul sehari sebelum makan. Perbanyak minum air putih hangat ya kak.\""
+            },
+            {
+                "content": "## Harga & Promo\n- Harga terjangkau untuk eceran.\n- Paket Terapi (Contoh: Paket Lambung Sehat) dengan harga lebih hemat.\n- Promo Jumat Berkah: Diskon khusus untuk produk madu tertentu.\n\nContoh:\n\"Paket Imun Kuat: Madu Murni + Habbatussauda + Sari Kurma cuma Rp 150.000.\""
+            },
+            {
+                "content": "## Layanan Pengiriman\n- Melayani pengiriman ke seluruh Indonesia via ekspedisi.\n- Area lokal bisa kirim via kurir instan.\n- Packing aman menggunakan dus dan bubble wrap.\n\nContoh:\n\"Untuk madu botol kaca, kami packing kayu jika dikirim ke luar pulau agar aman.\""
+            },
+            {
+                "content": "## Kontak Admin Herbal\nWhatsApp: 0813-2233-4455\nTelegram: @toko_herbal_sehat\n\nSehat alami dengan herbal pilihan terbaik!"
+            }
+        ],
+        "keywords": [
+            "toko herbal terdekat",
+            "harga madu murni asli",
+            "habbatussauda kapsul murah",
+            "minyak zaitun extra virgin",
+            "obat lambung herbal",
+            "sari kurma untuk tipes",
+            "teh jati cina pelangsing",
+            "jual minyak balur asli",
+            "madu hitam pahit untuk diabetes",
+            "propolis cair terbaik",
+            "jamu tradisional instan",
+            "herbal penambah imun",
+            "toko herbal terlengkap",
+            "sabun bidara ruqyah",
+            "cara minum habbatussauda"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34f3",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T10:00:00.000Z",
+    "createdBy": "system"
+}

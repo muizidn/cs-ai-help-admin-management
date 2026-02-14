@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3508",
+    "title": "Studio Foto & Videografi",
+    "description": "Template basis pengetahuan untuk studio foto dan jasa videografi, mencakup foto wisuda, pas foto, foto produk, dokumentasi event (wedding/birthday), dan editing video.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["lifestyle", "fotografi", "studio-foto", "videografi", "dokumentasi"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Studio Kami\nKami membantu Anda mengabadikan momen berharga melalui lensa profesional. Baik untuk keperluan formal (pas foto), momen spesial (wisuda/wedding), maupun kebutuhan bisnis (foto produk), kami menyediakan layanan fotografi dan videografi dengan kualitas visual tinggi dan sentuhan artistik.\n\nContoh:\n\"Lensa Kita Studio, berdiri sejak 2010. Spesialis foto wisuda dan dokumentasi wedding cinematic. Fotografer kami ramah dan pandai mengarahkan gaya.\""
+            },
+            {
+                "content": "## Layanan Foto Studio (Indoor)\n- Pas Foto (KTP, Ijazah, Visa) - Cetak kilat.\n- Foto Wisuda (Individu/Grup).\n- Foto Keluarga & Maternity.\n- Foto Bayi (Newborn Photography).\n- Foto Produk & Katalog Bisnis.\n\nContoh:\n\"Pas Foto Kilat 10 menit jadi (Edit Retouch Wajah). Foto Wisuda paket hemat mulai Rp 250.000 (3 File Edit + 1 Cetak 10R).\""
+            },
+            {
+                "content": "## Dokumentasi Event (Outdoor/On-location)\n- Dokumentasi Pernikahan (Wedding) & Lamaran (Engagement).\n- Dokumentasi Ulang Tahun & Acara Keluarga.\n- Liputan Seminar, Workshop, & Gathering Perusahaan.\n- Dokumentasi Cinematic Video Event.\n\nContoh:\n\"Paket Wedding Documentation: 1 Fotografer + 1 Videographer, Unlimited Shoot, Album Kolase, Video Highlight 3 menit. Harga mulai Rp 3.500.000.\""
+            },
+            {
+                "content": "## Jasa Videografi & Editing\n- Pembuatan Video Company Profile.\n- Video Iklan Produk (Social Media Ads).\n- Editing Video (Color Grading, Sound Design).\n- Jasa Live Streaming Event.\n\nContoh:\n\"Jasa Video Reels/TikTok Produk: Rp 500.000/video (durasi 30 detik). Live Streaming Youtube 1 Kamera mulai Rp 1.500.000/event.\""
+            },
+            {
+                "content": "## Jam Operasional & Reservasi\n- Senin - Minggu: 09.00 - 21.00\nDisarankan melakukan booking jadwal minimal H-3 untuk sesi studio dan H-14 untuk dokumentasi event besar.\n\nContoh:\n\"Studio buka setiap hari. Untuk foto wisuda saat musim wisuda, harap booking 1 minggu sebelumnya. DP 50% untuk lock jadwal.\""
+            },
+            {
+                "content": "## Daftar Harga Paket Estimasi\n- Paket Pas Foto: Rp [Isi Harga].\n- Paket Foto Wisuda: Mulai dari Rp [Isi Harga].\n- Paket Wedding Documentation: Mulai dari Rp [Isi Harga].\n- Jasa Editing Video: Rp [Isi Harga]/menit durasi jadi.\n\nContoh Harga:\n- Pas Foto (4 lbr): Rp 25.000.\n- Foto Group Studio (Maks 10 org): Rp 500.000.\n- Newborn Home Service: Rp 1.500.000.\n- Sewa Studio Only: Rp 150.000/jam.\""
+            },
+            {
+                "content": "## Fasilitas Studio\n- Ruang studio luas ber-AC.\n- Berbagai pilihan background (polos & tematik).\n- Properti pendukung foto lengkap.\n- Ruang ganti & make-up area.\n\nContoh:\n\"Tersedia background abstrak, wisuda library, dan tema industrial. Ruang ganti nyaman dan kaca rias besar lampu LED.\""
+            },
+            {
+                "content": "## Alur Pengiriman Hasil\n- Foto Mentah (Preview): Diberikan H+1 setelah sesi.\n- Foto Edit: Selesai dalam 3-7 hari kerja (tergantung paket).\n- Pengiriman via Cloud Drive (Google Drive) atau Flashdisk.\n- Layanan Cetak & Bingkai (Frame) tersedia.\n\nContoh:\n\"Link Google Drive dikirim via WA. File tersimpan aman di server kami selama 3 bulan. Cetak frame minimalis pengerjaan 3 hari.\""
+            },
+            {
+                "content": "## Mengapa Memilih Kami?\n- Fotografer berpengalaman dan komunikatif.\n- Peralatan kamera & lighting standar profesional.\n- Proses editing yang detail dan natural.\n- Harga paket yang fleksibel sesuai budget.\n\nContoh:\n\"Kami menggunakan kamera Sony Alpha series dan Lighting Godox. Tone warna bisa request (Warm, Bright, Moody).\""
+            },
+            {
+                "content": "## Kontak Admin Studio\nWhatsApp: [Isi Nomor WA]\nInstagram: @[Isi Username IG] (Portofolio)\n\nAbadikan setiap momen indahmu bersama kami!\n\nContoh:\n\"Booking Slot: WA 0812-xxxx-xxxx. Lihat portofolio wedding di IG: @lensakita_wedding. Alamat: Jl. Pahlawan No. 10.\""
+            }
+        ],
+        "keywords": [
+            "studio foto terdekat wisuda",
+            "pas foto kilat 5 menit jadi",
+            "jasa fotografer wedding murah",
+            "foto produk katalog estetik",
+            "biaya dokumentasi ulang tahun",
+            "studio foto keluarga indoor",
+            "jasa videografi cinematic event",
+            "foto wisuda grup [kota]",
+            "editing video company profile",
+            "paket foto maternity studio",
+            "fotografer lamaran engagement",
+            "cetak foto plus bingkai frame",
+            "studio foto tematik unik",
+            "jasa liputan video seminar",
+            "harga sewa studio foto per jam"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab3508",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:50:00.000Z",
+    "createdBy": "system"
+}

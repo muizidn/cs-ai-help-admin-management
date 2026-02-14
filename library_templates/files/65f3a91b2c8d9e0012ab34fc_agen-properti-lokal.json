@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34fc",
+    "title": "Agen Properti Lokal",
+    "description": "Template basis pengetahuan untuk agen properti lokal atau kantor broker properti, mencakup jasa jual-beli-sewa rumah, tanah, ruko, serta bantuan pengurusan KPR.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["jasa", "properti", "agen-properti", "rumah"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Agen Properti Kami\nKami adalah mitra terpercaya Anda dalam menemukan properti idaman di area [Isi Nama Wilayah]. Kami melayani jasa pemasaran properti (jual/sewa) serta membantu calon pembeli menemukan unit terbaik sesuai budget dan kebutuhan, baik untuk hunian pribadi maupun investasi.\n\nContoh: \"Malang Property Center\" adalah agen properti lokal yang fokus di area Malang Raya dan Batu. Kami memiliki database lebih dari 500 listing properti terverifikasi."
+            },
+            {
+                "content": "## Jam Operasional & Konsultasi\nSilakan hubungi agen kami:\n- Senin - Sabtu: 09.00 - 18.00\n- Minggu: Dengan perjanjian (untuk visit lokasi)\nKonsultasi mengenai tren harga properti dan legalitas tersedia secara gratis.\n\nContoh:\n- Kantor Buka: 09.00 - 17.00 WIB.\n- Layanan Chat WA: 24 Jam.\n- Jadwal Visit: Bisa diatur fleksibel (Sabtu/Minggu oke)."
+            },
+            {
+                "content": "## Listing Properti Tersedia\n- Rumah Tinggal (Baru/Second).\n- Tanah Kavling & Lahan Luas.\n- Ruko (Rumah Toko) & Kios.\n- Apartemen & Kost-kostan.\n- Gudang & Ruang Kantor.\n\nContoh Kategori Populer:\n- Rumah Subsidi & Komersil Murah (200-500 Juta).\n- Rumah Mewah di Kawasan Elit (Ijen/Permata Jingga).\n- Tanah Kavling Siap Bangun (Mulai 1,5 Juta/meter)."
+            },
+            {
+                "content": "## Jasa Pemasaran Properti (Titip Jual/Sewa)\nIngin menjual atau menyewakan properti Anda? Kami bantu:\n- Pengambilan foto & video profesional.\n- Pemasangan iklan di berbagai portal properti & media sosial.\n- Filter calon pembeli/penyewa yang serius.\n- Pendampingan negosiasi hingga deal.\n\nContoh:\n\"Gratis biaya promosi! Anda cukup kirimkan data sertifikat, PBB, dan foto lokasi. Kami yang akan pasang banner dan iklankan di OLX, Rumah123, dan Instagram Ads.\""
+            },
+            {
+                "content": "## Pendampingan Legalitas & Notaris\nKami memastikan transaksi Anda aman dengan membantu:\n- Pengecekan keaslian Sertifikat (SHM/HGB).\n- Pengurusan Akta Jual Beli (AJB).\n- Proses Balik Nama Sertifikat.\n- Koordinasi dengan Kantor Notaris & PPAT terpercaya.\n\nContoh:\n\"Kami bekerjasama dengan Notaris PPAT rekanan yang berpengalaman untuk memastikan legalitas properti 'Clean & Clear' sebelum transaksi.\""
+            },
+            {
+                "content": "## Bantuan Pengajuan KPR\nBagi Anda yang ingin membeli rumah secara kredit, kami bekerja sama dengan berbagai bank (BCA, Mandiri, BNI, BTN, dll) untuk:\n- Simulasi cicilan KPR.\n- Pengumpulan berkas persyaratan.\n- Monitoring proses appraisal hingga akad kredit.\n\nContoh:\n\"Tim kami akan membantu Anda melengkapi berkas KPR agar peluang disetujui bank lebih besar. Tersedia KPR Syariah (BSI/BTN Syariah) dan Konvensional.\""
+            },
+            {
+                "content": "## Biaya Jasa (Komisi Agen)\n- Jual Beli: Sesuai standar (2% - 3% dari nilai transaksi, ditanggung penjual).\n- Sewa Menyewa: Sesuai standar (5% dari nilai sewa per tahun).\n- Tidak ada biaya di muka (No upfront fee).\n\nContoh:\n- Nilai Transaksi < 1 Miliar: Komisi 3%.\n- Nilai Transaksi > 1 Miliar: Komisi 2,5%.\n- Sewa Tahunan: Komisi 5% dari total harga sewa.\""
+            },
+            {
+                "content": "## Keunggulan Menggunakan Jasa Kami\n- Jaringan pembeli & penjual yang luas.\n- Negosiasi yang objektif dan transparan.\n- Menghemat waktu dan tenaga Anda dalam mencari properti.\n- Update stok properti 'Hot Deal' setiap minggu.\n\nContoh:\n\"Dapatkan info properti BU (Butuh Uang) yang dijual dibawah harga pasar hanya di grup WhatsApp eksklusif kami.\""
+            },
+            {
+                "content": "## Cara Mencari Properti Idaman\nInformasikan kepada kami:\n1. Budget maksimal.\n2. Lokasi incaran.\n3. Kebutuhan (Misal: Rumah 3 Kamar Tidur).\n4. Cara Bayar (Cash/KPR).\nKami akan mengirimkan beberapa opsi listing yang sesuai.\n\nContoh Format WA:\n\"Min, carikan rumah di area Sawojajar, budget max 600 Juta, minimal 2 kamar tidur, akses mobil simpangan. Mau KPR.\""
+            },
+            {
+                "content": "## Kontak Admin Properti\nWhatsApp: [Isi Nomor WA]\nInstagram: @[Isi Username IG]\n\nTemukan properti impian Anda dengan cara yang mudah dan aman bersama kami!\n\nContoh:\nWA: 0812-3456-0000 (Sinta - Marketing)\nIG: @malang_property_center"
+            }
+        ],
+        "keywords": [
+            "agen properti terdekat",
+            "jual rumah murah di [wilayah]",
+            "broker properti terpercaya",
+            "info sewa ruko strategis",
+            "tanah kavling siap bangun",
+            "cara titip jual rumah",
+            "bantuan pengajuan kpr bank",
+            "rumah subsidi cicilan murah",
+            "investasi properti menguntungkan",
+            "jasa balik nama sertifikat tanah",
+            "cari kontrakan murah",
+            "listing properti terbaru",
+            "komisi agen properti berapa",
+            "akad jual beli rumah notaris",
+            "kantor broker properti lokal"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34fc",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:25:00.000Z",
+    "createdBy": "system"
+}

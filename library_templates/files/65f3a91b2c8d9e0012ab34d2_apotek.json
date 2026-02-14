@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34d2",
+    "title": "Apotek",
+    "description": "Template basis pengetahuan untuk apotek retail, mencakup informasi stok obat, penebusan resep dokter, konsultasi apoteker, dan layanan antar.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kesehatan", "obat", "apotek", "farmasi"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Apotek Kami\nApotek kami melayani kebutuhan obat-obatan, vitamin, dan alat kesehatan bagi masyarakat. Kami berkomitmen menyediakan obat asli, berkualitas, dan bersertifikat BPOM, serta memberikan edukasi penggunaan obat yang benar oleh apoteker kami.\n\nContoh: Apotek Farma Sehat melayani warga sejak 2012. Kami menjamin keaslian semua produk karena bekerja sama langsung dengan PBF (Pedagang Besar Farmasi) resmi."
+            },
+            {
+                "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap apotek Anda agar pelanggan mudah menemukan lokasi.\n\nContoh: Jl. Diponegoro No. 123, RT 04/RW 02, Kelurahan Menteng, Kecamatan Menteng, Jakarta Pusat, 10310.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: Samping Alfamart Menteng, seberang Taman Suropati."
+            },
+            {
+                "content": "## Jam Operasional & Layanan\nInformasikan jam buka dan tutup apotek Anda setiap harinya.\n\nContoh:\n- Senin - Minggu: 07.00 - 22.00\n- Hari Libur Nasional: Tetap Buka (09.00 - 21.00)\n\nKami melayani pembelian langsung di tempat maupun pemesanan via WhatsApp 0812-7777-8888."
+            },
+            {
+                "content": "## Penebusan Resep Dokter\nJelaskan alur penebusan resep di apotek Anda.\n\nContoh: Kami melayani penebusan resep dari semua Rumah Sakit dan Dokter Spesialis. \nAlur: Kirim foto resep via WA -> Cek Stok & Harga oleh Apoteker -> Pembayaran -> Obat disiapkan. \nCatatan: Resep asli wajib diserahkan ke apotek atau kurir saat serah terima obat."
+            },
+            {
+                "content": "## Ketersediaan Obat & Vitamin\nSebutkan kategori produk yang tersedia.\n\nContoh:\n- Obat Bebas & Bebas Terbatas (Flu, Batuk, Pusing, Salep).\n- Obat Keras (Antibiotik, Obat Jantung, Hipertensi - Wajib Resep).\n- Vitamin & Suplemen (Imboost, Enervon-C, Blackmores, dll).\n- Susu Formula & Susu Kesehatan Lansia.\n- Perlengkapan Ibu & Bayi (Diapers, Botol Susu, Bedak)."
+            },
+            {
+                "content": "## Konsultasi Apoteker\nInformasikan ketersediaan apoteker untuk konsultasi gratis.\n\nContoh: Apoteker kami standby di jam 08.00 - 20.00 untuk konsultasi gratis mengenai:\n- Aturan pakai dan dosis obat yang tepat.\n- Cara penyimpanan obat agar tidak rusak.\n- Informasi mengenai efek samping obat.\n- Saran pemilihan vitamin yang sesuai kebutuhan tubuh Anda."
+            },
+            {
+                "content": "## Layanan Pesan Antar (Delivery)\nJelaskan syarat dan ketentuan layanan antar.\n\nContoh: Kami melayani antar obat ke rumah dalam radius 5 km dari lokasi apotek.\n- Pesanan > Rp 150.000: GRATIS ONGKIR.\n- Pesanan < Rp 150.000: Biaya antar flat Rp 10.000.\nEstimasi pengiriman 30-45 menit setelah pembayaran dikonfirmasi."
+            },
+            {
+                "content": "## Alat Kesehatan (Alkes)\nSebutkan alat kesehatan yang tersedia untuk dibeli.\n\nContoh:\n- Termometer Digital & Gun: Mulai Rp 35.000.\n- Alat Cek Gula Darah, Kolesterol, Asam Urat (3 in 1): Mulai Rp 250.000.\n- Tensi Digital (Omron/Onemed): Mulai Rp 450.000.\n- Masker Medis (Surgical/N95) & Hand Sanitizer.\n- Tabung Oksigen Portable (Oxycan): Rp 60.000."
+            },
+            {
+                "content": "## Kebijakan Pengembalian\nInformasikan aturan mengenai penukaran obat.\n\nContoh: Demi keamanan pasien (Standard GPP), obat yang sudah dibawa keluar dari apotek tidak dapat ditukar atau dikembalikan, kecuali jika terjadi kesalahan pemberian jenis obat oleh pihak apotek kami. Harap teliti sebelum membayar."
+            },
+            {
+                "content": "## Metode Pembayaran\nSebutkan pilihan cara pembayaran yang tersedia.\n\nContoh: Pembayaran dapat dilakukan melalui:\n- Tunai / Cash.\n- Debit Card (BCA, Mandiri, BNI, BRI).\n- QRIS (Gopay, OVO, Dana, LinkAja, ShopeePay).\n- Transfer Bank (Khusus untuk layanan antar)."
+            }
+        ],
+        "keywords": [
+            "apotek terdekat",
+            "apotek 24 jam",
+            "beli obat online",
+            "cek stok obat",
+            "harga vitamin c",
+            "tebus resep dokter",
+            "apotek pesan antar",
+            "masker medis harga",
+            "apoteker konsultasi",
+            "obat asam lambung",
+            "jual alat kesehatan",
+            "susu bayi apotek",
+            "obat batuk anak",
+            "suplemen daya tahan tubuh",
+            "nomor whatsapp apotek"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34d2",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:00:00.000Z",
+    "createdBy": "system"
+}

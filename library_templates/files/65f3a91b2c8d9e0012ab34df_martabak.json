@@ -1,0 +1,75 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34df",
+    "title": "Martabak",
+    "description": "Template basis pengetahuan untuk outlet martabak, mencakup martabak manis (terang bulan) dengan berbagai topping premium dan martabak telur dengan pilihan daging.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kuliner", "makanan", "martabak", "cemilan"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Outlet Martabak Kami\nKami menyajikan martabak dengan resep rahasia yang menghasilkan tekstur martabak manis yang lembut dan bersarang, serta martabak telur yang renyah dan gurih. Menggunakan bahan-bahan premium untuk menjamin kepuasan rasa di setiap gigitannya.\n\nContoh: 'Martabak Bangka Asli 88' sudah berjualan sejak 1995. Kami terkenal dengan adonan yang tebal namun lembut (tidak bantat) dan topping yang melimpah."
+            },
+            {
+                "content": "## Lokasi & Jam Buka\n- Alamat: Jl. Raya Fatmawati No. 10, Jakarta Selatan (Sebelah Indomaret).\n- Google Maps: https://maps.app.goo.gl/xxxx\n- Jam Buka: 16.00 - 23.30 WIB (Setiap Hari)."
+            },
+            {
+                "content": "## Menu Martabak Manis (Terang Bulan)\nTersedia Ukuran: Regular (Loyang 20cm) / Large (Loyang 24cm) / Jumbo (Loyang 28cm).\nPilihan Adonan: Original / Pandan (+Rp 3rb) / Red Velvet (+Rp 5rb) / Black Sweet (+Rp 5rb).\n\n**Harga Topping Klasik (Regular):**\n- Cokelat Kacang Wijen: Rp 35.000\n- Keju Susu: Rp 40.000\n- Keju Cokelat Kacang (Komplit): Rp 45.000\n- Jagung Keju: Rp 40.000\n- Pisang Cokelat Keju: Rp 45.000"
+            },
+            {
+                "content": "## Menu Martabak Manis Premium\nMenggunakan topping merk ternama:\n- Nutella Keju: Rp 65.000\n- Ovomaltine Keju: Rp 70.000\n- Skippy Peanut Butter + Cokelat: Rp 60.000\n- Kitkat Green Tea + Keju: Rp 75.000\n- Durian Asli: Rp 85.000"
+            },
+            {
+                "content": "## Menu Martabak Telur\nKulit renyah dengan isian daging asli (bukan cornet):\n- Telur Ayam (2 Telur) + Daging Sapi: Rp 35.000\n- Telur Bebek (2 Telur) + Daging Sapi: Rp 40.000\n- Spesial (3 Telur Bebek + Daging Sapi Banyak): Rp 55.000\n- Super (4 Telur Bebek + Daging Sapi Super Banyak): Rp 70.000\n- Martabak Telur Mozzarella (Topping Keju Leleh): + Rp 15.000"
+            },
+            {
+                "content": "## Martabak Tipis Kering (Tipker)\nSensasi garing seperti crepes:\n- Tipker Cokelat Kacang: Rp 20.000\n- Tipker Keju: Rp 25.000\n- Tipker Nutella: Rp 35.000"
+            },
+            {
+                "content": "## Martabak Pizza (8 Rasa)\nMartabak manis model juring terbuka (seperti pizza) tanpa dilipat, dengan 8 topping berbeda dalam satu loyang:\n- Varian: Nutella, Keju, Oreo, Kitkat, Marshmallow, Cokelat, Strawberry, Cheese Cream.\n- Harga: Rp 95.000 / loyang."
+            },
+            {
+                "content": "## Prosedur Pemesanan\n- Datang Langsung: Estimasi masak 15-20 menit per loyang.\n- Pesan WA (Ambil Sendiri): Chat ke 0812-xxxx-xxxx (Format: Nama, Pesanan, Jam Ambil).\n- Delivery: GoFood/GrabFood/ShopeeFood 'Martabak Bangka Asli 88'."
+            },
+            {
+                "content": "## Opsi Tambahan\n- Wisman Butter (Wijsman): Tambah Rp 15.000 per loyang (Wangi lebih harum & rasa lebih gurih).\n- Extra Keju: Tambah Rp 10.000."
+            }
+        ],
+        "keywords": [
+            "martabak terdekat",
+            "martabak manis enak",
+            "harga martabak telur",
+            "terang bulan premium",
+            "martabak 8 rasa pizza",
+            "martabak tipis kering",
+            "martabak nutella keju",
+            "martabak telur bebek",
+            "martabak red velvet",
+            "cemilan malam hari",
+            "martabak wijsman",
+            "menu martabak spesial",
+            "martabak pandan keju",
+            "order martabak online",
+            "martabak daging sapi"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34df",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T12:00:00.000Z",
+    "createdBy": "system"
+}

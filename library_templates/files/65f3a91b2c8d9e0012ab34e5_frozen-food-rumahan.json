@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34e5",
+    "title": "Frozen Food Rumahan",
+    "description": "Template basis pengetahuan untuk usaha frozen food rumahan, mencakup aneka nugget, dimsum, pempek, sosis, dan panduan penyimpanan serta penyajian.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kuliner", "makanan", "frozen-food", "umkm"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Frozen Food Kami\nKami menyediakan berbagai pilihan makanan beku (frozen food) yang praktis, lezat, dan berkualitas untuk stok makanan keluarga Anda di rumah. Semua produk kami dipilih dari merk terpercaya dan beberapa produk adalah buatan rumahan (homemade) yang bebas bahan pengawet berbahaya.\n\nContoh:\n\"Mama Frozen\" menyediakan Dimsum Ayam Udang homemade tanpa MSG dan Sosis Bakar merk Besto/Kanzler."
+            },
+            {
+                "content": "## Jam Operasional & Pengiriman\nKami melayani pesanan setiap hari:\n- Senin - Sabtu: 08.00 - 18.00\n- Minggu: 09.00 - 15.00\nLokasi Pengiriman: Area [Isi Area].\n\nContoh:\nLokasi Toko: Perumahan Griya Asri Blok B2 No. 5, Depok.\nPengiriman Sameday: Order sebelum jam 14.00."
+            },
+            {
+                "content": "## Kategori Produk Frozen Food\n- Aneka Nugget & Sosis (Merk populer & premium)\n- Dimsum & Siomay Ayam (Homemade)\n- Pempek Palembang Asli (Frozen + Cuko)\n- Donat Kentang & Bakpao Karakter\n- Kebab Frozen & Risoles Mayo\n- Aneka Baso (Sapi, Ayam, Ikan)\n\nContoh:\n- Nugget: Fiesta, Champ, Kanzler.\n- Homemade: Risoles Mayo (isi 10), Pastel (isi 10)."
+            },
+            {
+                "content": "## Harga Produk Unggulan\n- Dimsum Mix (Isi 10): Rp 35.000\n- Pempek Paket Kecil (Isi 10): Rp 40.000\n- Nugget Ayam 500g: Rp 35.000 - Rp 50.000\n- Kebab Frozen (Isi 5): Rp 25.000\n- Donat Kentang (Isi 10): Rp 20.000\n\nContoh:\n- Sosis Kanzler Beef Cocktail 500g: Rp 55.000\n- Kentang Goreng Shoestring 1kg: Rp 32.000"
+            },
+            {
+                "content": "## Panduan Penyimpanan\nAgar kualitas rasa tetap terjaga, harap perhatikan hal berikut:\n- Segera masukkan ke dalam Freezer (suhu -18°C) setelah pesanan diterima.\n- Produk tahan hingga 3-6 bulan di dalam freezer (cek tanggal kadaluwarsa pada kemasan).\n- Jangan membekukan kembali produk yang sudah dicairkan sepenuhnya (thawing).\n\nContoh:\n\"Barang datang langsung masuk freezer ya kak, jangan ditaruh di suhu ruang lebih dari 4 jam.\""
+            },
+            {
+                "content": "## Panduan Penyajian (Thawing)\nSebelum dimasak, disarankan:\n1. Keluarkan produk dari freezer dan pindahkan ke chiller (kulkas bawah) selama 2-4 jam.\n2. Atau diamkan di suhu ruang hingga tidak membeku lagi.\n3. Goreng, kukus, atau bakar sesuai petunjuk jenis makanan masing-masing.\n\nContoh:\nUntuk Dimsum: Kukus air mendidih selama 10-15 menit (jangan terlalu lama agar kulit tidak lembek)."
+            },
+            {
+                "content": "## Layanan Pesan Antar & Reseller\n- Pengiriman area radius [Isi Radius] km menggunakan kurir kami.\n- Luar kota menggunakan jasa ekspedisi kilat (Paxel/JNE YES) dengan tambahan biaya Styrofoam & Ice Pack.\n- Kami membuka peluang Reseller dengan harga khusus (pembelian minimal 20 pack).\n\nContoh:\nOngkir Flat Rp 10.000 untuk Kecamatan Sawangan (Radius 5km).\nPengiriman luar kota wajib beli Styrofoam Box (Rp 15.000)."
+            },
+            {
+                "content": "## Promo & Paket Hemat\n- Paket Sarapan Anak: 3 pack nugget/sosis hanya Rp 90.000.\n- Paket Ngemil Sore: Dimsum + Donat Kentang hanya Rp 50.000.\n- Gratis Ongkir untuk pembelian minimal Rp 150.000 (area tertentu).\n\nContoh:\nPaket Steamboat (Baso Ikan, Chikuwa, Crabstick + Bumbu Tomyum): Rp 45.000."
+            },
+            {
+                "content": "## Metode Pembayaran\n- Tunai (COD area tertentu)\n- Transfer Bank (BCA/Mandiri)\n- QRIS\n\nContoh:\nBisa bayar tunai saat kurir toko kami sampai (COD)."
+            },
+            {
+                "content": "## Kontak Admin Frozen\nWhatsApp: [Isi Nomor WA]\nInstagram: @[Isi Username IG]\n\nStok makanan praktis selalu tersedia untuk keluarga tercinta!\n\nContoh:\nWA Admin: 0812-3333-4444 (Fast Response jam 08.00-17.00).\nInstagram: @mama_frozen_depok"
+            }
+        ],
+        "keywords": [
+            "frozen food terdekat",
+            "jual dimsum frozen enak",
+            "harga pempek frozen",
+            "nugget ayam murah",
+            "stok makanan praktis",
+            "agen frozen food",
+            "reseller frozen food rumahan",
+            "donat kentang beku",
+            "kebab frozen isi daging",
+            "cara simpan frozen food",
+            "frozen food tanpa pengawet",
+            "siomay ayam frozen",
+            "risoles mayo frozen",
+            "daftar harga frozen food",
+            "paxel frozen food"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34e5",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T10:00:00.000Z",
+    "createdBy": "system"
+}

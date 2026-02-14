@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34ed",
+    "title": "Toko Aksesoris HP",
+    "description": "Template basis pengetahuan untuk toko aksesoris smartphone, mencakup casing, tempered glass, charger, kabel data, headset, dan perlengkapan konten creator.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["retail", "gadget", "aksesoris-hp", "elektronik"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Toko Aksesoris Kami\nKami menyediakan berbagai perlengkapan untuk mempercantik dan melindungi smartphone Anda. Dari casing trendi hingga perangkat pengisian daya berkualitas tinggi, kami berkomitmen menyediakan produk fungsional dengan desain kekinian untuk semua merk smartphone."
+            },
+            {
+                "content": "## Jam Operasional\nKunjungi toko kami setiap hari:\n- Senin - Minggu: 09.00 - 21.00\n\nContoh Lokasi:\nJl. Mawar Melati No. 88, Ruko Gadget Center, Kel. Sukamaju, Kec. Cilodong, Depok.\n(Dekat Lampu Merah Simpang Tiga).\nMaps: https://maps.google.com/?q=lokasi_toko_aksesoris"
+            },
+            {
+                "content": "## Pelindung Layar (Tempered Glass)\nLindungi layar HP Anda dari goresan dan benturan:\n- Tempered Glass Bening (Clear).\n- Tempered Glass Anti Radiasi/Blue Light.\n- Tempered Glass Anti Intip (Spy/Privacy).\n- Tempered Glass Matte (Anti Sidik Jari).\n- Jasa pasang gratis dan rapi di toko.\n\nContoh Harga:\n- TG Bening Biasa: Rp 15.000\n- TG Full Cover (Hitam Pinggir): Rp 35.000\n- TG Anti Spy (Gelap): Rp 50.000"
+            },
+            {
+                "content": "## Koleksi Casing (Phone Case)\n- Softcase Silicone & Jelly Case.\n- Hardcase & Armor Case (Tahan banting).\n- Leather Case & Wallet Case.\n- Custom Case (Bisa cetak foto/desain sendiri).\n- Tersedia untuk iPhone, Samsung, Oppo, Vivo, Xiaomi, Realme, Infinix.\n\nContoh:\n- Softcase Bening Anti Crack: Rp 10.000\n- Casing Gambar Karakter: Rp 25.000\n- Armor Case dengan Ring Stand: Rp 45.000"
+            },
+            {
+                "content": "## Pengisian Daya (Charging)\n- Kepala Charger (Adaptor) berbagai watt (18W, 20W, 33W, hingga 65W).\n- Kabel Data (Micro USB, Type-C, Lightning/iPhone).\n- Powerbank berbagai kapasitas (10.000mAh - 30.000mAh).\n- Wireless Charger.\n\nContoh Harga:\n- Kabel Data Type-C Fast Charging: Rp 35.000\n- Adaptor Charger iPhone 20W (OEM): Rp 150.000\n- Powerbank Robot 10.000mAh: Rp 199.000"
+            },
+            {
+                "content": "## Audio & Musik\n- Earphone Kabel & Headset Bluetooth.\n- TWS (True Wireless Stereo) berbagai merk.\n- Speaker Bluetooth Portable.\n- Kabel AUX & Adapter Audio (Jack 3.5mm to Type-C/Lightning).\n\nContoh:\n- TWS Lenovo Thinkplus GM2 Pro: Rp 145.000\n- Earphone Kabel JBL C150SI: Rp 99.000"
+            },
+            {
+                "content": "## Perlengkapan Konten Kreator\n- Tripod & Monopod (Tongsis).\n- Ring Light berbagai ukuran.\n- Microphone Wireless/Clip-on untuk vlogging.\n- Holder HP untuk Mobil & Motor.\n\nContoh:\n- Ring Light 26cm + Tripod 2 Meter: Rp 120.000\n- Mic Wireless Type-C (2 Mic): Rp 180.000"
+            },
+            {
+                "content": "## Harga & Promo\n- Harga mulai dari Rp 5.000 (untuk kabel data standar).\n- Promo Beli 2 Diskon 10%.\n- Promo Member: Kumpulkan poin setiap belanja untuk ditukar dengan aksesoris menarik.\n\nContoh:\n\"Paket Hemat: Beli Case + Tempered Glass cuma Rp 50.000 (Normal Rp 60.000).\""
+            },
+            {
+                "content": "## Kebijakan Garansi\nProduk elektronik (Charger, TWS, Powerbank) bergaransi 1-6 bulan (ganti baru) jika terjadi kerusakan fungsi, bukan karena kesalahan pemakaian (jatuh/kena air).\n\nContoh Klaim:\n\"Kak, TWS yang dibeli kemarin sebelah kiri mati. Ini struk dan dusnya masih lengkap. Bisa tukar baru?\""
+            },
+            {
+                "content": "## Kontak Admin Toko\nWhatsApp: 0813-9876-5432\nInstagram: @aksesoris_gadget_murah\n\nBikin HP-mu makin keren dan aman bersama kami!"
+            }
+        ],
+        "keywords": [
+            "toko aksesoris hp terdekat",
+            "harga tempered glass iphone",
+            "casing hp lucu murah",
+            "charger fast charging type c",
+            "powerbank 10000mah terbaik",
+            "headset bluetooth murah",
+            "jual tripod vlogging",
+            "ring light untuk tiktok",
+            "kabel data iphone original",
+            "tws suara bass mantap",
+            "custom case foto sendiri",
+            "holder hp motor anti badai",
+            "softcase oppo vivo samsung",
+            "speaker bluetooth jbl murah",
+            "grosir aksesoris hp"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34ed",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T10:00:00.000Z",
+    "createdBy": "system"
+}

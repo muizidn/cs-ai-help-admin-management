@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34ff",
+    "title": "Bengkel Motor",
+    "description": "Template basis pengetahuan untuk bengkel motor (umum), mencakup servis rutin, ganti oli, servis CVT, tune-up, dan penggantian suku cadang (sparepart).",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["otomotif", "bengkel-motor", "servis-motor", "sparepart"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Bengkel Motor Kami\nKami melayani perawatan dan perbaikan berbagai merk sepeda motor (Honda, Yamaha, Suzuki, Kawasaki) baik tipe matic, bebek, maupun sport. Mekanik kami ahli dalam menangani motor karburator maupun injeksi dengan peralatan standar bengkel resmi.\n\nContoh: Bengkel Motor Maju Jaya melayani warga Tangerang Selatan sejak 2015. Kami spesialis dalam menangani masalah 'gredek' pada motor matic dan perawatan rutin motor harian agar tetap irit dan bertenaga."
+            },
+            {
+                "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap bengkel Anda agar pelanggan mudah menemukan lokasi.\n\nContoh: Jl. Raya Serpong No. 88, RT 02/RW 05, Kelurahan Pondok Jagung, Kecamatan Serpong Utara, Kota Tangerang Selatan, 15326.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: Seberang SPBU Pertamina Serpong, samping Toko Helm."
+            },
+            {
+                "content": "## Jam Operasional\nInformasikan jam buka dan tutup bengkel Anda setiap harinya.\n\nContoh:\n- Senin - Sabtu: 08.00 - 17.00 (Terima pendaftaran terakhir jam 16.30)\n- Minggu: 09.00 - 15.00 (Hanya servis ringan dan ganti oli)\n- Tanggal Merah: Tetap buka (kecuali Lebaran & Tahun Baru)"
+            },
+            {
+                "content": "## Layanan Servis Rutin & Tune-Up\nSebutkan detail paket servis rutin yang Anda tawarkan.\n\nContoh:\n- Servis Ringan: Pembersihan filter udara, cek busi, cek rem, setel rantai, pembersihan injektor (Mulai Rp 45.000).\n- Servis Lengkap: Termasuk servis ringan + tune up + bersihkan kerak ruang bakar (Mulai Rp 85.000).\n- Ganti Oli: Tersedia oli mesin (MPX, Shell, Castrol) dan oli gardan matic."
+            },
+            {
+                "content": "## Servis CVT (Khusus Motor Matic)\nInformasikan paket khusus untuk pengguna motor matic.\n\nContoh: Paket Servis CVT lengkap mencakup pembongkaran area CVT, pembersihan debu, pemberian grease (gemuk) baru, dan pengecekan kondisi Roller, V-Belt, serta kampas ganda. Harga paket: Rp 60.000 (Hanya jasa)."
+            },
+            {
+                "content": "## Suku Cadang (Sparepart) & Ban\nSebutkan ketersediaan suku cadang di bengkel Anda.\n\nContoh:\n- Sparepart Original: Honda (AHM), Yamaha (YGP), Suzuki (SGP).\n- Ban Luar: IRC, FDR, Maxxis, Zeneos (Tersedia mesin pasang ban otomatis).\n- Kelistrikan: Aki GS Astra, Yuasa, Busi NGK/Denso, aneka bohlam lampu."
+            },
+            {
+                "content": "## Estimasi Biaya Jasa\nBerikan gambaran harga jasa agar pelanggan bisa memprediksi biaya.\n\nContoh:\n- Jasa Ganti Oli: Rp 5.000 (Gratis jika beli oli di sini)\n- Jasa Pasang Ban: Rp 15.000/ban\n- Jasa Servis CVT: Rp 60.000\n- Jasa Bongkar Mesin (Turun Mesin): Mulai Rp 250.000 (Tergantung kerusakan)"
+            },
+            {
+                "content": "## Layanan Mekanik Panggilan\nInformasikan jika bengkel Anda bisa mendatangi lokasi pelanggan yang mogok.\n\nContoh: Motor mogok di rumah atau jalan? Kami melayani jasa mekanik panggilan untuk area Serpong Utara (Radius 3km). Biaya kunjungan mulai dari Rp 30.000 (di luar biaya jasa perbaikan dan sparepart). Hubungi WA: 0812-3456-7890."
+            },
+            {
+                "content": "## Fasilitas Ruang Tunggu\nInformasikan kenyamanan pelanggan saat menunggu motor diservis.\n\nContoh:\n- Ruang tunggu dengan kursi yang nyaman dan kipas angin\n- Tersedia air minum galon gratis dan kopi/teh\n- Port charger HP untuk pelanggan\n- Toilet bersih tersedia"
+            },
+            {
+                "content": "## Kontak & Konsultasi\nBerikan informasi kanal komunikasi untuk menanyakan stok atau booking servis.\n\nContoh:\n- WhatsApp Admin: 0812-3456-7890 (Booking servis agar tidak antre)\n- Instagram: @bengkel_majujaya_serpong\n- Konsultasi: Silakan chat WA jika motor ada kendala suara aneh atau tidak bertenaga."
+            }
+        ],
+        "keywords": [
+            "bengkel motor terdekat",
+            "servis motor matic gredek",
+            "harga ganti oli motor",
+            "servis cvt honda yamaha",
+            "ganti ban motor murah",
+            "bengkel motor injeksi",
+            "servis rutin motor bebek",
+            "harga sparepart motor original",
+            "tune up motor sport",
+            "bengkel motor buka hari minggu",
+            "ganti aki motor bergaransi",
+            "mekanik motor panggilan",
+            "turun mesin motor biaya",
+            "bersihkan injektor motor",
+            "bengkel spesialis matic"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34ff",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:25:00.000Z",
+    "createdBy": "system"
+}

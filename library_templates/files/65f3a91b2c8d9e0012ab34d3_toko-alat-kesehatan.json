@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34d3",
+    "title": "Toko Alat Kesehatan",
+    "description": "Template basis pengetahuan untuk toko retail alat kesehatan (Alkes), mencakup stok kursi roda, tabung oksigen, alat cek kesehatan mandiri, dan layanan sewa.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kesehatan", "alkes", "peralatan-medis"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Toko Alkes Kami\nKami adalah penyedia alat kesehatan terlengkap untuk kebutuhan rumah tangga maupun instansi medis. Produk kami telah tersertifikasi dan memiliki izin edar resmi, menjamin keamanan dan akurasi penggunaan untuk mendukung pemulihan dan pemantauan kesehatan Anda.\n\nContoh: Medika Utama Alkes telah melayani kebutuhan medis sejak 2015. Kami hanya menjual produk original dengan jaminan purna jual yang jelas."
+            },
+            {
+                "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap toko alkes Anda agar pelanggan mudah menemukan lokasi.\n\nContoh: Ruko Sentra Medika No. 5, Jl. Dr. Saharjo, RT 01/RW 04, Kelurahan Manggarai Selatan, Kecamatan Tebet, Jakarta Selatan, 12860.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: 50 meter dari RS RSIA Tambak, di samping Apotek Kimia Farma."
+            },
+            {
+                "content": "## Jam Operasional & Layanan\nInformasikan jam buka dan tutup toko Anda setiap harinya.\n\nContoh:\n- Senin - Sabtu: 08.00 - 20.00\n- Minggu: 09.00 - 17.00\n- Hari Libur Nasional: Tetap Buka (Jam terbatas)\n\nKami melayani pembelian langsung di toko maupun pemesanan via WhatsApp 0812-3333-4444."
+            },
+            {
+                "content": "## Kategori Produk Unggulan\nSebutkan peralatan medis yang tersedia untuk dibeli.\n\nContoh:\n- Alat Bantu Jalan: Kursi roda standar/traveling (mulai Rp 950rb), kruk, walker, tongkat kaki 3/4.\n- Alat Monitoring: Tensi digital Omron (mulai Rp 550rb), cek gula darah 3-in-1, oximeter, termometer gun.\n- Peralatan Kamar Pasien: Ranjang pasien manual 2/3 crank, kasur angin anti-decubitus.\n- Alat Pernapasan: Tabung oksigen 1m3 (lengkap regulator), nebulizer anak/dewasa.\n- Seragam & Habis Pakai: Baju scrub, sarung tangan medis, masker, kasa steril."
+            },
+            {
+                "content": "## Layanan Sewa Alat Kesehatan\nJelaskan sistem sewa peralatan medis di toko Anda.\n\nContoh: Kami menyediakan jasa sewa untuk alat-alat tertentu:\n- Kursi Roda: Rp 150.000 / minggu atau Rp 400.000 / bulan.\n- Ranjang Pasien Manual: Rp 600.000 / bulan.\n- Tabung Oksigen: Rp 100.000 / minggu (Belum termasuk isi ulang).\nSyarat Sewa: Menitipkan KTP asli + Deposit (Uang Jaminan) yang akan dikembalikan 100% saat alat kembali."
+            },
+            {
+                "content": "## Isi Ulang Oksigen (Refill)\nInformasikan layanan isi ulang tabung oksigen.\n\nContoh: Kami melayani isi ulang oksigen medis instan (langsung jadi).\n- Ukuran 1m3: Rp 45.000.\n- Ukuran 2m3: Rp 80.000.\nProses pengisian hanya 5-10 menit. Harap pastikan tabung Anda dalam kondisi baik dan tidak berkarat."
+            },
+            {
+                "content": "## Garansi & Layanan Purna Jual\nJelaskan mengenai kebijakan garansi produk elektronik.\n\nContoh: Alat elektronik seperti tensimeter dan nebulizer memiliki garansi resmi pabrik 1-5 tahun. \nKebijakan Kami: Jika alat rusak dalam 7 hari pertama karena cacat produksi, kami GANTI BARU. Selebihnya akan kami bantu proses klaim ke Service Center resmi."
+            },
+            {
+                "content": "## Pengiriman & Pemasangan\nJelaskan cara pengiriman untuk alat-alat berukuran besar.\n\nContoh:\n- Area Jakarta Selatan: GRATIS ONGKIR & PEMASANGAN untuk pembelian ranjang pasien.\n- Luar Kota: Menggunakan ekspedisi cargo dengan packing kayu aman (biaya menyesuaikan berat/volume).\n- Instant Delivery (Gojek/Grab): Tersedia untuk alat-alat kecil seperti kursi roda lipat atau tensimeter."
+            },
+            {
+                "content": "## Konsultasi Penggunaan Alat\nInformasikan bantuan teknis bagi pelanggan.\n\nContoh: Bingung cara pakai alat cek gula darah atau rakit kursi roda? Staf kami siap memberikan training singkat di toko atau melalui video call WhatsApp. Kami memastikan Anda paham cara penggunaan alat yang benar agar akurat dan awet."
+            },
+            {
+                "content": "## Metode Pembayaran\nSebutkan pilihan cara pembayaran yang tersedia.\n\nContoh: Kami menerima:\n- Tunai / Cash.\n- Debit Card (Semua Bank).\n- QRIS (Gopay, OVO, Dana, ShopeePay).\n- Transfer Bank (Mandiri/BCA).\n- Cicilan: Tersedia via kartu kredit atau platform Paylater (S&K berlaku)."
+            }
+        ],
+        "keywords": [
+            "toko alkes terdekat",
+            "harga kursi roda",
+            "sewa ranjang pasien",
+            "isi ulang oksigen",
+            "beli tensimeter digital",
+            "harga tabung oksigen",
+            "toko alat kesehatan lengkap",
+            "walker alat bantu jalan",
+            "alat cek gula darah murah",
+            "nebulizer anak",
+            "masker medis box",
+            "baju scrub medis",
+            "timbangan badan digital",
+            "kasur angin decubitus",
+            "termometer infrared"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34d3",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:00:00.000Z",
+    "createdBy": "system"
+}

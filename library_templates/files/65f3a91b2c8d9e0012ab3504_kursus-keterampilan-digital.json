@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3504",
+    "title": "Kursus Keterampilan Digital",
+    "description": "Template basis pengetahuan untuk kursus komputer, desain grafis, coding anak, dan videografi, mencakup paket belajar, software yang dipelajari, dan sertifikasi.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["pendidikan", "kursus-komputer", "coding", "desain-grafis"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Kursus Kami\nKami menyediakan pelatihan keterampilan digital yang paling dibutuhkan di era modern. Dengan metode praktek langsung (hands-on) dan bimbingan dari instruktur profesional, kami membantu Anda maupun anak Anda menguasai teknologi mulai dari tingkat dasar hingga mahir.\n\nContoh:\n\"Digital Skill Academy telah meluluskan 1000+ alumni. Instruktur kami adalah praktisi dari startup ternama. Kami fokus pada skill siap kerja.\""
+            },
+            {
+                "content": "## Kursus Komputer (Office & Dasar)\n- Microsoft Office (Word, Excel, PowerPoint).\n- Pengenalan Windows & Internet sehat.\n- Pengetikan 10 Jari.\n- Pengelolaan file & administrasi digital.\n\nContoh:\n\"Paket Office for Staff: Belajar rumus Excel (VLOOKUP, HLOOKUP, Pivot Table) dan Mail Merge di Word. Durasi 8x pertemuan @90 menit.\""
+            },
+            {
+                "content": "## Kursus Desain Grafis & Videografi\n- Desain Grafis: Adobe Photoshop, Illustrator, Canva Pro.\n- Editing Video: Adobe Premiere Pro, CapCut (PC/Mobile).\n- Pembuatan Konten Media Sosial (Content Creator).\n\nContoh:\n\"Kelas Desain Canva: Belajar membuat Feed IG, Poster, dan Presentasi menarik. Kelas Video Editing: Basic Cut, Transition, hingga Color Grading sederhana.\""
+            },
+            {
+                "content": "## Kursus Coding & Robotik Anak\n- Pengenalan logika pemrograman dengan Scratch (Block coding).\n- Pembuatan Game sederhana.\n- Pengembangan Web Dasar (HTML, CSS).\n- Robotika Dasar (Arduino/LEGO).\n\nContoh:\n\"Coding for Kids (SD): Membuat game 'Tangkap Buah' dengan Scratch. Coding for Teens (SMP/SMA): Membuat website portofolio sendiri dengan HTML & CSS.\""
+            },
+            {
+                "content": "## Program Kursus Bahasa Inggris\n- English for Kids (Anak-anak).\n- Conversation Class (Percakapan).\n- TOEFL/IELTS Preparation.\n- Business English (Untuk profesional).\n\nContoh:\n\"Conversation Class: Fokus speaking active. Topik sehari-hari dan traveling. Maksimal 5 siswa per kelas agar efektif.\""
+            },
+            {
+                "content": "## Fasilitas Belajar\n- Lab Komputer dengan spesifikasi tinggi.\n- WiFi kecepatan tinggi.\n- Modul belajar dalam bentuk cetak dan digital.\n- Sertifikat resmi setelah menyelesaikan kursus.\n\nContoh:\n\"Setiap siswa menggunakan 1 PC (Core i5, RAM 16GB). Ruangan Full AC. Gratis konsultasi seumur hidup via grup alumni.\""
+            },
+            {
+                "content": "## Jadwal Kursus\n- Kelas Pagi: 09.00 - 12.00\n- Kelas Sore: 15.00 - 18.00\n- Kelas Malam: 19.00 - 21.00\n- Kelas Weekend (Sabtu/Minggu).\n\nContoh:\n\"Kelas Reguler: Senin & Kamis (16.00-17.30). Kelas Weekend: Sabtu (09.00-12.00). Jadwal Privat bisa request sesuai kesepakatan.\""
+            },
+            {
+                "content": "## Harga & Paket Belajar\n- Paket Dasar (1 Bulan): Rp [Isi Harga].\n- Paket Profesional (3 Bulan): Rp [Isi Harga].\n- Kelas Privat (One-on-One): Mulai dari Rp [Isi Harga]/pertemuan.\n\nContoh Harga:\n- Microsoft Office (10 Sesi): Rp 750.000.\n- Desain Grafis (12 Sesi): Rp 1.200.000.\n- Coding Anak (Per Bulan): Rp 400.000.\n- Biaya Pendaftaran: Rp 100.000.\""
+            },
+            {
+                "content": "## Mengapa Belajar di Sini?\n- Kurikulum selalu update dengan tren industri.\n- Mentor praktisi di bidangnya.\n- Jaminan sampai bisa (boleh mengulang kelas jika belum paham).\n- Bantuan penyaluran kerja/magang (untuk program tertentu).\n\nContoh:\n\"Garansi mengulang GRATIS di kelas yang sama jika belum lulus ujian akhir. Kami bekerjasama dengan 50+ perusahaan untuk penyaluran magang.\""
+            },
+            {
+                "content": "## Kontak Admin Kursus\nWhatsApp: [Isi Nomor WA]\nInstagram: @[Isi Username IG]\n\nInvestasikan masa depanmu dengan keterampilan digital sekarang!\n\nContoh:\n\"Info Pendaftaran: WA 0812-xxxx-xxxx. Cek karya siswa kami di IG: @digiskill_academy. Lokasi: Ruko Grand Galaxy, Bekasi.\""
+            }
+        ],
+        "keywords": [
+            "kursus komputer terdekat",
+            "les desain grafis murah",
+            "belajar coding anak scratch",
+            "kursus bahasa inggris conversation",
+            "pelatihan microsoft excel tingkat lanjut",
+            "belajar adobe photoshop pemula",
+            "kursus editing video capcut",
+            "sertifikat kursus komputer resmi",
+            "kursus web design html css",
+            "coding school for kids [kota]",
+            "les toefl preparation terbaik",
+            "kursus canva untuk bisnis",
+            "pelatihan konten kreator",
+            "belajar mengetik cepat 10 jari",
+            "kursus digital marketing dasar"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab3504",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:50:00.000Z",
+    "createdBy": "system"
+}

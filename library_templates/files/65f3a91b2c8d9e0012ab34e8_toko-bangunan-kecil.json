@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34e8",
+    "title": "Toko Bangunan Kecil",
+    "description": "Template basis pengetahuan untuk toko bangunan skala UMKM, mencakup stok semen, cat, paku, pipa air, alat pertukangan, dan layanan antar barang.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["retail", "bangunan", "material", "pertukangan"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Toko Bangunan Kami\nKami menyediakan berbagai material bangunan dan perlengkapan rumah tangga untuk kebutuhan renovasi ringan maupun perbaikan mendesak. Meskipun skala kami menengah, kami mengutamakan kelengkapan barang, kualitas material yang terjamin, dan kecepatan pengiriman ke lokasi Anda.\n\nContoh:\n\"TB. Maju Jaya\" melayani warga Perumahan Harapan Indah untuk kebutuhan renovasi dan perbaikan rumah sejak 2010."
+            },
+            {
+                "content": "## Jam Operasional\nKami buka setiap hari:\n- Senin - Sabtu: 07.30 - 17.00\n- Minggu: 08.00 - 13.00\nLokasi: [Isi Alamat Toko]\n\nContoh:\nAlamat: Jl. Bulevar Hijau Raya No. 45, Bekasi.\nGoogle Maps: https://maps.google.com/?q=building_store\nBuka setengah hari saat hari libur nasional."
+            },
+            {
+                "content": "## Material Konstruksi Dasar\n- Semen (Gresik, Tiga Roda, Holcim) - Sak atau kiloan.\n- Pasir & Batu Belah (Satu pickup/kijang).\n- Besi Beton berbagai ukuran.\n- Bata Merah & Bata Ringan (Hebel).\n- Kayu Kaso & Papan (Borneo/Meranti).\n\nContoh Harga:\n- Semen Tiga Roda 40kg: Rp 58.000\n- Semen Tiga Roda 1kg (Eceran): Rp 2.500\n- Pasir Satu Kijang (0.8 m3): Rp 300.000\n- Hebel 7.5cm: Rp 7.500/pcs"
+            },
+            {
+                "content": "## Perlengkapan Pipa & Sanitasi\n- Pipa PVC (Wavin, Rucika) & Aneka Sambungan (Knee, Tee, Socket).\n- Kran Air (Plastik & Besi).\n- Lem Pipa & Seal Tape.\n- Bak Mandi Plastik & Closet Jongkok.\n\nContoh:\n- Pipa PVC 1/2 inch Rucika AW: Rp 35.000/batang\n- Kran Air Plastik: Rp 15.000\n- Seal Tape: Rp 3.000"
+            },
+            {
+                "content": "## Cat & Alat Pengecatan\n- Cat Tembok (Interior & Eksterior) - Berbagai merk & warna.\n- Cat Kayu & Besi.\n- Kuas, Rol Cat, & Bak Cat.\n- Thinner & Spiritus.\n\nContoh:\n- Cat Vinilex 5kg (Putih): Rp 120.000\n- Kuas 3 inch: Rp 10.000\n- Thinner A Botol Kaca: Rp 12.000"
+            },
+            {
+                "content": "## Alat Pertukangan & Perangkat Keras\n- Paku (Kayu, Beton, Payung).\n- Palu, Gergaji, Obeng, Tang.\n- Kawat Ikat & Kawat Nyamuk.\n- Engsel Pintu & Grendel/Kunci.\n\nContoh:\n- Paku 5cm/7cm: Rp 18.000/kg\n- Palu Kambing Gagang Kayu: Rp 35.000"
+            },
+            {
+                "content": "## Layanan Antar Barang\nKami menyediakan layanan antar untuk barang berat/besar menggunakan armada pickup kami:\n- Gratis ongkir untuk radius [Isi Radius] km dengan minimal belanja tertentu.\n- Pengiriman luar radius dikenakan biaya bensin menyesuaikan jarak.\n\nContoh:\nGratis ongkir radius 2km untuk pembelian minimal Rp 500.000 (misal: pasir + semen)."
+            },
+            {
+                "content": "## Estimasi Harga & Pembayaran\n- Harga material bersifat fluktuatif mengikuti harga pasar.\n- Menerima pembayaran Tunai & QRIS.\n- Untuk proyek borongan, silakan ajukan Rencana Anggaran Biaya (RAB) untuk mendapatkan harga khusus.\n\nContoh:\nBisa bayar pakai GoPay/OVO di kasir."
+            },
+            {
+                "content": "## Konsultasi Kebutuhan Material\nBingung menghitung berapa banyak semen atau bata yang dibutuhkan? Staf kami siap membantu menghitung estimasi kebutuhan material berdasarkan luas area yang akan Anda bangun atau renovasi.\n\nContoh:\n\"Pak, saya mau plester tembok 3x3 meter, butuh semen berapa sak?\""
+            },
+            {
+                "content": "## Kontak Admin Toko\nWhatsApp: [Isi Nomor WA]\nTelepon: [Isi Nomor Telepon]\n\nSolusi material bangunan cepat dan tepat untuk hunian Anda!\n\nContoh:\nWA Order: 0857-1234-5678 (Pak Slamet)\nBisa kirim foto barang yang dicari via WA."
+            }
+        ],
+        "keywords": [
+            "toko bangunan terdekat",
+            "harga semen per sak",
+            "jual cat tembok murah",
+            "pipa air rucika",
+            "bahan bangunan lengkap",
+            "toko material buka minggu",
+            "harga bata ringan hebel",
+            "alat pertukangan lengkap",
+            "kuas cat tembok",
+            "kran air wastafel",
+            "paku kayu kiloan",
+            "kunci pintu rumah",
+            "pasir satu pickup harga",
+            "besi beton bangunan",
+            "toko material antar ke rumah"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34e8",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T10:00:00.000Z",
+    "createdBy": "system"
+}

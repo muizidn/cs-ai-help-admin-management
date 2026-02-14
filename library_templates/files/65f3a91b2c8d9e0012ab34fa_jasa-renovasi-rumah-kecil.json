@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34fa",
+    "title": "Jasa Renovasi Rumah Kecil",
+    "description": "Template basis pengetahuan untuk jasa renovasi rumah skala kecil hingga menengah, mencakup pengecatan ulang, perbaikan atap bocor, pasang keramik, dan renovasi kamar mandi.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["jasa", "renovasi-rumah", "bangunan", "properti"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Layanan Renovasi Kami\nKami melayani jasa pertukangan dan renovasi rumah untuk skala kecil hingga menengah. Fokus kami adalah memberikan hasil pengerjaan yang rapi, struktur yang kuat, dan biaya yang transparan.\n\nContoh: Tukang Handal Service melayani warga Depok dan sekitarnya sejak 2012. Kami ahli dalam perbaikan atap bocor, pengecatan dinding, hingga renovasi total kamar mandi dengan tukang yang disiplin dan hasil yang bergaransi."
+            },
+            {
+                "content": "## Lokasi & Area Layanan\nSilakan masukkan alamat kantor/workshop dan cakupan wilayah yang bisa Anda layani.\n\nContoh: Perumahan Grand Depok City, Cluster Alamanda Blok B No. 12, Kelurahan Kalimulya, Kecamatan Cilodong, Kota Depok, 16413.\nArea Layanan: Mencakup seluruh wilayah Depok, Cibubur, dan Jakarta Selatan.\nLink Google Maps: https://maps.app.goo.gl/xxxx"
+            },
+            {
+                "content": "## Jam Operasional & Jadwal Survei\nInformasikan kapan tim Anda tersedia untuk melakukan pengecekan lokasi.\n\nContoh:\n- Jam Kerja Tukang: Senin - Sabtu (08.00 - 17.00)\n- Jadwal Survei Lokasi: Senin - Minggu (Sesuai janji temu)\n- Survei Hari Libur: Tersedia dengan konfirmasi minimal H-1.\nBiaya Survei: GRATIS untuk area radius 10km dari Depok."
+            },
+            {
+                "content": "## Layanan Renovasi Utama\nSebutkan jenis pekerjaan bangunan yang bisa tim Anda kerjakan.\n\nContoh:\n- Perbaikan Atap: Tambal bocor, ganti genteng, pasang baja ringan.\n- Pengecatan: Cat interior/eksterior, perbaikan dinding lembab/rembes.\n- Lantai & Keramik: Pasang keramik/granit baru, bongkar lantai lama.\n- Plafon: Pasang plafon Gypsum/PVC dan list profil."
+            },
+            {
+                "content": "## Renovasi Kamar Mandi & Dapur\nJelaskan layanan spesifik untuk dua area penting ini.\n\nContoh:\n- Kamar Mandi: Ganti pipa bocor, pasang closet duduk, shower, dan waterproofing lantai agar tidak bocor ke lantai bawah.\n- Dapur: Pembuatan meja dapur cor beton, pasang keramik dinding (backsplash), dan instalasi bak cuci piring (sink)."
+            },
+            {
+                "content": "## Alur Kerja & Sistem Pembayaran\nJelaskan tahapan mulai dari awal konsultasi hingga pelunasan.\n\nContoh:\n1. Konsultasi & Survei Lokasi (Gratis).\n2. Penyerahan RAB (Rencana Anggaran Biaya) detail.\n3. Penandatanganan Kontrak Kerja/SPK.\n4. Pembayaran DP (Down Payment) 30%.\n5. Pengerjaan Proyek & Termin (Cicilan) berdasarkan progres.\n6. Pelunasan setelah serah terima pekerjaan."
+            },
+            {
+                "content": "## Estimasi Biaya Pekerjaan\nBerikan gambaran harga agar pelanggan bisa menghitung budget awal.\n\nContoh:\n- Jasa Cat Dinding: Mulai Rp 20.000/m2 (Hanya jasa).\n- Pasang Keramik Lantai: Mulai Rp 60.000/m2.\n- Pasang Plafon PVC: Mulai Rp 165.000/m2 (Bahan + Jasa).\n- Paket Renovasi Kamar Mandi Standar: Mulai Rp 7.500.000 (Terima beres)."
+            },
+            {
+                "content": "## Mengapa Memilih Kami?\nSebutkan keunggulan jasa renovasi Anda dibandingkan yang lain.\n\nContoh:\n- Tukang spesialis (bukan serabutan) yang jujur dan rapi.\n- Transparansi Nota Pembelian Material (Sisa budget dikembalikan).\n- Garansi Pemeliharaan: Gratis perbaikan jika ada kendala dalam 30 hari setelah proyek selesai.\n- Konsultasi desain dan pemilihan material gratis."
+            },
+            {
+                "content": "## Cara Pemesanan & Kontak\nInformasikan cara pelanggan menghubungi Anda untuk mulai renovasi.\n\nContoh: Silakan hubungi kami via WhatsApp di 0812-3456-7890. Mohon kirimkan foto atau video area yang ingin diperbaiki agar kami bisa memberikan estimasi harga awal sebelum survei lokasi."
+            },
+            {
+                "content": "## Media Sosial & Portofolio\nBerikan link untuk melihat hasil kerja tim Anda sebelumnya.\n\nContoh:\n- Instagram: @tukang_handal_depok (Cek Highlight 'Testimoni')\n- Facebook: Jasa Renovasi Rumah Depok\n- Website: www.tukanghandalservice.com"
+            }
+        ],
+        "keywords": [
+            "jasa renovasi rumah murah",
+            "tukang cat borongan terdekat",
+            "perbaikan atap bocor garansi",
+            "biaya pasang plafon pvc per meter",
+            "jasa renovasi kamar mandi kecil",
+            "tukang bangunan harian murah",
+            "pasang keramik lantai dapur",
+            "cat rumah interior eksterior",
+            "renovasi rumah subsidi",
+            "tukang pasang baja ringan",
+            "waterproofing dak beton bocor",
+            "jasa borongan bangunan",
+            "rab renovasi rumah minimalis",
+            "kontraktor renovasi rumah kecil",
+            "tukang bangunan panggil"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34fa",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:25:00.000Z",
+    "createdBy": "system"
+}

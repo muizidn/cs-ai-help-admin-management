@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34f4",
+    "title": "Laundry Kiloan",
+    "description": "Template basis pengetahuan untuk jasa laundry kiloan dan satuan, mencakup paket cuci kering lipat, cuci setrika, laundry bed cover, dan layanan antar-jemput.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["jasa", "laundry", "kiloan", "rumah-tangga"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Laundry Kami\nKami menyediakan solusi praktis untuk urusan pakaian kotor Anda. Dengan mesin cuci modern, deterjen berkualitas, dan pewangi yang tahan lama, kami menjamin pakaian Anda bersih, rapi, dan harum. Kami sangat memperhatikan higienitas dengan sistem 'Satu Pelanggan Satu Mesin' (tidak dicampur).\n\nContoh: Laundry Wangi Segar hadir di Bekasi sejak 2018. Kami spesialis cuci setrika kiloan dengan proses cepat, bersih, dan packing yang eksklusif, menggunakan setrika uap untuk menjaga kualitas serat kain."
+            },
+            {
+                "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap outlet laundry Anda agar pelanggan mudah menemukan lokasi.\n\nContoh: Kompleks Perumahan Harapan Baru, Blok C1 No. 5, RT 003/RW 012, Kelurahan Kota Baru, Kecamatan Bekasi Barat, Kota Bekasi, 17133.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: Belakang Alfamidi Harapan Baru, depan Toko Bangunan Berkah."
+            },
+            {
+                "content": "## Jam Operasional\nInformasikan jam buka dan tutup laundry Anda setiap harinya.\n\nContoh:\n- Senin - Sabtu: 07.00 - 21.00 (Terima drop pakaian terakhir jam 20.30)\n- Minggu: 08.00 - 17.00\n- Tanggal Merah: Buka (Kecuali Hari Raya Idul Fitri)"
+            },
+            {
+                "content": "## Layanan Laundry Kiloan\nSebutkan paket cuci kiloan yang tersedia beserta estimasi waktunya.\n\nContoh:\n- Cuci Setrika Reguler (2 Hari): Rp 8.000/kg\n- Cuci Setrika Express (1 Hari): Rp 12.000/kg\n- Cuci Setrika Kilat (6 Jam): Rp 18.000/kg\n- Setrika Saja: Rp 6.000/kg"
+            },
+            {
+                "content": "## Layanan Laundry Satuan\nInformasikan harga untuk barang-barang yang tidak bisa dikilo (satuan).\n\nContoh:\n- Bed Cover: Small (Rp 25rb), Queen (Rp 35rb), King (Rp 45rb)\n- Jas / Blazer: Rp 30.000/pcs\n- Boneka: Kecil (Rp 10rb), Besar (Rp 30rb - 50rb)\n- Sepatu: Deep Cleaning Rp 35.000/pasang"
+            },
+            {
+                "content": "## Layanan Antar Jemput (Delivery)\nInformasikan prosedur pemesanan layanan jemput pakaian kotor.\n\nContoh: Kami melayani antar jemput gratis untuk minimal order 5kg (Radius < 2km). Untuk di luar radius tersebut dikenakan ongkir Rp 5.000 - Rp 10.000. Hubungi WhatsApp: 0812-3456-7890 dengan format: NAMA # ALAMAT # JUMLAH ESTIMASI # JENIS LAYANAN."
+            },
+            {
+                "content": "## Pilihan Parfum Laundry\nSebutkan varian aroma pewangi yang bisa dipilih pelanggan.\n\nContoh:\n- Ocean Fresh (Segar & Sporty)\n- Sakura (Lembut & Floral)\n- Akasia (Elegan & Mewah)\n- Lily (Manis & Soft)\nPelanggan dapat meminta 'Tanpa Parfum' jika memiliki kulit sensitif."
+            },
+            {
+                "content": "## Kebijakan & Garansi Layanan\nInformasikan tanggung jawab laundry jika terjadi kendala.\n\nContoh:\n- Komplain maksimal 24 jam setelah laundry diambil/diantar.\n- Jika pakaian tertukar atau hilang, ganti rugi maksimal 5x biaya laundry item tersebut.\n- Mohon cek kantong pakaian Anda sebelum diserahkan, kami tidak bertanggung jawab atas barang berharga yang tertinggal."
+            },
+            {
+                "content": "## Metode Pembayaran\nSebutkan cara pembayaran yang diterima di outlet.\n\nContoh: Kami menerima pembayaran Tunai, QRIS (Gopay/OVO/Dana), dan Transfer Bank BCA. Tersedia juga Paket Deposit (Bayar Rp 100.000 dapat saldo Rp 110.000)."
+            },
+            {
+                "content": "## Kontak & Media Sosial\nBerikan informasi kanal komunikasi yang bisa dihubungi.\n\nContoh:\n- WhatsApp Admin: 0812-3456-7890\n- Instagram: @laundry_wangisegar_bekasi\n- Facebook: Laundry Wangi Segar Official"
+            }
+        ],
+        "keywords": [
+            "laundry terdekat antar jemput",
+            "harga laundry kiloan",
+            "laundry express 6 jam",
+            "cuci bed cover murah",
+            "jasa setrika baju",
+            "laundry sepatu terdekat",
+            "cuci boneka besar",
+            "laundry kiloan bersih wangi",
+            "laundry satu hari jadi",
+            "antar jemput laundry gratis",
+            "laundry jas satuan",
+            "deterjen laundry berkualitas",
+            "laundry selimut tebal",
+            "cuci karpet laundry",
+            "promo laundry bulanan"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34f4",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:15:00.000Z",
+    "createdBy": "system"
+}

@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3505",
+    "title": "Daycare & PAUD",
+    "description": "Template basis pengetahuan untuk penitipan anak (daycare) dan pendidikan anak usia dini (PAUD), mencakup jadwal harian, menu makan, fasilitas bermain, dan laporan perkembangan anak.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["pendidikan", "daycare", "paud", "anak"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Daycare & PAUD Kami\nKami menyediakan lingkungan yang aman, bersih, dan penuh kasih sayang untuk mendukung tumbuh kembang anak secara optimal. Fokus kami adalah pendidikan karakter, kemandirian, dan sosialisasi melalui metode belajar sambil bermain (learning by playing) yang menyenangkan.\n\nContoh:\n\"Ceria Daycare & Preschool hadir sebagai rumah kedua bagi buah hati Anda. Kami menerapkan metode Montessori dan Islami. Pengasuh bersertifikat dan rasio guru:anak yang ideal (1:5).\""
+            },
+            {
+                "content": "## Jam Operasional\n- Daycare (Full Day): 07.30 - 17.30\n- PAUD/Playgroup: 08.00 - 11.00\n- Penitipan Overtime (Lembur): Tersedia dengan biaya tambahan.\n\nContoh:\n\"Buka Senin-Jumat 07.00 - 18.00. Sabtu (Half Day) 08.00 - 13.00. Toleransi penjemputan terlambat 15 menit, selebihnya dikenakan charge overtime Rp 20.000/jam.\""
+            },
+            {
+                "content": "## Jadwal Harian (Daily Routine)\n- 07.30 - 08.30: Kedatangan & Sarapan.\n- 08.30 - 10.00: Belajar Kreatif & Motorik (PAUD).\n- 10.00 - 11.00: Snack Time & Main di Luar.\n- 11.00 - 12.00: Makan Siang & Bersih diri.\n- 12.00 - 14.30: Tidur Siang.\n- 14.30 - 16.00: Mandi Sore & Snack Sore.\n- 16.00 - 17.30: Main Bebas & Persiapan Pulang.\n\nContoh:\n\"Rutinitas kami teratur namun fleksibel. Setiap Jumat ada kegiatan Sholat Dhuha bersama dan dongeng islami.\""
+            },
+            {
+                "content": "## Menu Makanan Sehat\nKami menyediakan makanan bergizi seimbang tanpa MSG dan pengawet:\n- Sarapan: Bubur sehat/Sereal/Roti.\n- Makan Siang: Nasi, Lauk Pauk (Protein Hewani/Nabati), Sayuran, Buah.\n- Snack: Pudding, Buah potong, Kue tradisional sehat.\n\nContoh:\n\"Katering sehat harian. Senin: Sup Ayam + Perkedel + Semangka. Selasa: Sayur Bayam + Ikan Goreng + Pisang. Kami mengakomodasi anak dengan alergi (harap info saat pendaftaran).\""
+            },
+            {
+                "content": "## Fasilitas Kami\n- Ruang bermain indoor & outdoor yang aman.\n- Ruang tidur ber-AC dan bersih.\n- CCTV yang dapat diakses orang tua (opsional).\n- Mainan edukatif sesuai usia.\n- Perpustakaan mini anak.\n\nContoh:\n\"Lantai vinyl empuk, pojok baca, dan playground outdoor dengan rumput sintetis. CCTV Live Access via HP untuk orang tua.\""
+            },
+            {
+                "content": "## Kurikulum & Aktivitas\n- Pengenalan huruf, angka, dan warna.\n- Melatih motorik kasar & halus (Mewarnai, Meronce, Menari).\n- Pembiasaan adab & kemandirian (Makan sendiri, toilet training).\n- Storytelling (Bercerita) dan menyanyi.\n\nContoh:\n\"Program Unggulan: Tahfidz Cilik (Hafalan surat pendek), Fun Cooking, dan Gardening (Berkebun). Toilet Training dibantu miss sampai lulus.\""
+            },
+            {
+                "content": "## Biaya Layanan\n- Biaya Pendaftaran: Rp [Isi Harga].\n- Daycare Bulanan: Rp [Isi Harga].\n- Daycare Harian (Insidental): Rp [Isi Harga].\n- SPP PAUD/Playgroup: Rp [Isi Harga]/bulan.\n\nContoh Harga:\n- Uang Pangkal: Rp 1.500.000 (Termasuk seragam & kasur).\n- SPP Bulanan (Full Day): Rp 1.200.000 (Include makan 3x).\n- Harian: Rp 100.000/hari.\n- Overtime: Rp 15.000/jam.\""
+            },
+            {
+                "content": "## Laporan Perkembangan (Daily Report)\nSetiap hari orang tua akan menerima laporan digital/buku penghubung mengenai:\n- Porsi makan & minum anak.\n- Durasi tidur siang.\n- Aktivitas belajar & bermain.\n- Mood & kesehatan anak.\n\nContoh:\n\"Laporan dikirim via WhatsApp setiap jam 17.00. Berisi foto kegiatan hari itu dan catatan khusus (misal: anak sedang pilek/tidak nafsu makan).\""
+            },
+            {
+                "content": "## Syarat Pendaftaran\n1. Mengisi formulir pendaftaran.\n2. Fotokopi Akte Kelahiran & KIA/Kartu Keluarga.\n3. Pas foto anak & orang tua.\n4. Fotokopi buku imunisasi.\n\nContoh:\n\"Usia penerimaan mulai 3 bulan s.d 6 tahun. Wajib melampirkan surat keterangan sehat dari dokter jika ada riwayat penyakit khusus.\""
+            },
+            {
+                "content": "## Kontak Admin Daycare\nWhatsApp: [Isi Nomor WA]\nInstagram: @[Isi Username IG]\n\nPartner terpercaya orang tua dalam menjaga dan mendidik buah hati!\n\nContoh:\n\"Survey lokasi silakan janji temu dulu via WA: 0812-xxxx-xxxx. Alamat: Komplek Griya Indah Blok A1 No. 5.\""
+            }
+        ],
+        "keywords": [
+            "daycare terdekat aman bersih",
+            "penitipan anak bulanan murah",
+            "paud playgroup terbaik [kota]",
+            "daycare harian insidental",
+            "biaya penitipan anak per bulan",
+            "sekolah paud kurikulum merdeka",
+            "daycare cctv online orang tua",
+            "les calistung anak paud",
+            "penitipan bayi newborn daycare",
+            "menu makan sehat daycare",
+            "aktivitas motorik anak paud",
+            "daycare jam operasional panjang",
+            "sekolah anak usia dini murah",
+            "tempat main anak edukatif",
+            "laporan harian anak daycare"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab3505",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:50:00.000Z",
+    "createdBy": "system"
+}

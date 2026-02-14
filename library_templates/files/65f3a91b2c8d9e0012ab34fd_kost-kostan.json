@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34fd",
+    "title": "Kost-kostan",
+    "description": "Template basis pengetahuan untuk manajemen kost-kostan, mencakup info tipe kamar, fasilitas (WiFi, parkir, dapur), aturan kost, dan sistem pembayaran bulanan.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["akomodasi", "kost", "properti", "sewa-kamar"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Kost Kami\nKami menyediakan hunian kost yang nyaman, bersih, dan aman bagi mahasiswa maupun karyawan/wati. Berlokasi strategis dekat dengan [Isi Nama Kampus/Perkantoran], kost kami dirancang untuk mendukung produktivitas dan istirahat Anda dengan lingkungan yang tenang.\n\nContoh: Kost Putri \"Griya Cantika\" terletak hanya 5 menit jalan kaki dari Kampus UGM. Lingkungan aman, bebas banjir, dan dekat dengan banyak tempat makan murah."
+            },
+            {
+                "content": "## Tipe Kamar & Fasilitas\n- Kamar AC: Kamar mandi dalam, kasur springbed, lemari, meja kerja, AC.\n- Kamar Non-AC (Fan): Kamar mandi dalam/luar, kasur, lemari, meja kerja.\n- Ukuran Kamar: [Isi, misal: 3x3m atau 3x4m].\n- Fasilitas Umum: WiFi kecepatan tinggi, Dapur bersama (kompor & gas), Kulkas bersama, Ruang tamu/santai.\n\nContoh:\n- Tipe A (Eksklusif): 4x5m, AC, TV LED, Water Heater, Token Listrik Sendiri.\n- Tipe B (Standard): 3x4m, AC, Kamar Mandi Dalam, Listrik Include.\n- Tipe C (Ekonomis): 3x3m, Kipas Angin, Kamar Mandi Luar."
+            },
+            {
+                "content": "## Area Parkir & Keamanan\n- Tersedia parkir motor yang luas dan aman.\n- Parkir mobil (Terbatas/Tersedia sesuai ketersediaan).\n- CCTV 24 jam di area publik kost.\n- Gerbang kost dengan kunci akses masing-masing penghuni.\n\nContoh:\n- Parkir Motor: Gratis, kapasitas 20 motor (dalam pagar).\n- Parkir Mobil: Rp 150.000/bulan (Slot terbatas, siapa cepat dia dapat).\n- Akses: Fingerprint door lock di pintu utama."
+            },
+            {
+                "content": "## Aturan & Ketentuan Kost\nUntuk kenyamanan bersama:\n- Jam Malam: Tamu berkunjung maksimal pukul 22.00.\n- Tamu lawan jenis dilarang masuk ke dalam kamar.\n- Menjaga kebersihan area publik dan dapur bersama.\n- Dilarang membawa hewan peliharaan (kecuali ada izin khusus).\n- Dilarang membawa obat-obatan terlarang & minuman keras.\n\nContoh Aturan Tambahan:\n- Penghuni wajib menyerahkan fotokopi KTP/KTM.\n- Dilarang merokok di dalam kamar ber-AC.\n- Membawa alat elektronik berdaya besar (Rice cooker, Dispenser) dikenakan charge listrik tambahan."
+            },
+            {
+                "content": "## Harga Sewa & Biaya Tambahan\n- Sewa Kamar AC: Rp [Isi Harga]/bulan.\n- Sewa Kamar Non-AC: Rp [Isi Harga]/bulan.\n- Deposit (Jaminan): Rp [Isi Harga] (dikembalikan saat pindah jika tidak ada kerusakan).\n- Biaya Listrik: [Isi, misal: Token mandiri atau termasuk sewa].\n- Biaya Tambahan (Opsional): Laundry, Parkir mobil, atau Tambah orang.\n\nContoh Harga:\n- Tipe A (AC): Rp 1.500.000/bulan (Listrik Token Sendiri).\n- Tipe B (Non-AC): Rp 850.000/bulan (Listrik Include).\n- Deposit Awal: Rp 500.000 (Dibayar 1x diawal)."
+            },
+            {
+                "content": "## Layanan Kebersihan\n- Pembersihan area koridor dan dapur bersama dilakukan setiap hari oleh petugas.\n- Layanan pembersihan kamar (cleaning service) tersedia sesuai permintaan (biaya tambahan).\n\nContoh:\n\"Free cleaning kamar mandi dalam 1x seminggu. Untuk sapu pel kamar harian bisa request ke penjaga dengan biaya Rp 50.000/bulan.\""
+            },
+            {
+                "content": "## Sistem Pembayaran & Jatuh Tempo\n- Pembayaran sewa dilakukan setiap tanggal [Isi] setiap bulannya.\n- Pembayaran via Transfer Bank ke rekening pengelola.\n- Keterlambatan pembayaran dikenakan denda sesuai kesepakatan.\n\nContoh:\n\"Jatuh tempo setiap tanggal 5. Pembayaran via Transfer BCA a.n Ibu Kost. Telat bayar >3 hari dikenakan denda Rp 50.000.\""
+            },
+            {
+                "content": "## Prosedur Booking Kamar\n1. Cek ketersediaan via WhatsApp admin.\n2. Survei lokasi (Visit).\n3. Pembayaran uang muka (DP) atau sewa bulan pertama.\n4. Penyerahan fotokopi KTP/Identitas resmi.\n5. Tanda tangan surat perjanjian kost.\n\nContoh:\n\"Untuk booking kamar (keep), wajib DP minimal Rp 300.000. DP hangus jika batal masuk.\""
+            },
+            {
+                "content": "## Fasilitas Sekitar Kost\n- Dekat dengan Minimarket (Indomaret/Alfamart).\n- Dekat dengan tempat makan/warteg.\n- Dekat dengan akses transportasi umum/ojek online.\n- Dekat dengan Laundry kiloan.\n\nContoh:\n\"Hanya 100m dari Indomaret 24 Jam dan Halte Trans Jogja. Banyak laundry kiloan murah di sepanjang jalan masuk.\""
+            },
+            {
+                "content": "## Kontak Pengelola Kost\nWhatsApp: [Isi Nomor WA]\nTelepon: [Isi Nomor Telepon]\n\nHunian nyaman, serasa di rumah sendiri!\n\nContoh:\nWA: 0812-3333-4444 (Mbak Ani - Penjaga Kost)"
+            }
+        ],
+        "keywords": [
+            "kost terdekat kampus",
+            "info kost putra putri",
+            "kost kamar mandi dalam ac",
+            "kost karyawan bulanan murah",
+            "kost harian wifi kencang",
+            "harga kost [wilayah] terbaru",
+            "kost parkir mobil luas",
+            "kost bebas jam malam",
+            "kost eksklusif fasilitas lengkap",
+            "cara booking kamar kost",
+            "kost putri aman cctv",
+            "kontrakan kost mahasiswa",
+            "kost campur karyawan",
+            "peraturan kost yang harus ditaati",
+            "sewa kamar kost murah"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34fd",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:25:00.000Z",
+    "createdBy": "system"
+}

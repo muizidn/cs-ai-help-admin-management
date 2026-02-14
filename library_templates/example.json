@@ -1,0 +1,73 @@
+{
+    "_id": "698ec8bc875c184801adedcb",
+    "title": "Klinik",
+    "description": "Klinik",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": [],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Klinik Kami\nKlinik [Nama Klinik] adalah penyedia layanan kesehatan terpercaya yang berfokus pada pelayanan cepat, profesional, dan ramah pasien. Kami melayani konsultasi umum, pemeriksaan kesehatan, vaksinasi, serta layanan laboratorium dengan standar medis yang aman dan modern.\n\nVisi kami adalah memberikan akses layanan kesehatan yang mudah dijangkau dengan biaya yang transparan dan proses yang efisien."
+            },
+            {
+                "content": "## Jam Operasional & Lokasi\nAlamat Klinik:\n[Alamat Lengkap Klinik]\n\nJam Operasional:\n- Senin – Jumat: 08.00 – 20.00\n- Sabtu: 08.00 – 15.00\n- Minggu & Hari Libur Nasional: Tutup (Darurat sesuai konfirmasi)\n\nUntuk menghindari antrean panjang, pasien disarankan melakukan reservasi terlebih dahulu."
+            },
+            {
+                "content": "## Layanan yang Tersedia\nKami menyediakan layanan berikut:\n- Konsultasi Dokter Umum\n- Konsultasi Dokter Anak\n- Pemeriksaan Tekanan Darah & Gula Darah\n- Vaksinasi Anak & Dewasa\n- Medical Check-Up\n- Pemeriksaan Laboratorium (Darah, Urin, Kolesterol, dll)\n- Tindakan Medis Ringan (Luka, Jahit, Nebulizer)\n- Konsultasi Penyakit Kronis (Diabetes, Hipertensi)\n\nUntuk layanan khusus, silakan tanyakan ke admin."
+            },
+            {
+                "content": "## Cara Pendaftaran & Reservasi\nPendaftaran dapat dilakukan melalui:\n- WhatsApp Resmi Klinik\n- Telepon\n- Datang langsung (Walk-in)\n\nFormat Reservasi via WhatsApp:\nNama:\nTanggal Lahir:\nKeluhan:\nTanggal & Jam Kedatangan:\n\nPasien yang datang terlambat lebih dari 15 menit dapat dijadwalkan ulang sesuai ketersediaan dokter."
+            },
+            {
+                "content": "## Estimasi Biaya & Pembayaran\nBiaya konsultasi mulai dari Rp[xx.xxx]. Biaya dapat berbeda tergantung jenis layanan dan tindakan medis yang dilakukan.\n\nMetode Pembayaran:\n- Tunai\n- Transfer Bank\n- Kartu Debit/Kredit\n- QRIS\n- Asuransi tertentu (konfirmasi terlebih dahulu)\n\nUntuk estimasi biaya spesifik, silakan sebutkan jenis layanan yang dibutuhkan."
+            },
+            {
+                "content": "## Layanan BPJS & Asuransi\nKami melayani pasien BPJS dan beberapa asuransi rekanan. Untuk pasien BPJS, harap membawa:\n- Kartu BPJS aktif\n- KTP\n- Surat Rujukan (jika diperlukan)\n\nPastikan status kepesertaan aktif sebelum datang ke klinik."
+            },
+            {
+                "content": "## Pemeriksaan Laboratorium\nJenis pemeriksaan laboratorium yang tersedia:\n- Cek Darah Lengkap\n- Gula Darah Sewaktu / Puasa\n- Kolesterol\n- Asam Urat\n- Tes Urin\n- Rapid Test (jika tersedia)\n\nEstimasi hasil keluar:\n- Tes cepat: 1–2 jam\n- Tes lengkap: 1–2 hari kerja\n\nHasil dapat diambil langsung atau dikirim via WhatsApp (sesuai permintaan)."
+            },
+            {
+                "content": "## Prosedur Vaksinasi\nSebelum vaksinasi, pasien akan melalui sesi skrining kesehatan oleh dokter.\n\nSyarat vaksin anak:\n- Dalam kondisi sehat\n- Tidak demam\n- Membawa buku vaksin\n\nUntuk ketersediaan stok vaksin tertentu, silakan konfirmasi terlebih dahulu."
+            },
+            {
+                "content": "## Kondisi Darurat\nJika pasien mengalami kondisi darurat seperti:\n- Nyeri dada hebat\n- Sesak napas\n- Pendarahan berat\n- Kejang\n\nSegera menuju IGD Rumah Sakit terdekat. Klinik kami melayani tindakan medis ringan selama jam operasional."
+            },
+            {
+                "content": "## Kebijakan Privasi & Data Pasien\nKami menjaga kerahasiaan seluruh data dan rekam medis pasien. Informasi medis tidak akan dibagikan kepada pihak ketiga tanpa persetujuan pasien, kecuali diwajibkan oleh hukum.\n\nUntuk permintaan salinan rekam medis, silakan hubungi bagian administrasi dengan membawa identitas resmi."
+            }
+        ],
+        "keywords": [
+            "klinik",
+            "dokter umum",
+            "klinik terdekat",
+            "biaya konsultasi dokter",
+            "jadwal dokter",
+            "vaksin anak",
+            "cek darah",
+            "medical check up",
+            "klinik BPJS",
+            "reservasi dokter"
+        ]
+    },
+    "preview": "",
+    "version": "1.0.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "698ec8bc875c184801adedca",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-13T06:46:20.325Z",
+    "updatedAt": "2026-02-13T23:25:05.963Z",
+    "createdBy": "system"
+}

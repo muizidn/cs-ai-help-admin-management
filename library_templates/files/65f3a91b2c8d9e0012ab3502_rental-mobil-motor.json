@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3502",
+    "title": "Rental Mobil & Motor",
+    "description": "Template basis pengetahuan untuk jasa penyewaan (rental) kendaraan, mencakup sewa mobil lepas kunci, sewa dengan supir, rental motor harian, dan paket tour.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["otomotif", "rental-mobil", "rental-motor", "sewa-kendaraan", "travel"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Jasa Rental Kami\nKami menyediakan solusi transportasi yang fleksibel dan terjangkau untuk kebutuhan perjalanan bisnis, wisata keluarga, maupun mobilitas harian Anda. Dengan armada kendaraan yang selalu terawat, bersih, dan berasuransi, kami menjamin kenyamanan dan keamanan perjalanan Anda di dalam maupun luar kota.\n\nContoh:\n\"Bali Trans Rental menyediakan sewa mobil dan motor di Denpasar sejak 2018. Armada kami selalu diservis rutin di bengkel resmi. Bisa antar jemput bandara Ngurah Rai.\""
+            },
+            {
+                "content": "## Pilihan Armada Mobil\n- City Car (Agya, Brio, March).\n- Family Car/MPV (Avanza, Xpander, Innova).\n- Luxury Car (Alphard, Camry, Fortuner).\n- Big Bus & Hiace (untuk rombongan).\nSemua unit dalam kondisi prima dan AC dingin.\n\nContoh:\n\"Ready: Innova Reborn Diesel, Avanza Facelift, Brio Satya. Unit bersih, wangi, dan tahun muda (2020 ke atas).\""
+            },
+            {
+                "content": "## Pilihan Armada Motor\n- Matic Standard (Beat, Vario, Scoopy).\n- Matic Besar (NMAX, PCX).\n- Motor Sport & Trail (sesuai ketersediaan).\nTersedia fasilitas Helm dan Jas Hujan untuk setiap penyewaan motor.\n\nContoh:\n\"Sewa Motor Jogja: Honda Beat Street & Vario 125. Include 2 Helm SNI + 2 Jas Hujan. Motor terawat dan ban tebal.\""
+            },
+            {
+                "content": "## Layanan Sewa Lepas Kunci\nBagi Anda yang ingin menyetir sendiri, kami menyediakan layanan lepas kunci dengan syarat dan ketentuan yang berlaku (verifikasi identitas dan domisili). Durasi sewa minimal 24 jam.\n\nContoh:\n\"Lepas Kunci Syarat Mudah: Cukup KTP Asli, SIM A, dan Akun Sosmed aktif. Wajib deposit Rp 500.000 (dikembalikan setelah sewa selesai).\""
+            },
+            {
+                "content": "## Layanan Sewa Dengan Supir\nNikmati perjalanan tanpa lelah dengan driver kami yang berpengalaman, ramah, dan menguasai rute perjalanan. Paket tersedia untuk 12 jam atau 18 jam (Full Day).\n\nContoh:\n\"Sewa Mobil + Driver: Driver kami hafal jalan tikus dan tempat wisata kuliner. Sopan, tidak merokok di dalam mobil, dan on-time.\""
+            },
+            {
+                "content": "## Daftar Harga Estimasi\n- Rental Motor: Mulai dari Rp [Isi Harga]/hari.\n- Rental Mobil Lepas Kunci: Mulai dari Rp [Isi Harga]/hari.\n- Rental Mobil + Supir: Mulai dari Rp [Isi Harga]/12 jam.\n- Paket All-in (Mobil+Supir+BBM): Silakan hubungi admin.\n\nContoh Harga:\n- Motor Beat: Rp 70.000/24 jam.\n- NMAX: Rp 120.000/24 jam.\n- Avanza Lepas Kunci: Rp 300.000/24 jam.\n- Innova Reborn + Driver: Rp 650.000/12 jam.\""
+            },
+            {
+                "content": "## Syarat & Ketentuan Penyewaan\n1. Identitas Asli (KTP/SIM).\n2. Jaminan (untuk lepas kunci, misal: Motor/Deposit uang).\n3. Verifikasi akun media sosial (opsional).\n4. Penggunaan kendaraan hanya untuk wilayah yang disepakati.\n\nContoh:\n\"Penyewa wajib memiliki SIM sesuai jenis kendaraan. Overtime dikenakan biaya 10% per jam dari harga sewa. Dilarang membawa durian/hewan peliharaan (kecuali izin).\""
+            },
+            {
+                "content": "## Prosedur Booking\n1. Pilih unit dan durasi sewa.\n2. Kirim foto identitas via WhatsApp untuk verifikasi.\n3. Pembayaran DP (Down Payment) untuk kunci jadwal.\n4. Unit siap diantar ke lokasi Anda atau diambil di kantor kami.\n\nContoh:\n\"Booking via WA. DP minimal 20% atau Rp 50.000 untuk lock unit. Pelunasan saat serah terima kendaraan.\""
+            },
+            {
+                "content": "## Layanan Antar Jemput Unit\nKami melayani pengantaran dan penjemputan unit kendaraan ke Bandara, Stasiun, Hotel, atau rumah Anda (Gratis untuk radius [Isi] km).\n\nContoh:\n\"Free delivery ke Stasiun Tugu & Lempuyangan. Antar ke hotel area Malioboro gratis. Luar ring road ada biaya bensin Rp 20.000.\""
+            },
+            {
+                "content": "## Kontak Admin Rental\nWhatsApp: [Isi Nomor WA]\nInstagram: @[Isi Username IG]\n\nSolusi transportasi terbaik untuk setiap perjalanan Anda!\n\nContoh:\n\"Hubungi Mas Dian 0812-xxxx-xxxx. IG: @jogja_transport_murah. Kantor: Jl. Kaliurang Km 7 (Gmaps: Rental Jogja Berkah).\""
+            }
+        ],
+        "keywords": [
+            "rental mobil terdekat lepas kunci",
+            "sewa mobil murah dengan supir",
+            "rental motor harian [kota]",
+            "harga sewa avanza per hari",
+            "rental mobil mewah wedding",
+            "sewa hiace untuk rombongan",
+            "rental nmax pcx murah",
+            "syarat rental mobil lepas kunci",
+            "sewa mobil bulanan perusahaan",
+            "antar jemput bandara rental mobil",
+            "rental mobil innova reborn",
+            "sewa motor dekat stasiun",
+            "paket tour wisata lokal",
+            "rental mobil harian bulanan",
+            "jasa transportasi panggil"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab3502",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:45:00.000Z",
+    "createdBy": "system"
+}

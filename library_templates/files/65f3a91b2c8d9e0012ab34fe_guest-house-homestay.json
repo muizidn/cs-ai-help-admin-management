@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34fe",
+    "title": "Guest House & Homestay",
+    "description": "Template basis pengetahuan untuk pengelolaan guest house atau homestay, mencakup sewa harian/mingguan, fasilitas rumah lengkap, prosedur check-in/out, dan paket wisata lokal.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["akomodasi", "homestay", "guest-house", "travel"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Akomodasi Kami\nKami menawarkan hunian dengan suasana rumah yang hangat (homey) untuk keperluan perjalanan bisnis, wisata keluarga, maupun rombongan. Terletak di lingkungan yang tenang namun mudah diakses, akomodasi kami adalah pilihan tepat bagi Anda yang menginginkan kenyamanan rumah saat berada di luar kota.\n\nContoh: \"Omah Kayu Homestay\" menawarkan pengalaman menginap nuansa pedesaan di tengah Kota Batu. Cocok untuk keluarga besar dengan kapasitas hingga 12 orang."
+            },
+            {
+                "content": "## Tipe Sewa & Kapasitas\n- Sewa Kamar (Private Room): Kamar dengan akses fasilitas umum rumah.\n- Sewa Satu Rumah (Full House): Cocok untuk keluarga atau rombongan (kapasitas [Isi, misal: 6-10 orang]).\n- Durasi: Harian, Mingguan, atau Bulanan.\n\nContoh:\n- Sewa Full House (3 Kamar Tidur + 2 Kamar Mandi): Kapasitas standar 6 orang, maksimal 10 orang (dengan extra bed).\n- Sewa Kamar Saja: Tersedia 2 kamar dengan kamar mandi dalam."
+            },
+            {
+                "content": "## Fasilitas Unit\n- Kamar Tidur: Kasur berkualitas, AC/Kipas, Lemari pakaian.\n- Kamar Mandi: Water heater, perlengkapan mandi dasar.\n- Dapur Lengkap: Kompor, dispenser, kulkas, alat masak & makan.\n- Hiburan: Smart TV, WiFi gratis, ruang tamu luas.\n- Parkir: Muat untuk [Isi jumlah] mobil dan motor.\n\nContoh Fasilitas Lengkap:\n- WiFi 50Mbps (Indihome).\n- Smart TV 43 Inch (Netflix Ready).\n- Dapur dengan Rice Cooker, Panci, Wajan, dan Piring Gelas untuk 10 orang.\n- Carport berkanopi muat 2 mobil Innova."
+            },
+            {
+                "content": "## Prosedur Check-in & Check-out\n- Waktu Check-in: Mulai pukul 14.00 WIB.\n- Waktu Check-out: Maksimal pukul 12.00 WIB.\n- Early check-in atau Late check-out tersedia tergantung ketersediaan (mungkin dikenakan biaya tambahan).\n- Wajib menunjukkan KTP saat kedatangan.\n\nContoh:\n\"Self Check-in tersedia dengan Smart Lock. Kode akses akan dikirim H-1 setelah pelunasan. Kunci manual tersedia di keybox.\""
+            },
+            {
+                "content": "## Harga Sewa & Kebijakan DP\n- Harga Kamar: Mulai dari Rp [Isi Harga]/malam.\n- Harga Satu Rumah: Mulai dari Rp [Isi Harga]/malam.\n- DP 50% untuk konfirmasi pesanan (booking).\n- Pelunasan dilakukan saat check-in.\n\nContoh Harga (Full House):\n- Weekday (Senin-Kamis): Rp 750.000/malam.\n- Weekend (Jumat-Minggu): Rp 950.000/malam.\n- High Season (Lebaran/Nataru): Rp 1.500.000/malam.\n- DP Booking: 50%, Pelunasan H-1.\""
+            },
+            {
+                "content": "## Peraturan Akomodasi\n- Dilarang merokok di dalam kamar (tersedia area merokok di luar).\n- Menjaga ketenangan dan tidak mengganggu tetangga sekitar.\n- Menjaga kebersihan dan fasilitas rumah yang digunakan.\n- Tidak diperbolehkan membawa benda tajam, narkoba, atau minuman keras.\n- Pasangan bukan muhrim dilarang menginap dalam satu kamar (Syariah).\n\nContoh:\n\"Kami adalah properti Syariah. Pasangan wajib menunjukkan KTP dengan alamat sama atau Buku Nikah saat check-in. Dilarang pesta miras/narkoba.\""
+            },
+            {
+                "content": "## Layanan Tambahan (Extra Services)\n- Sarapan pagi (Breakfast) - sesuai permintaan.\n- Sewa Mobil/Motor untuk tamu.\n- Antar-jemput Bandara/Stasiun.\n- Extra bed (Kasur tambahan).\n\nContoh:\n- Extra Bed (Kasur lipat + Bantal + Selimut): Rp 50.000/set/malam.\n- Sewa Motor Beat/Vario: Rp 75.000/24 jam.\n- Catering Sarapan Nasi Kuning/Gudeg: Rp 20.000/porsi.\""
+            },
+            {
+                "content": "## Kebijakan Pembatalan (Cancellation)\n- Pembatalan H-3: DP dikembalikan 100% (atau sesuai kebijakan).\n- Pembatalan H-1: DP hangus atau dikenakan biaya 50%.\n- Reschedule jadwal diperbolehkan maksimal 1 kali.\n\nContoh:\n\"Free Cancellation sampai 7 hari sebelum kedatangan. Kurang dari 7 hari, DP tidak kembali tapi bisa reschedule tanggal lain (selama tersedia).\""
+            },
+            {
+                "content": "## Rekomendasi Wisata & Kuliner Terdekat\nStaf kami siap memberikan informasi mengenai tempat wisata populer, pusat perbelanjaan, dan kuliner khas yang wajib dicoba di sekitar lokasi kami.\n\nContoh:\n- 5 Menit ke Jatim Park 1 & 2.\n- 10 Menit ke Alun-alun Kota Batu (Ketan Legenda).\n- 15 Menit ke BNS (Batu Night Spectacular).\""
+            },
+            {
+                "content": "## Kontak Admin Reservasi\nWhatsApp: [Isi Nomor WA]\nInstagram: @[Isi Username IG]\n\nNikmati kenyamanan rumah di destinasi perjalanan Anda bersama kami!\n\nContoh:\nWA: 0812-5555-6666 (Admin Reservasi)\nIG: @omahkayu_homestay"
+            }
+        ],
+        "keywords": [
+            "homestay keluarga murah",
+            "guest house harian [kota]",
+            "sewa satu rumah untuk rombongan",
+            "penginapan dekat tempat wisata",
+            "homestay fasilitas dapur lengkap",
+            "guest house syariah nyaman",
+            "harga homestay per malam",
+            "sewa villa harian murah",
+            "penginapan rumah harian",
+            "homestay dengan water heater",
+            "booking guest house online",
+            "penginapan keluarga 3 kamar",
+            "homestay suasana tenang",
+            "antar jemput tamu penginapan",
+            "guest house dekat bandara"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34fe",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:25:00.000Z",
+    "createdBy": "system"
+}

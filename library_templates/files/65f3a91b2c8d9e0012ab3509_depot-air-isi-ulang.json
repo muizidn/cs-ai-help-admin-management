@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3509",
+    "title": "Depot Air Isi Ulang",
+    "description": "Template basis pengetahuan untuk depot air minum isi ulang, mencakup info jenis air (mineral/RO), harga galon, layanan antar-jemput, dan hasil uji laboratorium kesehatan.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["agribisnis", "air-minum", "depot-air", "kebutuhan-pokok"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Depot Air Kami\nKami menyediakan air minum isi ulang yang higienis, segar, dan berkualitas untuk memenuhi kebutuhan air minum harian keluarga Anda. Melalui proses filtrasi yang ketat dan sterilisasi ultraviolet (UV) serta ozon, kami menjamin air yang Anda konsumsi aman dan sehat sesuai standar Dinas Kesehatan.\n\nContoh:\n\"Depot Air Segar Alami menggunakan teknologi Bio Energy dan Ultra Filtration 0,01 mikron. Air terasa segar seperti air pegunungan asli.\""
+            },
+            {
+                "content": "## Pilihan Jenis Air\n- Air Mineral: Air pegunungan yang difilter dan disterilisasi (Kaya mineral alami).\n- Air RO (Reverse Osmosis): Air dengan pemurnian tingkat tinggi (Bebas bakteri, logam berat, dan mineral anorganik).\n- Air Alkali/Bio (Opsional): Air dengan pH seimbang untuk kesehatan.\n\nContoh:\n\"Tersedia Air Mineral (Tutup Biru) dan Air RO Hexagonal (Tutup Merah). Air RO TDS rendah (<10 ppm) sangat murni.\""
+            },
+            {
+                "content": "## Harga Isi Ulang\n- Air Mineral (Galon 19L): Rp [Isi Harga].\n- Air RO (Galon 19L): Rp [Isi Harga].\n- Pembelian Galon Baru + Isi: Rp [Isi Harga].\n- Voucher/Kupon Paket 10x Isi Ulang: Rp [Isi Harga] (Hemat [Isi]%).\n\nContoh Harga:\n- Isi Ulang Mineral: Rp 6.000.\n- Isi Ulang RO: Rp 12.000.\n- Galon Kosong PET (Baru): Rp 35.000.\n- Paket Hemat: Beli kupon 10 tiket Rp 50.000 (Gratis 1x).\""
+            },
+            {
+                "content": "## Layanan Antar-Jemput (Delivery)\nMalas keluar rumah? Kami siap antar ke depan pintu Anda!\n- Area Layanan: [Isi Nama Perumahan/Kampung/Radius km].\n- Jam Layanan Antar: 08.00 - 19.00\n- Biaya Antar: [Isi, misal: Gratis atau Rp 1.000/galon].\n\nContoh:\n\"Gratis Ongkir area Perumahan Gading Mas. Minimal order 2 galon. Pengantaran maksimal 30 menit setelah pesan.\""
+            },
+            {
+                "content": "## Jaminan Kebersihan & Higienitas\n- Pembersihan (pembilasan) galon sebelum diisi.\n- Penggantian filter secara rutin setiap [Isi] bulan.\n- Sterilisasi tutup galon dan tisu pembersih.\n- Staf menggunakan perlengkapan bersih saat melayani.\n\nContoh:\n\"Galon disikat dan dibilas air panas sebelum diisi. Tutup galon baru dan bersegel higienis. Filter diganti setiap bulan.\""
+            },
+            {
+                "content": "## Sertifikasi & Uji Lab\nKesehatan Anda adalah prioritas kami. Air kami telah melalui:\n- Uji Laboratorium berkala oleh Dinas Kesehatan/Sucofindo.\n- Sertifikat Layak Sehat Depot Air Minum.\n(Salinan sertifikat tersedia di dinding depot kami).\n\nContoh:\n\"Lulus Uji Lab Dinkes No. 443/xxx/2024. Bebas E.Coli dan Bakteri Patogen. Izin Usaha Depot Air Minum (DAM) terdaftar.\""
+            },
+            {
+                "content": "## Jam Operasional Depot\n- Senin - Sabtu: 07.00 - 20.00\n- Minggu: 08.00 - 17.00\nLokasi: [Isi Alamat Depot]\n\nContoh:\n\"Buka setiap hari sampai jam 9 malam. Minggu tetap buka (pengantaran sampai jam 4 sore).\""
+            },
+            {
+                "content": "## Tips Menjaga Kualitas Air di Rumah\n1. Letakkan galon di tempat yang sejuk dan terhindar dari sinar matahari langsung.\n2. Bersihkan dispenser secara rutin minimal 1 bulan sekali.\n3. Segera konsumsi air setelah segel galon dibuka.\n\nContoh:\n\"Hindari menaruh galon di lantai langsung (gunakan alas). Jangan biarkan air di dispenser lebih dari 3 hari jika tidak diminum.\""
+            },
+            {
+                "content": "## Program Loyalitas\nKumpulkan stempel setiap pembelian/isi ulang. Dapatkan 1 kali ISI ULANG GRATIS setelah pengisian ke-10!\n\nContoh:\n\"Setiap isi ulang dapat 1 kupon. Kumpulkan 10 kupon, tukarkan dengan 1x isi ulang gratis mineral.\""
+            },
+            {
+                "content": "## Kontak Admin Depot\nWhatsApp: [Isi Nomor WA]\nTelepon: [Isi Nomor Telepon]\n\nAir minum sehat, keluarga kuat, dompet hemat!\n\nContoh:\n\"Pesan Antar WA: 0858-xxxx-xxxx. Alamat: Jl. Merpati No 5 (Samping Indomaret).\""
+            }
+        ],
+        "keywords": [
+            "depot air minum terdekat antar jemput",
+            "harga isi ulang air galon",
+            "air minum ro reverse osmosis",
+            "delivery air galon murah [wilayah]",
+            "depot air minum mineral higienis",
+            "isi ulang galon aqua vit",
+            "air galon sehat uji lab",
+            "promo kupon isi ulang air",
+            "depot air minum buka hari minggu",
+            "jual galon kosong baru",
+            "agen air minum perumahan",
+            "air minum ph tinggi alkali",
+            "layanan antar air galon cepat",
+            "depot air minum sterilisasi uv",
+            "harga air galon 19 liter"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab3509",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:50:00.000Z",
+    "createdBy": "system"
+}

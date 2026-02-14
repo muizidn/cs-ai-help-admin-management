@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34ec",
+    "title": "Counter Pulsa",
+    "description": "Template basis pengetahuan untuk counter pulsa dan kuota data, mencakup isi ulang pulsa, paket internet, pembayaran tagihan (PPOB), dan pendaftaran kartu perdana.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["retail", "pulsa", "kuota", "ppob"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Counter Kami\nKami menyediakan layanan pengisian pulsa, paket data internet, dan pembayaran tagihan bulanan secara cepat, praktis, dan aman. Dengan sistem yang online 24 jam, kami memastikan kebutuhan digital Anda terpenuhi kapan saja."
+            },
+            {
+                "content": "## Jam Operasional Fisik\nKunjungi counter kami:\n- Senin - Minggu: 08.00 - 23.00\n- Layanan WhatsApp: Fast Respon di jam operasional\n\nContoh Lokasi:\nJl. Kebon Jeruk No. 12, RT 03/RW 05, Kel. Palmerah, Jakarta Barat (Samping Indomaret).\nMaps: https://maps.google.com/?q=lokasi_counter"
+            },
+            {
+                "content": "## Isi Ulang Pulsa & Kuota Data\nMelayani semua operator seluler:\n- Telkomsel (Simpati, AS, Loop)\n- Indosat Ooredoo (IM3)\n- XL Axiata & AXIS\n- Tri (3)\n- Smartfren\nTersedia Pulsa Reguler, Paket Internet (Harian, Mingguan, Bulanan), & Paket Nelpon/SMS.\n\nContoh Harga:\n- Pulsa 5.000 -> Rp 7.000\n- Pulsa 10.000 -> Rp 12.000\n- Kuota Telkomsel 14GB (30 Hari): Rp 45.000\n- Kuota Indosat Freedom 20GB: Rp 55.000"
+            },
+            {
+                "content": "## Pembayaran Tagihan (PPOB)\nBayar tagihan Anda tanpa antri:\n- Token Listrik (PLN Prabayar) & Tagihan PLN Pascabayar.\n- PDAM (Air).\n- BPJS Kesehatan.\n- Cicilan Motor/Mobil (Leasing).\n- Tagihan WiFi (Indihome, Icon+, dll).\n- TV Berlangganan.\n\nContoh Transaksi:\n- Beli Token PLN 50.000 -> Bayar Rp 52.000\n- Bayar Tagihan Indihome -> Biaya Admin Rp 2.500"
+            },
+            {
+                "content": "## Top-Up E-Wallet & Game\n- E-Wallet: Dana, OVO, GoPay, ShopeePay, LinkAja, Maxim Driver.\n- Game: Mobile Legends (Diamonds), Free Fire, PUBG Mobile, Higgs Domino, dll.\n\nContoh Biaya Top Up:\n- Dana 50.000 -> Bayar Rp 52.000\n- GoPay 100.000 -> Bayar Rp 102.000\n- MLBB 86 Diamonds -> Rp 25.000"
+            },
+            {
+                "content": "## Kartu Perdana & Voucher Fisik\n- Penjualan Kartu Perdana baru (Segel).\n- Jasa Registrasi Kartu (Wajib bawa NIK & KK).\n- Voucher Internet Fisik (Tinggal gosok & input kode).\n\nContoh:\n- Perdana Telkomsel Sakti (Nomor Cantik): Rp 50.000\n- Voucher Axis AIGO 3GB 5 Hari: Rp 10.000"
+            },
+            {
+                "content": "## Cara Pemesanan via WhatsApp\nCukup kirim pesan dengan format:\n1. Nomor Tujuan: [Nomor HP/ID Pelanggan]\n2. Nominal/Paket: [Contoh: Pulsa 50rb / Paket Freedom 10GB]\n3. Pembayaran: [Transfer Bank/E-wallet]\nAdmin akan segera memproses setelah konfirmasi pembayaran.\n\nContoh Chat:\n\"Min, mau isi pulsa 20rb ke nomor 081234567890. Bayar pake Dana ya.\""
+            },
+            {
+                "content": "## Harga & Keunggulan\n- Harga bersaing dan transparan.\n- Transaksi sukses dalam hitungan detik.\n- CS siaga membantu jika ada kendala masuknya pulsa/paket.\n\nContoh Komplain:\n\"Kak, pulsa yang tadi belum masuk ya? Ini bukti transfernya. Tolong dicek.\""
+            },
+            {
+                "content": "## Metode Pembayaran\n- Tunai (Di Counter)\n- Transfer Bank (BCA, Mandiri, BRI)\n- QRIS (All Payment)\n\nContoh:\n\"Scan QRIS di sini ya kak untuk pembayaran via ShopeePay.\""
+            },
+            {
+                "content": "## Kontak Admin Counter\nWhatsApp: 0857-1234-5678\nInstagram: @counter_pulsa_jaya\n\nButuh kuota mendadak? Chat admin sekarang!"
+            }
+        ],
+        "keywords": [
+            "counter pulsa terdekat",
+            "isi pulsa telkomsel",
+            "paket internet indosat murah",
+            "harga token listrik 50rb",
+            "top up dana murah",
+            "voucher xl axiata",
+            "bayar bpjs di counter",
+            "agen pulsa kuota",
+            "jual kartu perdana murah",
+            "top up diamond ml",
+            "pulsa online 24 jam",
+            "bayar wifi indihome",
+            "paket akrab xl",
+            "kuota axis bronet",
+            "counter pulsa buka sampai malam"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34ec",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T10:00:00.000Z",
+    "createdBy": "system"
+}

@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34cd",
+    "title": "Klinik Umum",
+    "description": "Template basis pengetahuan untuk operasional klinik umum, mencakup informasi pendaftaran, layanan dokter, dan prosedur pasien.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kesehatan", "klinik", "dokter"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Klinik Kami\nKlinik Umum kami berdedikasi untuk memberikan layanan kesehatan primer yang berkualitas, cepat, dan terjangkau bagi masyarakat. Kami didukung oleh tim dokter berpengalaman dan staf medis yang ramah untuk memastikan kenyamanan setiap pasien.\n\nContoh: Klinik Sehat Keluarga berdiri sejak tahun 2010, melayani lebih dari 100 pasien setiap harinya dengan visi menjadi pusat kesehatan komunitas terdepan di Jakarta Selatan."
+            },
+            {
+                "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap klinik Anda agar pasien mudah menemukan lokasi.\n\nContoh: Jl. Melati No. 123, RT 005/RW 002, Kelurahan Senayan, Kecamatan Kebayoran Baru, Jakarta Selatan, 12190.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: 100 meter dari Stasiun MRT Senayan, di sebelah minimarket Indomaret."
+            },
+            {
+                "content": "## Jam Operasional\nInformasikan jam buka dan tutup klinik Anda setiap harinya.\n\nContoh:\n- Senin - Jumat: 08.00 - 21.00 (Pendaftaran terakhir jam 20.30)\n- Sabtu: 08.00 - 17.00\n- Minggu & Hari Libur Nasional: Tutup (Kecuali darurat/perjanjian khusus)"
+            },
+            {
+                "content": "## Layanan Medis Utama\nSebutkan layanan kesehatan yang tersedia di klinik Anda.\n\nContoh:\n- Konsultasi Dokter Umum (Biaya: Rp 50.000 - Rp 100.000)\n- Pemeriksaan Kesehatan (Medical Check-up) Paket Dasar\n- Vaksinasi & Imunisasi (Flu, Hepatitis B, Tetanus)\n- Tindakan Medis Ringan (Rawat luka, angkat jahitan, injeksi)\n- Pembuatan Surat Keterangan Sehat (SKS)"
+            },
+            {
+                "content": "## Prosedur Pendaftaran Pasien\nJelaskan langkah-langkah bagi pasien baru maupun lama untuk berobat.\n\nContoh:\n1. Datang langsung ke meja pendaftaran dan ambil nomor antrean.\n2. Tunjukkan kartu identitas (KTP/KIA/Paspor) kepada petugas.\n3. Untuk pasien lama, cukup informasikan Nama Lengkap atau Nomor Rekam Medis.\n4. Tunggu di ruang tunggu hingga dipanggil oleh perawat ke ruang dokter."
+            },
+            {
+                "content": "## Reservasi Online\nBerikan informasi jika klinik melayani pendaftaran via pesan singkat atau aplikasi.\n\nContoh: Untuk menghindari antrean panjang, Anda bisa mendaftar via WhatsApp ke nomor 0812-3456-7890. Format pesan: DAFTAR # NAMA # TGL LAHIR # TGL KUNJUNGAN # JAM KUNJUNGAN. Mohon konfirmasi minimal 3 jam sebelum kedatangan."
+            },
+            {
+                "content": "## Biaya & Metode Pembayaran\nBerikan estimasi harga layanan dan cara pembayarannya.\n\nContoh:\n- Administrasi Pasien Baru: Rp 15.000\n- Konsultasi Dokter: Rp 75.000\n- Tindakan Medis: Mulai dari Rp 50.000 (Sesuai kerumitan)\nKami menerima pembayaran melalui Tunai, Debit Mandiri/BCA, QRIS (Gopay/OVO/Dana), dan Transfer Bank."
+            },
+            {
+                "content": "## Fasilitas Klinik\nInformasikan sarana pendukung yang tersedia untuk kenyamanan pasien.\n\nContoh:\n- Ruang tunggu ber-AC dengan TV dan Dispenser air minum gratis\n- Toilet bersih dan ramah difabel\n- Area parkir motor dan mobil yang luas\n- Pojok laktasi untuk ibu menyusui\n- Apotek mini untuk penebusan obat langsung"
+            },
+            {
+                "content": "## Kerjasama Asuransi\nSebutkan provider asuransi atau BPJS jika sudah bekerjasama.\n\nContoh: Saat ini kami melayani pasien asuransi Mandiri Inhealth, Prudential (AdMedika), dan Manulife. Mohon siapkan Kartu Asuransi dan KTP saat pendaftaran untuk verifikasi cakupan layanan."
+            },
+            {
+                "content": "## Kontak & Keluhan Layanan\nInformasikan kanal komunikasi untuk pertanyaan atau masukan.\n\nContoh:\n- Customer Service (WhatsApp): 0812-3456-7890\n- Telepon Kantor: (021) 1234567\n- Email: admin@kliniksehat.com\n- Instagram: @kliniksehat_keluarga"
+            }
+        ],
+        "keywords": [
+            "klinik umum terdekat",
+            "dokter umum",
+            "biaya periksa dokter",
+            "cara daftar klinik",
+            "cek gula darah",
+            "surat keterangan sehat",
+            "jam buka klinik",
+            "vaksin flu",
+            "obat batuk pilek",
+            "lokasi klinik",
+            "reservasi dokter",
+            "klinik buka sampai malam",
+            "biaya medical check up",
+            "asuransi kesehatan klinik",
+            "nomor whatsapp klinik"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34cd",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:00:00.000Z",
+    "createdBy": "system"
+}

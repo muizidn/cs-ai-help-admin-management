@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34f0",
+    "title": "Toko Sepatu Lokal",
+    "description": "Template basis pengetahuan untuk toko sepatu brand lokal, mencakup koleksi sneakers, sepatu formal, panduan ukuran kaki, dan layanan tukar size.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["retail", "fashion", "sepatu", "brand-lokal"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Brand Sepatu Kami\nKami bangga menghadirkan sepatu karya anak bangsa dengan material pilihan dan desain yang kompetitif. Mulai dari sneakers kasual untuk harian hingga sepatu formal untuk acara spesial, setiap pasang sepatu kami dibuat dengan konstruksi yang kuat dan insole yang empuk untuk kenyamanan maksimal."
+            },
+            {
+                "content": "## Jam Operasional Store\nKunjungi store kami setiap hari:\n- Senin - Minggu: 10.00 - 21.00\n\nContoh Lokasi:\nJl. Pemuda No. 88, Ruko Graha Niaga, Kel. Sekayu, Kec. Semarang Tengah, Kota Semarang.\n(Samping Gramedia Pemuda).\nMaps: https://maps.google.com/?q=lokasi_toko_sepatu\n\nMelayani juga pembelian online 24 jam via Website/Marketplace."
+            },
+            {
+                "content": "## Koleksi Sepatu\n- Sneakers Kasual (Bahan Canvas & Suede).\n- Sepatu Lari (Running Shoes) - Ringan & Breathable.\n- Sepatu Formal (Pantofel) - Kulit Sintetis & Asli.\n- Sandal Slide & Sandal Gunung.\n- Aksesoris: Tali Sepatu, Kaos Kaki, & Pembersih Sepatu (Shoe Cleaner).\n\nContoh Harga:\n- Sneakers Canvas Low (Hitam/Putih): Rp 189.000\n- Running Shoes Air Mesh: Rp 245.000\n- Pantofel Kulit Asli: Rp 450.000"
+            },
+            {
+                "content": "## Panduan Ukuran (Size Chart)\nUkur panjang telapak kaki Anda (dari tumit ke jempol):\n- Size 37: 23.5 cm\n- Size 38: 24.0 cm\n- Size 39: 25.0 cm\n- Size 40: 25.5 cm\n- Size 41: 26.5 cm\n- Size 42: 27.0 cm\n- Size 43: 28.0 cm\n- Size 44: 28.5 cm\n(Toleransi 0.5cm)\n\nContoh:\n\"Kak, kaki saya panjangnya 26cm. Ambil size 41 ya, biar ada ruang sedikit.\""
+            },
+            {
+                "content": "## Kebijakan Tukar Size (Exchange)\nTakut kekecilan atau kebesaran? Tenang, kami melayani tukar size dengan syarat:\n- Barang masih dalam kondisi baru (belum dipakai jalan).\n- Kelengkapan box dan tag masih utuh.\n- Maksimal 3 hari setelah barang diterima.\n- Ongkir PP ditanggung oleh pembeli (kecuali kesalahan kirim dari kami).\n\nContoh:\n\"Min, mau tukar size dari 40 ke 41. Ini foto kondisi sepatunya masih baru banget.\""
+            },
+            {
+                "content": "## Harga & Promo\n- Harga Sneakers: Rp 150.000 - Rp 350.000\n- Harga Sepatu Kulit: Rp 250.000 - Rp 500.000\n- Promo Bundling: Beli sepatu gratis kaos kaki & tali sepatu cadangan.\n- Promo Gajian: Diskon 15% setiap tanggal 25-30.\n\nContoh:\n\"Paket Pelajar: Sneakers Sekolah + Kaos Kaki Hitam cuma Rp 175.000.\""
+            },
+            {
+                "content": "## Perawatan Sepatu\nAgar sepatu awet, disarankan:\n1. Jangan dicuci menggunakan mesin cuci.\n2. Gunakan sikat lembut dan cairan khusus pembersih sepatu.\n3. Keringkan di tempat teduh (jangan terkena matahari langsung).\n4. Gunakan silica gel di dalam box saat disimpan."
+            },
+            {
+                "content": "## Layanan Pengiriman\n- Pengiriman setiap hari kerja (Senin-Sabtu).\n- Ekspedisi: J&T, JNE, SiCepat, Wahana.\n- Double box packing untuk menjamin box sepatu asli tidak penyok.\n\nContoh:\n\"Pengiriman aman kak, kita pakai double box jadi dus aslinya gak akan rusak sampai tujuan.\""
+            },
+            {
+                "content": "## Metode Pembayaran\n- Transfer Bank (BCA, BRI, Mandiri)\n- QRIS\n- Paylater (via Marketplace)\n\nContoh:\n\"Bisa bayar pakai GoPay lewat QRIS di kasir ya kak.\""
+            },
+            {
+                "content": "## Kontak Admin Sepatu\nWhatsApp: 0812-9876-5432\nInstagram: @lokal_shoes_id\n\nLangkah pasti dengan sepatu lokal berkualitas!"
+            }
+        ],
+        "keywords": [
+            "toko sepatu terdekat",
+            "sneakers lokal terbaik",
+            "sepatu lari murah",
+            "harga sepatu pantofel pria",
+            "size chart sepatu cm",
+            "tukar size sepatu",
+            "sepatu canvas original",
+            "brand sepatu lokal jogja",
+            "sandal slide kekinian",
+            "pembersih sepatu shoe cleaner",
+            "sepatu sekolah hitam polos",
+            "promo sepatu gajian",
+            "kaos kaki motif keren",
+            "sepatu kulit asli murah",
+            "jasa titip sepatu lokal"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34f0",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T10:00:00.000Z",
+    "createdBy": "system"
+}

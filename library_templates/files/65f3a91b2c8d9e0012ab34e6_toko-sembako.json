@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34e6",
+    "title": "Toko Sembako",
+    "description": "Template basis pengetahuan untuk toko sembako (Sembilan Bahan Pokok), mencakup stok beras, minyak goreng, telur, gas LPG, dan layanan antar jemput.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["retail", "sembako", "umkm", "kebutuhan-pokok"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Toko Sembako Kami\nKami menyediakan kebutuhan pokok rumah tangga terlengkap dengan harga grosir dan eceran. Komitmen kami adalah menyediakan barang-barang berkualitas, timbangan yang akurat, dan pelayanan yang ramah untuk memenuhi kebutuhan dapur harian Anda.\n\nContoh: Toko Sembako Jaya Makmur telah melayani warga sekitar sejak tahun 2005. Kami fokus menyediakan barang kebutuhan pokok berkualitas dengan harga bersaing, mulai dari beras hingga gas LPG."
+            },
+            {
+                "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap toko Anda agar pelanggan mudah menemukan lokasi.\n\nContoh: Jl. Mangga Raya No. 12, RT 01/RW 04, Kelurahan Depok Jaya, Kecamatan Pancoran Mas, Kota Depok, 16432.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: 50 meter dari pertigaan jalan, depan bengkel motor AHASS."
+            },
+            {
+                "content": "## Jam Operasional\nInformasikan jam buka dan tutup toko Anda setiap harinya.\n\nContoh:\n- Senin - Sabtu: 06.00 - 21.00 (Kami buka lebih pagi untuk kebutuhan pasar)\n- Minggu: 07.00 - 18.00\n- Tanggal Merah: Tetap buka (kecuali Lebaran/Hari Raya)"
+            },
+            {
+                "content": "## Produk Utama (Sembako)\nSebutkan stok barang kebutuhan pokok yang selalu tersedia.\n\nContoh:\n- Beras: Setra Ramos (Rp 13rb/kg), Pandan Wangi (Rp 15rb/kg), Beras Merah (Rp 16rb/kg).\n- Minyak Goreng: Kemasan (Bimoli, Sunco) Rp 18rb/L, Curah Rp 16rb/kg.\n- Telur: Telur Ayam Negeri (Rp 27rb/kg), Telur Bebek (Rp 3.500/butir).\n- Gula & Terigu: Gula Pasir Rp 16rb/kg, Tepung Segitiga Biru Rp 12rb/kg."
+            },
+            {
+                "content": "## Layanan Gas LPG & Air Galon\nInformasikan ketersediaan gas dan air minum galon serta layanan antarnya.\n\nContoh:\n- Gas LPG: 3kg (Melon), 5.5kg (Bright Gas), 12kg (Biru).\n- Air Galon: Aqua (Rp 20rb), Vit (Rp 15rb), Le Minerale (Rp 18rb), Air Isi Ulang (Rp 6rb).\nLayanan antar gratis untuk radius 500 meter (Minimal order 1 galon/gas)."
+            },
+            {
+                "content": "## Harga Grosir & Paket Sembako\nJelaskan jika ada potongan harga untuk pembelian banyak atau paket bantuan.\n\nContoh: Kami melayani pembelian Grosir (minimal 1 dus/karung) dengan harga khusus bagi warung kelontong kecil. Tersedia juga Paket Sembako untuk donasi/santunan mulai harga Rp 50.000 per paket (Isi: Beras 2kg, Minyak 1L, Gula 500g, Mie 3 bks)."
+            },
+            {
+                "content": "## Layanan Pesan Antar (Delivery)\nInformasikan prosedur pemesanan barang dari rumah.\n\nContoh: Pelanggan dapat memesan belanjaan via WhatsApp. Pesanan akan dikirim dalam waktu 15-30 menit. Gratis ongkir untuk wilayah Kompleks Depok Jaya (Minimal belanja Rp 50.000). WhatsApp: 0812-3456-7890."
+            },
+            {
+                "content": "## Produk Pelengkap Lainnya\nSebutkan barang-barang lain yang dijual selain sembako utama.\n\nContoh:\n- Perlengkapan Mandi: Sabun, Sampo, Pasta Gigi, Deterjen Cuci.\n- Bumbu Dapur: Kecap, Saus, Garam, Penyedap Rasa, Bumbu Instan.\n- Minuman & Snack: Kopi, Teh, Susu, Air Mineral Botol, Aneka Biskuit."
+            },
+            {
+                "content": "## Metode Pembayaran\nSebutkan cara pembayaran yang diterima di toko.\n\nContoh: Kami menerima pembayaran Tunai, QRIS (Gopay/OVO/Dana), dan Transfer Bank (BCA/Mandiri). Kami juga melayani sistem 'Bon' khusus untuk warga tetap perumahan dengan limit tertentu."
+            },
+            {
+                "content": "## Kontak & Update Stok\nInformasikan kanal komunikasi untuk menanyakan ketersediaan barang.\n\nContoh:\n- WhatsApp Admin: 0812-3456-7890\n- Telepon Toko: (021) 7771234\nSilakan simpan nomor WA kami untuk melihat update harga telur dan minyak harian di Status WhatsApp."
+            }
+        ],
+        "keywords": [
+            "toko sembako terdekat",
+            "harga beras 5kg",
+            "minyak goreng murah",
+            "agen gas lpg 3kg",
+            "jual telur ayam segar",
+            "belanja sembako online",
+            "sembako harga grosir",
+            "toko kelontong lengkap",
+            "air galon aqua terdekat",
+            "mie instan satu dus",
+            "harga gula pasir hari ini",
+            "delivery sembako",
+            "perlengkapan rumah tangga",
+            "sembako murah untuk hajatan",
+            "toko sembako buka pagi"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34e6",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:10:00.000Z",
+    "createdBy": "system"
+}

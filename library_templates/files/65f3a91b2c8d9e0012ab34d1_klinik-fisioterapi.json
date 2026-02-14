@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34d1",
+    "title": "Klinik Fisioterapi",
+    "description": "Template basis pengetahuan untuk pusat rehabilitasi fisik, mencakup penanganan cidera olahraga, stroke, nyeri punggung, dan terapi tumbuh kembang anak.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kesehatan", "terapi", "fisioterapi", "rehabilitasi"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Klinik Fisioterapi Kami\nKami menyediakan layanan rehabilitasi fisik profesional untuk membantu pasien memulihkan fungsi tubuh setelah cidera, operasi, atau karena kondisi medis tertentu. Tim kami terdiri dari fisioterapis berlisensi yang berfokus pada terapi manual dan latihan fungsional.\n\nContoh: PhysioFit Center telah membantu lebih dari 1.000 pasien kembali beraktivitas normal sejak 2020. Kami ahli dalam penanganan nyeri tulang belakang dan pemulihan atlet."
+            },
+            {
+                "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap klinik fisioterapi Anda agar pasien mudah menemukan lokasi.\n\nContoh: Gedung Medika Plaza Lantai 2, Jl. Sudirman No. 10-12, RT 03/RW 01, Kelurahan Karet Tengsin, Kecamatan Tanah Abang, Jakarta Pusat, 10220.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: Sebelah Hotel Sahid Jaya, akses lift langsung dari lobby depan."
+            },
+            {
+                "content": "## Jam Operasional & Janji Temu\nInformasikan jam buka dan tutup klinik Anda setiap harinya.\n\nContoh:\n- Senin - Jumat: 08.00 - 20.00\n- Sabtu: 08.00 - 15.00\n- Minggu: Tutup\n\nPasien sangat disarankan melakukan reservasi jadwal melalui WhatsApp 0813-5555-6666 minimal 1 hari sebelumnya."
+            },
+            {
+                "content": "## Layanan Terapi Unggulan\nSebutkan kondisi medis yang bisa ditangani di klinik Anda.\n\nContoh:\n- Fisioterapi Muskuloskeletal (Nyeri punggung/HNP, nyeri lutut, saraf terjepit).\n- Rehabilitasi Pasca Stroke (Melatih kembali pola gerak dan kekuatan).\n- Fisioterapi Olahraga (Cidera ACL, pergelangan kaki, tennis elbow).\n- Pediatrik Fisioterapi (Terapi tumbuh kembang, terlambat jalan pada anak).\n- Geriatrik Fisioterapi (Membantu keseimbangan dan mobilitas lansia)."
+            },
+            {
+                "content": "## Metode Terapi yang Digunakan\nInformasikan teknologi dan teknik yang tersedia.\n\nContoh: Kami menggunakan kombinasi teknik modern:\n- Elektroterapi (TENS, Ultrasound, Infrared): Untuk meredakan nyeri dan peradangan.\n- Terapi Manual: Mobilisasi sendi dan manipulasi jaringan lunak oleh terapis.\n- Exercise Therapy: Latihan penguatan khusus di gym mini kami.\n- Kinesio Taping: Pemasangan plester elastis untuk mendukung otot dan sendi."
+            },
+            {
+                "content": "## Prosedur Kunjungan Pertama\nJelaskan apa yang akan dialami pasien baru.\n\nContoh:\n1. Asesmen Awal (30 Menit): Terapis melakukan pemeriksaan fisik, tes kekuatan, dan range of motion.\n2. Diagnosis Fisioterapi: Penjelasan masalah utama dan target pemulihan.\n3. Pelaksanaan Terapi: Sesi terapi pertama sesuai hasil asesmen.\n4. Home Program: Pemberian daftar latihan yang bisa dilakukan mandiri di rumah."
+            },
+            {
+                "content": "## Estimasi Biaya & Paket Hemat\nBerikan gambaran harga agar pasien bisa merencanakan terapi jangka panjang.\n\nContoh:\n- Sesi Tunggal (Asesmen + Terapi): Rp 250.000 (Durasi 60-90 menit).\n- Paket 5 Sesi: Rp 1.125.000 (Hemat 10%).\n- Paket 10 Sesi: Rp 2.125.000 (Hemat 15%).\n- Layanan Home Visit: Rp 350.000 - Rp 450.000 per visit (Tergantung jarak)."
+            },
+            {
+                "content": "## Layanan Fisioterapi Home Visit\nJelaskan area cakupan jika melayani terapi di rumah pasien.\n\nContoh: Kami melayani kunjungan ke rumah untuk pasien stroke atau pasca operasi yang sulit mobilisasi. Area cakupan: Seluruh Jakarta Pusat dan Jakarta Selatan. Hubungi Admin via WA untuk cek ketersediaan terapis home visit."
+            },
+            {
+                "content": "## Fasilitas & Kenyamanan\nSebutkan sarana pendukung di klinik.\n\nContoh:\n- Ruang terapi privat dengan gorden penyekat.\n- Gym mini khusus rehabilitasi (Parallel bars, Static bike, Dumbbells).\n- Alat bantu jalan (Kruk/Walker) yang bisa dipinjamkan.\n- Akses gedung ramah kursi roda dan toilet difabel."
+            },
+            {
+                "content": "## FAQ - Pertanyaan Umum\nSediakan jawaban untuk pertanyaan teknis.\n\nContoh:\nQ: Apakah harus bawa hasil Rontgen/MRI?\nA: Sangat disarankan membawa hasil scan terbaru agar diagnosa terapis lebih akurat.\nQ: Berapa lama satu sesi terapi?\nA: Rata-rata 60 hingga 90 menit, tergantung kondisi dan banyaknya tindakan.\nQ: Apakah fisioterapi itu sakit?\nA: Sebagian teknik mungkin terasa sedikit tidak nyaman (seperti pijatan dalam), namun terapis akan selalu berkomunikasi dengan Anda."
+            }
+        ],
+        "keywords": [
+            "fisioterapi terdekat",
+            "biaya fisioterapi",
+            "fisioterapi saraf terjepit",
+            "terapi pasca stroke",
+            "fisioterapi cidera olahraga",
+            "hnp fisioterapi",
+            "fisioterapi home visit",
+            "harga terapi ultrasound",
+            "fisioterapi anak",
+            "nyeri pinggang fisioterapi",
+            "jadwal fisioterapis",
+            "latihan gerak stroke",
+            "klinik rehabilitasi medik",
+            "tens fisioterapi",
+            "biaya home visit fisioterapi"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34d1",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:00:00.000Z",
+    "createdBy": "system"
+}

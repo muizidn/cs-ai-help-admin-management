@@ -1,0 +1,81 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34d6",
+    "title": "Homecare Lansia",
+    "description": "Template basis pengetahuan untuk jasa perawatan lansia di rumah, mencakup pendampingan harian, perawatan medis di rumah, dan fisioterapi lansia.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kesehatan", "homecare", "lansia", "perawat"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Layanan Homecare Lansia\nKami menyediakan layanan pendampingan dan perawatan lansia (senior care) secara profesional di rumah pelanggan. Fokus kami adalah meningkatkan kualitas hidup lansia melalui perawatan yang penuh kasih sayang, pemantauan kesehatan rutin, dan bantuan aktivitas harian.\n\nContoh: 'Sahabat Lansia Homecare' didirikan oleh praktisi kesehatan berpengalaman. Kami memahami bahwa setiap lansia membutuhkan pendekatan personal, mulai dari teman bicara hingga perawatan medis intensif."
+            },
+            {
+                "content": "## Lokasi Kantor & Cakupan Layanan\nInformasikan alamat kantor dan area jangkauan layanan.\n\nContoh: Kantor Pusat: Ruko Emerald Blok B-12, Jl. Bintaro Utama 3, Sektor 3A, Tangerang Selatan, 15225.\nArea Layanan: Jabodetabek (Jakarta, Bogor, Depok, Tangerang, Bekasi).\nLink Google Maps: https://maps.app.goo.gl/xxxx"
+            },
+            {
+                "content": "## Jenis Layanan yang Tersedia\nKami menawarkan beberapa paket layanan:\n- Pendampingan Harian (Caregiver): Bantuan makan, mandi, dan mobilitas.\n- Perawat Medis (Nurse): Perawatan luka, pasang sonde/kateter, pemberian obat injeksi.\n- Fisioterapi Lansia: Melatih kekuatan otot dan keseimbangan.\n- Pendampingan RS: Menemani lansia saat kontrol atau rawat inap di rumah sakit."
+            },
+            {
+                "content": "## Jam Layanan & Durasi\nInformasikan opsi durasi layanan yang bisa dipilih.\n\nContoh:\n- Paket Shift Pagi: 07.00 - 15.00 (8 Jam).\n- Paket Shift Malam: 19.00 - 07.00 (12 Jam).\n- Paket Live-in (Menginap): Perawat tinggal di rumah pasien (Libur 1 hari/minggu atau diganti infal).\n- Kunjungan Insidentil: Per tindakan (misal: Ganti balutan luka 1 jam)."
+            },
+            {
+                "content": "## Tugas Utama Caregiver/Perawat\nTugas tim kami meliputi:\n- Membantu personal hygiene (Mandi, ganti pakaian, diapers).\n- Menyiapkan dan menyuapi makanan sesuai diet lansia (Rendah garam/gula).\n- Membantu mobilitas (Pindah dari tempat tidur ke kursi roda/berjemur).\n- Memantau tanda vital (Tensi, nadi, suhu, gula darah) setiap pagi dan sore.\n- Menemani berinteraksi, membaca koran, atau jalan santai."
+            },
+            {
+                "content": "## Kualifikasi Tenaga Perawat\nJelaskan standar kualifikasi staf Anda.\n\nContoh:\n- Caregiver: Lulusan SMK Kesehatan/Kursus Asisten Perawat bersertifikat.\n- Perawat Medis: Lulusan D3/S1 Keperawatan, memiliki STR aktif, dan sertifikat BTCLS.\nSemua staf telah lolos tes psikologi, cek kesehatan (bebas TBC/Hepatitis), dan verifikasi SKCK."
+            },
+            {
+                "content": "## Prosedur Pemesanan Layanan\nJelaskan langkah-langkah untuk menggunakan jasa Anda.\n\nContoh:\n1. Hubungi Admin WA 0812-xxxx-xxxx.\n2. Jadwalkan Home Visit (Asesmen Gratis) untuk cek kondisi pasien.\n3. Kami kirimkan profil kandidat perawat (CV & Foto).\n4. Interview singkat via Video Call.\n5. Penandatanganan kontrak & pembayaran administrasi."
+            },
+            {
+                "content": "## Estimasi Biaya Layanan\nBerikan transparansi harga agar klien bisa mengestimasi budget.\n\nContoh:\n- Caregiver Live-in: Rp 3.500.000 - Rp 4.500.000 / bulan.\n- Perawat Medis Live-in: Rp 5.500.000 - Rp 7.500.000 / bulan.\n- Biaya Admin Awal: Rp 500.000 (Berlaku kontrak 1 tahun).\n- Visit Fisioterapi: Rp 250.000 / sesi (60 menit).\n(Harga belum termasuk makan perawat 3x sehari)."
+            },
+            {
+                "content": "## Perlengkapan yang Harus Disediakan\nPengguna jasa diharapkan menyediakan:\n- Kamar tidur layak & lemari untuk perawat (Paket Live-in).\n- Makanan & Minuman yang layak (sama dengan keluarga).\n- Alat kesehatan pribadi pasien (Termometer, Tensi Digital, Oximeter).\n- Obat-obatan rutin & kebutuhan higienitas pasien (Diapers, Tisu basah)."
+            },
+            {
+                "content": "## Kebijakan Penggantian Perawat\nJelaskan garansi layanan Anda.\n\nContoh: Jika merasa tidak cocok dengan kinerja perawat, Klien berhak minta penggantian (garansi) UNLIMITED selama masa kontrak. Proses penggantian maksimal 3 hari kerja setelah pengajuan komplain."
+            },
+            {
+                "content": "## Kontak Layanan Pelanggan\nUntuk konsultasi gratis dan pemesanan, silakan hubungi:\n- WhatsApp: 0812-9999-8888 (Admin Rina)\n- Telepon Kantor: (021) 7345-xxxx\n- Email: info@sahabatlansia.com"
+            }
+        ],
+        "keywords": [
+            "homecare lansia terdekat",
+            "perawat lansia harian",
+            "jasa caregiver rumah tangga",
+            "biaya perawat lansia menginap",
+            "perawat luka home visit",
+            "pendamping lansia ke rumah sakit",
+            "fisioterapi lansia di rumah",
+            "cari perawat d3 keperawatan",
+            "harga homecare bulanan",
+            "perawat pasang sonde",
+            "asisten rumah tangga lansia",
+            "perawatan pasca stroke di rumah",
+            "layanan senior care",
+            "perawat lansia profesional",
+            "biaya homecare harian"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34d6",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:10:00.000Z",
+    "createdBy": "system"
+}

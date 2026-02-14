@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34e3",
+    "title": "Minuman Boba",
+    "description": "Template basis pengetahuan untuk outlet minuman boba kekinian, mencakup varian boba brown sugar, menu fruit tea, aneka topping, dan promo bundling.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kuliner", "minuman", "boba", "kekinian"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Outlet Boba Kami\nKami menghadirkan sensasi minuman boba yang kenyal dan manis sempurna. Menggunakan biji boba berkualitas tinggi yang dimasak dengan brown sugar asli setiap jamnya untuk menjamin kesegaran dan tekstur yang pas di setiap sedotan.\n\nContoh:\n\"Boba Time\" menggunakan teh impor dari Taiwan dan susu segar (Fresh Milk) Diamond/Greenfields, bukan krimer bubuk."
+            },
+            {
+                "content": "## Jam Operasional\nKunjungi booth kami setiap hari:\n- Senin - Minggu: 10.00 - 21.30\n- Libur: Akan diumumkan via sosial media\n\nContoh:\nBuka setiap hari kecuali Hari Raya Idul Fitri.\nLast Order: 21.15 WIB."
+            },
+            {
+                "content": "## Menu Signature Boba\n- Brown Sugar Boba Milk (Best Seller)\n- Brown Sugar Boba Milk Tea\n- Salted Caramel Boba Shake\n- Dirty Brown Sugar Fresh Milk\n- Boba Milk Coffee\n\nContoh:\n- Brown Sugar Boba Milk: Susu segar + Gula aren + Boba hangat (Rp 18.000).\n- Salted Caramel: Perpaduan manis gurih karamel dengan susu creamy (Rp 22.000)."
+            },
+            {
+                "content": "## Menu Fruit Tea & Macchiato\nKesegaran buah asli dipadukan dengan teh pilihan:\n- Mango Green Tea with Jelly\n- Passion Fruit Tea\n- Strawberry Macchiato\n- Jasmine Green Tea Cheese Foam\n\nContoh:\n- Mango Green Tea: Teh hijau melati + Sirup mangga + Potongan buah mangga asli (Rp 15.000).\n- Cheese Foam Series: Teh apa saja ditambah lapisan keju gurih di atasnya (+Rp 5.000)."
+            },
+            {
+                "content": "## Pilihan Topping Seru\nLengkapi minuman Anda dengan topping tambahan:\n- Brown Sugar Boba (Chewy)\n- Popping Boba (Meletus di mulut - rasa mangga/strawberry)\n- Grass Jelly (Cincau)\n- Rainbow Jelly\n- Cheese Cream / Macchiato Foam\n- Oreo Crumbs\n\nContoh:\nExtra Boba: Rp 3.000\nExtra Cheese Foam: Rp 5.000"
+            },
+            {
+                "content": "## Ukuran Cup & Harga\n- Regular Cup (12oz): Rp 12.000 - Rp 18.000\n- Large Cup (16oz): Rp 18.000 - Rp 25.000\n- Jumbo Cup (22oz): Rp 25.000 - Rp 32.000\n\nContoh:\n- Brown Sugar Milk Regular: Rp 15.000\n- Brown Sugar Milk Large: Rp 19.000"
+            },
+            {
+                "content": "## Pengaturan Sugar & Ice Level\nAnda bisa memesan sesuai selera:\n- Sugar: 0% / 25% / 50% / 75% / 100% (Normal)\n- Ice: No Ice / Less Ice / Normal Ice\n\nContoh:\n\"Pesan Brown Sugar Milk, Large, Less Ice, Sugar 50% ya kak.\""
+            },
+            {
+                "content": "## Promo Member & Bundling\n- Beli 2 Gratis 1 (Setiap hari Selasa)\n- Paket Hemat Berdua: Rp 30.000 (2 Large Cup varian tertentu)\n- Promo Flash Sale di Gofood/Grabfood/Shopeefood setiap jam makan siang.\n\nContoh:\nKumpulkan 10 stempel di kartu member, gratis 1 minuman apa saja (Maksimal Rp 20.000)."
+            },
+            {
+                "content": "## Layanan Pesan Antar\nKami tersedia di seluruh platform ojek online. Untuk pesanan dalam jumlah besar (acara ulang tahun/rapat), harap hubungi WhatsApp kami minimal 3 jam sebelumnya untuk persiapan.\n\nContoh:\nCari \"Boba Time\" di GoFood/GrabFood.\nPesanan 50 cup untuk acara kantor bisa diantar langsung oleh staf kami (jarak <3km)."
+            },
+            {
+                "content": "## Lokasi & Kontak Admin\nAlamat Booth: [Isi Alamat Lengkap]\nWhatsApp: [Isi Nomor WA]\nInstagram: @[Isi Username IG]\n\nJangan lupa tag kami di story untuk mendapatkan voucher diskon!\n\nContoh:\nAlamat: Teras Alfamart Jl. Merpati No. 10, Ciputat.\nWhatsApp: 0812-3344-5566"
+            }
+        ],
+        "keywords": [
+            "boba terdekat",
+            "minuman boba murah",
+            "brown sugar boba milk",
+            "harga boba cup",
+            "menu boba kekinian",
+            "boba paling enak",
+            "minuman segar boba",
+            "fruit tea jelly",
+            "topping boba apa saja",
+            "boba cheese foam",
+            "promo boba hari ini",
+            "boba delivery online",
+            "minuman manis dingin",
+            "boba susu segar",
+            "outlet boba terlaris"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34e3",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T10:00:00.000Z",
+    "createdBy": "system"
+}

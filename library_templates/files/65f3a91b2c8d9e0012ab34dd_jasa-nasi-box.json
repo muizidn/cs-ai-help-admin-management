@@ -1,0 +1,75 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34dd",
+    "title": "Jasa Nasi Box",
+    "description": "Template basis pengetahuan untuk spesialis nasi kotak (Lunch Box), mencakup berbagai pilihan paket menu, sistem pesanan dalam jumlah besar, dan layanan pengiriman tepat waktu.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kuliner", "makanan", "nasi-box", "event"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Jasa Nasi Box Kami\nKami adalah mitra terpercaya untuk kebutuhan konsumsi acara Anda. Berpengalaman melayani ribuan porsi nasi box untuk berbagai keperluan dengan mengutamakan tiga pilar: Rasa Lezat, Tampilan Menarik, dan Pengiriman Tepat Waktu.\n\nContoh: 'Berkah Catering Box' siap mensukseskan acara Anda, mulai dari rapat kecil hingga seminar besar. Dapur kami tersertifikasi Laik Higiene Sanitasi."
+            },
+            {
+                "content": "## Pilihan Paket Menu & Harga\nKami menyediakan 3 kategori paket utama:\n\n1. **Paket Ekonomis (Rp 20.000)**\n   - Nasi Putih\n   - Ayam Goreng / Telur Balado\n   - Tumis Buncis Jagung\n   - Kerupuk & Sambal\n   - Air Mineral Gelas\n\n2. **Paket Reguler (Rp 27.000)**\n   - Nasi Putih / Nasi Uduk\n   - Ayam Bakar / Ikan Fillet Asam Manis\n   - Telur Dadar Iris / Perkedel\n   - Capcay Goreng\n   - Buah (Pisang/Jeruk)\n   - Kerupuk & Sambal\n   - Air Mineral Gelas\n\n3. **Paket Premium (Rp 35.000)**\n   - Nasi Kuning / Nasi Liwet\n   - Daging Rendang / Empal Suwir\n   - Ayam Goreng Lengkuas (Potongan Kecil)\n   - Sambal Goreng Ati Kentang\n   - Mie Goreng Spesial\n   - Puding / Buah Potong\n   - Air Mineral Botol 330ml\n   - Sendok & Tisu Premium"
+            },
+            {
+                "content": "## Menu Lauk Utama Lainnya\nBisa request ganti lauk (harga menyesuaikan):\n- Ayam Bakar Taliwang\n- Ayam Goreng Kremes\n- Dendeng Balado (Sapi)\n- Ikan Nila Bakar\n- Cumi Cabai Hijau"
+            },
+            {
+                "content": "## Kapasitas Produksi & Pemesanan\n- Minimum Order: 20 Box.\n- Kapasitas Maksimal: 1.000 Box per hari.\n- Pemesanan H-3 (Untuk jumlah <100) atau H-7 (Untuk jumlah >100).\n- Menerima pesanan dadakan H-1 (Menu menyesuaikan stok dapur)."
+            },
+            {
+                "content": "## Prosedur Pemesanan\n1. Hubungi Admin WA: 0812-xxxx-xxxx.\n2. Infokan: Tanggal, Jam Makan, Alamat, Paket Menu, Jumlah Porsi.\n3. Transfer DP (Down Payment) 50% untuk booking slot.\n4. Pelunasan H-1 atau COD (Cash on Delivery) saat barang sampai (S&K berlaku)."
+            },
+            {
+                "content": "## Layanan Pengiriman Tepat Waktu\nKami memahami betapa pentingnya jadwal acara Anda.\n- Tim logistik kami akan mengantarkan pesanan 30-60 menit sebelum jam makan.\n- Ongkir: Flat Rp 20.000 (Kota) / Rp 50.000 (Kabupaten).\n- GRATIS ONGKIR untuk pemesanan di atas 100 box."
+            },
+            {
+                "content": "## Testimoni & Pengalaman\nKami telah melayani berbagai klien instansi seperti: Kantor Walikota, Universitas [Nama Kampus], Bank [Nama Bank], dan ribuan acara syukuran warga."
+            },
+            {
+                "content": "## Metode Pembayaran\n- Transfer Bank (BCA/Mandiri/BNI).\n- Invoice & Faktur Pajak (Tersedia untuk Corporate/Instansi Pemerintah)."
+            },
+            {
+                "content": "## Kontak & Alamat\nAlamat Dapur: Jl. Merpati No. 10, Kel. Sukamaju, Kec. Cilodong, Depok.\nGoogle Maps: https://maps.app.goo.gl/xxxx\n\nHubungi kami sekarang untuk tes food (icip-icip) gratis bagi pemesanan >200 box!"
+            }
+        ],
+        "keywords": [
+            "nasi box terdekat",
+            "harga nasi kotak murah",
+            "paket nasi box kantor",
+            "nasi box syukuran",
+            "catering nasi kotak enak",
+            "menu nasi box mewah",
+            "pesan nasi box 100 porsi",
+            "nasi kuning kotak",
+            "nasi uduk box",
+            "nasi box ayam bakar",
+            "jasa catering event",
+            "nasi box seminar",
+            "catering harian nasi box",
+            "daftar menu nasi kotak",
+            "nasi box 20 ribu"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34dd",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:50:00.000Z",
+    "createdBy": "system"
+}

@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34ea",
+    "title": "Toko Listrik",
+    "description": "Template basis pengetahuan untuk toko alat listrik, mencakup aneka lampu LED, kabel, saklar, stop kontak, peralatan instalasi, dan kipas angin.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["retail", "listrik", "elektronik", "peralatan-rumah"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Toko Listrik Kami\nKami menyediakan segala kebutuhan instalasi listrik dan pencahayaan untuk rumah, kantor, maupun proyek bangunan Anda. Kami hanya menjual produk berstandar SNI untuk menjamin keamanan dan ketahanan penggunaan listrik di tempat Anda.\n\nContoh:\n\"Sinar Abadi Electric\" merupakan distributor resmi Philips dan Panasonic di kota Malang."
+            },
+            {
+                "content": "## Jam Operasional\nKami buka setiap hari:\n- Senin - Sabtu: 08.00 - 20.00\n- Minggu: 09.00 - 17.00\nLokasi: [Isi Alamat Toko]\n\nContoh:\nAlamat: Jl. Letjen Sutoyo No. 55, Malang.\nGoogle Maps: https://maps.google.com/?q=electric_store\nPatokan: Sebelah Bank BRI Unit Sutoyo."
+            },
+            {
+                "content": "## Produk Pencahayaan (Lampu)\n- Lampu LED (Hemat energi) berbagai watt (3W - 50W).\n- Lampu Smart LED (Bisa ganti warna lewat HP).\n- Lampu Downlight & Panel Lamp untuk plafon.\n- Lampu Hias & Lampu Gantung.\n- Lampu Taman & Lampu Sorot (Floodlight).\n\nContoh Harga:\n- Philips LED 10W (Putih): Rp 45.000\n- Hannochs LED 10W (Putih): Rp 28.000\n- Lampu Sorot 50W (Outdoor): Rp 85.000"
+            },
+            {
+                "content": "## Alat Instalasi Listrik\n- Kabel Listrik (NYM, NYA, NYYHY) - Eceran per meter atau per roll.\n- Saklar & Stop Kontak (Single, Double, Multi-pin).\n- MCB (Miniature Circuit Breaker) & Box MCB.\n- Pipa Conduit & Klem Kabel.\n- Fitting Lampu & Steker (Colokan).\n\nContoh:\n- Kabel Eterna NYM 2x1.5mm: Rp 8.000/meter\n- Stop Kontak Broco Gracio: Rp 18.000\n- MCB Schneider 10A: Rp 60.000"
+            },
+            {
+                "content": "## Peralatan Elektronik Pendukung\n- Kipas Angin (Meja, Berdiri, Dinding).\n- Antena TV & Booster.\n- Stabilizer & UPS.\n- Bel Pintu Wireless.\n- Senter & Lampu Emergency.\n\nContoh:\n- Kipas Angin Miyako Berdiri 16 inch: Rp 250.000\n- Lampu Emergency Surya (Tahan 6 jam): Rp 75.000"
+            },
+            {
+                "content": "## Layanan Konsultasi Instalasi\nBingung memilih ukuran kabel yang tepat atau butuh rekomendasi teknisi listrik? Staf kami siap memberikan edukasi mengenai spesifikasi barang dan kami memiliki jaringan teknisi instalasi listrik panggilan yang terpercaya.\n\nContoh:\n\"Untuk daya rumah 1300W, sebaiknya pakai kabel ukuran 2x1.5mm sudah cukup aman, Bu.\""
+            },
+            {
+                "content": "## Harga & Garansi\n- Harga bersaing untuk eceran dan grosir.\n- Garansi ganti baru untuk produk lampu tertentu (sesuai ketentuan merk).\n- Diskon khusus untuk pembelian paket instalasi rumah baru.\n\nContoh:\nGaransi Lampu Philips 2 Tahun (Mati ganti baru, bawa kotak dan nota)."
+            },
+            {
+                "content": "## Kebijakan Pengembalian\nProduk yang tidak berfungsi (cacat pabrik) dapat ditukar maksimal 3 hari setelah pembelian dengan menyertakan nota dan kemasan produk asli.\n\nContoh:\nBarang dicoba dulu di toko sebelum dibawa pulang untuk memastikan nyala."
+            },
+            {
+                "content": "## Layanan Pesan Antar\nKami melayani pengiriman area lokal via kurir motor. Pesanan di atas Rp 200.000 gratis ongkir untuk radius [Isi Radius] km.\n\nContoh:\nBisa kirim lampu pakai GoSend Instant (Ongkir ditanggung pembeli jika belanja < Rp 200rb)."
+            },
+            {
+                "content": "## Kontak Admin Toko\nWhatsApp: [Isi Nomor WA]\nTelepon: [Isi Nomor Telepon]\n\nSolusi kelistrikan aman dan terpercaya hanya di toko kami!\n\nContoh:\nWA: 0812-9988-7766 (Admin Toko)\nTelp: (0341) 49xxxx"
+            }
+        ],
+        "keywords": [
+            "toko listrik terdekat",
+            "harga lampu led philips",
+            "kabel listrik nym per meter",
+            "saklar panasonic harga",
+            "stop kontak arde",
+            "mcb schneider 10 ampere",
+            "lampu downlight led",
+            "toko alat listrik lengkap",
+            "kipas angin miyako",
+            "fitting lampu plafon",
+            "steker colokan kaki 3",
+            "lampu taman tenaga surya",
+            "kabel antena tv terbaik",
+            "box mcb isi 4",
+            "lampu emergency terang"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34ea",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T10:00:00.000Z",
+    "createdBy": "system"
+}

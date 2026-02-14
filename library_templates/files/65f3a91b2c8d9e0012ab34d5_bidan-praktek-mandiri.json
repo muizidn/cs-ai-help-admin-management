@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34d5",
+    "title": "Bidan Praktek Mandiri",
+    "description": "Template basis pengetahuan untuk praktek bidan mandiri, mencakup pemeriksaan kehamilan (ANC), persalinan 24 jam, KB, dan imunisasi bayi.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kesehatan", "ibu-dan-anak", "bidan", "kehamilan"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Praktek Bidan Kami\nKami menyediakan layanan kesehatan ibu dan anak yang profesional, hangat, dan kekeluargaan. Dipimpin oleh bidan berlisensi dengan pengalaman bertahun-tahun, kami siap mendampingi masa kehamilan, persalinan, hingga perawatan bayi Anda.\n\nContoh: PMB (Praktek Mandiri Bidan) Siti Aminah telah melayani persalinan warga sejak 2005. Kami mengutamakan persalinan normal yang minim trauma dan penuh kasih sayang."
+            },
+            {
+                "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap praktek bidan Anda agar pasien mudah menemukan lokasi.\n\nContoh: Jl. Mawar Indah No. 42, RT 03/RW 05, Kelurahan Jatiwaringin, Kecamatan Pondok Gede, Kota Bekasi, 17411.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: Masuk dari samping Masjid Al-Ikhlas, rumah pagar coklat dengan plang Bidan."
+            },
+            {
+                "content": "## Jam Operasional & Layanan Darurat\nInformasikan jam pelayanan rutin dan ketersediaan layanan 24 jam.\n\nContoh:\n- Pemeriksaan Rutin (ANC/KB): Senin - Sabtu (08.00 - 12.00 & 16.00 - 20.00).\n- Persalinan: 24 JAM SETIAP HARI.\n- Hari Minggu/Libur: Hanya melayani persalinan dan kondisi darurat ibu hamil.\nUntuk kunjungan rutin, disarankan membuat janji via WA 0812-9999-0000."
+            },
+            {
+                "content": "## Pemeriksaan Kehamilan (ANC)\nSebutkan detail layanan pemeriksaan rutin ibu hamil.\n\nContoh: Layanan ANC meliputi:\n- Cek Tekanan Darah & Timbang Berat Badan.\n- Pemeriksaan Tinggi Fundus (Perkembangan janin).\n- Mendengarkan DJJ (Detak Jantung Janin) dengan Doppler.\n- Cek Laboratorium sederhana (HB, Protein Urin).\n- Konsultasi Gizi dan Persiapan Persalinan.\n- Biaya per kunjungan: Rp 75.000 (Sudah termasuk vitamin dasar)."
+            },
+            {
+                "content": "## Layanan Persalinan 24 Jam\nJelaskan fasilitas dan biaya persalinan normal.\n\nContoh: Kami melayani persalinan normal dengan fasilitas:\n- Kamar bersalin privat yang nyaman dan tenang.\n- Kamar rawat inap pasca salin (AC/Non-AC).\n- Inisiasi Menyusu Dini (IMD) segera setelah lahir.\n- Biaya Persalinan Normal: Mulai dari Rp 2.500.000 - Rp 3.500.000 (Terima beres, termasuk perawatan ibu & bayi 1 hari)."
+            },
+            {
+                "content": "## Program Keluarga Berencana (KB)\nInformasikan jenis kontrasepsi yang tersedia.\n\nContoh:\n- Suntik KB (1 bulan / 3 bulan): Rp 35.000 - Rp 50.000.\n- Pasang IUD (Spiral): Mulai Rp 450.000.\n- Pasang Implan (Susuk 2/3 tahun): Mulai Rp 600.000.\n- Pil KB & Kondom.\nKami juga melayani konseling pemilihan metode KB yang tepat sesuai kondisi kesehatan Ibu."
+            },
+            {
+                "content": "## Imunisasi & Kesehatan Bayi\nSebutkan layanan untuk bayi baru lahir hingga balita.\n\nContoh:\n- Imunisasi Dasar Lengkap (BCG, Polio, DPT, HB0, Campak).\n- Tindik Telinga Bayi (Steril & Aman): Rp 75.000.\n- Pijat Bayi Sehat: Rp 100.000.\n- Cek Kuning (Bilirubin) dan Tumbuh Kembang Bayi.\nMohon bawa Buku Pink (KIA) setiap kali berkunjung."
+            },
+            {
+                "content": "## Persiapan Melahirkan\nBerikan daftar yang harus dibawa pasien saat akan melahirkan.\n\nContoh: Saat mulai terasa mulas teratur, segera bawa:\n1. Buku KIA (Buku Pink) - WAJIB.\n2. Fotokopi KTP Suami Istri & Kartu Keluarga (2 lembar).\n3. Perlengkapan Ibu (Kain jarik, pembalut nifas, baju kancing depan).\n4. Perlengkapan Bayi (Popok, baju bayi, selimut/bedong)."
+            },
+            {
+                "content": "## Metode Pembayaran\nSebutkan pilihan cara pembayaran yang tersedia.\n\nContoh: Kami menerima:\n- Tunai / Cash.\n- Transfer Bank (BCA/Mandiri).\n- QRIS (Gopay/OVO).\n- Klaim Jampersal / BPJS (Khusus bagi yang sudah memiliki rujukan/kerjasama)."
+            },
+            {
+                "content": "## FAQ - Pertanyaan Umum\nSediakan jawaban untuk pertanyaan yang sering ditanyakan.\n\nContoh:\nQ: Apakah bisa USG di sini?\nA: Kami menyediakan layanan USG 2D bersama Dokter Spesialis Obgyn setiap hari Sabtu jam 16.00 (Wajib daftar dulu).\nQ: Apakah bidan bisa datang ke rumah (Home Visit)?\nA: Ya, kami melayani perawatan tali pusar bayi dan memandikan bayi baru lahir di rumah (Area radius 3km)."
+            }
+        ],
+        "keywords": [
+            "bidan terdekat",
+            "periksa hamil dimana",
+            "biaya persalinan bidan",
+            "suntik kb 3 bulan",
+            "jadwal imunisasi bayi",
+            "pemasangan iud",
+            "bidan buka 24 jam",
+            "pijat bayi terdekat",
+            "tindik bayi perempuan",
+            "harga melahirkan normal",
+            "buku kia pink",
+            "senam hamil bidan",
+            "kb implan harga",
+            "pemeriksaan anc",
+            "konsultasi kehamilan"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34d5",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:00:00.000Z",
+    "createdBy": "system"
+}

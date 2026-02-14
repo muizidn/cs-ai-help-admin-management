@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34eb",
+    "title": "Toko Handphone",
+    "description": "Template basis pengetahuan untuk toko handphone (smartphone), mencakup penjualan HP baru & bekas, layanan tukar tambah, klaim garansi, dan kredit HP.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["retail", "gadget", "smartphone", "elektronik"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Toko Handphone Kami\nKami adalah pusat gadget terlengkap yang menyediakan berbagai merk smartphone terbaru dengan garansi resmi. Kami berkomitmen memberikan pelayanan terbaik, mulai dari konsultasi spesifikasi hingga layanan purna jual yang memudahkan pelanggan."
+            },
+            {
+                "content": "## Jam Operasional\nKunjungi store kami setiap hari:\n- Senin - Minggu: 10.00 - 21.00\n\nContoh Lokasi:\nJl. Jendral Sudirman No. 45, Ruko Pusat Gadget Blok B2, Kel. Menteng, Kec. Jakarta Pusat, Kode Pos 10310.\n(Sebelah Bank BCA, depan Halte Busway).\nMaps: https://maps.google.com/?q=lokasi_toko"
+            },
+            {
+                "content": "## Penjualan Smartphone Baru\nKami menjual HP dengan Garansi Resmi (TAM, iBox, SEIN, dll):\n- iPhone (Berbagai seri terbaru)\n- Samsung (Galaxy S, A, & M Series)\n- Oppo & Vivo\n- Xiaomi & Realme\n- Infinix & Tecno\n\nContoh Harga (Bisa berubah sewaktu-waktu):\n- Samsung Galaxy A55 5G 8/256GB: Rp 6.499.000\n- iPhone 15 128GB (iBox): Rp 16.499.000\n- Xiaomi Redmi Note 13 Pro 5G: Rp 4.399.000"
+            },
+            {
+                "content": "## Penjualan HP Bekas (Second)\nTersedia HP bekas berkualitas dengan kondisi:\n- Like New (Mulus seperti baru).\n- Fungsi 100% normal (sudah melalui QC ketat).\n- Kelengkapan Fullset atau Batangan (sesuai stok).\n- Garansi toko selama 7 hari.\n\nContoh Stok Second:\n- iPhone 11 128GB (Mulus, BH 88%, Fullset OEM): Rp 4.800.000\n- Samsung S21 FE 5G (Batangan, Mulus 95%): Rp 3.500.000"
+            },
+            {
+                "content": "## Layanan Tukar Tambah (Trade-In)\nIngin upgrade HP lama Anda? Bawa HP lama Anda ke toko kami untuk ditaksir harganya. Hasil taksiran bisa dijadikan potongan harga untuk pembelian HP baru.\n\nContoh Simulasi:\nHP Lama: Oppo Reno 5 (Taksiran Rp 1.800.000)\nHP Baru: Oppo Reno 11 5G (Harga Rp 5.999.000)\nSisa Bayar: Rp 4.199.000 (Bisa Cash/Kredit)"
+            },
+            {
+                "content": "## Fasilitas Kredit HP\nBelanja gadget impian jadi lebih mudah dengan cicilan:\n- Home Credit (Proses cepat 15-30 menit).\n- Kredivo & Akulaku.\n- Cicilan Kartu Kredit 0% (Bank tertentu).\n- Syarat cukup membawa KTP asli.\n\nContoh Cicilan:\nHome Credit (DP 0%, Bunga Ringan)\n- Tenor 6 Bulan: Rp 950.000/bulan\n- Tenor 12 Bulan: Rp 520.000/bulan"
+            },
+            {
+                "content": "## Layanan Pindah Data & Instalasi\nSetiap pembelian HP di toko kami, Anda mendapatkan layanan GRATIS:\n- Pindah data dari HP lama ke HP baru.\n- Pembuatan akun (Email/iCloud).\n- Instalasi aplikasi standar.\n- Pemasangan tempered glass.\n\nContoh:\n\"Mas, tolong pindahkan semua kontak dan foto dari HP Samsung lama ke HP baru ini ya. Sekalian pasangkan anti goresnya.\""
+            },
+            {
+                "content": "## Harga & Promo Terbaru\n- Harga mengikuti update pricelist resmi nasional.\n- Promo Cashback setiap akhir pekan.\n- Bonus Aksesoris (Softcase, Tempered Glass, Earphone) untuk pembelian tipe tertentu.\n\nContoh Promo:\n\"Weekend Sale! Potongan harga Rp 300.000 untuk semua seri Vivo V30 khusus pembelian hari Sabtu-Minggu. Bonus TWS Earphone senilai Rp 150.000!\""
+            },
+            {
+                "content": "## Metode Pembayaran\n- Tunai (Cash)\n- Debit Card & Kartu Kredit\n- QRIS\n- Transfer Bank\n\nContoh:\n\"Bisa split payment ya kak? Rp 2.000.000 Tunai, sisanya Rp 3.000.000 gesek kartu kredit BCA.\""
+            },
+            {
+                "content": "## Kontak Customer Service\nWhatsApp: 0812-3456-7890\nInstagram: @gadget_center_id\n\nUpdate stok dan harga harian bisa cek di Story Instagram kami!"
+            }
+        ],
+        "keywords": [
+            "toko hp terdekat",
+            "harga iphone 15 pro max",
+            "kredit hp tanpa dp",
+            "tukar tambah hp jogja",
+            "jual hp second berkualitas",
+            "samsung galaxy terbaru",
+            "toko handphone garansi resmi",
+            "promo cashback hp",
+            "syarat kredit home credit",
+            "service hp resmi",
+            "xiaomi murah bergaransi",
+            "toko gadget terlengkap",
+            "harga oppo terbaru",
+            "cicilan hp 0 persen",
+            "toko hp buka sampai malam"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34eb",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T10:00:00.000Z",
+    "createdBy": "system"
+}

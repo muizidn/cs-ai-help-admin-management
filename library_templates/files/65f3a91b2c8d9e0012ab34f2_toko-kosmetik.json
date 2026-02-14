@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34f2",
+    "title": "Toko Kosmetik",
+    "description": "Template basis pengetahuan untuk toko kosmetik dan skincare, mencakup produk make-up, perawatan wajah, perawatan tubuh, dan konsultasi jenis kulit.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["retail", "kecantikan", "kosmetik", "skincare"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Toko Kosmetik Kami\nKami adalah pusat kecantikan yang menyediakan berbagai produk skincare, bodycare, dan make-up dari brand lokal maupun internasional yang sudah terdaftar BPOM. Kami berkomitmen membantu Anda menemukan produk yang tepat sesuai dengan jenis dan kebutuhan kulit Anda."
+            },
+            {
+                "content": "## Jam Operasional\nKunjungi store kami setiap hari:\n- Senin - Minggu: 09.00 - 21.30\n\nContoh Lokasi:\nJl. Pahlawan No. 45, Ruko Beauty Center, Kel. Alun-Alun, Kec. Klojen, Malang.\n(Depan Mall Olympic).\nMaps: https://maps.google.com/?q=lokasi_toko_kosmetik"
+            },
+            {
+                "content": "## Produk Perawatan Wajah (Skincare)\n- Pembersih: Micellar water, Facial wash, Cleansing balm.\n- Toner: Exfoliating toner & Hydrating toner.\n- Serum: Brightening, Anti-aging, Acne care.\n- Pelembab: Moisturizer gel/cream.\n- Tabir Surya: Sunscreen SPF 30 - 50 PA+++.\n\nContoh Harga:\n- Facial Wash (Wardah/Emina): Rp 25.000\n- Sunscreen Azarine 40ml: Rp 39.000\n- Serum Avoskin Miraculous: Rp 129.000"
+            },
+            {
+                "content": "## Produk Make-up\n- Face: Foundation, Cushion, Bedak Tabur/Padat, Concealer.\n- Eyes: Mascara, Eyeliner, Eyeshadow, Pensil Alis.\n- Lips: Lipcream, Lipstick, Liptint, Lipbalm.\n- Tools: Brush set, Beauty blender, Penjepit bulu mata.\n\nContoh:\n- Cushion Make Over (Refill): Rp 115.000\n- Maybelline Mascara Sky High: Rp 140.000\n- Hanasui Lip Cream Matte: Rp 22.000"
+            },
+            {
+                "content": "## Perawatan Tubuh & Rambut (Body & Hair Care)\n- Body: Lotion, Body butter, Body scrub (Lulur), Sabun mandi.\n- Hair: Shampoo, Conditioner, Hair vitamin, Hair mask.\n- Parfum: Body mist, EDP, EDT dengan berbagai aroma.\n\nContoh:\n- Scarlett Body Lotion: Rp 65.000\n- Makarizo Hair Energy (Sachet): Rp 10.000"
+            },
+            {
+                "content": "## Konsultasi Jenis Kulit\nBingung memilih produk? Staf kami siap membantu Anda mengenali jenis kulit (Berminyak, Kering, Kombinasi, atau Sensitif) agar produk yang dibeli memberikan hasil yang maksimal tanpa iritasi.\n\nContoh:\n\"Kak, kulit saya berminyak dan gampang jerawatan. Bagusnya pakai moisturizer apa ya yang gak bikin lengket?\""
+            },
+            {
+                "content": "## Keaslian Produk & BPOM\nSemua produk yang kami jual 100% Original. Kami tidak menjual produk KW atau tanpa izin BPOM. Anda bisa mengecek kode BPOM pada setiap kemasan produk yang kami jual."
+            },
+            {
+                "content": "## Harga & Promo\n- Harga bervariasi dari ekonomis hingga premium.\n- Promo Bundle: Paket Skincare Lengkap lebih hemat.\n- Diskon Member: Potongan harga khusus setiap tanggal 15.\n\nContoh:\n\"Paket Glowing Hemat: Facial Wash + Toner + Sunscreen cuma Rp 100.000.\""
+            },
+            {
+                "content": "## Layanan Pengiriman\n- Pengiriman via kurir motor (Area Lokal).\n- Ekspedisi: J&T, JNE, SiCepat.\n- Packing aman menggunakan Bubble Wrap tebal (Gratis).\n\nContoh:\n\"Untuk pengiriman luar kota, bubble wrapnya kita kasih tebal kak biar botol kaca aman.\""
+            },
+            {
+                "content": "## Kontak Admin Kecantikan\nWhatsApp: 0812-3456-7890\nInstagram: @beauty_store_official\n\nTampil percaya diri dengan kulit sehat dan cantik!"
+            }
+        ],
+        "keywords": [
+            "toko kosmetik terdekat",
+            "skincare bpom original",
+            "harga cushion wardah",
+            "sunscreen untuk kulit berminyak",
+            "paket skincare mencerahkan",
+            "lipcream matte tahan lama",
+            "toko make up terlengkap",
+            "serum acne murah",
+            "jual parfum wangi tahan lama",
+            "micellar water untuk kulit sensitif",
+            "bedak tabur terbaik",
+            "lulur pemutih badan",
+            "hair vitamin untuk rambut rontok",
+            "promo kosmetik bulanan",
+            "toko skincare original"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34f2",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T10:00:00.000Z",
+    "createdBy": "system"
+}

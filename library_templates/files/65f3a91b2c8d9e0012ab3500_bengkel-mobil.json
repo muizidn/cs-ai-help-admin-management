@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab3500",
+    "title": "Bengkel Mobil",
+    "description": "Template basis pengetahuan untuk bengkel mobil (umum), mencakup servis berkala, ganti oli, tune-up, servis kaki-kaki, perbaikan AC mobil, dan scan komputer (OBD).",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["otomotif", "bengkel-mobil", "servis-mobil", "sparepart"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Bengkel Mobil Kami\nKami menyediakan layanan perawatan dan perbaikan mobil untuk berbagai merk (Toyota, Daihatsu, Honda, Suzuki, Mitsubishi, dll). Dengan dukungan alat diagnosa modern dan mekanik ahli, kami berkomitmen menjaga performa mobil Anda agar selalu aman dan nyaman digunakan untuk perjalanan dalam maupun luar kota.\n\nContoh:\n\"Bengkel Mobil Sejahtera Motor spesialis mobil Jepang & Korea. Kami memiliki alat scanner canggih untuk diagnosa check engine dan mekanik berpengalaman lebih dari 10 tahun.\""
+            },
+            {
+                "content": "## Jam Operasional & Booking\nKunjungi bengkel kami:\n- Senin - Sabtu: 08.00 - 17.30\n- Minggu: Dengan perjanjian (untuk servis tertentu)\nDisarankan melakukan booking jadwal melalui WhatsApp untuk menghindari antrian panjang.\n\nContoh:\n\"Buka Senin-Sabtu 08.00-17.00. Minggu Libur. Booking servis H-1 via WA agar langsung dikerjakan tanpa antre.\""
+            },
+            {
+                "content": "## Servis Berkala & Ganti Oli\n- Ganti Oli Mesin, Oli Transmisi, & Oli Gardan.\n- Penggantian Filter Oli, Filter Udara, & Filter Kabin (AC).\n- Pengecekan cairan-cairan (Air radiator, Minyak rem, Power steering).\n- Tune-up mesin untuk mengembalikan performa.\n\nContoh:\n\"Paket Ganti Oli mulai Rp 350.000 (Oli 4 Liter + Filter + Jasa). Tersedia oli Shell, Pertamina, TMO, HGO. Tune up carbon cleaner Rp 250.000.\""
+            },
+            {
+                "content": "## Servis Kaki-Kaki & Rem\n- Ganti Kampas Rem (Brake Pads/Shoes).\n- Pengecekan & Ganti Shockbreaker.\n- Perbaikan Tie Rod, Long Tie Rod, Ball Joint.\n- Bubut piringan cakram (Disc brake).\n\nContoh:\n\"Bunyi gluduk-gluduk? Kami cek kaki-kaki gratis. Ganti kampas rem depan Avanza Rp 250.000 (Jasa + Part). Service Rack Steer bergaransi 6 bulan.\""
+            },
+            {
+                "content": "## Perbaikan AC Mobil\n- Cuci Evaporator & Kondensor.\n- Isi Freon & Oli Kompresor.\n- Penggantian Filter Dryer & Ekspansi.\n- Deteksi kebocoran sistem AC.\n\nContoh:\n\"Paket Service AC Ringan: Cuci Evap + Isi Freon Rp 350.000. AC tidak dingin atau bau apek bisa kami atasi. Ganti magnet clutch kompresor mulai Rp 400.000.\""
+            },
+            {
+                "content": "## Scan Komputer (OBD Diagnostic)\nBagi mobil modern dengan sistem injeksi, kami menyediakan jasa scan ECU untuk:\n- Mendeteksi penyebab lampu 'Check Engine' menyala.\n- Reset data error sistem elektronik.\n- Pengecekan sensor-sensor mesin.\n\nContoh:\n\"Lampu indikator mesin menyala? Scan OBD hanya Rp 100.000. Kami bisa mendeteksi kerusakan sensor O2, MAF, atau koil dengan akurat.\""
+            },
+            {
+                "content": "## Daftar Harga Estimasi\n- Jasa Ganti Oli: Rp [Isi Harga].\n- Jasa Tune-Up: Mulai dari Rp [Isi Harga].\n- Jasa Servis Rem: Rp [Isi Harga]/roda.\n- Jasa Scan OBD: Rp [Isi Harga].\n\nContoh Harga:\n- Jasa Ganti Oli: Rp 50.000.\n- Tune Up + Gurah Mesin: Rp 300.000.\n- Service Rem 4 Roda: Rp 200.000.\n- Overhaul Mesin: Mulai Rp 2.500.000 (Jasa).\""
+            },
+            {
+                "content": "## Penjualan Suku Cadang (Sparepart)\nKami menyediakan sparepart Original (OEM) maupun produk aftermarket berkualitas dengan harga yang kompetitif dan bergaransi.\n\nContoh:\n\"Ready Stock: Kampas Rem Akebono, Filter Oli Sakura, Busi NGK Iridium. Sparepart Original Toyota/Honda indent 1-2 hari jika kosong.\""
+            },
+            {
+                "content": "## Layanan Darurat & Derek\nKami bekerja sama dengan jasa towing/derek untuk membantu menjemput mobil Anda jika mogok di jalan (Area [Isi Kota]).\n\nContoh:\n\"Mobil mogok di area Bekasi? Hubungi kami untuk layanan towing rekanan. Biaya towing mulai Rp 500.000 dalam kota. Kami juga bisa jumper aki panggil.\""
+            },
+            {
+                "content": "## Kontak Admin Bengkel\nWhatsApp: [Isi Nomor WA]\nTelepon: [Isi Nomor Telepon]\n\nSolusi terpercaya untuk perawatan mobil Anda!\n\nContoh:\n\"WA: 0812-9999-8888 (Pak Budi). Lokasi: Jl. Patriot No 5, Bekasi Barat (Google Maps: Bengkel Sejahtera).\""
+            }
+        ],
+        "keywords": [
+            "bengkel mobil terdekat",
+            "servis mobil berkala murah",
+            "harga ganti oli mobil",
+            "tune up mobil injeksi",
+            "servis kaki kaki mobil",
+            "bengkel ac mobil terpercaya",
+            "scan ecu mobil check engine",
+            "ganti kampas rem mobil",
+            "bengkel mobil buka hari minggu",
+            "sparepart mobil original",
+            "servis rutin mobil toyota honda",
+            "harga kuras radiator mobil",
+            "bengkel mobil spesialis matic",
+            "jasa ganti aki mobil panggil",
+            "biaya turun mesin mobil"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab3500",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:45:00.000Z",
+    "createdBy": "system"
+}

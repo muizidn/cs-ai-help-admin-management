@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34ee",
+    "title": "Toko Baju Lokal",
+    "description": "Template basis pengetahuan untuk toko fashion (baju) lokal, mencakup koleksi pakaian pria/wanita, panduan ukuran (size chart), kebijakan retur, dan pengiriman.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["retail", "fashion", "baju", "umkm"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Brand Kami\nKami adalah brand fashion lokal yang mengedepankan kualitas bahan premium dengan desain yang timeless dan trendy. Setiap koleksi kami diproduksi secara terbatas untuk menjaga eksklusivitas dan detail jahitan yang rapi, khusus untuk menunjang penampilan harian Anda."
+            },
+            {
+                "content": "## Jam Operasional & Store\nKunjungi offline store kami:\n- Senin - Minggu: 10.00 - 22.00\n\nContoh Lokasi:\nJl. Distro Bandung No. 22, Kel. Dago, Kec. Coblong, Kota Bandung.\n(Seberang Cafe Halaman).\nMaps: https://maps.google.com/?q=lokasi_toko_baju\n\nKami juga melayani pembelian online melalui WhatsApp dan Marketplace."
+            },
+            {
+                "content": "## Koleksi Pakaian\n- Atasan: Kaos (T-shirt), Kemeja Polos/Motif, Blouse, Tunik.\n- Bawahan: Celana Bahan, Celana Cargo, Rok Plisket, Jeans.\n- Outerwear: Jaket, Hoodie, Cardigan, Blazer.\n- Dress: Casual Dress & Formal Dress.\n\nContoh Produk Best Seller:\n- Kemeja Flannel Tartan (Merah/Hitam): Rp 135.000\n- Celana Chino Slim Fit (Khaki/Navy): Rp 150.000\n- Gamis Rayon Viscose (Motif Bunga): Rp 185.000"
+            },
+            {
+                "content": "## Panduan Ukuran (Size Chart)\nAgar tidak salah pilih, silakan cek estimasi ukuran kami:\n- S: Lingkar Dada 90-94cm\n- M: Lingkar Dada 96-100cm\n- L: Lingkar Dada 102-106cm\n- XL: Lingkar Dada 108-112cm\n- XXL: Lingkar Dada 114-120cm\nDetail panjang baju tersedia di deskripsi setiap produk.\n\nContoh:\n\"Kak, untuk BB 60kg TB 165cm disarankan pakai size L ya, biar tidak terlalu ketat di bagian dada.\""
+            },
+            {
+                "content": "## Bahan Kain yang Digunakan\nKami menggunakan bahan-bahan berkualitas:\n- Cotton Combed 24s/30s (Adem & Menyerap keringat).\n- Linen Premium (Tekstur mewah & kuat).\n- Rayon Viscose (Jatuh & Sangat lembut).\n- Crinkle Airflow (Ironless/Tidak perlu disetrika)."
+            },
+            {
+                "content": "## Harga & Promo\n- Harga Atasan: Rp 85.000 - Rp 150.000\n- Harga Bawahan: Rp 120.000 - Rp 250.000\n- Promo Bundling: Beli 3 pcs diskon Rp 30.000.\n- Promo Flash Sale: Diskon hingga 50% setiap tanggal kembar (1.1, 2.2, dst).\n\nContoh:\n\"Paket Ngantor: Beli 1 Kemeja + 1 Celana Chino cuma Rp 250.000 (Hemat Rp 35.000).\""
+            },
+            {
+                "content": "## Kebijakan Pengembalian (Retur)\nKami menerima retur jika:\n- Barang yang diterima cacat produksi (bolong/noda permanen).\n- Salah kirim ukuran atau warna dari pihak kami.\n- Wajib menyertakan video unboxing tanpa jeda.\n- Batas retur maksimal 2 hari setelah barang diterima.\n\nContoh Kasus:\n\"Min, saya pesan warna Navy tapi yang datang Hitam. Ini video unboxingnya. Mau tukar ya.\""
+            },
+            {
+                "content": "## Layanan Pengiriman\n- Pengiriman setiap sore (Senin-Sabtu).\n- Ekspedisi: J&T, JNE, SiCepat, Shopee Express.\n- Layanan Instan: GoSend/GrabExpress (Area Lokal).\n\nContoh Ongkir:\n\"Ke Jakarta pakai J&T Reguler ongkirnya Rp 10.000, estimasi sampai 2 hari.\""
+            },
+            {
+                "content": "## Metode Pembayaran\n- Transfer Bank (BCA, Mandiri)\n- ShopeePay / Gopay\n- COD (Khusus pembelian via Marketplace)\n\nContoh:\n\"Pembayaran via transfer BCA 1234567890 a.n Toko Baju Lokal. Jangan lupa kirim bukti transfer ya.\""
+            },
+            {
+                "content": "## Kontak Customer Service\nWhatsApp: 0821-2345-6789\nInstagram: @local_brand_fashion\n\nKonsultasikan gaya berpakaianmu bersama admin kami!"
+            }
+        ],
+        "keywords": [
+            "toko baju terdekat",
+            "brand fashion lokal",
+            "kaos cotton combed 30s",
+            "kemeja pria keren",
+            "blouse wanita kerja",
+            "celana cargo premium",
+            "tunik busui friendly",
+            "harga baju murah berkualitas",
+            "size chart kemeja",
+            "baju lebaran terbaru",
+            "outerwear wanita aesthetic",
+            "toko baju buka hari minggu",
+            "promo diskon baju",
+            "ootd hijab kekinian",
+            "cara retur barang"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34ee",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T10:00:00.000Z",
+    "createdBy": "system"
+}

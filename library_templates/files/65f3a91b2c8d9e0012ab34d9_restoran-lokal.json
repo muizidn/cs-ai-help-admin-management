@@ -1,0 +1,78 @@
+{
+    "_id": "65f3a91b2c8d9e0012ab34d9",
+    "title": "Restoran Lokal",
+    "description": "Template basis pengetahuan untuk restoran keluarga lokal, mencakup reservasi meja, menu paket keluarga, fasilitas VIP, dan paket acara ulang tahun.",
+    "type": "knowledge_base",
+    "category": "general",
+    "tags": ["kuliner", "restoran", "makanan-lokal", "keluarga"],
+    "language": "id",
+    "content": {
+        "sections": [
+            {
+                "content": "## Tentang Restoran Kami\nRestoran kami menghadirkan perpaduan cita rasa kuliner lokal dengan suasana makan yang nyaman dan elegan. Sangat cocok untuk acara makan keluarga, pertemuan bisnis, hingga perayaan momen spesial dengan standar pelayanan yang profesional.\n\nContoh: 'Resto Sunda Kelapa' menyajikan masakan khas Jawa Barat dengan suasana saung lesehan di tengah kota. Berdiri sejak 2010, kami berkomitmen melestarikan resep warisan leluhur."
+            },
+            {
+                "content": "## Jam Operasional & Lokasi\nInformasikan waktu buka dan lokasi detail.\n\nContoh:\n- Senin - Kamis: 10.00 - 21.00 WIB.\n- Jumat - Minggu: 10.00 - 22.00 WIB.\n- Alamat: Jl. Pajajaran Indah V No. 33, Bogor Timur, Kota Bogor, 16143.\n- Maps: https://maps.app.goo.gl/xxxx"
+            },
+            {
+                "content": "## Menu Unggulan (Signature Dish)\nSebutkan menu yang wajib dicoba pelanggan.\n\nContoh:\n- Gurame Bakar Madu (Rp 85.000): Ikan segar 500gr dibakar dengan saus madu spesial.\n- Ayam Betutu (Rp 95.000): Satu ekor ayam kampung masak rempah, empuk dan pedas.\n- Sate Maranggi (Rp 55.000): 10 tusuk sate sapi empuk tanpa lemak.\n- Sop Buntut Premium (Rp 75.000): Kuah bening segar dengan daging impor.\n- Es Campur Spesial (Rp 25.000): Dengan durian asli dan gula aren."
+            },
+            {
+                "content": "## Reservasi Meja (Booking)\nJelaskan cara booking tempat.\n\nContoh: Untuk menghindari antrean, reservasi dapat dilakukan via WhatsApp 0812-xxxx-xxxx.\n- Format Booking: Nama / Tanggal & Jam / Jumlah Orang / Area (Smoking/Non-Smoking/Lesehan).\n- Reservasi untuk >10 orang wajib DP Rp 200.000.\n- Toleransi keterlambatan maksimal 15 menit dari jam booking."
+            },
+            {
+                "content": "## Paket Makan Keluarga (Family Set)\nKami menyediakan paket hemat untuk kelompok:\n- Paket Ber-4 (Rp 350.000): Nasi Bakul, 1 Gurame (Bakar/Goreng), 1 Ekor Ayam Bakar, 2 Sayur Asem, Tahu Tempe, Sambal Lalap, 1 Pitcher Es Teh.\n- Paket Ber-10 (Rp 850.000): Menu lengkap prasmanan mini di meja.\nSangat hemat dibandingkan beli satuan (ala carte)."
+            },
+            {
+                "content": "## Fasilitas Ruang VIP & Meeting\nKami menyediakan ruang privat (VIP Room) untuk pertemuan yang lebih tenang:\n- VIP A (Kapasitas 10 orang): Minimum order Rp 1.000.000.\n- VIP B (Kapasitas 25 orang): Minimum order Rp 2.500.000.\n- Fasilitas: AC Dingin, Smart TV 50 inch (Bisa untuk presentasi), Sound System, Private Toilet.\n- Durasi penggunaan maksimal 3 jam."
+            },
+            {
+                "content": "## Paket Acara (Ulang Tahun/Engagement)\nIngin merayakan momen spesial? Kami menyediakan paket acara lengkap:\n- Paket Birthday A (Rp 100.000/pax): Termasuk Buffet Menu, Dekorasi Balon Standar, dan Sound System.\n- Paket Engagement (Rp 150.000/pax): Termasuk Buffet Premium, Dekorasi Backdrop Bunga, dan Free Flow Minuman.\nHubungi Marketing kami di 0813-xxxx-xxxx untuk katalog lengkap."
+            },
+            {
+                "content": "## Kebijakan Membawa Makanan Luar\nPelanggan tidak diperkenankan membawa makanan dan minuman dari luar (Kecuali makanan bayi).\n- Kue Ulang Tahun: Boleh dibawa, dikenakan biaya piring/potong kue (corkage) Rp 50.000 flat.\n- Minuman Beralkohol: Dikenakan corkage fee Rp 150.000 per botol."
+            },
+            {
+                "content": "## Fasilitas Pendukung\nDemi kenyamanan pengunjung, kami menyediakan:\n- Area parkir luas (Muat 20 Mobil, Valet tersedia di weekend).\n- Musholla yang bersih dan luas (Lengkap dengan mukena/sarung).\n- Toilet terpisah (Laki-laki/Perempuan/Difabel).\n- Area bermain anak (Kids Playground) dengan perosotan dan mandi bola.\n- Wi-Fi Gratis High Speed."
+            },
+            {
+                "content": "## Metode Pembayaran\nKami menerima berbagai metode pembayaran:\n- Tunai / Cash.\n- Kartu Debit & Kredit (Visa/Mastercard/JCB) - Minimal transaksi Rp 50.000.\n- QRIS (Gopay/OVO/Dana).\n- Corporate Billing (Invoice) untuk perusahaan yang sudah bekerjasama."
+            }
+        ],
+        "keywords": [
+            "restoran keluarga terdekat",
+            "tempat makan enak",
+            "reservasi restoran",
+            "menu paket keluarga",
+            "restoran ada ruang vip",
+            "paket ulang tahun anak",
+            "restoran masakan indonesia",
+            "harga gurame bakar",
+            "tempat meeting privat",
+            "restoran dengan playground",
+            "makan malam romantis",
+            "restoran murah enak",
+            "booking tempat arisan",
+            "menu prasmanan restoran",
+            "nomor telepon restoran"
+        ]
+    },
+    "preview": "",
+    "version": "1.1.0",
+    "metadata": {
+        "variables": [],
+        "conditions": [],
+        "actions": [],
+        "dataSourceType": "",
+        "keywords": [],
+        "requiredPermissions": [],
+        "exampleUseCases": []
+    },
+    "id": "65f3a91b2c8d9e0012ab34d9",
+    "isActive": true,
+    "downloadCount": 0,
+    "rating": 0,
+    "createdAt": "2026-02-14T10:00:00.000Z",
+    "updatedAt": "2026-02-14T11:25:00.000Z",
+    "createdBy": "system"
+}
