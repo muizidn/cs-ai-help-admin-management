@@ -2,9 +2,12 @@
   import { onMount } from "svelte"
   import { page } from "$app/stores"
   import { apiClient } from "$lib/api-client"
-  import type { Transaction, TransactionUpdateInput } from "$lib/types/user-billing"
+  import type {
+    Transaction,
+    TransactionUpdateInput,
+  } from "$lib/types/user-billing"
   import "./transaction-detail.css"
-  
+
   // State
   let transaction: Transaction | null = null
   let loading = false
@@ -61,14 +64,17 @@
     saveSuccess = false
 
     try {
-      const response = await apiClient.put(`/api/transactions/${transactionId}`, editData)
+      const response = await apiClient.put(
+        `/api/transactions/${transactionId}`,
+        editData,
+      )
 
       if (response.status === 200 && response.data?.status === "success") {
         saveSuccess = true
         editMode = false
         // Reload transaction data
         await loadTransaction()
-        
+
         // Hide success message after 3 seconds
         setTimeout(() => {
           saveSuccess = false
@@ -87,20 +93,26 @@
   // Quick Approve for Manual Payments
   async function handleApprove() {
     if (!transaction) return
-    if (!confirm("Are you sure you want to approve this manual payment?")) return
+    if (!confirm("Are you sure you want to approve this manual payment?"))
+      return
 
     saving = true
     try {
-      const response = await apiClient.put(`/api/transactions/${transaction.id}`, {
-        status: "COMPLETED",
-        metadata: { ...transaction.metadata, manuallyApproved: true },
-        notes: (transaction.notes ? transaction.notes + "\n" : "") + "Approved manually by admin."
-      })
+      const response = await apiClient.put(
+        `/api/transactions/${transaction.id}`,
+        {
+          status: "COMPLETED",
+          metadata: { ...transaction.metadata, manuallyApproved: true },
+          notes:
+            (transaction.notes ? transaction.notes + "\n" : "") +
+            "Approved manually by admin.",
+        },
+      )
 
       if (response.status === 200 && response.data?.status === "success") {
         saveSuccess = true
         await loadTransaction()
-        setTimeout(() => saveSuccess = false, 3000)
+        setTimeout(() => (saveSuccess = false), 3000)
       } else {
         saveError = response.data?.message || "Failed to approve transaction"
       }
@@ -150,19 +162,26 @@
   // Get status badge class
   function getStatusBadgeClass(status: string): string {
     switch (status) {
-      case "COMPLETED": return "badge-success"
-      case "PENDING": return "badge-warning"
-      case "FAILED": return "badge-danger"
-      default: return "badge-secondary"
+      case "COMPLETED":
+        return "badge-success"
+      case "PENDING":
+        return "badge-warning"
+      case "FAILED":
+        return "badge-danger"
+      default:
+        return "badge-secondary"
     }
   }
 
   // Get type badge class
   function getTypeBadgeClass(type: string): string {
     switch (type) {
-      case "CREDIT_PURCHASE": return "badge-primary"
-      case "PLAN_UPGRADE": return "badge-premium"
-      default: return "badge-secondary"
+      case "CREDIT_PURCHASE":
+        return "badge-primary"
+      case "PLAN_UPGRADE":
+        return "badge-premium"
+      default:
+        return "badge-secondary"
     }
   }
 
@@ -173,7 +192,10 @@
 </script>
 
 <svelte:head>
-  <title>Transaction Details - {transaction?.transactionCode || 'Loading...'} - CS AI Admin</title>
+  <title
+    >Transaction Details - {transaction?.transactionCode || "Loading..."} - CS AI
+    Admin</title
+  >
 </svelte:head>
 
 <div class="page-container">
@@ -187,15 +209,19 @@
           <p>Manage transaction {transaction.transactionCode}</p>
         {/if}
       </div>
-      
+
       {#if transaction && !editMode}
         <div class="header-actions">
           {#if transaction.status === "PENDING" && transaction.metadata?.isManual}
-            <button on:click={handleApprove} disabled={saving} class="btn btn-success">
+            <button
+              on:click={handleApprove}
+              disabled={saving}
+              class="btn btn-success"
+            >
               {saving ? "Processing..." : "Approve Manual Payment"}
             </button>
           {/if}
-          <button on:click={() => editMode = true} class="btn btn-primary">
+          <button on:click={() => (editMode = true)} class="btn btn-primary">
             Edit Transaction
           </button>
         </div>
@@ -223,9 +249,7 @@
   {#if !loading && !error && transaction}
     <!-- Success Message -->
     {#if saveSuccess}
-      <div class="success-message">
-        Transaction updated successfully!
-      </div>
+      <div class="success-message">Transaction updated successfully!</div>
     {/if}
 
     <!-- Save Error -->
@@ -251,7 +275,9 @@
             <div class="info-item">
               <span class="label">Gateway Code</span>
               <div class="value code">
-                {transaction.transactionCode || transaction.gatewayTransactionId || "-"}
+                {transaction.transactionCode ||
+                  transaction.gatewayTransactionId ||
+                  "-"}
                 {#if transaction.metadata?.isManual}
                   <span class="badge badge-warning ml-2">MANUAL</span>
                 {/if}
@@ -262,7 +288,9 @@
               <span class="label">Type</span>
               <div class="value">
                 <span class="badge {getTypeBadgeClass(transaction.type)}">
-                  {transaction.type === "CREDIT_PURCHASE" ? "Credit Purchase" : "Plan Upgrade"}
+                  {transaction.type === "CREDIT_PURCHASE"
+                    ? "Credit Purchase"
+                    : "Plan Upgrade"}
                 </span>
               </div>
             </div>
@@ -273,9 +301,9 @@
                 {#if editMode}
                   <div class="amount-edit">
                     <span class="currency-prefix">IDR</span>
-                    <input 
-                      type="number" 
-                      bind:value={editData.amount} 
+                    <input
+                      type="number"
+                      bind:value={editData.amount}
                       class="amount-input"
                     />
                   </div>
@@ -314,7 +342,7 @@
 
             {#if transaction.expiredAt}
               <div class="info-item">
-              <span class="label">Expires At</span>
+                <span class="label">Expires At</span>
                 <div class="value">{formatDate(transaction.expiredAt)}</div>
               </div>
             {/if}
@@ -324,10 +352,10 @@
                 <span class="label">Credits</span>
                 <div class="value">
                   {#if editMode}
-                    <input 
+                    <input
                       id="edit-credits"
-                      type="number" 
-                      bind:value={editData.credits} 
+                      type="number"
+                      bind:value={editData.credits}
                       placeholder="Number of credits..."
                     />
                   {:else}
@@ -373,7 +401,10 @@
               <div class="info-item">
                 <span class="label">Actions</span>
                 <div class="value">
-                  <a href="/user-billing/{transaction.user.id}" class="btn btn-sm btn-secondary">
+                  <a
+                    href="/user-billing/{transaction.user.id}"
+                    class="btn btn-sm btn-secondary"
+                  >
                     View User Details
                   </a>
                 </div>
@@ -413,14 +444,14 @@
           </div>
 
           <div class="form-actions">
-            <button 
-              on:click={saveTransaction} 
+            <button
+              on:click={saveTransaction}
               disabled={saving}
               class="btn btn-primary"
             >
               {saving ? "Saving..." : "Save Changes"}
             </button>
-            <button 
+            <button
               on:click={cancelEdit}
               disabled={saving}
               class="btn btn-secondary"
@@ -442,9 +473,31 @@
               <div class="info-item full-width">
                 <span class="label">Payment Proof</span>
                 <div class="value">
-                  <a href={transaction.paymentProof} target="_blank" class="proof-link">
-                    View Payment Proof
+                  <a
+                    href={transaction.paymentProof}
+                    target="_blank"
+                    class="proof-link"
+                  >
+                    View Full Image
                   </a>
+                  <div class="proof-image-container">
+                    <button
+                      type="button"
+                      class="btn-image-zoom"
+                      on:click={() => {
+                        if (transaction?.paymentProof) {
+                          window.open(transaction.paymentProof, "_blank")
+                        }
+                      }}
+                      aria-label="View payment proof full size"
+                    >
+                      <img
+                        src={transaction.paymentProof}
+                        alt="Payment Proof"
+                        class="proof-image"
+                      />
+                    </button>
+                  </div>
                 </div>
               </div>
             {/if}

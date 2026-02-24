@@ -80,6 +80,7 @@ export class UserBillingService {
       type,
       status,
       metadata,
+      paymentProof: transaction.paymentProof || metadata.paymentProof || "",
       transactionCode: transaction.transactionCode || transaction.gatewayTransactionId || `TRX-${transaction.id?.substring(0, 8) || "UNK"}`,
       currency: transaction.currency || "IDR",
       voucherCode: transaction.voucherCode,
@@ -624,7 +625,7 @@ export class UserBillingService {
       type: transaction.type
     }, "Applying transaction side effects")
 
-    const billingStatesCollection = await this.getCollection("billing_states")
+    const billingStatesCollection = await this.getCollection("billing-state")
     const usersCollection = await this.getCollection("users")
 
     // 1. Update Credits Ledger if it's a credit purchase

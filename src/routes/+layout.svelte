@@ -1,13 +1,24 @@
 <script lang="ts">
   import "../app.css"
   import { page } from "$app/stores"
-  import { Settings, Library, Activity, Database, MessageSquare, Users, CreditCard, Building } from "lucide-svelte"
+  import {
+    Settings,
+    Library,
+    Activity,
+    Database,
+    MessageSquare,
+    Users,
+    CreditCard,
+    Building,
+    BarChart3,
+    Receipt,
+  } from "lucide-svelte"
 
   $: currentPath = $page.url.pathname
 </script>
 
 <div class="app-layout">
-  {#if currentPath !== '/login'}
+  {#if currentPath !== "/login"}
     <nav class="sidebar">
       <div class="sidebar-header">
         <h1 class="app-title">CS AI Admin</h1>
@@ -16,12 +27,41 @@
 
       <div class="nav-menu">
         <a
+          href="/user"
+          class="nav-item"
+          class:active={currentPath.startsWith("/user")}
+        >
+          <Users size={20} />
+          <span>User Management</span>
+        </a>
+
+        <a
+          href="/billing"
+          class="nav-item"
+          class:active={currentPath.startsWith("/billing")}
+        >
+          <Receipt size={20} />
+          <span>Billing & Credits</span>
+        </a>
+
+        <a
+          href="/analytics/ai"
+          class="nav-item"
+          class:active={currentPath === "/analytics/ai"}
+        >
+          <BarChart3 size={20} />
+          <span>AI Analytics</span>
+        </a>
+
+        <div class="nav-divider">System</div>
+
+        <a
           href="/ai-execution-log"
           class="nav-item"
           class:active={currentPath.startsWith("/ai-execution-log")}
         >
           <Activity size={20} />
-          <span>AI Execution Logs</span>
+          <span>Execution Logs</span>
         </a>
 
         <a
@@ -30,23 +70,13 @@
           class:active={currentPath.startsWith("/ai-response-feedback")}
         >
           <MessageSquare size={20} />
-          <span>AI Response Feedback</span>
-        </a>
-
-        <a
-          href="/system-prompts-redis"
-          class="nav-item"
-          class:active={currentPath.startsWith("/system-prompts-redis")}
-        >
-          <Database size={20} />
-          <span>System Prompts (Redis)</span>
+          <span>Feedback</span>
         </a>
 
         <a
           href="/system-prompts"
           class="nav-item"
-          class:active={currentPath.startsWith("/system-prompts") && !currentPath.startsWith("/system-prompts-redis") ||
-            currentPath === "/"}
+          class:active={currentPath.startsWith("/system-prompts")}
         >
           <Settings size={20} />
           <span>System Prompts</span>
@@ -58,44 +88,10 @@
           class:active={currentPath.startsWith("/library-templates")}
         >
           <Library size={20} />
-          <span>Library Templates</span>
+          <span>Templates</span>
         </a>
 
-        <a
-          href="/user-billing"
-          class="nav-item"
-          class:active={currentPath.startsWith("/user-billing")}
-        >
-          <Users size={20} />
-          <span>User Billing</span>
-        </a>
-
-        <a
-          href="/transactions"
-          class="nav-item"
-          class:active={currentPath.startsWith("/transactions")}
-        >
-          <CreditCard size={20} />
-          <span>Transactions</span>
-        </a>
-
-        <a
-          href="/vouchers"
-          class="nav-item"
-          class:active={currentPath.startsWith("/vouchers")}
-        >
-          <Database size={20} />
-          <span>Voucher Management</span>
-        </a>
-
-        <a
-          href="/pricing"
-          class="nav-item"
-          class:active={currentPath.startsWith("/pricing")}
-        >
-          <CreditCard size={20} />
-          <span>Pricing Configuration</span>
-        </a>
+        <div class="nav-divider">Configuration</div>
 
         <a
           href="/organizations"
@@ -105,6 +101,33 @@
           <Building size={20} />
           <span>Organizations</span>
         </a>
+
+        <a
+          href="/pricing"
+          class="nav-item"
+          class:active={currentPath.startsWith("/pricing")}
+        >
+          <CreditCard size={20} />
+          <span>Pricing Settings</span>
+        </a>
+
+        <a
+          href="/vouchers"
+          class="nav-item"
+          class:active={currentPath.startsWith("/vouchers")}
+        >
+          <Database size={20} />
+          <span>Vouchers</span>
+        </a>
+
+        <a
+          href="/transactions"
+          class="nav-item"
+          class:active={currentPath.startsWith("/transactions")}
+        >
+          <Receipt size={20} />
+          <span>Transactions</span>
+        </a>
       </div>
 
       <div class="sidebar-footer">
@@ -113,7 +136,7 @@
     </nav>
   {/if}
 
-  <main class={currentPath === '/login' ? 'w-full' : 'main-content'}>
+  <main class={currentPath === "/login" ? "w-full" : "main-content"}>
     <slot />
   </main>
 </div>
@@ -182,6 +205,15 @@
   .nav-item span {
     font-size: 14px;
     font-weight: 500;
+  }
+
+  .nav-divider {
+    padding: 1.5rem 1.25rem 0.5rem;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #94a3b8;
   }
 
   .sidebar-footer {
