@@ -149,6 +149,7 @@ export interface TransactionUpdateInput {
   paymentProof?: string
   notes?: string
   updatedBy?: string
+  metadata?: Record<string, any>
 }
 
 export interface ApiResponse<T = any> {

@@ -524,13 +524,23 @@ export class UserBillingService {
       const currentTx = this.mapTransaction(currentTxDoc)
 
       // Update the transaction
+      const { metadata, ...restData } = updateData
+      const updateFields: any = {
+        ...restData,
+        updatedAt: new Date(),
+      }
+
+      // Use dot notation to merge metadata instead of overwriting the whole object
+      if (metadata) {
+        Object.entries(metadata).forEach(([key, value]) => {
+          updateFields[`metadata.${key}`] = value
+        })
+      }
+
       const result = await transactionsCollection.updateOne(
         { id: transactionId },
         {
-          $set: {
-            ...updateData,
-            updatedAt: new Date(),
-          },
+          $set: updateFields,
         },
       )
 
@@ -538,6 +548,46 @@ export class UserBillingService {
         return {
           success: false,
           error: ["Transaction not found"],
+        }
+      }
+
+      // Special handling for manual approval via webhook simulation
+      const isManualApproval = currentTx.status === "PENDING" &&
+        updateData.status === "COMPLETED" &&
+        (updateData.metadata?.manuallyApproved || currentTxDoc.metadata?.manuallyApproved);
+
+      const callbackUrl = updateData.metadata?.manualCallbackUrl || currentTxDoc.metadata?.manualCallbackUrl;
+
+      if (isManualApproval && callbackUrl) {
+        logger.info({ transactionId, callbackUrl }, "Manual approval detected with webhook. Triggering simulation.")
+
+        try {
+          const response = await fetch(callbackUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              transactionId: currentTx.id,
+              status: "completed",
+              transactionCode: currentTx.transactionCode,
+              amount: currentTx.amount,
+              currency: currentTx.currency,
+            }),
+          })
+
+          if (response.ok) {
+            logger.info({ transactionId }, "Manual approval webhook triggered successfully")
+            // The webhook should have processed the transaction and marked it as completed
+            const updatedTxDoc = await transactionsCollection.findOne({ id: transactionId })
+            return {
+              success: true,
+              data: this.mapTransaction(updatedTxDoc),
+            }
+          } else {
+            const errorText = await response.text()
+            logger.warn({ transactionId, status: response.status, errorText }, "Manual approval webhook failed, falling back to local approval")
+          }
+        } catch (error) {
+          logger.error({ transactionId, error: error as any }, "Error triggering manual approval webhook, falling back to local approval")
         }
       }
 

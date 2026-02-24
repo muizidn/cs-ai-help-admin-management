@@ -93,6 +93,7 @@
     try {
       const response = await apiClient.put(`/api/transactions/${transaction.id}`, {
         status: "COMPLETED",
+        metadata: { ...transaction.metadata, manuallyApproved: true },
         notes: (transaction.notes ? transaction.notes + "\n" : "") + "Approved manually by admin."
       })
 
