@@ -300,6 +300,14 @@
   font-size: 0.875rem;
 }
 
+.transactions-table tr:hover {
+  background: #f9fafb;
+}
+
+.clickable-row {
+  cursor: pointer;
+}
+
 .transactions-table td {
   padding: 0.75rem;
   border-bottom: 1px solid #f3f4f6;

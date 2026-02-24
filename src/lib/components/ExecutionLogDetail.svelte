@@ -279,15 +279,15 @@
         <h3>Basic Information</h3>
         <div class="info-grid">
           <div class="info-item">
-            <label>Conversation ID</label>
+            <span class="label">Conversation ID</span>
             <span class="mono">{executionLog.conversation_id}</span>
           </div>
           <div class="info-item">
-            <label>Context</label>
+            <span class="label">Context</span>
             <span>{executionLog.context}</span>
           </div>
           <div class="info-item">
-            <label>Business ID</label>
+            <span class="label">Business ID</span>
             <span>{executionLog.business_id || 'N/A'}</span>
           </div>
         </div>
@@ -297,15 +297,15 @@
         <h3>Timing</h3>
         <div class="info-grid">
           <div class="info-item">
-            <label>Start Time</label>
+            <span class="label">Start Time</span>
             <span>{executionLog.formatted_start_time}</span>
           </div>
           <div class="info-item">
-            <label>End Time</label>
+            <span class="label">End Time</span>
             <span>{executionLog.formatted_end_time || 'N/A'}</span>
           </div>
           <div class="info-item">
-            <label>Duration</label>
+            <span class="label">Duration</span>
             <span>{executionLog.formatted_duration || 'N/A'}</span>
           </div>
         </div>

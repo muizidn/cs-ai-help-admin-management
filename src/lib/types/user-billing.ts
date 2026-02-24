@@ -23,6 +23,7 @@ export interface User {
 export interface Transaction {
   id: string
   userId: string
+  organizationId?: string
   type: "CREDIT_PURCHASE" | "PLAN_UPGRADE" | "CREDIT_UPDATE"
   planId?: string
   plan?: "BASIC" | "PRO" | "ENTERPRISE"
@@ -32,12 +33,15 @@ export interface Transaction {
   currency: string
   status: "COMPLETED" | "PENDING" | "FAILED"
   transactionCode: string
+  gatewayTransactionId?: string
+  paymentGateway?: string
   voucherCode?: string
   paymentProof?: string
   notes?: string
   createdAt: Date | string
   updatedAt: Date | string
   expiredAt?: Date | string
+  metadata?: Record<string, any>
   createdBy: string
   updatedBy?: string
   user?: {
@@ -93,6 +97,7 @@ export interface TransactionQuery {
   sortOrder?: "asc" | "desc"
   dateFrom?: string
   dateTo?: string
+  metadata?: Record<string, any>
 }
 
 export interface UserBillingStats {
@@ -139,6 +144,8 @@ export interface UserUpdateInput {
 
 export interface TransactionUpdateInput {
   status?: "COMPLETED" | "PENDING" | "FAILED"
+  amount?: number
+  credits?: number
   paymentProof?: string
   notes?: string
   updatedBy?: string

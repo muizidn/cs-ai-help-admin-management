@@ -31,12 +31,15 @@
       const response = await apiClient.get(`/api/transactions/${transactionId}`)
 
       if (response.status === 200 && response.data?.status === "success") {
-        transaction = response.data.data
+        const txData = response.data.data
+        transaction = txData
         // Initialize edit data
         editData = {
-          status: transaction.status,
-          notes: transaction.notes || "",
-          paymentProof: transaction.paymentProof || "",
+          status: txData.status,
+          amount: txData.amount,
+          credits: txData.credits,
+          notes: txData.notes || "",
+          paymentProof: txData.paymentProof || "",
         }
       } else {
         error = response.data?.message || "Failed to load transaction"
@@ -81,6 +84,32 @@
     }
   }
 
+  // Quick Approve for Manual Payments
+  async function handleApprove() {
+    if (!transaction) return
+    if (!confirm("Are you sure you want to approve this manual payment?")) return
+
+    saving = true
+    try {
+      const response = await apiClient.put(`/api/transactions/${transaction.id}`, {
+        status: "COMPLETED",
+        notes: (transaction.notes ? transaction.notes + "\n" : "") + "Approved manually by admin."
+      })
+
+      if (response.status === 200 && response.data?.status === "success") {
+        saveSuccess = true
+        await loadTransaction()
+        setTimeout(() => saveSuccess = false, 3000)
+      } else {
+        saveError = response.data?.message || "Failed to approve transaction"
+      }
+    } catch (err) {
+      saveError = "An error occurred while approving transaction"
+    } finally {
+      saving = false
+    }
+  }
+
   // Cancel edit
   function cancelEdit() {
     editMode = false
@@ -89,6 +118,8 @@
     if (transaction) {
       editData = {
         status: transaction.status,
+        amount: transaction.amount,
+        credits: transaction.credits,
         notes: transaction.notes || "",
         paymentProof: transaction.paymentProof || "",
       }
@@ -157,9 +188,16 @@
       </div>
       
       {#if transaction && !editMode}
-        <button on:click={() => editMode = true} class="btn btn-primary">
-          Edit Transaction
-        </button>
+        <div class="header-actions">
+          {#if transaction.status === "PENDING" && transaction.metadata?.isManual}
+            <button on:click={handleApprove} disabled={saving} class="btn btn-success">
+              {saving ? "Processing..." : "Approve Manual Payment"}
+            </button>
+          {/if}
+          <button on:click={() => editMode = true} class="btn btn-primary">
+            Edit Transaction
+          </button>
+        </div>
       {/if}
     </div>
   </div>
@@ -205,12 +243,22 @@
         <div class="card-content">
           <div class="info-grid">
             <div class="info-item">
-              <label>Transaction Code</label>
-              <div class="value code">{transaction.transactionCode}</div>
+              <span class="label">App Code</span>
+              <div class="value code">{transaction.id}</div>
             </div>
 
             <div class="info-item">
-              <label>Type</label>
+              <span class="label">Gateway Code</span>
+              <div class="value code">
+                {transaction.transactionCode || transaction.gatewayTransactionId || "-"}
+                {#if transaction.metadata?.isManual}
+                  <span class="badge badge-warning ml-2">MANUAL</span>
+                {/if}
+              </div>
+            </div>
+
+            <div class="info-item">
+              <span class="label">Type</span>
               <div class="value">
                 <span class="badge {getTypeBadgeClass(transaction.type)}">
                   {transaction.type === "CREDIT_PURCHASE" ? "Credit Purchase" : "Plan Upgrade"}
@@ -219,12 +267,25 @@
             </div>
 
             <div class="info-item">
-              <label>Amount</label>
-              <div class="value amount">{formatCurrency(transaction.amount)}</div>
+              <span class="label">Amount</span>
+              <div class="value amount">
+                {#if editMode}
+                  <div class="amount-edit">
+                    <span class="currency-prefix">IDR</span>
+                    <input 
+                      type="number" 
+                      bind:value={editData.amount} 
+                      class="amount-input"
+                    />
+                  </div>
+                {:else}
+                  {formatCurrency(transaction.amount)}
+                {/if}
+              </div>
             </div>
 
             <div class="info-item">
-              <label>Status</label>
+              <span class="label">Status</span>
               <div class="value">
                 {#if editMode}
                   <select bind:value={editData.status}>
@@ -241,25 +302,43 @@
             </div>
 
             <div class="info-item">
-              <label>Created At</label>
+              <span class="label">Created At</span>
               <div class="value">{formatDate(transaction.createdAt)}</div>
             </div>
 
             <div class="info-item">
-              <label>Updated At</label>
+              <span class="label">Updated At</span>
               <div class="value">{formatDate(transaction.updatedAt)}</div>
             </div>
 
             {#if transaction.expiredAt}
               <div class="info-item">
-                <label>Expires At</label>
+              <span class="label">Expires At</span>
                 <div class="value">{formatDate(transaction.expiredAt)}</div>
+              </div>
+            {/if}
+
+            {#if transaction.credits || editMode}
+              <div class="info-item">
+                <span class="label">Credits</span>
+                <div class="value">
+                  {#if editMode}
+                    <input 
+                      id="edit-credits"
+                      type="number" 
+                      bind:value={editData.credits} 
+                      placeholder="Number of credits..."
+                    />
+                  {:else}
+                    {transaction.credits} Credits
+                  {/if}
+                </div>
               </div>
             {/if}
 
             {#if transaction.plan}
               <div class="info-item">
-                <label>Plan</label>
+                <span class="label">Plan</span>
                 <div class="value">{transaction.plan}</div>
               </div>
             {/if}
@@ -276,22 +355,22 @@
           <div class="card-content">
             <div class="info-grid">
               <div class="info-item">
-                <label>Name</label>
+                <span class="label">Name</span>
                 <div class="value">{transaction.user.name}</div>
               </div>
 
               <div class="info-item">
-                <label>Email</label>
+                <span class="label">Email</span>
                 <div class="value">{transaction.user.email}</div>
               </div>
 
               <div class="info-item">
-                <label>User ID</label>
+                <span class="label">User ID</span>
                 <div class="value code">{transaction.user.id}</div>
               </div>
 
               <div class="info-item">
-                <label>Actions</label>
+                <span class="label">Actions</span>
                 <div class="value">
                   <a href="/user-billing/{transaction.user.id}" class="btn btn-sm btn-secondary">
                     View User Details
@@ -352,7 +431,7 @@
           <!-- View Mode -->
           <div class="info-grid">
             <div class="info-item full-width">
-              <label>Notes</label>
+              <span class="label">Notes</span>
               <div class="value">
                 {transaction.notes || "No notes available"}
               </div>
@@ -360,7 +439,7 @@
 
             {#if transaction.paymentProof}
               <div class="info-item full-width">
-                <label>Payment Proof</label>
+                <span class="label">Payment Proof</span>
                 <div class="value">
                   <a href={transaction.paymentProof} target="_blank" class="proof-link">
                     View Payment Proof

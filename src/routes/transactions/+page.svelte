@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte"
   import { page } from "$app/stores"
+  import { goto } from "$app/navigation"
   import { apiClient } from "$lib/api-client"
   import type { Transaction, TransactionQuery, TransactionStats } from "$lib/types/user-billing"
   import "./transactions.css"
@@ -23,6 +24,7 @@
   let dateToFilter = ""
   let sortBy = "createdAt"
   let sortOrder = "desc"
+  let isManualOnly = false
 
   // Get initial filters from URL params
   $: {
@@ -47,6 +49,7 @@
         dateTo: dateToFilter || undefined,
         sortBy: sortBy as any,
         sortOrder: sortOrder as any,
+        metadata: isManualOnly ? { isManual: true } : undefined,
       }
 
       const queryString = apiClient.buildQueryString(query)
@@ -134,8 +137,7 @@
     statusFilter = ""
     dateFromFilter = ""
     dateToFilter = ""
-    sortBy = "createdAt"
-    sortOrder = "desc"
+    isManualOnly = false
     currentPage = 1
     loadTransactions()
   }
@@ -253,6 +255,11 @@
       </select>
 
       <button on:click={clearFilters} class="clear-btn">Clear Filters</button>
+
+      <label class="manual-filter">
+        <input type="checkbox" bind:checked={isManualOnly} on:change={handleFilterChange} />
+        Manual Only
+      </label>
     </div>
   </div>
 
@@ -291,7 +298,7 @@
         </thead>
         <tbody>
           {#each transactions as transaction}
-            <tr>
+            <tr on:click={() => goto(`/transactions/${transaction.id}`)} class="clickable-row">
               <td>
                 <div class="date-info">
                   {formatDate(transaction.createdAt)}
@@ -370,7 +377,12 @@
                 {/if}
               </td>
               <td>
-                <div class="transaction-code">{transaction.transactionCode}</div>
+                <div class="transaction-code">
+                  {transaction.transactionCode}
+                  {#if transaction.metadata?.isManual}
+                    <span class="badge badge-warning ml-1">MANUAL</span>
+                  {/if}
+                </div>
               </td>
               <td>
                 <div class="notes">
@@ -378,7 +390,12 @@
                 </div>
                 {#if transaction.paymentProof}
                   <div class="payment-proof">
-                    <a href={transaction.paymentProof} target="_blank" class="proof-link">
+                    <a 
+                      href={transaction.paymentProof} 
+                      target="_blank" 
+                      class="proof-link"
+                      on:click|stopPropagation
+                    >
                       View Proof
                     </a>
                   </div>

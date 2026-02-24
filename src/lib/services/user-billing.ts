@@ -61,11 +61,25 @@ export class UserBillingService {
       status = "PENDING"
     }
 
+    const metadata = { ...(transaction.metadata || {}) }
+    const gatewayId = transaction.gatewayTransactionId || ""
+    const appCode = transaction.transactionCode || ""
+    const paymentGateway = transaction.paymentGateway || ""
+
+    if (
+      paymentGateway === "manual" ||
+      gatewayId.toLowerCase().includes("manual") ||
+      appCode.toLowerCase().includes("manual")
+    ) {
+      metadata.isManual = true
+    }
+
     return {
       ...rest,
       id: transaction.id || (_id ? _id.toString() : ""),
       type,
       status,
+      metadata,
       transactionCode: transaction.transactionCode || transaction.gatewayTransactionId || `TRX-${transaction.id?.substring(0, 8) || "UNK"}`,
       currency: transaction.currency || "IDR",
       voucherCode: transaction.voucherCode,
@@ -362,6 +376,7 @@ export class UserBillingService {
         sortOrder = "desc",
         dateFrom,
         dateTo,
+        metadata,
       } = query
 
       const transactionsCollection = await this.getCollection("transactions")
@@ -384,6 +399,12 @@ export class UserBillingService {
         filter.createdAt = { ...filter.createdAt, $gte: new Date(dateFrom) }
       if (dateTo)
         filter.createdAt = { ...filter.createdAt, $lte: new Date(dateTo) }
+
+      if (metadata) {
+        for (const [key, value] of Object.entries(metadata)) {
+          filter[`metadata.${key}`] = value
+        }
+      }
 
       // Build sort
       const sort: any = {}
@@ -491,6 +512,18 @@ export class UserBillingService {
     try {
       const transactionsCollection = await this.getCollection("transactions")
 
+      // Get current transaction to check for status change
+      const currentTxDoc = await transactionsCollection.findOne({ id: transactionId })
+      if (!currentTxDoc) {
+        return {
+          success: false,
+          error: ["Transaction not found"],
+        }
+      }
+
+      const currentTx = this.mapTransaction(currentTxDoc)
+
+      // Update the transaction
       const result = await transactionsCollection.updateOne(
         { id: transactionId },
         {
@@ -508,18 +541,137 @@ export class UserBillingService {
         }
       }
 
-      const updatedTransactionDoc = await transactionsCollection.findOne({
-        id: transactionId,
-      })
+      const updatedTxDoc = await transactionsCollection.findOne({ id: transactionId })
+      const updatedTx = this.mapTransaction(updatedTxDoc)
+
+      // If status changed to COMPLETED, apply side effects (credits/plan)
+      if (currentTx.status !== "COMPLETED" && updatedTx.status === "COMPLETED") {
+        await this.applyTransactionSideEffects(updatedTx)
+      }
+
       return {
         success: true,
-        data: updatedTransactionDoc ? this.mapTransaction(updatedTransactionDoc) : undefined,
+        data: updatedTx,
       }
     } catch (error) {
       logger.error("Error updating transaction:", error as any)
       return {
         success: false,
         error: ["Failed to update transaction"],
+      }
+    }
+  }
+
+  // Apply side effects of a completed transaction (credits, subscription, etc.)
+  private async applyTransactionSideEffects(transaction: Transaction) {
+    const ownerId = transaction.organizationId || transaction.userId
+    const ownerType = transaction.organizationId ? "organization" : "user"
+
+    logger.info({
+      transactionId: transaction.id,
+      ownerId,
+      ownerType,
+      type: transaction.type
+    }, "Applying transaction side effects")
+
+    const billingStatesCollection = await this.getCollection("billing_states")
+    const usersCollection = await this.getCollection("users")
+
+    // 1. Update Credits Ledger if it's a credit purchase
+    if (transaction.type === "CREDIT_PURCHASE") {
+      let creditsToAdd = 0
+
+      // Map known plan IDs to credit amounts
+      if (transaction.planId === "credits_100") {
+        creditsToAdd = 100 * (transaction.quantity || 1)
+      } else if (transaction.credits) {
+        creditsToAdd = transaction.credits
+      }
+
+      if (creditsToAdd > 0) {
+        // Record in credit_ledger
+        const ledgerCollection = await this.getCollection("credit_ledger")
+        await ledgerCollection.insertOne({
+          id: `tx-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
+          organizationId: transaction.organizationId || "",
+          userId: transaction.userId,
+          amount: creditsToAdd,
+          source: "purchase",
+          description: `Manual approval: ${transaction.transactionCode}`,
+          createdAt: new Date(),
+          createdBy: "admin",
+          metadata: {
+            transactionId: transaction.id,
+            planId: transaction.planId
+          }
+        })
+
+        // Update billing state
+        const state = await billingStatesCollection.findOne({ ownerId })
+        const currentBalance = state?.creditBalance || 0
+        const newBalance = currentBalance + creditsToAdd
+
+        await billingStatesCollection.updateOne(
+          { ownerId },
+          {
+            $set: {
+              creditBalance: newBalance,
+              updatedAt: new Date()
+            },
+            $setOnInsert: { ownerType }
+          },
+          { upsert: true }
+        )
+
+        // Sync to user doc if user-based
+        if (ownerType === "user") {
+          await usersCollection.updateOne(
+            { id: ownerId },
+            { $set: { creditBalance: newBalance, updatedAt: new Date() } }
+          )
+        }
+      }
+    }
+
+    // 2. Update Plan if it's a plan upgrade
+    if (transaction.type === "PLAN_UPGRADE") {
+      const planId = transaction.planId || "pro_1m"
+      let durationMonths = 1
+      if (planId.includes("_3m")) durationMonths = 3
+      else if (planId.includes("_1y")) durationMonths = 12
+
+      const currentPeriodStart = new Date()
+      const currentPeriodEnd = new Date()
+      currentPeriodEnd.setMonth(currentPeriodEnd.getMonth() + durationMonths)
+
+      await billingStatesCollection.updateOne(
+        { ownerId },
+        {
+          $set: {
+            planId: planId.startsWith("pro") ? "pro" : planId,
+            subscriptionStatus: "active",
+            currentPeriodStart,
+            currentPeriodEnd,
+            updatedAt: new Date()
+          },
+          $setOnInsert: { ownerType }
+        },
+        { upsert: true }
+      )
+
+      // Sync to user/org if needed (legacy or UI purposes)
+      if (ownerType === "user") {
+        await usersCollection.updateOne(
+          { id: ownerId },
+          {
+            $set: {
+              billingPlan: planId.split("_")[0],
+              billingStatus: "active",
+              billingExpiresAt: currentPeriodEnd,
+              updatedAt: new Date()
+            }
+          }
+        )
       }
     }
   }
@@ -532,9 +684,13 @@ export class UserBillingService {
       const transactionsCollection = await this.getCollection("transactions")
       const usersCollection = await this.getCollection("users")
 
-      // Find transaction by transaction ID
+      // Find transaction by internal ID, transaction code, or gateway ID
       const transactionDoc = await transactionsCollection.findOne({
-        id: transactionId,
+        $or: [
+          { id: transactionId },
+          { transactionCode: transactionId },
+          { gatewayTransactionId: transactionId }
+        ]
       })
 
       if (!transactionDoc) {

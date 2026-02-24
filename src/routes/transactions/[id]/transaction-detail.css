@@ -119,6 +119,32 @@
   color: #059669;
 }
 
+.amount-edit {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.currency-prefix {
+  font-size: 1rem;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.amount-input {
+  max-width: 200px;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #059669;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
 /* Form Styles */
 .form-group {
   margin-bottom: 1.5rem;
@@ -203,6 +229,22 @@
 .btn-secondary:hover:not(:disabled) {
   background: #4b5563;
   border-color: #4b5563;
+}
+
+.btn-success {
+  background: #059669;
+  color: white;
+  border-color: #059669;
+}
+
+.btn-success:hover:not(:disabled) {
+  background: #047857;
+  border-color: #047857;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
 }
 
 .btn:disabled {

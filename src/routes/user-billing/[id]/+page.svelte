@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte"
   import { page } from "$app/stores"
+  import { goto } from "$app/navigation"
   import { apiClient } from "$lib/api-client"
   import type { UserWithBilling, UserUpdateInput, Transaction } from "$lib/types/user-billing"
   import "./user-detail.css"
@@ -31,17 +32,18 @@
       const response = await apiClient.get(`/api/user-billing/${userId}`)
 
       if (response.status === 200 && response.data?.status === "success") {
-        user = response.data.data
+        const userData = response.data.data
+        user = userData
         // Initialize edit data
         editData = {
-          name: user.name,
-          isActive: user.isActive,
-          billingPlan: user.billingPlan,
-          billingStatus: user.billingStatus,
-          billingExpiresAt: user.billingExpiresAt ? new Date(user.billingExpiresAt).toISOString().split('T')[0] : undefined,
-          isLifetimeBilling: user.isLifetimeBilling,
-          creditBalance: user.creditBalance,
-          tags: user.tags || [],
+          name: userData.name,
+          isActive: userData.isActive,
+          billingPlan: userData.billingPlan,
+          billingStatus: userData.billingStatus,
+          billingExpiresAt: userData.billingExpiresAt ? new Date(userData.billingExpiresAt).toISOString().split('T')[0] : undefined,
+          isLifetimeBilling: userData.isLifetimeBilling,
+          creditBalance: userData.creditBalance,
+          tags: userData.tags || [],
         }
       } else {
         error = response.data?.message || "Failed to load user"
@@ -152,6 +154,31 @@
       case "PENDING": return "badge-warning"
       case "FAILED": return "badge-danger"
       default: return "badge-secondary"
+    }
+  }
+
+  // Approve manual transaction
+  async function handleApproveTransaction(tx: Transaction) {
+    if (!confirm(`Are you sure you want to approve manual payment ${tx.transactionCode}?`)) return
+
+    saving = true
+    try {
+      const response = await apiClient.put(`/api/transactions/${tx.id}`, {
+        status: "COMPLETED",
+        notes: (tx.notes ? tx.notes + "\n" : "") + "Approved manually by admin from user record."
+      })
+
+      if (response.status === 200 && response.data?.status === "success") {
+        saveSuccess = true
+        await loadUser()
+        setTimeout(() => saveSuccess = false, 3000)
+      } else {
+        saveError = response.data?.message || "Failed to approve transaction"
+      }
+    } catch (err) {
+      saveError = "An error occurred while approving transaction"
+    } finally {
+      saving = false
     }
   }
 
@@ -272,8 +299,9 @@
             </div>
 
             <div class="form-group">
-              <label>
+              <label for="isLifetimeBilling">
                 <input
+                  id="isLifetimeBilling"
                   type="checkbox"
                   bind:checked={editData.isLifetimeBilling}
                 />
@@ -312,22 +340,22 @@
             <!-- View Mode -->
             <div class="info-grid">
               <div class="info-item">
-                <label>Name</label>
+                <span class="label">Name</span>
                 <div class="value">{user.name}</div>
               </div>
 
               <div class="info-item">
-                <label>Email</label>
+                <span class="label">Email</span>
                 <div class="value">{user.email}</div>
               </div>
 
               <div class="info-item">
-                <label>User ID</label>
+                <span class="label">User ID</span>
                 <div class="value code">{user.id}</div>
               </div>
 
               <div class="info-item">
-                <label>Account Status</label>
+                <span class="label">Account Status</span>
                 <div class="value">
                   <span class="badge {user.isActive ? 'badge-success' : 'badge-danger'}">
                     {user.isActive ? 'Active' : 'Inactive'}
@@ -336,7 +364,7 @@
               </div>
 
               <div class="info-item">
-                <label>Email Verified</label>
+                <span class="label">Email Verified</span>
                 <div class="value">
                   <span class="badge {user.emailVerified ? 'badge-success' : 'badge-warning'}">
                     {user.emailVerified ? 'Verified' : 'Not Verified'}
@@ -345,7 +373,7 @@
               </div>
 
               <div class="info-item">
-                <label>Created At</label>
+                <span class="label">Created At</span>
                 <div class="value">{formatDate(user.createdAt)}</div>
               </div>
             </div>
@@ -362,7 +390,7 @@
           {#if user.billingSummary}
             <div class="billing-grid">
               <div class="billing-item">
-                <label>Plan</label>
+                <span class="label">Plan</span>
                 <div class="value">
                   <span class="badge {getPlanBadgeClass(user.billingSummary.plan)}">
                     {user.billingSummary.plan.toUpperCase()}
@@ -371,7 +399,7 @@
               </div>
 
               <div class="billing-item">
-                <label>Status</label>
+                <span class="label">Status</span>
                 <div class="value">
                   <span class="badge {getStatusBadgeClass(user.billingSummary.status)}">
                     {user.billingSummary.status.toUpperCase()}
@@ -380,21 +408,21 @@
               </div>
 
               <div class="billing-item">
-                <label>Credit Balance</label>
+                <span class="label">Credit Balance</span>
                 <div class="value credit-amount">
                   {formatCurrency(user.billingSummary.creditBalance)}
                 </div>
               </div>
 
               <div class="billing-item">
-                <label>Total Spent</label>
+                <span class="label">Total Spent</span>
                 <div class="value">
                   {formatCurrency(user.billingSummary.totalSpent)}
                 </div>
               </div>
 
               <div class="billing-item">
-                <label>Expires At</label>
+                <span class="label">Expires At</span>
                 <div class="value">
                   {#if user.billingSummary.isLifetime}
                     <span class="lifetime-badge">Lifetime</span>
@@ -417,7 +445,7 @@
               </div>
 
               <div class="billing-item">
-                <label>Last Payment</label>
+                <span class="label">Last Payment</span>
                 <div class="value">
                   {#if user.billingSummary.lastPayment}
                     <div>{formatCurrency(user.billingSummary.lastPayment.amount)}</div>
@@ -450,12 +478,14 @@
                   <th>Type</th>
                   <th>Amount</th>
                   <th>Status</th>
-                  <th>Transaction Code</th>
+                  <th>App Code</th>
+                  <th>Gateway Code</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {#each user.recentTransactions as transaction}
-                  <tr>
+                  <tr on:click={() => goto(`/transactions/${transaction.id}`)} class="clickable-row">
                     <td>{formatDate(transaction.createdAt)}</td>
                     <td>
                       <span class="transaction-type">
@@ -468,7 +498,19 @@
                         {transaction.status}
                       </span>
                     </td>
+                    <td class="code">{transaction.id}</td>
                     <td class="code">{transaction.transactionCode}</td>
+                    <td>
+                      {#if transaction.status === "PENDING" && transaction.metadata?.isManual}
+                        <button 
+                          class="btn btn-sm btn-success" 
+                          on:click|stopPropagation={() => handleApproveTransaction(transaction)}
+                          disabled={saving}
+                        >
+                          {saving ? "..." : "Approve"}
+                        </button>
+                      {/if}
+                    </td>
                   </tr>
                 {/each}
               </tbody>

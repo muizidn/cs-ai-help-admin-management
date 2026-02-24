@@ -278,8 +278,8 @@
     <div class="filters-panel">
       <div class="filter-row">
         <div class="filter-group">
-          <label>Status</label>
-          <select bind:value={statusFilter} on:change={handleFilterChange}>
+          <label for="status-filter">Status</label>
+          <select id="status-filter" bind:value={statusFilter} on:change={handleFilterChange}>
             {#each statusOptions as option}
               <option value={option.value}>{option.label}</option>
             {/each}
@@ -287,8 +287,9 @@
         </div>
         
         <div class="filter-group">
-          <label>Context</label>
+          <label for="context-filter">Context</label>
           <input
+            id="context-filter"
             type="text"
             placeholder="Filter by context..."
             bind:value={contextFilter}
@@ -297,8 +298,9 @@
         </div>
         
         <div class="filter-group">
-          <label>Start Date</label>
+          <label for="start-date-filter">Start Date</label>
           <input
+            id="start-date-filter"
             type="datetime-local"
             bind:value={dateRangeFilter.start}
             on:change={handleFilterChange}
@@ -306,8 +308,9 @@
         </div>
         
         <div class="filter-group">
-          <label>End Date</label>
+          <label for="end-date-filter">End Date</label>
           <input
+            id="end-date-filter"
             type="datetime-local"
             bind:value={dateRangeFilter.end}
             on:change={handleFilterChange}
@@ -317,8 +320,8 @@
 
       <div class="filter-row">
         <div class="filter-group">
-          <label>Final Decision</label>
-          <select bind:value={finalDecisionFilter} on:change={handleFilterChange}>
+          <label for="final-decision-filter">Final Decision</label>
+          <select id="final-decision-filter" bind:value={finalDecisionFilter} on:change={handleFilterChange}>
             {#each finalDecisionOptions as option}
               <option value={option.value}>{option.label}</option>
             {/each}
@@ -326,8 +329,9 @@
         </div>
 
         <div class="filter-group">
-          <label>Customer Message</label>
+          <label for="customer-message-filter">Customer Message</label>
           <input
+            id="customer-message-filter"
             type="text"
             placeholder="Filter by customer message..."
             bind:value={customerMessageFilter}
@@ -336,8 +340,9 @@
         </div>
 
         <div class="filter-group">
-          <label>AI Response</label>
+          <label for="ai-response-filter">AI Response</label>
           <input
+            id="ai-response-filter"
             type="text"
             placeholder="Filter by AI response..."
             bind:value={aiResponseFilter}
