@@ -1,7 +1,7 @@
 import { getDatabase } from "$lib/mongodb"
 import { logger } from "$lib/logger"
 import type { BillingEntity, BillingQuery, BillingState } from "$lib/types/billing"
-import type { ApiResponse, PaginatedResponse } from "$lib/types/user-billing"
+import type { ApiResponse, PaginatedResponse } from "$lib/types/transactions"
 
 export class BillingService {
     private async getCollection(name: string) {

@@ -5,7 +5,7 @@ import type {
     PricingConfig,
     PricingUpdateInput
 } from "$lib/types/pricing"
-import type { ApiResponse } from "$lib/types/user-billing"
+import type { ApiResponse } from "$lib/types/transactions"
 
 export class PricingService {
     private readonly REDIS_KEY = "system-settings:pricing"

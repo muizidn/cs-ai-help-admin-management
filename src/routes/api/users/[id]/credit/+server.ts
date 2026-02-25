@@ -1,5 +1,5 @@
 import { json, type RequestHandler } from "@sveltejs/kit"
-import { UserBillingService } from "$lib/services/user-billing"
+import { TransactionService } from "$lib/services/transactions"
 import { logger } from "$lib/logger"
 
 // PUT /api/users/[id]/credit - Update user credit balance
@@ -35,7 +35,7 @@ export const PUT: RequestHandler = async ({ params, request, locals }) => {
             creditBalance,
         }, "Processing user credit update request")
 
-        const service = new UserBillingService()
+        const service = new TransactionService()
         const result = await service.updateUserCredit(userId, creditBalance, "admin")
 
         if (result.success) {

@@ -1,7 +1,7 @@
 import { json, type RequestHandler } from "@sveltejs/kit"
-import { UserBillingService } from "$lib/services/user-billing"
+import { TransactionService } from "$lib/services/transactions"
 import { logger } from "$lib/logger"
-import type { UserBillingQuery } from "$lib/types/user-billing"
+import type { TransactionQuery } from "$lib/types/transactions"
 
 // GET /api/users - List users with billing information
 export const GET: RequestHandler = async ({ url, locals }) => {
@@ -10,7 +10,7 @@ export const GET: RequestHandler = async ({ url, locals }) => {
     try {
         const searchParams = url.searchParams
 
-        const query: UserBillingQuery = {
+        const query: TransactionQuery = {
             search: searchParams.get("search") || undefined,
             page: parseInt(searchParams.get("page") || "1"),
             limit: parseInt(searchParams.get("limit") || "20"),
@@ -27,7 +27,7 @@ export const GET: RequestHandler = async ({ url, locals }) => {
             query,
         }, "Processing users list request")
 
-        const service = new UserBillingService()
+        const service = new TransactionService()
         const result = await service.getUsers(query)
 
         if (result.success) {

@@ -5,7 +5,7 @@
   import type {
     Transaction,
     TransactionUpdateInput,
-  } from "$lib/types/user-billing"
+  } from "$lib/types/transactions"
   import "./transaction-detail.css"
 
   // State
@@ -268,15 +268,15 @@
         <div class="card-content">
           <div class="info-grid">
             <div class="info-item">
-              <span class="label">App Code</span>
+              <span class="label">Transaction ID</span>
               <div class="value code">{transaction.id}</div>
             </div>
 
             <div class="info-item">
-              <span class="label">Gateway Code</span>
+              <span class="label">Payment Provider Trx ID</span>
               <div class="value code">
-                {transaction.transactionCode ||
-                  transaction.gatewayTransactionId ||
+                {transaction.gatewayTransactionId ||
+                  transaction.transactionCode ||
                   "-"}
                 {#if transaction.metadata?.isManual}
                   <span class="badge badge-warning ml-2">MANUAL</span>

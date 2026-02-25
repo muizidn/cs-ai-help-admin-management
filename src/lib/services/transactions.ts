@@ -4,17 +4,17 @@ import type {
   User,
   Transaction,
   UserWithBilling,
-  UserBillingQuery,
   TransactionQuery,
-  UserBillingStats,
+  TransactionQuery,
+  TransactionStats,
   TransactionStats,
   UserUpdateInput,
   TransactionUpdateInput,
   PaginatedResponse,
   ApiResponse,
-} from "$lib/types/user-billing"
+} from "$lib/types/transactions"
 
-export class UserBillingService {
+export class TransactionService {
   private async getCollection(name: string) {
     const db = await getDatabase()
     return db.collection(name)
@@ -89,7 +89,7 @@ export class UserBillingService {
 
   // Get all users with billing information
   async getUsers(
-    query: UserBillingQuery,
+    query: TransactionQuery,
   ): Promise<ApiResponse<PaginatedResponse<UserWithBilling>>> {
     try {
       const {
@@ -192,7 +192,7 @@ export class UserBillingService {
       )
 
       // Calculate stats
-      const stats: UserBillingStats = {
+      const stats: TransactionStats = {
         totalUsers: total,
         activeUsers: enrichedUsers.filter((u) => u.isActive).length,
         billingPlans: {
@@ -388,7 +388,9 @@ export class UserBillingService {
 
       if (search) {
         filter.$or = [
+          { id: { $regex: search, $options: "i" } },
           { transactionCode: { $regex: search, $options: "i" } },
+          { gatewayTransactionId: { $regex: search, $options: "i" } },
           { notes: { $regex: search, $options: "i" } },
         ]
       }

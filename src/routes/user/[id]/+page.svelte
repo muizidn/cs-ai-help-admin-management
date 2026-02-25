@@ -7,7 +7,7 @@
     UserWithBilling,
     UserUpdateInput,
     Transaction,
-  } from "$lib/types/user-billing"
+  } from "$lib/types/transactions"
   import "./user-detail.css"
 
   // State

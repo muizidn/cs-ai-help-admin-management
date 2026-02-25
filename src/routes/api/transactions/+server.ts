@@ -1,7 +1,7 @@
 import { json, type RequestHandler } from "@sveltejs/kit"
-import { UserBillingService } from "$lib/services/user-billing"
+import { TransactionService } from "$lib/services/transactions"
 import { logger } from "$lib/logger"
-import type { TransactionQuery } from "$lib/types/user-billing"
+import type { TransactionQuery } from "$lib/types/transactions"
 
 // GET /api/transactions - List transactions with filtering and pagination
 export const GET: RequestHandler = async ({ url, locals }) => {
@@ -9,7 +9,7 @@ export const GET: RequestHandler = async ({ url, locals }) => {
 
   try {
     const searchParams = url.searchParams
-    
+
     const query: TransactionQuery = {
       search: searchParams.get("search") || undefined,
       page: parseInt(searchParams.get("page") || "1"),
@@ -29,7 +29,7 @@ export const GET: RequestHandler = async ({ url, locals }) => {
       query,
     }, "Processing transactions list request")
 
-    const service = new UserBillingService()
+    const service = new TransactionService()
     const result = await service.getTransactions(query)
 
     if (result.success) {

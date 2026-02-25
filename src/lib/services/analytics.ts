@@ -1,7 +1,7 @@
 import { getDatabase } from "$lib/mongodb"
 import { logger } from "$lib/logger"
 import type { AiAnalyticsQuery, AiAnalyticsStats, OwnerUsage } from "$lib/types/analytics"
-import type { ApiResponse } from "$lib/types/user-billing"
+import type { ApiResponse } from "$lib/types/transactions"
 
 export class AnalyticsService {
     private async getCollection(name: string) {

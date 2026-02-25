@@ -1,4 +1,4 @@
-import type { User } from "./user-billing"
+import type { User } from "./transactions"
 import type { Organization } from "./organization"
 
 export interface BillingState {

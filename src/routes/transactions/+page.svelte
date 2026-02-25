@@ -3,9 +3,13 @@
   import { page } from "$app/stores"
   import { goto } from "$app/navigation"
   import { apiClient } from "$lib/api-client"
-  import type { Transaction, TransactionQuery, TransactionStats } from "$lib/types/user-billing"
+  import type {
+    Transaction,
+    TransactionQuery,
+    TransactionStats,
+  } from "$lib/types/transactions"
   import "./transactions.css"
-  
+
   // State
   let transactions: (Transaction & { user?: any })[] = []
   let stats: TransactionStats | null = null
@@ -94,20 +98,28 @@
   // Get status badge class
   function getStatusBadgeClass(status: string): string {
     switch (status) {
-      case "COMPLETED": return "badge-success"
-      case "PENDING": return "badge-warning"
-      case "FAILED": return "badge-danger"
-      default: return "badge-secondary"
+      case "COMPLETED":
+        return "badge-success"
+      case "PENDING":
+        return "badge-warning"
+      case "FAILED":
+        return "badge-danger"
+      default:
+        return "badge-secondary"
     }
   }
 
   // Get type badge class
   function getTypeBadgeClass(type: string): string {
     switch (type) {
-      case "CREDIT_PURCHASE": return "badge-primary"
-      case "PLAN_UPGRADE": return "badge-premium"
-      case "CREDIT_UPDATE": return "badge-warning"
-      default: return "badge-secondary"
+      case "CREDIT_PURCHASE":
+        return "badge-primary"
+      case "PLAN_UPGRADE":
+        return "badge-premium"
+      case "CREDIT_UPDATE":
+        return "badge-warning"
+      default:
+        return "badge-secondary"
     }
   }
 
@@ -168,7 +180,7 @@
           <div class="stat-label">Total Transactions</div>
         </div>
       </div>
-      
+
       <div class="stat-card">
         <div class="stat-icon">💰</div>
         <div class="stat-content">
@@ -176,7 +188,7 @@
           <div class="stat-label">Total Amount</div>
         </div>
       </div>
-      
+
       <div class="stat-card">
         <div class="stat-icon">✅</div>
         <div class="stat-content">
@@ -184,7 +196,7 @@
           <div class="stat-label">Completed</div>
         </div>
       </div>
-      
+
       <div class="stat-card">
         <div class="stat-icon">⏳</div>
         <div class="stat-content">
@@ -200,7 +212,7 @@
     <div class="search-box">
       <input
         type="text"
-        placeholder="Search by transaction code or notes..."
+        placeholder="Search by ID, code, or notes..."
         bind:value={searchQuery}
         on:keydown={(e) => e.key === "Enter" && handleSearch()}
       />
@@ -257,7 +269,11 @@
       <button on:click={clearFilters} class="clear-btn">Clear Filters</button>
 
       <label class="manual-filter">
-        <input type="checkbox" bind:checked={isManualOnly} on:change={handleFilterChange} />
+        <input
+          type="checkbox"
+          bind:checked={isManualOnly}
+          on:change={handleFilterChange}
+        />
         Manual Only
       </label>
     </div>
@@ -291,14 +307,18 @@
             <th>Items/Credits</th>
             <th>Cost</th>
             <th>Status</th>
-            <th>Transaction Code</th>
+            <th>Transaction ID</th>
+            <th>Gateway ID</th>
             <th>Notes</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           {#each transactions as transaction}
-            <tr on:click={() => goto(`/transactions/${transaction.id}`)} class="clickable-row">
+            <tr
+              on:click={() => goto(`/transactions/${transaction.id}`)}
+              class="clickable-row"
+            >
               <td>
                 <div class="date-info">
                   {formatDate(transaction.createdAt)}
@@ -338,7 +358,10 @@
               <td>
                 <div class="items-info">
                   {#if transaction.credits}
-                    <span class="tokens-value">{transaction.credits > 0 ? "+" : ""}{transaction.credits} Credits</span>
+                    <span class="tokens-value"
+                      >{transaction.credits > 0 ? "+" : ""}{transaction.credits}
+                      Credits</span
+                    >
                   {:else if transaction.type === "PLAN_UPGRADE"}
                     1 Subscription
                   {:else}
@@ -351,7 +374,9 @@
               </td>
               <td>
                 <div class="amount-info">
-                  {transaction.amount > 0 ? formatCurrency(transaction.amount) : "-"}
+                  {transaction.amount > 0
+                    ? formatCurrency(transaction.amount)
+                    : "-"}
                 </div>
                 {#if transaction.voucher}
                   <div class="voucher-info mt-1">
@@ -359,8 +384,8 @@
                       🎟️ {transaction.voucher.code}
                     </span>
                     <div class="text-xs text-green-600 font-bold">
-                      -{transaction.voucher.discountType === 'PERCENTAGE' 
-                        ? `${transaction.voucher.discountValue}%` 
+                      -{transaction.voucher.discountType === "PERCENTAGE"
+                        ? `${transaction.voucher.discountValue}%`
                         : formatCurrency(transaction.voucher.discountValue)}
                     </div>
                   </div>
@@ -377,8 +402,15 @@
                 {/if}
               </td>
               <td>
+                <div class="transaction-id code">
+                  {transaction.id}
+                </div>
+              </td>
+              <td>
                 <div class="transaction-code">
-                  {transaction.transactionCode}
+                  {transaction.gatewayTransactionId ||
+                    transaction.transactionCode ||
+                    "-"}
                   {#if transaction.metadata?.isManual}
                     <span class="badge badge-warning ml-1">MANUAL</span>
                   {/if}
@@ -390,9 +422,9 @@
                 </div>
                 {#if transaction.paymentProof}
                   <div class="payment-proof">
-                    <a 
-                      href={transaction.paymentProof} 
-                      target="_blank" 
+                    <a
+                      href={transaction.paymentProof}
+                      target="_blank"
                       class="proof-link"
                       on:click|stopPropagation
                     >
@@ -403,7 +435,10 @@
               </td>
               <td>
                 <div class="actions">
-                  <a href="/transactions/{transaction.id}" class="btn btn-sm btn-primary">
+                  <a
+                    href="/transactions/{transaction.id}"
+                    class="btn btn-sm btn-primary"
+                  >
                     Edit
                   </a>
                 </div>
@@ -417,25 +452,25 @@
     <!-- Pagination -->
     {#if totalPages > 1}
       <div class="pagination">
-        <button 
+        <button
           on:click={() => changePage(currentPage - 1)}
           disabled={currentPage === 1}
           class="btn btn-sm"
         >
           Previous
         </button>
-        
+
         {#each Array(Math.min(totalPages, 10)) as _, i}
           {@const pageNum = i + 1}
-          <button 
+          <button
             on:click={() => changePage(pageNum)}
             class="btn btn-sm {currentPage === pageNum ? 'btn-primary' : ''}"
           >
             {pageNum}
           </button>
         {/each}
-        
-        <button 
+
+        <button
           on:click={() => changePage(currentPage + 1)}
           disabled={currentPage === totalPages}
           class="btn btn-sm"

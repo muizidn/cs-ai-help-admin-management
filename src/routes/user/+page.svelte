@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte"
   import { apiClient } from "$lib/api-client"
-  import type { UserWithBilling } from "$lib/types/user-billing"
+  import type { UserWithBilling } from "$lib/types/transactions"
   import {
     Users,
     UserCheck,

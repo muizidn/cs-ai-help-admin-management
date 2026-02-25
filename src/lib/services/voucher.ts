@@ -8,7 +8,7 @@ import type {
     VoucherUpdateInput,
     VoucherStats,
 } from "$lib/types/voucher"
-import type { ApiResponse, PaginatedResponse } from "$lib/types/user-billing"
+import type { ApiResponse, PaginatedResponse } from "$lib/types/transactions"
 
 export class VoucherService {
     private async getCollection() {

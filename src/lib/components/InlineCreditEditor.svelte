@@ -35,9 +35,12 @@
     error = ""
 
     try {
-      const response = await apiClient.put(`/api/user-billing/${userId}/credit`, {
-        creditBalance: editValue
-      })
+      const response = await apiClient.put(
+        `/api/transactions/${userId}/credit`,
+        {
+          creditBalance: editValue,
+        },
+      )
 
       if (response.status === 200 && response.data?.status === "success") {
         editMode = false
@@ -60,7 +63,6 @@
       cancelEdit()
     }
   }
-
 </script>
 
 <div class="credit-editor">
@@ -99,8 +101,16 @@
       <div class="error-text">{error}</div>
     {/if}
   {:else}
-    <div class="credit-display" on:click={startEdit} role="button" tabindex="0" on:keydown={(e) => e.key === "Enter" && startEdit()}>
-      <span class="credit-amount">{currentCredit.toLocaleString("id-ID")} Credits</span>
+    <div
+      class="credit-display"
+      on:click={startEdit}
+      role="button"
+      tabindex="0"
+      on:keydown={(e) => e.key === "Enter" && startEdit()}
+    >
+      <span class="credit-amount"
+        >{currentCredit.toLocaleString("id-ID")} Credits</span
+      >
       <span class="edit-hint">Click to edit</span>
     </div>
   {/if}

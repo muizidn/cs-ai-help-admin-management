@@ -75,7 +75,7 @@ export interface UserWithBilling extends User {
   recentTransactions?: Transaction[]
 }
 
-export interface UserBillingQuery {
+export interface TransactionQuery {
   search?: string
   page?: number
   limit?: number
@@ -100,7 +100,7 @@ export interface TransactionQuery {
   metadata?: Record<string, any>
 }
 
-export interface UserBillingStats {
+export interface TransactionStats {
   totalUsers: number
   activeUsers: number
   billingPlans: {

@@ -1,7 +1,7 @@
 import { json, type RequestHandler } from "@sveltejs/kit"
-import { UserBillingService } from "$lib/services/user-billing"
+import { TransactionService } from "$lib/services/transactions"
 import { logger } from "$lib/logger"
-import type { TransactionUpdateInput } from "$lib/types/user-billing"
+import type { TransactionUpdateInput } from "$lib/types/transactions"
 
 // GET /api/transactions/[id] - Get transaction by ID
 export const GET: RequestHandler = async ({ params, locals }) => {
@@ -30,7 +30,7 @@ export const GET: RequestHandler = async ({ params, locals }) => {
       "Processing transaction get request",
     )
 
-    const service = new UserBillingService()
+    const service = new TransactionService()
 
     // Get transaction by transaction ID
     const result = await service.getTransactionById(transactionId)
@@ -123,7 +123,7 @@ export const PUT: RequestHandler = async ({ params, request, locals }) => {
       "Processing transaction update request",
     )
 
-    const service = new UserBillingService()
+    const service = new TransactionService()
     const result = await service.updateTransaction(transactionId, {
       ...updateData,
       updatedBy: "admin", // Set admin as updater

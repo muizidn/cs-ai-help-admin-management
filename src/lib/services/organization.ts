@@ -4,7 +4,7 @@ import type {
     OrganizationWithStats,
     OrganizationQuery
 } from "$lib/types/organization"
-import type { ApiResponse, PaginatedResponse } from "$lib/types/user-billing"
+import type { ApiResponse, PaginatedResponse } from "$lib/types/transactions"
 
 export class OrganizationService {
     private async getCollection(name: string) {

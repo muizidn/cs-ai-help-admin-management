@@ -1,7 +1,7 @@
 import { json, type RequestHandler } from "@sveltejs/kit"
-import { UserBillingService } from "$lib/services/user-billing"
+import { TransactionService } from "$lib/services/transactions"
 import { logger } from "$lib/logger"
-import type { UserUpdateInput } from "$lib/types/user-billing"
+import type { UserUpdateInput } from "$lib/types/transactions"
 
 // GET /api/users/[id] - Get specific user details
 export const GET: RequestHandler = async ({ params, locals }) => {
@@ -24,7 +24,7 @@ export const GET: RequestHandler = async ({ params, locals }) => {
             userId,
         }, "Processing user detail request")
 
-        const service = new UserBillingService()
+        const service = new TransactionService()
         const result = await service.getUserById(userId)
 
         if (result.success) {
@@ -95,7 +95,7 @@ export const PUT: RequestHandler = async ({ params, request, locals }) => {
             updateData,
         }, "Processing user update request")
 
-        const service = new UserBillingService()
+        const service = new TransactionService()
         const result = await service.updateUser(userId, updateData)
 
         if (result.success) {
