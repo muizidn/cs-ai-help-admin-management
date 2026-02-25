@@ -3,9 +3,13 @@
   import { page } from "$app/stores"
   import { goto } from "$app/navigation"
   import { apiClient } from "$lib/api-client"
-  import type { UserWithBilling, UserUpdateInput, Transaction } from "$lib/types/user-billing"
+  import type {
+    UserWithBilling,
+    UserUpdateInput,
+    Transaction,
+  } from "$lib/types/user-billing"
   import "./user-detail.css"
-  
+
   // State
   let user: UserWithBilling | null = null
   let loading = false
@@ -29,7 +33,7 @@
     error = ""
 
     try {
-      const response = await apiClient.get(`/api/user-billing/${userId}`)
+      const response = await apiClient.get(`/api/users/${userId}`)
 
       if (response.status === 200 && response.data?.status === "success") {
         const userData = response.data.data
@@ -40,7 +44,9 @@
           isActive: userData.isActive,
           billingPlan: userData.billingPlan,
           billingStatus: userData.billingStatus,
-          billingExpiresAt: userData.billingExpiresAt ? new Date(userData.billingExpiresAt).toISOString().split('T')[0] : undefined,
+          billingExpiresAt: userData.billingExpiresAt
+            ? new Date(userData.billingExpiresAt).toISOString().split("T")[0]
+            : undefined,
           isLifetimeBilling: userData.isLifetimeBilling,
           creditBalance: userData.creditBalance,
           tags: userData.tags || [],
@@ -65,14 +71,14 @@
     saveSuccess = false
 
     try {
-      const response = await apiClient.put(`/api/user-billing/${userId}`, editData)
+      const response = await apiClient.put(`/api/users/${userId}`, editData)
 
       if (response.status === 200 && response.data?.status === "success") {
         saveSuccess = true
         editMode = false
         // Reload user data
         await loadUser()
-        
+
         // Hide success message after 3 seconds
         setTimeout(() => {
           saveSuccess = false
@@ -99,7 +105,9 @@
         isActive: user.isActive,
         billingPlan: user.billingPlan,
         billingStatus: user.billingStatus,
-        billingExpiresAt: user.billingExpiresAt ? new Date(user.billingExpiresAt).toISOString().split('T')[0] : undefined,
+        billingExpiresAt: user.billingExpiresAt
+          ? new Date(user.billingExpiresAt).toISOString().split("T")[0]
+          : undefined,
         isLifetimeBilling: user.isLifetimeBilling,
         creditBalance: user.creditBalance,
         tags: user.tags || [],
@@ -130,48 +138,67 @@
   // Get status badge class
   function getStatusBadgeClass(status: string): string {
     switch (status) {
-      case "active": return "badge-success"
-      case "expired": return "badge-danger"
-      case "pending": return "badge-warning"
-      default: return "badge-secondary"
+      case "active":
+        return "badge-success"
+      case "expired":
+        return "badge-danger"
+      case "pending":
+        return "badge-warning"
+      default:
+        return "badge-secondary"
     }
   }
 
   // Get plan badge class
   function getPlanBadgeClass(plan: string): string {
     switch (plan) {
-      case "basic": return "badge-secondary"
-      case "pro": return "badge-primary"
-      case "enterprise": return "badge-premium"
-      default: return "badge-secondary"
+      case "basic":
+        return "badge-secondary"
+      case "pro":
+        return "badge-primary"
+      case "enterprise":
+        return "badge-premium"
+      default:
+        return "badge-secondary"
     }
   }
 
   // Get transaction status badge class
   function getTransactionStatusBadgeClass(status: string): string {
     switch (status) {
-      case "COMPLETED": return "badge-success"
-      case "PENDING": return "badge-warning"
-      case "FAILED": return "badge-danger"
-      default: return "badge-secondary"
+      case "COMPLETED":
+        return "badge-success"
+      case "PENDING":
+        return "badge-warning"
+      case "FAILED":
+        return "badge-danger"
+      default:
+        return "badge-secondary"
     }
   }
 
   // Approve manual transaction
   async function handleApproveTransaction(tx: Transaction) {
-    if (!confirm(`Are you sure you want to approve manual payment ${tx.transactionCode}?`)) return
+    if (
+      !confirm(
+        `Are you sure you want to approve manual payment ${tx.transactionCode}?`,
+      )
+    )
+      return
 
     saving = true
     try {
       const response = await apiClient.put(`/api/transactions/${tx.id}`, {
         status: "COMPLETED",
-        notes: (tx.notes ? tx.notes + "\n" : "") + "Approved manually by admin from user record."
+        notes:
+          (tx.notes ? tx.notes + "\n" : "") +
+          "Approved manually by admin from user record.",
       })
 
       if (response.status === 200 && response.data?.status === "success") {
         saveSuccess = true
         await loadUser()
-        setTimeout(() => saveSuccess = false, 3000)
+        setTimeout(() => (saveSuccess = false), 3000)
       } else {
         saveError = response.data?.message || "Failed to approve transaction"
       }
@@ -189,7 +216,7 @@
 </script>
 
 <svelte:head>
-  <title>User Details - {user?.name || 'Loading...'} - CS AI Admin</title>
+  <title>User Details - {user?.name || "Loading..."} - CS AI Admin</title>
 </svelte:head>
 
 <div class="page-container">
@@ -197,15 +224,15 @@
   <div class="page-header">
     <div class="header-content">
       <div>
-        <a href="/user-billing" class="back-link">← Back to Users</a>
+        <a href="/user" class="back-link">← Back to Users</a>
         <h1>User Details</h1>
         {#if user}
           <p>Manage billing and account information for {user.name}</p>
         {/if}
       </div>
-      
+
       {#if user && !editMode}
-        <button on:click={() => editMode = true} class="btn btn-primary">
+        <button on:click={() => (editMode = true)} class="btn btn-primary">
           Edit User
         </button>
       {/if}
@@ -232,9 +259,7 @@
   {#if !loading && !error && user}
     <!-- Success Message -->
     {#if saveSuccess}
-      <div class="success-message">
-        User updated successfully!
-      </div>
+      <div class="success-message">User updated successfully!</div>
     {/if}
 
     <!-- Save Error -->
@@ -321,14 +346,14 @@
             </div>
 
             <div class="form-actions">
-              <button 
-                on:click={saveUser} 
+              <button
+                on:click={saveUser}
                 disabled={saving}
                 class="btn btn-primary"
               >
                 {saving ? "Saving..." : "Save Changes"}
               </button>
-              <button 
+              <button
                 on:click={cancelEdit}
                 disabled={saving}
                 class="btn btn-secondary"
@@ -357,8 +382,12 @@
               <div class="info-item">
                 <span class="label">Account Status</span>
                 <div class="value">
-                  <span class="badge {user.isActive ? 'badge-success' : 'badge-danger'}">
-                    {user.isActive ? 'Active' : 'Inactive'}
+                  <span
+                    class="badge {user.isActive
+                      ? 'badge-success'
+                      : 'badge-danger'}"
+                  >
+                    {user.isActive ? "Active" : "Inactive"}
                   </span>
                 </div>
               </div>
@@ -366,8 +395,12 @@
               <div class="info-item">
                 <span class="label">Email Verified</span>
                 <div class="value">
-                  <span class="badge {user.emailVerified ? 'badge-success' : 'badge-warning'}">
-                    {user.emailVerified ? 'Verified' : 'Not Verified'}
+                  <span
+                    class="badge {user.emailVerified
+                      ? 'badge-success'
+                      : 'badge-warning'}"
+                  >
+                    {user.emailVerified ? "Verified" : "Not Verified"}
                   </span>
                 </div>
               </div>
@@ -392,7 +425,9 @@
               <div class="billing-item">
                 <span class="label">Plan</span>
                 <div class="value">
-                  <span class="badge {getPlanBadgeClass(user.billingSummary.plan)}">
+                  <span
+                    class="badge {getPlanBadgeClass(user.billingSummary.plan)}"
+                  >
                     {user.billingSummary.plan.toUpperCase()}
                   </span>
                 </div>
@@ -401,7 +436,11 @@
               <div class="billing-item">
                 <span class="label">Status</span>
                 <div class="value">
-                  <span class="badge {getStatusBadgeClass(user.billingSummary.status)}">
+                  <span
+                    class="badge {getStatusBadgeClass(
+                      user.billingSummary.status,
+                    )}"
+                  >
                     {user.billingSummary.status.toUpperCase()}
                   </span>
                 </div>
@@ -430,12 +469,11 @@
                     {formatDate(user.billingSummary.expiresAt)}
                     {#if user.billingSummary.daysUntilExpiry !== null && user.billingSummary.daysUntilExpiry !== undefined}
                       <div class="expiry-info">
-                        {user.billingSummary.daysUntilExpiry > 0 
+                        {user.billingSummary.daysUntilExpiry > 0
                           ? `${user.billingSummary.daysUntilExpiry} days left`
                           : user.billingSummary.daysUntilExpiry === 0
-                          ? "Expires today"
-                          : `Expired ${Math.abs(user.billingSummary.daysUntilExpiry)} days ago`
-                        }
+                            ? "Expires today"
+                            : `Expired ${Math.abs(user.billingSummary.daysUntilExpiry)} days ago`}
                       </div>
                     {/if}
                   {:else}
@@ -448,9 +486,15 @@
                 <span class="label">Last Payment</span>
                 <div class="value">
                   {#if user.billingSummary.lastPayment}
-                    <div>{formatCurrency(user.billingSummary.lastPayment.amount)}</div>
-                    <div class="payment-date">{formatDate(user.billingSummary.lastPayment.date)}</div>
-                    <div class="payment-type">{user.billingSummary.lastPayment.type}</div>
+                    <div>
+                      {formatCurrency(user.billingSummary.lastPayment.amount)}
+                    </div>
+                    <div class="payment-date">
+                      {formatDate(user.billingSummary.lastPayment.date)}
+                    </div>
+                    <div class="payment-type">
+                      {user.billingSummary.lastPayment.type}
+                    </div>
                   {:else}
                     <span class="no-payment">No payments</span>
                   {/if}
@@ -467,7 +511,9 @@
       <div class="info-card">
         <div class="card-header">
           <h2>Transaction History</h2>
-          <a href="/transactions?userId={user.id}" class="view-all-link">View All</a>
+          <a href="/transactions?userId={user.id}" class="view-all-link"
+            >View All</a
+          >
         </div>
         <div class="card-content">
           <div class="transactions-table">
@@ -485,16 +531,25 @@
               </thead>
               <tbody>
                 {#each user.recentTransactions as transaction}
-                  <tr on:click={() => goto(`/transactions/${transaction.id}`)} class="clickable-row">
+                  <tr
+                    on:click={() => goto(`/transactions/${transaction.id}`)}
+                    class="clickable-row"
+                  >
                     <td>{formatDate(transaction.createdAt)}</td>
                     <td>
                       <span class="transaction-type">
-                        {transaction.type === "CREDIT_PURCHASE" ? "Credit Purchase" : "Plan Upgrade"}
+                        {transaction.type === "CREDIT_PURCHASE"
+                          ? "Credit Purchase"
+                          : "Plan Upgrade"}
                       </span>
                     </td>
                     <td class="amount">{formatCurrency(transaction.amount)}</td>
                     <td>
-                      <span class="badge {getTransactionStatusBadgeClass(transaction.status)}">
+                      <span
+                        class="badge {getTransactionStatusBadgeClass(
+                          transaction.status,
+                        )}"
+                      >
                         {transaction.status}
                       </span>
                     </td>
@@ -502,9 +557,10 @@
                     <td class="code">{transaction.transactionCode}</td>
                     <td>
                       {#if transaction.status === "PENDING" && transaction.metadata?.isManual}
-                        <button 
-                          class="btn btn-sm btn-success" 
-                          on:click|stopPropagation={() => handleApproveTransaction(transaction)}
+                        <button
+                          class="btn btn-sm btn-success"
+                          on:click|stopPropagation={() =>
+                            handleApproveTransaction(transaction)}
                           disabled={saving}
                         >
                           {saving ? "..." : "Approve"}

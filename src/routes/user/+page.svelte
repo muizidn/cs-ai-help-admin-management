@@ -44,7 +44,7 @@
       }
 
       const queryString = apiClient.buildQueryString(query)
-      const response = await apiClient.get(`/api/user-billing${queryString}`)
+      const response = await apiClient.get(`/api/users${queryString}`)
 
       if (response.status === 200 && response.data?.status === "success") {
         users = response.data.data.items
@@ -120,13 +120,10 @@
     updateSuccess = ""
 
     try {
-      const response = await apiClient.put(
-        `/api/user-billing/${selectedUser.id}`,
-        {
-          name: editName,
-          isActive: editIsActive,
-        },
-      )
+      const response = await apiClient.put(`/api/users/${selectedUser.id}`, {
+        name: editName,
+        isActive: editIsActive,
+      })
 
       if (response.status === 200 && response.data?.status === "success") {
         updateSuccess = "User updated successfully"
@@ -345,17 +342,11 @@
   {#if showEditModal && selectedUser}
     <div
       class="modal-overlay"
-      on:click={() => (showEditModal = false)}
-      role="button"
-      tabindex="-1"
+      on:click|self={() => (showEditModal = false)}
       on:keydown={(e) => e.key === "Escape" && (showEditModal = false)}
+      role="none"
     >
-      <div
-        class="modal-container"
-        on:click|stopPropagation
-        role="dialog"
-        aria-modal="true"
-      >
+      <div class="modal-container" role="dialog" aria-modal="true">
         <div class="modal-header">
           <div class="header-main">
             <h2>Edit User Profile</h2>
@@ -396,7 +387,7 @@
             </div>
 
             <div class="input-group">
-              <label>Account Status</label>
+              <span class="label-text">Account Status</span>
               <div class="status-toggle-container">
                 <span class="status-text" class:inactive={!editIsActive}>
                   {editIsActive
@@ -548,10 +539,6 @@
     width: 100%;
     font-size: 0.9375rem;
     color: #0f172a;
-  }
-
-  .search-box svg {
-    color: #94a3b8;
   }
 
   .filter-row {
@@ -1121,8 +1108,7 @@
     background: #f8fafc;
   }
 
-  /* Accessibility/Roles */
-  .modal-overlay[role="button"] {
+  .modal-overlay[role="none"] {
     cursor: default;
   }
 </style>

@@ -5,7 +5,10 @@
 <div class="dashboard">
   <div class="dashboard-header">
     <h1>CS AI System Management</h1>
-    <p>Manage system prompts, library templates, user billing, and transactions for your AI application</p>
+    <p>
+      Manage system prompts, library templates, user billing, and transactions
+      for your AI application
+    </p>
   </div>
 
   <div class="dashboard-grid">
@@ -32,12 +35,12 @@
     </a>
 
     <!-- User Billing Card -->
-    <a href="/user-billing" class="dashboard-card">
+    <a href="/user" class="dashboard-card">
       <div class="card-icon">
         <Users size={32} />
       </div>
       <div class="card-content">
-        <h3>User Billing</h3>
+        <h3>User Management</h3>
         <p>Manage user accounts and billing information</p>
       </div>
     </a>
@@ -65,7 +68,7 @@
         <Plus size={20} />
         <span>New Library Template</span>
       </a>
-      <a href="/user-billing" class="action-button">
+      <a href="/user" class="action-button">
         <Users size={20} />
         <span>View Users</span>
       </a>

@@ -142,6 +142,14 @@ class ApiClient {
     return this.makeRequest<T>(endpoint, { method: "POST", body, headers })
   }
 
+  async patch<T = any>(
+    endpoint: string,
+    body?: any,
+    headers?: Record<string, string>,
+  ): Promise<ApiResponse<T>> {
+    return this.makeRequest<T>(endpoint, { method: "PATCH", body, headers })
+  }
+
   async put<T = any>(
     endpoint: string,
     body?: any,

@@ -2,14 +2,25 @@
   import { onMount } from "svelte"
   import { apiClient } from "$lib/api-client"
   import type { OrganizationWithStats } from "$lib/types/organization"
-  import { Search, Building, Users, Calendar, ArrowUp, ArrowDown, RefreshCw, AlertCircle, ChevronLeft, ChevronRight } from "lucide-svelte"
-  import "../user-billing/user-billing.css"
+  import {
+    Search,
+    Building,
+    Users,
+    Calendar,
+    ArrowUp,
+    ArrowDown,
+    RefreshCw,
+    AlertCircle,
+    ChevronLeft,
+    ChevronRight,
+  } from "lucide-svelte"
+  import "../global-admin.css"
 
   // State
   let organizations: OrganizationWithStats[] = []
   let loading = true
   let error = ""
-  
+
   // Pagination & Filters
   let search = ""
   let currentPage = 1
@@ -28,11 +39,13 @@
         page: currentPage.toString(),
         limit: limit.toString(),
         sortBy,
-        sortOrder
+        sortOrder,
       })
-      
-      const response = await apiClient.get(`/api/organizations?${params.toString()}`)
-      
+
+      const response = await apiClient.get(
+        `/api/organizations?${params.toString()}`,
+      )
+
       if (response.status === 200 && response.data?.status === "success") {
         organizations = response.data.data.items
         const pagination = response.data.data.pagination
@@ -75,7 +88,7 @@
     return new Date(date).toLocaleDateString("en-US", {
       year: "numeric",
       month: "short",
-      day: "numeric"
+      day: "numeric",
     })
   }
 
@@ -102,11 +115,20 @@
           on:keydown={(e) => e.key === "Enter" && handleSearch()}
         />
       </div>
-      <button class="search-btn flex items-center gap-2" on:click={handleSearch}>
+      <button
+        class="search-btn flex items-center gap-2"
+        on:click={handleSearch}
+      >
         <Search size={18} />
         Search
       </button>
-      <button class="clear-btn" on:click={() => { search = ""; handleSearch(); }}>Clear</button>
+      <button
+        class="clear-btn"
+        on:click={() => {
+          search = ""
+          handleSearch()
+        }}>Clear</button
+      >
     </div>
   </div>
 
@@ -147,7 +169,10 @@
               </div>
             </th>
             <th>ID</th>
-            <th on:click={() => handleSort("memberCount")} class="cursor-pointer">
+            <th
+              on:click={() => handleSort("memberCount")}
+              class="cursor-pointer"
+            >
               <div class="flex items-center gap-2">
                 Active Members
                 {#if sortBy === "memberCount"}
@@ -182,7 +207,9 @@
                   <div class="p-2 bg-blue-50 rounded-lg">
                     <Building size={20} class="text-blue-600" />
                   </div>
-                  <span class="font-bold text-gray-900 text-base">{org.name}</span>
+                  <span class="font-bold text-gray-900 text-base"
+                    >{org.name}</span
+                  >
                 </div>
               </td>
               <td>
@@ -195,8 +222,12 @@
                 </div>
               </td>
               <td>
-                <span class="badge {org.isActive ? 'badge-success' : 'badge-secondary'}">
-                  {org.isActive ? 'Active' : 'Inactive'}
+                <span
+                  class="badge {org.isActive
+                    ? 'badge-success'
+                    : 'badge-secondary'}"
+                >
+                  {org.isActive ? "Active" : "Inactive"}
                 </span>
               </td>
               <td>
@@ -215,7 +246,10 @@
     {#if totalPages > 1}
       <div class="pagination flex items-center justify-between">
         <div class="text-sm text-gray-500">
-          Showing {(currentPage - 1) * limit + 1} to {Math.min(currentPage * limit, totalItems)} of {totalItems} organizations
+          Showing {(currentPage - 1) * limit + 1} to {Math.min(
+            currentPage * limit,
+            totalItems,
+          )} of {totalItems} organizations
         </div>
         <div class="flex gap-2">
           <button
@@ -225,12 +259,12 @@
           >
             <ChevronLeft size={16} />
           </button>
-          
+
           {#each Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
-            if (totalPages <= 5) return i + 1;
-            if (currentPage <= 3) return i + 1;
-            if (currentPage >= totalPages - 2) return totalPages - 4 + i;
-            return currentPage - 2 + i;
+            if (totalPages <= 5) return i + 1
+            if (currentPage <= 3) return i + 1
+            if (currentPage >= totalPages - 2) return totalPages - 4 + i
+            return currentPage - 2 + i
           }) as page}
             <button
               class="btn btn-sm {currentPage === page ? 'btn-primary' : ''}"
@@ -258,10 +292,12 @@
   :global(.page-container) {
     background-color: #f8fafc;
     min-height: calc(100vh - 40px);
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
-  .cursor-pointer { cursor: pointer; }
+  .cursor-pointer {
+    cursor: pointer;
+  }
 
   .page-header {
     margin-bottom: 2rem;
@@ -290,7 +326,7 @@
     border-radius: 16px;
     padding: 1.5rem;
     margin-bottom: 2rem;
-    box-shadow: 
+    box-shadow:
       0 4px 6px -1px rgba(0, 0, 0, 0.05),
       0 2px 4px -1px rgba(0, 0, 0, 0.03),
       inset 0 0 0 1px rgba(255, 255, 255, 0.5);
@@ -324,7 +360,8 @@
     box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
   }
 
-  .search-btn, .clear-btn {
+  .search-btn,
+  .clear-btn {
     padding: 0.875rem 1.5rem;
     border-radius: 12px;
     font-weight: 600;
@@ -367,7 +404,7 @@
   .table-container {
     background: white;
     border-radius: 16px;
-    box-shadow: 
+    box-shadow:
       0 20px 25px -5px rgba(0, 0, 0, 0.05),
       0 10px 10px -5px rgba(0, 0, 0, 0.02);
     border: 1px solid #f1f5f9;
@@ -418,7 +455,7 @@
   }
 
   .transaction-code {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: "JetBrains Mono", monospace;
     font-size: 0.8rem;
     color: #64748b;
     background: #f1f5f9;
@@ -451,7 +488,7 @@
   }
 
   .badge::before {
-    content: '';
+    content: "";
     display: block;
     width: 6px;
     height: 6px;

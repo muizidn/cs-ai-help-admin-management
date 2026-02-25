@@ -402,7 +402,7 @@
                 <span class="label">Actions</span>
                 <div class="value">
                   <a
-                    href="/user-billing/{transaction.user.id}"
+                    href="/user/{transaction.user.id}"
                     class="btn btn-sm btn-secondary"
                   >
                     View User Details
