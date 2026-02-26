@@ -29,6 +29,22 @@
   let inferenceCost = 0
   let simulationCost = 0
   let kbParsingCost = 0
+  let proCredits = 0
+  let proMultipliersRaw = ""
+  let creditMultipliersRaw = ""
+  let highlightDuration = 3
+  let highlightBadge = "plans.best_value"
+  let enabledDurations: number[] = [1]
+
+  const possibleDurations = [1, 3, 6, 12, 24]
+
+  function toggleDuration(duration: number, checked: boolean) {
+    if (checked) {
+      enabledDurations = [...enabledDurations, duration]
+    } else {
+      enabledDurations = enabledDurations.filter((d) => d !== duration)
+    }
+  }
 
   async function loadConfig() {
     loading = true
@@ -45,6 +61,12 @@
           inferenceCost = config.usageCosts.inference
           simulationCost = config.usageCosts.simulation
           kbParsingCost = config.usageCosts.kbParsing
+          proCredits = config.proPlan.credits || 0
+          proMultipliersRaw = JSON.stringify(config.proPlan.discountMultipliers || {}, null, 2)
+          creditMultipliersRaw = JSON.stringify(config.credits.discountMultipliers || {}, null, 2)
+          enabledDurations = config.proPlan.enabledDurations || [1]
+          highlightDuration = config.proPlan.highlightDuration || 0
+          highlightBadge = config.proPlan.highlightBadge || ""
         }
       } else {
         error = response.data?.message || "Failed to load pricing configuration"
@@ -62,11 +84,31 @@
     error = ""
     success = ""
 
+    let finalProMultipliers = {}
+    let finalCreditMultipliers = {}
+    try {
+      finalProMultipliers = JSON.parse(proMultipliersRaw)
+      finalCreditMultipliers = JSON.parse(creditMultipliersRaw)
+    } catch (e) {
+      error = "Invalid JSON in multipliers"
+      saving = false
+      return
+    }
+
     const updateData: PricingUpdateInput = {
-      proPlan: { originalPrice: proOriginal, currentPrice: proCurrent },
+      proPlan: { 
+        originalPrice: proOriginal, 
+        currentPrice: proCurrent,
+        credits: proCredits,
+        discountMultipliers: finalProMultipliers,
+        enabledDurations: enabledDurations,
+        highlightDuration: highlightDuration,
+        highlightBadge: highlightBadge
+      },
       credits: {
         pricePerCredit: creditPrice,
         originalPricePerCredit: creditOriginal || undefined,
+        discountMultipliers: finalCreditMultipliers
       },
       usageCosts: {
         inference: inferenceCost,
@@ -158,18 +200,67 @@
         </div>
         <div class="card-body">
           <div class="form-group">
-            <label>Original Price (IDR)</label>
-            <input type="number" bind:value={proOriginal} class="form-input" />
+            <label for="proOriginal">Original Price (IDR)</label>
+            <input id="proOriginal" type="number" bind:value={proOriginal} class="form-input" />
             <p class="form-help">Current: {formatCurrency(proOriginal)}</p>
           </div>
           <div class="form-group">
-            <label>Discounted Price (IDR)</label>
-            <input type="number" bind:value={proCurrent} class="form-input" />
+            <label for="proCurrent">Discounted Price (IDR)</label>
+            <input id="proCurrent" type="number" bind:value={proCurrent} class="form-input" />
             <div class="flex items-center gap-2 mt-1">
               <p class="form-help">Current: {formatCurrency(proCurrent)}</p>
               {#if proCurrent < proOriginal}
                 <span class="badge badge-success text-xs">Discounted</span>
               {/if}
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="proCredits">Monthly AI Credits</label>
+            <input id="proCredits" type="number" bind:value={proCredits} class="form-input" />
+            <p class="form-help">Current: {proCredits} credits/month</p>
+          </div>
+          <div class="form-group">
+            <label for="proMultipliers">Pro Duration Multipliers (JSON)</label>
+            <textarea id="proMultipliers" bind:value={proMultipliersRaw} class="form-input font-mono text-xs" rows="3"></textarea>
+            <p class="form-help">
+              Defines bulk discounts. <b>Formula: (Monthly Price × Months) × Multiplier</b>.
+              <br/>Example: <code>{"{ \"3\": 0.9 }"}</code> means a 10% discount for the 3-month plan.
+            </p>
+          </div>
+          <div class="form-group">
+            <p class="text-sm font-medium text-gray-700 mb-2">Enabled Durations</p>
+            <div class="flex flex-wrap gap-4 mt-2">
+              {#each possibleDurations as duration}
+                <label class="flex items-center gap-2 font-normal cursor-pointer">
+                  <input 
+                    type="checkbox" 
+                    checked={enabledDurations.includes(duration)}
+                    on:change={(e) => toggleDuration(duration, e.currentTarget.checked)}
+                  />
+                  <span>{duration} Month{duration > 1 ? 's' : ''}</span>
+                </label>
+              {/each}
+            </div>
+            <p class="form-help">Select which subscription plans are visible to users</p>
+          </div>
+          <div class="form-group grid grid-cols-2 gap-4">
+            <div>
+              <label for="highlightDuration">Highlight Duration (focused card)</label>
+              <select id="highlightDuration" bind:value={highlightDuration} class="form-input">
+                <option value={0}>None</option>
+                {#each enabledDurations as duration}
+                  <option value={duration}>{duration} Month{duration > 1 ? 's' : ''}</option>
+                {/each}
+              </select>
+            </div>
+            <div>
+              <label for="highlightBadge">Badge Type</label>
+              <select id="highlightBadge" bind:value={highlightBadge} class="form-input">
+                <option value="plans.popular">Popular</option>
+                <option value="plans.best_value">Best Value</option>
+                <option value="plans.recommended">Recommended</option>
+              </select>
+              <p class="form-help">Badge text shown on top of the card</p>
             </div>
           </div>
         </div>
@@ -183,18 +274,24 @@
         </div>
         <div class="card-body">
           <div class="form-group">
-            <label>Price Per Credit (IDR)</label>
-            <input type="number" bind:value={creditPrice} class="form-input" />
+            <label for="creditPrice">Price Per Credit (IDR)</label>
+            <input id="creditPrice" type="number" bind:value={creditPrice} class="form-input" />
             <p class="form-help">Current: {formatCurrency(creditPrice)}</p>
           </div>
           <div class="form-group">
-            <label>Original Price Per Credit (Optional)</label>
+            <label for="creditOriginal">Original Price Per Credit (Optional)</label>
             <input
+              id="creditOriginal"
               type="number"
               bind:value={creditOriginal}
               class="form-input"
             />
             <p class="form-help">Current: {formatCurrency(creditOriginal)}</p>
+          </div>
+          <div class="form-group">
+            <label for="creditMultipliers">Credit Bulk Multipliers (JSON)</label>
+            <textarea id="creditMultipliers" bind:value={creditMultipliersRaw} class="form-input font-mono text-xs" rows="3"></textarea>
+            <p class="form-help">Example: {"{ \"1000\": 0.9, \"5000\": 0.8 }"}</p>
           </div>
         </div>
       </div>
@@ -209,9 +306,10 @@
           <div class="form-group">
             <div class="flex items-center gap-2 mb-2">
               <Brain size={16} />
-              <label class="m-0">Inference</label>
+              <label for="inferenceCost" class="m-0">Inference</label>
             </div>
             <input
+              id="inferenceCost"
               type="number"
               bind:value={inferenceCost}
               class="form-input"
@@ -221,9 +319,10 @@
           <div class="form-group">
             <div class="flex items-center gap-2 mb-2">
               <Play size={16} />
-              <label class="m-0">Simulation</label>
+              <label for="simulationCost" class="m-0">Simulation</label>
             </div>
             <input
+              id="simulationCost"
               type="number"
               bind:value={simulationCost}
               class="form-input"
@@ -233,9 +332,10 @@
           <div class="form-group">
             <div class="flex items-center gap-2 mb-2">
               <FileSearch size={16} />
-              <label class="m-0">KB Parsing</label>
+              <label for="kbParsingCost" class="m-0">KB Parsing</label>
             </div>
             <input
+              id="kbParsingCost"
               type="number"
               bind:value={kbParsingCost}
               class="form-input"
@@ -334,24 +434,9 @@
     border: 1px solid #bbf7d0;
   }
 
-  .animate-spin {
-    animation: spin 1s linear infinite;
-  }
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(3600deg);
-    }
-  }
-  .text-orange-500 {
-    color: #f97316;
-  }
-  .text-purple-500 {
-    color: #a855f7;
-  }
-  .m-0 {
-    margin: 0;
+  .alert-success {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
   }
 </style>
