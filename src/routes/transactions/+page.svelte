@@ -97,7 +97,9 @@
 
   // Get status badge class
   function getStatusBadgeClass(status: string): string {
-    switch (status) {
+    if (!status) return "badge-secondary"
+    const s = status.toUpperCase()
+    switch (s) {
       case "COMPLETED":
         return "badge-success"
       case "PENDING":
@@ -107,6 +109,16 @@
       default:
         return "badge-secondary"
     }
+  }
+
+  // Format status for display
+  function formatStatus(status: string): string {
+    if (!status) return "-"
+    const s = status.toUpperCase()
+    if (s === "COMPLETED") return "Completed"
+    if (s === "PENDING") return "Pending"
+    if (s === "FAILED") return "Failed"
+    return s.charAt(0) + s.slice(1).toLowerCase()
   }
 
   // Get type badge class
@@ -184,7 +196,9 @@
       <div class="stat-card">
         <div class="stat-icon">💰</div>
         <div class="stat-content">
-          <div class="stat-value">{formatCurrency(stats.totalAmount)}</div>
+          <div class="stat-value">
+            {stats ? formatCurrency(stats.totalAmount || 0) : "-"}
+          </div>
           <div class="stat-label">Total Amount</div>
         </div>
       </div>
@@ -192,7 +206,7 @@
       <div class="stat-card">
         <div class="stat-icon">✅</div>
         <div class="stat-content">
-          <div class="stat-value">{stats.byStatus.completed}</div>
+          <div class="stat-value">{stats?.byStatus?.completed || 0}</div>
           <div class="stat-label">Completed</div>
         </div>
       </div>
@@ -200,7 +214,7 @@
       <div class="stat-card">
         <div class="stat-icon">⏳</div>
         <div class="stat-content">
-          <div class="stat-value">{stats.byStatus.pending}</div>
+          <div class="stat-value">{stats?.byStatus?.pending || 0}</div>
           <div class="stat-label">Pending</div>
         </div>
       </div>
@@ -393,7 +407,7 @@
               </td>
               <td>
                 <span class="badge {getStatusBadgeClass(transaction.status)}">
-                  {transaction.status}
+                  {formatStatus(transaction.status)}
                 </span>
                 {#if transaction.expiredAt && transaction.status === "PENDING"}
                   <div class="expiry-info">

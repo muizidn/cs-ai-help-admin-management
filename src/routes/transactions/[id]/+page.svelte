@@ -164,7 +164,9 @@
 
   // Get status badge class
   function getStatusBadgeClass(status: string): string {
-    switch (status) {
+    if (!status) return "badge-secondary"
+    const s = status.toUpperCase()
+    switch (s) {
       case "COMPLETED":
         return "badge-success"
       case "PENDING":
@@ -174,6 +176,16 @@
       default:
         return "badge-secondary"
     }
+  }
+
+  // Format status for display
+  function formatStatus(status: string): string {
+    if (!status) return "-"
+    const s = status.toUpperCase()
+    if (s === "COMPLETED") return "Completed"
+    if (s === "PENDING") return "Pending"
+    if (s === "FAILED") return "Failed"
+    return s.charAt(0) + s.slice(1).toLowerCase()
   }
 
   // Get type badge class
@@ -327,7 +339,7 @@
                   </select>
                 {:else}
                   <span class="badge {getStatusBadgeClass(transaction.status)}">
-                    {transaction.status}
+                    {formatStatus(transaction.status)}
                   </span>
                 {/if}
               </div>
@@ -437,7 +449,9 @@
           </div>
 
           <div class="form-group">
-            <label for="reason">Reason for Change <span class="required">*</span></label>
+            <label for="reason"
+              >Reason for Change <span class="required">*</span></label
+            >
             <textarea
               id="reason"
               bind:value={editData.reason}

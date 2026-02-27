@@ -14,7 +14,10 @@
     Receipt,
   } from "lucide-svelte"
 
+  import type { LayoutData } from "./$types"
+
   $: currentPath = $page.url.pathname
+  export let data: LayoutData
 </script>
 
 <div class="app-layout">
@@ -131,7 +134,7 @@
       </div>
 
       <div class="sidebar-footer">
-        <p class="version">v1.0.0</p>
+        <p class="version">{data.appVersion}</p>
       </div>
     </nav>
   {/if}
