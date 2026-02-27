@@ -123,11 +123,11 @@
     })
   }
 
-
-
   // Get transaction status badge class
   function getTransactionStatusBadgeClass(status: string): string {
-    switch (status) {
+    if (!status) return "badge-secondary"
+    const s = status.toUpperCase()
+    switch (s) {
       case "COMPLETED":
         return "badge-success"
       case "PENDING":
@@ -137,6 +137,16 @@
       default:
         return "badge-secondary"
     }
+  }
+
+  // Format status for display
+  function formatStatus(status: string): string {
+    if (!status) return "-"
+    const s = status.toUpperCase()
+    if (s === "COMPLETED") return "Completed"
+    if (s === "PENDING") return "Pending"
+    if (s === "FAILED") return "Failed"
+    return s.charAt(0) + s.slice(1).toLowerCase()
   }
 
   // Approve manual transaction
@@ -258,10 +268,10 @@
               </select>
             </div>
 
-
-
             <div class="form-group">
-              <label for="reason">Reason for Change <span class="required">*</span></label>
+              <label for="reason"
+                >Reason for Change <span class="required">*</span></label
+              >
               <textarea
                 id="reason"
                 bind:value={editData.reason}
@@ -339,8 +349,6 @@
           {/if}
         </div>
       </div>
-
-
     </div>
 
     <!-- Transaction History -->
@@ -387,7 +395,7 @@
                           transaction.status,
                         )}"
                       >
-                        {transaction.status}
+                        {formatStatus(transaction.status)}
                       </span>
                     </td>
                     <td class="code">{transaction.id}</td>
