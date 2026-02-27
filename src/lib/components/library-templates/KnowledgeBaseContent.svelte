@@ -2,6 +2,7 @@
   import { Plus, X } from "lucide-svelte"
   import type { KnowledgeBaseContent } from "$lib/types/library-templates"
   import { createEventDispatcher } from "svelte"
+  import TestQuestions from "./TestQuestions.svelte"
 
   export let content: KnowledgeBaseContent
 
@@ -148,4 +149,14 @@
       </button>
     </div>
   </div>
+
+  <TestQuestions
+    questions={content.questions || []}
+    on:change={(e) => {
+      updateContent({
+        ...content,
+        questions: e.detail,
+      })
+    }}
+  />
 </div>

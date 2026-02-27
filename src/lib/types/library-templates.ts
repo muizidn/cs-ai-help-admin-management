@@ -156,11 +156,22 @@ export interface ToolContent {
   }
 }
 
+export interface TestMessage {
+  customer: string
+  ai_response_eval: string
+}
+
+export interface TestScenario {
+  flowName: string
+  messages: TestMessage[]
+}
+
 export interface KnowledgeBaseContent {
   sections: Array<{
     content: string
   }>
   keywords: string[]
+  questions?: TestScenario[]
 }
 
 // API Response Types

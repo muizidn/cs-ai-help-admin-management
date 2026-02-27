@@ -33,6 +33,9 @@
                 "content": "## Syarat\nFotokopi KK/KTP, Akta Lahir, Kartu Imunisasi, 2 foto 3x4.\n\nContoh:\nFormulir dapat diambil di sekolah atau via WA."
             },
             {
+                "content": "## Pembayaran\nKami menerima pembayaran melalui:\n- Transfer Bank: BCA 12345678 a/n PAUD Bintang\n- QRIS: (Tersedia di loket pendaftaran)\n- E-Wallet: GoPay/OVO ke nomor 0812-xxxx-xxxx"
+            },
+            {
                 "content": "## Kontak\nWA: 0812-xxxx-xxxx\nInstagram: @paud_bintang_kecil\n\nContoh:\nWA Admin: 0812-1111-2222"
             }
         ],
@@ -42,6 +45,33 @@
             "program paud harian",
             "fasilitas paud lengkap",
             "pendaftaran paud"
+        ],
+        "questions": [
+            {
+                "flowName": "Alur Pendaftaran & Pembayaran Lengkap",
+                "messages": [
+                    {
+                        "customer": "Halo, bisa minta info tentang program belajar untuk anak usia 4 tahun?",
+                        "ai_response_eval": "AI harus menyapa dengan ramah dan menyebutkan program yang tersedia (Calistung, Seni, Outing)."
+                    },
+                    {
+                        "customer": "Berapa biayanya untuk pendaftaran dan bulanannya?",
+                        "ai_response_eval": "AI harus merinci biaya pendaftaran (Rp 200rb), bulanan (Rp 300rb), dan seragam (Rp 150rb)."
+                    },
+                    {
+                        "customer": "Apa bedanya dengan paud lain? Fasilitasnya apa saja?",
+                        "ai_response_eval": "AI harus menyebutkan keunggulan: Kelas AC, alat peraga edukatif, playground, dan perpustakaan."
+                    },
+                    {
+                        "customer": "Baik, saya tertarik. Syaratnya apa saja dan bagaimana cara bayarnya?",
+                        "ai_response_eval": "AI harus menyebutkan syarat dokumen (KK, KTP, Akta, Imunisasi) DAN metode pembayaran (BCA, QRIS, atau E-Wallet)."
+                    },
+                    {
+                        "customer": "Bisa minta nomor rekeningnya untuk transfer?",
+                        "ai_response_eval": "AI harus memberikan detail rekening BCA 12345678 a/n PAUD Bintang."
+                    }
+                ]
+            }
         ]
     },
     "preview": "",

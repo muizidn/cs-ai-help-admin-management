@@ -58,6 +58,46 @@
             "biaya medical check up",
             "asuransi kesehatan klinik",
             "nomor whatsapp klinik"
+        ],
+        "questions": [
+            {
+                "flowName": "Alur Pemeriksaan Pasien Baru",
+                "messages": [
+                    {
+                        "customer": "Halo, saya ingin periksa ke dokter. Hari ini buka sampai jam berapa ya?",
+                        "ai_response_eval": "AI harus menyebutkan jam operasional (Senin-Jumat s/d 21.00 atau Sabtu s/d 17.00) dan batas waktu pendaftaran terakhir (20.30)."
+                    },
+                    {
+                        "customer": "Saya belum pernah ke sini sebelumnya. Apa saja syarat kalau mau daftar?",
+                        "ai_response_eval": "AI harus menjelaskan prosedur pasien baru, yaitu membawa kartu identitas (KTP/KIA/Paspor) dan menyebutkan adanya biaya administrasi Rp 15.000."
+                    },
+                    {
+                        "customer": "Berapa total biaya untuk konsultasi dokter umum?",
+                        "ai_response_eval": "AI harus menyebutkan estimasi biaya konsultasi dokter umum antara Rp 50.000 - Rp 100.000."
+                    },
+                    {
+                        "customer": "Apakah bisa pakai asuransi Prudential atau BPJS?",
+                        "ai_response_eval": "AI harus mengonfirmasi kerjasama dengan Prudential (AdMedika) namun menjelaskan ketersediaan BPJS (saat ini tidak disebutkan di konten, jadi AI harus jujur sesuai data)."
+                    },
+                    {
+                        "customer": "Oke saya mau datang sekarang. Bagaimana cara bayarnya nanti?",
+                        "ai_response_eval": "AI harus menyebutkan metode pembayaran yang tersedia: Tunai, Debit Mandiri/BCA, QRIS, atau Transfer Bank."
+                    }
+                ]
+            },
+            {
+                "flowName": "Reservasi & Lokasi",
+                "messages": [
+                    {
+                        "customer": "Bisa daftar lewat WA dulu? Saya malas antre.",
+                        "ai_response_eval": "AI harus mengonfirmasi bisa reservasi via WA ke 0812-3456-7890 dan menyebutkan format pendaftarannya."
+                    },
+                    {
+                        "customer": "Kliniknya di mana ya? Ada patokannya?",
+                        "ai_response_eval": "AI harus memberikan alamat di Jl. Melati No. 123 dan menyebutkan patokan dekat Stasiun MRT Senayan / Indomaret."
+                    }
+                ]
+            }
         ]
     },
     "preview": "",
