@@ -23,6 +23,8 @@ RUN bun run build
 FROM oven/bun:1.2.10-alpine AS runner
 
 WORKDIR /app
+ARG APP_VERSION=development
+ENV APP_VERSION=$APP_VERSION
 
 # Install wget for health checks
 RUN apk add --no-cache wget

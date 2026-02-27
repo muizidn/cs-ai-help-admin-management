@@ -84,6 +84,7 @@ export const getServerEnv: any = () => {
     ADMIN_PASSWORD_HASH_BASE64: merged.ADMIN_PASSWORD_HASH_BASE64,
     INTERNAL_SECRET_TOKEN: merged.INTERNAL_SECRET_TOKEN,
     MAIN_APP_URL: merged.MAIN_APP_URL,
+    APP_VERSION: merged.APP_VERSION,
   }
 
   return result
@@ -95,5 +96,7 @@ export const logEnvVars = () => {
   console.log("Environment Variables:")
   console.log("MONGODB_URI:", env.MONGODB_URI)
   console.log("MONGODB_DATABASE:", env.MONGODB_DATABASE)
+  console.log("APP_VERSION (env):", env.APP_VERSION)
+  console.log("APP_VERSION (process):", process.env.APP_VERSION)
   console.log("NODE_ENV:", process.env.NODE_ENV)
 }
