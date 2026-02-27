@@ -12,9 +12,18 @@
     LIBRARY_TEMPLATE_TYPE_LABELS,
     LIBRARY_TEMPLATE_TYPE_DESCRIPTIONS,
   } from "$lib/types/library-templates"
-  import { Plus, Save, X, FileText, Code } from "lucide-svelte"
+  import {
+    Plus,
+    Save,
+    X,
+    FileText,
+    Code,
+    Maximize2,
+    Minimize2,
+  } from "lucide-svelte"
   import { createEventDispatcher } from "svelte"
   import KnowledgeBaseContentEditor from "./library-templates/KnowledgeBaseContent.svelte"
+  import MonacoEditor from "./MonacoEditor.svelte"
 
   export let template: LibraryTemplate | null = null
 
@@ -63,6 +72,7 @@
   // Content as JSON string for editing
   let activeTab: "form" | "json" = "form"
   let contentJson = ""
+  let isFullscreenJson = false
 
   function initializeForm(t: LibraryTemplate | null) {
     if (t) {
@@ -476,22 +486,99 @@
           </div>
         {/if}
       {:else}
-        <!-- JSON Editor -->
-        <textarea
-          id="content"
-          rows="12"
-          bind:value={contentJson}
-          on:input={handleJsonChange}
-          placeholder={JSON.stringify({ key: "value" }, null, 2)}
-          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 font-mono text-sm {errors.content
-            ? 'border-red-300'
-            : ''}"
-        ></textarea>
-        {#if errors.content}
-          <p class="mt-1 text-sm text-red-600">{errors.content}</p>
-        {/if}
+        <!-- JSON Editor Container -->
+        <div class="relative group">
+          <div
+            class="flex justify-between items-center bg-gray-100 px-3 py-1.5 border border-b-0 border-gray-300 rounded-t-md"
+          >
+            <span class="text-xs font-medium text-gray-500">JSON Editor</span>
+            <button
+              type="button"
+              on:click={() => (isFullscreenJson = true)}
+              class="text-gray-400 hover:text-blue-600 transition-colors"
+              title="Expand to Fullscreen"
+            >
+              <Maximize2 class="w-4 h-4" />
+            </button>
+          </div>
+          <div class="h-[400px]">
+            <MonacoEditor
+              value={contentJson}
+              on:change={(e) => {
+                contentJson = e.detail
+                handleJsonChange()
+              }}
+            />
+          </div>
+          {#if errors.content}
+            <p class="mt-1 text-sm text-red-600">{errors.content}</p>
+          {/if}
+        </div>
       {/if}
     </div>
+
+    <!-- Fullscreen JSON Modal -->
+    {#if isFullscreenJson}
+      <div
+        class="fixed inset-0 z-[100] flex flex-col bg-white"
+        on:keydown={(e) => e.key === "Escape" && (isFullscreenJson = false)}
+      >
+        <div
+          class="flex items-center justify-between px-6 py-4 border-b border-gray-200 bg-gray-50"
+        >
+          <div class="flex items-center space-x-4">
+            <h3 class="text-lg font-bold text-gray-900">
+              JSON Content Editor - {formData.title || "Untitled"}
+            </h3>
+            {#if errors.content}
+              <span
+                class="px-2 py-0.5 bg-red-100 text-red-700 text-xs font-bold rounded animate-pulse"
+              >
+                {errors.content}
+              </span>
+            {/if}
+          </div>
+          <button
+            type="button"
+            on:click={() => (isFullscreenJson = false)}
+            class="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full transition-all"
+          >
+            <Minimize2 class="w-6 h-6" />
+          </button>
+        </div>
+        <div class="flex-1 p-6 overflow-hidden">
+          <div
+            class="w-full h-full shadow-2xl rounded-xl border border-gray-200 overflow-hidden"
+          >
+            <MonacoEditor
+              value={contentJson}
+              options={{ fontSize: 16 }}
+              on:change={(e) => {
+                contentJson = e.detail
+                handleJsonChange()
+              }}
+            />
+          </div>
+        </div>
+        <div
+          class="px-6 py-4 border-t border-gray-200 bg-gray-50 flex justify-between items-center"
+        >
+          <p class="text-xs text-gray-500">
+            Press <kbd
+              class="px-1 py-0.5 bg-white border border-gray-300 rounded shadow-sm"
+              >Esc</kbd
+            > to minimize
+          </p>
+          <button
+            type="button"
+            on:click={() => (isFullscreenJson = false)}
+            class="px-6 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 shadow-md transition-all active:scale-95"
+          >
+            Apply Changes
+          </button>
+        </div>
+      </div>
+    {/if}
 
     <!-- Actions -->
     <div class="flex justify-end space-x-3 pt-6 border-t">
