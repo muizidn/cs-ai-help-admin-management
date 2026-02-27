@@ -99,6 +99,7 @@
   let selectedUser: UserWithBilling | null = null
   let editName = ""
   let editIsActive = true
+  let editReason = ""
   let isUpdating = false
   let updateError = ""
   let updateSuccess = ""
@@ -107,6 +108,7 @@
     selectedUser = user
     editName = user.name
     editIsActive = user.isActive
+    editReason = ""
     showEditModal = true
     updateError = ""
     updateSuccess = ""
@@ -123,6 +125,7 @@
       const response = await apiClient.put(`/api/users/${selectedUser.id}`, {
         name: editName,
         isActive: editIsActive,
+        reason: editReason,
       })
 
       if (response.status === 200 && response.data?.status === "success") {
@@ -400,6 +403,17 @@
                 </label>
               </div>
             </div>
+
+            <div class="input-group">
+              <label for="edit-reason">Reason for Change <span class="required">*</span></label>
+              <textarea
+                id="edit-reason"
+                bind:value={editReason}
+                placeholder="Explain why you are making these changes..."
+                rows="3"
+                required
+              ></textarea>
+            </div>
           </div>
 
           <div class="billing-link-box">
@@ -424,7 +438,7 @@
           <button
             class="btn-primary"
             on:click={handleUpdateUser}
-            disabled={isUpdating}
+            disabled={isUpdating || !editReason.trim()}
           >
             {isUpdating ? "Saving Changes..." : "Save Profile"}
           </button>

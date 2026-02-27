@@ -42,14 +42,8 @@
         editData = {
           name: userData.name,
           isActive: userData.isActive,
-          billingPlan: userData.billingPlan,
-          billingStatus: userData.billingStatus,
-          billingExpiresAt: userData.billingExpiresAt
-            ? new Date(userData.billingExpiresAt).toISOString().split("T")[0]
-            : undefined,
-          isLifetimeBilling: userData.isLifetimeBilling,
-          creditBalance: userData.creditBalance,
           tags: userData.tags || [],
+          reason: "",
         }
       } else {
         error = response.data?.message || "Failed to load user"
@@ -103,14 +97,8 @@
       editData = {
         name: user.name,
         isActive: user.isActive,
-        billingPlan: user.billingPlan,
-        billingStatus: user.billingStatus,
-        billingExpiresAt: user.billingExpiresAt
-          ? new Date(user.billingExpiresAt).toISOString().split("T")[0]
-          : undefined,
-        isLifetimeBilling: user.isLifetimeBilling,
-        creditBalance: user.creditBalance,
         tags: user.tags || [],
+        reason: "",
       }
     }
   }
@@ -135,33 +123,7 @@
     })
   }
 
-  // Get status badge class
-  function getStatusBadgeClass(status: string): string {
-    switch (status) {
-      case "active":
-        return "badge-success"
-      case "expired":
-        return "badge-danger"
-      case "pending":
-        return "badge-warning"
-      default:
-        return "badge-secondary"
-    }
-  }
 
-  // Get plan badge class
-  function getPlanBadgeClass(plan: string): string {
-    switch (plan) {
-      case "basic":
-        return "badge-secondary"
-      case "pro":
-        return "badge-primary"
-      case "enterprise":
-        return "badge-premium"
-      default:
-        return "badge-secondary"
-    }
-  }
 
   // Get transaction status badge class
   function getTransactionStatusBadgeClass(status: string): string {
@@ -296,59 +258,23 @@
               </select>
             </div>
 
-            <div class="form-group">
-              <label for="billingPlan">Billing Plan</label>
-              <select id="billingPlan" bind:value={editData.billingPlan}>
-                <option value="basic">Basic</option>
-                <option value="pro">Pro</option>
-                <option value="enterprise">Enterprise</option>
-              </select>
-            </div>
+
 
             <div class="form-group">
-              <label for="billingStatus">Billing Status</label>
-              <select id="billingStatus" bind:value={editData.billingStatus}>
-                <option value="active">Active</option>
-                <option value="expired">Expired</option>
-                <option value="pending">Pending</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="billingExpiresAt">Billing Expires At</label>
-              <input
-                id="billingExpiresAt"
-                type="date"
-                bind:value={editData.billingExpiresAt}
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="isLifetimeBilling">
-                <input
-                  id="isLifetimeBilling"
-                  type="checkbox"
-                  bind:checked={editData.isLifetimeBilling}
-                />
-                Lifetime Billing
-              </label>
-            </div>
-
-            <div class="form-group">
-              <label for="creditBalance">Credit Balance (IDR)</label>
-              <input
-                id="creditBalance"
-                type="number"
-                bind:value={editData.creditBalance}
-                min="0"
-                step="1000"
-              />
+              <label for="reason">Reason for Change <span class="required">*</span></label>
+              <textarea
+                id="reason"
+                bind:value={editData.reason}
+                placeholder="Explain why you are making these changes..."
+                rows="3"
+                required
+              ></textarea>
             </div>
 
             <div class="form-actions">
               <button
                 on:click={saveUser}
-                disabled={saving}
+                disabled={saving || !editData.reason?.trim()}
                 class="btn btn-primary"
               >
                 {saving ? "Saving..." : "Save Changes"}
@@ -414,96 +340,7 @@
         </div>
       </div>
 
-      <!-- Billing Information Card -->
-      <div class="info-card">
-        <div class="card-header">
-          <h2>Billing Information</h2>
-        </div>
-        <div class="card-content">
-          {#if user.billingSummary}
-            <div class="billing-grid">
-              <div class="billing-item">
-                <span class="label">Plan</span>
-                <div class="value">
-                  <span
-                    class="badge {getPlanBadgeClass(user.billingSummary.plan)}"
-                  >
-                    {user.billingSummary.plan.toUpperCase()}
-                  </span>
-                </div>
-              </div>
 
-              <div class="billing-item">
-                <span class="label">Status</span>
-                <div class="value">
-                  <span
-                    class="badge {getStatusBadgeClass(
-                      user.billingSummary.status,
-                    )}"
-                  >
-                    {user.billingSummary.status.toUpperCase()}
-                  </span>
-                </div>
-              </div>
-
-              <div class="billing-item">
-                <span class="label">Credit Balance</span>
-                <div class="value credit-amount">
-                  {formatCurrency(user.billingSummary.creditBalance)}
-                </div>
-              </div>
-
-              <div class="billing-item">
-                <span class="label">Total Spent</span>
-                <div class="value">
-                  {formatCurrency(user.billingSummary.totalSpent)}
-                </div>
-              </div>
-
-              <div class="billing-item">
-                <span class="label">Expires At</span>
-                <div class="value">
-                  {#if user.billingSummary.isLifetime}
-                    <span class="lifetime-badge">Lifetime</span>
-                  {:else if user.billingSummary.expiresAt}
-                    {formatDate(user.billingSummary.expiresAt)}
-                    {#if user.billingSummary.daysUntilExpiry !== null && user.billingSummary.daysUntilExpiry !== undefined}
-                      <div class="expiry-info">
-                        {user.billingSummary.daysUntilExpiry > 0
-                          ? `${user.billingSummary.daysUntilExpiry} days left`
-                          : user.billingSummary.daysUntilExpiry === 0
-                            ? "Expires today"
-                            : `Expired ${Math.abs(user.billingSummary.daysUntilExpiry)} days ago`}
-                      </div>
-                    {/if}
-                  {:else}
-                    <span class="no-expiry">No expiry</span>
-                  {/if}
-                </div>
-              </div>
-
-              <div class="billing-item">
-                <span class="label">Last Payment</span>
-                <div class="value">
-                  {#if user.billingSummary.lastPayment}
-                    <div>
-                      {formatCurrency(user.billingSummary.lastPayment.amount)}
-                    </div>
-                    <div class="payment-date">
-                      {formatDate(user.billingSummary.lastPayment.date)}
-                    </div>
-                    <div class="payment-type">
-                      {user.billingSummary.lastPayment.type}
-                    </div>
-                  {:else}
-                    <span class="no-payment">No payments</span>
-                  {/if}
-                </div>
-              </div>
-            </div>
-          {/if}
-        </div>
-      </div>
     </div>
 
     <!-- Transaction History -->

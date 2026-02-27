@@ -12,7 +12,7 @@ export class AnalyticsService {
     async getAiAnalytics(query: AiAnalyticsQuery): Promise<ApiResponse<AiAnalyticsStats>> {
         try {
             const db = await getDatabase()
-            const ledgerCollection = db.collection("credit_ledger")
+            const ledgerCollection = db.collection("credit-ledger")
             const usersCollection = db.collection("users")
             const orgsCollection = db.collection("organizations")
 

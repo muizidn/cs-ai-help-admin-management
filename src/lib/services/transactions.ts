@@ -1,12 +1,12 @@
 import { getDatabase } from "$lib/mongodb"
 import { logger } from "$lib/logger"
+import { getServerEnv } from "$lib/env"
+import { callBillingWebhook } from "./webhook-helper"
 import type {
   User,
   Transaction,
   UserWithBilling,
   TransactionQuery,
-  TransactionQuery,
-  TransactionStats,
   TransactionStats,
   UserUpdateInput,
   TransactionUpdateInput,
@@ -107,6 +107,8 @@ export class TransactionService {
       const transactionsCollection = await this.getCollection("transactions")
 
       // Build MongoDB filter
+      const billingStatesCollection = await this.getCollection("billing-state")
+
       const filter: any = { deletedAt: { $exists: false } }
 
       if (search) {
@@ -116,8 +118,11 @@ export class TransactionService {
         ]
       }
 
-      if (billingPlan) filter.billingPlan = billingPlan
-      if (billingStatus) filter.billingStatus = billingStatus
+      // Note: Filters on billingPlan/billingStatus would need join/aggregation now
+      // For simplicity, we skip them in the usersCollection filter for now
+      // if (billingPlan) filter.billingPlan = billingPlan
+      // if (billingStatus) filter.billingStatus = billingStatus
+
       if (isActive !== undefined) filter.isActive = isActive
 
       // Build sort
@@ -139,6 +144,11 @@ export class TransactionService {
       const enrichedUsers: UserWithBilling[] = await Promise.all(
         users.map(async (userDoc) => {
           const user = this.mapUser(userDoc)
+          const billingStateDoc = await billingStatesCollection.findOne({
+            ownerId: user.id,
+            ownerType: "user"
+          })
+
           const userTransactions = await transactionsCollection
             .find({ userId: user.id })
             .sort({ createdAt: -1 })
@@ -157,9 +167,10 @@ export class TransactionService {
           const lastPayment = completedTransactions[0]
 
           const now = new Date()
-          const billingExpiresAt = user.billingExpiresAt
-            ? new Date(user.billingExpiresAt)
+          const billingExpiresAt = billingStateDoc?.currentPeriodEnd
+            ? new Date(billingStateDoc.currentPeriodEnd)
             : null
+
           const daysUntilExpiry = billingExpiresAt
             ? Math.ceil(
               (billingExpiresAt.getTime() - now.getTime()) /
@@ -170,11 +181,11 @@ export class TransactionService {
           return {
             ...user,
             billingSummary: {
-              plan: user.billingPlan || "basic",
-              status: user.billingStatus || "active",
-              expiresAt: user.billingExpiresAt ? String(user.billingExpiresAt) : undefined,
-              isLifetime: user.isLifetimeBilling || false,
-              creditBalance: user.creditBalance || 0,
+              plan: billingStateDoc?.planId || "basic",
+              status: billingStateDoc?.subscriptionStatus || "active",
+              expiresAt: billingStateDoc?.currentPeriodEnd ? String(billingStateDoc.currentPeriodEnd) : undefined,
+              isLifetime: billingStateDoc?.isLifetime || false,
+              creditBalance: billingStateDoc?.creditBalance || 0,
               daysUntilExpiry,
               totalSpent,
               lastPayment: lastPayment
@@ -196,17 +207,17 @@ export class TransactionService {
         totalUsers: total,
         activeUsers: enrichedUsers.filter((u) => u.isActive).length,
         billingPlans: {
-          basic: enrichedUsers.filter((u) => u.billingPlan === "basic").length,
-          pro: enrichedUsers.filter((u) => u.billingPlan === "pro").length,
-          enterprise: enrichedUsers.filter((u) => u.billingPlan === "enterprise")
+          basic: enrichedUsers.filter((u) => u.billingSummary?.plan === "basic").length,
+          pro: enrichedUsers.filter((u) => u.billingSummary?.plan === "pro").length,
+          enterprise: enrichedUsers.filter((u) => u.billingSummary?.plan === "enterprise")
             .length,
         },
         billingStatus: {
-          active: enrichedUsers.filter((u) => u.billingStatus === "active").length,
-          expired: enrichedUsers.filter((u) => u.billingStatus === "expired").length,
-          pending: enrichedUsers.filter((u) => u.billingStatus === "pending").length,
+          active: enrichedUsers.filter((u) => u.billingSummary?.status === "active").length,
+          expired: enrichedUsers.filter((u) => u.billingSummary?.status === "expired").length,
+          pending: enrichedUsers.filter((u) => u.billingSummary?.status === "pending").length,
         },
-        totalCredits: enrichedUsers.reduce((sum, u) => sum + (u.creditBalance || 0), 0),
+        totalCredits: enrichedUsers.reduce((sum, u) => sum + (u.billingSummary?.creditBalance || 0), 0),
       }
 
       return {
@@ -250,6 +261,12 @@ export class TransactionService {
 
       const user = this.mapUser(userDoc)
 
+      const billingStatesCollection = await this.getCollection("billing-state")
+      const billingStateDoc = await billingStatesCollection.findOne({
+        ownerId: userId,
+        ownerType: "user"
+      })
+
       // Get all user transactions
       const transactions = await transactionsCollection
         .find({ userId })
@@ -269,9 +286,10 @@ export class TransactionService {
       const lastPayment = completedTransactions[0]
 
       const now = new Date()
-      const billingExpiresAt = user.billingExpiresAt
-        ? new Date(user.billingExpiresAt)
+      const billingExpiresAt = billingStateDoc?.currentPeriodEnd
+        ? new Date(billingStateDoc.currentPeriodEnd)
         : null
+
       const daysUntilExpiry = billingExpiresAt
         ? Math.ceil(
           (billingExpiresAt.getTime() - now.getTime()) /
@@ -282,11 +300,11 @@ export class TransactionService {
       const enrichedUser: UserWithBilling = {
         ...user,
         billingSummary: {
-          plan: user.billingPlan || "basic",
-          status: user.billingStatus || "active",
-          expiresAt: user.billingExpiresAt ? String(user.billingExpiresAt) : undefined,
-          isLifetime: user.isLifetimeBilling || false,
-          creditBalance: user.creditBalance || 0,
+          plan: billingStateDoc?.planId || "basic",
+          status: billingStateDoc?.subscriptionStatus || "active",
+          expiresAt: billingStateDoc?.currentPeriodEnd ? String(billingStateDoc.currentPeriodEnd) : undefined,
+          isLifetime: billingStateDoc?.isLifetime || false,
+          creditBalance: billingStateDoc?.creditBalance || 0,
           daysUntilExpiry,
           totalSpent,
           lastPayment: lastPayment
@@ -322,35 +340,44 @@ export class TransactionService {
     try {
       const usersCollection = await this.getCollection("users")
 
-      // Convert date string to Date object if provided
-      const processedData = { ...updateData }
-      if (processedData.billingExpiresAt) {
-        processedData.billingExpiresAt = new Date(
-          processedData.billingExpiresAt,
-        ) as any
-      }
-
-      const result = await usersCollection.updateOne(
-        { id: userId, deletedAt: { $exists: false } },
-        {
-          $set: {
-            ...processedData,
-            updatedAt: new Date(),
-          },
-        },
-      )
-
-      if (result.matchedCount === 0) {
+      const userDoc = await usersCollection.findOne({ id: userId, deletedAt: { $exists: false } })
+      if (!userDoc) {
         return {
           success: false,
           error: ["User not found"],
         }
       }
 
+      const { reason, ...otherUpdates } = updateData
+
+      if (!reason) {
+        return {
+          success: false,
+          error: ["Reason for change is mandatory"],
+        }
+      }
+
+      // 2. Process other updates (Profile fields only)
+      const {
+        name,
+        isActive,
+        tags
+      } = otherUpdates as any
+
+      const updatePayload: any = { updatedAt: new Date() }
+      if (name !== undefined) updatePayload.name = name
+      if (isActive !== undefined) updatePayload.isActive = isActive
+      if (tags !== undefined) updatePayload.tags = tags
+
+      await usersCollection.updateOne(
+        { id: userId, deletedAt: { $exists: false } },
+        { $set: updatePayload },
+      )
+
       const updatedUserDoc = await usersCollection.findOne({ id: userId })
       return {
         success: true,
-        data: updatedUserDoc ? this.mapUser(updatedUserDoc) : undefined,
+        data: updatedUserDoc ? this.mapUser(updatedUserDoc) as any : undefined,
       }
     } catch (error) {
       logger.error("Error updating user:", error as any)
@@ -587,7 +614,7 @@ export class TransactionService {
             }
           } else {
             const errorText = await response.text()
-            logger.warn({ transactionId, status: response.status, errorText }, "Manual approval webhook failed, falling back to local approval")
+            logger.warn({ transactionId, status: response.status, errorText }, "Manual approval webhook failed. Manual balance sync via ledger is restricted to the main app.")
           }
         } catch (error) {
           logger.error({ transactionId, error: error as any }, "Error triggering manual approval webhook, falling back to local approval")
@@ -620,112 +647,44 @@ export class TransactionService {
     const ownerId = transaction.organizationId || transaction.userId
     const ownerType = transaction.organizationId ? "organization" : "user"
 
-    logger.info({
-      transactionId: transaction.id,
-      ownerId,
-      ownerType,
-      type: transaction.type
-    }, "Applying transaction side effects")
+    logger.info(
+      {
+        transactionId: transaction.id,
+        ownerId,
+        ownerType,
+        type: transaction.type,
+      },
+      "Applying transaction side effects via internal webhook",
+    )
 
-    const billingStatesCollection = await this.getCollection("billing-state")
-    const usersCollection = await this.getCollection("users")
-
-    // 1. Update Credits Ledger if it's a credit purchase
+    let creditsToAdd = 0
     if (transaction.type === "CREDIT_PURCHASE") {
-      let creditsToAdd = 0
-
-      // Map known plan IDs to credit amounts
       if (transaction.planId === "credits_100") {
         creditsToAdd = 100 * (transaction.quantity || 1)
       } else if (transaction.credits) {
         creditsToAdd = transaction.credits
       }
-
-      if (creditsToAdd > 0) {
-        // Record in credit_ledger
-        const ledgerCollection = await this.getCollection("credit_ledger")
-        await ledgerCollection.insertOne({
-          id: `tx-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
-          organizationId: transaction.organizationId || "",
-          userId: transaction.userId,
-          amount: creditsToAdd,
-          source: "purchase",
-          description: `Manual approval: ${transaction.transactionCode}`,
-          createdAt: new Date(),
-          createdBy: "admin",
-          metadata: {
-            transactionId: transaction.id,
-            planId: transaction.planId
-          }
-        })
-
-        // Update billing state
-        const state = await billingStatesCollection.findOne({ ownerId })
-        const currentBalance = state?.creditBalance || 0
-        const newBalance = currentBalance + creditsToAdd
-
-        await billingStatesCollection.updateOne(
-          { ownerId },
-          {
-            $set: {
-              creditBalance: newBalance,
-              updatedAt: new Date()
-            },
-            $setOnInsert: { ownerType }
-          },
-          { upsert: true }
-        )
-
-        // Sync to user doc if user-based
-        if (ownerType === "user") {
-          await usersCollection.updateOne(
-            { id: ownerId },
-            { $set: { creditBalance: newBalance, updatedAt: new Date() } }
-          )
-        }
-      }
     }
 
-    // 2. Update Plan if it's a plan upgrade
+    let durationMonths = 1
     if (transaction.type === "PLAN_UPGRADE") {
       const planId = transaction.planId || "pro_1m"
-      let durationMonths = 1
       if (planId.includes("_3m")) durationMonths = 3
       else if (planId.includes("_1y")) durationMonths = 12
+    }
 
-      const currentPeriodStart = new Date()
-      const currentPeriodEnd = new Date()
-      currentPeriodEnd.setMonth(currentPeriodEnd.getMonth() + durationMonths)
+    if (creditsToAdd > 0) {
+      const billingStatesCollection = await this.getCollection("billing-state")
+      const currentState = await billingStatesCollection.findOne({ ownerId, ownerType })
+      const currentBalance = currentState?.creditBalance || 0
+      const newBalance = currentBalance + creditsToAdd
 
-      await billingStatesCollection.updateOne(
-        { ownerId },
-        {
-          $set: {
-            planId: planId.startsWith("pro") ? "pro" : planId,
-            subscriptionStatus: "active",
-            currentPeriodStart,
-            currentPeriodEnd,
-            updatedAt: new Date()
-          },
-          $setOnInsert: { ownerType }
-        },
-        { upsert: true }
-      )
-
-      // Sync to user/org if needed (legacy or UI purposes)
-      if (ownerType === "user") {
-        await usersCollection.updateOne(
-          { id: ownerId },
-          {
-            $set: {
-              billingPlan: planId.split("_")[0],
-              billingStatus: "active",
-              billingExpiresAt: currentPeriodEnd,
-              updatedAt: new Date()
-            }
-          }
-        )
-      }
+      await callBillingWebhook({
+        ownerId,
+        ownerType,
+        creditBalance: newBalance,
+        reason: transaction.reason || `Approved transaction: ${transaction.transactionCode}`,
+      })
     }
   }
 
@@ -788,13 +747,13 @@ export class TransactionService {
     userId: string,
     creditBalance: number,
     updatedBy: string = "admin",
+    reason: string = "",
   ): Promise<ApiResponse<User>> {
     try {
       const usersCollection = await this.getCollection("users")
-      const transactionsCollection = await this.getCollection("transactions")
 
-      // Get current user to get current balance for notes
-      const userDoc = await usersCollection.findOne({ id: userId })
+      // Verify user exists first
+      const userDoc = await usersCollection.findOne({ id: userId, deletedAt: { $exists: false } })
       if (!userDoc) {
         return {
           success: false,
@@ -802,52 +761,49 @@ export class TransactionService {
         }
       }
 
-      const user = this.mapUser(userDoc)
-      const previousBalance = user.creditBalance || 0
+      const billingStatesCollection = await this.getCollection("billing-state")
+      const billingStateDoc = await billingStatesCollection.findOne({
+        ownerId: userId,
+        ownerType: "user"
+      })
+
+      const previousBalance = billingStateDoc?.creditBalance || 0
       const diff = creditBalance - previousBalance
 
-      const result = await usersCollection.updateOne(
-        { id: userId, deletedAt: { $exists: false } },
-        {
-          $set: {
-            creditBalance,
-            updatedAt: new Date(),
-            updatedBy,
-          },
-        },
-      )
-
-      if (result.matchedCount === 0) {
+      if (diff === 0) {
         return {
-          success: false,
-          error: ["User not found"],
+          success: true,
+          data: this.mapUser(userDoc)
         }
       }
 
-      // Create a transaction record for the manual update
-      const now = new Date()
-      const transactionId = `tx-${now.getTime()}-${Math.random().toString(36).substring(2, 7)}`
-      const transactionCode = `ADM-${now.getTime().toString().substring(7)}`
+      if (!reason) {
+        return {
+          success: false,
+          error: ["Reason for change is mandatory"],
+        }
+      }
 
-      await transactionsCollection.insertOne({
-        id: transactionId,
-        userId: userId,
-        type: "CREDIT_UPDATE",
-        amount: 0, // No monetary cost for manual update
-        currency: "IDR",
-        status: "COMPLETED",
-        transactionCode: transactionCode,
-        notes: `Manual credit update: ${previousBalance} -> ${creditBalance} (Delta: ${diff > 0 ? "+" : ""}${diff})`,
-        credits: diff,
-        createdAt: now,
-        updatedAt: now,
-        createdBy: updatedBy,
+      // 1. Sync via internal webhook (Main App handles ledger delta and state update)
+      const webhookSuccess = await callBillingWebhook({
+        ownerId: userId,
+        ownerType: "user",
+        creditBalance: creditBalance,
+        reason: reason,
       })
 
-      const updatedUserDoc = await usersCollection.findOne({ id: userId })
+      if (!webhookSuccess) {
+        logger.error(`Failed to sync manual credit update for user ${userId} to main app`)
+        return {
+          success: false,
+          error: ["Failed to sync balance to main app"],
+        }
+      }
+
+      // Return the user object for UI feedback
       return {
         success: true,
-        data: updatedUserDoc ? this.mapUser(updatedUserDoc) : undefined,
+        data: this.mapUser(userDoc)
       }
     } catch (error) {
       logger.error("Error updating user credit:", error as any)

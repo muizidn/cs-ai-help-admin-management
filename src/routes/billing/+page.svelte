@@ -111,6 +111,7 @@
   let selectedEntity: BillingEntity | null = null
   let editCreditBalance = 0
   let editTopupBalance = 0
+  let editReason = ""
   let isUpdating = false
   let updateError = ""
 
@@ -118,6 +119,7 @@
     selectedEntity = entity
     editCreditBalance = entity.billingState?.creditBalance || 0
     editTopupBalance = entity.billingState?.topupBalance || 0
+    editReason = ""
     showEditModal = true
     updateError = ""
   }
@@ -134,6 +136,7 @@
         {
           creditBalance: Number(editCreditBalance),
           topupBalance: Number(editTopupBalance),
+          reason: editReason
         },
       )
 
@@ -442,6 +445,18 @@
               >Manual topup balance for future payments</span
             >
           </div>
+
+          <div class="form-group-modal">
+            <label for="edit-reason">Reason for Change <span class="required">*</span></label>
+            <textarea
+              id="edit-reason"
+              bind:value={editReason}
+              placeholder="Explain why you are making this adjustment..."
+              rows="3"
+              required
+            ></textarea>
+            <span class="help-text">This will be recorded in the credit ledger</span>
+          </div>
         </div>
 
         <div class="modal-footer">
@@ -451,7 +466,7 @@
           <button
             class="btn-save"
             on:click={handleUpdateBilling}
-            disabled={isUpdating}
+            disabled={isUpdating || !editReason.trim()}
           >
             {isUpdating ? "Updating..." : "Save Changes"}
           </button>
@@ -971,6 +986,21 @@
     box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
   }
 
+  .form-group-modal textarea {
+    padding: 0.75rem;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    font-size: 0.875rem;
+    outline: none;
+    resize: none;
+    font-weight: 500;
+  }
+
+  .form-group-modal textarea:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  }
+
   .help-text {
     font-size: 0.75rem;
     color: #6b7280;
@@ -1021,5 +1051,10 @@
   .btn-save:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+
+  .required {
+    color: #ef4444;
+    margin-left: 2px;
   }
 </style>

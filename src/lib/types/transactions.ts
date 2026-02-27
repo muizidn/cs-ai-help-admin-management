@@ -12,12 +12,6 @@ export interface User {
   deletedAt?: Date | string
   createdBy: string
   updatedBy?: string
-  // Billing fields
-  billingPlan?: "basic" | "pro" | "enterprise"
-  billingStatus?: "active" | "expired" | "pending"
-  billingExpiresAt?: Date | string
-  isLifetimeBilling?: boolean
-  creditBalance?: number
 }
 
 export interface Transaction {
@@ -44,6 +38,7 @@ export interface Transaction {
   metadata?: Record<string, any>
   createdBy: string
   updatedBy?: string
+  reason?: string
   user?: {
     id: string
     name: string
@@ -76,70 +71,64 @@ export interface UserWithBilling extends User {
 }
 
 export interface TransactionQuery {
+  // User query fields
   search?: string
   page?: number
   limit?: number
   billingPlan?: "basic" | "pro" | "enterprise"
   billingStatus?: "active" | "expired" | "pending"
   isActive?: boolean
-  sortBy?: "name" | "email" | "createdAt" | "billingExpiresAt" | "creditBalance"
-  sortOrder?: "asc" | "desc"
-}
 
-export interface TransactionQuery {
-  search?: string
-  page?: number
-  limit?: number
+  // Transaction query fields
   userId?: string
   type?: "CREDIT_PURCHASE" | "PLAN_UPGRADE"
   status?: "COMPLETED" | "PENDING" | "FAILED"
-  sortBy?: "createdAt" | "amount" | "status" | "type"
-  sortOrder?: "asc" | "desc"
   dateFrom?: string
   dateTo?: string
   metadata?: Record<string, any>
+
+  // Sorting
+  sortBy?: "name" | "email" | "createdAt" | "billingExpiresAt" | "creditBalance" | "amount" | "status" | "type"
+  sortOrder?: "asc" | "desc"
 }
 
 export interface TransactionStats {
-  totalUsers: number
-  activeUsers: number
-  billingPlans: {
+  // User stats
+  totalUsers?: number
+  activeUsers?: number
+  billingPlans?: {
     basic: number
     pro: number
     enterprise: number
   }
-  billingStatus: {
+  billingStatus?: {
     active: number
     expired: number
     pending: number
   }
-  totalCredits: number
-}
+  totalCredits?: number
 
-export interface TransactionStats {
-  totalTransactions: number
-  totalAmount: number
-  byStatus: {
+  // Transaction stats
+  totalTransactions?: number
+  totalAmount?: number
+  byStatus?: {
     completed: number
     pending: number
     failed: number
   }
-  byType: {
+  byType?: {
     creditPurchase: number
     planUpgrade: number
   }
-  completedAmount: number
+  completedAmount?: number
 }
 
 export interface UserUpdateInput {
   name?: string
   isActive?: boolean
-  billingPlan?: "basic" | "pro" | "enterprise"
-  billingStatus?: "active" | "expired" | "pending"
-  billingExpiresAt?: string
-  isLifetimeBilling?: boolean
-  creditBalance?: number
   tags?: string[]
+  reason?: string
+  updatedBy?: string
 }
 
 export interface TransactionUpdateInput {
@@ -150,6 +139,7 @@ export interface TransactionUpdateInput {
   notes?: string
   updatedBy?: string
   metadata?: Record<string, any>
+  reason?: string
 }
 
 export interface ApiResponse<T = any> {

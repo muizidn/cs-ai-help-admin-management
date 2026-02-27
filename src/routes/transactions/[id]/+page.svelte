@@ -43,6 +43,7 @@
           credits: txData.credits,
           notes: txData.notes || "",
           paymentProof: txData.paymentProof || "",
+          reason: "",
         }
       } else {
         error = response.data?.message || "Failed to load transaction"
@@ -103,6 +104,7 @@
         {
           status: "COMPLETED",
           metadata: { ...transaction.metadata, manuallyApproved: true },
+          reason: "Manual approval by admin.",
           notes:
             (transaction.notes ? transaction.notes + "\n" : "") +
             "Approved manually by admin.",
@@ -135,6 +137,7 @@
         credits: transaction.credits,
         notes: transaction.notes || "",
         paymentProof: transaction.paymentProof || "",
+        reason: "",
       }
     }
   }
@@ -434,6 +437,17 @@
           </div>
 
           <div class="form-group">
+            <label for="reason">Reason for Change <span class="required">*</span></label>
+            <textarea
+              id="reason"
+              bind:value={editData.reason}
+              placeholder="Explain why you are modifying this transaction..."
+              rows="3"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
             <label for="paymentProof">Payment Proof URL</label>
             <input
               id="paymentProof"
@@ -446,7 +460,7 @@
           <div class="form-actions">
             <button
               on:click={saveTransaction}
-              disabled={saving}
+              disabled={saving || !editData.reason?.trim()}
               class="btn btn-primary"
             >
               {saving ? "Saving..." : "Save Changes"}

@@ -1,5 +1,6 @@
 import { getDatabase } from "$lib/mongodb"
 import { logger } from "$lib/logger"
+import { callBillingWebhook } from "./webhook-helper"
 import type { BillingEntity, BillingQuery, BillingState } from "$lib/types/billing"
 import type { ApiResponse, PaginatedResponse } from "$lib/types/transactions"
 
@@ -106,32 +107,62 @@ export class BillingService {
 
     async updateBillingState(
         ownerId: string,
-        updates: any
+        updates: any,
+        reason: string = ""
     ): Promise<ApiResponse<BillingState>> {
         try {
             const db = await getDatabase()
             const billingStatesCollection = db.collection("billing-state")
 
-            const result = await billingStatesCollection.findOneAndUpdate(
-                { ownerId },
-                {
-                    $set: {
-                        ...updates,
-                        updatedAt: new Date()
-                    }
-                },
-                { returnDocument: "after" }
-            )
-
-            if (!result) {
+            const currentState = await billingStatesCollection.findOne({ ownerId })
+            if (!currentState) {
                 return {
                     success: false,
                     error: ["Billing state not found"]
                 }
             }
 
-            // Cleanup for response
-            const updatedDoc = result as any
+            const ownerType = currentState.ownerType || (ownerId.startsWith("org-") ? "organization" : "user")
+            const description = reason || "Admin manual adjustment"
+
+            // Prepare target-balance payload
+            const webhookPayload: any = {
+                ownerId,
+                ownerType,
+                creditBalance: updates.creditBalance,
+                topupBalance: updates.topupBalance,
+                reason: description,
+            }
+
+            // If no numeric changes provided, return success early
+            if (updates.creditBalance === undefined && updates.topupBalance === undefined) {
+                return {
+                    success: true,
+                    data: { ...currentState, id: currentState._id.toString() } as any
+                }
+            }
+
+            // Call the movement-based webhook
+            const webhookSuccess = await callBillingWebhook(webhookPayload)
+
+            if (!webhookSuccess) {
+                return {
+                    success: false,
+                    error: ["Failed to sync update to main app"]
+                }
+            }
+
+            // After webhook success, the local MongoDB (shared) should be updated by the main app.
+            // Refetch it to return the latest state to the UI.
+            const refreshedState = await billingStatesCollection.findOne({ ownerId })
+            if (!refreshedState) {
+                return {
+                    success: false,
+                    error: ["Billing state lost after update"]
+                }
+            }
+
+            const updatedDoc = refreshedState as any
             const data: BillingState = {
                 ...updatedDoc,
                 id: updatedDoc._id.toString()

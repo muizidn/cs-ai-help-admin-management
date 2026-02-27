@@ -88,6 +88,15 @@ export const PUT: RequestHandler = async ({ params, request, locals }) => {
     try {
         const updateData: UserUpdateInput = await request.json()
 
+        if (!updateData.reason || !updateData.reason.trim()) {
+            return json({
+                status: "error",
+                message: "A reason is required for any manual user update",
+                errors: ["Reason is required"],
+                requestId,
+            }, { status: 400 })
+        }
+
         logger.info({
             requestId,
             type: "user_update_request",

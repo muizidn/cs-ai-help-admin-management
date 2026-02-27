@@ -145,6 +145,11 @@
   margin-left: 0.5rem;
 }
 
+.required {
+  color: #ef4444;
+  margin-left: 2px;
+}
+
 /* Form Styles */
 .form-group {
   margin-bottom: 1.5rem;

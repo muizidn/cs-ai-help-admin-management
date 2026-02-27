@@ -17,7 +17,7 @@ export const PUT: RequestHandler = async ({ params, request, locals }) => {
     }
 
     try {
-        const { creditBalance } = await request.json()
+        const { creditBalance, reason } = await request.json()
 
         if (typeof creditBalance !== "number" || creditBalance < 0) {
             return json({
@@ -28,15 +28,25 @@ export const PUT: RequestHandler = async ({ params, request, locals }) => {
             }, { status: 400 })
         }
 
+        if (!reason || !reason.trim()) {
+            return json({
+                status: "error",
+                message: "A reason is required for any manual credit adjustment",
+                errors: ["Reason is required"],
+                requestId,
+            }, { status: 400 })
+        }
+
         logger.info({
             requestId,
             type: "user_credit_update_request",
             userId,
             creditBalance,
+            reason
         }, "Processing user credit update request")
 
         const service = new TransactionService()
-        const result = await service.updateUserCredit(userId, creditBalance, "admin")
+        const result = await service.updateUserCredit(userId, creditBalance, "admin", reason || "")
 
         if (result.success) {
             logger.info({
@@ -44,6 +54,7 @@ export const PUT: RequestHandler = async ({ params, request, locals }) => {
                 type: "user_credit_update_success",
                 userId,
                 creditBalance,
+                reason
             }, "User credit updated successfully")
 
             return json({

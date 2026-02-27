@@ -17,17 +17,27 @@ export const PUT: RequestHandler = async ({ params, request, locals }) => {
     }
 
     try {
-        const updates = await request.json()
+        const { reason, ...updates } = await request.json()
+
+        if (!reason || !reason.trim()) {
+            return json({
+                status: "error",
+                message: "A reason is required for any manual billing adjustment",
+                errors: ["Reason is required"],
+                requestId,
+            }, { status: 400 })
+        }
 
         logger.info({
             requestId,
             type: "billing_state_update_request",
             ownerId,
             updates,
+            reason
         }, "Processing billing state update request")
 
         const service = new BillingService()
-        const result = await service.updateBillingState(ownerId, updates)
+        const result = await service.updateBillingState(ownerId, updates, reason || "")
 
         if (result.success) {
             logger.info({

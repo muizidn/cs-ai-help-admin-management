@@ -66,43 +66,26 @@ function loadEnvFiles(): Record<string, string> {
 
 // For server-side environment variables
 export const getServerEnv: any = () => {
-  console.log("getServerEnv called, NODE_ENV:", process.env.NODE_ENV)
-  console.log("Raw process.env.MONGODB_URI:", process.env.MONGODB_URI)
-  console.log("Raw process.env.MONGODB_DATABASE:", process.env.MONGODB_DATABASE)
-
-  // In production/Docker, prioritize process.env over .env.local
-  if (process.env.NODE_ENV === "production") {
-    const result = {
-      MONGODB_URI: process.env.MONGODB_URI,
-      MONGODB_DATABASE: process.env.MONGODB_DATABASE,
-      REDIS_URL: process.env.REDIS_URL,
-      UPSTASH_REDIS_REST_URL: process.env.UPSTASH_REDIS_REST_URL,
-      UPSTASH_REDIS_REST_TOKEN: process.env.UPSTASH_REDIS_REST_TOKEN,
-      NODE_ENV: process.env.NODE_ENV,
-      PORT: process.env.PORT,
-      HOST: process.env.HOST,
-      ADMIN_USERNAME: process.env.ADMIN_USERNAME,
-      ADMIN_PASSWORD_HASH_BASE64: process.env.ADMIN_PASSWORD_HASH_BASE64,
-    }
-    return result
-  }
-
-  // In development, try .env files first, then fall back to process.env
   const envFiles = loadEnvFiles()
+
+  // Merge order: process.env (highest) > .env files
+  const merged = { ...envFiles, ...process.env }
+
   const result = {
-    MONGODB_URI: envFiles.MONGODB_URI || process.env.MONGODB_URI,
-    MONGODB_DATABASE: envFiles.MONGODB_DATABASE || process.env.MONGODB_DATABASE,
-    REDIS_URL: envFiles.REDIS_URL || process.env.REDIS_URL,
-    UPSTASH_REDIS_REST_URL:
-      envFiles.UPSTASH_REDIS_REST_URL || process.env.UPSTASH_REDIS_REST_URL,
-    UPSTASH_REDIS_REST_TOKEN:
-      envFiles.UPSTASH_REDIS_REST_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN,
-    NODE_ENV: envFiles.NODE_ENV || process.env.NODE_ENV,
-    PORT: envFiles.PORT || process.env.PORT,
-    HOST: envFiles.HOST || process.env.HOST,
-    ADMIN_USERNAME: envFiles.ADMIN_USERNAME || process.env.ADMIN_USERNAME,
-    ADMIN_PASSWORD_HASH_BASE64: envFiles.ADMIN_PASSWORD_HASH_BASE64 || process.env.ADMIN_PASSWORD_HASH_BASE64,
+    MONGODB_URI: merged.MONGODB_URI,
+    MONGODB_DATABASE: merged.MONGODB_DATABASE,
+    REDIS_URL: merged.REDIS_URL,
+    UPSTASH_REDIS_REST_URL: merged.UPSTASH_REDIS_REST_URL,
+    UPSTASH_REDIS_REST_TOKEN: merged.UPSTASH_REDIS_REST_TOKEN,
+    NODE_ENV: merged.NODE_ENV,
+    PORT: merged.PORT,
+    HOST: merged.HOST,
+    ADMIN_USERNAME: merged.ADMIN_USERNAME,
+    ADMIN_PASSWORD_HASH_BASE64: merged.ADMIN_PASSWORD_HASH_BASE64,
+    INTERNAL_SECRET_TOKEN: merged.INTERNAL_SECRET_TOKEN,
+    MAIN_APP_URL: merged.MAIN_APP_URL,
   }
+
   return result
 }
 
