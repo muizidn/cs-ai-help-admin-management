@@ -259,6 +259,7 @@
                     </span>
                     <span>Created: {formatDate(template.createdAt)}</span>
                   </div>
+
                   <div class="mt-2 flex flex-wrap gap-1">
                     {#each template.tags.slice(0, 3) as tag}
                       <span
@@ -273,7 +274,28 @@
                       >
                     {/if}
                   </div>
+
+                  {#if template.type === "knowledge_base" && template.content.keywords && template.content.keywords.length > 0}
+                    <div class="mt-2 flex flex-wrap gap-1">
+                      <span class="text-xs text-gray-400 self-center mr-1"
+                        >KB Keywords:</span
+                      >
+                      {#each template.content.keywords.slice(0, 5) as keyword}
+                        <span
+                          class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-green-50 text-green-700 border border-green-100"
+                        >
+                          {keyword}
+                        </span>
+                      {/each}
+                      {#if template.content.keywords.length > 5}
+                        <span class="text-[10px] text-gray-400 self-center"
+                          >+{template.content.keywords.length - 5}</span
+                        >
+                      {/if}
+                    </div>
+                  {/if}
                 </div>
+
                 <div class="flex items-center space-x-2">
                   <a
                     href="/library-templates/{template.id}"

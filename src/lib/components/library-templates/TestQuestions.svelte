@@ -153,10 +153,11 @@
                     <button
                       type="button"
                       on:click={() => removeMessage(sIdx, mIdx)}
-                      class="text-gray-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"
+                      class="text-gray-400 hover:text-red-500 p-1 rounded-full hover:bg-red-50 transition-all"
+                      title="Remove this message step"
                       aria-label="Remove Message"
                     >
-                      <X class="w-3 h-3" />
+                      <X class="w-3.5 h-3.5" />
                     </button>
                   </div>
 
