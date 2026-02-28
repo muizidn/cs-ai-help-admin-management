@@ -10,91 +10,102 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Klinik Umum Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Klinik"
+        },
         "sections": [
             {
-                "content": "## Tentang Klinik Kami\nKlinik Umum kami berdedikasi untuk memberikan layanan kesehatan primer yang berkualitas, cepat, dan terjangkau bagi masyarakat. Kami didukung oleh tim dokter berpengalaman dan staf medis yang ramah untuk memastikan kenyamanan setiap pasien.\n\nContoh: Klinik Sehat Keluarga berdiri sejak tahun 2010, melayani lebih dari 100 pasien setiap harinya dengan visi menjadi pusat kesehatan komunitas terdepan di Jakarta Selatan."
+                "title": "Profil & Visi Misi",
+                "content": "## Tentang Klinik Kami\nKami adalah penyedia layanan kesehatan primer yang mengedepankan profesionalisme, empati, dan aksesibilitas. Fokus utama kami adalah deteksi dini, pencegahan penyakit, dan pengobatan rawat jalan yang efektif bagi seluruh anggota keluarga.\n\nContoh: Klinik Pratama Sehat Sejahtera didirikan pada tahun 2010 dengan misi memberikan layanan medis berkualitas tinggi yang setara dengan rumah sakit namun dengan kenyamanan lingkungan komunitas. Kami bangga telah melayani lebih dari 50.000 pasien dengan tingkat kepuasan yang terjaga."
             },
             {
-                "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap klinik Anda agar pasien mudah menemukan lokasi.\n\nContoh: Jl. Melati No. 123, RT 005/RW 002, Kelurahan Senayan, Kecamatan Kebayoran Baru, Jakarta Selatan, 12190.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: 100 meter dari Stasiun MRT Senayan, di sebelah minimarket Indomaret."
+                "title": "Aksesibilitas & Navigasi",
+                "content": "## Lokasi & Alamat Lengkap\nInformasi detail mengenai letak fisik gedung, titik koordinat, dan panduan arah bagi pasien.\n\nContoh: Gedung Medika Center, Lantai 1. Jl. Melati No. 123, RT 005/RW 002, Kelurahan Senayan, Kecamatan Kebayoran Baru, Jakarta Selatan, Kode Pos 12190.\nLink Google Maps: https://maps.google.com/example-link\nPatokan: Berjarak 100 meter dari Stasiun MRT Senayan (Pintu Keluar B), tepat di sebelah minimarket Indomaret. Tersedia akses ramp untuk kursi roda."
             },
             {
-                "content": "## Jam Operasional\nInformasikan jam buka dan tutup klinik Anda setiap harinya.\n\nContoh:\n- Senin - Jumat: 08.00 - 21.00 (Pendaftaran terakhir jam 20.30)\n- Sabtu: 08.00 - 17.00\n- Minggu & Hari Libur Nasional: Tutup (Kecuali darurat/perjanjian khusus)"
+                "title": "Waktu Pelayanan",
+                "content": "## Jam Operasional & Jadwal Dokter\nRincian waktu pelayanan rutin dan kebijakan khusus pada hari libur.\n\nContoh:\n- Senin - Jumat: 08.00 - 21.00 (Pendaftaran pasien baru maksimal pukul 20.30)\n- Sabtu: 08.00 - 17.00 (Pendaftaran maksimal pukul 16.30)\n- Minggu & Hari Libur Nasional: Tutup (Kecuali untuk jadwal kontrol yang sudah disepakati sebelumnya)\n*Catatan: Istirahat staf medis pukul 12.00 - 13.00 (Pelayanan administrasi tetap buka).* "
             },
             {
-                "content": "## Layanan Medis Utama\nSebutkan layanan kesehatan yang tersedia di klinik Anda.\n\nContoh:\n- Konsultasi Dokter Umum (Biaya: Rp 50.000 - Rp 100.000)\n- Pemeriksaan Kesehatan (Medical Check-up) Paket Dasar\n- Vaksinasi & Imunisasi (Flu, Hepatitis B, Tetanus)\n- Tindakan Medis Ringan (Rawat luka, angkat jahitan, injeksi)\n- Pembuatan Surat Keterangan Sehat (SKS)"
+                "title": "Katalog Layanan Medis",
+                "content": "## Layanan Medis & Tindakan Utama\nDaftar prosedur medis yang dapat ditangani secara mandiri di klinik.\n\nContoh:\n1. Konsultasi Dokter Umum (Diagnosa penyakit umum, edukasi kesehatan)\n2. Pemeriksaan Kesehatan (MCU): Paket Dasar, Paket Pranikah, Paket Lansia\n3. Layanan Laboratorium: Cek Gula Darah, Kolesterol, Asam Urat, Hematologi rutin\n4. Imunisasi & Vaksinasi: Influenza, Hepatitis B, PCV, Booster Dewasa\n5. Tindakan Bedah Minor: Jahit luka, eksisi kutil, angkat kutil (veruka), incisi abses\n6. Perawatan Luka: Luka diabetes, luka bakar ringan, angkat jahitan\n7. Administrasi Medis: Surat Keterangan Sehat (SKS), Surat Keterangan Sakit, Rujukan ke Spesialis"
             },
             {
-                "content": "## Prosedur Pendaftaran Pasien\nJelaskan langkah-langkah bagi pasien baru maupun lama untuk berobat.\n\nContoh:\n1. Datang langsung ke meja pendaftaran dan ambil nomor antrean.\n2. Tunjukkan kartu identitas (KTP/KIA/Paspor) kepada petugas.\n3. Untuk pasien lama, cukup informasikan Nama Lengkap atau Nomor Rekam Medis.\n4. Tunggu di ruang tunggu hingga dipanggil oleh perawat ke ruang dokter."
+                "title": "SOP Pendaftaran & Berkas",
+                "content": "## Prosedur Pendaftaran Pasien\nAlur pendaftaran untuk memastikan efisiensi waktu tunggu.\n\nContoh Pasien Baru:\n1. Menuju meja resepsionis untuk pengisian formulir biodata.\n2. Wajib membawa identitas asli (KTP/SIM/Paspor) atau KIA (untuk anak).\n3. Petugas akan membuatkan nomor Rekam Medis (RM) baru.\n\nContoh Pasien Lama/Kontrol:\n1. Sebutkan Nama Lengkap, Tanggal Lahir, atau tunjukkan Kartu Pasien.\n2. Konfirmasi apakah ada perubahan alamat atau nomor telepon.\n3. Langsung masuk ke antrean poli yang dituju."
             },
             {
-                "content": "## Reservasi Online\nBerikan informasi jika klinik melayani pendaftaran via pesan singkat atau aplikasi.\n\nContoh: Untuk menghindari antrean panjang, Anda bisa mendaftar via WhatsApp ke nomor 0812-3456-7890. Format pesan: DAFTAR # NAMA # TGL LAHIR # TGL KUNJUNGAN # JAM KUNJUNGAN. Mohon konfirmasi minimal 3 jam sebelum kedatangan."
+                "title": "Sistem Reservasi Modern",
+                "content": "## Layanan Booking & Antrean Online\nFasilitas pendaftaran jarak jauh untuk meminimalisir kepadatan ruang tunggu.\n\nContoh: Pasien sangat disarankan melakukan reservasi H-1 melalui WhatsApp (0812-3456-7890). \nFormat Booking: BOOK # NAMA # TANGGAL # JAM # KELUHAN SINGKAT. \nKeuntungan: Mendapatkan prioritas waktu konsultasi dan estimasi biaya di awal."
             },
             {
-                "content": "## Biaya & Metode Pembayaran\nBerikan estimasi harga layanan dan cara pembayarannya.\n\nContoh:\n- Administrasi Pasien Baru: Rp 15.000\n- Konsultasi Dokter: Rp 75.000\n- Tindakan Medis: Mulai dari Rp 50.000 (Sesuai kerumitan)\nKami menerima pembayaran melalui Tunai, Debit Mandiri/BCA, QRIS (Gopay/OVO/Dana), dan Transfer Bank."
+                "title": "Transparansi Biaya",
+                "content": "## Biaya & Ketentuan Pembayaran\nEstimasi pengeluaran yang perlu disiapkan oleh pasien.\n\nContoh:\n- Administrasi & Kartu Pasien: Rp 15.000 (Sekali bayar untuk pasien baru)\n- Konsultasi Dokter: Rp 75.000 - Rp 125.000\n- Pemeriksaan Lab: Mulai Rp 35.000 per parameter\n- Tindakan Medis: Tergantung tingkat kerumitan dan bahan medis yang digunakan\nMetode Pembayaran: Kami mendukung ekosistem cashless (QRIS, Debit Mandiri/BCA/BNI, Kredit Visa/Mastercard) serta pembayaran tunai."
             },
             {
-                "content": "## Fasilitas Klinik\nInformasikan sarana pendukung yang tersedia untuk kenyamanan pasien.\n\nContoh:\n- Ruang tunggu ber-AC dengan TV dan Dispenser air minum gratis\n- Toilet bersih dan ramah difabel\n- Area parkir motor dan mobil yang luas\n- Pojok laktasi untuk ibu menyusui\n- Apotek mini untuk penebusan obat langsung"
+                "title": "Fasilitas Pendukung",
+                "content": "## Sarana & Prasarana Klinik\nFasilitas untuk menunjang kenyamanan selama berada di area klinik.\n\nContoh:\n- Ruang Tunggu Eksklusif: AC, Smart TV, Wi-Fi gratis, Charger Station.\n- Higienitas: Toilet terpisah laki-laki/perempuan, Hand sanitizer di setiap sudut.\n- Ramah Ibu & Anak: Ruang Laktasi (Nursing Room) dan Pojok Bermain Anak.\n- Farmasi: Apotek internal menyediakan obat-obatan esensial sesuai resep dokter klinik."
             },
             {
-                "content": "## Kerjasama Asuransi\nSebutkan provider asuransi atau BPJS jika sudah bekerjasama.\n\nContoh: Saat ini kami melayani pasien asuransi Mandiri Inhealth, Prudential (AdMedika), dan Manulife. Mohon siapkan Kartu Asuransi dan KTP saat pendaftaran untuk verifikasi cakupan layanan."
-            },
-            {
-                "content": "## Kontak & Keluhan Layanan\nInformasikan kanal komunikasi untuk pertanyaan atau masukan.\n\nContoh:\n- Customer Service (WhatsApp): 0812-3456-7890\n- Telepon Kantor: (021) 1234567\n- Email: admin@kliniksehat.com\n- Instagram: @kliniksehat_keluarga"
+                "title": "Kemitraan Asuransi",
+                "content": "## Kerjasama Pihak Ketiga (Asuransi/Perusahaan)\nInformasi mengenai penjaminan biaya pengobatan.\n\nContoh: Kami bekerjasama dengan berbagai provider asuransi melalui jaringan AdMedika (Prudential, Manulife, AIA, Allianz). Untuk peserta BPJS Kesehatan, saat ini kami hanya menerima rujukan jika klinik kami terdaftar sebagai Faskes Tingkat 1 Anda (Mohon cek aplikasi Mobile JKN)."
             }
         ],
         "keywords": [
-            "klinik umum terdekat",
-            "dokter umum",
-            "biaya periksa dokter",
-            "cara daftar klinik",
-            "cek gula darah",
-            "surat keterangan sehat",
-            "jam buka klinik",
-            "vaksin flu",
-            "obat batuk pilek",
-            "lokasi klinik",
-            "reservasi dokter",
-            "klinik buka sampai malam",
-            "biaya medical check up",
-            "asuransi kesehatan klinik",
-            "nomor whatsapp klinik"
+            "klinik umum terdekat 24 jam",
+            "dokter keluarga terbaik",
+            "biaya konsultasi dokter umum",
+            "klinik vaksin anak dan dewasa",
+            "cek lab murah jakarta",
+            "surat keterangan sehat kerja",
+            "klinik asuransi admedika",
+            "rawat luka luar",
+            "tes gula darah kolesterol",
+            "jadwal dokter malam hari",
+            "reservasi wa klinik",
+            "klinik ramah anak",
+            "biaya mcu pra nikah",
+            "apotek dalam klinik",
+            "pendaftaran pasien baru online"
         ],
         "questions": [
             {
-                "flowName": "Alur Pemeriksaan Pasien Baru",
+                "flowName": "Alur Informasi Umum & Biaya",
                 "messages": [
                     {
-                        "customer": "Halo, saya ingin periksa ke dokter. Hari ini buka sampai jam berapa ya?",
-                        "ai_response_eval": "AI harus menyebutkan jam operasional (Senin-Jumat s/d 21.00 atau Sabtu s/d 17.00) dan batas waktu pendaftaran terakhir (20.30)."
+                        "customer": "Halo, hari ini saya bisa periksa? Buka sampai jam berapa?",
+                        "ai_response_eval": "AI harus memberikan sapaan ramah, mengonfirmasi status operasional hari ini sesuai jadwal di data, dan menyebutkan jam tutup serta batas maksimal pendaftaran (last order)."
                     },
                     {
-                        "customer": "Saya belum pernah ke sini sebelumnya. Apa saja syarat kalau mau daftar?",
-                        "ai_response_eval": "AI harus menjelaskan prosedur pasien baru, yaitu membawa kartu identitas (KTP/KIA/Paspor) dan menyebutkan adanya biaya administrasi Rp 15.000."
+                        "customer": "Saya pasien baru, syaratnya apa saja dan ada biaya daftar tidak?",
+                        "ai_response_eval": "AI harus menjelaskan dokumen identitas yang wajib dibawa (KTP/identitas resmi) dan merinci biaya administrasi awal bagi pasien yang belum memiliki nomor rekam medis."
                     },
                     {
-                        "customer": "Berapa total biaya untuk konsultasi dokter umum?",
-                        "ai_response_eval": "AI harus menyebutkan estimasi biaya konsultasi dokter umum antara Rp 50.000 - Rp 100.000."
+                        "customer": "Berapa kira-kira biaya kalau mau cek kolesterol dan asam urat?",
+                        "ai_response_eval": "AI harus memberikan estimasi biaya pemeriksaan lab yang diminta berdasarkan rentang harga di dataset, serta menyarankan pasien untuk berpuasa jika diperlukan (opsional)."
                     },
                     {
-                        "customer": "Apakah bisa pakai asuransi Prudential atau BPJS?",
-                        "ai_response_eval": "AI harus mengonfirmasi kerjasama dengan Prudential (AdMedika) namun menjelaskan ketersediaan BPJS (saat ini tidak disebutkan di konten, jadi AI harus jujur sesuai data)."
-                    },
-                    {
-                        "customer": "Oke saya mau datang sekarang. Bagaimana cara bayarnya nanti?",
-                        "ai_response_eval": "AI harus menyebutkan metode pembayaran yang tersedia: Tunai, Debit Mandiri/BCA, QRIS, atau Transfer Bank."
+                        "customer": "Apakah pembayarannya bisa pakai kartu kredit atau GoPay?",
+                        "ai_response_eval": "AI harus memvalidasi seluruh metode pembayaran non-tunai yang tersedia sesuai informasi di bagian Biaya & Metode Pembayaran."
                     }
                 ]
             },
             {
-                "flowName": "Reservasi & Lokasi",
+                "flowName": "Alur Reservasi & Lokasi Spesifik",
                 "messages": [
                     {
-                        "customer": "Bisa daftar lewat WA dulu? Saya malas antre.",
-                        "ai_response_eval": "AI harus mengonfirmasi bisa reservasi via WA ke 0812-3456-7890 dan menyebutkan format pendaftarannya."
+                        "customer": "Saya tidak mau menunggu lama, bisa booking jadwal dokter?",
+                        "ai_response_eval": "AI harus mengarahkan pasien untuk melakukan reservasi online, memberikan nomor kontak yang tepat, dan menjelaskan format pesan atau syarat waktu booking (misal H-1)."
                     },
                     {
-                        "customer": "Kliniknya di mana ya? Ada patokannya?",
-                        "ai_response_eval": "AI harus memberikan alamat di Jl. Melati No. 123 dan menyebutkan patokan dekat Stasiun MRT Senayan / Indomaret."
+                        "customer": "Kliniknya sebelah mana ya? Saya sudah di sekitar Senayan.",
+                        "ai_response_eval": "AI harus memberikan panduan arah yang spesifik menggunakan poin-poin patokan bangunan (landmark) terdekat dan menyertakan link peta digital jika tersedia."
+                    },
+                    {
+                        "customer": "Bisa pakai asuransi kantor saya tidak? Saya pakai Allianz.",
+                        "ai_response_eval": "AI harus melakukan pengecekan terhadap daftar mitra asuransi di dataset, mengonfirmasi jika ada kerjasama, dan mengingatkan pasien untuk membawa kartu fisik serta dokumen pendukung."
                     }
                 ]
             }

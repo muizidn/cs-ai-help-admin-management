@@ -161,13 +161,15 @@
                     </button>
                   </div>
 
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="space-y-3">
                     <div>
                       <label
+                        for="cust-{sIdx}-{mIdx}"
                         class="block text-xs font-medium text-gray-500 mb-1"
                         >Customer Question</label
                       >
                       <textarea
+                        id="cust-{sIdx}-{mIdx}"
                         bind:value={message.customer}
                         on:input={updateField}
                         rows="2"
@@ -177,10 +179,12 @@
                     </div>
                     <div>
                       <label
+                        for="eval-{sIdx}-{mIdx}"
                         class="block text-xs font-medium text-gray-500 mb-1"
                         >AI Response Evaluation</label
                       >
                       <textarea
+                        id="eval-{sIdx}-{mIdx}"
                         bind:value={message.ai_response_eval}
                         on:input={updateField}
                         rows="2"

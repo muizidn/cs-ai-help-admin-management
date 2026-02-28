@@ -74,6 +74,12 @@
   let contentJson = ""
   let isFullscreenJson = false
 
+  function handleKeydown(e: KeyboardEvent) {
+    if (e.key === "Escape" && isFullscreenJson) {
+      isFullscreenJson = false
+    }
+  }
+
   function initializeForm(t: LibraryTemplate | null) {
     if (t) {
       formData = {
@@ -519,9 +525,12 @@
 
     <!-- Fullscreen JSON Modal -->
     {#if isFullscreenJson}
+      <svelte:window on:keydown={handleKeydown} />
       <div
         class="fixed inset-0 z-[100] flex flex-col bg-white"
-        on:keydown={(e) => e.key === "Escape" && (isFullscreenJson = false)}
+        role="dialog"
+        aria-modal="true"
+        tabindex="-1"
       >
         <div
           class="flex items-center justify-between px-6 py-4 border-b border-gray-200 bg-gray-50"

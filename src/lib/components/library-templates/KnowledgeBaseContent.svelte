@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Plus, X } from "lucide-svelte"
+  import { Plus, X, ChevronDown, ChevronRight, FileText } from "lucide-svelte"
   import type { KnowledgeBaseContent } from "$lib/types/library-templates"
   import { createEventDispatcher } from "svelte"
   import TestQuestions from "./TestQuestions.svelte"
@@ -11,6 +11,17 @@
   }>()
 
   let newKbKeyword = ""
+  let expandedSections: boolean[] = []
+
+  // Initialize expanded states
+  $: if (expandedSections.length !== (content.sections?.length || 0)) {
+    const newExpanded = [...expandedSections]
+    const currentLen = content.sections?.length || 0
+    while (newExpanded.length < currentLen) {
+      newExpanded.push(false) // Collapse by default to let user focus on questions
+    }
+    expandedSections = newExpanded
+  }
 
   function updateContent(newContent: KnowledgeBaseContent) {
     content = newContent
@@ -31,6 +42,18 @@
       ...content,
       sections: sections.filter((_, i) => i !== index),
     })
+    expandedSections = expandedSections.filter((_, i) => i !== index)
+  }
+
+  function toggleSection(index: number) {
+    expandedSections[index] = !expandedSections[index]
+    expandedSections = [...expandedSections]
+  }
+
+  function getSectionTitle(content: string, index: number): string {
+    if (!content) return `Section ${index + 1}`
+    const firstLine = content.split("\n")[0].replace(/^#+\s*/, "")
+    return firstLine || `Section ${index + 1}`
   }
 
   function updateSection(index: number, value: string) {
@@ -80,25 +103,61 @@
     </div>
 
     {#if content.sections && content.sections.length > 0}
-      <div class="space-y-3">
+      <div class="space-y-2">
         {#each content.sections as section, i}
-          <div class="flex gap-2">
-            <textarea
-              value={section.content}
-              on:input={(e) => updateSection(i, e.currentTarget.value)}
-              rows="3"
-              class="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-              placeholder="## Section Title&#10;Content..."
-              aria-label="Section Content"
-            ></textarea>
-            <button
-              type="button"
-              on:click={() => removeSection(i)}
-              class="text-red-500 hover:text-red-700 self-start p-1"
-              aria-label="Remove Section"
+          <div
+            class="border border-gray-200 rounded-md bg-white overflow-hidden shadow-sm"
+          >
+            <!-- Section Header -->
+            <div
+              class="flex items-center justify-between bg-gray-50 px-3 py-2 border-b border-gray-100"
             >
-              <X class="w-4 h-4" />
-            </button>
+              <div class="flex items-center flex-1 min-w-0">
+                <button
+                  type="button"
+                  on:click={() => toggleSection(i)}
+                  class="mr-2 text-gray-500 hover:text-gray-700 transition-colors"
+                >
+                  {#if expandedSections[i]}
+                    <ChevronDown class="w-4 h-4" />
+                  {:else}
+                    <ChevronRight class="w-4 h-4" />
+                  {/if}
+                </button>
+                <button
+                  type="button"
+                  class="flex items-center space-x-2 cursor-pointer truncate text-left focus:outline-none"
+                  on:click={() => toggleSection(i)}
+                >
+                  <FileText class="w-3.5 h-3.5 text-gray-400" />
+                  <span class="text-xs font-medium text-gray-700 truncate">
+                    {getSectionTitle(section.content, i)}
+                  </span>
+                </button>
+              </div>
+              <button
+                type="button"
+                on:click={() => removeSection(i)}
+                class="text-gray-400 hover:text-red-500 p-1"
+                aria-label="Remove Section"
+              >
+                <X class="w-4 h-4" />
+              </button>
+            </div>
+
+            <!-- Section Content -->
+            {#if expandedSections[i]}
+              <div class="p-3">
+                <textarea
+                  value={section.content}
+                  on:input={(e) => updateSection(i, e.currentTarget.value)}
+                  rows="5"
+                  class="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                  placeholder="## Section Title&#10;Content..."
+                  aria-label="Section Content"
+                ></textarea>
+              </div>
+            {/if}
           </div>
         {/each}
       </div>
