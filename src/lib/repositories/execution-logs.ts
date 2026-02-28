@@ -6,7 +6,6 @@ import type {
   ExecutionLogQuery,
   ExecutionLogResponse,
   ExecutionLogStats,
-  ExecutionLogListItem,
   ExecutionStep,
   ExecutionStepResponse,
 } from "../types/execution-logs"
@@ -41,6 +40,19 @@ function logDbOperation(
   }
 }
 
+function calculateTotalCost(steps: any[]): number {
+  if (!steps || !Array.isArray(steps)) return 0
+  let totalCost = 0
+  for (const step of steps) {
+    if (step.response?.usage?.cost_details?.upstream_inference_cost != null) {
+      totalCost += step.response.usage.cost_details.upstream_inference_cost
+    } else if (step.response?.usage?.cost != null) {
+      totalCost += step.response.usage.cost
+    }
+  }
+  return Number(totalCost.toFixed(6))
+}
+
 export class ExecutionLogRepository {
   private async getCollection(): Promise<Collection<ExecutionLog>> {
     const db = await getDatabase()
@@ -54,13 +66,15 @@ export class ExecutionLogRepository {
     const start = Date.now()
     try {
       const collection = await this.getCollection()
-      const result = await collection.findOne({ _id: id })
+      const result = await collection.findOne({ _id: id as any })
 
       if (result) {
         // Map MongoDB _id back to id field
-        const { _id, ...rest } = result as any
+        const { _id, steps, ...rest } = result as any
         const executionLog: ExecutionLog = {
           id: _id,
+          steps,
+          total_cost: calculateTotalCost(steps),
           ...rest,
         }
 
@@ -86,9 +100,11 @@ export class ExecutionLogRepository {
       const result = await collection.findOne({ execution_id: executionId })
 
       if (result) {
-        const { _id, ...rest } = result as any
+        const { _id, steps, ...rest } = result as any
         const executionLog: ExecutionLog = {
           id: _id,
+          steps,
+          total_cost: calculateTotalCost(steps),
           ...rest,
         }
 
@@ -113,88 +129,7 @@ export class ExecutionLogRepository {
       const collection = await this.getCollection()
 
       // Build filter
-      const filter: any = {}
-
-      if (query.status) {
-        filter.status = query.status
-      }
-
-      if (query.context) {
-        filter.context = query.context
-      }
-
-      if (query.conversation_id) {
-        filter.conversation_id = query.conversation_id
-      }
-
-      if (query.business_id) {
-        filter.business_id = query.business_id
-      }
-
-      if (query.search) {
-        filter.$or = [
-          { original_message: { $regex: query.search, $options: "i" } },
-          { execution_id: { $regex: query.search, $options: "i" } },
-          { conversation_id: { $regex: query.search, $options: "i" } },
-          { context: { $regex: query.search, $options: "i" } },
-        ]
-      }
-
-      // Filter by customer message content
-      if (query.customer_message) {
-        filter.original_message = {
-          $regex: query.customer_message,
-          $options: "i",
-        }
-      }
-
-      // Filter by AI response content
-      if (query.ai_response) {
-        filter.$or = [
-          ...(filter.$or || []),
-          {
-            "final_response.final_message": {
-              $regex: query.ai_response,
-              $options: "i",
-            },
-          },
-          {
-            "final_response.response.final_message": {
-              $regex: query.ai_response,
-              $options: "i",
-            },
-          },
-          {
-            "final_response.response.ai_output.text": {
-              $regex: query.ai_response,
-              $options: "i",
-            },
-          },
-          {
-            "steps.response.text": { $regex: query.ai_response, $options: "i" },
-          },
-        ]
-      }
-
-      // Filter by final decision
-      if (query.final_decision) {
-        const decisionFilter = this.buildFinalDecisionFilter(
-          query.final_decision,
-        )
-        if (decisionFilter) {
-          filter.$or = [...(filter.$or || []), ...decisionFilter]
-        }
-      }
-
-      if (query.start_date || query.end_date) {
-        filter.start_time = {}
-        if (query.start_date) {
-          filter.start_time.$gte = new Date(query.start_date)
-        }
-        if (query.end_date) {
-          filter.start_time.$lte = new Date(query.end_date)
-        }
-      }
+      const filter = this.buildBaseFilter(query)
 
       if (query.step_type) {
         filter["steps.step_type"] = query.step_type
@@ -214,15 +149,17 @@ export class ExecutionLogRepository {
       const total = await collection.countDocuments(filter)
 
       // Get paginated results
-      const cursor = collection.find(filter).sort(sort).skip(skip).limit(limit)
+      const cursor = collection.find(filter).sort(sort as any).skip(skip).limit(limit)
 
       const docs = await cursor.toArray()
 
       // Transform results
       const items: ExecutionLog[] = docs.map((doc) => {
-        const { _id, ...rest } = doc as any
+        const { _id, steps, ...rest } = doc as any
         return {
           id: _id,
+          steps,
+          total_cost: calculateTotalCost(steps),
           ...rest,
         }
       })
@@ -254,22 +191,7 @@ export class ExecutionLogRepository {
       const collection = await this.getCollection()
 
       // Build base filter
-      const baseFilter: any = {}
-      if (filter?.business_id) {
-        baseFilter.business_id = filter.business_id
-      }
-      if (filter?.context) {
-        baseFilter.context = filter.context
-      }
-      if (filter?.start_date || filter?.end_date) {
-        baseFilter.start_time = {}
-        if (filter.start_date) {
-          baseFilter.start_time.$gte = new Date(filter.start_date)
-        }
-        if (filter.end_date) {
-          baseFilter.start_time.$lte = new Date(filter.end_date)
-        }
-      }
+      const baseFilter = this.buildBaseFilter(filter || {})
 
       // Aggregate stats
       const pipeline = [
@@ -293,6 +215,22 @@ export class ExecutionLogRepository {
             avgDurationMs: {
               $avg: { $ifNull: ["$total_duration_ms", 0] },
             },
+            totalCost: {
+              $sum: {
+                $sum: {
+                  $map: {
+                    input: { $ifNull: ["$steps", []] },
+                    as: "step",
+                    in: {
+                      $ifNull: [
+                        "$$step.response.usage.cost_details.upstream_inference_cost",
+                        { $ifNull: ["$$step.response.usage.cost", 0] }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
           },
         },
       ]
@@ -302,21 +240,23 @@ export class ExecutionLogRepository {
       const stats: ExecutionLogStats =
         result.length > 0
           ? {
-              total: result[0].total || 0,
-              running: result[0].running || 0,
-              completed: result[0].completed || 0,
-              failed: result[0].failed || 0,
-              avgDurationMs: Math.round(result[0].avgDurationMs || 0),
-              totalDurationMs: result[0].totalDurationMs || 0,
-            }
+            total: result[0].total || 0,
+            running: result[0].running || 0,
+            completed: result[0].completed || 0,
+            failed: result[0].failed || 0,
+            avgDurationMs: Math.round(result[0].avgDurationMs || 0),
+            totalDurationMs: result[0].totalDurationMs || 0,
+            totalCost: Number((result[0].totalCost || 0).toFixed(6)),
+          }
           : {
-              total: 0,
-              running: 0,
-              completed: 0,
-              failed: 0,
-              avgDurationMs: 0,
-              totalDurationMs: 0,
-            }
+            total: 0,
+            running: 0,
+            completed: 0,
+            failed: 0,
+            avgDurationMs: 0,
+            totalDurationMs: 0,
+            totalCost: 0,
+          }
 
       const duration = Date.now() - start
       logDbOperation("getStats", COLLECTION_NAME, duration)
@@ -374,58 +314,176 @@ export class ExecutionLogRepository {
   }
 
   /**
+   * Build base MongoDB filter from query parameters
+   */
+  private buildBaseFilter(query: Partial<ExecutionLogQuery>): any {
+    const filter: any = {}
+
+    if (query.status && query.status !== "all") {
+      filter.status = query.status
+    }
+
+    if (query.context) {
+      filter.context = query.context
+    }
+
+    if (query.conversation_id) {
+      filter.conversation_id = query.conversation_id
+    }
+
+    if (query.business_id) {
+      filter.business_id = query.business_id
+    }
+
+    if (query.flag) {
+      if (query.flag === "unflagged") {
+        filter.flag = { $in: [null, "", { $exists: false }] }
+      } else {
+        filter.flag = query.flag
+      }
+    }
+
+    if (query.start_date || query.end_date) {
+      filter.start_time = {}
+      if (query.start_date) {
+        filter.start_time.$gte = new Date(query.start_date)
+      }
+      if (query.end_date) {
+        filter.start_time.$lte = new Date(query.end_date)
+      }
+    }
+
+    // Build $and sections for complex filters
+    const andSections: any[] = []
+
+    // 1. Search filter
+    if (query.search) {
+      andSections.push({
+        $or: [
+          { original_message: { $regex: query.search, $options: "i" } },
+          { execution_id: { $regex: query.search, $options: "i" } },
+          { conversation_id: { $regex: query.search, $options: "i" } },
+          { context: { $regex: query.search, $options: "i" } },
+        ],
+      })
+    }
+
+    // 2. Customer message filter
+    if (query.customer_message) {
+      filter.original_message = {
+        $regex: query.customer_message,
+        $options: "i",
+      }
+    }
+
+    // 3. AI response filter
+    if (query.ai_response) {
+      andSections.push({
+        $or: [
+          {
+            "final_response.final_message": {
+              $regex: query.ai_response,
+              $options: "i",
+            },
+          },
+          {
+            "final_response.response.final_message": {
+              $regex: query.ai_response,
+              $options: "i",
+            },
+          },
+          {
+            "final_response.response.ai_output.text": {
+              $regex: query.ai_response,
+              $options: "i",
+            },
+          },
+          {
+            "steps.response.text": { $regex: query.ai_response, $options: "i" },
+          },
+        ],
+      })
+    }
+
+    // 4. Decision filter
+    if (query.final_decision && query.final_decision !== "all") {
+      const decisionOrs = this.buildFinalDecisionFilter(query.final_decision)
+      if (decisionOrs && decisionOrs.length > 0) {
+        andSections.push({ $or: decisionOrs })
+      }
+    }
+
+    if (andSections.length > 0) {
+      filter.$and = andSections
+    }
+
+    return filter
+  }
+
+  /**
    * Build MongoDB filter for final decision
    */
   private buildFinalDecisionFilter(decision: string): any[] | null {
     const normalizedDecision = decision.toUpperCase()
 
     switch (normalizedDecision) {
+      case "DIRECT_REPLY":
       case "SENT_ANSWER":
         return [
           {
-            "final_response.response.decision": {
-              $regex: "DIRECT_REPLY|SENT_ANSWER",
+            "final_response.ai_output.decision": {
+              $regex: "^(DIRECT_REPLY|SENT_ANSWER)$",
               $options: "i",
             },
           },
-          { "final_response.context": "TRY_ANSWER" },
-          { "steps.message": { $regex: "sent_answer", $options: "i" } },
-          { "steps.metadata.step_type": "SENT_ANSWER" },
           {
-            status: "completed",
-            "final_response.response.requires_human_assistance": { $ne: true },
+            "final_response.response.decision": {
+              $regex: "^(DIRECT_REPLY|SENT_ANSWER)$",
+              $options: "i",
+            },
           },
+          { "steps.metadata.step_type": "SENT_ANSWER" },
         ]
 
       case "REQUEST_HUMAN_ASSISTANCE":
         return [
           {
-            "final_response.response.decision": {
-              $regex: "REQUEST_HUMAN_ASSISTANCE|HUMAN_ASSISTANCE",
+            "final_response.ai_output.decision": {
+              $regex: "^(REQUEST_HUMAN_ASSISTANCE|HUMAN_ASSISTANCE)$",
               $options: "i",
             },
           },
-          { "final_response.context": "TRY_ANSWER" },
-          { "final_response.response.requires_human_assistance": true },
           {
-            "steps.message": {
-              $regex: "request_human_assistance",
+            "final_response.response.decision": {
+              $regex: "^(REQUEST_HUMAN_ASSISTANCE|HUMAN_ASSISTANCE)$",
               $options: "i",
             },
           },
+          { "final_response.response.requires_human_assistance": true },
           { "steps.metadata.step_type": "REQUEST_HUMAN_ASSISTANCE" },
+        ]
+
+      case "FALLBACK_REPLY":
+        return [
+          { "final_response.ai_output.decision": "FALLBACK_REPLY" },
+          { "final_response.response.decision": "FALLBACK_REPLY" },
+          { "steps.metadata.step_type": "FALLBACK_REPLY" },
         ]
 
       case "NO_ANSWER_GIVEN":
         return [
           {
-            "final_response.response.decision": {
-              $regex: "NO_ANSWER|NO_ANSWER_GIVEN",
+            "final_response.ai_output.decision": {
+              $regex: "^(NO_ANSWER|NO_ANSWER_GIVEN)$",
               $options: "i",
             },
           },
-          { "final_response.context": "TRY_ANSWER" },
-          { "steps.message": { $regex: "no_answer_given", $options: "i" } },
+          {
+            "final_response.response.decision": {
+              $regex: "^(NO_ANSWER|NO_ANSWER_GIVEN)$",
+              $options: "i",
+            },
+          },
           { "steps.metadata.step_type": "NO_ANSWER_GIVEN" },
         ]
 
@@ -437,6 +495,31 @@ export class ExecutionLogRepository {
 
       default:
         return null
+    }
+  }
+
+  async updateFlag(id: string, flag: string | null): Promise<boolean> {
+    const start = Date.now()
+    try {
+      const collection = await this.getCollection()
+
+      const updateDoc: any = {}
+      if (flag === null) {
+        updateDoc.$unset = { flag: "" }
+      } else {
+        updateDoc.$set = { flag }
+      }
+
+      const result = await collection.updateOne({ _id: id as any }, updateDoc)
+
+      const duration = Date.now() - start
+      logDbOperation("updateFlag", COLLECTION_NAME, duration)
+
+      return result.modifiedCount > 0
+    } catch (error) {
+      const duration = Date.now() - start
+      logDbOperation("updateFlag", COLLECTION_NAME, duration, error)
+      throw error
     }
   }
 }

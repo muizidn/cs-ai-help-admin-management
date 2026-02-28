@@ -1,5 +1,6 @@
 import { getDatabase } from "$lib/mongodb"
 import { logger } from "$lib/logger"
+import { executionLogRepository } from "../repositories/execution-logs"
 import type { AiAnalyticsQuery, AiAnalyticsStats, OwnerUsage } from "$lib/types/analytics"
 import type { ApiResponse } from "$lib/types/transactions"
 
@@ -37,8 +38,15 @@ export class AnalyticsService {
 
             const logs = await ledgerCollection.find(filter).toArray()
 
+            const executionStats = await executionLogRepository.getStats({
+                start_date: query.startDate,
+                end_date: query.endDate,
+                business_id: query.ownerType === "organization" ? query.ownerId : undefined
+            })
+
             const stats: AiAnalyticsStats = {
                 totalCreditSpent: 0,
+                totalProviderCost: executionStats.totalCost || 0,
                 totalInvocations: 0,
                 usageBySource: {},
                 topUsers: [],

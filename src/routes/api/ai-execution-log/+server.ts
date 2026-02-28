@@ -73,6 +73,11 @@ export const GET: RequestHandler = async ({ url, locals }) => {
       query.ai_response = aiResponse
     }
 
+    const flag = url.searchParams.get("flag")
+    if (flag) {
+      query.flag = flag
+    }
+
     logger.info(
       {
         requestId,

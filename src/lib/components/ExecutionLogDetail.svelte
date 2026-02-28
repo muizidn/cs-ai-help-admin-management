@@ -28,6 +28,7 @@
     Target,
     CheckCircle2,
     AlertTriangle,
+    Flag,
   } from "lucide-svelte"
   import type { ExecutionLogDetail } from "$lib/types/execution-logs"
   import GenericComments from "./GenericComments.svelte"
@@ -87,6 +88,19 @@
   $: filteredSteps = selectedStepType
     ? orderedSteps.filter((step) => step.step_type === selectedStepType)
     : orderedSteps
+
+  const selectableFlags = [
+    { value: "NEED_REVIEW", label: "Needs Review" },
+    { value: "FALSE_POSITIVE", label: "False Positive" },
+    { value: "FALSE_NEGATIVE", label: "False Negative" },
+    { value: "EXCELLENT", label: "Excellent" },
+    { value: "POOR_RESPONSE", label: "Poor Response" },
+    { value: "HALLUCINATION", label: "Hallucination" },
+    { value: "OFF_TOPIC", label: "Off Topic" },
+    { value: "PII_LEAK", label: "PII Leak" },
+    { value: "TOXIC", label: "Toxic Content" },
+    { value: "COULD_BE_BETTER", label: "Could Be Better" },
+  ]
 
   $: stepTypeCounts = executionLog
     ? Object.entries(executionLog.steps_by_type)
@@ -183,6 +197,52 @@
 
   function toggleRawJson() {
     showRawJson = !showRawJson
+  }
+
+  async function changeFlag(event: Event) {
+    if (!executionLog) return
+    const target = event.target as HTMLSelectElement
+    const flagValue = target.value
+    const newFlag = flagValue === "" ? null : flagValue
+    try {
+      const resp = await fetch(
+        `/api/ai-execution-log/${executionLog.id}/flag`,
+        {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ flag: newFlag }),
+        },
+      )
+      if (resp.ok) {
+        executionLog.flag = newFlag || undefined
+        // trigger reactivity if needed
+        executionLog = { ...executionLog }
+      }
+    } catch (e) {
+      console.error("Failed to change flag", e)
+    }
+  }
+
+  function getFlagColorClass(flag: string | undefined) {
+    if (!flag) return "text-gray-400 bg-transparent border-transparent"
+    if (flag === "NEED_REVIEW") return "text-red-700 bg-red-50 border-red-200"
+    if (flag === "FALSE_POSITIVE")
+      return "text-orange-700 bg-orange-50 border-orange-200"
+    if (flag === "FALSE_NEGATIVE")
+      return "text-yellow-700 bg-yellow-50 border-yellow-200"
+    if (flag === "EXCELLENT")
+      return "text-green-700 bg-green-50 border-green-200"
+    if (flag === "POOR_RESPONSE")
+      return "text-amber-700 bg-amber-50 border-amber-200"
+    if (flag === "HALLUCINATION")
+      return "text-purple-700 bg-purple-50 border-purple-200"
+    if (flag === "OFF_TOPIC")
+      return "text-fuchsia-700 bg-fuchsia-50 border-fuchsia-200"
+    if (flag === "PII_LEAK") return "text-pink-700 bg-pink-50 border-pink-200"
+    if (flag === "TOXIC") return "text-red-900 bg-red-100 border-red-300"
+    if (flag === "COULD_BE_BETTER")
+      return "text-cyan-700 bg-cyan-50 border-cyan-200"
+    return "text-gray-700 bg-gray-50 border-gray-200"
   }
 
   function setViewMode(mode: "grouped" | "sequential") {
@@ -300,6 +360,25 @@
           />
           {executionLog.status}
         </div>
+
+        <div class="flag-selector">
+          <Flag
+            size={18}
+            class="mr-2 {executionLog.flag
+              ? 'text-red-500 fill-red-500'
+              : 'text-gray-400'}"
+          />
+          <select
+            class="flag-select-detail {getFlagColorClass(executionLog.flag)}"
+            value={executionLog.flag || ""}
+            on:change={changeFlag}
+          >
+            <option value="">No Flag</option>
+            {#each selectableFlags as flag}
+              <option value={flag.value}>{flag.label}</option>
+            {/each}
+          </select>
+        </div>
       </div>
 
       <h1>Execution Log Details</h1>
@@ -315,10 +394,7 @@
             <span class="label">Conversation ID</span>
             <span class="mono">{executionLog.conversation_id}</span>
           </div>
-          <div class="info-item">
-            <span class="label">Context</span>
-            <span>{executionLog.context}</span>
-          </div>
+
           <div class="info-item">
             <span class="label">Business ID</span>
             <span>{executionLog.business_id || "N/A"}</span>
@@ -340,6 +416,10 @@
           <div class="info-item">
             <span class="label">Duration</span>
             <span>{executionLog.formatted_duration || "N/A"}</span>
+          </div>
+          <div class="info-item">
+            <span class="label">Total Cost</span>
+            <span>${(executionLog.total_cost || 0).toFixed(6)}</span>
           </div>
         </div>
       </div>
@@ -1025,6 +1105,34 @@
     font-size: 0.875rem;
     font-weight: 500;
     text-transform: capitalize;
+  }
+
+  /* Flag Select Detail */
+  .flag-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1rem;
+    background: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    border: 1px solid #d1d5db;
+  }
+
+  .flag-select-detail {
+    border: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+    width: 140px;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+  }
+
+  .flag-select-detail:hover {
+    background: #f9fafb;
   }
 
   .header h1 {

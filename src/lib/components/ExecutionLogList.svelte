@@ -1,17 +1,39 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
-  import { Clock, CheckCircle, XCircle, AlertCircle, Eye, Search, Filter, ChevronDown, ChevronRight, Expand, Minimize } from 'lucide-svelte'
-  import type { ExecutionLogResponse, ExecutionLogQuery, ExecutionLogStats } from '$lib/types/execution-logs'
-  import { extractFinalDecision, extractAiResponseText, getFinalDecisionLabel, getFinalDecisionClass } from '$lib/utils/final-decision-extractor'
-  import GenericComments from './GenericComments.svelte'
+  import { onMount } from "svelte"
+  import {
+    Clock,
+    CheckCircle,
+    XCircle,
+    AlertCircle,
+    Eye,
+    Search,
+    Filter,
+    ChevronDown,
+    ChevronRight,
+    Expand,
+    Minimize,
+    Flag,
+  } from "lucide-svelte"
+  import type {
+    ExecutionLogResponse,
+    ExecutionLogQuery,
+    ExecutionLogStats,
+  } from "$lib/types/execution-logs"
+  import {
+    extractFinalDecision,
+    extractAiResponseText,
+    getFinalDecisionLabel,
+    getFinalDecisionClass,
+  } from "$lib/utils/final-decision-extractor"
+  import GenericComments from "./GenericComments.svelte"
 
-  export let searchQuery = ''
-  export let statusFilter = 'all'
-  export let contextFilter = ''
-  export let dateRangeFilter = { start: '', end: '' }
-  export let finalDecisionFilter = 'all'
-  export let customerMessageFilter = ''
-  export let aiResponseFilter = ''
+  export let searchQuery = ""
+  export let statusFilter = "all"
+  export let dateRangeFilter = { start: "", end: "" }
+  export let finalDecisionFilter = "all"
+  export let customerMessageFilter = ""
+  export let aiResponseFilter = ""
+  export let flagFilter = "all"
 
   // Expandable rows state
   let expandedRows = new Set<string>()
@@ -20,82 +42,101 @@
   let executionLogs: ExecutionLogResponse | null = null
   let stats: ExecutionLogStats | null = null
   let loading = true
-  let error = ''
+  let error = ""
   let currentPage = 1
   let showFilters = false
 
   const statusOptions = [
-    { value: 'all', label: 'All Status' },
-    { value: 'running', label: 'Running' },
-    { value: 'completed', label: 'Completed' },
-    { value: 'failed', label: 'Failed' }
+    { value: "all", label: "All Status" },
+    { value: "running", label: "Running" },
+    { value: "completed", label: "Completed" },
+    { value: "failed", label: "Failed" },
   ]
 
   const finalDecisionOptions = [
-    { value: 'all', label: 'All Decisions' },
-    { value: 'DIRECT_REPLY', label: 'Direct Reply' },
-    { value: 'REQUEST_HUMAN_ASSISTANCE', label: 'Human Assistance' },
-    { value: 'NO_ANSWER_GIVEN', label: 'No Answer' },
-    { value: 'FALLBACK_REPLY', label: 'Fallback Reply' },
-    { value: 'FAILED', label: 'Failed' },
-    { value: 'RUNNING', label: 'Running' }
+    { value: "all", label: "All Decisions" },
+    { value: "DIRECT_REPLY", label: "Direct Reply" },
+    { value: "REQUEST_HUMAN_ASSISTANCE", label: "Human Assistance" },
+    { value: "NO_ANSWER_GIVEN", label: "No Answer" },
+    { value: "FALLBACK_REPLY", label: "Fallback Reply" },
+    { value: "FAILED", label: "Failed" },
+    { value: "RUNNING", label: "Running" },
+  ]
+
+  const selectableFlags = [
+    { value: "NEED_REVIEW", label: "Needs Review" },
+    { value: "FALSE_POSITIVE", label: "False Positive" },
+    { value: "FALSE_NEGATIVE", label: "False Negative" },
+    { value: "EXCELLENT", label: "Excellent" },
+    { value: "POOR_RESPONSE", label: "Poor Response" },
+    { value: "HALLUCINATION", label: "Hallucination" },
+    { value: "OFF_TOPIC", label: "Off Topic" },
+    { value: "PII_LEAK", label: "PII Leak" },
+    { value: "TOXIC", label: "Toxic Content" },
+    { value: "COULD_BE_BETTER", label: "Could Be Better" },
+  ]
+
+  const flagOptions = [
+    { value: "all", label: "All Logs" },
+    ...selectableFlags,
+    { value: "unflagged", label: "Unflagged" },
   ]
 
   async function loadExecutionLogs() {
     loading = true
-    error = ''
-    
+    error = ""
+
     try {
       const params = new URLSearchParams({
         page: currentPage.toString(),
-        limit: '20',
-        sort_by: 'start_time',
-        sort_order: 'desc'
+        limit: "20",
+        sort_by: "start_time",
+        sort_order: "desc",
       })
-      
+
       if (searchQuery.trim()) {
-        params.append('search', searchQuery.trim())
-      }
-      
-      if (statusFilter && statusFilter !== 'all') {
-        params.append('status', statusFilter)
-      }
-      
-      if (contextFilter.trim()) {
-        params.append('context', contextFilter.trim())
-      }
-      
-      if (dateRangeFilter.start) {
-        params.append('start_date', dateRangeFilter.start)
-      }
-      
-      if (dateRangeFilter.end) {
-        params.append('end_date', dateRangeFilter.end)
+        params.append("search", searchQuery.trim())
       }
 
-      if (finalDecisionFilter && finalDecisionFilter !== 'all') {
-        params.append('final_decision', finalDecisionFilter)
+      if (statusFilter && statusFilter !== "all") {
+        params.append("status", statusFilter)
+      }
+
+      if (dateRangeFilter.start) {
+        params.append("start_date", dateRangeFilter.start)
+      }
+
+      if (dateRangeFilter.end) {
+        params.append("end_date", dateRangeFilter.end)
+      }
+
+      if (finalDecisionFilter && finalDecisionFilter !== "all") {
+        params.append("final_decision", finalDecisionFilter)
       }
 
       if (customerMessageFilter.trim()) {
-        params.append('customer_message', customerMessageFilter.trim())
+        params.append("customer_message", customerMessageFilter.trim())
       }
 
       if (aiResponseFilter.trim()) {
-        params.append('ai_response', aiResponseFilter.trim())
+        params.append("ai_response", aiResponseFilter.trim())
       }
-      
+
+      if (flagFilter && flagFilter !== "all") {
+        params.append("flag", flagFilter)
+      }
+
       const response = await fetch(`/api/ai-execution-log?${params}`)
       const result = await response.json()
-      
-      if (result.status === 'success') {
+
+      if (result.status === "success") {
         executionLogs = result.data
       } else {
-        error = result.message || 'Failed to load execution logs'
+        error = result.message || "Failed to load execution logs"
       }
     } catch (err) {
-      error = 'Failed to load execution logs'
-      console.error('Error loading execution logs:', err)
+      error = "Failed to load execution logs"
+      console.error("Error loading execution logs:", err)
     } finally {
       loading = false
     }
@@ -104,27 +145,23 @@
   async function loadStats() {
     try {
       const params = new URLSearchParams()
-      
-      if (contextFilter.trim()) {
-        params.append('context', contextFilter.trim())
-      }
-      
+
       if (dateRangeFilter.start) {
-        params.append('start_date', dateRangeFilter.start)
+        params.append("start_date", dateRangeFilter.start)
       }
-      
+
       if (dateRangeFilter.end) {
-        params.append('end_date', dateRangeFilter.end)
+        params.append("end_date", dateRangeFilter.end)
       }
-      
+
       const response = await fetch(`/api/ai-execution-log/stats?${params}`)
       const result = await response.json()
-      
-      if (result.status === 'success') {
+
+      if (result.status === "success") {
         stats = result.data
       }
     } catch (err) {
-      console.error('Error loading stats:', err)
+      console.error("Error loading stats:", err)
     }
   }
 
@@ -137,6 +174,51 @@
     currentPage = 1
     loadExecutionLogs()
     loadStats()
+  }
+
+  async function changeFlag(logId: string, event: Event) {
+    const target = event.target as HTMLSelectElement
+    const flagValue = target.value
+    const newFlag = flagValue === "" ? null : flagValue
+
+    try {
+      const resp = await fetch(`/api/ai-execution-log/${logId}/flag`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ flag: newFlag }),
+      })
+      if (resp.ok) {
+        if (executionLogs) {
+          const item = executionLogs.items.find((l) => l.id === logId)
+          if (item) item.flag = newFlag || undefined
+          executionLogs = { ...executionLogs }
+        }
+      }
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  function getFlagColorClass(flag: string | undefined) {
+    if (!flag) return "text-gray-400 bg-transparent border-transparent"
+    if (flag === "NEED_REVIEW") return "text-red-700 bg-red-50 border-red-200"
+    if (flag === "FALSE_POSITIVE")
+      return "text-orange-700 bg-orange-50 border-orange-200"
+    if (flag === "FALSE_NEGATIVE")
+      return "text-yellow-700 bg-yellow-50 border-yellow-200"
+    if (flag === "EXCELLENT")
+      return "text-green-700 bg-green-50 border-green-200"
+    if (flag === "POOR_RESPONSE")
+      return "text-amber-700 bg-amber-50 border-amber-200"
+    if (flag === "HALLUCINATION")
+      return "text-purple-700 bg-purple-50 border-purple-200"
+    if (flag === "OFF_TOPIC")
+      return "text-fuchsia-700 bg-fuchsia-50 border-fuchsia-200"
+    if (flag === "PII_LEAK") return "text-pink-700 bg-pink-50 border-pink-200"
+    if (flag === "TOXIC") return "text-red-900 bg-red-100 border-red-300"
+    if (flag === "COULD_BE_BETTER")
+      return "text-cyan-700 bg-cyan-50 border-cyan-200"
+    return "text-gray-700 bg-gray-50 border-gray-200"
   }
 
   // Expandable row functions
@@ -153,7 +235,9 @@
     showAllExpanded = !showAllExpanded
     if (showAllExpanded) {
       // Expand all current rows
-      expandedRows = new Set(executionLogs?.items.map(log => log.execution_id) || [])
+      expandedRows = new Set(
+        executionLogs?.items.map((log) => log.execution_id) || [],
+      )
     } else {
       // Collapse all rows
       expandedRows = new Set()
@@ -167,11 +251,11 @@
 
   function getStatusIcon(status: string) {
     switch (status) {
-      case 'running':
+      case "running":
         return Clock
-      case 'completed':
+      case "completed":
         return CheckCircle
-      case 'failed':
+      case "failed":
         return XCircle
       default:
         return AlertCircle
@@ -180,14 +264,14 @@
 
   function getStatusClass(status: string) {
     switch (status) {
-      case 'running':
-        return 'text-blue-600 bg-blue-100'
-      case 'completed':
-        return 'text-green-600 bg-green-100'
-      case 'failed':
-        return 'text-red-600 bg-red-100'
+      case "running":
+        return "text-blue-600 bg-blue-100"
+      case "completed":
+        return "text-green-600 bg-green-100"
+      case "failed":
+        return "text-red-600 bg-red-100"
       default:
-        return 'text-gray-600 bg-gray-100'
+        return "text-gray-600 bg-gray-100"
     }
   }
 
@@ -196,8 +280,8 @@
   }
 
   function formatDuration(durationMs?: number) {
-    if (!durationMs) return 'N/A'
-    
+    if (!durationMs) return "N/A"
+
     if (durationMs < 1000) {
       return `${durationMs}ms`
     } else if (durationMs < 60000) {
@@ -210,7 +294,9 @@
   }
 
   function truncateMessage(message: string, maxLength = 100) {
-    return message.length > maxLength ? message.substring(0, maxLength) + '...' : message
+    return message.length > maxLength
+      ? message.substring(0, maxLength) + "..."
+      : message
   }
 
   onMount(() => {
@@ -226,7 +312,7 @@
       <h1>AI Execution Logs</h1>
       <p>Monitor and review AI inference execution logs and performance</p>
     </div>
-    
+
     {#if stats}
       <div class="stats-grid">
         <div class="stat-card">
@@ -234,21 +320,33 @@
           <div class="stat-label">Total Executions</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value text-green-600">{stats.completed.toLocaleString()}</div>
+          <div class="stat-value text-green-600">
+            {stats.completed.toLocaleString()}
+          </div>
           <div class="stat-label">Completed</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value text-blue-600">{stats.running.toLocaleString()}</div>
+          <div class="stat-value text-blue-600">
+            {stats.running.toLocaleString()}
+          </div>
           <div class="stat-label">Running</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value text-red-600">{stats.failed.toLocaleString()}</div>
+          <div class="stat-value text-red-600">
+            {stats.failed.toLocaleString()}
+          </div>
           <div class="stat-label">Failed</div>
         </div>
         {#if stats.avgDurationMs}
           <div class="stat-card">
             <div class="stat-value">{formatDuration(stats.avgDurationMs)}</div>
             <div class="stat-label">Avg Duration</div>
+          </div>
+        {/if}
+        {#if stats.totalCost !== undefined}
+          <div class="stat-card">
+            <div class="stat-value">${stats.totalCost.toFixed(6)}</div>
+            <div class="stat-label">Total Cost</div>
           </div>
         {/if}
       </div>
@@ -263,12 +361,12 @@
         type="text"
         placeholder="Search by message, execution ID, conversation ID..."
         bind:value={searchQuery}
-        on:keydown={(e) => e.key === 'Enter' && handleSearch()}
+        on:keydown={(e) => e.key === "Enter" && handleSearch()}
       />
       <button class="search-btn" on:click={handleSearch}>Search</button>
     </div>
-    
-    <button class="filter-toggle" on:click={() => showFilters = !showFilters}>
+
+    <button class="filter-toggle" on:click={() => (showFilters = !showFilters)}>
       <Filter size={20} />
       Filters
     </button>
@@ -279,24 +377,17 @@
       <div class="filter-row">
         <div class="filter-group">
           <label for="status-filter">Status</label>
-          <select id="status-filter" bind:value={statusFilter} on:change={handleFilterChange}>
+          <select
+            id="status-filter"
+            bind:value={statusFilter}
+            on:change={handleFilterChange}
+          >
             {#each statusOptions as option}
               <option value={option.value}>{option.label}</option>
             {/each}
           </select>
         </div>
-        
-        <div class="filter-group">
-          <label for="context-filter">Context</label>
-          <input
-            id="context-filter"
-            type="text"
-            placeholder="Filter by context..."
-            bind:value={contextFilter}
-            on:change={handleFilterChange}
-          />
-        </div>
-        
+
         <div class="filter-group">
           <label for="start-date-filter">Start Date</label>
           <input
@@ -306,7 +397,7 @@
             on:change={handleFilterChange}
           />
         </div>
-        
+
         <div class="filter-group">
           <label for="end-date-filter">End Date</label>
           <input
@@ -321,7 +412,11 @@
       <div class="filter-row">
         <div class="filter-group">
           <label for="final-decision-filter">Final Decision</label>
-          <select id="final-decision-filter" bind:value={finalDecisionFilter} on:change={handleFilterChange}>
+          <select
+            id="final-decision-filter"
+            bind:value={finalDecisionFilter}
+            on:change={handleFilterChange}
+          >
             {#each finalDecisionOptions as option}
               <option value={option.value}>{option.label}</option>
             {/each}
@@ -349,6 +444,19 @@
             on:change={handleFilterChange}
           />
         </div>
+
+        <div class="filter-group">
+          <label for="flag-filter">Flagged For Review</label>
+          <select
+            id="flag-filter"
+            bind:value={flagFilter}
+            on:change={handleFilterChange}
+          >
+            {#each flagOptions as option}
+              <option value={option.value}>{option.label}</option>
+            {/each}
+          </select>
+        </div>
       </div>
     </div>
   {/if}
@@ -374,7 +482,9 @@
           <button
             class="expand-toggle-btn"
             on:click={toggleAllRows}
-            title={showAllExpanded ? 'Collapse all AI responses' : 'Expand all AI responses'}
+            title={showAllExpanded
+              ? "Collapse all AI responses"
+              : "Expand all AI responses"}
           >
             {#if showAllExpanded}
               <Minimize size={16} />
@@ -389,98 +499,120 @@
 
       <div class="table-scroll-wrapper">
         <table class="logs-table">
-        <thead>
-          <tr>
-            <th class="expand-col"></th>
-            <th class="status-col">Status</th>
-            <th class="id-col">Execution ID</th>
-            <th class="context-col">Context</th>
-            <th class="message-col">Message</th>
-            <th class="decision-col">Final Decision</th>
-            <th class="duration-col">Duration</th>
-            <th class="time-col">Start Time</th>
-            <th class="steps-col">Steps</th>
-            <th class="actions-col">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {#each executionLogs.items as log}
-            {@const finalDecision = extractFinalDecision(log)}
-            {@const aiResponse = extractAiResponseText(log)}
-            {@const isExpanded = expandedRows.has(log.execution_id)}
-
-            <!-- Main row -->
-            <tr class="main-row" class:expanded={isExpanded}>
-              <td class="expand-col">
-                <button
-                  class="expand-btn"
-                  on:click={() => toggleRow(log.execution_id)}
-                  title={isExpanded ? 'Hide AI response' : 'Show AI response'}
-                >
-                  {#if isExpanded}
-                    <ChevronDown size={16} />
-                  {:else}
-                    <ChevronRight size={16} />
-                  {/if}
-                </button>
-              </td>
-              <td class="status-col">
-                <div class="status-badge {getStatusClass(log.status)}">
-                  <svelte:component this={getStatusIcon(log.status)} size={16} />
-                  {log.status}
-                </div>
-              </td>
-              <td class="id-col">
-                <div class="execution-id">{log.execution_id}</div>
-                <div class="conversation-id">Conv: {log.conversation_id}</div>
-              </td>
-              <td class="context-col">{log.context}</td>
-              <td class="message-col">
-                <div class="message" title={log.original_message}>
-                  {truncateMessage(log.original_message)}
-                </div>
-              </td>
-              <td class="decision-col">
-                <div class="decision-badge {getFinalDecisionClass(finalDecision)}">
-                  {getFinalDecisionLabel(finalDecision)}
-                </div>
-              </td>
-              <td class="duration-col">{formatDuration(log.total_duration_ms)}</td>
-              <td class="time-col">{formatDateTime(log.start_time)}</td>
-              <td class="steps-col">{log.steps.length}</td>
-              <td class="actions-col">
-                <a href="/ai-execution-log/{log.id}" class="view-btn">
-                  <Eye size={16} />
-                  View
-                </a>
-              </td>
+          <thead>
+            <tr>
+              <th class="expand-col"></th>
+              <th class="status-col">Status</th>
+              <th class="id-col">Execution ID</th>
+              <th class="message-col">Message</th>
+              <th class="decision-col">Final Decision</th>
+              <th class="flag-col">Flag</th>
+              <th class="cost-col">Cost</th>
+              <th class="duration-col">Duration</th>
+              <th class="time-col">Start Time</th>
+              <th class="steps-col">Steps</th>
+              <th class="actions-col">Actions</th>
             </tr>
+          </thead>
+          <tbody>
+            {#each executionLogs.items as log}
+              {@const finalDecision = extractFinalDecision(log)}
+              {@const aiResponse = extractAiResponseText(log)}
+              {@const isExpanded = expandedRows.has(log.execution_id)}
 
-            <!-- Expandable AI response row -->
-            {#if isExpanded}
-              <tr class="expanded-row">
-                <td colspan="10" class="ai-response-cell">
-                  <div class="ai-response-content">
-                    <div class="ai-response-header">
-                      <h4>AI Response</h4>
-                    </div>
-                    <div class="ai-response-text">
-                      {aiResponse || 'No AI response available'}
-                    </div>
-
-                    <!-- Comments Section -->
-                    <GenericComments
-                      entityType="execution-log"
-                      entityId={log.execution_id}
-                      entityLogId={log.id}
+              <!-- Main row -->
+              <tr class="main-row" class:expanded={isExpanded}>
+                <td class="expand-col">
+                  <button
+                    class="expand-btn"
+                    on:click={() => toggleRow(log.execution_id)}
+                    title={isExpanded ? "Hide AI response" : "Show AI response"}
+                  >
+                    {#if isExpanded}
+                      <ChevronDown size={16} />
+                    {:else}
+                      <ChevronRight size={16} />
+                    {/if}
+                  </button>
+                </td>
+                <td class="status-col">
+                  <div class="status-badge {getStatusClass(log.status)}">
+                    <svelte:component
+                      this={getStatusIcon(log.status)}
+                      size={16}
                     />
+                    {log.status}
                   </div>
                 </td>
+                <td class="id-col">
+                  <div class="execution-id">{log.execution_id}</div>
+                  <div class="conversation-id">Conv: {log.conversation_id}</div>
+                </td>
+                <td class="message-col">
+                  <div class="message" title={log.original_message}>
+                    {truncateMessage(log.original_message)}
+                  </div>
+                </td>
+                <td class="decision-col">
+                  <div
+                    class="decision-badge {getFinalDecisionClass(
+                      finalDecision,
+                    )}"
+                  >
+                    {getFinalDecisionLabel(finalDecision)}
+                  </div>
+                </td>
+                <td class="flag-col">
+                  <select
+                    class="flag-select {getFlagColorClass(log.flag)}"
+                    value={log.flag || ""}
+                    on:change={(e) => changeFlag(log.id, e)}
+                  >
+                    <option value="">No Flag</option>
+                    {#each selectableFlags as flag}
+                      <option value={flag.value}>{flag.label}</option>
+                    {/each}
+                  </select>
+                </td>
+                <td class="cost-col">${(log.total_cost || 0).toFixed(6)}</td>
+                <td class="duration-col"
+                  >{formatDuration(log.total_duration_ms)}</td
+                >
+                <td class="time-col">{formatDateTime(log.start_time)}</td>
+                <td class="steps-col">{log.steps.length}</td>
+                <td class="actions-col">
+                  <a href="/ai-execution-log/{log.id}" class="view-btn">
+                    <Eye size={16} />
+                    View
+                  </a>
+                </td>
               </tr>
-            {/if}
-          {/each}
-        </tbody>
-      </table>
+
+              <!-- Expandable AI response row -->
+              {#if isExpanded}
+                <tr class="expanded-row">
+                  <td colspan="10" class="ai-response-cell">
+                    <div class="ai-response-content">
+                      <div class="ai-response-header">
+                        <h4>AI Response</h4>
+                      </div>
+                      <div class="ai-response-text">
+                        {aiResponse || "No AI response available"}
+                      </div>
+
+                      <!-- Comments Section -->
+                      <GenericComments
+                        entityType="execution-log"
+                        entityId={log.execution_id}
+                        entityLogId={log.id}
+                      />
+                    </div>
+                  </td>
+                </tr>
+              {/if}
+            {/each}
+          </tbody>
+        </table>
       </div>
 
       <!-- Pagination -->
@@ -742,16 +874,51 @@
   }
 
   /* Column widths */
-  .expand-col { width: 50px; min-width: 50px; }
-  .status-col { width: 120px; min-width: 120px; }
-  .id-col { width: 200px; min-width: 200px; }
-  .context-col { width: 120px; min-width: 120px; }
-  .message-col { width: 300px; min-width: 300px; }
-  .decision-col { width: 150px; min-width: 150px; }
-  .duration-col { width: 100px; min-width: 100px; }
-  .time-col { width: 180px; min-width: 180px; }
-  .steps-col { width: 80px; min-width: 80px; }
-  .actions-col { width: 100px; min-width: 100px; }
+  .expand-col {
+    width: 50px;
+    min-width: 50px;
+  }
+  .status-col {
+    width: 120px;
+    min-width: 120px;
+  }
+  .id-col {
+    width: 200px;
+    min-width: 200px;
+  }
+
+  .message-col {
+    width: 300px;
+    min-width: 300px;
+  }
+  .decision-col {
+    width: 150px;
+    min-width: 150px;
+  }
+  .flag-col {
+    width: 140px;
+    min-width: 140px;
+  }
+  .cost-col {
+    width: 100px;
+    min-width: 100px;
+  }
+  .duration-col {
+    width: 100px;
+    min-width: 100px;
+  }
+  .time-col {
+    width: 180px;
+    min-width: 180px;
+  }
+  .steps-col {
+    width: 80px;
+    min-width: 80px;
+  }
+  .actions-col {
+    width: 100px;
+    min-width: 100px;
+  }
 
   .logs-table th {
     background: #f9fafb;
@@ -791,6 +958,27 @@
     background: #f3f4f6;
     border-color: #9ca3af;
     color: #374151;
+  }
+
+  /* Flag Select */
+  .flag-select {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    border: 1px solid transparent;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    outline: none;
+    transition: all 0.2s ease;
+  }
+
+  .flag-select:hover {
+    border-color: #d1d5db;
+  }
+
+  .flag-select.text-gray-400 {
+    font-weight: 400;
   }
 
   /* Expandable Row */
@@ -932,8 +1120,6 @@
     max-width: 300px;
     word-break: break-word;
   }
-
-
 
   .view-btn {
     display: inline-flex;

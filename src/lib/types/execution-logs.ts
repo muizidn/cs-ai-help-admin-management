@@ -25,7 +25,16 @@ export interface ExecutionStep {
   level: LogLevel
   message: string
   payload?: Record<string, any>
-  response?: Record<string, any>
+  response?: Record<string, any> & {
+    usage?: {
+      cost?: number
+      cost_details?: {
+        upstream_inference_cost?: number
+        [key: string]: any
+      }
+      [key: string]: any
+    }
+  }
   error?: string
   metadata?: Record<string, any>
 }
@@ -40,6 +49,8 @@ export interface ExecutionLog {
   start_time: string // ISO date string
   end_time?: string // ISO date string
   total_duration_ms?: number
+  total_cost?: number // computed cost from steps
+  flag?: string // e.g. "NEED_REVIEW"
 
   // Request data
   original_message: string
@@ -78,6 +89,7 @@ export interface ExecutionLogQuery {
   final_decision?: string
   customer_message?: string
   ai_response?: string
+  flag?: string
 }
 
 export interface ExecutionLogResponse {
@@ -115,6 +127,7 @@ export interface ExecutionLogStats {
   failed: number
   avgDurationMs?: number
   totalDurationMs?: number
+  totalCost?: number
 }
 
 // API response wrapper
@@ -135,12 +148,14 @@ export interface ExecutionLogListItem {
   start_time: string
   end_time?: string
   total_duration_ms?: number
+  total_cost?: number
   original_message: string
   business_id?: string
   steps_count: number
   error_message?: string
   final_decision?: string
   ai_response_text?: string
+  flag?: string
 }
 
 // For the execution log detail view

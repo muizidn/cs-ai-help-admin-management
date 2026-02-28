@@ -15,6 +15,7 @@ export interface OwnerUsage {
 
 export interface AiAnalyticsStats {
     totalCreditSpent: number
+    totalProviderCost: number
     totalInvocations: number
     usageBySource: Record<string, { credits: number; count: number }>
     topUsers: OwnerUsage[]

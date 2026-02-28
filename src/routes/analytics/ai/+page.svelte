@@ -128,7 +128,7 @@
             >{formatNumber(stats.totalCreditSpent)}</span
           >
           <span class="metric-sub"
-            >Est. {formatCurrency(stats.totalCreditSpent)}</span
+            >Est. Cost: ${stats.totalProviderCost.toFixed(4)}</span
           >
         </div>
         <div class="metric-chart-bg"></div>
