@@ -576,16 +576,21 @@
           </div>
         {:else}
           <!-- Fallback for non-JSON response -->
-          <div class="response-card">
-            <p>{executionLog.final_response}</p>
-            <button
-              class="copy-btn"
-              on:click={() => copyToClipboard(executionLog.final_response)}
-            >
-              <Copy size={16} />
-              Copy
-            </button>
-          </div>
+          {#if executionLog}
+            <div class="response-card">
+              <p>{executionLog.final_response}</p>
+              <button
+                class="copy-btn"
+                on:click={() =>
+                  copyToClipboard(
+                    JSON.stringify(executionLog?.final_response, null, 2),
+                  )}
+              >
+                <Copy size={16} />
+                Copy
+              </button>
+            </div>
+          {/if}
         {/if}
       </div>
     {/if}
