@@ -253,6 +253,8 @@
   }
 </script>
 
+<svelte:window on:keydown={handleKeydown} />
+
 <div class="bg-white shadow rounded-lg p-6">
   <!-- Header -->
   <div class="mb-6">
@@ -525,7 +527,6 @@
 
     <!-- Fullscreen JSON Modal -->
     {#if isFullscreenJson}
-      <svelte:window on:keydown={handleKeydown} />
       <div
         class="fixed inset-0 z-[100] flex flex-col bg-white"
         role="dialog"
