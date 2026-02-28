@@ -1,98 +1,128 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
+  import { onMount } from "svelte"
   import {
-    ArrowLeft, Clock, CheckCircle, XCircle, AlertCircle,
-    MessageSquare, Database, Zap, ExternalLink, Copy,
-    ChevronDown, ChevronRight, Eye, Code, List, Grid,
-    Calendar, Timer, User, Hash, FileText, Settings,
-    Bot, Brain, Target, CheckCircle2, AlertTriangle
-  } from 'lucide-svelte'
-  import type { ExecutionLogDetail } from '$lib/types/execution-logs'
-  import GenericComments from './GenericComments.svelte'
+    ArrowLeft,
+    Clock,
+    CheckCircle,
+    XCircle,
+    AlertCircle,
+    MessageSquare,
+    Database,
+    Zap,
+    ExternalLink,
+    Copy,
+    ChevronDown,
+    ChevronRight,
+    Eye,
+    Code,
+    List,
+    Grid,
+    Calendar,
+    Timer,
+    User,
+    Hash,
+    FileText,
+    Settings,
+    Bot,
+    Brain,
+    Target,
+    CheckCircle2,
+    AlertTriangle,
+  } from "lucide-svelte"
+  import type { ExecutionLogDetail } from "$lib/types/execution-logs"
+  import GenericComments from "./GenericComments.svelte"
 
   export let executionId: string
 
   let executionLog: ExecutionLogDetail | null = null
   let loading = true
-  let error = ''
+  let error = ""
   let expandedSteps: Record<string, boolean> = {}
   let expandedStepTypes: Record<string, boolean> = {}
   let showRawJson = false
-  let viewMode: 'grouped' | 'sequential' = 'grouped'
+  let viewMode: "grouped" | "sequential" = "grouped"
   let selectedStepType: string | null = null
 
   const stepTypeLabels: Record<string, string> = {
-    'api_invocation': 'API Invocation',
-    'llm_query': 'LLM Query',
-    'llm_response': 'LLM Response',
-    'callback_request': 'Callback Request',
-    'callback_response': 'Callback Response',
-    'workflow_step': 'Workflow Step',
-    'error': 'Error',
-    'unknown': 'Unknown'
+    api_invocation: "API Invocation",
+    llm_query: "LLM Query",
+    llm_response: "LLM Response",
+    callback_request: "Callback Request",
+    callback_response: "Callback Response",
+    workflow_step: "Workflow Step",
+    error: "Error",
+    unknown: "Unknown",
   }
 
   const stepTypeIcons: Record<string, any> = {
-    'api_invocation': ExternalLink,
-    'llm_query': MessageSquare,
-    'llm_response': MessageSquare,
-    'callback_request': Database,
-    'callback_response': Database,
-    'workflow_step': Zap,
-    'error': AlertCircle,
-    'unknown': AlertCircle
+    api_invocation: ExternalLink,
+    llm_query: MessageSquare,
+    llm_response: MessageSquare,
+    callback_request: Database,
+    callback_response: Database,
+    workflow_step: Zap,
+    error: AlertCircle,
+    unknown: AlertCircle,
   }
 
   const stepTypeColors: Record<string, string> = {
-    'api_invocation': 'bg-blue-100 text-blue-800 border-blue-200',
-    'llm_query': 'bg-purple-100 text-purple-800 border-purple-200',
-    'llm_response': 'bg-green-100 text-green-800 border-green-200',
-    'callback_request': 'bg-orange-100 text-orange-800 border-orange-200',
-    'callback_response': 'bg-yellow-100 text-yellow-800 border-yellow-200',
-    'workflow_step': 'bg-indigo-100 text-indigo-800 border-indigo-200',
-    'error': 'bg-red-100 text-red-800 border-red-200',
-    'unknown': 'bg-gray-100 text-gray-800 border-gray-200'
+    api_invocation: "bg-blue-100 text-blue-800 border-blue-200",
+    llm_query: "bg-purple-100 text-purple-800 border-purple-200",
+    llm_response: "bg-green-100 text-green-800 border-green-200",
+    callback_request: "bg-orange-100 text-orange-800 border-orange-200",
+    callback_response: "bg-yellow-100 text-yellow-800 border-yellow-200",
+    workflow_step: "bg-indigo-100 text-indigo-800 border-indigo-200",
+    error: "bg-red-100 text-red-800 border-red-200",
+    unknown: "bg-gray-100 text-gray-800 border-gray-200",
   }
 
   // Computed properties
-  $: orderedSteps = executionLog ?
-    [...executionLog.steps].sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()) : []
+  $: orderedSteps = executionLog
+    ? [...executionLog.steps].sort(
+        (a, b) =>
+          new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime(),
+      )
+    : []
 
-  $: filteredSteps = selectedStepType ?
-    orderedSteps.filter(step => step.step_type === selectedStepType) : orderedSteps
+  $: filteredSteps = selectedStepType
+    ? orderedSteps.filter((step) => step.step_type === selectedStepType)
+    : orderedSteps
 
-  $: stepTypeCounts = executionLog ?
-    Object.entries(executionLog.steps_by_type).map(([type, steps]) => ({
-      type,
-      count: steps.length,
-      label: stepTypeLabels[type] || type,
-      icon: stepTypeIcons[type],
-      color: stepTypeColors[type]
-    })).filter(item => item.count > 0) : []
+  $: stepTypeCounts = executionLog
+    ? Object.entries(executionLog.steps_by_type)
+        .map(([type, steps]) => ({
+          type,
+          count: steps.length,
+          label: stepTypeLabels[type] || type,
+          icon: stepTypeIcons[type],
+          color: stepTypeColors[type],
+        }))
+        .filter((item) => item.count > 0)
+    : []
 
   async function loadExecutionLog() {
     loading = true
-    error = ''
+    error = ""
 
     try {
       const response = await fetch(`/api/ai-execution-log/${executionId}`)
       const result = await response.json()
 
-      if (result.status === 'success') {
+      if (result.status === "success") {
         executionLog = result.data
 
         // Initialize expanded state for step types that have steps
-        Object.keys(result.data.steps_by_type).forEach(stepType => {
+        Object.keys(result.data.steps_by_type).forEach((stepType) => {
           if (result.data.steps_by_type[stepType].length > 0) {
             expandedStepTypes[stepType] = true
           }
         })
       } else {
-        error = result.message || 'Failed to load execution log'
+        error = result.message || "Failed to load execution log"
       }
     } catch (err) {
-      error = 'Failed to load execution log'
-      console.error('Error loading execution log:', err)
+      error = "Failed to load execution log"
+      console.error("Error loading execution log:", err)
     } finally {
       loading = false
     }
@@ -100,11 +130,11 @@
 
   function getStatusIcon(status: string) {
     switch (status) {
-      case 'running':
+      case "running":
         return Clock
-      case 'completed':
+      case "completed":
         return CheckCircle
-      case 'failed':
+      case "failed":
         return XCircle
       default:
         return AlertCircle
@@ -113,27 +143,27 @@
 
   function getStatusClass(status: string) {
     switch (status) {
-      case 'running':
-        return 'text-blue-600 bg-blue-100'
-      case 'completed':
-        return 'text-green-600 bg-green-100'
-      case 'failed':
-        return 'text-red-600 bg-red-100'
+      case "running":
+        return "text-blue-600 bg-blue-100"
+      case "completed":
+        return "text-green-600 bg-green-100"
+      case "failed":
+        return "text-red-600 bg-red-100"
       default:
-        return 'text-gray-600 bg-gray-100'
+        return "text-gray-600 bg-gray-100"
     }
   }
 
   function getLevelClass(level: string) {
     switch (level) {
-      case 'error':
-        return 'text-red-600 bg-red-50'
-      case 'warning':
-        return 'text-yellow-600 bg-yellow-50'
-      case 'debug':
-        return 'text-purple-600 bg-purple-50'
+      case "error":
+        return "text-red-600 bg-red-50"
+      case "warning":
+        return "text-yellow-600 bg-yellow-50"
+      case "debug":
+        return "text-purple-600 bg-purple-50"
       default:
-        return 'text-blue-600 bg-blue-50'
+        return "text-blue-600 bg-blue-50"
     }
   }
 
@@ -155,7 +185,7 @@
     showRawJson = !showRawJson
   }
 
-  function setViewMode(mode: 'grouped' | 'sequential') {
+  function setViewMode(mode: "grouped" | "sequential") {
     viewMode = mode
     selectedStepType = null
   }
@@ -163,12 +193,12 @@
   function filterByStepType(stepType: string | null) {
     selectedStepType = stepType
     if (stepType) {
-      viewMode = 'sequential'
+      viewMode = "sequential"
     }
   }
 
   function getStepNumber(step: any): number {
-    return orderedSteps.findIndex(s => s.id === step.id) + 1
+    return orderedSteps.findIndex((s) => s.id === step.id) + 1
   }
 
   function formatStepDuration(durationMs: number): string {
@@ -184,39 +214,39 @@
   }
 
   function getStepTypeColor(stepType: string): string {
-    return stepTypeColors[stepType] || stepTypeColors['unknown']
+    return stepTypeColors[stepType] || stepTypeColors["unknown"]
   }
 
   function getConfidenceColor(confidence: string): string {
     switch (confidence?.toLowerCase()) {
-      case 'high':
-        return 'bg-green-100 text-green-800 border-green-200'
-      case 'medium':
-        return 'bg-yellow-100 text-yellow-800 border-yellow-200'
-      case 'low':
-        return 'bg-red-100 text-red-800 border-red-200'
+      case "high":
+        return "bg-green-100 text-green-800 border-green-200"
+      case "medium":
+        return "bg-yellow-100 text-yellow-800 border-yellow-200"
+      case "low":
+        return "bg-red-100 text-red-800 border-red-200"
       default:
-        return 'bg-gray-100 text-gray-800 border-gray-200'
+        return "bg-gray-100 text-gray-800 border-gray-200"
     }
   }
 
   function getDecisionColor(decision: string): string {
     switch (decision?.toUpperCase()) {
-      case 'DIRECT_REPLY':
-        return 'bg-blue-100 text-blue-800 border-blue-200'
-      case 'ESCALATE':
-        return 'bg-orange-100 text-orange-800 border-orange-200'
-      case 'TRANSFER':
-        return 'bg-purple-100 text-purple-800 border-purple-200'
+      case "DIRECT_REPLY":
+        return "bg-blue-100 text-blue-800 border-blue-200"
+      case "ESCALATE":
+        return "bg-orange-100 text-orange-800 border-orange-200"
+      case "TRANSFER":
+        return "bg-purple-100 text-purple-800 border-purple-200"
       default:
-        return 'bg-gray-100 text-gray-800 border-gray-200'
+        return "bg-gray-100 text-gray-800 border-gray-200"
     }
   }
 
   function formatMessage(message: string): string {
-    if (!message) return ''
+    if (!message) return ""
     // Replace \n with actual line breaks for display
-    return message.replace(/\\n/g, '\n')
+    return message.replace(/\\n/g, "\n")
   }
 
   function formatJson(obj: any) {
@@ -228,8 +258,8 @@
   }
 
   function formatDuration(durationMs?: number) {
-    if (!durationMs) return 'N/A'
-    
+    if (!durationMs) return "N/A"
+
     if (durationMs < 1000) {
       return `${durationMs}ms`
     } else if (durationMs < 60000) {
@@ -262,13 +292,16 @@
           <ArrowLeft size={20} />
           Back to Execution Logs
         </a>
-        
+
         <div class="status-badge {getStatusClass(executionLog.status)}">
-          <svelte:component this={getStatusIcon(executionLog.status)} size={16} />
+          <svelte:component
+            this={getStatusIcon(executionLog.status)}
+            size={16}
+          />
           {executionLog.status}
         </div>
       </div>
-      
+
       <h1>Execution Log Details</h1>
       <p>Execution ID: <code>{executionLog.execution_id}</code></p>
     </div>
@@ -288,7 +321,7 @@
           </div>
           <div class="info-item">
             <span class="label">Business ID</span>
-            <span>{executionLog.business_id || 'N/A'}</span>
+            <span>{executionLog.business_id || "N/A"}</span>
           </div>
         </div>
       </div>
@@ -302,11 +335,11 @@
           </div>
           <div class="info-item">
             <span class="label">End Time</span>
-            <span>{executionLog.formatted_end_time || 'N/A'}</span>
+            <span>{executionLog.formatted_end_time || "N/A"}</span>
           </div>
           <div class="info-item">
             <span class="label">Duration</span>
-            <span>{executionLog.formatted_duration || 'N/A'}</span>
+            <span>{executionLog.formatted_duration || "N/A"}</span>
           </div>
         </div>
       </div>
@@ -335,7 +368,10 @@
       <h2>Customer Message</h2>
       <div class="message-card">
         <p>{executionLog.original_message}</p>
-        <button class="copy-btn" on:click={() => copyToClipboard(executionLog?.original_message || "")}>
+        <button
+          class="copy-btn"
+          on:click={() => copyToClipboard(executionLog?.original_message || "")}
+        >
           <Copy size={16} />
           Copy
         </button>
@@ -370,7 +406,9 @@
                 {#if parsedResponse.final_message}
                   <div class="response-item full-width">
                     <span class="field-label">AI Response Message</span>
-                    <div class="user-message">{parsedResponse.final_message}</div>
+                    <div class="user-message">
+                      {parsedResponse.final_message}
+                    </div>
                   </div>
                 {/if}
                 {#if parsedResponse.ai_output}
@@ -381,7 +419,10 @@
                     </div>
                     <button
                       class="copy-btn small"
-                      on:click={() => copyToClipboard(JSON.stringify(parsedResponse.ai_output, null, 2))}
+                      on:click={() =>
+                        copyToClipboard(
+                          JSON.stringify(parsedResponse.ai_output, null, 2),
+                        )}
                     >
                       <Copy size={14} />
                       Copy AI Response
@@ -391,7 +432,9 @@
                 {#if parsedResponse.execution_id}
                   <div class="response-item">
                     <span class="field-label">Execution ID</span>
-                    <code class="execution-id">{parsedResponse.execution_id}</code>
+                    <code class="execution-id"
+                      >{parsedResponse.execution_id}</code
+                    >
                   </div>
                 {/if}
               </div>
@@ -408,13 +451,17 @@
                   {#if parsedResponse.ai_output.decision}
                     <div class="response-item">
                       <span class="field-label">Decision</span>
-                      <span class="decision-badge {getDecisionColor(parsedResponse.ai_output.decision)}">
+                      <span
+                        class="decision-badge {getDecisionColor(
+                          parsedResponse.ai_output.decision,
+                        )}"
+                      >
                         <Target size={16} />
                         {parsedResponse.ai_output.decision}
                       </span>
                     </div>
                   {/if}
-                  {#if parsedResponse.ai_output.confidence}
+                  <!-- {#if parsedResponse.ai_output.confidence}
                     <div class="response-item">
                       <span class="field-label">Confidence</span>
                       <span class="confidence-badge {getConfidenceColor(parsedResponse.ai_output.confidence)}">
@@ -426,11 +473,13 @@
                         {parsedResponse.ai_output.confidence.toUpperCase()}
                       </span>
                     </div>
-                  {/if}
+                  {/if} -->
                   {#if parsedResponse.ai_output.reason}
                     <div class="response-item full-width">
                       <span class="field-label">Reasoning</span>
-                      <div class="ai-reason">{parsedResponse.ai_output.reason}</div>
+                      <div class="ai-reason">
+                        {parsedResponse.ai_output.reason}
+                      </div>
                     </div>
                   {/if}
                 </div>
@@ -452,7 +501,8 @@
                     </div>
                     <button
                       class="copy-btn small"
-                      on:click={() => copyToClipboard(parsedResponse.ai_output.response)}
+                      on:click={() =>
+                        copyToClipboard(parsedResponse.ai_output.response)}
                     >
                       <Copy size={14} />
                       Copy AI Response
@@ -468,7 +518,8 @@
                     </div>
                     <button
                       class="copy-btn small"
-                      on:click={() => copyToClipboard(parsedResponse.final_message)}
+                      on:click={() =>
+                        copyToClipboard(parsedResponse.final_message)}
                     >
                       <Copy size={14} />
                       Copy Final Message
@@ -503,12 +554,22 @@
                 <div class="raw-response-container">
                   <div class="json-header">
                     <span class="json-label">Complete Response Object</span>
-                    <button class="copy-btn small" on:click={() => copyToClipboard(JSON.stringify(parsedResponse, null, 2))}>
+                    <button
+                      class="copy-btn small"
+                      on:click={() =>
+                        copyToClipboard(
+                          JSON.stringify(parsedResponse, null, 2),
+                        )}
+                    >
                       <Copy size={14} />
                       Copy All JSON
                     </button>
                   </div>
-                  <pre class="raw-response">{JSON.stringify(parsedResponse, null, 2)}</pre>
+                  <pre class="raw-response">{JSON.stringify(
+                      parsedResponse,
+                      null,
+                      2,
+                    )}</pre>
                 </div>
               {/if}
             </div>
@@ -517,7 +578,10 @@
           <!-- Fallback for non-JSON response -->
           <div class="response-card">
             <p>{executionLog.final_response}</p>
-            <button class="copy-btn" on:click={() => copyToClipboard(executionLog.final_response)}>
+            <button
+              class="copy-btn"
+              on:click={() => copyToClipboard(executionLog.final_response)}
+            >
               <Copy size={16} />
               Copy
             </button>
@@ -547,14 +611,14 @@
           <div class="view-mode-toggle">
             <button
               class="toggle-btn {viewMode === 'grouped' ? 'active' : ''}"
-              on:click={() => setViewMode('grouped')}
+              on:click={() => setViewMode("grouped")}
             >
               <Grid size={16} />
               Grouped
             </button>
             <button
               class="toggle-btn {viewMode === 'sequential' ? 'active' : ''}"
-              on:click={() => setViewMode('sequential')}
+              on:click={() => setViewMode("sequential")}
             >
               <List size={16} />
               Sequential
@@ -577,7 +641,11 @@
         <div class="raw-json-container">
           <div class="raw-json-header">
             <h3>Raw Execution Log Data</h3>
-            <button class="copy-btn" on:click={() => copyToClipboard(JSON.stringify(executionLog, null, 2))}>
+            <button
+              class="copy-btn"
+              on:click={() =>
+                copyToClipboard(JSON.stringify(executionLog, null, 2))}
+            >
               <Copy size={16} />
               Copy JSON
             </button>
@@ -586,7 +654,7 @@
         </div>
       {:else}
         <!-- Step Type Filter (for sequential view) -->
-        {#if viewMode === 'sequential'}
+        {#if viewMode === "sequential"}
           <div class="step-type-filters">
             <button
               class="filter-btn {selectedStepType === null ? 'active' : ''}"
@@ -596,7 +664,9 @@
             </button>
             {#each stepTypeCounts as { type, count, label, icon, color }}
               <button
-                class="filter-btn {selectedStepType === type ? 'active' : ''} {color}"
+                class="filter-btn {selectedStepType === type
+                  ? 'active'
+                  : ''} {color}"
                 on:click={() => filterByStepType(type)}
               >
                 <svelte:component this={icon} size={16} />
@@ -606,24 +676,31 @@
           </div>
         {/if}
 
-        {#if viewMode === 'grouped'}
+        {#if viewMode === "grouped"}
           <!-- Grouped View -->
           {#each Object.entries(executionLog.steps_by_type) as [stepType, steps]}
             {#if steps.length > 0}
               <div class="step-type-section">
                 <div class="step-type-header {getStepTypeColor(stepType)}">
                   <div class="step-type-info">
-                    <svelte:component this={stepTypeIcons[stepType]} size={20} />
-                    <span class="step-type-title">{stepTypeLabels[stepType]}</span>
+                    <svelte:component
+                      this={stepTypeIcons[stepType]}
+                      size={20}
+                    />
+                    <span class="step-type-title"
+                      >{stepTypeLabels[stepType]}</span
+                    >
                     <span class="step-count">({steps.length} steps)</span>
                   </div>
                   <button
                     class="expand-toggle-btn"
                     on:click={() => toggleStepType(stepType)}
                   >
-                    {expandedStepTypes[stepType] ? 'Hide' : 'Show'} Details
+                    {expandedStepTypes[stepType] ? "Hide" : "Show"} Details
                     <svelte:component
-                      this={expandedStepTypes[stepType] ? ChevronDown : ChevronRight}
+                      this={expandedStepTypes[stepType]
+                        ? ChevronDown
+                        : ChevronRight}
                       size={16}
                     />
                   </button>
@@ -638,7 +715,10 @@
                           <div class="step-info">
                             <div class="step-title">
                               <span class="step-id">{step.id}</span>
-                              <span class="step-level {getLevelClass(step.level)}">{step.level}</span>
+                              <span
+                                class="step-level {getLevelClass(step.level)}"
+                                >{step.level}</span
+                              >
                             </div>
                             <div class="step-meta">
                               <span class="step-time">
@@ -658,7 +738,7 @@
                             on:click={() => toggleStep(step.id)}
                           >
                             <Eye size={16} />
-                            {expandedSteps[step.id] ? 'Hide' : 'Show'} Details
+                            {expandedSteps[step.id] ? "Hide" : "Show"} Details
                           </button>
                         </div>
 
@@ -672,8 +752,16 @@
                                   <FileText size={16} />
                                   Payload
                                 </h4>
-                                <pre class="json-display">{formatJson(step.payload)}</pre>
-                                <button class="copy-btn" on:click={() => copyToClipboard(JSON.stringify(step.payload, null, 2))}>
+                                <pre class="json-display">{formatJson(
+                                    step.payload,
+                                  )}</pre>
+                                <button
+                                  class="copy-btn"
+                                  on:click={() =>
+                                    copyToClipboard(
+                                      JSON.stringify(step.payload, null, 2),
+                                    )}
+                                >
                                   <Copy size={14} />
                                   Copy
                                 </button>
@@ -686,8 +774,16 @@
                                   <MessageSquare size={16} />
                                   Response
                                 </h4>
-                                <pre class="json-display">{formatJson(step.response)}</pre>
-                                <button class="copy-btn" on:click={() => copyToClipboard(JSON.stringify(step.response, null, 2))}>
+                                <pre class="json-display">{formatJson(
+                                    step.response,
+                                  )}</pre>
+                                <button
+                                  class="copy-btn"
+                                  on:click={() =>
+                                    copyToClipboard(
+                                      JSON.stringify(step.response, null, 2),
+                                    )}
+                                >
                                   <Copy size={14} />
                                   Copy
                                 </button>
@@ -710,8 +806,16 @@
                                   <Settings size={16} />
                                   Metadata
                                 </h4>
-                                <pre class="json-display">{formatJson(step.metadata)}</pre>
-                                <button class="copy-btn" on:click={() => copyToClipboard(JSON.stringify(step.metadata, null, 2))}>
+                                <pre class="json-display">{formatJson(
+                                    step.metadata,
+                                  )}</pre>
+                                <button
+                                  class="copy-btn"
+                                  on:click={() =>
+                                    copyToClipboard(
+                                      JSON.stringify(step.metadata, null, 2),
+                                    )}
+                                >
                                   <Copy size={14} />
                                   Copy
                                 </button>
@@ -733,14 +837,21 @@
               <div class="step-card sequential">
                 <div class="step-header">
                   <div class="step-number">#{getStepNumber(step)}</div>
-                  <div class="step-type-badge {getStepTypeColor(step.step_type)}">
-                    <svelte:component this={stepTypeIcons[step.step_type]} size={16} />
+                  <div
+                    class="step-type-badge {getStepTypeColor(step.step_type)}"
+                  >
+                    <svelte:component
+                      this={stepTypeIcons[step.step_type]}
+                      size={16}
+                    />
                     {stepTypeLabels[step.step_type]}
                   </div>
                   <div class="step-info">
                     <div class="step-title">
                       <span class="step-id">{step.id}</span>
-                      <span class="step-level {getLevelClass(step.level)}">{step.level}</span>
+                      <span class="step-level {getLevelClass(step.level)}"
+                        >{step.level}</span
+                      >
                     </div>
                     <div class="step-meta">
                       <span class="step-time">
@@ -760,7 +871,7 @@
                     on:click={() => toggleStep(step.id)}
                   >
                     <Eye size={16} />
-                    {expandedSteps[step.id] ? 'Hide' : 'Show'} Details
+                    {expandedSteps[step.id] ? "Hide" : "Show"} Details
                   </button>
                 </div>
 
@@ -774,8 +885,16 @@
                           <FileText size={16} />
                           Payload
                         </h4>
-                        <pre class="json-display">{formatJson(step.payload)}</pre>
-                        <button class="copy-btn" on:click={() => copyToClipboard(JSON.stringify(step.payload, null, 2))}>
+                        <pre class="json-display">{formatJson(
+                            step.payload,
+                          )}</pre>
+                        <button
+                          class="copy-btn"
+                          on:click={() =>
+                            copyToClipboard(
+                              JSON.stringify(step.payload, null, 2),
+                            )}
+                        >
                           <Copy size={14} />
                           Copy
                         </button>
@@ -788,8 +907,16 @@
                           <MessageSquare size={16} />
                           Response
                         </h4>
-                        <pre class="json-display">{formatJson(step.response)}</pre>
-                        <button class="copy-btn" on:click={() => copyToClipboard(JSON.stringify(step.response, null, 2))}>
+                        <pre class="json-display">{formatJson(
+                            step.response,
+                          )}</pre>
+                        <button
+                          class="copy-btn"
+                          on:click={() =>
+                            copyToClipboard(
+                              JSON.stringify(step.response, null, 2),
+                            )}
+                        >
                           <Copy size={14} />
                           Copy
                         </button>
@@ -812,8 +939,16 @@
                           <Settings size={16} />
                           Metadata
                         </h4>
-                        <pre class="json-display">{formatJson(step.metadata)}</pre>
-                        <button class="copy-btn" on:click={() => copyToClipboard(JSON.stringify(step.metadata, null, 2))}>
+                        <pre class="json-display">{formatJson(
+                            step.metadata,
+                          )}</pre>
+                        <button
+                          class="copy-btn"
+                          on:click={() =>
+                            copyToClipboard(
+                              JSON.stringify(step.metadata, null, 2),
+                            )}
+                        >
                           <Copy size={14} />
                           Copy
                         </button>
@@ -1079,7 +1214,7 @@
     padding: 1rem;
     background: #1e293b;
     color: #e2e8f0;
-    font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+    font-family: "Fira Code", "Monaco", "Consolas", monospace;
     font-size: 0.875rem;
     line-height: 1.5;
     overflow-x: auto;
@@ -1526,7 +1661,7 @@
     color: #e2e8f0;
     padding: 0.5rem 1rem;
     border-radius: 0.375rem;
-    font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+    font-family: "Fira Code", "Monaco", "Consolas", monospace;
     font-size: 0.875rem;
     width: fit-content;
   }
@@ -1589,7 +1724,7 @@
     padding: 1rem;
     background: #1e293b;
     color: #e2e8f0;
-    font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+    font-family: "Fira Code", "Monaco", "Consolas", monospace;
     font-size: 0.875rem;
     line-height: 1.5;
     overflow-x: auto;
