@@ -386,6 +386,25 @@
                 <div class="value">{transaction.plan}</div>
               </div>
             {/if}
+
+            {#if transaction.metadata?.voucherCode}
+              <div class="info-item">
+                <span class="label">Applied Voucher</span>
+                <div class="value">
+                  <span class="badge badge-secondary">🎟️ {transaction.metadata.voucherCode}</span>
+                  {#if transaction.metadata.discountAmount}
+                    <div class="text-xs text-green-600 font-bold mt-1">
+                      Discount: -{formatCurrency(transaction.metadata.discountAmount)}
+                    </div>
+                  {/if}
+                  {#if transaction.metadata.originalAmount}
+                    <div class="text-xs text-muted-foreground line-through">
+                      Original: {formatCurrency(transaction.metadata.originalAmount)}
+                    </div>
+                  {/if}
+                </div>
+              </div>
+            {/if}
           </div>
         </div>
       </div>

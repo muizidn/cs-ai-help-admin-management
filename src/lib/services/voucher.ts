@@ -21,6 +21,7 @@ export class VoucherService {
         return {
             ...rest,
             id: doc.id || (_id ? _id.toString() : ""),
+            maxRedemption: doc.maxRedemption || doc.limitUse || 0, // Fallback for old data
         } as Voucher
     }
 
@@ -163,12 +164,17 @@ export class VoucherService {
             const newVoucher = {
                 id,
                 code: data.code.toUpperCase(),
+                ownerId: data.ownerId || null,
                 discountType: data.discountType,
                 discountValue: data.discountValue,
-                limitUse: data.limitUse,
+                maxRedemptionGlobal: data.maxRedemptionGlobal || 0,
+                maxRedemptionPerOwner: data.maxRedemptionPerOwner || 0,
                 usedCount: 0,
                 isActive: data.isActive,
+                showInSettings: data.showInSettings,
                 expiresAt: data.expiresAt ? new Date(data.expiresAt) : null,
+                targetType: data.targetType || "BOTH",
+                applicablePlanType: data.applicablePlanType || "BOTH",
                 createdAt: now,
                 updatedAt: now,
                 createdBy,
@@ -252,6 +258,35 @@ export class VoucherService {
             return {
                 success: false,
                 error: ["Failed to delete voucher"],
+            }
+        }
+    }
+
+    async getVoucherTransactions(voucherId: string): Promise<ApiResponse<any[]>> {
+        try {
+            const db = await getDatabase()
+            const transactions = await db.collection("transactions")
+                .find({
+                    $or: [
+                        { voucherId: voucherId },
+                        { "metadata.voucherId": voucherId }
+                    ]
+                })
+                .sort({ createdAt: -1 })
+                .toArray()
+
+            return {
+                success: true,
+                data: transactions.map((t: any) => {
+                    const { _id, ...rest } = t
+                    return { ...rest, id: t.id || _id.toString() }
+                })
+            }
+        } catch (error) {
+            logger.error("Error getting voucher transactions:", error as any)
+            return {
+                success: false,
+                error: ["Failed to retrieve linked transactions"],
             }
         }
     }

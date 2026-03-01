@@ -403,6 +403,17 @@
                         : formatCurrency(transaction.voucher.discountValue)}
                     </div>
                   </div>
+                {:else if transaction.metadata?.voucherCode}
+                  <div class="voucher-info mt-1">
+                    <span class="badge badge-secondary text-xs">
+                      🎟️ {transaction.metadata.voucherCode}
+                    </span>
+                    {#if transaction.metadata.discountAmount}
+                      <div class="text-xs text-green-600 font-bold">
+                        -{formatCurrency(transaction.metadata.discountAmount)}
+                      </div>
+                    {/if}
+                  </div>
                 {/if}
               </td>
               <td>

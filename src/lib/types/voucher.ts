@@ -5,12 +5,18 @@ export type DiscountType = "PERCENTAGE" | "AMOUNT"
 export interface Voucher {
     id: string
     code: string
+    ownerId?: string // user.id or org.id
     discountType: DiscountType
     discountValue: number
-    limitUse: number
+    maxRedemption?: number // Legacy field
+    maxRedemptionGlobal: number // Global availability across all users
+    maxRedemptionPerOwner: number // Limit per single user/organization
     usedCount: number
     isActive: boolean
+    showInSettings: boolean
     expiresAt: Date | string | null
+    targetType?: "PERSONAL" | "ORGANIZATION" | "BOTH"
+    applicablePlanType?: "SUBSCRIPTION" | "CREDIT" | "BOTH"
 
     // Usage tracking
     lastUsedBy?: string
@@ -35,20 +41,30 @@ export interface VoucherQuery {
 
 export interface VoucherCreateInput {
     code: string
+    ownerId?: string
     discountType: DiscountType
     discountValue: number
-    limitUse: number
+    maxRedemptionGlobal: number
+    maxRedemptionPerOwner: number
     isActive: boolean
+    showInSettings: boolean
     expiresAt?: string | null
+    targetType?: "PERSONAL" | "ORGANIZATION" | "BOTH"
+    applicablePlanType?: "SUBSCRIPTION" | "CREDIT" | "BOTH"
 }
 
 export interface VoucherUpdateInput {
     code?: string
+    ownerId?: string
     discountType?: DiscountType
     discountValue?: number
-    limitUse?: number
+    maxRedemptionGlobal?: number
+    maxRedemptionPerOwner?: number
     isActive?: boolean
+    showInSettings?: boolean
     expiresAt?: string | null
+    targetType?: "PERSONAL" | "ORGANIZATION" | "BOTH"
+    applicablePlanType?: "SUBSCRIPTION" | "CREDIT" | "BOTH"
     updatedBy?: string
 }
 
