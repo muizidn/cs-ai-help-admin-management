@@ -1,8 +1,9 @@
 // Types for pricing and usage configuration
 
 export interface PricingPlan {
-    originalPrice: number
-    currentPrice: number
+    price: number
+    originalPrice?: number
+    isDiscounted: boolean
     credits: number
     discountMultipliers: Record<string, number>
     enabledDurations: number[]
@@ -11,8 +12,9 @@ export interface PricingPlan {
 }
 
 export interface CreditPricing {
-    pricePerCredit: number
-    originalPricePerCredit?: number
+    price: number
+    originalPrice?: number
+    isDiscounted: boolean
     discountMultipliers: Record<string, number>
 }
 
@@ -23,6 +25,10 @@ export interface UsageCosts {
 }
 
 export interface PricingConfig {
+    id?: string
+    name?: string // For custom group pricing
+    isGlobal?: boolean
+    expiresAt?: Date | string
     proPlan: PricingPlan
     credits: CreditPricing
     usageCosts: UsageCosts
@@ -31,7 +37,19 @@ export interface PricingConfig {
 }
 
 export interface PricingUpdateInput {
+    name?: string
+    expiresAt?: Date | string
     proPlan?: Partial<PricingPlan>
     credits?: Partial<CreditPricing>
     usageCosts?: Partial<UsageCosts>
+}
+
+export interface PricingGroupAssignment {
+    id: string
+    groupId: string
+    ownerId: string
+    ownerType: 'ORGANIZATION' | 'USER'
+    ownerName?: string // Cached for UI
+    assignedAt: Date | string
+    assignedBy: string
 }

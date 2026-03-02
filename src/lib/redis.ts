@@ -11,14 +11,14 @@ class RedisClient {
     }
 
     const env = getServerEnv()
-    
+
     try {
       // Try local Redis first if REDIS_URL is set
       if (env.REDIS_URL) {
         this.client = createClient({
           url: env.REDIS_URL
         })
-        
+
         await this.client.connect()
         this.isConnected = true
         console.log(`✅ Connected to local Redis: ${env.REDIS_URL}`)
@@ -61,7 +61,7 @@ class RedisClient {
 
   private async makeUpstashRequest(command: string[]): Promise<any> {
     const env = getServerEnv()
-    
+
     if (!env.UPSTASH_REDIS_REST_URL || !env.UPSTASH_REDIS_REST_TOKEN) {
       throw new Error('Upstash Redis configuration not found')
     }
@@ -85,9 +85,9 @@ class RedisClient {
 
   async get(key: string): Promise<string | null> {
     await this.ensureConnection()
-    
+
     const env = getServerEnv()
-    
+
     if (this.client && env.REDIS_URL) {
       // Use local Redis client
       return await this.client.get(key)
@@ -95,15 +95,15 @@ class RedisClient {
       // Use Upstash REST API
       return await this.makeUpstashRequest(['GET', key])
     }
-    
+
     throw new Error('No Redis connection available')
   }
 
   async set(key: string, value: string, expireSeconds?: number): Promise<void> {
     await this.ensureConnection()
-    
+
     const env = getServerEnv()
-    
+
     if (this.client && env.REDIS_URL) {
       // Use local Redis client
       if (expireSeconds) {
@@ -125,9 +125,9 @@ class RedisClient {
 
   async delete(key: string): Promise<number> {
     await this.ensureConnection()
-    
+
     const env = getServerEnv()
-    
+
     if (this.client && env.REDIS_URL) {
       // Use local Redis client
       return await this.client.del(key)
@@ -135,8 +135,30 @@ class RedisClient {
       // Use Upstash REST API
       return await this.makeUpstashRequest(['DEL', key])
     }
-    
+
     throw new Error('No Redis connection available')
+  }
+
+  async deleteByPattern(pattern: string): Promise<void> {
+    await this.ensureConnection()
+
+    const env = getServerEnv()
+
+    if (this.client && env.REDIS_URL) {
+      // Use local Redis client
+      const keys = await this.client.keys(pattern)
+      if (keys.length > 0) {
+        await this.client.del(keys)
+      }
+    } else if (env.UPSTASH_REDIS_REST_URL) {
+      // Use Upstash REST API
+      const keys = await this.makeUpstashRequest(['KEYS', pattern])
+      if (keys && Array.isArray(keys) && keys.length > 0) {
+        await this.makeUpstashRequest(['DEL', ...keys])
+      }
+    } else {
+      throw new Error('No Redis connection available')
+    }
   }
 
   // AI-specific methods matching the ai-inference Redis client

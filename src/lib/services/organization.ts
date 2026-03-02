@@ -45,6 +45,7 @@ export class OrganizationService {
                 .toArray()
 
             // Enrich with member counts
+            const usersCollection = await this.getCollection("users")
             const enrichedOrgs = await Promise.all(
                 orgs.map(async (org) => {
                     const memberCount = await collaboratorsCollection.countDocuments({
@@ -53,12 +54,21 @@ export class OrganizationService {
                         deletedAt: { $exists: false }
                     })
 
+                    let ownerEmail = "Unknown Owner"
+                    if (org.createdBy) {
+                        const ownerDoc = await usersCollection.findOne({ id: org.createdBy })
+                        if (ownerDoc && ownerDoc.email) {
+                            ownerEmail = ownerDoc.email
+                        }
+                    }
+
                     const { _id, ...rest } = org
                     return {
                         ...rest,
                         id: org.id || (_id ? _id.toString() : ""),
-                        memberCount
-                    } as OrganizationWithStats
+                        memberCount,
+                        ownerEmail
+                    } as any
                 })
             )
 
