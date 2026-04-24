@@ -12,6 +12,7 @@
     Building,
     BarChart3,
     Receipt,
+    Cpu,
   } from "lucide-svelte"
 
   import type { LayoutData } from "./$types"
@@ -103,6 +104,15 @@
         >
           <Building size={20} />
           <span>Organizations</span>
+        </a>
+
+        <a
+          href="/configurator"
+          class="nav-item"
+          class:active={currentPath.startsWith("/configurator")}
+        >
+          <Cpu size={20} />
+          <span>Configurator</span>
         </a>
 
         <a
