@@ -410,43 +410,65 @@
       </div>
 
       <!-- User Information Card -->
-      {#if transaction.user}
-        <div class="info-card">
-          <div class="card-header">
-            <h2>User Information</h2>
-          </div>
-          <div class="card-content">
-            <div class="info-grid">
-              <div class="info-item">
-                <span class="label">Name</span>
-                <div class="value">{transaction.user.name}</div>
+      <div class="info-card">
+        <div class="card-header">
+          <h2>User Information</h2>
+        </div>
+        <div class="card-content">
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="label">Name</span>
+              <div class="value">
+                {#if transaction.metadata?.customerName}
+                  {transaction.metadata.customerName}
+                  {#if transaction.organizationId || transaction.metadata?.orgId}
+                    <span class="badge badge-primary text-xs ml-2">ORGANIZATION</span>
+                  {/if}
+                {:else if transaction.user}
+                  {transaction.user.name}
+                  {#if transaction.organizationId || transaction.metadata?.orgId}
+                    <span class="badge badge-primary text-xs ml-2">ORGANIZATION</span>
+                  {/if}
+                {:else}
+                  -
+                {/if}
               </div>
+            </div>
 
-              <div class="info-item">
-                <span class="label">Email</span>
-                <div class="value">{transaction.user.email}</div>
+            <div class="info-item">
+              <span class="label">Email</span>
+              <div class="value">
+                {#if transaction.metadata?.email}
+                  {transaction.metadata.email}
+                {:else if transaction.user}
+                  {transaction.user.email}
+                {:else}
+                  -
+                {/if}
               </div>
+            </div>
 
-              <div class="info-item">
-                <span class="label">User ID</span>
-                <div class="value code">{transaction.user.id}</div>
-              </div>
+            <div class="info-item">
+              <span class="label">User ID</span>
+              <div class="value code">{transaction.userId}</div>
+            </div>
 
+            {#if transaction.userId}
               <div class="info-item">
                 <span class="label">Actions</span>
                 <div class="value">
                   <a
-                    href="/user/{transaction.user.id}"
+                    href="/user/{transaction.userId}"
                     class="btn btn-sm btn-secondary"
                   >
                     View User Details
                   </a>
                 </div>
               </div>
-            </div>
+            {/if}
           </div>
         </div>
-      {/if}
+      </div>
     </div>
 
     <!-- Notes and Payment Proof -->
