@@ -277,9 +277,9 @@ export class VoucherService {
 
             return {
                 success: true,
-                data: transactions.map((t: any) => {
-                    const { _id, ...rest } = t
-                    return { ...rest, id: t.id || _id.toString() }
+                data: transactions.map((item: any) => {
+                    const { _id, ...rest } = item
+                    return { ...rest, id: item.id || _id.toString() }
                 })
             }
         } catch (error) {
