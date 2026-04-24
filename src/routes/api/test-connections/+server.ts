@@ -6,13 +6,13 @@ import { logger } from '$lib/logger'
 // GET /api/test-connections - Test MongoDB and Redis connections
 export const GET: RequestHandler = async ({ locals }) => {
   const requestId = locals.requestId || 'test-connections'
-  
+
   const results = {
     mongodb: { status: 'unknown', message: '', error: null },
     redis: { status: 'unknown', message: '', error: null },
     ai_inference_collection: { status: 'unknown', message: '', count: 0, error: null }
   }
-  
+
   // Test MongoDB connection
   try {
     const db = await getDatabase()
@@ -23,14 +23,14 @@ export const GET: RequestHandler = async ({ locals }) => {
         message: 'MongoDB connection successful',
         error: null
       }
-      
+
       // Test AI inference collection access
       try {
         const collection = db.collection('ai_inference_engine_execution_logs')
         const count = await collection.countDocuments({})
         results.ai_inference_collection = {
           status: 'accessible',
-          message: `AI inference collection accessible with ${count} documents`,
+          message: `AI inference collection accessible with ${{ count }} documents`,
           count,
           error: null
         }
@@ -56,18 +56,18 @@ export const GET: RequestHandler = async ({ locals }) => {
       error: error instanceof Error ? error.message : 'Unknown error'
     }
   }
-  
+
   // Test Redis connection
   try {
     const redisClient = await getRedisClient()
-    
+
     // Try to get a test key
     const testValue = await redisClient.get('test-connection-key')
-    
+
     // Try to set and get a test value
     await redisClient.set('admin-test-key', 'test-value', 60) // 60 seconds expiry
     const retrievedValue = await redisClient.get('admin-test-key')
-    
+
     if (retrievedValue === 'test-value') {
       results.redis = {
         status: 'connected',
@@ -88,22 +88,22 @@ export const GET: RequestHandler = async ({ locals }) => {
       error: error instanceof Error ? error.message : 'Unknown error'
     }
   }
-  
+
   // Determine overall status
-  const overallStatus = 
-    results.mongodb.status === 'connected' && 
-    results.redis.status === 'connected' && 
-    results.ai_inference_collection.status === 'accessible'
+  const overallStatus =
+    results.mongodb.status === 'connected' &&
+      results.redis.status === 'connected' &&
+      results.ai_inference_collection.status === 'accessible'
       ? 'healthy'
       : 'degraded'
-  
+
   logger.info({
     requestId,
     results,
     overallStatus,
     type: 'connection_test'
   }, 'Connection test completed')
-  
+
   return json({
     status: 'success',
     data: {
