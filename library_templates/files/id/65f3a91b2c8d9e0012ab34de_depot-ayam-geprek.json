@@ -11,33 +11,79 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Depot Ayam Geprek Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Depot Ayam Geprek"
+        },
         "sections": [
             {
+                "title": "Tentang Depot",
                 "content": "## Tentang Depot Ayam Geprek Kami\nKami menyajikan ayam goreng tepung yang renyah (crispy) dan digeprek langsung dengan sambal korek bawang yang pedasnya nendang. Cocok bagi para pecinta makanan pedas yang mencari rasa autentik dengan harga yang ramah di kantong.\n\nContoh: 'Geprek Juara' menggunakan ayam segar pilihan dan cabai rawit merah asli (bukan bubuk). Slogan kami: Pedasnya Bikin Nagih!"
             },
             {
+                "title": "Lokasi & Alamat",
                 "content": "## Lokasi & Alamat\nSilakan datang ke outlet kami:\n- Alamat: Jl. Kampus Raya No. 12, Sekaran, Gunungpati (Depan Gerbang UNNES).\n- Google Maps: https://maps.app.goo.gl/xxxx\n- Jam Buka: 10.00 - 21.00 WIB (Setiap Hari)."
             },
             {
+                "title": "Menu Utama",
                 "content": "## Menu Utama Ayam Geprek\n- Ayam Geprek Original (Rp 12.000): Ayam + Sambal Bawang.\n- Ayam Geprek Keju (Rp 15.000): Topping Keju Parut Cheddar.\n- Ayam Geprek Mozzarella (Rp 18.000): Topping Keju Mozzarella Leleh (Dibakar).\n- Ayam Geprek Sambal Matah (Rp 14.000): Segar dengan irisan bawang merah & serai.\n- Ayam Geprek Sambal Ijo (Rp 13.000): Pedas gurih cabai hijau."
             },
             {
+                "title": "Level Pedas",
                 "content": "## Pilihan Level Pedas\nAnda bisa menentukan jumlah cabai sesuai keberanian Anda:\n- Level 0: Tanpa Cabai (Original).\n- Level 1-5: Pedas Santai (1-5 cabai).\n- Level 6-10: Pedas Nendang (6-10 cabai).\n- Level >10: Pedas Mampus (Tambah biaya Rp 1.000 per 5 cabai tambahan). Rekor kami: 50 Cabai!"
             },
             {
+                "title": "Paket Hemat",
                 "content": "## Menu Paket Hemat (Paket Pelajar)\nSangat cocok untuk mahasiswa dan pelajar:\n- Paket Hemat 1 (Rp 15.000): Nasi + Ayam Geprek Orig + Es Teh.\n- Paket Hemat 2 (Rp 18.000): Nasi + Ayam Geprek Orig + Tahu/Tempe + Es Teh.\n- Paket Sultan (Rp 25.000): Nasi + Ayam Mozzarella + Kulit Crispy + Es Milo."
             },
             {
+                "title": "Menu Pendamping",
                 "content": "## Menu Pendamping (Side Dish)\nLengkapi makan Anda dengan:\n- Nasi Putih: Rp 4.000 (Refill sepuasnya kalau makan di tempat).\n- Tahu / Tempe Goreng: Rp 2.000/pcs.\n- Jamur Crispy: Rp 8.000/porsi.\n- Terong Goreng Crispy: Rp 6.000/porsi.\n- Kol Goreng: Rp 5.000/porsi.\n- Kulit Ayam Crispy: Rp 10.000/porsi."
             },
             {
+                "title": "Delivery Online",
                 "content": "## Pesanan via Online & Delivery\nTemukan kami di GoFood, GrabFood, dan ShopeeFood dengan nama 'Geprek Juara Kampus'.\n- Pesan Antar Manual (WA): Minimal order 3 porsi, ongkir Rp 5.000 (Radius 2km).\n- WhatsApp Delivery: 0857-xxxx-xxxx."
             },
             {
+                "title": "Fasilitas",
                 "content": "## Fasilitas Makan di Tempat\n- Area Lesehan luas (muat 30 orang).\n- Free WiFi.\n- Toilet & Musholla tersedia."
             },
             {
+                "title": "Metode Pembayaran",
                 "content": "## Metode Pembayaran\n- Tunai.\n- QRIS (Gopay/ShopeePay/Dana) - Ada Cashback 10% (S&K)."
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Alur Menu & Level Pedas",
+                "messages": [
+                    {
+                        "customer": "Ayam geprek mozarella harganya berapa? Bisa request pedas banget?",
+                        "ai_response_eval": "AI harus memberikan harga ayam geprek mozarella dan menjelaskan opsi level pedas (jumlah cabai) serta biaya tambahannya jika ada."
+                    },
+                    {
+                        "customer": "Paket hemat buat mahasiswa ada apa aja kak?",
+                        "ai_response_eval": "AI harus menjelaskan detail menu paket hemat (nasi + ayam + minum) beserta harganya."
+                    },
+                    {
+                        "customer": "Sambal matah ada gak? Atau cuma sambal bawang?",
+                        "ai_response_eval": "AI harus menginformasikan varian sambal yang tersedia (bawang, matah, ijo) dan harganya."
+                    }
+                ]
+            },
+            {
+                "flowName": "Alur Paket Hemat & Delivery",
+                "messages": [
+                    {
+                        "customer": "Kalau pesan 5 porsi bisa diantar ke kosan? Ongkirnya berapa?",
+                        "ai_response_eval": "AI harus menjelaskan ketentuan delivery manual (minimal order) dan biaya ongkir berdasarkan jarak/lokasi."
+                    },
+                    {
+                        "customer": "Bisa bayar pakai ShopeePay gak kalau makan di tempat?",
+                        "ai_response_eval": "AI harus mengonfirmasi metode pembayaran QRIS/E-wallet yang diterima."
+                    }
+                ]
             }
         ],
         "keywords": [

@@ -11,36 +11,79 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Jasa Cuci Sofa & Karpet Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Jasa Cuci Sofa & Karpet"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Layanan Kami\nKami spesialis pembersihan furnitur berbahan kain dan kulit. Menggunakan metode pencucian basah (wet cleaning) dengan shampoo khusus yang mampu mengangkat noda, bau tidak sedap, dan membunuh kuman/bakteri tanpa merusak serat kain furnitur kesayangan Anda.\n\nContoh: CleanSoft Jakarta menggunakan teknologi extraction dari Eropa. Kami menggunakan shampoo self-on yang aman untuk kulit bayi dan hewan peliharaan, serta mampu mengeringkan sofa hingga 90% di tempat."
             },
             {
+                "title": "Area Layanan & Jadwal",
                 "content": "## Area Layanan & Jadwal\nKami melayani kunjungan ke rumah atau kantor:\n- Senin - Minggu: 08.00 - 18.00\nArea: [Isi Kota/Kabupaten]\nProses pengerjaan dilakukan langsung di tempat Anda.\n\nContoh:\n- Jadwal: Setiap hari termasuk hari libur nasional (08.00 - 17.00).\n- Area: Jakarta Selatan, Jakarta Pusat, Tangerang Selatan (Bintaro, BSD, Ciputat).\n- Minimal Order: Rp 200.000 per kedatangan."
             },
             {
+                "title": "Layanan Cuci Sofa & Kursi",
                 "content": "## Layanan Cuci Sofa & Kursi\n- Sofa (Kain/Kulit/Suede) per dudukan.\n- Sofa Bed.\n- Kursi Makan & Kursi Kantor.\n- Bean Bag.\n\nContoh Harga:\n- Sofa Standar: Rp 45.000/dudukan.\n- Sofa Bed (Lipat): Rp 180.000/unit.\n- Kursi Kantor (Jaring/Kain): Rp 30.000/unit.\n- Kursi Makan: Rp 25.000/unit."
             },
             {
+                "title": "Layanan Cuci Springbed",
                 "content": "## Layanan Cuci Springbed & Kasur\n- Springbed King, Queen, Single.\n- Kasur Busa / Latex.\n- Divan & Headboard Springbed.\nMembersihkan noda ompol, keringat, dan bau apek.\n\nContoh Harga:\n- Kasur Single (120x200): Rp 150.000\n- Kasur Queen (160x200): Rp 180.000\n- Kasur King (180x200): Rp 200.000\n- Kasur Super King (200x200): Rp 220.000\n*Harga sudah termasuk penyedotan debu & tungau."
             },
             {
+                "title": "Layanan Cuci Karpet",
                 "content": "## Layanan Cuci Karpet & Gorden\n- Karpet Kantor (Permadani).\n- Karpet Masjid.\n- Karpet Bulu halus.\n- Gorden (tanpa harus melepas rel).\n\nContoh Harga:\n- Karpet Kantor (Meteran): Rp 12.000/m2.\n- Karpet Masjid: Rp 10.000/m2 (Diskon khusus untuk tempat ibadah).\n- Karpet Permadani: Rp 15.000/m2.\n- Gorden Tebal: Rp 15.000/m2."
             },
             {
+                "title": "Metode Pengerjaan",
                 "content": "## Metode Pengerjaan\n1. Vakum debu kering.\n2. Spraying shampoo khusus anti bakteri.\n3. Brushing (Sikat) manual atau mesin untuk angkat noda.\n4. Extraction (Penyedotan sisa air & kotoran).\n5. Pengeringan (estimasi 3-5 jam kering alami atau dibantu kipas).\n\nContoh:\nKami menggunakan mesin polisher hand-held untuk menyikat noda membandel pada sofa, dan mesin vacuum extractor 1200W untuk menyedot kotoran hingga ke dalam busa, sehingga furnitur tidak basah kuyup (lembab saja) dan cepat kering."
             },
             {
+                "title": "Daftar Harga",
                 "content": "## Daftar Harga Estimasi\n- Cuci Sofa: Mulai dari Rp [Isi Harga]/dudukan.\n- Cuci Springbed: Mulai dari Rp [Isi Harga]/unit.\n- Cuci Karpet: Mulai dari Rp [Isi Harga]/m2.\n- Minimal Order: Rp [Isi Harga] untuk satu kali kunjungan.\n\nContoh Tambahan:\n- Bantal Sofa: Rp 10.000/pcs.\n- Boneka Besar: Rp 35.000/pcs.\n- Stroller Bayi: Rp 100.000/unit."
             },
             {
+                "title": "Keunggulan",
                 "content": "## Keunggulan Kami\n- Shampoo aman untuk anak dan hewan peliharaan.\n- Hasil bersih, harum, dan bebas kuman.\n- Tim jujur dan berpengalaman.\n- Peralatan extraction modern (daya hisap kuat).\n\nContoh:\n\"Garansi 100% Uang Kembali jika noda tidak berkurang sama sekali (syarat: bukan noda permanen/luntur).\""
             },
             {
+                "title": "Persiapan Pelanggan",
                 "content": "## Persiapan Sebelum Tim Datang\nPelanggan diharapkan menyediakan akses air dan listrik secukupnya untuk operasional mesin vacuum dan polisher kami.\n\nContoh:\n\"Mohon siapkan ember air bersih dan colokan listrik maksimal 10 meter dari area pengerjaan. Daya listrik mesin kami sekitar 900-1200 Watt.\""
             },
             {
+                "title": "Kontak Booking",
                 "content": "## Kontak Booking Layanan\nWhatsApp: [Isi Nomor WA]\nInstagram: @[Isi Username IG]\n\nKembalikan kenyamanan furnitur Anda bersama kami!\n\nContoh:\nWA Admin: 0813-4567-8910\nInstagram: @cleansoft_jakarta"
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Pertanyaan Umum - Cuci Sofa",
+                "messages": [
+                    {
+                        "customer": "Sofa saya ada noda bekas makanan, bisa hilang nggak?",
+                        "ai_response_eval": "AI harus menjelaskan bahwa tim akan berusaha semaksimal mungkin menggunakan teknik brushing dan extraction, namun untuk noda permanen tidak bisa dijamin 100% hilang."
+                    },
+                    {
+                        "customer": "Berapa lama proses pengeringan sofa setelah dicuci?",
+                        "ai_response_eval": "AI harus memberikan estimasi waktu pengeringan (biasanya 3-5 jam) dan menyarankan agar ruangan memiliki sirkulasi udara yang baik atau dibantu kipas angin."
+                    }
+                ]
+            },
+            {
+                "flowName": "Pertanyaan Umum - Cuci Springbed",
+                "messages": [
+                    {
+                        "customer": "Kalau springbed kena ompol bisa bersih dan nggak bau lagi?",
+                        "ai_response_eval": "AI harus meyakinkan pelanggan bahwa layanan mencakup penyedotan hingga ke dalam busa untuk menghilangkan bau dan bakteri penyebab bau ompol."
+                    },
+                    {
+                        "customer": "Bisa langsung kering hari ini juga?",
+                        "ai_response_eval": "AI harus menjelaskan bahwa metode yang digunakan adalah wet cleaning yang menyisakan sedikit kelembapan, namun akan kering total dalam beberapa jam."
+                    }
+                ]
             }
         ],
         "keywords": [

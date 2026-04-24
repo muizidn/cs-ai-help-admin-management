@@ -11,8 +11,14 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Toko Handphone Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Toko Handphone"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Toko Handphone Kami\nKami adalah pusat gadget terlengkap yang menyediakan berbagai merk smartphone terbaru dengan garansi resmi. Kami berkomitmen memberikan pelayanan terbaik, mulai dari konsultasi spesifikasi hingga layanan purna jual yang memudahkan pelanggan."
             },
             {
@@ -41,6 +47,34 @@
             },
             {
                 "content": "## Kontak Customer Service\nWhatsApp: 0812-3456-7890\nInstagram: @gadget_center_id\n\nUpdate stok dan harga harian bisa cek di Story Instagram kami!"
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Rekomendasi HP Gaming Murah",
+                "messages": [
+                    {
+                        "customer": "Saya cari HP buat main game Mobile Legends dan PUBG lancar, budget 2-3 jutaan ada?",
+                        "ai_response_eval": "1. AI merekomendasikan HP dengan chipset yang mumpuni untuk gaming di kelas harga tersebut (misal: Helio G99 atau Snapdragon 680).\n2. AI menyebutkan kapasitas RAM dan baterai yang mendukung aktivitas gaming.\n3. AI menawarkan beberapa opsi merek (misal: Infinix Note series, Tecno Pova, atau Xiaomi Redmi Note).\n4. AI mengajak pelanggan untuk cek unit demo di toko."
+                    },
+                    {
+                        "customer": "Kalau yang kameranya juga bagus apa ya di harga segitu?",
+                        "ai_response_eval": "1. AI menyarankan alternatif yang seimbang antara performa gaming dan kamera (misal: Samsung Galaxy A series atau Realme).\n2. AI menjelaskan fitur kamera unggulan dari model yang disarankan.\n3. AI memberikan perbandingan harga sedikit di atas atau di bawah budget jika ada opsi yang lebih 'worth it'."
+                    }
+                ]
+            },
+            {
+                "flowName": "Prosedur Tukar Tambah",
+                "messages": [
+                    {
+                        "customer": "Saya mau tukar tambah HP lama saya, caranya gimana?",
+                        "ai_response_eval": "1. AI menjelaskan prosedur tukar tambah: bawa HP lama lengkap (jika ada dus/charger) ke toko untuk pengecekan fisik dan fungsi.\n2. AI menginformasikan bahwa harga taksiran bergantung pada kondisi fisik, kesehatan baterai, dan kelengkapan.\n3. AI menyarankan untuk membackup data pribadi sebelum membawa HP ke toko."
+                    },
+                    {
+                        "customer": "Kira-kira iPhone 11 64GB dihargai berapa?",
+                        "ai_response_eval": "1. AI memberikan estimasi rentang harga pasar (bukan harga pasti) dengan catatan 'tergantung kondisi saat dicek'.\n2. AI menegaskan harga final ditentukan setelah teknisi toko melakukan inspeksi langsung.\n3. AI mengundang pelanggan datang ke toko untuk penilaian gratis."
+                    }
+                ]
             }
         ],
         "keywords": [

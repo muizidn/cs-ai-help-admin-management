@@ -11,8 +11,14 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Toko Herbal Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Toko Herbal"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Toko Herbal Kami\nKami menyediakan berbagai macam produk herbal dan suplemen alami berkualitas untuk menjaga kesehatan dan membantu proses pemulihan secara alami (thibbun nabawi). Semua produk kami dijamin keasliannya dan telah memiliki izin edar resmi (POM TR) sehingga aman untuk dikonsumsi."
             },
             {
@@ -41,6 +47,34 @@
             },
             {
                 "content": "## Kontak Admin Herbal\nWhatsApp: 0813-2233-4455\nTelegram: @toko_herbal_sehat\n\nSehat alami dengan herbal pilihan terbaik!"
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Manfaat Madu Hitam",
+                "messages": [
+                    {
+                        "customer": "Apa bedanya madu hitam sama madu biasa?",
+                        "ai_response_eval": "1. AI menjelaskan madu hitam (pahit) biasanya berasal dari nektar bunga mahoni/pelawan, memiliki rasa pahit dan kadar gula rendah.\n2. AI menyebutkan khasiat utamanya: bagus untuk penderita diabetes, kolesterol, dan gangguan pencernaan.\n3. AI membandingkan dengan madu biasa yang rasanya manis dan lebih umum untuk stamina/imun."
+                    },
+                    {
+                        "customer": "Aman buat penderita maag?",
+                        "ai_response_eval": "1. AI mengonfirmasi bahwa madu hitam aman dan bahkan bagus untuk maag (memperbaiki lambung).\n2. AI menyarankan diminum sebelum makan (perut kosong) dicampur air hangat.\n3. AI merekomendasikan merek madu hitam yang best seller."
+                    }
+                ]
+            },
+            {
+                "flowName": "Cara Minum Habbatussauda",
+                "messages": [
+                    {
+                        "customer": "Habbatussauda diminumnya berapa kali sehari?",
+                        "ai_response_eval": "1. AI menjelaskan dosis umum: untuk menjaga kesehatan 2x2 kapsul sehari, untuk pengobatan 3x3 kapsul sehari (tergantung jenis minyak/serbuk).\n2. AI menyarankan diminum sebelum makan untuk penyerapan maksimal.\n3. AI mengingatkan untuk memperbanyak minum air putih selama konsumsi herbal."
+                    },
+                    {
+                        "customer": "Boleh diminum bareng obat dokter?",
+                        "ai_response_eval": "1. AI menyarankan untuk memberi jeda waktu sekitar 1-2 jam antara minum herbal dan obat dokter.\n2. AI menjelaskan tujuannya agar masing-masing bekerja optimal dan tidak saling menetralkan.\n3. AI menyarankan konsultasi ke dokter jika memiliki kondisi medis khusus."
+                    }
+                ]
             }
         ],
         "keywords": [

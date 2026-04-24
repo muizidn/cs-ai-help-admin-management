@@ -11,35 +11,50 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Restoran Lokal Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Restoran Lokal"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Restoran Kami\nRestoran kami menghadirkan perpaduan cita rasa kuliner lokal dengan suasana makan yang nyaman dan elegan. Sangat cocok untuk acara makan keluarga, pertemuan bisnis, hingga perayaan momen spesial dengan standar pelayanan yang profesional.\n\nContoh: 'Resto Sunda Kelapa' menyajikan masakan khas Jawa Barat dengan suasana saung lesehan di tengah kota. Berdiri sejak 2010, kami berkomitmen melestarikan resep warisan leluhur."
             },
             {
+                "title": "Aksesibilitas & Navigasi",
                 "content": "## Jam Operasional & Lokasi\nInformasikan waktu buka dan lokasi detail.\n\nContoh:\n- Senin - Kamis: 10.00 - 21.00 WIB.\n- Jumat - Minggu: 10.00 - 22.00 WIB.\n- Alamat: Jl. Pajajaran Indah V No. 33, Bogor Timur, Kota Bogor, 16143.\n- Maps: https://maps.app.goo.gl/xxxx"
             },
             {
+                "title": "Menu Unggulan",
                 "content": "## Menu Unggulan (Signature Dish)\nSebutkan menu yang wajib dicoba pelanggan.\n\nContoh:\n- Gurame Bakar Madu (Rp 85.000): Ikan segar 500gr dibakar dengan saus madu spesial.\n- Ayam Betutu (Rp 95.000): Satu ekor ayam kampung masak rempah, empuk dan pedas.\n- Sate Maranggi (Rp 55.000): 10 tusuk sate sapi empuk tanpa lemak.\n- Sop Buntut Premium (Rp 75.000): Kuah bening segar dengan daging impor.\n- Es Campur Spesial (Rp 25.000): Dengan durian asli dan gula aren."
             },
             {
+                "title": "Reservasi Meja",
                 "content": "## Reservasi Meja (Booking)\nJelaskan cara booking tempat.\n\nContoh: Untuk menghindari antrean, reservasi dapat dilakukan via WhatsApp 0812-xxxx-xxxx.\n- Format Booking: Nama / Tanggal & Jam / Jumlah Orang / Area (Smoking/Non-Smoking/Lesehan).\n- Reservasi untuk >10 orang wajib DP Rp 200.000.\n- Toleransi keterlambatan maksimal 15 menit dari jam booking."
             },
             {
+                "title": "Paket Keluarga",
                 "content": "## Paket Makan Keluarga (Family Set)\nKami menyediakan paket hemat untuk kelompok:\n- Paket Ber-4 (Rp 350.000): Nasi Bakul, 1 Gurame (Bakar/Goreng), 1 Ekor Ayam Bakar, 2 Sayur Asem, Tahu Tempe, Sambal Lalap, 1 Pitcher Es Teh.\n- Paket Ber-10 (Rp 850.000): Menu lengkap prasmanan mini di meja.\nSangat hemat dibandingkan beli satuan (ala carte)."
             },
             {
+                "title": "Fasilitas VIP",
                 "content": "## Fasilitas Ruang VIP & Meeting\nKami menyediakan ruang privat (VIP Room) untuk pertemuan yang lebih tenang:\n- VIP A (Kapasitas 10 orang): Minimum order Rp 1.000.000.\n- VIP B (Kapasitas 25 orang): Minimum order Rp 2.500.000.\n- Fasilitas: AC Dingin, Smart TV 50 inch (Bisa untuk presentasi), Sound System, Private Toilet.\n- Durasi penggunaan maksimal 3 jam."
             },
             {
+                "title": "Paket Acara",
                 "content": "## Paket Acara (Ulang Tahun/Engagement)\nIngin merayakan momen spesial? Kami menyediakan paket acara lengkap:\n- Paket Birthday A (Rp 100.000/pax): Termasuk Buffet Menu, Dekorasi Balon Standar, dan Sound System.\n- Paket Engagement (Rp 150.000/pax): Termasuk Buffet Premium, Dekorasi Backdrop Bunga, dan Free Flow Minuman.\nHubungi Marketing kami di 0813-xxxx-xxxx untuk katalog lengkap."
             },
             {
+                "title": "Kebijakan Luar",
                 "content": "## Kebijakan Membawa Makanan Luar\nPelanggan tidak diperkenankan membawa makanan dan minuman dari luar (Kecuali makanan bayi).\n- Kue Ulang Tahun: Boleh dibawa, dikenakan biaya piring/potong kue (corkage) Rp 50.000 flat.\n- Minuman Beralkohol: Dikenakan corkage fee Rp 150.000 per botol."
             },
             {
+                "title": "Fasilitas Pendukung",
                 "content": "## Fasilitas Pendukung\nDemi kenyamanan pengunjung, kami menyediakan:\n- Area parkir luas (Muat 20 Mobil, Valet tersedia di weekend).\n- Musholla yang bersih dan luas (Lengkap dengan mukena/sarung).\n- Toilet terpisah (Laki-laki/Perempuan/Difabel).\n- Area bermain anak (Kids Playground) dengan perosotan dan mandi bola.\n- Wi-Fi Gratis High Speed."
             },
             {
+                "title": "Metode Pembayaran",
                 "content": "## Metode Pembayaran\nKami menerima berbagai metode pembayaran:\n- Tunai / Cash.\n- Kartu Debit & Kredit (Visa/Mastercard/JCB) - Minimal transaksi Rp 50.000.\n- QRIS (Gopay/OVO/Dana).\n- Corporate Billing (Invoice) untuk perusahaan yang sudah bekerjasama."
             }
         ],
@@ -59,6 +74,46 @@
             "booking tempat arisan",
             "menu prasmanan restoran",
             "nomor telepon restoran"
+        ],
+        "questions": [
+            {
+                "flowName": "Alur Reservasi & Informasi Umum",
+                "messages": [
+                    {
+                        "customer": "Halo, saya mau booking tempat untuk makan malam keluarga ber-10, bisa?",
+                        "ai_response_eval": "AI harus merespons dengan ramah, menanyakan tanggal dan jam kedatangan, serta menginformasikan syarat reservasi untuk grup >10 orang (DP) sesuai data."
+                    },
+                    {
+                        "customer": "Restorannya buka sampai jam berapa? Saya mau datang jam 9 malam.",
+                        "ai_response_eval": "AI harus menginformasikan jam operasional (Weekday vs Weekend) dan memastikan apakah dapur (last order) masih buka pada jam tersebut."
+                    },
+                    {
+                        "customer": "Lokasinya dimana ya? Dekat stasiun Bogor tidak?",
+                        "ai_response_eval": "AI harus memberikan alamat lengkap dan patokan lokasi yang jelas, serta estimasi jarak dari landmark terdekat jika data tersedia."
+                    }
+                ]
+            },
+            {
+                "flowName": "Alur Menu & Fasilitas",
+                "messages": [
+                    {
+                        "customer": "Menu andalannya apa ya di sini? Saya suka ikan.",
+                        "ai_response_eval": "AI harus merekomendasikan menu signature dish (seperti Gurame Bakar Madu) lengkap dengan deskripsi dan harganya sesuai data."
+                    },
+                    {
+                        "customer": "Ada ruang VIP untuk meeting kantor? Kapasitas berapa?",
+                        "ai_response_eval": "AI harus menjelaskan ketersediaan ruang VIP, kapasitas, minimum order, dan fasilitas yang didapat (TV/AC/Sound System)."
+                    },
+                    {
+                        "customer": "Bisa bawa kue ulang tahun sendiri tidak? Kena charge?",
+                        "ai_response_eval": "AI harus menjelaskan kebijakan corkage fee untuk kue ulang tahun sesuai aturan yang tertulis di dataset."
+                    },
+                    {
+                        "customer": "Ada paket hemat buat makan sekeluarga?",
+                        "ai_response_eval": "AI harus menawarkan paket family set yang tersedia, merinci menu apa saja yang didapat dan harga paketnya."
+                    }
+                ]
+            }
         ]
     },
     "preview": "",

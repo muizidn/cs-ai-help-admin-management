@@ -11,8 +11,14 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Toko Kosmetik Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Toko Kosmetik"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Toko Kosmetik Kami\nKami adalah pusat kecantikan yang menyediakan berbagai produk skincare, bodycare, dan make-up dari brand lokal maupun internasional yang sudah terdaftar BPOM. Kami berkomitmen membantu Anda menemukan produk yang tepat sesuai dengan jenis dan kebutuhan kulit Anda."
             },
             {
@@ -41,6 +47,34 @@
             },
             {
                 "content": "## Kontak Admin Kecantikan\nWhatsApp: 0812-3456-7890\nInstagram: @beauty_store_official\n\nTampil percaya diri dengan kulit sehat dan cantik!"
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Rekomendasi Skincare Jerawat",
+                "messages": [
+                    {
+                        "customer": "Muka saya lagi breakout parah, ada rekomendasi skincare?",
+                        "ai_response_eval": "1. AI menyarankan rangkaian produk 'Acne Series' (misal: mengandung Salicylic Acid, Tea Tree, atau Centella Asiatica).\n2. AI merekomendasikan basic skincare dulu: Gentle Cleanser, Hydrating Toner, Moisturizer, dan Sunscreen (siang) / Acne Spot (malam).\n3. AI mengingatkan untuk patch test dulu jika kulit sensitif."
+                    },
+                    {
+                        "customer": "Sunscreen yang nggak bikin makin berminyak apa?",
+                        "ai_response_eval": "1. AI merekomendasikan sunscreen berjenis 'Gel' atau 'Water-based' (misal: Azarine atau Wardah UV Shield Gel).\n2. AI menjelaskan teksturnya yang ringan dan cepat meresap (matte finish).\n3. AI menyebutkan harga produk yang direkomendasikan."
+                    }
+                ]
+            },
+            {
+                "flowName": "Shade Bedak untuk Kulit Sawo Matang",
+                "messages": [
+                    {
+                        "customer": "Saya bingung pilih shade bedak, kulit saya sawo matang.",
+                        "ai_response_eval": "1. AI merekomendasikan shade dengan undertone 'Warm' atau 'Yellow' (misal: Natural Beige, Sand, atau Caramel).\n2. AI menyarankan untuk menghindari shade yang terlalu terang (pinkish) agar tidak terlihat abu-abu.\n3. AI memberikan contoh nomor/nama shade dari brand tertentu (misal: Maybelline 220 atau Make Over 04)."
+                    },
+                    {
+                        "customer": "Boleh coba dulu nggak?",
+                        "ai_response_eval": "1. AI menginformasikan bahwa di toko tersedia tester untuk dicoba di rahang/leher.\n2. AI menyarankan untuk datang langsung ke toko agar bisa dibantu staf memilih warna yang pas."
+                    }
+                ]
             }
         ],
         "keywords": [

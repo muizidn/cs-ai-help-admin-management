@@ -11,35 +11,50 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Klinik Terapi Bekam Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Klinik Terapi Bekam"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Terapi Bekam Kami\nKami menyediakan layanan terapi bekam (cupping therapy) sesuai standar kesehatan dan prinsip Thibbun Nabawi. Terapi dilakukan oleh praktisi berpengalaman yang memahami titik-titik anatomi tubuh untuk membantu membuang darah kotor dan meningkatkan imunitas.\n\nContoh: Rumah Bekam Sehat telah melayani sejak 2017 dengan komitmen pada sterilisasi dan kenyamanan pasien. Kami memadukan kearifan thibbun nabawi dengan standar kebersihan medis."
             },
             {
+                "title": "Aksesibilitas & Navigasi",
                 "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap klinik bekam Anda agar pasien mudah menemukan lokasi.\n\nContoh: Jl. Kebon Jeruk No. 88, RT 01/RW 09, Kelurahan Palmerah, Kecamatan Palmerah, Jakarta Barat, 11480.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: Belakang Pasar Palmerah, gedung ruko warna hijau dengan plang \"Rumah Bekam\"."
             },
             {
+                "title": "Waktu Pelayanan",
                 "content": "## Jam Operasional & Jadwal\nInformasikan jam buka dan tutup klinik Anda setiap harinya.\n\nContoh:\n- Senin - Minggu: 09.00 - 20.00\n- Jumat: 13.30 - 20.00 (Istirahat Shalat Jumat)\n- Hari Libur Nasional: Konfirmasi via WhatsApp 0812-4444-5555\n\nSangat disarankan terapi dilakukan pada tanggal sunnah (17, 19, 21 Hijriah) sesuai anjuran medis dan spiritual."
             },
             {
+                "title": "Katalog Layanan Medis",
                 "content": "## Jenis Layanan Bekam\nSebutkan jenis-jenis terapi yang tersedia beserta harganya.\n\nContoh:\n- Bekam Kering (Rp 50.000): Relaksasi otot tanpa pengeluaran darah.\n- Bekam Basah (Rp 85.000): Mengeluarkan darah kotor melalui sayatan tipis/jarum.\n- Bekam Meluncur (Rp 60.000): Pijat menggunakan kop bekam untuk melenturkan otot.\n- Bekam Api (Rp 75.000): Menggunakan api untuk daya sedot yang lebih kuat (bagus untuk masuk angin).\n- Paket Sehat (Rp 120.000): Bekam Basah + Pijat Relaksasi 15 menit."
             },
             {
+                "title": "Protokol Keamanan",
                 "content": "## Standar Sterilisasi & Keamanan\nJelaskan prosedur kebersihan untuk meyakinkan pasien.\n\nContoh: Keamanan Anda adalah prioritas kami:\n- Jarum/Lancet: Menggunakan merk berkualitas dan PASTI sekali pakai (disposable).\n- Kop Bekam: Disterilisasi dengan larutan klorin dan diproses dalam UV Sterilizer.\n- APD Terapis: Selalu menggunakan masker, sarung tangan latex, dan apron medis.\n- Ruangan: Dipisah antara Laki-laki dan Perempuan dengan sekat permanen."
             },
             {
+                "title": "Persiapan Terapi",
                 "content": "## Prosedur Sebelum Terapi\nBerikan panduan persiapan bagi calon pasien.\n\nContoh: Untuk hasil maksimal, mohon perhatikan hal berikut:\n1. Puasa makan berat minimal 2-3 jam sebelum bekam (perut tidak boleh terlalu kenyang/kosong).\n2. Berwudhu (disarankan).\n3. Informasikan kepada terapis jika Anda memiliki riwayat diabetes, anemia, atau sedang mengonsumsi obat pengencer darah."
             },
             {
+                "title": "Perawatan Pasca Terapi",
                 "content": "## Perawatan Pasca Bekam\nBerikan instruksi apa yang harus dilakukan setelah terapi.\n\nContoh: Hal-hal yang perlu dilakukan setelah bekam:\n- Istirahat total minimal 30 menit setelah terapi.\n- Jangan mandi minimal 2-3 jam setelah bekam (agar pori-pori menutup kembali).\n- Hindari makanan berminyak, santan, dan pedas selama 12 jam ke depan.\n- Perbanyak minum air hangat."
             },
             {
+                "title": "Reservasi & Kontak",
                 "content": "## Reservasi & Kontak\nJelaskan cara pendaftaran agar pasien tidak perlu mengantre lama.\n\nContoh: Anda bisa melakukan reservasi jadwal melalui WhatsApp 0812-4444-5555.\nFormat Pesan: DAFTAR BEKAM # NAMA # L/P # TGL KUNJUNGAN # JAM.\nKami akan mengonfirmasi jadwal yang masih tersedia dalam 10 menit."
             },
             {
+                "title": "Pertanyaan Umum",
                 "content": "## FAQ - Pertanyaan Umum\nSediakan jawaban untuk pertanyaan yang sering diajukan.\n\nContoh:\nQ: Apakah bekas bekam susah hilang?\nA: Bekas merah/ungu biasanya hilang dalam 3-7 hari tergantung kondisi fisik.\nQ: Apakah bekam boleh untuk wanita haid?\nA: Sebaiknya ditunda hingga masa haid selesai untuk menjaga keseimbangan kondisi tubuh.\nQ: Bekam kepala harus botak?\nA: Kami memiliki alat khusus bekam kepala tanpa harus dicukur habis."
             },
             {
+                "title": "Fasilitas Klinik",
                 "content": "## Fasilitas Klinik\nInformasikan kenyamanan yang didapat pasien.\n\nContoh:\n- Ruang terapi ber-AC dan wangi aromaterapi.\n- Air minum (Teh/Jahe Hangat) gratis setelah terapi.\n- Ruang tunggu nyaman dengan literatur kesehatan thibbun nabawi.\n- Area parkir motor yang aman."
             }
         ],
@@ -59,6 +74,46 @@
             "bekam kepala tanpa cukur",
             "titik bekam sunnah",
             "terapi thibbun nabawi"
+        ],
+        "questions": [
+            {
+                "flowName": "Alur Informasi Umum & Biaya",
+                "messages": [
+                    {
+                        "customer": "Halo, klinik bekam ini buka jam berapa ya? Saya mau coba terapi bekam.",
+                        "ai_response_eval": "AI harus memberikan sapaan ramah, mengonfirmasi status operasional hari ini sesuai jadwal di data, menyebutkan jam buka dan tutup, serta menyarankan reservasi untuk menghindari antrean."
+                    },
+                    {
+                        "customer": "Berapa harga terapi bekam dan ada paket hemat tidak?",
+                        "ai_response_eval": "AI harus menjelaskan estimasi biaya terapi bekam berdasarkan informasi di dataset, serta menawarkan paket hemat yang tersedia."
+                    },
+                    {
+                        "customer": "Apa saja jenis bekam yang tersedia dan manfaatnya?",
+                        "ai_response_eval": "AI harus merekomendasikan jenis bekam yang sesuai berdasarkan informasi di dataset, memberikan estimasi biaya, serta menjelaskan manfaat masing-masing jenis bekam."
+                    },
+                    {
+                        "customer": "Apakah terapi bekam aman? Saya khawatir soal sterilisasi alat.",
+                        "ai_response_eval": "AI harus menjelaskan prosedur sterilisasi dan keamanan yang diterapkan sesuai informasi di bagian Standar Sterilisasi & Keamanan."
+                    }
+                ]
+            },
+            {
+                "flowName": "Alur Reservasi & Lokasi Spesifik",
+                "messages": [
+                    {
+                        "customer": "Saya mau booking jadwal bekam, caranya gimana?",
+                        "ai_response_eval": "AI harus mengarahkan pasien untuk melakukan reservasi online melalui WhatsApp, memberikan nomor kontak yang tepat, dan menjelaskan format pesan booking yang benar."
+                    },
+                    {
+                        "customer": "Kliniknya dimana ya? Saya dari arah Palmerah.",
+                        "ai_response_eval": "AI harus memberikan panduan arah yang spesifik menggunakan poin-poin patokan bangunan (landmark) terdekat dan menyertakan link peta digital jika tersedia."
+                    },
+                    {
+                        "customer": "Saya baru saja bekam, ada pantangan tidak?",
+                        "ai_response_eval": "AI harus memberikan panduan pasca bekam sesuai prosedur di dataset, termasuk pantangan penggunaan produk tertentu dan perawatan tubuh."
+                    }
+                ]
+            }
         ]
     },
     "preview": "",

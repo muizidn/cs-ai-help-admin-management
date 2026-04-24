@@ -11,35 +11,50 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Catering Rumahan Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Catering Rumahan"
+        },
         "sections": [
             {
+                "title": "Tentang Catering",
                 "content": "## Tentang Catering Rumahan Kami\nKami menyajikan masakan lezat dengan kualitas bahan terbaik dan tanpa bahan pengawet. Catering kami dirancang untuk membantu Anda yang tidak sempat memasak namun ingin tetap mengonsumsi masakan rumah yang sehat, bergizi, dan bervariasi setiap harinya.\n\nContoh: 'Dapur Mama Ani' menyediakan catering rantangan sejak 2018. Masakan kami dikenal dengan rasa yang 'homey' seperti masakan ibu sendiri, cocok untuk keluarga dan anak kost."
             },
             {
+                "title": "Lokasi & Area",
                 "content": "## Lokasi & Area Pengiriman\nInformasikan jangkauan layanan Anda.\n\nContoh: Dapur kami berlokasi di Perumahan Griya Asri Blok C, Cibubur.\nArea Pengiriman: Cibubur, Cileungsi, Kranggan, dan sekitarnya (Radius max 5km).\nJam Pengiriman: Makan Siang (10.30 - 12.00) & Makan Malam (16.30 - 18.00)."
             },
             {
+                "title": "Menu Rantangan",
                 "content": "## Menu Rantangan Harian\nLayanan utama kami untuk keluarga. Menu bervariasi setiap hari (Senin - Jumat):\n- Senin: Ayam Goreng Mentega + Capcay + Tahu Isi + Sambal.\n- Selasa: Balado Daging + Sayur Asem + Tempe Bacem + Kerupuk.\n- Rabu: Ikan Pesmol + Tumis Buncis + Perkedel Jagung + Sambal.\n- Kamis: Semur Ayam + Sop Makaroni + Bakwan Sayur + Kerupuk.\n- Jumat: Gulai Sapi + Daun Singkong + Tahu Goreng + Sambal Ijo.\n(Menu update setiap minggu di Status WA)."
             },
             {
+                "title": "Estimasi Harga",
                 "content": "## Estimasi Harga Paket Rantangan\n- Paket 2 Porsi: Rp 45.000 / pengiriman.\n- Paket 3 Porsi: Rp 60.000 / pengiriman.\n- Paket 4 Porsi: Rp 75.000 / pengiriman.\n- Langganan Mingguan (5 Hari) bayar dimuka DISKON 5%."
             },
             {
+                "title": "Catering Diet",
                 "content": "## Catering Diet & Sehat\nKami juga melayani paket diet khusus:\n- Paket Diet Mayo (No Salt): Rp 40.000/box (Lunch + Dinner).\n- Paket Clean Eating (Rebus/Panggang): Rp 35.000/box.\n- Dilengkapi info kalori (approx. 350-450 kkal/porsi)."
             },
             {
+                "title": "Pesanan Nasi Box",
                 "content": "## Pesanan Nasi Box & Tumpeng\nMelayani pesanan untuk acara khusus:\n- Nasi Box Syukuran: Mulai Rp 25.000 (Nasi, Ayam Bakar, Lalap, Sambal, Buah, Air).\n- Tumpeng Mini: Rp 35.000/pax (Min order 10 pax).\n- Tumpeng Besar (20 Porsi): Rp 850.000 (Lauk lengkap 7 macam).\n- Pemesanan H-3 untuk Tumpeng."
             },
             {
+                "title": "Langganan & Pembayaran",
                 "content": "## Sistem Langganan & Pembayaran\n- Sistem: Pre-order H-1 atau Langganan Mingguan/Bulanan.\n- Pembayaran: Transfer BCA/Mandiri/OVO di awal periode langganan.\n- Tidak ada sistem hutang/bon."
             },
             {
+                "title": "Kebijakan Libur",
                 "content": "## Kebijakan Libur/Skip Makan\nJika Anda ingin libur atau skip makan (misal: ada acara luar), harap konfirmasi via WhatsApp maksimal H-1 jam 18.00. \n- Saldo makan yang diskip akan dialihkan ke hari berikutnya (deposit tidak hangus).\n- Pembatalan dadakan di hari H tetap dihitung (makanan akan disumbangkan)."
             },
             {
+                "title": "Kebersihan",
                 "content": "## Kebersihan & Kualitas Bahan\nDapur kami menjaga standar kebersihan yang tinggi. Kami hanya menggunakan minyak goreng bermerk (Sunco/Tropical), sayuran segar dari pasar setiap pagi, dan daging/ayam fresh (bukan frozen lama). Wadah rantang dicuci steril setiap hari."
             },
             {
+                "title": "Kontak Admin",
                 "content": "## Hubungi Admin Catering\nWhatsApp Admin: 0813-xxxx-xxxx (Mama Ani)\nInstagram: @dapurmamaani_cibubur\n\nSilakan chat untuk minta Price List lengkap dan Contoh Foto Menu!"
             }
         ],
@@ -59,6 +74,42 @@
             "catering anak sekolah",
             "nasi kuning tumpeng",
             "daftar harga catering"
+        ],
+        "questions": [
+            {
+                "flowName": "Alur Langganan Rantangan",
+                "messages": [
+                    {
+                        "customer": "Cara langganan catering harian gimana? Ada paket buat 2 orang?",
+                        "ai_response_eval": "AI harus menjelaskan prosedur langganan (pre-order/mingguan) dan memberikan detail harga paket 2 porsi sesuai data."
+                    },
+                    {
+                        "customer": "Kalau besok saya mau skip makan karena keluar kota, bisa gak? Uangnya hangus?",
+                        "ai_response_eval": "AI harus menjelaskan kebijakan skip makan (konfirmasi H-1) dan status saldo deposit sesuai aturan yang berlaku."
+                    },
+                    {
+                        "customer": "Menu hari ini apa ya? Saya gak suka pedas.",
+                        "ai_response_eval": "AI harus menginformasikan menu harian (sesuai hari) dan memberikan opsi atau catatan terkait preferensi rasa jika memungkinkan (misal: sambal dipisah)."
+                    }
+                ]
+            },
+            {
+                "flowName": "Alur Pesanan Khusus (Diet/Event)",
+                "messages": [
+                    {
+                        "customer": "Ada paket diet buat nurunin berat badan?",
+                        "ai_response_eval": "AI harus menjelaskan paket diet yang tersedia (Mayo/Clean Eating), harga, dan perkiraan kalori per porsi."
+                    },
+                    {
+                        "customer": "Bisa pesan tumpeng mini buat ulang tahun anak? Minimal berapa?",
+                        "ai_response_eval": "AI harus menginformasikan layanan tumpeng mini, harga per pax, dan minimum order yang berlaku."
+                    },
+                    {
+                        "customer": "Area pengirimannya sampai mana aja? Ongkirnya berapa?",
+                        "ai_response_eval": "AI harus menjelaskan area jangkauan pengiriman dan kebijakan ongkir (gratis/berbayar) sesuai lokasi pelanggan."
+                    }
+                ]
+            }
         ]
     },
     "preview": "",

@@ -11,36 +11,79 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Jasa Cleaning Service Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Jasa Cleaning Service"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Layanan Kami\nKami menyediakan tenaga kebersihan profesional (cleaner) yang jujur, terlatih, dan cekatan untuk menangani berbagai masalah kebersihan di hunian maupun tempat kerja Anda. Kami membawa peralatan dan cairan pembersih standar profesional untuk hasil yang higienis dan memuaskan.\n\nContoh: CleanHouse Bandung telah melayani lebih dari 500 rumah sejak 2020. Seluruh cleaner kami telah melewati background check dan pelatihan standar hotel bintang 3. Kami menggunakan bahan pembersih biodegradable yang aman untuk anak dan hewan peliharaan."
             },
             {
+                "title": "Jam Operasional & Area",
                 "content": "## Jam Layanan\nTim kami siap bertugas:\n- Senin - Minggu: 08.00 - 17.00\n- Layanan Darurat/Lembur: Sesuai kesepakatan\nArea Layanan: [Isi Kota/Wilayah]\n\nContoh:\n- Jam Operasional: Setiap hari pukul 08.00 - 18.00 WIB.\n- Area Layanan: Seluruh wilayah Kota Bandung, Cimahi, dan sebagian Kabupaten Bandung (Lembang, Bojongsoang).\n- Biaya Transport: Gratis untuk radius 5km dari kantor pusat (Jl. Dago), selebihnya Rp 15.000 flat."
             },
             {
+                "title": "Daily Cleaning",
                 "content": "## Daily Cleaning (Pembersihan Harian)\nLayanan rutin mencakup:\n- Menyapu & mengepel lantai.\n- Mengelap debu (dusting) furnitur.\n- Membersihkan kamar mandi standar.\n- Merapikan tempat tidur.\n- Membuang sampah.\n\nContoh Paket:\n- Paket 2 Jam: Rp 120.000 (Cocok untuk Apartemen Studio / Kos).\n- Paket 4 Jam: Rp 200.000 (Cocok untuk Rumah Type 36/45).\n- Paket Seharian (8 Jam): Rp 350.000 (Maksimal luas 150m2)."
             },
             {
+                "title": "Deep Cleaning",
                 "content": "## Deep Cleaning (Pembersihan Menyeluruh)\nLayanan ekstra detail untuk area yang jarang tersentuh:\n- Membersihkan kerak kamar mandi membandel.\n- Membersihkan area dapur (kitchen set & kompor).\n- Pembersihan jendela & kusen tinggi.\n- Pembersihan pasca renovasi atau pasca banjir.\n\nContoh Harga:\n- Kamar Mandi (Kerak Membandel): Mulai Rp 150.000/unit.\n- Kitchen Set (Luar Dalam): Rp 250.000/unit.\n- Pasca Renovasi: Rp 25.000/m2 (Termasuk pembersihan sisa cat dan semen)."
             },
             {
+                "title": "Hydro Cleaning",
                 "content": "## Hydro Cleaning (Vakum Tungau)\nLayanan vakum khusus untuk kasur, sofa, karpet, dan gorden menggunakan mesin hydro-vacuum yang mampu menyedot debu dan tungau hingga kedalaman 15-20cm, sangat baik untuk penderita alergi debu.\n\nContoh Harga:\n- Kasur Single (90/100/120): Rp 60.000\n- Kasur Queen/King (160/180/200): Rp 80.000\n- Sofa 1 Dudukan: Rp 25.000\n- Karpet Gulung: Rp 15.000/m2"
             },
             {
+                "title": "Harga & Paket",
                 "content": "## Harga & Paket Layanan\n- Daily Cleaning: Mulai dari Rp [Isi Harga]/jam.\n- Deep Cleaning: Mulai dari Rp [Isi Harga]/m2.\n- Vakum Tungau Kasur: Mulai dari Rp [Isi Harga]/bed.\n- Paket Hemat: Langganan bulanan (4x kunjungan) lebih ekonomis.\n\nContoh Paket Hemat:\n- Langganan Basic: 4x Kunjungan (2 jam) = Rp 450.000 (Hemat Rp 30.000).\n- Langganan Family: 8x Kunjungan (3 jam) = Rp 1.100.000 (Hemat Rp 100.000).\n*Pembayaran di muka untuk paket langganan."
             },
             {
+                "title": "Cara Pemesanan",
                 "content": "## Cara Pemesanan\n1. Hubungi admin via WhatsApp.\n2. Tentukan jenis layanan dan jadwal kunjungan.\n3. Kirimkan foto area yang akan dibersihkan (opsional untuk estimasi).\n4. Konfirmasi alamat lengkap dan nomor telepon.\n\nContoh Format WA:\n\"Halo Admin, saya mau pesan Daily Cleaning 3 jam untuk besok jam 09.00 pagi. Alamat: Jl. Merak No. 10, Bandung. Atas nama: Budi.\""
             },
             {
+                "title": "Keunggulan",
                 "content": "## Keunggulan Kami\n- Cleaner sudah melalui proses seleksi dan pelatihan.\n- Peralatan lengkap (Vacuum, Mop, Scrubber, dll) dari kami.\n- Cairan pembersih ramah lingkungan dan wangi.\n- Garansi pembersihan ulang jika hasil tidak sesuai standar.\n\nContoh Garansi:\nJika Anda kurang puas dengan hasil pembersihan, silakan komplain maksimal 1x24 jam. Kami akan mengirimkan tim kembali untuk membersihkan ulang area tersebut GRATIS."
             },
             {
+                "title": "Metode Pembayaran",
                 "content": "## Metode Pembayaran\n- Transfer Bank setelah pekerjaan selesai.\n- Tunai kepada tim di lapangan.\n- E-Wallet (QRIS).\n\nContoh:\nPembayaran bisa via Transfer BCA 1234567890 a.n PT Bersih Sejahtera atau Scan QRIS yang dibawa oleh petugas kami. Harap tidak menitipkan uang tip di sembarang tempat."
             },
             {
+                "title": "Kontak Admin",
                 "content": "## Kontak Admin Cleaning\nWhatsApp: [Isi Nomor WA]\nInstagram: @[Isi Username IG]\n\nRumah bersih, hidup lebih berkualitas bersama kami!\n\nContoh:\nWA: 0812-9988-7766\nIG: @cleanhouse_bandung\nWebsite: www.cleanhousebandung.com"
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Pertanyaan Umum - Daily Cleaning",
+                "messages": [
+                    {
+                        "customer": "Mau pesan cleaning service buat besok bisa?",
+                        "ai_response_eval": "AI harus menanyakan jenis layanan yang dibutuhkan (Daily/Deep Cleaning), perkiraan luas area atau durasi yang diinginkan, serta alamat lengkap."
+                    },
+                    {
+                        "customer": "Untuk apartemen studio butuh berapa jam ya?",
+                        "ai_response_eval": "AI harus memberikan estimasi waktu (misal: 2 jam) dan menjelaskan apa saja yang tercakup dalam layanan daily cleaning tersebut."
+                    }
+                ]
+            },
+            {
+                "flowName": "Pertanyaan Umum - Deep Cleaning & Tungau",
+                "messages": [
+                    {
+                        "customer": "Kamar mandi saya keraknya tebal banget, bisa bersih nggak?",
+                        "ai_response_eval": "AI harus menyarankan layanan Deep Cleaning dan meminta foto kondisi kamar mandi untuk estimasi harga dan waktu pengerjaan."
+                    },
+                    {
+                        "customer": "Kalau sedot tungau kasur King Size berapa harganya?",
+                        "ai_response_eval": "AI harus memberikan informasi harga spesifik untuk layanan Hydro Cleaning kasur ukuran King dan menjelaskan manfaatnya."
+                    }
+                ]
             }
         ],
         "keywords": [

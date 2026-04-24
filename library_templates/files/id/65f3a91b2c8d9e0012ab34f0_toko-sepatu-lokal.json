@@ -11,8 +11,14 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Toko Sepatu Lokal Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Toko Sepatu Lokal"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Brand Sepatu Kami\nKami bangga menghadirkan sepatu karya anak bangsa dengan material pilihan dan desain yang kompetitif. Mulai dari sneakers kasual untuk harian hingga sepatu formal untuk acara spesial, setiap pasang sepatu kami dibuat dengan konstruksi yang kuat dan insole yang empuk untuk kenyamanan maksimal."
             },
             {
@@ -41,6 +47,34 @@
             },
             {
                 "content": "## Kontak Admin Sepatu\nWhatsApp: 0812-9876-5432\nInstagram: @lokal_shoes_id\n\nLangkah pasti dengan sepatu lokal berkualitas!"
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Cara Ukur Kaki",
+                "messages": [
+                    {
+                        "customer": "Gimana cara tau ukuran sepatu yang pas? Takut kekecilan.",
+                        "ai_response_eval": "1. AI memberikan panduan cara mengukur panjang kaki (gambar jejak kaki di kertas, lalu ukur dari tumit ke jempol terpanjang).\n2. AI menyarankan untuk menambahkan 0.5 - 1 cm untuk ruang gerak (space).\n3. AI meminta hasil pengukuran dalam cm untuk dicocokkan dengan size chart toko."
+                    },
+                    {
+                        "customer": "Kaki saya lebar, harus naik size nggak?",
+                        "ai_response_eval": "1. AI menyarankan 'Upsize' (naik 1 nomor) jika memiliki tipe kaki lebar (wide fit).\n2. AI menjelaskan risiko jika memaksakan size normal (sakit di bagian samping).\n3. AI merekomendasikan model sepatu yang cocok untuk kaki lebar."
+                    }
+                ]
+            },
+            {
+                "flowName": "Kebijakan Tukar Size",
+                "messages": [
+                    {
+                        "customer": "Kalau sampai sini nggak muat, boleh tukar size?",
+                        "ai_response_eval": "1. AI mengonfirmasi bahwa penukaran size diperbolehkan.\n2. AI menjelaskan syarat penukaran: sepatu belum dipakai jalan (hanya dicoba), tag masih utuh, dan dus tidak rusak.\n3. AI menginfokan batas waktu klaim (misal: 3 hari setelah barang sampai) dan ongkir ditanggung pembeli."
+                    },
+                    {
+                        "customer": "Proses tukarnya lama nggak?",
+                        "ai_response_eval": "1. AI menjelaskan alur: kirim balik sepatu -> gudang cek kondisi -> kirim size baru.\n2. AI memberikan estimasi waktu proses (misal: 1-2 hari kerja setelah barang diterima di gudang)."
+                    }
+                ]
             }
         ],
         "keywords": [

@@ -11,36 +11,79 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Service AC Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Service AC"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Layanan Service AC\nKami menyediakan jasa teknisi AC panggilan yang handal dan jujur untuk menjaga udara di ruangan Anda tetap sejuk dan bersih. Kami melayani berbagai merk AC (Split, Standing, Cassette) baik untuk skala rumah tangga, kantor, maupun industri.\n\nContoh: Berkah Teknik AC Surabaya melayani service segala merk (Daikin, Panasonic, Sharp, LG, Gree). Teknisi kami bersertifikat BNSP dan bekerja sesuai SOP pabrikan."
             },
             {
+                "title": "Jam Operasional & Area",
                 "content": "## Jam Operasional & Area\nTeknisi kami siap datang ke lokasi Anda:\n- Senin - Sabtu: 08.00 - 18.00\n- Minggu/Tanggal Merah: Dengan perjanjian\nArea Layanan: [Isi Kota/Wilayah]\n\nContoh:\n- Jam Kerja: 08.00 - 17.00 WIB.\n- Area: Surabaya Pusat, Surabaya Timur, dan Sidoarjo Kota.\n- Garansi Service: 30 Hari (untuk kerusakan yang sama)."
             },
             {
+                "title": "Layanan Cuci AC",
                 "content": "## Layanan Cuci AC (Maintenance)\nDisarankan setiap 3-4 bulan sekali untuk:\n- Membersihkan debu & jamur pada evaporator.\n- Membersihkan filter udara & cover indoor.\n- Pembersihan outdoor unit (condenser).\n- Pengecekan tekanan freon & drainase air (mencegah bocor air).\n\nContoh Harga Cuci:\n- Cuci AC Split 0.5 - 1 PK: Rp 75.000/unit.\n- Cuci AC Split 1.5 - 2 PK: Rp 90.000/unit.\n- Cuci AC Inverter: Rp 100.000/unit (Perlu penanganan khusus).\n- Cuci AC Cassette/Standing: Mulai Rp 250.000/unit."
             },
             {
+                "title": "Perbaikan & Tambah Freon",
                 "content": "## Perbaikan AC & Tambah Freon\nKami menangani berbagai keluhan:\n- AC tidak dingin / kurang dingin.\n- AC bocor air (netes).\n- AC mati total / error pada modul.\n- Pengisian / Penambahan Freon (R22, R32, R410a).\n- Penggantian Kapasitor atau Overload.\n\nContoh Harga Freon:\n- Tambah Freon R32/R410 (Inverter): Rp 150.000 - Rp 250.000 (Tergantung tekanan PSI).\n- Isi Full Freon R32: Rp 350.000 - Rp 450.000.\n- Las Kebocoran Pipa: Rp 100.000/titik."
             },
             {
+                "title": "Bongkar Pasang AC",
                 "content": "## Bongkar Pasang AC\n- Jasa Pasang AC Baru / Bekas.\n- Jasa Bongkar AC (pindah lokasi).\n- Paket Bongkar Pasang (Relokasi AC).\n- Penambahan pipa, kabel, dan bracket outdoor.\n\nContoh Harga Instalasi:\n- Pasang AC Baru (0.5 - 1 PK): Rp 250.000 (Jasa saja).\n- Bongkar AC Lama: Rp 100.000.\n- Paket Relokasi (Bongkar + Pasang + Vakum): Rp 400.000.\n- Tambah Pipa Tembaga (Standard): Rp 85.000/meter."
             },
             {
+                "title": "Daftar Harga",
                 "content": "## Daftar Harga Estimasi\n- Cuci AC (0.5 PK - 2 PK): Rp [Isi Harga].\n- Tambah Freon: Mulai dari Rp [Isi Harga].\n- Bongkar Pasang AC: Rp [Isi Harga].\n- Biaya Pengecekan (jika tidak jadi service): Rp [Isi Harga].\n\nContoh:\n- Biaya Pengecekan/Kunjungan: Rp 50.000 (Gratis jika lanjut service).\n- Ganti Kapasitor Fan: Rp 125.000.\n- Ganti Thermistor: Rp 150.000."
             },
             {
+                "title": "Keunggulan",
                 "content": "## Mengapa Memilih Kami?\n- Teknisi bersertifikat dan berpengalaman.\n- Peralatan lengkap dan modern.\n- Transparan dalam penggunaan freon (diukur dengan manifold).\n- Garansi pengerjaan selama 30 hari.\n\nContoh:\n\"Kami selalu menunjukkan hasil ukur tekanan freon (PSI) dan ampere kompresor kepada pelanggan sebelum dan sesudah pengerjaan agar transparan.\""
             },
             {
+                "title": "Tips Merawat AC",
                 "content": "## Tips Merawat AC\n1. Cuci filter udara indoor secara mandiri setiap 2 minggu.\n2. Pastikan ruangan tertutup rapat saat AC menyala.\n3. Atur suhu ideal di 23-25 derajat Celcius.\n4. Lakukan cuci besar rutin setiap 3-4 bulan.\n\nContoh:\n\"Jangan atur suhu langsung ke 16 derajat. Cukup 24 derajat, kompresor akan bekerja lebih ringan dan listrik lebih hemat.\""
             },
             {
+                "title": "Cara Booking",
                 "content": "## Cara Booking Teknisi\nSilakan kirimkan:\n- Nama & Alamat Lengkap.\n- Keluhan AC / Jenis Layanan.\n- Jadwal yang diinginkan.\nAdmin akan mengirimkan jadwal teknisi yang tersedia.\n\nContoh Format:\n\"Sore Min, mau servis cuci AC 2 unit di Perumahan Griya Asri Blok B No 5. Untuk besok jam 10 pagi bisa?\""
             },
             {
+                "title": "Kontak Admin",
                 "content": "## Kontak Admin Service AC\nWhatsApp: [Isi Nomor WA]\nTelepon: [Isi Nomor Telepon]\n\nUdara sejuk, AC awet, listrik jadi lebih hemat!\n\nContoh:\nWA: 0857-1234-5678 (Berkah Teknik)\nIG: @berkahteknik_surabaya"
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Pertanyaan Umum - Service AC",
+                "messages": [
+                    {
+                        "customer": "AC saya nggak dingin, bisa service?",
+                        "ai_response_eval": "AI harus menanyakan gejala spesifik (misal: keluar angin saja, berisik, atau mati total) dan menawarkan jadwal kunjungan teknisi."
+                    },
+                    {
+                        "customer": "Kalau AC netes air itu kenapa ya dan biayanya berapa?",
+                        "ai_response_eval": "AI harus menjelaskan kemungkinan penyebab (seperti saluran pembuangan buntu atau kotor) dan memberikan estimasi biaya service untuk masalah tersebut."
+                    }
+                ]
+            },
+            {
+                "flowName": "Pertanyaan Umum - Cuci AC",
+                "messages": [
+                    {
+                        "customer": "Berapa biaya cuci AC?",
+                        "ai_response_eval": "AI harus memberikan informasi harga cuci AC per unit berdasarkan jenis/PK AC dan menjelaskan apa saja yang dibersihkan."
+                    },
+                    {
+                        "customer": "Harus cuci AC seberapa sering sih?",
+                        "ai_response_eval": "AI harus merekomendasikan perawatan rutin setiap 3-4 bulan sekali untuk menjaga kinerja AC dan efisiensi listrik."
+                    }
+                ]
             }
         ],
         "keywords": [

@@ -11,35 +11,50 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Klinik Fisioterapi Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Klinik Fisioterapi"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Klinik Fisioterapi Kami\nKami menyediakan layanan rehabilitasi fisik profesional untuk membantu pasien memulihkan fungsi tubuh setelah cidera, operasi, atau karena kondisi medis tertentu. Tim kami terdiri dari fisioterapis berlisensi yang berfokus pada terapi manual dan latihan fungsional.\n\nContoh: PhysioFit Center telah membantu lebih dari 1.000 pasien kembali beraktivitas normal sejak 2020. Kami ahli dalam penanganan nyeri tulang belakang dan pemulihan atlet."
             },
             {
+                "title": "Aksesibilitas & Navigasi",
                 "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap klinik fisioterapi Anda agar pasien mudah menemukan lokasi.\n\nContoh: Gedung Medika Plaza Lantai 2, Jl. Sudirman No. 10-12, RT 03/RW 01, Kelurahan Karet Tengsin, Kecamatan Tanah Abang, Jakarta Pusat, 10220.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: Sebelah Hotel Sahid Jaya, akses lift langsung dari lobby depan."
             },
             {
+                "title": "Waktu Pelayanan",
                 "content": "## Jam Operasional & Janji Temu\nInformasikan jam buka dan tutup klinik Anda setiap harinya.\n\nContoh:\n- Senin - Jumat: 08.00 - 20.00\n- Sabtu: 08.00 - 15.00\n- Minggu: Tutup\n\nPasien sangat disarankan melakukan reservasi jadwal melalui WhatsApp 0813-5555-6666 minimal 1 hari sebelumnya."
             },
             {
+                "title": "Katalog Layanan Medis",
                 "content": "## Layanan Terapi Unggulan\nSebutkan kondisi medis yang bisa ditangani di klinik Anda.\n\nContoh:\n- Fisioterapi Muskuloskeletal (Nyeri punggung/HNP, nyeri lutut, saraf terjepit).\n- Rehabilitasi Pasca Stroke (Melatih kembali pola gerak dan kekuatan).\n- Fisioterapi Olahraga (Cidera ACL, pergelangan kaki, tennis elbow).\n- Pediatrik Fisioterapi (Terapi tumbuh kembang, terlambat jalan pada anak).\n- Geriatrik Fisioterapi (Membantu keseimbangan dan mobilitas lansia)."
             },
             {
+                "title": "Metode Terapi",
                 "content": "## Metode Terapi yang Digunakan\nInformasikan teknologi dan teknik yang tersedia.\n\nContoh: Kami menggunakan kombinasi teknik modern:\n- Elektroterapi (TENS, Ultrasound, Infrared): Untuk meredakan nyeri dan peradangan.\n- Terapi Manual: Mobilisasi sendi dan manipulasi jaringan lunak oleh terapis.\n- Exercise Therapy: Latihan penguatan khusus di gym mini kami.\n- Kinesio Taping: Pemasangan plester elastis untuk mendukung otot dan sendi."
             },
             {
+                "title": "Prosedur Kunjungan",
                 "content": "## Prosedur Kunjungan Pertama\nJelaskan apa yang akan dialami pasien baru.\n\nContoh:\n1. Asesmen Awal (30 Menit): Terapis melakukan pemeriksaan fisik, tes kekuatan, dan range of motion.\n2. Diagnosis Fisioterapi: Penjelasan masalah utama dan target pemulihan.\n3. Pelaksanaan Terapi: Sesi terapi pertama sesuai hasil asesmen.\n4. Home Program: Pemberian daftar latihan yang bisa dilakukan mandiri di rumah."
             },
             {
+                "title": "Transparansi Biaya",
                 "content": "## Estimasi Biaya & Paket Hemat\nBerikan gambaran harga agar pasien bisa merencanakan terapi jangka panjang.\n\nContoh:\n- Sesi Tunggal (Asesmen + Terapi): Rp 250.000 (Durasi 60-90 menit).\n- Paket 5 Sesi: Rp 1.125.000 (Hemat 10%).\n- Paket 10 Sesi: Rp 2.125.000 (Hemat 15%).\n- Layanan Home Visit: Rp 350.000 - Rp 450.000 per visit (Tergantung jarak)."
             },
             {
+                "title": "Layanan Home Visit",
                 "content": "## Layanan Fisioterapi Home Visit\nJelaskan area cakupan jika melayani terapi di rumah pasien.\n\nContoh: Kami melayani kunjungan ke rumah untuk pasien stroke atau pasca operasi yang sulit mobilisasi. Area cakupan: Seluruh Jakarta Pusat dan Jakarta Selatan. Hubungi Admin via WA untuk cek ketersediaan terapis home visit."
             },
             {
+                "title": "Fasilitas Klinik",
                 "content": "## Fasilitas & Kenyamanan\nSebutkan sarana pendukung di klinik.\n\nContoh:\n- Ruang terapi privat dengan gorden penyekat.\n- Gym mini khusus rehabilitasi (Parallel bars, Static bike, Dumbbells).\n- Alat bantu jalan (Kruk/Walker) yang bisa dipinjamkan.\n- Akses gedung ramah kursi roda dan toilet difabel."
             },
             {
+                "title": "Pertanyaan Umum",
                 "content": "## FAQ - Pertanyaan Umum\nSediakan jawaban untuk pertanyaan teknis.\n\nContoh:\nQ: Apakah harus bawa hasil Rontgen/MRI?\nA: Sangat disarankan membawa hasil scan terbaru agar diagnosa terapis lebih akurat.\nQ: Berapa lama satu sesi terapi?\nA: Rata-rata 60 hingga 90 menit, tergantung kondisi dan banyaknya tindakan.\nQ: Apakah fisioterapi itu sakit?\nA: Sebagian teknik mungkin terasa sedikit tidak nyaman (seperti pijatan dalam), namun terapis akan selalu berkomunikasi dengan Anda."
             }
         ],
@@ -59,6 +74,46 @@
             "klinik rehabilitasi medik",
             "tens fisioterapi",
             "biaya home visit fisioterapi"
+        ],
+        "questions": [
+            {
+                "flowName": "Alur Informasi Umum & Biaya",
+                "messages": [
+                    {
+                        "customer": "Halo, klinik fisioterapi ini buka jam berapa ya? Saya mau cek nyeri punggung saya.",
+                        "ai_response_eval": "AI harus memberikan sapaan ramah, mengonfirmasi status operasional hari ini sesuai jadwal di data, menyebutkan jam buka dan tutup, serta menyarankan reservasi untuk menghindari antrean."
+                    },
+                    {
+                        "customer": "Berapa harga terapi fisioterapi dan ada paket hemat tidak?",
+                        "ai_response_eval": "AI harus menjelaskan estimasi biaya terapi fisioterapi berdasarkan informasi di dataset, serta menawarkan paket hemat yang tersedia."
+                    },
+                    {
+                        "customer": "Apa saja layanan terapi yang tersedia untuk nyeri punggung?",
+                        "ai_response_eval": "AI harus merekomendasikan layanan terapi yang sesuai untuk nyeri punggung berdasarkan informasi di dataset, memberikan estimasi biaya, serta menjelaskan manfaat masing-masing layanan."
+                    },
+                    {
+                        "customer": "Apakah bisa terapi di rumah? Berapa biayanya?",
+                        "ai_response_eval": "AI harus menjelaskan layanan home visit sesuai informasi di dataset, termasuk area cakupan dan estimasi biaya."
+                    }
+                ]
+            },
+            {
+                "flowName": "Alur Reservasi & Lokasi Spesifik",
+                "messages": [
+                    {
+                        "customer": "Saya mau booking jadwal fisioterapi, caranya gimana?",
+                        "ai_response_eval": "AI harus mengarahkan pasien untuk melakukan reservasi online melalui WhatsApp, memberikan nomor kontak yang tepat, dan menjelaskan format pesan booking yang benar."
+                    },
+                    {
+                        "customer": "Kliniknya dimana ya? Saya dari arah Sudirman.",
+                        "ai_response_eval": "AI harus memberikan panduan arah yang spesifik menggunakan poin-poin patokan bangunan (landmark) terdekat dan menyertakan link peta digital jika tersedia."
+                    },
+                    {
+                        "customer": "Saya baru saja terapi, ada pantangan tidak?",
+                        "ai_response_eval": "AI harus memberikan panduan pasca terapi sesuai prosedur di dataset, termasuk pantangan penggunaan produk tertentu dan perawatan tubuh."
+                    }
+                ]
+            }
         ]
     },
     "preview": "",

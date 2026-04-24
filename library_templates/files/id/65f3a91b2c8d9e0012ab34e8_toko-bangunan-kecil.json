@@ -11,36 +11,83 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Toko Bangunan Kecil Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Toko Bangunan Kecil"
+        },
         "sections": [
             {
+                "title": "Tentang Toko",
                 "content": "## Tentang Toko Bangunan Kami\nKami menyediakan berbagai material bangunan dan perlengkapan rumah tangga untuk kebutuhan renovasi ringan maupun perbaikan mendesak. Meskipun skala kami menengah, kami mengutamakan kelengkapan barang, kualitas material yang terjamin, dan kecepatan pengiriman ke lokasi Anda.\n\nContoh:\n\"TB. Maju Jaya\" melayani warga Perumahan Harapan Indah untuk kebutuhan renovasi dan perbaikan rumah sejak 2010."
             },
             {
+                "title": "Jam Operasional",
                 "content": "## Jam Operasional\nKami buka setiap hari:\n- Senin - Sabtu: 07.30 - 17.00\n- Minggu: 08.00 - 13.00\nLokasi: [Isi Alamat Toko]\n\nContoh:\nAlamat: Jl. Bulevar Hijau Raya No. 45, Bekasi.\nGoogle Maps: https://maps.google.com/?q=building_store\nBuka setengah hari saat hari libur nasional."
             },
             {
+                "title": "Material Konstruksi Dasar",
                 "content": "## Material Konstruksi Dasar\n- Semen (Gresik, Tiga Roda, Holcim) - Sak atau kiloan.\n- Pasir & Batu Belah (Satu pickup/kijang).\n- Besi Beton berbagai ukuran.\n- Bata Merah & Bata Ringan (Hebel).\n- Kayu Kaso & Papan (Borneo/Meranti).\n\nContoh Harga:\n- Semen Tiga Roda 40kg: Rp 58.000\n- Semen Tiga Roda 1kg (Eceran): Rp 2.500\n- Pasir Satu Kijang (0.8 m3): Rp 300.000\n- Hebel 7.5cm: Rp 7.500/pcs"
             },
             {
+                "title": "Perlengkapan Pipa & Sanitasi",
                 "content": "## Perlengkapan Pipa & Sanitasi\n- Pipa PVC (Wavin, Rucika) & Aneka Sambungan (Knee, Tee, Socket).\n- Kran Air (Plastik & Besi).\n- Lem Pipa & Seal Tape.\n- Bak Mandi Plastik & Closet Jongkok.\n\nContoh:\n- Pipa PVC 1/2 inch Rucika AW: Rp 35.000/batang\n- Kran Air Plastik: Rp 15.000\n- Seal Tape: Rp 3.000"
             },
             {
+                "title": "Cat & Alat Pengecatan",
                 "content": "## Cat & Alat Pengecatan\n- Cat Tembok (Interior & Eksterior) - Berbagai merk & warna.\n- Cat Kayu & Besi.\n- Kuas, Rol Cat, & Bak Cat.\n- Thinner & Spiritus.\n\nContoh:\n- Cat Vinilex 5kg (Putih): Rp 120.000\n- Kuas 3 inch: Rp 10.000\n- Thinner A Botol Kaca: Rp 12.000"
             },
             {
+                "title": "Alat Pertukangan & Perangkat Keras",
                 "content": "## Alat Pertukangan & Perangkat Keras\n- Paku (Kayu, Beton, Payung).\n- Palu, Gergaji, Obeng, Tang.\n- Kawat Ikat & Kawat Nyamuk.\n- Engsel Pintu & Grendel/Kunci.\n\nContoh:\n- Paku 5cm/7cm: Rp 18.000/kg\n- Palu Kambing Gagang Kayu: Rp 35.000"
             },
             {
+                "title": "Layanan Antar Barang",
                 "content": "## Layanan Antar Barang\nKami menyediakan layanan antar untuk barang berat/besar menggunakan armada pickup kami:\n- Gratis ongkir untuk radius [Isi Radius] km dengan minimal belanja tertentu.\n- Pengiriman luar radius dikenakan biaya bensin menyesuaikan jarak.\n\nContoh:\nGratis ongkir radius 2km untuk pembelian minimal Rp 500.000 (misal: pasir + semen)."
             },
             {
+                "title": "Estimasi Harga & Pembayaran",
                 "content": "## Estimasi Harga & Pembayaran\n- Harga material bersifat fluktuatif mengikuti harga pasar.\n- Menerima pembayaran Tunai & QRIS.\n- Untuk proyek borongan, silakan ajukan Rencana Anggaran Biaya (RAB) untuk mendapatkan harga khusus.\n\nContoh:\nBisa bayar pakai GoPay/OVO di kasir."
             },
             {
+                "title": "Konsultasi Kebutuhan Material",
                 "content": "## Konsultasi Kebutuhan Material\nBingung menghitung berapa banyak semen atau bata yang dibutuhkan? Staf kami siap membantu menghitung estimasi kebutuhan material berdasarkan luas area yang akan Anda bangun atau renovasi.\n\nContoh:\n\"Pak, saya mau plester tembok 3x3 meter, butuh semen berapa sak?\""
             },
             {
+                "title": "Kontak Admin Toko",
                 "content": "## Kontak Admin Toko\nWhatsApp: [Isi Nomor WA]\nTelepon: [Isi Nomor Telepon]\n\nSolusi material bangunan cepat dan tepat untuk hunian Anda!\n\nContoh:\nWA Order: 0857-1234-5678 (Pak Slamet)\nBisa kirim foto barang yang dicari via WA."
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Alur Stok & Harga Material",
+                "messages": [
+                    {
+                        "customer": "Semen tiga roda yang 40kg harganya berapa sekarang?",
+                        "ai_response_eval": "AI harus memberikan harga terkini semen Tiga Roda sak 40kg sesuai data."
+                    },
+                    {
+                        "customer": "Kalau pasir satu kijang berapa? Bisa sekalian bata merah?",
+                        "ai_response_eval": "AI harus menginformasikan harga pasir per pickup (kijang) dan harga bata merah (per biji atau per ribu), serta memastikan ketersediaan armada."
+                    },
+                    {
+                        "customer": "Punya pipa rucika yang setengah inchi? Sama keni-nya sekalian.",
+                        "ai_response_eval": "AI harus mengonfirmasi stok pipa PVC ukuran 1/2 inch merk Rucika beserta sambungannya (knee/elbow)."
+                    }
+                ]
+            },
+            {
+                "flowName": "Alur Pengiriman & Pembayaran",
+                "messages": [
+                    {
+                        "customer": "Saya di perumahan sebelah, kalau beli pasir sama semen 5 sak bisa diantar?",
+                        "ai_response_eval": "AI harus menjelaskan kebijakan pengiriman (gratis ongkir radius tertentu atau ada biaya tambahan) dan memastikan alamat pengiriman."
+                    },
+                    {
+                        "customer": "Bisa bayar pas barang sampai (COD) atau harus transfer dulu?",
+                        "ai_response_eval": "AI harus menjelaskan metode pembayaran yang tersedia (Tunai/COD, Transfer, atau QRIS) dan prosedur pembayarannya."
+                    }
+                ]
             }
         ],
         "keywords": [

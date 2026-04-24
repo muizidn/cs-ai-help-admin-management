@@ -11,35 +11,50 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Apotek Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Apotek"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Apotek Kami\nApotek kami melayani kebutuhan obat-obatan, vitamin, dan alat kesehatan bagi masyarakat. Kami berkomitmen menyediakan obat asli, berkualitas, dan bersertifikat BPOM, serta memberikan edukasi penggunaan obat yang benar oleh apoteker kami.\n\nContoh: Apotek Farma Sehat melayani warga sejak 2012. Kami menjamin keaslian semua produk karena bekerja sama langsung dengan PBF (Pedagang Besar Farmasi) resmi."
             },
             {
+                "title": "Aksesibilitas & Navigasi",
                 "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap apotek Anda agar pelanggan mudah menemukan lokasi.\n\nContoh: Jl. Diponegoro No. 123, RT 04/RW 02, Kelurahan Menteng, Kecamatan Menteng, Jakarta Pusat, 10310.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: Samping Alfamart Menteng, seberang Taman Suropati."
             },
             {
+                "title": "Waktu Pelayanan",
                 "content": "## Jam Operasional & Layanan\nInformasikan jam buka dan tutup apotek Anda setiap harinya.\n\nContoh:\n- Senin - Minggu: 07.00 - 22.00\n- Hari Libur Nasional: Tetap Buka (09.00 - 21.00)\n\nKami melayani pembelian langsung di tempat maupun pemesanan via WhatsApp 0812-7777-8888."
             },
             {
+                "title": "Penebusan Resep",
                 "content": "## Penebusan Resep Dokter\nJelaskan alur penebusan resep di apotek Anda.\n\nContoh: Kami melayani penebusan resep dari semua Rumah Sakit dan Dokter Spesialis. \nAlur: Kirim foto resep via WA -> Cek Stok & Harga oleh Apoteker -> Pembayaran -> Obat disiapkan. \nCatatan: Resep asli wajib diserahkan ke apotek atau kurir saat serah terima obat."
             },
             {
+                "title": "Ketersediaan Produk",
                 "content": "## Ketersediaan Obat & Vitamin\nSebutkan kategori produk yang tersedia.\n\nContoh:\n- Obat Bebas & Bebas Terbatas (Flu, Batuk, Pusing, Salep).\n- Obat Keras (Antibiotik, Obat Jantung, Hipertensi - Wajib Resep).\n- Vitamin & Suplemen (Imboost, Enervon-C, Blackmores, dll).\n- Susu Formula & Susu Kesehatan Lansia.\n- Perlengkapan Ibu & Bayi (Diapers, Botol Susu, Bedak)."
             },
             {
+                "title": "Konsultasi Apoteker",
                 "content": "## Konsultasi Apoteker\nInformasikan ketersediaan apoteker untuk konsultasi gratis.\n\nContoh: Apoteker kami standby di jam 08.00 - 20.00 untuk konsultasi gratis mengenai:\n- Aturan pakai dan dosis obat yang tepat.\n- Cara penyimpanan obat agar tidak rusak.\n- Informasi mengenai efek samping obat.\n- Saran pemilihan vitamin yang sesuai kebutuhan tubuh Anda."
             },
             {
+                "title": "Layanan Antar",
                 "content": "## Layanan Pesan Antar (Delivery)\nJelaskan syarat dan ketentuan layanan antar.\n\nContoh: Kami melayani antar obat ke rumah dalam radius 5 km dari lokasi apotek.\n- Pesanan > Rp 150.000: GRATIS ONGKIR.\n- Pesanan < Rp 150.000: Biaya antar flat Rp 10.000.\nEstimasi pengiriman 30-45 menit setelah pembayaran dikonfirmasi."
             },
             {
+                "title": "Alat Kesehatan",
                 "content": "## Alat Kesehatan (Alkes)\nSebutkan alat kesehatan yang tersedia untuk dibeli.\n\nContoh:\n- Termometer Digital & Gun: Mulai Rp 35.000.\n- Alat Cek Gula Darah, Kolesterol, Asam Urat (3 in 1): Mulai Rp 250.000.\n- Tensi Digital (Omron/Onemed): Mulai Rp 450.000.\n- Masker Medis (Surgical/N95) & Hand Sanitizer.\n- Tabung Oksigen Portable (Oxycan): Rp 60.000."
             },
             {
+                "title": "Kebijakan Pengembalian",
                 "content": "## Kebijakan Pengembalian\nInformasikan aturan mengenai penukaran obat.\n\nContoh: Demi keamanan pasien (Standard GPP), obat yang sudah dibawa keluar dari apotek tidak dapat ditukar atau dikembalikan, kecuali jika terjadi kesalahan pemberian jenis obat oleh pihak apotek kami. Harap teliti sebelum membayar."
             },
             {
+                "title": "Metode Pembayaran",
                 "content": "## Metode Pembayaran\nSebutkan pilihan cara pembayaran yang tersedia.\n\nContoh: Pembayaran dapat dilakukan melalui:\n- Tunai / Cash.\n- Debit Card (BCA, Mandiri, BNI, BRI).\n- QRIS (Gopay, OVO, Dana, LinkAja, ShopeePay).\n- Transfer Bank (Khusus untuk layanan antar)."
             }
         ],
@@ -59,6 +74,46 @@
             "obat batuk anak",
             "suplemen daya tahan tubuh",
             "nomor whatsapp apotek"
+        ],
+        "questions": [
+            {
+                "flowName": "Alur Informasi Umum & Biaya",
+                "messages": [
+                    {
+                        "customer": "Halo, apotek ini buka jam berapa ya? Saya mau beli obat flu.",
+                        "ai_response_eval": "AI harus memberikan sapaan ramah, mengonfirmasi status operasional hari ini sesuai jadwal di data, menyebutkan jam buka dan tutup, serta menyarankan reservasi untuk menghindari antrean."
+                    },
+                    {
+                        "customer": "Apakah obat ini tersedia di apotek? Saya kirim foto resepnya.",
+                        "ai_response_eval": "AI harus menjelaskan prosedur penebusan resep sesuai informasi di dataset, termasuk cara mengirimkan foto resep dan estimasi waktu pelayanan."
+                    },
+                    {
+                        "customer": "Berapa biaya konsultasi dengan apoteker?",
+                        "ai_response_eval": "AI harus menjelaskan bahwa konsultasi dengan apoteker gratis sesuai informasi di dataset, serta menyebutkan jam konsultasi yang tersedia."
+                    }
+                ]
+            },
+            {
+                "flowName": "Alur Reservasi & Layanan Spesifik",
+                "messages": [
+                    {
+                        "customer": "Saya mau pesan obat via antar, caranya gimana?",
+                        "ai_response_eval": "AI harus menjelaskan prosedur pemesanan obat via antar sesuai informasi di dataset, termasuk syarat minimal pembelian, biaya pengiriman, dan estimasi waktu pengiriman."
+                    },
+                    {
+                        "customer": "Apoteknya dimana ya? Saya dari arah Menteng.",
+                        "ai_response_eval": "AI harus memberikan panduan arah yang spesifik menggunakan poin-poin patokan bangunan (landmark) terdekat dan menyertakan link peta digital jika tersedia."
+                    },
+                    {
+                        "customer": "Apakah bisa bayar dengan QRIS? Saya pakai Gopay.",
+                        "ai_response_eval": "AI harus menjelaskan metode pembayaran yang tersedia sesuai informasi di dataset, termasuk konfirmasi bahwa QRIS (Gopay) dapat digunakan."
+                    },
+                    {
+                        "customer": "Saya butuh alat tensi digital, harganya berapa?",
+                        "ai_response_eval": "AI harus memberikan informasi harga alat tensi digital sesuai data di dataset dan menjelaskan spesifikasi produk yang tersedia."
+                    }
+                ]
+            }
         ]
     },
     "preview": "",

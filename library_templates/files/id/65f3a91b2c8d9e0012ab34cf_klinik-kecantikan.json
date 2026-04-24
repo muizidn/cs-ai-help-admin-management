@@ -10,35 +10,50 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Klinik Kecantikan Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Klinik Kecantikan"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Klinik Kecantikan Kami\nKami adalah pusat estetika medis yang menggabungkan keahlian dokter spesialis dengan teknologi kecantikan terkini. Kami percaya bahwa setiap orang berhak memiliki kulit yang sehat dan bercahaya melalui perawatan yang aman dan teruji secara klinis.\n\nContoh: Glow Aesthetic Clinic telah berdiri sejak 2018, fokus pada solusi kulit wajah sehat alami. Kami telah menangani lebih dari 10.000 kasus jerawat dan pigmentasi dengan tingkat kepuasan tinggi."
             },
             {
+                "title": "Aksesibilitas & Navigasi",
                 "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap klinik kecantikan Anda agar pelanggan mudah menemukan lokasi.\n\nContoh: Ruko Golden Boulevard Blok A No. 12, Jl. Pahlawan Seribu, Kelurahan Lengkong Karya, Kecamatan Serpong Utara, Kota Tangerang Selatan, Banten, 15320.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: Samping Bank Mandiri, dekat gerbang masuk perumahan BSD City."
             },
             {
+                "title": "Waktu Pelayanan",
                 "content": "## Jam Operasional & Reservasi\nInformasikan jam buka dan tutup klinik Anda setiap harinya.\n\nContoh:\n- Senin - Sabtu: 10.00 - 19.00\n- Minggu: 10.00 - 17.00\n- Hari Libur Nasional: Tutup (Kecuali ada promo event khusus)\n\nUntuk kenyamanan Anda, sangat disarankan melakukan reservasi minimal 2 hari sebelum kedatangan via WhatsApp 0811-2222-3333."
             },
             {
+                "title": "Katalog Layanan Medis",
                 "content": "## Konsultasi Dokter\nInformasikan ketersediaan sesi konsultasi dengan dokter kecantikan.\n\nContoh: Kami menyediakan sesi konsultasi mendalam dengan dokter kecantikan (FREE jika lanjut treatment). Dokter akan melakukan Skin Analysis menggunakan teknologi digital untuk menentukan jenis kulit dan masalah kulit Anda (Acne, Brightening, atau Anti-aging)."
             },
             {
+                "title": "Perawatan Wajah (Facial)",
                 "content": "## Menu Perawatan Wajah (Facial)\nSebutkan layanan facial yang tersedia beserta manfaat singkatnya.\n\nContoh:\n- Medical Facial (Rp 175.000): Pembersihan komedo mendalam, ekstraksi steril.\n- Detox Facial (Rp 250.000): Mengeluarkan racun polusi dan sisa make-up berat.\n- Oxygen Facial (Rp 350.000): Memberikan nutrisi oksigen murni agar kulit langsung segar.\n- Gold Facial (Rp 450.000): Menggunakan masker emas 24K untuk mencerahkan instan."
             },
             {
+                "title": "Treatment Laser & Teknologi",
                 "content": "## Treatment Laser & Teknologi\nInformasikan layanan berbasis teknologi laser dan alat medis lainnya.\n\nContoh:\n- Laser Rejuvenation (Rp 750.000): Peremajaan kulit dan mengecilkan pori-pori.\n- Laser Acne (Rp 600.000): Mematikan bakteri penyebab jerawat aktif.\n- IPL Hair Removal (Rp 300.000/area): Menghilangkan bulu secara permanen.\n- HIFU Face Lift (Rp 1.500.000): Pengencangan wajah dan v-shape tanpa operasi."
             },
             {
+                "title": "Paket Hemat Treatment",
                 "content": "## Paket Hemat Treatment\nInformasikan paket bundling untuk harga yang lebih terjangkau.\n\nContoh:\n- Paket Glowing (Rp 2.000.000): 3x Laser + 3x Facial + 1 Set Skincare Dasar.\n- Paket Acne Cure (Rp 1.500.000): 5x Treatment Jerawat + Konsultasi Gratis tiap visit.\n- Paket Bridal (Rp 3.000.000): Persiapan pernikahan lengkap (Face & Body) selama 1 bulan."
             },
             {
+                "title": "Produk Skincare (Homecare)",
                 "content": "## Produk Skincare (Homecare)\nInformasikan produk perawatan rumah yang tersedia di klinik.\n\nContoh: Produk kami diformulasikan khusus oleh tim dokter (BPOM & Halal):\n- Facial Wash Acne/Brightening: Rp 65.000\n- Sunscreen SPF 50 PA+++: Rp 85.000\n- Night Cream Klinik (Sesuai resep dokter): Rp 110.000\n- Serum Vitamin C 20%: Rp 150.000"
             },
             {
+                "title": "SOP Pendaftaran & Berkas",
                 "content": "## Prosedur Kedatangan\nJelaskan alur yang harus diikuti pelanggan saat berkunjung.\n\nContoh:\n1. Tunjukkan bukti reservasi WhatsApp ke Front Office.\n2. Cuci muka di area yang telah disediakan.\n3. Skin Analysis dan konsultasi dengan Dokter.\n4. Proses Treatment oleh Terapis (Facial) atau Dokter (Laser/Inject).\n5. Selesai, pembayaran, dan pengambilan krim di Apotek klinik."
             },
             {
+                "title": "Transparansi Biaya",
                 "content": "## Estimasi Harga & Pembayaran\nBerikan gambaran biaya total dan metode pembayaran.\n\nContoh:\n- Rata-rata pengeluaran per kunjungan: Rp 300.000 - Rp 1.000.000.\n- Biaya Admin: Rp 20.000 (Hanya kunjungan pertama).\nKami menerima: Tunai, Debit (BCA/Mandiri), QRIS (Semua E-wallet), dan Kartu Kredit (Cicilan 0% minimal transaksi Rp 2jt)."
             }
         ],
@@ -58,6 +73,46 @@
             "botox wajah",
             "chemical peeling",
             "konsultasi kulit gratis"
+        ],
+        "questions": [
+            {
+                "flowName": "Alur Informasi Umum & Biaya",
+                "messages": [
+                    {
+                        "customer": "Halo, klinik kecantikan ini buka jam berapa ya? Saya mau coba facial.",
+                        "ai_response_eval": "AI harus memberikan sapaan ramah, mengonfirmasi status operasional hari ini sesuai jadwal di data, menyebutkan jam buka dan tutup, serta menyarankan reservasi untuk menghindari antrean."
+                    },
+                    {
+                        "customer": "Berapa harga facial biasa dan ada paket hemat tidak?",
+                        "ai_response_eval": "AI harus menjelaskan estimasi biaya facial berdasarkan informasi di dataset, serta menawarkan paket hemat treatment yang tersedia."
+                    },
+                    {
+                        "customer": "Saya punya masalah jerawat, treatment apa yang cocok dan berapa harganya?",
+                        "ai_response_eval": "AI harus merekomendasikan treatment yang sesuai untuk jerawat berdasarkan informasi di dataset, memberikan estimasi biaya, serta menyarankan konsultasi gratis terlebih dahulu."
+                    },
+                    {
+                        "customer": "Apakah bisa bayar dengan cicilan atau e-wallet?",
+                        "ai_response_eval": "AI harus memvalidasi seluruh metode pembayaran non-tunai yang tersedia sesuai informasi di bagian Estimasi Harga & Pembayaran, termasuk opsi cicilan 0% untuk kartu kredit."
+                    }
+                ]
+            },
+            {
+                "flowName": "Alur Reservasi & Lokasi Spesifik",
+                "messages": [
+                    {
+                        "customer": "Saya mau booking jadwal facial, caranya gimana?",
+                        "ai_response_eval": "AI harus mengarahkan pelanggan untuk melakukan reservasi online melalui WhatsApp, memberikan nomor kontak yang tepat, dan menjelaskan format pesan booking yang benar."
+                    },
+                    {
+                        "customer": "Kliniknya dimana ya? Saya dari arah BSD.",
+                        "ai_response_eval": "AI harus memberikan panduan arah yang spesifik menggunakan poin-poin patokan bangunan (landmark) terdekat dan menyertakan link peta digital jika tersedia."
+                    },
+                    {
+                        "customer": "Saya baru saja treatment laser, ada pantangan tidak?",
+                        "ai_response_eval": "AI harus memberikan panduan pasca treatment laser sesuai prosedur di dataset, termasuk pantangan penggunaan produk tertentu dan perawatan kulit."
+                    }
+                ]
+            }
         ]
     },
     "preview": "",

@@ -11,36 +11,79 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Tukang Listrik Panggilan Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Tukang Listrik"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Layanan Listrik Kami\nKami menyediakan jasa teknisi listrik profesional untuk menangani segala urusan kelistrikan di rumah, kantor, atau ruko Anda. Keamanan adalah prioritas utama kami, oleh karena itu kami selalu menggunakan standar prosedur kerja yang aman dan material berkualitas (SNI).\n\nContoh: Volt Tech Semarang. Tim kami terdiri dari teknisi lulusan SMK Kelistrikan dan berpengalaman minimal 5 tahun. Siap membantu masalah listrik rumah tangga hingga instalasi panel 3 phase."
             },
             {
+                "title": "Jam Layanan & Respon",
                 "content": "## Jam Layanan & Respon Cepat\nMasalah listrik tidak bisa menunggu? Kami siap membantu:\n- Senin - Minggu: 08.00 - 21.00\n- Layanan Darurat Korsleting: 24 Jam (Sesuai ketersediaan teknisi)\nArea Layanan: [Isi Kota/Wilayah]\n\nContoh:\n- Jam Operasional Rutin: 08.00 - 17.00 WIB.\n- Emergency Call (Malam Hari): 08.00 - 05.00 WIB (Biaya +50%).\n- Area: Kota Semarang, Ungaran, dan Kendal."
             },
             {
+                "title": "Perbaikan Gangguan",
                 "content": "## Perbaikan Gangguan Listrik\n- Menangani listrik sering anjlok (MCB turun).\n- Mencari dan memperbaiki titik korsleting (hubungan arus pendek).\n- Memperbaiki bau gosong atau percikan api pada stop kontak/saklar.\n- Perbaikan lampu mati sebagian atau redup.\n\nContoh Harga:\n- Pengecekan & Perbaikan Korsleting: Mulai Rp 150.000 - Rp 300.000 (Tergantung kesulitan tracing jalur).\n- Ganti MCB Box Dalam: Rp 50.000 (Jasa) + Harga MCB."
             },
             {
+                "title": "Instalasi Baru",
                 "content": "## Instalasi Listrik Baru & Renovasi\n- Jasa pasang instalasi listrik rumah baru/renovasi.\n- Penambahan titik lampu baru (Indoor/Outdoor).\n- Pemasangan stop kontak dan saklar tambahan.\n- Pemasangan instalasi kabel untuk AC atau Water Heater.\n\nContoh Harga Instalasi:\n- Instalasi Titik Lampu Baru: Rp 65.000/titik (Non-Material).\n- Instalasi Stop Kontak Baru: Rp 70.000/titik.\n- Paket All-in (Jasa + Kabel Eterna/Supreme + Pipa): Rp 250.000/titik."
             },
             {
+                "title": "Pemasangan Perangkat",
                 "content": "## Pemasangan Perangkat Listrik\n- Jasa pasang lampu hias, lampu gantung, dan lampu downlight.\n- Pemasangan bel pintu (doorbell).\n- Pemasangan Exhaust Fan (Kipas hisap).\n- Pemasangan Grouping MCB / Box Panel Listrik.\n\nContoh:\n- Pasang Lampu Gantung Kristal: Mulai Rp 150.000 (Tergantung ukuran & berat).\n- Pasang Exhaust Fan Dinding: Rp 85.000/unit.\n- Pasang Kipas Angin Gantung (Ceiling Fan): Rp 125.000/unit."
             },
             {
+                "title": "Perawatan & Audit",
                 "content": "## Perawatan & Pengecekan (Audit)\n- Pengecekan rutin kesehatan kabel (mencegah kebakaran).\n- Penyeimbangan beban listrik (agar MCB tidak sering turun).\n- Pemasangan Arde (Grounding) untuk keamanan petir dan elektronik.\n\nContoh:\n- Jasa Pasang Grounding (Arde): Rp 350.000 (Termasuk pasak bumi tembaga 1,5m).\n- General Checkup Kelistrikan Rumah: Rp 200.000 (Laporan kondisi kabel, MCB, & grounding)."
             },
             {
+                "title": "Estimasi Biaya",
                 "content": "## Estimasi Biaya Jasa\n- Perbaikan Korsleting: Mulai dari Rp [Isi Harga].\n- Pasang Titik Lampu: Rp [Isi Harga]/titik.\n- Pasang Saklar/Stop Kontak: Rp [Isi Harga]/titik.\n- Biaya Kunjungan & Pengecekan: Rp [Isi Harga].\n\nContoh:\n- Minimum Order: Rp 100.000.\n- Biaya Transport (Jika diluar area >10km): Rp 25.000.\n- Survey Lokasi (Proyek Besar): Gratis."
             },
             {
+                "title": "Keunggulan",
                 "content": "## Mengapa Memilih Kami?\n- Teknisi jujur, sopan, dan berpengalaman.\n- Hasil pengerjaan rapi dan memperhatikan estetika.\n- Memberikan saran material yang tepat dan aman.\n- Garansi instalasi selama 30 hari.\n\nContoh:\n\"Kami memberikan garansi instalasi 1 bulan. Jika ada sambungan kendor atau lampu mati karena kesalahan pasang, kami perbaiki gratis.\""
             },
             {
+                "title": "Cara Booking",
                 "content": "## Cara Booking Layanan\nSilakan hubungi admin dengan menginfokan:\n1. Alamat Lengkap.\n2. Keluhan/Kebutuhan (Contoh: Pasang 3 titik lampu baru).\n3. Jadwal Kunjungan.\nKami akan mengonfirmasi biaya estimasi dan mengirimkan teknisi.\n\nContoh WA:\n\"Mas, listrik rumah saya jeglek terus kalau nyalakan AC. Bisa dicek? Lokasi di Banyumanik.\""
             },
             {
+                "title": "Kontak Teknisi",
                 "content": "## Kontak Teknisi Listrik\nWhatsApp: [Isi Nomor WA]\nTelepon: [Isi Nomor Telepon]\n\nInstalasi aman, keluarga nyaman, terhindar dari bahaya kebakaran!\n\nContoh:\nWA: 0812-5566-7788 (Volt Tech)"
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Pertanyaan Umum - Masalah Listrik",
+                "messages": [
+                    {
+                        "customer": "Listrik di rumah sering jepret, kenapa ya?",
+                        "ai_response_eval": "AI harus menyarankan pengecekan oleh teknisi untuk mengetahui penyebabnya (kelebihan beban atau korsleting) dan menawarkan jadwal kunjungan."
+                    },
+                    {
+                        "customer": "Kalau mau tambah daya listrik apa bisa bantu?",
+                        "ai_response_eval": "AI harus menjelaskan bahwa tambah daya adalah ranah PLN, namun teknisi bisa membantu pengecekan instalasi kabel dan penggantian MCB dalam setelah proses tambah daya selesai."
+                    }
+                ]
+            },
+            {
+                "flowName": "Pertanyaan Umum - Instalasi",
+                "messages": [
+                    {
+                        "customer": "Mau pasang lampu baru, biayanya berapa?",
+                        "ai_response_eval": "AI harus menanyakan jumlah titik lampu yang ingin dipasang dan memberikan estimasi biaya per titik instalasi."
+                    },
+                    {
+                        "customer": "Biaya pasang stop kontak baru berapa per titik?",
+                        "ai_response_eval": "AI harus memberikan estimasi harga per titik untuk pemasangan stop kontak baru (jasa + material atau jasa saja)."
+                    }
+                ]
             }
         ],
         "keywords": [

@@ -11,35 +11,50 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Bakery Lokal Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Bakery Lokal"
+        },
         "sections": [
             {
+                "title": "Tentang Bakery",
                 "content": "## Tentang Bakery Lokal Kami\nKami menghadirkan kehangatan roti yang dipanggang segar setiap pagi (fresh from the oven). Menggunakan resep tradisional yang dipadukan dengan bahan berkualitas tinggi, kami berkomitmen menyajikan roti yang lembut, harum, dan tanpa bahan pengawet buatan.\n\nContoh:\n\"Sari Roti Mama\" berdiri sejak 1998 di kawasan Tebet, terkenal dengan Roti Sisir Mentega yang selalu ludes sebelum jam 12 siang."
             },
             {
+                "title": "Jam Operasional",
                 "content": "## Jam Operasional\nSilakan kunjungi outlet kami setiap hari:\n- Senin - Minggu: 07.00 - 21.00\n- Jam Roti Segar: 07.00 & 16.00 (Waktu terbaik untuk mendapatkan roti yang baru matang)\n\nContoh:\nOutlet Pusat: Jl. Raya Kebon Jeruk No. 10 (Buka 06.30 - 22.00).\nOutlet Cabang: Ruko Modernland (Buka 08.00 - 20.00)."
             },
             {
+                "title": "Roti Manis & Gurih",
                 "content": "## Koleksi Roti Manis & Gurih\nNikmati berbagai pilihan roti satuan kami:\n- Roti Isi (Cokelat, Keju, Susu, Srikaya, Kacang Merah)\n- Roti Sobek (Berbagai varian rasa dalam satu loyang)\n- Roti Abon Sapi / Ayam\n- Roti Sosis & Pizza Mini\n- Roti Sisir Mentega\n\nContoh Harga:\n- Roti Cokelat/Keju: Rp 7.000\n- Roti Abon Floss: Rp 12.000\n- Roti Sobek Kombinasi: Rp 22.000"
             },
             {
+                "title": "Roti Tawar",
                 "content": "## Roti Tawar & Gandum\nKebutuhan sarapan keluarga Anda:\n- Roti Tawar Kupas / Non-Kupas\n- Roti Tawar Gandum (Tinggi serat)\n- Roti Tawar Pandan\n- Roti Burger & Hotdog (Bisa dipesan untuk usaha kuliner)\n\nContoh Harga:\n- Roti Tawar Spesial (Tebal): Rp 16.000\n- Roti Gandum Utuh: Rp 22.000\n- Bun Burger (isi 6): Rp 18.000"
             },
             {
+                "title": "Kue Basah",
                 "content": "## Kue Basah & Jajanan Pasar\nSelain roti, kami menyediakan aneka kue tradisional (setiap pagi):\n- Risoles (Sayur/Mayo)\n- Lemper Ayam\n- Pastel Reborn\n- Lapis Legit / Lapis Surabaya (Potongan)\n- Bolu Kukus\n\nContoh:\n- Lemper Ayam Bakar: Rp 4.500\n- Risoles Smoked Beef Mayo: Rp 5.000\n- Pastel Tutup: Rp 6.000"
             },
             {
+                "title": "Snack Box",
                 "content": "## Pesanan Snack Box\nKami melayani pesanan snack box untuk rapat, pengajian, atau acara sekolah. Paket mulai dari Rp 10.000 (isi 2 kue + 1 air mineral) hingga paket premium. Harap melakukan pemesanan minimal H-1 sebelum jam 15.00.\n\nContoh Paket:\n- Paket Hemat (Rp 12.000): Roti Cokelat + Risoles + Air Mineral Gelas.\n- Paket Rapat (Rp 18.000): Lemper Ayam + Soes Fla + Bolu Kukus + Air Mineral Botol.\n- Paket Premium (Rp 25.000): Roti Abon + Pastel + Lapis Surabaya + Buah Potong + Air Mineral."
             },
             {
+                "title": "Estimasi Harga",
                 "content": "## Estimasi Harga\n- Roti Satuan: Rp 6.000 - Rp 12.000\n- Roti Tawar: Rp 15.000 - Rp 25.000\n- Kue Basah: Rp 3.000 - Rp 5.000\n- Bolu Loyangan: Mulai Rp 45.000"
             },
             {
+                "title": "Custom Cake",
                 "content": "## Layanan Custom Cake\nKami juga menerima pesanan kue ulang tahun sederhana (Tart) dengan base cake cokelat atau vanilla. Desain bisa disesuaikan dengan permintaan pelanggan (pre-order minimal H-3).\n\nContoh:\n- Black Forest Diameter 20cm: Rp 180.000\n- Mocca Cake Diameter 20cm: Rp 160.000\n- Tulisan ucapan gratis."
             },
             {
+                "title": "Pembayaran",
                 "content": "## Metode Pembayaran\n- Tunai\n- Debit Card\n- QRIS\n- Transfer Bank (Khusus pesanan snack box)\n\nContoh:\nBCA 1234567890 a.n. Toko Roti Sejahtera."
             },
             {
+                "title": "Lokasi & Kontak",
                 "content": "## Lokasi & Kontak Admin\nAlamat: [Isi Alamat Lengkap Bakery]\nWhatsApp: [Isi Nomor WA]\n\nDapatkan diskon 20% untuk pembelian roti di atas jam 20.00 (selama persediaan masih ada)!\n\nContoh:\nAlamat: Jl. Pahlawan No. 45, Kel. Sukajadi, Kec. Sukasari, Bandung 40162 (Sebelah Apotek Kimia Farma).\nGoogle Maps: https://maps.google.com/?q=bakeries\nWhatsApp: 0812-3456-7890 (Admin Lina)."
             }
         ],
@@ -59,6 +74,42 @@
             "toko kue terpercaya",
             "roti sehat tanpa pengawet",
             "promo roti malam hari"
+        ],
+        "questions": [
+            {
+                "flowName": "Alur Informasi Produk & Roti",
+                "messages": [
+                    {
+                        "customer": "Roti yang baru matang jam berapa ya? Saya mau yang masih hangat.",
+                        "ai_response_eval": "AI harus menginformasikan jadwal 'fresh from the oven' (pagi/sore) agar pelanggan bisa datang di waktu yang tepat."
+                    },
+                    {
+                        "customer": "Ada roti gandum gak? Berapa harganya?",
+                        "ai_response_eval": "AI harus mengonfirmasi ketersediaan roti gandum (tawar/isi) dan memberikan informasi harganya."
+                    },
+                    {
+                        "customer": "Kue ulang tahun blackforest ukuran sedang berapa?",
+                        "ai_response_eval": "AI harus memberikan estimasi harga kue tart (Blackforest) sesuai ukuran yang tersedia dan info pre-order H-3."
+                    }
+                ]
+            },
+            {
+                "flowName": "Alur Pesanan Snack Box",
+                "messages": [
+                    {
+                        "customer": "Saya mau pesan 30 snack box buat rapat besok pagi, bisa?",
+                        "ai_response_eval": "AI harus mengecek batas waktu pemesanan (H-1 sebelum jam 15.00) dan mengonfirmasi kesanggupan produksi."
+                    },
+                    {
+                        "customer": "Paket snack box 15 ribu dapat apa aja?",
+                        "ai_response_eval": "AI harus memberikan opsi kombinasi kue/roti yang masuk dalam budget Rp 15.000 (misal: 1 Roti + 1 Kue Basah + Air)."
+                    },
+                    {
+                        "customer": "Bisa antar ke kantor gak? Daerah Sudirman.",
+                        "ai_response_eval": "AI harus menjelaskan kebijakan pengiriman (delivery) untuk pesanan snack box, termasuk biaya ongkir jika ada."
+                    }
+                ]
+            }
         ]
     },
     "preview": "",

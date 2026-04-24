@@ -11,36 +11,79 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Tukang Ledeng Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Tukang Ledeng"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Layanan Ledeng Kami\nKami menyediakan solusi ahli untuk segala masalah saluran air dan perpipaan di rumah, kantor, atau apartemen Anda. Dengan peralatan yang lengkap dan teknisi berpengalaman, kami menjamin perbaikan yang rapi, cepat, dan bergaransi.\n\nContoh: Jasa Ledeng \"Sumber Rejeki\" Yogyakarta. Spesialis deteksi kebocoran pipa dan pelancaran saluran mampet tanpa bongkar keramik."
             },
             {
+                "title": "Jam Operasional & Area",
                 "content": "## Jam Layanan & Area\nKami siap dipanggil kapan saja Anda membutuhkan:\n- Senin - Minggu: 07.00 - 20.00\n- Layanan Darurat (Emergency): Tersedia 24 jam\nArea Layanan: [Isi Kota/Wilayah]\n\nContoh:\n- Jam Operasional: 07.00 - 21.00 WIB.\n- Emergency 24 Jam: Khusus untuk pipa pecah besar atau pompa mati total.\n- Area: Kota Yogyakarta, Sleman, dan Bantul."
             },
             {
+                "title": "Saluran Mampet",
                 "content": "## Perbaikan Saluran Mampet\nKami menangani saluran mampet tanpa bongkar (jika memungkinkan):\n- Wastafel dapur mampet karena lemak.\n- Saluran kamar mandi (floor drain) mampet karena rambut/kotoran.\n- Kloset/WC mampet (tersumbat).\n- Saluran air hujan (talang) mampet.\n\nContoh Harga:\n- Pelancaran Wastafel Mampet: Rp 150.000 - Rp 250.000 (Tergantung tingkat kesulitan).\n- Pelancaran Floor Drain: Rp 200.000.\n- Pelancaran WC Mampet: Rp 350.000 (Menggunakan mesin Ridgid/Sodok)."
             },
             {
+                "title": "Pipa Bocor",
                 "content": "## Perbaikan Pipa Bocor & Rembes\n- Deteksi pipa bocor di dalam dinding atau bawah lantai.\n- Perbaikan sambungan pipa yang pecah atau rembes.\n- Penggantian kran air yang patah atau bocor.\n- Perbaikan instalasi pipa air panas/dingin.\n\nContoh:\n- Jasa Ganti Kran Patah di Tembok: Rp 75.000 (Belum termasuk sparepart).\n- Tambal Pipa Bocor 1 Titik: Rp 100.000.\n- Instalasi Pipa Baru: Rp 25.000/meter lari."
             },
             {
+                "title": "Pompa Air",
                 "content": "## Instalasi & Perawatan Pompa Air\n- Jasa pasang pompa air baru (Sanyo, Shimizu, dll).\n- Perbaikan pompa air mati, suara berisik, atau air tidak naik.\n- Pemasangan otomatis (radar) tandon air.\n- Jasa kuras tandon (toren) air.\n\nContoh Harga:\n- Pasang Pompa Dorong (Booster): Rp 150.000.\n- Service Pompa Air (Ganti Seal/Klaker): Rp 125.000 + Sparepart.\n- Kuras Tandon Atas (500-1000 Liter): Rp 150.000."
             },
             {
+                "title": "Pemasangan Sanitari",
                 "content": "## Pemasangan Sanitari\n- Jasa pasang kloset duduk/jongkok.\n- Jasa pasang wastafel, sink dapur, dan shower.\n- Jasa pasang water heater (listrik/gas).\n- Jasa pasang filter air bersih.\n\nContoh:\n- Pasang Kloset Duduk: Rp 250.000/unit.\n- Pasang Water Heater Listrik: Rp 150.000/unit.\n- Pasang Kran Mixer Shower: Rp 75.000/unit."
             },
             {
+                "title": "Estimasi Biaya",
                 "content": "## Estimasi Biaya Layanan\n- Jasa Perbaikan Ringan (Ganti kran/seal): Rp [Isi Harga].\n- Jasa Saluran Mampet: Mulai dari Rp [Isi Harga].\n- Jasa Pasang Pompa: Rp [Isi Harga].\n- Biaya Kunjungan & Pengecekan: Rp [Isi Harga].\n\nContoh:\n- Biaya Kunjungan: Rp 50.000 (Area dalam kota).\n- Minimum Charge: Rp 100.000 (Total biaya jasa minimal)."
             },
             {
+                "title": "Keunggulan",
                 "content": "## Keunggulan Kami\n- Respon cepat untuk area terdekat.\n- Peralatan modern (Sodok kabel, mesin pendorong, dll).\n- Harga transparan dan disepakati di awal.\n- Garansi perbaikan jika masalah yang sama muncul kembali.\n\nContoh:\n\"Garansi 7 Hari untuk kasus mampet. Jika mampet lagi dalam seminggu, kami kerjakan ulang GRATIS.\""
             },
             {
+                "title": "Cara Memanggil",
                 "content": "## Cara Memanggil Tukang\nCukup kirimkan:\n- Nama & Alamat.\n- Foto/Video masalah (untuk estimasi).\n- Waktu kunjungan yang diinginkan.\nKami akan segera mengirimkan teknisi ke lokasi Anda.\n\nContoh Format WA:\n\"Pak, wastafel saya mampet total, air meluap. Lokasi di Jl. Kaliurang Km 5. Bisa datang sekarang?\""
             },
             {
+                "title": "Kontak Tukang",
                 "content": "## Kontak Tukang Ledeng\nWhatsApp: [Isi Nomor WA]\nTelepon: [Isi Nomor Telepon]\n\nSaluran lancar, hati tenang, air mengalir deras!\n\nContoh:\nWA/Telp: 0812-3344-5566 (Pak Joko Ledeng)"
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Pertanyaan Umum - Saluran Mampet",
+                "messages": [
+                    {
+                        "customer": "Wastafel saya mampet nih, bisa benerin tanpa bongkar?",
+                        "ai_response_eval": "AI harus menanyakan detail masalah dan meyakinkan pelanggan bahwa teknisi akan mengusahakan metode tanpa bongkar terlebih dahulu menggunakan alat khusus."
+                    },
+                    {
+                        "customer": "Berapa biaya untuk melancarkan saluran kamar mandi?",
+                        "ai_response_eval": "AI harus memberikan estimasi range harga untuk pelancaran saluran dan menjelaskan faktor yang mempengaruhi harga (tingkat kesulitan)."
+                    }
+                ]
+            },
+            {
+                "flowName": "Pertanyaan Umum - Pompa Air",
+                "messages": [
+                    {
+                        "customer": "Pompa air saya bunyi tapi airnya nggak naik, kenapa ya?",
+                        "ai_response_eval": "AI harus menjelaskan kemungkinan penyebab (seperti seal bocor atau masalah pada pipa hisap) dan menawarkan jasa pengecekan/service pompa."
+                    },
+                    {
+                        "customer": "Bisa pasang pompa booster untuk shower?",
+                        "ai_response_eval": "AI harus mengonfirmasi bahwa layanan pemasangan pompa booster tersedia dan memberikan estimasi biaya jasa pasangnya."
+                    }
+                ]
             }
         ],
         "keywords": [

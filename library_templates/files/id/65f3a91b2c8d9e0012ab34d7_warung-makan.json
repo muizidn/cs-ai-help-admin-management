@@ -10,35 +10,50 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Warung Makan Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Warung Makan"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Warung Makan Kami\nWarung makan kami menyajikan masakan rumah tangga yang lezat, bersih, dan higienis dengan harga yang sangat terjangkau. Kami menggunakan bahan-bahan segar setiap harinya untuk memastikan cita rasa masakan yang autentik.\n\nContoh: Warung Barokah menyediakan masakan khas Jawa sejak tahun 2015. Kami dikenal dengan menu Ayam Goreng Serundeng dan Sayur Asemnya yang segar, dimasak tanpa MSG berlebih."
             },
             {
+                "title": "Aksesibilitas & Navigasi",
                 "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap warung Anda agar pelanggan mudah menemukan lokasi.\n\nContoh: Jl. Raya Bogor KM 20, No. 45, RT 02/RW 03, Kelurahan Kramat Jati, Kecamatan Kramat Jati, Jakarta Timur, 13510.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: Samping Masjid Jami Al-Barokah, seberang minimarket Alfamart."
             },
             {
+                "title": "Jam Operasional",
                 "content": "## Jam Operasional\nInformasikan jam buka dan tutup warung Anda setiap harinya.\n\nContoh:\n- Senin - Sabtu: 07.00 - 19.00 (Siap melayani sarapan hingga makan malam).\n- Minggu: 08.00 - 15.00.\n- Hari Libur Nasional: Tetap buka (kecuali diinfokan khusus melalui status WhatsApp)."
             },
             {
+                "title": "Menu Andalan",
                 "content": "## Menu Andalan Harian\nSebutkan menu masakan yang rutin tersedia atau menjadi favorit pelanggan.\n\nContoh:\n- Lauk Utama: Ayam Goreng (Rp 10rb), Ikan Kembung Balado (Rp 12rb), Telur Dadar (Rp 5rb), Lele Goreng (Rp 8rb).\n- Aneka Sayur: Sayur Asem, Sayur Lodeh, Tumis Kangkung, Sop Ayam (Rp 5rb/porsi).\n- Gorengan: Tempe Mendoan, Bakwan, Tahu Isi (Rp 2rb/3 biji)."
             },
             {
+                "title": "Pesanan Khusus",
                 "content": "## Pesanan Nasi Bungkus & Kotak\nJelaskan layanan pesanan dalam jumlah banyak untuk acara tertentu.\n\nContoh: Kami menerima pesanan Nasi Kotak dan Nasi Bungkus untuk acara arisan, rapat kantor, atau syukuran. \n- Harga mulai dari Rp 15.000 per porsi (Nasi, Lauk Utama, Sayur, Kerupuk, Sambal).\n- Mohon melakukan pemesanan minimal H-1 untuk jumlah di atas 20 porsi.\n- Bisa request menu (misal: Ayam Bakar atau Gudeg)."
             },
             {
+                "title": "Estimasi Biaya",
                 "content": "## Estimasi Harga & Paket Makan\nBerikan gambaran harga paket agar pelanggan bisa menyesuaikan budget.\n\nContoh:\n- Paket Kenyang 1: Nasi + Sayur + Tempe/Tahu + Es Teh (Rp 12.000).\n- Paket Kenyang 2: Nasi + Sayur + Ayam/Ikan + Es Teh (Rp 20.000).\n- Nasi Putih Porsi: Rp 5.000 (Boleh nambah sepuasnya untuk makan di tempat)."
             },
             {
+                "title": "Layanan Pesan Antar",
                 "content": "## Layanan Pesan Antar (Delivery)\nInformasikan jika pelanggan bisa memesan dari rumah.\n\nContoh: Kami melayani pesan antar gratis untuk radius maksimal 2km dari warung (Minimal order Rp 30.000). \n- Untuk jarak lebih jauh, pesanan dapat dikirim melalui kurir ojek online (biaya ongkir ditanggung pembeli).\n- Cara Pesan: Chat WA ke 0812-3456-7890 (Format: Nama, Alamat, Pesanan)."
             },
             {
+                "title": "Fasilitas Makan",
                 "content": "## Fasilitas Makan di Tempat\nInformasikan kenyamanan yang didapat pelanggan saat makan di lokasi.\n\nContoh:\n- Meja makan bersih dengan kapasitas 10-15 orang.\n- Kipas angin dan area cuci tangan (wastafel) tersedia.\n- Tersedia kerupuk kaleng dan aneka sambal gratis di meja.\n- Parkir motor aman di depan warung."
             },
             {
+                "title": "Metode Pembayaran",
                 "content": "## Metode Pembayaran\nSebutkan cara pembayaran yang diterima di warung.\n\nContoh: Kami menerima pembayaran:\n- Tunai / Cash.\n- QRIS (Gopay, Dana, OVO, ShopeePay) - Scan barcode di meja kasir.\n- Transfer Bank BCA/Mandiri (Khusus pesanan nasi kotak)."
             },
             {
+                "title": "Kontak Layanan",
                 "content": "## Kontak & Media Sosial\nBerikan informasi kanal komunikasi yang bisa dihubungi.\n\nContoh:\n- WhatsApp: 0812-3456-7890 (Bu Siti).\n- Instagram: @warung_barokah_kramatjati\n- Update Menu: Cek Status WhatsApp kami setiap pagi jam 08.00 untuk menu spesial hari ini."
             }
         ],
@@ -58,6 +73,46 @@
             "warung nasi rames",
             "sambal terasi",
             "minuman es teh"
+        ],
+        "questions": [
+            {
+                "flowName": "Alur Informasi Umum & Menu",
+                "messages": [
+                    {
+                        "customer": "Halo, warung makan ini buka jam berapa ya? Saya mau makan siang di sana.",
+                        "ai_response_eval": "AI harus memberikan sapaan ramah, menjelaskan jam operasional warung sesuai informasi di dataset, dan menyarankan menu andalan harian yang tersedia."
+                    },
+                    {
+                        "customer": "Ada menu apa saja hari ini? Saya dari arah Bogor.",
+                        "ai_response_eval": "AI harus memberikan informasi menu andalan harian sesuai informasi di dataset, serta menyarankan paket makan yang tersedia."
+                    },
+                    {
+                        "customer": "Harga nasi ayamnya berapa? Ada paket hemat tidak?",
+                        "ai_response_eval": "AI harus menjelaskan estimasi harga paket makan sesuai informasi di dataset, serta menawarkan paket hemat yang tersedia."
+                    }
+                ]
+            },
+            {
+                "flowName": "Alur Reservasi & Layanan Spesifik",
+                "messages": [
+                    {
+                        "customer": "Saya mau pesan nasi kotak untuk acara kantor, caranya gimana?",
+                        "ai_response_eval": "AI harus menjelaskan prosedur pemesanan nasi kotak sesuai informasi di dataset, termasuk minimum order, waktu pemesanan, dan cara pemesanan."
+                    },
+                    {
+                        "customer": "Warungnya dimana ya? Saya dari arah Kramat Jati.",
+                        "ai_response_eval": "AI harus memberikan panduan arah yang spesifik menggunakan poin-poin patokan bangunan (landmark) terdekat dan menyertakan link peta digital jika tersedia."
+                    },
+                    {
+                        "customer": "Apakah bisa pesan antar? Saya di rumah sakit.",
+                        "ai_response_eval": "AI harus menjelaskan layanan pesan antar sesuai informasi di dataset, termasuk radius pengiriman, minimum order, dan cara pemesanan."
+                    },
+                    {
+                        "customer": "Saya butuh nasi bungkus untuk 50 orang, bisa tidak?",
+                        "ai_response_eval": "AI harus menjelaskan layanan pesanan dalam jumlah banyak sesuai informasi di dataset, termasuk minimum order, waktu pemesanan, dan kemampuan melayani jumlah besar."
+                    }
+                ]
+            }
         ]
     },
     "preview": "",

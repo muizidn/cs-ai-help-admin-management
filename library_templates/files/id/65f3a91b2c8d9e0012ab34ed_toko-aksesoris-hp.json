@@ -11,8 +11,14 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Toko Aksesoris HP Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Toko Aksesoris HP"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Toko Aksesoris Kami\nKami menyediakan berbagai perlengkapan untuk mempercantik dan melindungi smartphone Anda. Dari casing trendi hingga perangkat pengisian daya berkualitas tinggi, kami berkomitmen menyediakan produk fungsional dengan desain kekinian untuk semua merk smartphone."
             },
             {
@@ -41,6 +47,34 @@
             },
             {
                 "content": "## Kontak Admin Toko\nWhatsApp: 0813-9876-5432\nInstagram: @aksesoris_gadget_murah\n\nBikin HP-mu makin keren dan aman bersama kami!"
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Pertanyaan Umum - Ketersediaan Produk",
+                "messages": [
+                    {
+                        "customer": "Ada casing buat iPhone 13 Pro nggak?",
+                        "ai_response_eval": "AI harus menanyakan preferensi bahan (softcase/hardcase) atau desain, dan menawarkan opsi yang tersedia."
+                    },
+                    {
+                        "customer": "Casing yang ada tali lanyardnya buat Samsung A54 ada?",
+                        "ai_response_eval": "AI harus mengecek stok casing dengan fitur tali lanyard untuk tipe HP tersebut dan memberikan rekomendasi."
+                    }
+                ]
+            },
+            {
+                "flowName": "Pertanyaan Umum - Pelindung Layar",
+                "messages": [
+                    {
+                        "customer": "Tempered glass yang anti intip ada?",
+                        "ai_response_eval": "AI harus mengonfirmasi ketersediaan stok untuk tipe HP pelanggan dan menjelaskan fitur privacy glass."
+                    },
+                    {
+                        "customer": "Bisa pasang tempered glass sekalian nggak kalau beli di toko?",
+                        "ai_response_eval": "AI harus mengonfirmasi bahwa toko menyediakan jasa pasang gratis dan rapi."
+                    }
+                ]
             }
         ],
         "keywords": [

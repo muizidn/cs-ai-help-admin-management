@@ -11,36 +11,83 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Toko Sembako Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Toko Sembako"
+        },
         "sections": [
             {
+                "title": "Tentang Toko",
                 "content": "## Tentang Toko Sembako Kami\nKami menyediakan kebutuhan pokok rumah tangga terlengkap dengan harga grosir dan eceran. Komitmen kami adalah menyediakan barang-barang berkualitas, timbangan yang akurat, dan pelayanan yang ramah untuk memenuhi kebutuhan dapur harian Anda.\n\nContoh: Toko Sembako Jaya Makmur telah melayani warga sekitar sejak tahun 2005. Kami fokus menyediakan barang kebutuhan pokok berkualitas dengan harga bersaing, mulai dari beras hingga gas LPG."
             },
             {
+                "title": "Lokasi & Alamat",
                 "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap toko Anda agar pelanggan mudah menemukan lokasi.\n\nContoh: Jl. Mangga Raya No. 12, RT 01/RW 04, Kelurahan Depok Jaya, Kecamatan Pancoran Mas, Kota Depok, 16432.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: 50 meter dari pertigaan jalan, depan bengkel motor AHASS."
             },
             {
+                "title": "Jam Operasional",
                 "content": "## Jam Operasional\nInformasikan jam buka dan tutup toko Anda setiap harinya.\n\nContoh:\n- Senin - Sabtu: 06.00 - 21.00 (Kami buka lebih pagi untuk kebutuhan pasar)\n- Minggu: 07.00 - 18.00\n- Tanggal Merah: Tetap buka (kecuali Lebaran/Hari Raya)"
             },
             {
+                "title": "Produk Utama (Sembako)",
                 "content": "## Produk Utama (Sembako)\nSebutkan stok barang kebutuhan pokok yang selalu tersedia.\n\nContoh:\n- Beras: Setra Ramos (Rp 13rb/kg), Pandan Wangi (Rp 15rb/kg), Beras Merah (Rp 16rb/kg).\n- Minyak Goreng: Kemasan (Bimoli, Sunco) Rp 18rb/L, Curah Rp 16rb/kg.\n- Telur: Telur Ayam Negeri (Rp 27rb/kg), Telur Bebek (Rp 3.500/butir).\n- Gula & Terigu: Gula Pasir Rp 16rb/kg, Tepung Segitiga Biru Rp 12rb/kg."
             },
             {
+                "title": "Layanan Gas LPG & Air Galon",
                 "content": "## Layanan Gas LPG & Air Galon\nInformasikan ketersediaan gas dan air minum galon serta layanan antarnya.\n\nContoh:\n- Gas LPG: 3kg (Melon), 5.5kg (Bright Gas), 12kg (Biru).\n- Air Galon: Aqua (Rp 20rb), Vit (Rp 15rb), Le Minerale (Rp 18rb), Air Isi Ulang (Rp 6rb).\nLayanan antar gratis untuk radius 500 meter (Minimal order 1 galon/gas)."
             },
             {
+                "title": "Harga Grosir & Paket Sembako",
                 "content": "## Harga Grosir & Paket Sembako\nJelaskan jika ada potongan harga untuk pembelian banyak atau paket bantuan.\n\nContoh: Kami melayani pembelian Grosir (minimal 1 dus/karung) dengan harga khusus bagi warung kelontong kecil. Tersedia juga Paket Sembako untuk donasi/santunan mulai harga Rp 50.000 per paket (Isi: Beras 2kg, Minyak 1L, Gula 500g, Mie 3 bks)."
             },
             {
+                "title": "Layanan Pesan Antar",
                 "content": "## Layanan Pesan Antar (Delivery)\nInformasikan prosedur pemesanan barang dari rumah.\n\nContoh: Pelanggan dapat memesan belanjaan via WhatsApp. Pesanan akan dikirim dalam waktu 15-30 menit. Gratis ongkir untuk wilayah Kompleks Depok Jaya (Minimal belanja Rp 50.000). WhatsApp: 0812-3456-7890."
             },
             {
+                "title": "Produk Pelengkap Lainnya",
                 "content": "## Produk Pelengkap Lainnya\nSebutkan barang-barang lain yang dijual selain sembako utama.\n\nContoh:\n- Perlengkapan Mandi: Sabun, Sampo, Pasta Gigi, Deterjen Cuci.\n- Bumbu Dapur: Kecap, Saus, Garam, Penyedap Rasa, Bumbu Instan.\n- Minuman & Snack: Kopi, Teh, Susu, Air Mineral Botol, Aneka Biskuit."
             },
             {
+                "title": "Metode Pembayaran",
                 "content": "## Metode Pembayaran\nSebutkan cara pembayaran yang diterima di toko.\n\nContoh: Kami menerima pembayaran Tunai, QRIS (Gopay/OVO/Dana), dan Transfer Bank (BCA/Mandiri). Kami juga melayani sistem 'Bon' khusus untuk warga tetap perumahan dengan limit tertentu."
             },
             {
+                "title": "Kontak & Update Stok",
                 "content": "## Kontak & Update Stok\nInformasikan kanal komunikasi untuk menanyakan ketersediaan barang.\n\nContoh:\n- WhatsApp Admin: 0812-3456-7890\n- Telepon Toko: (021) 7771234\nSilakan simpan nomor WA kami untuk melihat update harga telur dan minyak harian di Status WhatsApp."
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Alur Stok & Harga Sembako",
+                "messages": [
+                    {
+                        "customer": "Beras pandan wangi sekarang sekilo berapa? Ada yang karungan 5kg?",
+                        "ai_response_eval": "AI harus memberikan harga beras Pandan Wangi per kg dan per karung (5kg/10kg) jika ada."
+                    },
+                    {
+                        "customer": "Telur ayam sekilo berapa hari ini? Bisa beli setengah kilo?",
+                        "ai_response_eval": "AI harus menginformasikan harga telur ayam hari ini dan mengonfirmasi bahwa pembelian eceran (1/2 kg) diperbolehkan."
+                    },
+                    {
+                        "customer": "Minyak goreng curah ada? Harganya berapa?",
+                        "ai_response_eval": "AI harus memberikan info stok dan harga minyak goreng curah per liter atau per kg."
+                    }
+                ]
+            },
+            {
+                "flowName": "Alur Pesan Antar & Gas",
+                "messages": [
+                    {
+                        "customer": "Gas melon 3kg habis, bisa diantar ke rumah? Saya di blok sebelah.",
+                        "ai_response_eval": "AI harus mengonfirmasi ketersediaan gas LPG 3kg dan layanan antar ke lokasi pelanggan."
+                    },
+                    {
+                        "customer": "Saya mau belanja bulanan, nanti daftarnya saya kirim WA, bisa diantar sekalian?",
+                        "ai_response_eval": "AI harus menyanggupi pesanan belanja bulanan via WA dan menjelaskan prosedur pengirimannya."
+                    }
+                ]
             }
         ],
         "keywords": [

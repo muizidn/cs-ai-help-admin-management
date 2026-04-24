@@ -11,36 +11,83 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Dessert Box Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Dessert Box"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Dessert Box Kami\nKami menghadirkan kebahagiaan dalam kotak! Dessert box kami dibuat dengan lapisan cake yang lembut, krim yang ringan, dan topping melimpah. Menggunakan bahan premium (Real Butter & High Quality Chocolate) untuk memastikan setiap suapan terasa mewah dan nagih.\n\nContoh:\n\"Lumer Box ID\" menggunakan 100% Cokelat Belgia asli dan Keju New Zealand dalam setiap produknya."
             },
             {
+                "title": "Jam Operasional & Pengiriman",
                 "content": "## Jam Operasional & Pengiriman\nKami melayani pesanan setiap hari:\n- Senin - Minggu: 10.00 - 20.00\nPengiriman dilakukan dari dapur kami di [Isi Area].\n\nContoh:\nDapur Pusat: Apartemen Kalibata City, Tower Cendana.\nPengiriman via: GoSend/GrabExpress Instant & Sameday.\nBisa COD area lobi apartemen."
             },
             {
+                "title": "Menu Varian Rasa",
                 "content": "## Menu Varian Rasa (Best Seller)\n- Bittersweet Chocolate (Cokelat Belgia melimpah)\n- Lotus Biscoff Cheesecake (Crunchy & Creamy)\n- Tiramisu Signature (Aroma kopi asli)\n- Red Velvet Cheese (Asam manis segar)\n- Milk Bath / Tres Leches (Sangat lembut & milky)\n- Oreo Cookies & Cream\n\nContoh:\n- Lotus Biscoff: Layer biskuit Lotus, Cream Cheese, dan Selai Lotus lumer.\n- Milk Bath: Sponge cake vanilla disiram susu 3 rasa (evaporasi, kental manis, fresh milk) dengan topping keju."
             },
             {
+                "title": "Ukuran Box & Harga",
                 "content": "## Ukuran Box & Harga\n- Small Box (200ml): Rp 25.000 - Rp 35.000\n- Medium Box (350ml): Rp 45.000 - Rp 60.000\n- Large Box (500ml): Rp 75.000 - Rp 95.000\n\nContoh Harga:\n- Choco Melt Small: Rp 25.000\n- Choco Melt Medium: Rp 45.000\n- Tiramisu Medium: Rp 55.000"
             },
             {
+                "title": "Paket Gift & Hampers",
                 "content": "## Paket Gift & Hampers\nIngin memberikan kejutan untuk orang tersayang? Kami menyediakan paket hampers:\n- Paket Couple (2 Small Box + Greeting Card)\n- Paket Birthday (Medium Box + Lilin + Topper Happy Birthday)\n- Paket Family (4 Mix Small Box + Tas Eksklusif)\n\nContoh:\nPaket Hampers Lebaran (Isi 4 Box Medium + Pita + Kartu): Rp 250.000."
             },
             {
+                "title": "Cara Penyimpanan",
                 "content": "## Cara Penyimpanan\nDessert box kami paling nikmat dikonsumsi dalam keadaan dingin. \n- Suhu Ruang: Tahan 2-4 jam.\n- Kulkas (Chiller): Tahan 3-5 hari.\n- Freezer: Tahan hingga 2 minggu (tekstur akan seperti es krim).\n\nContoh:\n\"Segera masukkan kulkas saat paket tiba. Untuk kenikmatan maksimal, sajikan dingin (jangan beku).\""
             },
             {
+                "title": "Layanan Delivery",
                 "content": "## Layanan Delivery (Ojek Online)\nKami sangat menyarankan pengiriman menggunakan kurir instan (GoSend/GrabExpress) agar kondisi layer dessert tidak berantakan. Kami tersedia juga di GoFood/GrabFood/ShopeeFood dengan nama '[Isi Nama Toko]'.\n\nContoh:\nCari di GoFood: \"Lumer Box ID - Kalibata\".\nPromo Ongkir: Cek voucher di aplikasi masing-masing."
             },
             {
+                "title": "Pemesanan Jumlah Banyak",
                 "content": "## Pemesanan Jumlah Banyak\nMelayani pesanan untuk acara kantor, arisan, atau wedding dessert corner. Untuk pemesanan di atas 20 box, harap melakukan konfirmasi minimal H-2 untuk mendapatkan harga spesial.\n\nContoh:\nDiskon 10% untuk pesanan minimal 50 box mini (150ml) untuk souvenir pernikahan."
             },
             {
+                "title": "Metode Pembayaran",
                 "content": "## Metode Pembayaran\n- QRIS (All Payment)\n- Transfer Bank (BCA/Mandiri)\n- ShopeePay\n\nContoh:\nScan QRIS a.n. Lumer Box ID saat COD atau transfer ke BCA 12345678."
             },
             {
+                "title": "Kontak Order",
                 "content": "## Kontak Order\nWhatsApp: [Isi Nomor WA]\nInstagram: @[Isi Username IG]\n\nCek katalog lengkap dan testimoni pelanggan kami di highlight Instagram!\n\nContoh:\nWhatsApp: 0812-9988-7766\nLinktree: linktr.ee/lumerboxid"
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Alur Pemesanan & Varian",
+                "messages": [
+                    {
+                        "customer": "Varian apa yang paling best seller? Saya suka yang cokelat.",
+                        "ai_response_eval": "AI harus merekomendasikan varian Bittersweet Chocolate atau Oreo Cookies & Cream sesuai preferensi cokelat pelanggan."
+                    },
+                    {
+                        "customer": "Harganya berapa untuk yang ukuran besar? Ada diskon?",
+                        "ai_response_eval": "AI harus memberikan informasi harga Large Box (500ml) dan menjelaskan promo atau paket bundling jika ada."
+                    },
+                    {
+                        "customer": "Kalau dikirim ke luar kota bisa tidak?",
+                        "ai_response_eval": "AI harus menjelaskan batasan pengiriman (biasanya hanya instant/sameday dalam kota) demi menjaga kualitas produk."
+                    }
+                ]
+            },
+            {
+                "flowName": "Alur Gift & Penyimpanan",
+                "messages": [
+                    {
+                        "customer": "Saya mau kirim buat kado ulang tahun teman, ada paket khusus?",
+                        "ai_response_eval": "AI harus menawarkan Paket Birthday atau Hampers yang tersedia, lengkap dengan kartu ucapan."
+                    },
+                    {
+                        "customer": "Dessert box ini tahan berapa lama ya di suhu ruang?",
+                        "ai_response_eval": "AI harus menginformasikan ketahanan produk (2-4 jam di suhu ruang) dan menyarankan penyimpanan di kulkas."
+                    }
+                ]
             }
         ],
         "keywords": [

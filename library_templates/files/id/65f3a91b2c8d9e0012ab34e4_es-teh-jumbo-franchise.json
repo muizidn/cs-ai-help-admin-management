@@ -11,36 +11,79 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Es Teh Jumbo Franchise Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Franchise Es Teh Jumbo"
+        },
         "sections": [
             {
+                "title": "Tentang Es Teh Jumbo Kami",
                 "content": "## Tentang Es Teh Jumbo Kami\nKami menyajikan kesegaran teh asli Indonesia dalam ukuran jumbo yang memuaskan dahaga. Dibuat dari pucuk teh pilihan dengan racikan gula asli, Es Teh Jumbo kami hadir dengan berbagai varian rasa kekinian namun tetap dengan harga yang sangat terjangkau bagi semua kalangan.\n\nContoh:\n\"Es Teh Saudagar\" menggunakan racikan teh wangi melati khas Solo yang sepat dan kental."
             },
             {
+                "title": "Jam Operasional Outlet",
                 "content": "## Jam Operasional Outlet\nKunjungi booth kami setiap hari:\n- Senin - Minggu: 09.00 - 21.00\n- Hari Libur: Tetap Buka\nLokasi: [Isi Lokasi Outlet/Booth]\n\nContoh:\nLokasi: Depan Indomaret Point, Jl. Raya Bogor Km 25.\nBuka sampai jam 22.00 saat malam minggu."
             },
             {
+                "title": "Menu Varian Rasa Es Teh",
                 "content": "## Menu Varian Rasa Es Teh\nNikmati berbagai pilihan rasa kami:\n- Es Teh Solo Original (Best Seller)\n- Es Teh Melati (Jasmine Tea)\n- Es Teh Lemon (Lemon Tea)\n- Es Teh Leci (Lychee Tea)\n- Es Teh Susu (Milk Tea)\n- Es Teh Tarik\n\nContoh:\n- Es Teh Original: Rp 3.000\n- Es Teh Leci (ada buah leci asli): Rp 6.000\n- Es Teh Tarik (Creamy): Rp 8.000"
             },
             {
+                "title": "Harga Ukuran Jumbo",
                 "content": "## Harga Ukuran Jumbo\nHanya ada satu ukuran, yaitu JUMBO (22oz):\n- Original: Rp 3.000\n- Varian Rasa: Rp 5.000 - Rp 8.000\n- Tambahan Topping (Cincau/Jelly): +Rp 2.000\n\nContoh:\nPaket Komplit: Es Teh Susu Jumbo + Cincau = Rp 10.000."
             },
             {
+                "title": "Promo Menarik",
                 "content": "## Promo Menarik\n- Promo Beli 3 Gratis 1 (Setiap hari Jumat)\n- Promo Pelajar: Diskon Rp 1.000 dengan menunjukkan seragam/kartu pelajar.\n- Promo Jumat Berkah: Beli 10 porsi hanya Rp 25.000 (khusus original).\n\nContoh:\n\"Kak, saya pelajar SMA 1, mau beli Es Teh Lemon jadi Rp 4.000 ya?\""
             },
             {
+                "title": "Kualitas Bahan Baku",
                 "content": "## Kualitas Bahan Baku\nKami menjamin kualitas setiap gelasnya:\n- Menggunakan Gula Asli (bukan pemanis buatan).\n- Air Mineral galon yang terjamin kebersihannya.\n- Es Batu kristal (ice cube) yang higienis.\n- Teh seduhan baru setiap pagi.\n\nContoh:\nTeh diseduh setiap 4 jam sekali agar tidak basi. Es batu dari supplier bersertifikat BPOM."
             },
             {
+                "title": "Layanan Pesan Antar",
                 "content": "## Layanan Pesan Antar\nKami melayani pengiriman via ojek online (GoFood/GrabFood/ShopeeFood). Untuk pesanan dalam jumlah besar (acara sekolah, rapat, atau syukuran), silakan hubungi WhatsApp kami minimal 1 jam sebelumnya.\n\nContoh:\nMinimal order 20 cup bisa diantar gratis radius 1 km (pakai motor karyawan)."
             },
             {
+                "title": "Info Kemitraan (Franchise)",
                 "content": "## Info Kemitraan (Franchise)\nTertarik membuka usaha Es Teh Jumbo seperti kami? Kami membuka peluang kemitraan dengan paket usaha yang sangat terjangkau. Paket sudah termasuk:\n- Booth/Gerobak Portable\n- Peralatan Lengkap\n- Bahan Baku Awal\n- Pelatihan Karyawan\nHubungi admin kemitraan kami untuk detail lebih lanjut.\n\nContoh:\nPaket Silver (Rp 3,5 Juta): Booth Portable, Termos Es, Bahan Baku 100 cup.\nPaket Gold (Rp 7 Juta): Gerobak Kontainer, Cup Sealer Machine, Bahan Baku 300 cup."
             },
             {
+                "title": "Metode Pembayaran",
                 "content": "## Metode Pembayaran\n- Tunai (Cash)\n- QRIS (Gopay, OVO, Dana, ShopeePay)\n- Transfer Bank (Khusus pesanan besar)\n\nContoh:\nQRIS tersedia di meja kasir. Tanpa minimum pembayaran."
             },
             {
+                "title": "Kontak Kami",
                 "content": "## Kontak Kami\nWhatsApp Order: [Isi Nomor WA]\nWhatsApp Kemitraan: [Isi Nomor WA Kemitraan]\nInstagram: @[Isi Username IG]\n\nSegarkan harimu dengan Es Teh Jumbo kami!\n\nContoh:\nWA Order: 0856-7788-9900\nWA Franchise: 0813-1122-3344 (Pak Budi)"
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Rekomendasi Varian Es Teh",
+                "messages": [
+                    {
+                        "customer": "Rekomendasi dong kak, yang paling laku apa?",
+                        "ai_response_eval": "AI harus merekomendasikan 'Es Teh Solo Original' sebagai best seller dengan harga Rp 3.000, atau menawarkan varian rasa seperti 'Es Teh Leci' jika pelanggan ingin yang lebih segar dan berbuah."
+                    },
+                    {
+                        "customer": "Ada yang pake susu gak?",
+                        "ai_response_eval": "AI harus menginformasikan menu 'Es Teh Susu (Milk Tea)' atau 'Es Teh Tarik' dan menawarkan tambahan topping cincau agar lebih nikmat."
+                    }
+                ]
+            },
+            {
+                "flowName": "Info Kemitraan",
+                "messages": [
+                    {
+                        "customer": "Saya tertarik buka franchise, berapa modalnya?",
+                        "ai_response_eval": "AI harus menjelaskan paket kemitraan yang tersedia (misal Paket Silver Rp 3,5 Juta atau Paket Gold Rp 7 Juta) dan menyarankan untuk menghubungi nomor WhatsApp Kemitraan untuk detail proposal."
+                    },
+                    {
+                        "customer": "Apa aja yang didapet kalo join mitra?",
+                        "ai_response_eval": "AI harus merinci fasilitas yang didapat seperti Booth Portable, peralatan lengkap, bahan baku awal, dan pelatihan karyawan."
+                    }
+                ]
             }
         ],
         "keywords": [

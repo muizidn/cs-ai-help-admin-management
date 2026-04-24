@@ -11,8 +11,14 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Counter Pulsa Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Counter Pulsa"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Counter Kami\nKami menyediakan layanan pengisian pulsa, paket data internet, dan pembayaran tagihan bulanan secara cepat, praktis, dan aman. Dengan sistem yang online 24 jam, kami memastikan kebutuhan digital Anda terpenuhi kapan saja."
             },
             {
@@ -41,6 +47,34 @@
             },
             {
                 "content": "## Kontak Admin Counter\nWhatsApp: 0857-1234-5678\nInstagram: @counter_pulsa_jaya\n\nButuh kuota mendadak? Chat admin sekarang!"
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Komplain Pulsa Belum Masuk",
+                "messages": [
+                    {
+                        "customer": "Kak, saya sudah transfer buat beli pulsa 50rb ke nomor 0812xxx tapi kok belum masuk ya?",
+                        "ai_response_eval": "1. AI meminta maaf atas ketidaknyamanan dan meminta bukti transfer (screenshot) serta nomor tujuan yang diisi.\n2. AI menjelaskan akan segera melakukan pengecekan ke sistem server atau provider.\n3. AI memberikan estimasi waktu pengecekan (biasanya 1-5 menit).\n4. AI menjamin refund atau pengiriman ulang jika transaksi memang gagal dari sistem."
+                    },
+                    {
+                        "customer": "Biasanya cepet, kok ini lama banget?",
+                        "ai_response_eval": "1. AI menjelaskan kemungkinan adanya gangguan jaringan dari provider pusat (sedang maintenance atau padat).\n2. AI meminta pelanggan untuk menunggu sebentar lagi sambil terus dipantau statusnya.\n3. AI menawarkan opsi lain jika butuh mendesak (misal ganti provider atau nominal lain jika gangguan spesifik)."
+                    }
+                ]
+            },
+            {
+                "flowName": "Daftar Harga Paket Data",
+                "messages": [
+                    {
+                        "customer": "Ada daftar harga paket data Telkomsel yang bulanan?",
+                        "ai_response_eval": "1. AI memberikan daftar paket data Telkomsel bulanan yang tersedia beserta harganya (misal: OMG! 10GB, 20GB, dll).\n2. AI menjelaskan pembagian kuota (jika ada, misal kuota utama + kuota nonton).\n3. AI menanyakan kebutuhan pelanggan (lebih sering sosmed, nonton, atau browsing) untuk merekomendasikan paket yang pas."
+                    },
+                    {
+                        "customer": "Yang paling murah buat anak sekolah ada?",
+                        "ai_response_eval": "1. AI merekomendasikan paket hemat atau paket khusus pelajar (jika ada promo).\n2. AI menyarankan voucher fisik atau inject kuota harian/mingguan yang lebih terjangkau.\n3. AI menyebutkan harga spesifik untuk opsi termurah."
+                    }
+                ]
             }
         ],
         "keywords": [

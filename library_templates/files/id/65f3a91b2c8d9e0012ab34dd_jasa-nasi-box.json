@@ -11,32 +11,46 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Jasa Nasi Box Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Jasa Nasi Box"
+        },
         "sections": [
             {
+                "title": "Tentang Jasa Nasi Box",
                 "content": "## Tentang Jasa Nasi Box Kami\nKami adalah mitra terpercaya untuk kebutuhan konsumsi acara Anda. Berpengalaman melayani ribuan porsi nasi box untuk berbagai keperluan dengan mengutamakan tiga pilar: Rasa Lezat, Tampilan Menarik, dan Pengiriman Tepat Waktu.\n\nContoh: 'Berkah Catering Box' siap mensukseskan acara Anda, mulai dari rapat kecil hingga seminar besar. Dapur kami tersertifikasi Laik Higiene Sanitasi."
             },
             {
+                "title": "Paket Menu & Harga",
                 "content": "## Pilihan Paket Menu & Harga\nKami menyediakan 3 kategori paket utama:\n\n1. **Paket Ekonomis (Rp 20.000)**\n   - Nasi Putih\n   - Ayam Goreng / Telur Balado\n   - Tumis Buncis Jagung\n   - Kerupuk & Sambal\n   - Air Mineral Gelas\n\n2. **Paket Reguler (Rp 27.000)**\n   - Nasi Putih / Nasi Uduk\n   - Ayam Bakar / Ikan Fillet Asam Manis\n   - Telur Dadar Iris / Perkedel\n   - Capcay Goreng\n   - Buah (Pisang/Jeruk)\n   - Kerupuk & Sambal\n   - Air Mineral Gelas\n\n3. **Paket Premium (Rp 35.000)**\n   - Nasi Kuning / Nasi Liwet\n   - Daging Rendang / Empal Suwir\n   - Ayam Goreng Lengkuas (Potongan Kecil)\n   - Sambal Goreng Ati Kentang\n   - Mie Goreng Spesial\n   - Puding / Buah Potong\n   - Air Mineral Botol 330ml\n   - Sendok & Tisu Premium"
             },
             {
+                "title": "Lauk Tambahan",
                 "content": "## Menu Lauk Utama Lainnya\nBisa request ganti lauk (harga menyesuaikan):\n- Ayam Bakar Taliwang\n- Ayam Goreng Kremes\n- Dendeng Balado (Sapi)\n- Ikan Nila Bakar\n- Cumi Cabai Hijau"
             },
             {
+                "title": "Kapasitas & Pemesanan",
                 "content": "## Kapasitas Produksi & Pemesanan\n- Minimum Order: 20 Box.\n- Kapasitas Maksimal: 1.000 Box per hari.\n- Pemesanan H-3 (Untuk jumlah <100) atau H-7 (Untuk jumlah >100).\n- Menerima pesanan dadakan H-1 (Menu menyesuaikan stok dapur)."
             },
             {
+                "title": "Prosedur Pemesanan",
                 "content": "## Prosedur Pemesanan\n1. Hubungi Admin WA: 0812-xxxx-xxxx.\n2. Infokan: Tanggal, Jam Makan, Alamat, Paket Menu, Jumlah Porsi.\n3. Transfer DP (Down Payment) 50% untuk booking slot.\n4. Pelunasan H-1 atau COD (Cash on Delivery) saat barang sampai (S&K berlaku)."
             },
             {
+                "title": "Pengiriman",
                 "content": "## Layanan Pengiriman Tepat Waktu\nKami memahami betapa pentingnya jadwal acara Anda.\n- Tim logistik kami akan mengantarkan pesanan 30-60 menit sebelum jam makan.\n- Ongkir: Flat Rp 20.000 (Kota) / Rp 50.000 (Kabupaten).\n- GRATIS ONGKIR untuk pemesanan di atas 100 box."
             },
             {
+                "title": "Testimoni",
                 "content": "## Testimoni & Pengalaman\nKami telah melayani berbagai klien instansi seperti: Kantor Walikota, Universitas [Nama Kampus], Bank [Nama Bank], dan ribuan acara syukuran warga."
             },
             {
+                "title": "Pembayaran",
                 "content": "## Metode Pembayaran\n- Transfer Bank (BCA/Mandiri/BNI).\n- Invoice & Faktur Pajak (Tersedia untuk Corporate/Instansi Pemerintah)."
             },
             {
+                "title": "Kontak & Alamat",
                 "content": "## Kontak & Alamat\nAlamat Dapur: Jl. Merpati No. 10, Kel. Sukamaju, Kec. Cilodong, Depok.\nGoogle Maps: https://maps.app.goo.gl/xxxx\n\nHubungi kami sekarang untuk tes food (icip-icip) gratis bagi pemesanan >200 box!"
             }
         ],
@@ -56,6 +70,42 @@
             "catering harian nasi box",
             "daftar menu nasi kotak",
             "nasi box 20 ribu"
+        ],
+        "questions": [
+            {
+                "flowName": "Alur Pemesanan & Menu",
+                "messages": [
+                    {
+                        "customer": "Saya butuh 50 nasi box untuk acara kantor besok lusa, masih keburu?",
+                        "ai_response_eval": "AI harus mengecek ketersediaan slot (H-3 vs H-2) dan menginformasikan kemungkinan pemesanan dadakan jika stok masih ada."
+                    },
+                    {
+                        "customer": "Paket yang 20 ribu dapat apa aja ya?",
+                        "ai_response_eval": "AI harus merinci isi menu Paket Ekonomis (Nasi, Ayam, Sayur, dll) sesuai data yang tersedia."
+                    },
+                    {
+                        "customer": "Bisa request ganti ayam bakar gak buat paket regulernya?",
+                        "ai_response_eval": "AI harus mengonfirmasi opsi penggantian lauk (custom) dan menjelaskan jika ada penyesuaian harga."
+                    }
+                ]
+            },
+            {
+                "flowName": "Alur Pembayaran & Pengiriman",
+                "messages": [
+                    {
+                        "customer": "Sistem pembayarannya gimana? Harus lunas di depan?",
+                        "ai_response_eval": "AI harus menjelaskan prosedur pembayaran (DP 50% untuk booking) dan pelunasan saat pengiriman atau H-1."
+                    },
+                    {
+                        "customer": "Kalau pesan 100 box ongkirnya gratis gak?",
+                        "ai_response_eval": "AI harus mengonfirmasi kebijakan gratis ongkir untuk pemesanan jumlah tertentu (>100 box) sesuai data."
+                    },
+                    {
+                        "customer": "Bisa minta faktur pajak buat klaim kantor?",
+                        "ai_response_eval": "AI harus menginformasikan ketersediaan layanan administrasi (Invoice/Faktur Pajak) untuk pelanggan korporat."
+                    }
+                ]
+            }
         ]
     },
     "preview": "",

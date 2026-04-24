@@ -11,36 +11,67 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Toko Listrik Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Toko Listrik"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Toko Listrik Kami\nKami menyediakan segala kebutuhan instalasi listrik dan pencahayaan untuk rumah, kantor, maupun proyek bangunan Anda. Kami hanya menjual produk berstandar SNI untuk menjamin keamanan dan ketahanan penggunaan listrik di tempat Anda.\n\nContoh:\n\"Sinar Abadi Electric\" merupakan distributor resmi Philips dan Panasonic di kota Malang."
             },
             {
-                "content": "## Jam Operasional\nKami buka setiap hari:\n- Senin - Sabtu: 08.00 - 20.00\n- Minggu: 09.00 - 17.00\nLokasi: [Isi Alamat Toko]\n\nContoh:\nAlamat: Jl. Letjen Sutoyo No. 55, Malang.\nGoogle Maps: https://maps.google.com/?q=electric_store\nPatokan: Sebelah Bank BRI Unit Sutoyo."
+                "title": "Jam Operasional",
+                "content": "## Jam Operasional & Lokasi\nBuka setiap hari:\n- Senin - Sabtu: 08.00 - 17.00\n- Minggu: 09.00 - 15.00\n\nLokasi:\nJl. Jendral Sudirman No. 45, Ruko Plaza Elektrik, Kota Bandung.\n(Samping Bank BCA).\nMaps: https://maps.google.com/?q=lokasi_toko_listrik"
             },
             {
-                "content": "## Produk Pencahayaan (Lampu)\n- Lampu LED (Hemat energi) berbagai watt (3W - 50W).\n- Lampu Smart LED (Bisa ganti warna lewat HP).\n- Lampu Downlight & Panel Lamp untuk plafon.\n- Lampu Hias & Lampu Gantung.\n- Lampu Taman & Lampu Sorot (Floodlight).\n\nContoh Harga:\n- Philips LED 10W (Putih): Rp 45.000\n- Hannochs LED 10W (Putih): Rp 28.000\n- Lampu Sorot 50W (Outdoor): Rp 85.000"
+                "title": "Produk Pencahayaan",
+                "content": "## Lampu & Pencahayaan (Lighting)\n- Lampu LED Bulb (3W - 50W) berbagai merk (Philips, Panasonic, Hannochs).\n- Lampu Downlight & Panel Light.\n- Lampu Sorot (Flood Light) untuk outdoor.\n- Lampu Hias & Lampu Gantung.\n- Lampu Strip LED (untuk dekorasi plafon/lemari).\n\nContoh Harga:\n- Philips LED 10W: Rp 45.000\n- Hannochs LED 12W: Rp 35.000\n- Downlight Panel 6W: Rp 40.000"
             },
             {
-                "content": "## Alat Instalasi Listrik\n- Kabel Listrik (NYM, NYA, NYYHY) - Eceran per meter atau per roll.\n- Saklar & Stop Kontak (Single, Double, Multi-pin).\n- MCB (Miniature Circuit Breaker) & Box MCB.\n- Pipa Conduit & Klem Kabel.\n- Fitting Lampu & Steker (Colokan).\n\nContoh:\n- Kabel Eterna NYM 2x1.5mm: Rp 8.000/meter\n- Stop Kontak Broco Gracio: Rp 18.000\n- MCB Schneider 10A: Rp 60.000"
+                "title": "Kabel & Instalasi",
+                "content": "## Kabel & Alat Instalasi\n- Kabel Listrik (NYA, NYM, NYY) ukuran 1.5mm, 2.5mm, dst.\n- Pipa Conduit & Klem Pipa.\n- Box MCB & MCB (Schneider, Broco).\n- Isolasi Listrik & Tespen.\n\nContoh:\n- Kabel Eterna NYM 2x1.5 (50m): Rp 350.000\n- MCB Schneider 10A: Rp 65.000"
             },
             {
-                "content": "## Peralatan Elektronik Pendukung\n- Kipas Angin (Meja, Berdiri, Dinding).\n- Antena TV & Booster.\n- Stabilizer & UPS.\n- Bel Pintu Wireless.\n- Senter & Lampu Emergency.\n\nContoh:\n- Kipas Angin Miyako Berdiri 16 inch: Rp 250.000\n- Lampu Emergency Surya (Tahan 6 jam): Rp 75.000"
+                "title": "Saklar & Stop Kontak",
+                "content": "## Saklar & Stop Kontak\n- Saklar Engkel & Seri (Panasonic, Broco).\n- Stop Kontak Arde & Tanam.\n- Steker (Colokan) & T-Arde.\n- Terminal Kuningan.\n\nContoh:\n- Saklar Seri Panasonic Wide: Rp 35.000\n- Stop Kontak Broco Gracio: Rp 25.000"
             },
             {
-                "content": "## Layanan Konsultasi Instalasi\nBingung memilih ukuran kabel yang tepat atau butuh rekomendasi teknisi listrik? Staf kami siap memberikan edukasi mengenai spesifikasi barang dan kami memiliki jaringan teknisi instalasi listrik panggilan yang terpercaya.\n\nContoh:\n\"Untuk daya rumah 1300W, sebaiknya pakai kabel ukuran 2x1.5mm sudah cukup aman, Bu.\""
+                "title": "Garansi & Retur",
+                "content": "## Kebijakan Garansi & Retur\n- Lampu LED bergaransi resmi 1-2 tahun (tergantung merk). Syarat: Kotak ada & tidak pecah.\n- Barang elektronik lain (Kipas, Exhaust) garansi service center resmi.\n- Retur barang cacat fisik maksimal 1x24 jam setelah pembelian.\n\nContoh Klaim:\n\"Lampu yang dibeli mati dalam 3 bulan, silakan bawa ke toko beserta kotaknya untuk kami tukarkan baru.\""
             },
             {
-                "content": "## Harga & Garansi\n- Harga bersaing untuk eceran dan grosir.\n- Garansi ganti baru untuk produk lampu tertentu (sesuai ketentuan merk).\n- Diskon khusus untuk pembelian paket instalasi rumah baru.\n\nContoh:\nGaransi Lampu Philips 2 Tahun (Mati ganti baru, bawa kotak dan nota)."
+                "title": "Kontak Admin",
+                "content": "## Hubungi Kami\nWhatsApp: 0812-3456-7890\nTelepon: (022) 420-XXXX\nInstagram: @toko_listrik_lengkap\n\nMelayani pesan antar untuk area kota dan sekitarnya!"
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Pertanyaan Umum - Rekomendasi Lampu Hemat Energi",
+                "messages": [
+                    {
+                        "customer": "Saya cari lampu yang hemat listrik tapi terang untuk ruang tamu, ada rekomendasi?",
+                        "ai_response_eval": "1. AI menyarankan penggunaan lampu LED sebagai solusi hemat energi.\n2. AI menanyakan luas ruangan untuk menentukan watt yang sesuai.\n3. AI menawarkan merek terpercaya (misal: Philips, Panasonic, Hannochs) yang tersedia.\n4. AI menjelaskan perbedaan warna cahaya (Cool Day Light vs Warm White) jika relevan."
+                    },
+                    {
+                        "customer": "Kalau untuk kamar tidur ukuran 3x3 butuh berapa watt ya?",
+                        "ai_response_eval": "1. AI merekomendasikan lampu LED sekitar 5-7 watt untuk pencahayaan cukup namun nyaman.\n2. AI menyarankan warna Warm White (kuning) untuk suasana rileks, atau Cool White jika suka terang.\n3. AI memberikan estimasi harga untuk opsi yang disarankan."
+                    }
+                ]
             },
             {
-                "content": "## Kebijakan Pengembalian\nProduk yang tidak berfungsi (cacat pabrik) dapat ditukar maksimal 3 hari setelah pembelian dengan menyertakan nota dan kemasan produk asli.\n\nContoh:\nBarang dicoba dulu di toko sebelum dibawa pulang untuk memastikan nyala."
-            },
-            {
-                "content": "## Layanan Pesan Antar\nKami melayani pengiriman area lokal via kurir motor. Pesanan di atas Rp 200.000 gratis ongkir untuk radius [Isi Radius] km.\n\nContoh:\nBisa kirim lampu pakai GoSend Instant (Ongkir ditanggung pembeli jika belanja < Rp 200rb)."
-            },
-            {
-                "content": "## Kontak Admin Toko\nWhatsApp: [Isi Nomor WA]\nTelepon: [Isi Nomor Telepon]\n\nSolusi kelistrikan aman dan terpercaya hanya di toko kami!\n\nContoh:\nWA: 0812-9988-7766 (Admin Toko)\nTelp: (0341) 49xxxx"
+                "flowName": "Pertanyaan Umum - Konsultasi Instalasi Listrik Dasar",
+                "messages": [
+                    {
+                        "customer": "Saya mau ganti saklar lampu sendiri, apakah aman?",
+                        "ai_response_eval": "1. AI mengingatkan pentingnya mematikan sumber listrik utama (MCB) sebelum memulai pekerjaan.\n2. AI menyarankan untuk menggunakan alat tespen guna memastikan tidak ada arus.\n3. AI merekomendasikan produk saklar yang mudah dipasang dan aman (misal: Panasonic Wide Series).\n4. AI menyarankan memanggil teknisi profesional jika ragu demi keselamatan."
+                    },
+                    {
+                        "customer": "Kabel yang bagus untuk instalasi rumah merek apa?",
+                        "ai_response_eval": "1. AI merekomendasikan merek kabel berstandar SNI dan LMK seperti Supreme, Eterna, atau Kabelindo.\n2. AI menjelaskan jenis kabel yang umum dipakai (NYM untuk indoor, NYY untuk outdoor/tanam).\n3. AI menanyakan kebutuhan panjang kabel atau jumlah titik instalasi."
+                    }
+                ]
             }
         ],
         "keywords": [

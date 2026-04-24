@@ -11,36 +11,43 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Toko Hijab Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Toko Hijab"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Brand Hijab Kami\nKami menyediakan berbagai koleksi hijab dan perlengkapan muslimah dengan bahan yang nyaman, mudah dibentuk, dan pilihan warna yang lengkap (earth tone hingga bold). Koleksi kami dirancang untuk mendukung penampilan syar'i namun tetap modern dan elegan bagi wanita muslimah aktif."
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Bahan Hijab yang Adem",
+                "messages": [
+                    {
+                        "customer": "Hijab yang paling adem buat sehari-hari apa ya?",
+                        "ai_response_eval": "1. AI merekomendasikan bahan 'Voal Premium' atau 'Kaos Rayon' yang menyerap keringat.\n2. AI menjelaskan karakteristik bahan tersebut (ringan, tidak gerah, dan tegak di dahi).\n3. AI menawarkan beberapa pilihan warna best seller untuk bahan tersebut."
+                    },
+                    {
+                        "customer": "Kalau buat kondangan yang mewah tapi nggak licin?",
+                        "ai_response_eval": "1. AI menyarankan bahan 'Ceruty Baby Doll' atau 'Maxmara'.\n2. AI menyarankan penggunaan ciput (inner) rajut atau ninja agar hijab tetap stay dan tidak licin.\n3. AI memberikan opsi pashmina atau segi empat sesuai selera pelanggan."
+                    }
+                ]
             },
             {
-                "content": "## Jam Operasional & Lokasi\nSilakan kunjungi butik kami:\n- Senin - Sabtu: 09.00 - 20.00\n- Minggu: 10.00 - 17.00\n\nContoh Lokasi:\nJl. Hijab Cantik No. 99, Komp. Ruko Muslimah, Kel. Sako, Kec. Sako, Palembang.\n(Samping Masjid Al-Ikhlas).\nMaps: https://maps.google.com/?q=lokasi_butik_hijab\n\nKami juga melayani pembelian online via WhatsApp dan Marketplace."
-            },
-            {
-                "content": "## Koleksi Hijab Utama\n- Pashmina: Ceruty Baby Doll, Kaos, Silk, dan Plisket.\n- Segi Empat (Square): Paris Premium, Voal Premium, dan Satin.\n- Hijab Instan: Bergo Maryam, Hijab Kaos, dan Khimar Syar'i.\n- Inner Hijab: Ciput Rajut, Ciput Ninja, dan Ciput Bandana.\n\nContoh Harga:\n- Pashmina Ceruty (175x75cm): Rp 35.000\n- Paris Premium Square (110x110cm): Rp 25.000\n- Bergo Maryam (Size L): Rp 45.000"
-            },
-            {
-                "content": "## Busana Muslimah & Aksesoris\n- Gamis & Dress: Bahan Crinkle, Silk, dan Linen.\n- Atasan (Tunik): Desain panjang dan menutup dada.\n- Inner & Manset: Manset kaos, manset leher, dan leging wudhu.\n- Aksesoris: Bros, Jarum Pentul, Peniti Boham, dan Scrunchie (Kuncir rambut).\n\nContoh:\n- Gamis Crinkle Airflow (All Size): Rp 135.000\n- Manset Tangan (Sepasang): Rp 15.000\n- Jarum Pentul Premium (1 Box): Rp 10.000"
-            },
-            {
-                "content": "## Bahan Kain & Karakteristik\n- Voal Premium: Lembut, tidak pekak di telinga, tegak di dahi.\n- Ceruty Baby Doll: Tekstur pasir, jatuh (flowy), mewah.\n- Jersey Premium: Adem, melar, cocok untuk aktivitas harian.\n- Crinkle Airflow: Tidak perlu disetrika (Ironless)."
-            },
-            {
-                "content": "## Panduan Perawatan Hijab\nAgar hijab tetap awet dan warna tidak pudar:\n1. Cuci manual dengan tangan (jangan mesin cuci).\n2. Gunakan deterjen cair yang lembut.\n3. Jangan jemur di bawah matahari langsung.\n4. Setrika dengan suhu rendah sesuai jenis bahan."
-            },
-            {
-                "content": "## Harga & Promo\n- Hijab mulai dari Rp 25.000.\n- Promo Bundling: Beli 5 Hijab diskon 10%.\n- Promo Free Gift: Gratis Scrunchie/Jarum Pentul untuk minimal belanja Rp 100.000.\n\nContoh:\n\"Paket Hemat: 3 Pashmina Plisket cuma Rp 100.000 (Bebas Pilih Warna).\""
-            },
-            {
-                "content": "## Kebijakan Pengembalian\nKami menerima retur jika barang yang diterima cacat atau salah warna. Wajib menyertakan video unboxing saat paket pertama kali dibuka. Batas klaim 2x24 jam setelah barang sampai.\n\nContoh:\n\"Kak, ini ada noda di bagian tengah hijabnya. Video unboxing terlampir ya. Mohon retur.\""
-            },
-            {
-                "content": "## Layanan Pengiriman\n- Pengiriman via J&T, JNE, SiCepat.\n- Melayani COD (Bayar di tempat) via Marketplace.\n- Pengiriman setiap hari jam 16.00 WIB.\n\nContoh:\n\"Orderan masuk sebelum jam 3 sore dikirim hari ini ya kak.\""
-            },
-            {
-                "content": "## Kontak Admin Hijab\nWhatsApp: 0856-7890-1234\nInstagram: @hijab_style_daily\n\nCantik dan Syar'i bersama koleksi terbaik kami!"
+                "flowName": "Tutorial Pashmina",
+                "messages": [
+                    {
+                        "customer": "Saya nggak bisa pakai pashmina, ribet nggak sih?",
+                        "ai_response_eval": "1. AI meyakinkan bahwa pakai pashmina bisa simpel dan cepat.\n2. AI memberikan tips gaya 'Simple Daily' (jarum pentul di dagu, satu sisi disampirkan ke bahu).\n3. AI menawarkan untuk mengirimkan link video tutorial singkat jika tersedia di media sosial toko."
+                    },
+                    {
+                        "customer": "Kalau muka bulat cocoknya model gimana?",
+                        "ai_response_eval": "1. AI menyarankan model yang memberikan efek tirus (misal: bagian dahi agak dimajukan/dilancipkan, jangan terlalu ketat di pipi).\n2. AI merekomendasikan bahan yang agak kaku (seperti Voal) atau pashmina yang bervolume (Crinkle) untuk membingkai wajah."
+                    }
+                ]
             }
         ],
         "keywords": [

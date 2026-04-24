@@ -11,8 +11,14 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Toko Baju Lokal Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Toko Baju Lokal"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Brand Kami\nKami adalah brand fashion lokal yang mengedepankan kualitas bahan premium dengan desain yang timeless dan trendy. Setiap koleksi kami diproduksi secara terbatas untuk menjaga eksklusivitas dan detail jahitan yang rapi, khusus untuk menunjang penampilan harian Anda."
             },
             {
@@ -41,6 +47,34 @@
             },
             {
                 "content": "## Kontak Customer Service\nWhatsApp: 0821-2345-6789\nInstagram: @local_brand_fashion\n\nKonsultasikan gaya berpakaianmu bersama admin kami!"
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Pertanyaan Umum - Ukuran & Fitting",
+                "messages": [
+                    {
+                        "customer": "Kak, BB 60kg TB 160cm muat size apa?",
+                        "ai_response_eval": "AI harus meminta detail lingkar dada jika diperlukan, atau memberikan estimasi size berdasarkan BB/TB dengan merujuk ke size chart."
+                    },
+                    {
+                        "customer": "Size chart kemejanya gimana kak?",
+                        "ai_response_eval": "AI harus memberikan detail ukuran (Lingkar Dada, Panjang Baju) untuk setiap size (S, M, L, XL)."
+                    }
+                ]
+            },
+            {
+                "flowName": "Pertanyaan Umum - Ketersediaan Stok",
+                "messages": [
+                    {
+                        "customer": "Kemeja flannel merah size L ready?",
+                        "ai_response_eval": "AI harus mengecek ketersediaan stok warna dan ukuran yang diminta, lalu mengonfirmasi ke pelanggan."
+                    },
+                    {
+                        "customer": "Warna navy masih ada nggak?",
+                        "ai_response_eval": "AI harus menanyakan produk spesifik apa yang dimaksud (kemeja, celana, dll) jika konteks belum jelas, lalu cek stok."
+                    }
+                ]
             }
         ],
         "keywords": [

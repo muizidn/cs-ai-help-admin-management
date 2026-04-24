@@ -11,36 +11,43 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Thrift Shop Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Thrift Shop"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Thrift Shop Kami\nKami menyediakan pakaian pilihan (curated) hasil impor dengan kondisi terbaik. Setiap item hanya tersedia satu buah (one of a kind), sudah melalui proses sortir ketat, dan kami tawarkan dengan harga yang sangat terjangkau dibandingkan harga retail aslinya."
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Kondisi Barang Thrift",
+                "messages": [
+                    {
+                        "customer": "Ini barangnya baru atau bekas kak?",
+                        "ai_response_eval": "1. AI menjelaskan bahwa barang adalah 'Thrift' (bekas impor) namun sudah dilaundry dan disortir (layak pakai).\n2. AI menjelaskan sistem grading kondisi (Like New, Good Condition, atau ada minus).\n3. AI meyakinkan bahwa setiap minus pasti diinfokan di deskripsi produk."
+                    },
+                    {
+                        "customer": "Minusnya apa aja biasanya?",
+                        "ai_response_eval": "1. AI memberikan contoh minus wajar (warna turun sedikit, noda samar, atau kancing lepas).\n2. AI menegaskan bahwa tidak menjual barang yang sobek parah atau tidak layak pakai.\n3. AI menyarankan untuk melihat detail foto/video sebelum membeli."
+                    }
+                ]
             },
             {
-                "content": "## Info Grading Barang\nKami transparan mengenai kondisi barang:\n- Brand New With Tag (BNWT): Baru dengan label.\n- Grade A++: Seperti baru, tidak ada cacat, warna pekat.\n- Grade A: Kondisi sangat baik, bekas pemakaian wajar.\n- Grade B: Ada minus sedikit (noda samar/kancing ganti) dan akan diinfokan di deskripsi.\n\nContoh Deskripsi:\n\"Crewneck Champion Grey. Size L. Kondisi 9/10 (Warna aman, karet kencang, ada noda titik di lengan kanan, butuh cuci).\""
-            },
-            {
-                "content": "## Jadwal Update Stok (Drop)\nJangan sampai ketinggalan barang incaran!\n- Update stok baru setiap hari Sabtu jam 19.00 WIB.\n- Katalog bisa dilihat di Instagram Feed/Story.\n- Sistem: Siapa Cepat Dia Dapat (First Pay First Get).\n\nContoh:\n\"Siap-siap ya guys! Nanti malam jam 7 ada drop 50 pcs Jaket Parka & Coach Jacket. Pasang alarm!\""
-            },
-            {
-                "content": "## Koleksi Item Thrift\n- Crewneck & Hoodie (Brand luar seperti Champion, Uniqlo, Dickies).\n- Kemeja Flanel & Kemeja Vintage.\n- Jaket Parka & Coach Jacket.\n- Celana Corduroy & Cargo.\n- Kaos Vintage (Vintage Tee).\n\nContoh Harga:\n- Crewneck Uniqlo Polos: Rp 65.000\n- Hoodie Dickies (Logo Bordir): Rp 120.000\n- Kemeja Flanel Uniqlo: Rp 75.000"
-            },
-            {
-                "content": "## Panduan Ukuran (Manual Measurement)\nKarena barang thrift memiliki standar ukuran luar negeri, kami selalu menyertakan ukuran manual dalam centimeter (cm):\n- P (Panjang): Diukur dari bahu ke bawah.\n- L (Lebar): Diukur dari ketiak ke ketiak.\nHarap ukur baju Anda di rumah sebelum membeli.\n\nContoh:\n\"Size on Tag L, tapi fit to XL Lokal. P: 72cm, L: 58cm. Pastikan muat ya kak.\""
-            },
-            {
-                "content": "## Cara Pemesanan & Booking\nFormat Order: [Screenshot Barang] + [Nama] + [Alamat]\n- Booking maksimal 1x24 jam.\n- Lewat dari batas waktu tanpa pembayaran, barang otomatis dilempar ke calon pembeli lain (Back in Stock).\n\nContoh Chat:\n\"Kak, mau booking Hoodie Nike Hitam yang ini. Atas nama Budi, kirim ke Jakarta Selatan. Total berapa?\""
-            },
-            {
-                "content": "## Panduan Mencuci Barang Thrift\nDemi kebersihan dan kesehatan, kami menyarankan:\n1. Rendam dengan air hangat + deterjen selama 30 menit.\n2. Cuci bersih dan bilas dengan pewangi pakaian.\n3. Jemur hingga benar-benar kering di bawah sinar matahari.\n4. Setrika dengan suhu yang sesuai."
-            },
-            {
-                "content": "## Harga & Promo\n- Harga mulai dari Rp 35.000.\n- Promo Happy Hour: Diskon 20% untuk semua item di jam tertentu.\n- Promo Cuci Gudang (Sale): Semua item serba Rp 25rb setiap akhir bulan.\n\nContoh:\n\"SALE ALERT! 3 Pcs cuma Rp 100.000 (Bebas Pilih Item di Rak Clearance).\""
-            },
-            {
-                "content": "## Layanan Pengiriman\n- Pengiriman dari Yogyakarta.\n- Ekspedisi: J&T, JNE, SiCepat.\n- Estimasi sampai 2-4 hari kerja.\n\nContoh:\n\"Paket dikirim hari ini ya kak, resi akan diupdate nanti malam di story.\""
-            },
-            {
-                "content": "## Kontak Admin Thrift\nWhatsApp: 0899-8877-6655\nInstagram: @thrift_hunter_jogja\n\nTemukan harta karun fashionmu di sini!"
+                "flowName": "Cara Booking",
+                "messages": [
+                    {
+                        "customer": "Cara pesannya gimana kak? Bisa keep dulu?",
+                        "ai_response_eval": "1. AI menjelaskan sistem 'First Pay First Get' (siapa cepat dia dapat).\n2. AI menginfokan batas waktu booking/transfer (misal: maksimal 1x24 jam).\n3. AI memberikan format order untuk mempercepat proses."
+                    },
+                    {
+                        "customer": "Yah telat, barangnya udah sold ya?",
+                        "ai_response_eval": "1. AI mengonfirmasi status stok barang tersebut.\n2. AI menawarkan opsi 'Waiting List' jika pembeli pertama batal.\n3. AI menyarankan untuk menyalakan notifikasi agar tidak ketinggalan update stok berikutnya."
+                    }
+                ]
             }
         ],
         "keywords": [

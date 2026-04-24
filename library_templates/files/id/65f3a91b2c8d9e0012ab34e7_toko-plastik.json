@@ -11,36 +11,83 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Toko Plastik Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Toko Plastik"
+        },
         "sections": [
             {
+                "title": "Tentang Toko",
                 "content": "## Tentang Toko Plastik Kami\nKami adalah pusat penyedia berbagai jenis plastik dan kemasan makanan untuk kebutuhan rumah tangga maupun pelaku usaha UMKM. Kami berkomitmen menyediakan pilihan kemasan yang lengkap, berkualitas food-grade, dan harga yang kompetitif untuk mendukung bisnis Anda.\n\nContoh:\n\"Toko Plastik Sinar Jaya\" menyediakan lebih dari 500 jenis kemasan, mulai dari plastik es mambo hingga box catering premium."
             },
             {
+                "title": "Jam Operasional",
                 "content": "## Jam Operasional\nKunjungi toko kami pada:\n- Senin - Sabtu: 08.00 - 17.30\n- Minggu: 09.00 - 15.00\nLokasi: [Isi Alamat Toko]\n\nContoh:\nAlamat: Pasar Anyar Blok B No. 12, Jl. Sudirman, Bogor.\nGoogle Maps: https://maps.google.com/?q=plastic_store\nPatokan: Sebelah Toko Emas Semar."
             },
             {
+                "title": "Jenis Kantong Plastik",
                 "content": "## Jenis Kantong Plastik\nTersedia berbagai ukuran dan ketebalan:\n- Plastik Kresek (Putih, Hitam, Warna-warni)\n- Plastik PP (Bening untuk makanan kering)\n- Plastik PE (Lentur untuk es/cairan)\n- Plastik OPP (Kaca/Bening berperekat)\n- Plastik Sampah (Trash Bag)\n\nContoh Ukuran & Harga:\n- Kresek Putih HD 15 (Kecil): Rp 5.000/pak\n- Plastik Es PE 1/2 kg: Rp 8.000/pak\n- Trash Bag Hitam 60x100: Rp 15.000/pak"
             },
             {
+                "title": "Kemasan Makanan (Food Packaging)",
                 "content": "## Kemasan Makanan (Food Packaging)\nSolusi kemasan untuk usaha kuliner:\n- Thinwall (Kotak makan plastik berbagai ukuran)\n- Paper Bowl & Lunch Box Kertas\n- Mika Kue & Mika Nasi\n- Styrofoam (Polos & Sekat)\n- Gelas Plastik (Cup) & Tutupnya\n- Sedotan & Sendok/Garpu Plastik\n\nContoh:\n- Thinwall 650ml (Rectangular): Rp 2.000/pcs (Grosir Rp 45.000/25pcs).\n- Paper Bowl 800ml + Tutup: Rp 3.500/pcs.\n- Cup 16oz (Gelas Boba): Rp 12.000/roll (isi 50)."
             },
             {
+                "title": "Perlengkapan Packing Online",
                 "content": "## Perlengkapan Packing Online\nBagi Anda penjual online, kami menyediakan:\n- Bubble Wrap (Roll & Meteran)\n- Lakban Bening/Cokelat/Fragile\n- Polymailer (Kantong plastik kurir)\n- Kardus Packing Polos\n\nContoh:\n- Bubble Wrap Hitam (50m x 1.25m): Rp 130.000/roll.\n- Lakban Bening 100 yard: Rp 10.000/roll.\n- Polymailer 20x30cm (isi 100): Rp 25.000."
             },
             {
+                "title": "Perlengkapan Hajatan & Pesta",
                 "content": "## Perlengkapan Hajatan & Pesta\n- Kertas Minyak & Kertas Nasi\n- Plastik Mika Roll (untuk hantaran)\n- Tali Rafia\n- Karet Gelang\n- Aneka Kotak Snack\n\nContoh:\n- Kotak Snack Kertas Motif Batik: Rp 15.000/pak (isi 100).\n- Kertas Nasi Cokelat: Rp 18.000/rim."
             },
             {
+                "title": "Harga Eceran & Partai",
                 "content": "## Harga Eceran & Partai\nKami melayani pembelian eceran (per pak) maupun partai besar (per dus/bal) dengan harga yang jauh lebih murah. Sangat cocok bagi pemilik warung makan, katering, atau reseller plastik.\n\nContoh:\nBeli Thinwall 1 Dus (isi 500 pcs) diskon 15% dari harga eceran."
             },
             {
+                "title": "Layanan Pengiriman",
                 "content": "## Layanan Pengiriman\n- Area Lokal: Pengiriman via kurir motor (ongkir menyesuaikan).\n- Luar Area: Pengiriman via ekspedisi atau kargo untuk pembelian partai besar.\n\nContoh:\nGratis ongkir untuk pembelian di atas Rp 500.000 (Radius 3km)."
             },
             {
+                "title": "Metode Pembayaran",
                 "content": "## Metode Pembayaran\n- Tunai\n- Debit Card\n- QRIS\n- Transfer Bank\n\nContoh:\nQRIS BCA tersedia di kasir."
             },
             {
+                "title": "Kontak Admin Toko",
                 "content": "## Kontak Admin Toko\nWhatsApp: [Isi Nomor WA]\nTelepon: [Isi Nomor Telepon]\n\nCek stok dan harga terbaru melalui katalog WhatsApp kami!\n\nContoh:\nWA Admin: 0813-4567-8900 (Bisa minta katalog PDF).\nTelp: (0251) 832xxxx"
+            }
+        ],
+        "questions": [
+            {
+                "flowName": "Alur Produk & Ukuran",
+                "messages": [
+                    {
+                        "customer": "Ada thinwall ukuran 650ml yang kotak? Harganya berapa?",
+                        "ai_response_eval": "AI harus mengonfirmasi ketersediaan thinwall rectangular 650ml dan memberikan harga eceran serta harga grosir (per dus)."
+                    },
+                    {
+                        "customer": "Plastik kresek hitam yang besar buat sampah ada? Yang isi berapa?",
+                        "ai_response_eval": "AI harus menawarkan trash bag atau kresek hitam jumbo, menyebutkan ukuran (misal 60x100) dan isi per pak."
+                    },
+                    {
+                        "customer": "Kalau mau beli gelas boba 16oz sama tutup cembung, jual eceran gak?",
+                        "ai_response_eval": "AI harus menjelaskan kebijakan penjualan cup (biasanya per roll/50pcs) dan memberikan harganya."
+                    }
+                ]
+            },
+            {
+                "flowName": "Alur Grosir & Pengiriman",
+                "messages": [
+                    {
+                        "customer": "Saya mau buka usaha catering, kalau ambil rutin dapat harga khusus gak?",
+                        "ai_response_eval": "AI harus menawarkan harga grosir/partai untuk pelanggan bisnis dan menjelaskan keuntungan menjadi langganan tetap."
+                    },
+                    {
+                        "customer": "Bisa kirim ke daerah [Nama Daerah]? Ongkirnya berapa?",
+                        "ai_response_eval": "AI harus menjelaskan opsi pengiriman (lokal/ekspedisi) dan estimasi biaya berdasarkan lokasi pelanggan."
+                    }
+                ]
             }
         ],
         "keywords": [

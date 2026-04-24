@@ -11,35 +11,50 @@
     ],
     "language": "id",
     "content": {
+        "template_info": {
+            "name": "Template Profil & SOP Praktek Bidan Mandiri Digital",
+            "version": "2.0",
+            "description": "Dataset komprehensif untuk knowledge base AI Customer Service Praktek Bidan Mandiri"
+        },
         "sections": [
             {
+                "title": "Profil & Visi Misi",
                 "content": "## Tentang Praktek Bidan Kami\nKami menyediakan layanan kesehatan ibu dan anak yang profesional, hangat, dan kekeluargaan. Dipimpin oleh bidan berlisensi dengan pengalaman bertahun-tahun, kami siap mendampingi masa kehamilan, persalinan, hingga perawatan bayi Anda.\n\nContoh: PMB (Praktek Mandiri Bidan) Siti Aminah telah melayani persalinan warga sejak 2005. Kami mengutamakan persalinan normal yang minim trauma dan penuh kasih sayang."
             },
             {
+                "title": "Aksesibilitas & Navigasi",
                 "content": "## Lokasi & Alamat Lengkap\nSilakan masukkan alamat lengkap praktek bidan Anda agar pasien mudah menemukan lokasi.\n\nContoh: Jl. Mawar Indah No. 42, RT 03/RW 05, Kelurahan Jatiwaringin, Kecamatan Pondok Gede, Kota Bekasi, 17411.\nLink Google Maps: https://maps.app.goo.gl/xxxx\nPatokan: Masuk dari samping Masjid Al-Ikhlas, rumah pagar coklat dengan plang Bidan."
             },
             {
+                "title": "Waktu Pelayanan",
                 "content": "## Jam Operasional & Layanan Darurat\nInformasikan jam pelayanan rutin dan ketersediaan layanan 24 jam.\n\nContoh:\n- Pemeriksaan Rutin (ANC/KB): Senin - Sabtu (08.00 - 12.00 & 16.00 - 20.00).\n- Persalinan: 24 JAM SETIAP HARI.\n- Hari Minggu/Libur: Hanya melayani persalinan dan kondisi darurat ibu hamil.\nUntuk kunjungan rutin, disarankan membuat janji via WA 0812-9999-0000."
             },
             {
+                "title": "Katalog Layanan Medis",
                 "content": "## Pemeriksaan Kehamilan (ANC)\nSebutkan detail layanan pemeriksaan rutin ibu hamil.\n\nContoh: Layanan ANC meliputi:\n- Cek Tekanan Darah & Timbang Berat Badan.\n- Pemeriksaan Tinggi Fundus (Perkembangan janin).\n- Mendengarkan DJJ (Detak Jantung Janin) dengan Doppler.\n- Cek Laboratorium sederhana (HB, Protein Urin).\n- Konsultasi Gizi dan Persiapan Persalinan.\n- Biaya per kunjungan: Rp 75.000 (Sudah termasuk vitamin dasar)."
             },
             {
+                "title": "Layanan Persalinan",
                 "content": "## Layanan Persalinan 24 Jam\nJelaskan fasilitas dan biaya persalinan normal.\n\nContoh: Kami melayani persalinan normal dengan fasilitas:\n- Kamar bersalin privat yang nyaman dan tenang.\n- Kamar rawat inap pasca salin (AC/Non-AC).\n- Inisiasi Menyusu Dini (IMD) segera setelah lahir.\n- Biaya Persalinan Normal: Mulai dari Rp 2.500.000 - Rp 3.500.000 (Terima beres, termasuk perawatan ibu & bayi 1 hari)."
             },
             {
+                "title": "Program Keluarga Berencana",
                 "content": "## Program Keluarga Berencana (KB)\nInformasikan jenis kontrasepsi yang tersedia.\n\nContoh:\n- Suntik KB (1 bulan / 3 bulan): Rp 35.000 - Rp 50.000.\n- Pasang IUD (Spiral): Mulai Rp 450.000.\n- Pasang Implan (Susuk 2/3 tahun): Mulai Rp 600.000.\n- Pil KB & Kondom.\nKami juga melayani konseling pemilihan metode KB yang tepat sesuai kondisi kesehatan Ibu."
             },
             {
+                "title": "Imunisasi & Kesehatan Bayi",
                 "content": "## Imunisasi & Kesehatan Bayi\nSebutkan layanan untuk bayi baru lahir hingga balita.\n\nContoh:\n- Imunisasi Dasar Lengkap (BCG, Polio, DPT, HB0, Campak).\n- Tindik Telinga Bayi (Steril & Aman): Rp 75.000.\n- Pijat Bayi Sehat: Rp 100.000.\n- Cek Kuning (Bilirubin) dan Tumbuh Kembang Bayi.\nMohon bawa Buku Pink (KIA) setiap kali berkunjung."
             },
             {
+                "title": "Persiapan Melahirkan",
                 "content": "## Persiapan Melahirkan\nBerikan daftar yang harus dibawa pasien saat akan melahirkan.\n\nContoh: Saat mulai terasa mulas teratur, segera bawa:\n1. Buku KIA (Buku Pink) - WAJIB.\n2. Fotokopi KTP Suami Istri & Kartu Keluarga (2 lembar).\n3. Perlengkapan Ibu (Kain jarik, pembalut nifas, baju kancing depan).\n4. Perlengkapan Bayi (Popok, baju bayi, selimut/bedong)."
             },
             {
+                "title": "Metode Pembayaran",
                 "content": "## Metode Pembayaran\nSebutkan pilihan cara pembayaran yang tersedia.\n\nContoh: Kami menerima:\n- Tunai / Cash.\n- Transfer Bank (BCA/Mandiri).\n- QRIS (Gopay/OVO).\n- Klaim Jampersal / BPJS (Khusus bagi yang sudah memiliki rujukan/kerjasama)."
             },
             {
+                "title": "Pertanyaan Umum",
                 "content": "## FAQ - Pertanyaan Umum\nSediakan jawaban untuk pertanyaan yang sering ditanyakan.\n\nContoh:\nQ: Apakah bisa USG di sini?\nA: Kami menyediakan layanan USG 2D bersama Dokter Spesialis Obgyn setiap hari Sabtu jam 16.00 (Wajib daftar dulu).\nQ: Apakah bidan bisa datang ke rumah (Home Visit)?\nA: Ya, kami melayani perawatan tali pusar bayi dan memandikan bayi baru lahir di rumah (Area radius 3km)."
             }
         ],
@@ -59,6 +74,46 @@
             "kb implan harga",
             "pemeriksaan anc",
             "konsultasi kehamilan"
+        ],
+        "questions": [
+            {
+                "flowName": "Alur Informasi Umum & Biaya",
+                "messages": [
+                    {
+                        "customer": "Halo, praktek bidan ini buka jam berapa ya? Saya mau periksa kehamilan.",
+                        "ai_response_eval": "AI harus memberikan sapaan ramah, mengonfirmasi status operasional hari ini sesuai jadwal di data, menyebutkan jam buka dan tutup, serta menyarankan reservasi untuk menghindari antrean."
+                    },
+                    {
+                        "customer": "Berapa harga periksa kehamilan dan ada paket hemat tidak?",
+                        "ai_response_eval": "AI harus menjelaskan estimasi biaya pemeriksaan kehamilan berdasarkan informasi di dataset, serta menawarkan paket hemat yang tersedia."
+                    },
+                    {
+                        "customer": "Apakah bisa persalinan di sini? Berapa biayanya?",
+                        "ai_response_eval": "AI harus menjelaskan layanan persalinan sesuai informasi di dataset, termasuk fasilitas yang tersedia dan estimasi biaya."
+                    }
+                ]
+            },
+            {
+                "flowName": "Alur Reservasi & Layanan Spesifik",
+                "messages": [
+                    {
+                        "customer": "Saya mau booking periksa kehamilan, caranya gimana?",
+                        "ai_response_eval": "AI harus mengarahkan pasien untuk melakukan reservasi online melalui WhatsApp, memberikan nomor kontak yang tepat, dan menjelaskan format pesan booking yang benar."
+                    },
+                    {
+                        "customer": "Prakteknya dimana ya? Saya dari arah Pondok Gede.",
+                        "ai_response_eval": "AI harus memberikan panduan arah yang spesifik menggunakan poin-poin patokan bangunan (landmark) terdekat dan menyertakan link peta digital jika tersedia."
+                    },
+                    {
+                        "customer": "Apakah ada layanan KB di sini? Jenisnya apa saja?",
+                        "ai_response_eval": "AI harus menjelaskan layanan KB yang tersedia sesuai informasi di dataset, termasuk jenis kontrasepsi, harga, dan prosedur pemasangan."
+                    },
+                    {
+                        "customer": "Bayi saya mau diimunisasi, jadwalnya kapan?",
+                        "ai_response_eval": "AI harus memberikan informasi jadwal imunisasi bayi sesuai data di dataset dan menjelaskan prosedur yang perlu dilakukan sebelum imunisasi."
+                    }
+                ]
+            }
         ]
     },
     "preview": "",
