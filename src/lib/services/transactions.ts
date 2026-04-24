@@ -1,6 +1,7 @@
 import { getDatabase } from "$lib/mongodb"
 import { logger } from "$lib/logger"
 import { getServerEnv } from "$lib/env"
+import { PricingService } from "./pricing"
 import { callBillingWebhook } from "./webhook-helper"
 import type {
   User,
@@ -664,13 +665,36 @@ export class TransactionService {
       } else if (transaction.credits) {
         creditsToAdd = transaction.credits
       }
+    } else if (transaction.type === "PLAN_UPGRADE") {
+      // Fetch dynamic pricing config for Pro plans
+      const pricingService = new PricingService()
+      const pricingResult = await pricingService.getGlobalPricingConfig()
+      const baseCredits = (pricingResult.success && pricingResult.data) 
+        ? pricingResult.data.proPlan.credits 
+        : 500
+
+      const planId = transaction.planId || ""
+      let months = 0
+      if (planId === "pro_1m" || planId === "pro") months = 1
+      else if (planId === "pro_3m") months = 3
+      else if (planId === "pro_6m") months = 6
+      else if (planId === "pro_12m" || planId === "pro_1y") months = 12
+      else if (planId === "pro_24m" || planId === "pro_2y") months = 24
+
+      if (months > 0) {
+        creditsToAdd = baseCredits * months * (transaction.quantity || 1)
+      } else if (transaction.credits) {
+        creditsToAdd = transaction.credits
+      }
     }
 
     let durationMonths = 1
     if (transaction.type === "PLAN_UPGRADE") {
       const planId = transaction.planId || "pro_1m"
-      if (planId.includes("_3m")) durationMonths = 3
-      else if (planId.includes("_1y")) durationMonths = 12
+      if (planId === "pro_3m") durationMonths = 3
+      else if (planId === "pro_6m") durationMonths = 6
+      else if (planId === "pro_12m" || planId === "pro_1y") durationMonths = 12
+      else if (planId === "pro_24m" || planId === "pro_2y") durationMonths = 24
     }
 
     if (creditsToAdd > 0) {
