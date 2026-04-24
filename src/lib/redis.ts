@@ -197,6 +197,14 @@ class RedisClient {
     const result = await this.delete(key)
     return result > 0
   }
+
+  async getLlmModel(): Promise<string | null> {
+    return await this.get('config:llm_model')
+  }
+
+  async setLlmModel(model: string): Promise<void> {
+    await this.set('config:llm_model', model)
+  }
 }
 
 // Singleton instance
