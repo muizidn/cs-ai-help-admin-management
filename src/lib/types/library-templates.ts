@@ -137,7 +137,7 @@ export interface DatasourceContent {
   type: string
   url?: string
   content?: string
-  accessKey?: string
+  accessToken?: string
 }
 
 export interface ToolContent {
