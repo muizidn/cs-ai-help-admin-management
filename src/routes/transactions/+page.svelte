@@ -339,17 +339,31 @@
                 </div>
               </td>
               <td>
-                {#if transaction.user}
-                  <div class="user-info">
-                    <div class="user-name">{transaction.user.name}</div>
+                <div class="user-info">
+                  {#if transaction.metadata?.customerName}
+                    <div class="user-name">
+                      {transaction.metadata.customerName}
+                      {#if transaction.organizationId || transaction.metadata?.orgId}
+                        <span class="badge badge-primary text-xs ml-1">ORG</span>
+                      {/if}
+                    </div>
+                  {:else if transaction.user}
+                    <div class="user-name">
+                      {transaction.user.name}
+                      {#if transaction.organizationId || transaction.metadata?.orgId}
+                        <span class="badge badge-primary text-xs ml-1">ORG</span>
+                      {/if}
+                    </div>
+                  {/if}
+
+                  {#if transaction.metadata?.email}
+                    <div class="user-email">{transaction.metadata.email}</div>
+                  {:else if transaction.user}
                     <div class="user-email">{transaction.user.email}</div>
-                    <div class="user-id">ID: {transaction.user.id}</div>
-                  </div>
-                {:else}
-                  <div class="user-info">
-                    <div class="user-id">ID: {transaction.userId}</div>
-                  </div>
-                {/if}
+                  {/if}
+                  
+                  <div class="user-id">ID: {transaction.userId}</div>
+                </div>
               </td>
               <td>
                 <span class="badge {getTypeBadgeClass(transaction.type)}">
