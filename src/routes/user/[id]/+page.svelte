@@ -345,6 +345,28 @@
                 <span class="label">Created At</span>
                 <div class="value">{formatDate(user.createdAt)}</div>
               </div>
+
+              <div class="info-item credit-item">
+                <span class="label">Total Credits</span>
+                <div class="value credit-value">
+                  {user.billingSummary?.creditBalance || 0}
+                </div>
+                <div class="credit-breakdown">
+                  <div class="bucket">
+                    <span class="bucket-label">Subscription:</span>
+                    <span class="bucket-value">{user.billingSummary?.subscriptionCredit || 0}</span>
+                  </div>
+                  <div class="bucket">
+                    <span class="bucket-label">Pay-As-You-Go:</span>
+                    <span class="bucket-value">{user.billingSummary?.payAsYouGoCredit || 0}</span>
+                  </div>
+                  <div class="bucket">
+                    <span class="bucket-label">Rollover:</span>
+                    <span class="bucket-value">{user.billingSummary?.rolloverCredit || 0}</span>
+                  </div>
+                </div>
+                <a href="/billing?search={user.email}" class="manage-billing-link">Manage in Billing</a>
+              </div>
             </div>
           {/if}
         </div>

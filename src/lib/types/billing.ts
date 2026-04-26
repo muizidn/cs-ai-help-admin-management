@@ -6,6 +6,9 @@ export interface BillingState {
     ownerId: string
     ownerType: "user" | "organization"
     creditBalance: number
+    subscriptionCredit: number
+    payAsYouGoCredit: number
+    rolloverCredit: number
     topupBalance: number
     planId: string
     subscriptionStatus: "active" | "expired" | "pending" | "canceled"
@@ -33,7 +36,9 @@ export interface BillingQuery {
     sortOrder?: "asc" | "desc"
 }
 export interface BillingStateUpdateInput {
-    creditBalance?: number
+    subscriptionCredit?: number
+    payAsYouGoCredit?: number
+    rolloverCredit?: number
     topupBalance?: number
     subscriptionStatus?: "active" | "expired" | "pending" | "canceled"
     currentPeriodEnd?: Date | string

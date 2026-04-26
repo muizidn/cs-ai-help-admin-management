@@ -187,6 +187,9 @@ export class TransactionService {
               expiresAt: billingStateDoc?.currentPeriodEnd ? String(billingStateDoc.currentPeriodEnd) : undefined,
               isLifetime: billingStateDoc?.isLifetime || false,
               creditBalance: billingStateDoc?.creditBalance || 0,
+              subscriptionCredit: billingStateDoc?.subscriptionCredit || 0,
+              payAsYouGoCredit: billingStateDoc?.payAsYouGoCredit || 0,
+              rolloverCredit: billingStateDoc?.rolloverCredit || 0,
               daysUntilExpiry,
               totalSpent,
               lastPayment: lastPayment
@@ -306,6 +309,9 @@ export class TransactionService {
           expiresAt: billingStateDoc?.currentPeriodEnd ? String(billingStateDoc.currentPeriodEnd) : undefined,
           isLifetime: billingStateDoc?.isLifetime || false,
           creditBalance: billingStateDoc?.creditBalance || 0,
+          subscriptionCredit: billingStateDoc?.subscriptionCredit || 0,
+          payAsYouGoCredit: billingStateDoc?.payAsYouGoCredit || 0,
+          rolloverCredit: billingStateDoc?.rolloverCredit || 0,
           daysUntilExpiry,
           totalSpent,
           lastPayment: lastPayment
@@ -809,10 +815,11 @@ export class TransactionService {
       }
 
       // 1. Sync via internal webhook (Main App handles ledger delta and state update)
+      // Since direct creditBalance update is removed, we apply the new balance to payAsYouGoCredit
       const webhookSuccess = await callBillingWebhook({
         ownerId: userId,
         ownerType: "user",
-        creditBalance: creditBalance,
+        payAsYouGoCredit: creditBalance,
         reason: reason,
       })
 

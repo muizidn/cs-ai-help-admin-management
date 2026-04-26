@@ -436,3 +436,69 @@
         font-size: 0.75rem;
     }
 }
+
+/* Credit Breakdown Styles */
+.credit-item {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    grid-column: span 2;
+}
+
+.credit-value {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #1e40af;
+    margin-bottom: 1rem;
+}
+
+.credit-breakdown {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.bucket {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.bucket-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+.bucket-value {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #334155;
+}
+
+.manage-billing-link {
+    display: inline-block;
+    color: #3b82f6;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background: white;
+    border: 1px solid #3b82f6;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.manage-billing-link:hover {
+    background: #3b82f6;
+    color: white;
+}
+
+@media (max-width: 640px) {
+    .credit-breakdown {
+        grid-template-columns: 1fr;
+    }
+}

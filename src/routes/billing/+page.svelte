@@ -109,15 +109,33 @@
   // Edit Modal State
   let showEditModal = false
   let selectedEntity: BillingEntity | null = null
-  let editCreditBalance = 0
+  let editSubscriptionCredit = 0
+  let editPayAsYouGoCredit = 0
+  let editRolloverCredit = 0
   let editTopupBalance = 0
   let editReason = ""
   let isUpdating = false
   let updateError = ""
 
+  $: editCreditBalance = editSubscriptionCredit + editPayAsYouGoCredit + editRolloverCredit
+
   function openEditModal(entity: BillingEntity) {
     selectedEntity = entity
-    editCreditBalance = entity.billingState?.creditBalance || 0
+    const sub = entity.billingState?.subscriptionCredit || 0
+    const payg = entity.billingState?.payAsYouGoCredit || 0
+    const roll = entity.billingState?.rolloverCredit || 0
+    const total = entity.billingState?.creditBalance || 0
+
+    editSubscriptionCredit = sub
+    editPayAsYouGoCredit = payg
+    editRolloverCredit = roll
+
+    // Healing in the UI: if total > sum of buckets, put the difference in PAYG for the admin to see
+    const bucketSum = sub + payg + roll
+    if (total > bucketSum) {
+      editPayAsYouGoCredit += (total - bucketSum)
+    }
+
     editTopupBalance = entity.billingState?.topupBalance || 0
     editReason = ""
     showEditModal = true
@@ -134,7 +152,9 @@
       const response = await apiClient.put(
         `/api/billing/${selectedEntity.id}`,
         {
-          creditBalance: Number(editCreditBalance),
+          subscriptionCredit: Number(editSubscriptionCredit),
+          payAsYouGoCredit: Number(editPayAsYouGoCredit),
+          rolloverCredit: Number(editRolloverCredit),
           topupBalance: Number(editTopupBalance),
           reason: editReason
         },
@@ -311,10 +331,24 @@
               </td>
               <td>
                 <div class="balance-cell">
-                  <span class="balance-value"
-                    >{entity.billingState?.creditBalance || 0}</span
-                  >
-                  <span class="balance-label">credits</span>
+                  <span class="balance-value">
+                    {Math.max(
+                      (entity.billingState?.subscriptionCredit || 0) +
+                        (entity.billingState?.payAsYouGoCredit || 0) +
+                        (entity.billingState?.rolloverCredit || 0),
+                      entity.billingState?.creditBalance || 0,
+                    )}
+                  </span>
+                  {#if (entity.billingState?.creditBalance || 0) > (entity.billingState?.subscriptionCredit || 0) + (entity.billingState?.payAsYouGoCredit || 0) + (entity.billingState?.rolloverCredit || 0)}
+                    <span class="legacy-badge" title="Has unassigned legacy credits"
+                      >Legacy</span
+                    >
+                  {/if}
+                  <div class="balance-breakdown">
+                    <span title="Subscription Credit">S: {entity.billingState?.subscriptionCredit || 0}</span>
+                    <span title="Pay-As-You-Go Credit">P: {entity.billingState?.payAsYouGoCredit || 0}</span>
+                    <span title="Rollover Credit">R: {entity.billingState?.rolloverCredit || 0}</span>
+                  </div>
                 </div>
               </td>
               <td>
@@ -416,18 +450,59 @@
         {/if}
 
         <div class="modal-body">
-          <div class="form-group-modal">
-            <label for="edit-credits">Credit Balance</label>
-            <div class="input-with-icon">
-              <CreditCard size={18} />
-              <input
-                id="edit-credits"
-                type="number"
-                bind:value={editCreditBalance}
-                placeholder="0"
-              />
+          <div class="credit-buckets-grid">
+            <div class="form-group-modal">
+              <label for="edit-sub-credits">Subscription Credit</label>
+              <div class="input-with-icon">
+                <Calendar size={18} />
+                <input
+                  id="edit-sub-credits"
+                  type="number"
+                  bind:value={editSubscriptionCredit}
+                  placeholder="0"
+                />
+              </div>
+              <span class="help-text">Monthly quota credits</span>
             </div>
-            <span class="help-text">Directly modify available AI credits</span>
+
+            <div class="form-group-modal">
+              <label for="edit-payg-credits">Pay-As-You-Go Credit</label>
+              <div class="input-with-icon">
+                <CreditCard size={18} />
+                <input
+                  id="edit-payg-credits"
+                  type="number"
+                  bind:value={editPayAsYouGoCredit}
+                  placeholder="0"
+                />
+              </div>
+              <span class="help-text">Purchased top-up credits</span>
+            </div>
+
+            <div class="form-group-modal">
+              <label for="edit-roll-credits">Rollover Credit</label>
+              <div class="input-with-icon">
+                <ArrowUpDown size={18} />
+                <input
+                  id="edit-roll-credits"
+                  type="number"
+                  bind:value={editRolloverCredit}
+                  placeholder="0"
+                />
+              </div>
+              <span class="help-text">Credits rolled from previous period</span>
+            </div>
+          </div>
+
+          <div class="form-group-modal total-credits-group">
+            <label for="edit-credits">Total Credit Balance (Calculated)</label>
+            <div class="input-with-icon disabled">
+              <Shield size={18} />
+              <div class="calculated-value">
+                {editCreditBalance}
+              </div>
+            </div>
+            <span class="help-text">Sum of all credit buckets</span>
           </div>
 
           <div class="form-group-modal">
@@ -732,6 +807,67 @@
     color: #111827;
   }
 
+  .balance-breakdown {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    color: #6b7280;
+    font-weight: 500;
+  }
+
+  .balance-breakdown span {
+    background: #f3f4f6;
+    padding: 0.1rem 0.3rem;
+    border-radius: 4px;
+  }
+
+  .legacy-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    background: #fff7ed;
+    color: #c2410c;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    border: 1px solid #ffedd5;
+    margin-top: 0.25rem;
+    width: fit-content;
+  }
+
+  .credit-buckets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .total-credits-group {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+  .input-with-icon.disabled {
+    background: #f3f4f6;
+    cursor: not-allowed;
+  }
+
+  .calculated-value {
+    width: 100%;
+    padding: 0.75rem 0.75rem 0.75rem 2.75rem;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #1e40af;
+    background: #eff6ff;
+  }
+
   .balance-label {
     font-size: 0.75rem;
     color: #9ca3af;
@@ -869,9 +1005,12 @@
     background: white;
     width: 100%;
     max-width: 500px;
+    max-height: 90vh;
     border-radius: 20px;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
 
   .modal-header {
@@ -939,6 +1078,8 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    overflow-y: auto;
+    flex: 1;
   }
 
   .form-group-modal {

@@ -129,13 +129,20 @@ export class BillingService {
             const webhookPayload: any = {
                 ownerId,
                 ownerType,
-                creditBalance: updates.creditBalance,
+                subscriptionCredit: updates.subscriptionCredit,
+                payAsYouGoCredit: updates.payAsYouGoCredit,
+                rolloverCredit: updates.rolloverCredit,
                 topupBalance: updates.topupBalance,
                 reason: description,
             }
 
             // If no numeric changes provided, return success early
-            if (updates.creditBalance === undefined && updates.topupBalance === undefined) {
+            if (
+                updates.subscriptionCredit === undefined &&
+                updates.payAsYouGoCredit === undefined &&
+                updates.rolloverCredit === undefined &&
+                updates.topupBalance === undefined
+            ) {
                 return {
                     success: true,
                     data: { ...currentState, id: currentState._id.toString() } as any

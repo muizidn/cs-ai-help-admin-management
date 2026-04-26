@@ -58,6 +58,9 @@ export interface UserWithBilling extends User {
     expiresAt?: string
     isLifetime: boolean
     creditBalance: number
+    subscriptionCredit: number
+    payAsYouGoCredit: number
+    rolloverCredit: number
     daysUntilExpiry?: number
     totalSpent: number
     lastPayment?: {
