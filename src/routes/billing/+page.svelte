@@ -11,6 +11,7 @@
     Search,
     Filter,
     ArrowUpDown,
+    AlertTriangle,
   } from "lucide-svelte"
 
   let entities: BillingEntity[] = []
@@ -121,25 +122,28 @@
 
   function openEditModal(entity: BillingEntity) {
     selectedEntity = entity
-    const sub = entity.billingState?.subscriptionCredit || 0
-    const payg = entity.billingState?.payAsYouGoCredit || 0
-    const roll = entity.billingState?.rolloverCredit || 0
-    const total = entity.billingState?.creditBalance || 0
-
-    editSubscriptionCredit = sub
-    editPayAsYouGoCredit = payg
-    editRolloverCredit = roll
-
-    // Healing in the UI: if total > sum of buckets, put the difference in PAYG for the admin to see
-    const bucketSum = sub + payg + roll
-    if (total > bucketSum) {
-      editPayAsYouGoCredit += (total - bucketSum)
-    }
-
+    editSubscriptionCredit = entity.billingState?.subscriptionCredit || 0
+    editPayAsYouGoCredit = entity.billingState?.payAsYouGoCredit || 0
+    editRolloverCredit = entity.billingState?.rolloverCredit || 0
     editTopupBalance = entity.billingState?.topupBalance || 0
     editReason = ""
     showEditModal = true
     updateError = ""
+  }
+
+  $: legacyCredits = selectedEntity && selectedEntity.billingState ? 
+    Math.max(0, (selectedEntity.billingState.creditBalance || 0) - 
+    ((selectedEntity.billingState.subscriptionCredit || 0) + 
+     (selectedEntity.billingState.payAsYouGoCredit || 0) + 
+     (selectedEntity.billingState.rolloverCredit || 0))) : 0
+
+  function applyMigration() {
+    if (legacyCredits > 0) {
+      editPayAsYouGoCredit += legacyCredits
+      // We also need to update the local 'total' in selectedEntity to prevent the notice from reappearing
+      // if we want it to disappear immediately, but better to just let the reactive 'legacyCredits'
+      // handle it if we compare against the INITIAL state.
+    }
   }
 
   async function handleUpdateBilling() {
@@ -174,6 +178,29 @@
       isUpdating = false
     }
   }
+
+  async function handleMigrate(entity: BillingEntity) {
+    if (!confirm(`Are you sure you want to migrate legacy credits for ${entity.name}? This will assign unassigned credits to the Pay-As-You-Go bucket.`)) {
+      return
+    }
+
+    isUpdating = true
+    try {
+      await apiClient.put(
+        `/api/billing/${entity.id}`,
+        {
+          reason: "Manual legacy data migration"
+        },
+      )
+      // Refresh data
+      await loadBilling()
+    } catch (e) {
+      alert("Migration failed: " + (e as any).message)
+    } finally {
+      isUpdating = false
+    }
+  }
+
 
   onMount(() => {
     loadBilling()
@@ -443,6 +470,13 @@
             <strong>{selectedEntity.name}</strong>
             <span>{selectedEntity.email || selectedEntity.id}</span>
           </div>
+          {#if legacyCredits > 0}
+            <div class="legacy-notice">
+              <AlertTriangle size={14} />
+              <span>{legacyCredits} legacy credits found</span>
+              <button class="btn-migrate-inline" on:click={applyMigration}>Migrate</button>
+            </div>
+          {/if}
         </div>
 
         {#if updateError}
@@ -832,7 +866,36 @@
     border-radius: 4px;
     border: 1px solid #ffedd5;
     margin-top: 0.25rem;
-    width: fit-content;
+  }
+
+  .legacy-notice {
+    margin-left: auto;
+    background: #fff7ed;
+    border: 1px solid #ffedd5;
+    padding: 0.4rem 0.75rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: #c2410c;
+    font-weight: 600;
+  }
+
+  .btn-migrate-inline {
+    background: #c2410c;
+    color: white;
+    border: none;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  .btn-migrate-inline:hover {
+    background: #9a3412;
   }
 
   .credit-buckets-grid {
