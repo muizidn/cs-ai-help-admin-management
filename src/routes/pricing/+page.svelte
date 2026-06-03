@@ -11,6 +11,7 @@
     Brain,
     Play,
     FileSearch,
+    Database,
     Plus,
     Trash2,
     Edit,
@@ -51,6 +52,7 @@
   let inferenceCost = 0
   let simulationCost = 0
   let kbParsingCost = 0
+  let datasourceExecutionCost = 0
   let proCredits = 0
   let proMultipliersRaw = ""
   let creditMultipliersRaw = ""
@@ -120,6 +122,7 @@
     inferenceCost = config.usageCosts.inference
     simulationCost = config.usageCosts.simulation
     kbParsingCost = config.usageCosts.kbParsing
+    datasourceExecutionCost = config.usageCosts.datasourceExecution
     proCredits = config.proPlan.credits || 0
     proMultipliersRaw = JSON.stringify(config.proPlan.discountMultipliers || {}, null, 2)
     creditMultipliersRaw = JSON.stringify(config.credits.discountMultipliers || {}, null, 2)
@@ -183,6 +186,7 @@
         inference: inferenceCost,
         simulation: simulationCost,
         kbParsing: kbParsingCost,
+        datasourceExecution: datasourceExecutionCost,
       },
     }
 
@@ -736,7 +740,7 @@
           <Brain size={20} class="text-purple-500" />
           <h2 class="text-sm font-bold uppercase tracking-wider">AI Usage Costs (Credits per operation)</h2>
         </div>
-        <div class="card-body grid grid-cols-3 gap-6">
+        <div class="card-body grid grid-cols-4 gap-6">
           <div class="form-group">
             <div class="flex items-center gap-2 mb-2">
               <Brain size={16} />
@@ -757,6 +761,13 @@
               <label for="kbParsingCost" class="m-0 text-xs text-gray-500 uppercase">KB Parsing</label>
             </div>
             <input id="kbParsingCost" type="number" bind:value={kbParsingCost} class="form-input" />
+          </div>
+          <div class="form-group">
+            <div class="flex items-center gap-2 mb-2">
+              <Database size={16} />
+              <label for="datasourceExecutionCost" class="m-0 text-xs text-gray-500 uppercase">DS Execution</label>
+            </div>
+            <input id="datasourceExecutionCost" type="number" bind:value={datasourceExecutionCost} class="form-input" />
           </div>
         </div>
       </div>
