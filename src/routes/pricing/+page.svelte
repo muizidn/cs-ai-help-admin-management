@@ -53,6 +53,8 @@
   let simulationCost = 0
   let kbParsingCost = 0
   let datasourceExecutionCost = 0
+  let inferenceMethodCosts: Record<string, number> = {}
+  let showMethodCosts = false
   let proCredits = 0
   let proMultipliersRaw = ""
   let creditMultipliersRaw = ""
@@ -123,6 +125,7 @@
     simulationCost = config.usageCosts.simulation
     kbParsingCost = config.usageCosts.kbParsing
     datasourceExecutionCost = config.usageCosts.datasourceExecution
+    inferenceMethodCosts = { ...(config.usageCosts.inferenceByMethod || {}) }
     proCredits = config.proPlan.credits || 0
     proMultipliersRaw = JSON.stringify(config.proPlan.discountMultipliers || {}, null, 2)
     creditMultipliersRaw = JSON.stringify(config.credits.discountMultipliers || {}, null, 2)
@@ -187,6 +190,9 @@
         simulation: simulationCost,
         kbParsing: kbParsingCost,
         datasourceExecution: datasourceExecutionCost,
+        inferenceByMethod: Object.fromEntries(
+          Object.entries(inferenceMethodCosts).filter(([_, v]) => v !== undefined && v !== null)
+        ),
       },
     }
 
@@ -769,6 +775,44 @@
             </div>
             <input id="datasourceExecutionCost" type="number" bind:value={datasourceExecutionCost} class="form-input" />
           </div>
+        </div>
+
+        <div class="border-t border-gray-100 mt-4 pt-4 px-6 pb-4">
+          <button
+            type="button"
+            class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-500 hover:text-gray-800 transition-colors"
+            on:click={() => (showMethodCosts = !showMethodCosts)}
+          >
+            <Brain size={14} />
+            Per-Method Inference Costs
+            <span class="text-gray-300">{showMethodCosts ? '▲' : '▼'}</span>
+          </button>
+          {#if showMethodCosts}
+            <p class="text-[11px] text-gray-400 mt-1 mb-4">Override inference cost per inference method. Leave empty to use the base Inference cost above.</p>
+            <div class="grid grid-cols-5 gap-4">
+              {#each ["AUTO", "MULTITURN", "SINGLE_TURN", "SEQUENTIAL", "SEQUENTIAL_EVALUATOR"] as method}
+                <div class="form-group">
+                  <label for="method_{method}" class="m-0 text-[10px] text-gray-500 uppercase font-bold">{method.replace('_', ' ')}</label>
+                  <input
+                    id="method_{method}"
+                    type="number"
+                    class="form-input text-sm mt-1"
+                    value={inferenceMethodCosts[method] ?? ""}
+                    on:input={(e) => {
+                      const val = e.currentTarget.value
+                      if (val === "") {
+                        delete inferenceMethodCosts[method]
+                        inferenceMethodCosts = inferenceMethodCosts
+                      } else {
+                        inferenceMethodCosts = { ...inferenceMethodCosts, [method]: Number(val) }
+                      }
+                    }}
+                    placeholder={String(inferenceCost)}
+                  />
+                </div>
+              {/each}
+            </div>
+          {/if}
         </div>
       </div>
 

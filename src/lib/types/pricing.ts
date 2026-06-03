@@ -23,6 +23,13 @@ export interface UsageCosts {
   simulation: number
   kbParsing: number
   datasourceExecution: number
+  inferenceByMethod?: {
+    AUTO?: number
+    MULTITURN?: number
+    SINGLE_TURN?: number
+    SEQUENTIAL?: number
+    SEQUENTIAL_EVALUATOR?: number
+  }
 }
 
 export interface PricingConfig {

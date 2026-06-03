@@ -62,6 +62,7 @@ export class PricingService {
         simulation: 1,
         kbParsing: 1,
         datasourceExecution: 1,
+        inferenceByMethod: {},
       },
       updatedAt: new Date(),
       updatedBy: "system",
