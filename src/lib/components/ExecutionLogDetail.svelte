@@ -349,19 +349,20 @@
     <div class="header">
       <div class="header-top">
         <a href="/ai-execution-log" class="back-btn">
-          <ArrowLeft size={20} />
-          Back to Execution Logs
+          <ArrowLeft size={16} />
+          Back to Logs
         </a>
-
-        <div class="status-badge {getStatusClass(executionLog.status)}">
-          <svelte:component
-            this={getStatusIcon(executionLog.status)}
-            size={16}
-          />
-          {executionLog.status}
-        </div>
-
-        <div class="flag-selector">
+        <div class="header-badges">
+          <div class="status-badge {getStatusClass(executionLog.status)}">
+            <svelte:component this={getStatusIcon(executionLog.status)} size={16} />
+            {executionLog.status}
+          </div>
+          {#if executionLog.has_duplicate_tool_calls}
+            <div class="duplicate-warning-badge">
+              <AlertTriangle size={16} />
+              Duplicate Tool Calls
+            </div>
+          {/if}
           <Flag
             size={18}
             class="mr-2 {executionLog.flag
@@ -1048,6 +1049,40 @@
       {/if}
     </div>
 
+    <!-- Datasource Calls -->
+    {#if executionLog.datasource_calls && executionLog.datasource_calls.length > 0}
+      <div class="section">
+        <div class="section-header">
+          <h2>
+            <Database size={20} />
+            Datasource Calls
+          </h2>
+          <span class="step-count">({executionLog.datasource_calls.length} calls)</span>
+        </div>
+        <div class="datasource-calls-list">
+          {#each executionLog.datasource_calls as call, idx}
+            <div class="datasource-call-card">
+              <div class="call-header">
+                <span class="call-number">#{idx + 1}</span>
+                <span class="call-tool-name">{call.tool_name}</span>
+                <span class="call-id-mono">{call.tool_call_id}</span>
+              </div>
+              <div class="call-body">
+                <div class="call-field">
+                  <span class="field-label">Arguments</span>
+                  <pre class="call-args">{formatJson(JSON.parse(call.arguments))}</pre>
+                </div>
+                <div class="call-field">
+                  <span class="field-label">Timestamp</span>
+                  <span>{call.timestamp}</span>
+                </div>
+              </div>
+            </div>
+          {/each}
+        </div>
+      </div>
+    {/if}
+
     <!-- Comments Section -->
     {#if executionLog}
       <div class="section">
@@ -1079,6 +1114,12 @@
     margin-bottom: 1rem;
   }
 
+  .header-badges {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
   .back-btn {
     display: inline-flex;
     align-items: center;
@@ -1105,6 +1146,19 @@
     font-size: 0.875rem;
     font-weight: 500;
     text-transform: capitalize;
+  }
+
+  .duplicate-warning-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fca5a5;
   }
 
   /* Flag Select Detail */
@@ -1367,6 +1421,80 @@
     border-color: #3b82f6;
     background: #eff6ff;
     color: #1d4ed8;
+  }
+
+  .datasource-calls-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .datasource-call-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .call-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .call-number {
+    font-weight: 600;
+    color: #6b7280;
+    font-size: 0.875rem;
+  }
+
+  .call-tool-name {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 0.875rem;
+  }
+
+  .call-id-mono {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-left: auto;
+  }
+
+  .call-body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .call-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .call-field .field-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .call-args {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    padding: 0.75rem;
+    font-family: monospace;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    overflow-x: auto;
+    margin: 0;
   }
 
   .message-card,

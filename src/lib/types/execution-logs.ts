@@ -63,6 +63,15 @@ export interface ExecutionLog {
   // Steps during execution
   steps: ExecutionStep[]
 
+  // Datasource tool calls
+  datasource_calls?: Array<{
+    tool_call_id: string
+    tool_name: string
+    arguments: string
+    timestamp: string
+  }>
+  has_duplicate_tool_calls?: boolean
+
   // Final result
   final_response?: Record<string, any>
   error_message?: string
