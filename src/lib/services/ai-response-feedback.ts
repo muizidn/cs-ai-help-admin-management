@@ -1,11 +1,11 @@
 import { getDatabase } from "$lib/mongodb"
 import { logger } from "$lib/logger"
-import type { 
-  AIResponseFeedback, 
-  AIResponseFeedbackQuery, 
+import type {
+  AIResponseFeedback,
+  AIResponseFeedbackQuery,
   AIResponseFeedbackResponse,
   AIResponseFeedbackStats,
-  FeedbackType 
+  FeedbackType,
 } from "$lib/types/ai-response-feedback"
 
 const COLLECTION_NAME = "ai-response-feedback"
@@ -17,19 +17,21 @@ export class AIResponseFeedbackService {
     this.db = db
   }
 
-  async getFeedbackList(query: AIResponseFeedbackQuery): Promise<AIResponseFeedbackResponse> {
+  async getFeedbackList(
+    query: AIResponseFeedbackQuery,
+  ): Promise<AIResponseFeedbackResponse> {
     const collection = this.db.collection(COLLECTION_NAME)
-    
+
     // Build MongoDB query
     const mongoQuery: any = { deletedAt: { $exists: false } }
-    
+
     // Search functionality
     if (query.search) {
       mongoQuery.$or = [
         { reason: { $regex: query.search, $options: "i" } },
         { messageId: { $regex: query.search, $options: "i" } },
         { conversationId: { $regex: query.search, $options: "i" } },
-        { createdBy: { $regex: query.search, $options: "i" } }
+        { createdBy: { $regex: query.search, $options: "i" } },
       ]
     }
 
@@ -82,7 +84,7 @@ export class AIResponseFeedbackService {
     try {
       // Get total count
       const total = await collection.countDocuments(mongoQuery)
-      
+
       // Get paginated results
       const items = await collection
         .find(mongoQuery)
@@ -99,10 +101,11 @@ export class AIResponseFeedbackService {
           createdAt: new Date(rest.createdAt),
           updatedAt: new Date(rest.updatedAt),
           deletedAt: rest.deletedAt ? new Date(rest.deletedAt) : undefined,
-          contextMessages: rest.contextMessages?.map((msg: any) => ({
-            ...msg,
-            createdAt: new Date(msg.createdAt)
-          })) || []
+          contextMessages:
+            rest.contextMessages?.map((msg: any) => ({
+              ...msg,
+              createdAt: new Date(msg.createdAt),
+            })) || [],
         } as AIResponseFeedback
       })
 
@@ -111,7 +114,7 @@ export class AIResponseFeedbackService {
         total,
         page,
         limit,
-        totalPages: Math.ceil(total / limit)
+        totalPages: Math.ceil(total / limit),
       }
     } catch (error) {
       logger.error("Error fetching AI response feedback list", { error, query })
@@ -121,13 +124,13 @@ export class AIResponseFeedbackService {
 
   async getFeedbackById(id: string): Promise<AIResponseFeedback | null> {
     const collection = this.db.collection(COLLECTION_NAME)
-    
+
     try {
-      const item = await collection.findOne({ 
-        id, 
-        deletedAt: { $exists: false } 
+      const item = await collection.findOne({
+        id,
+        deletedAt: { $exists: false },
       })
-      
+
       if (!item) {
         return null
       }
@@ -138,10 +141,11 @@ export class AIResponseFeedbackService {
         createdAt: new Date(rest.createdAt),
         updatedAt: new Date(rest.updatedAt),
         deletedAt: rest.deletedAt ? new Date(rest.deletedAt) : undefined,
-        contextMessages: rest.contextMessages?.map((msg: any) => ({
-          ...msg,
-          createdAt: new Date(msg.createdAt)
-        })) || []
+        contextMessages:
+          rest.contextMessages?.map((msg: any) => ({
+            ...msg,
+            createdAt: new Date(msg.createdAt),
+          })) || [],
       } as AIResponseFeedback
     } catch (error) {
       logger.error("Error fetching AI response feedback by ID", { error, id })
@@ -151,55 +155,55 @@ export class AIResponseFeedbackService {
 
   async getFeedbackStats(): Promise<AIResponseFeedbackStats> {
     const collection = this.db.collection(COLLECTION_NAME)
-    
+
     try {
       const now = new Date()
       const today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
       const thisWeek = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000)
       const thisMonth = new Date(now.getFullYear(), now.getMonth(), 1)
 
-      const [
-        totalResult,
-        feedbackTypeStats,
-        organizationStats,
-        recentStats
-      ] = await Promise.all([
-        // Total count
-        collection.countDocuments({ deletedAt: { $exists: false } }),
-        
-        // Feedback type aggregation
-        collection.aggregate([
-          { $match: { deletedAt: { $exists: false } } },
-          { $group: { _id: "$feedbackType", count: { $sum: 1 } } }
-        ]).toArray(),
-        
-        // Organization aggregation
-        collection.aggregate([
-          { $match: { deletedAt: { $exists: false } } },
-          { $group: { _id: "$organizationId", count: { $sum: 1 } } }
-        ]).toArray(),
-        
-        // Recent activity
-        Promise.all([
-          collection.countDocuments({ 
-            deletedAt: { $exists: false },
-            createdAt: { $gte: today }
-          }),
-          collection.countDocuments({ 
-            deletedAt: { $exists: false },
-            createdAt: { $gte: thisWeek }
-          }),
-          collection.countDocuments({ 
-            deletedAt: { $exists: false },
-            createdAt: { $gte: thisMonth }
-          })
+      const [totalResult, feedbackTypeStats, organizationStats, recentStats] =
+        await Promise.all([
+          // Total count
+          collection.countDocuments({ deletedAt: { $exists: false } }),
+
+          // Feedback type aggregation
+          collection
+            .aggregate([
+              { $match: { deletedAt: { $exists: false } } },
+              { $group: { _id: "$feedbackType", count: { $sum: 1 } } },
+            ])
+            .toArray(),
+
+          // Organization aggregation
+          collection
+            .aggregate([
+              { $match: { deletedAt: { $exists: false } } },
+              { $group: { _id: "$organizationId", count: { $sum: 1 } } },
+            ])
+            .toArray(),
+
+          // Recent activity
+          Promise.all([
+            collection.countDocuments({
+              deletedAt: { $exists: false },
+              createdAt: { $gte: today },
+            }),
+            collection.countDocuments({
+              deletedAt: { $exists: false },
+              createdAt: { $gte: thisWeek },
+            }),
+            collection.countDocuments({
+              deletedAt: { $exists: false },
+              createdAt: { $gte: thisMonth },
+            }),
+          ]),
         ])
-      ])
 
       // Process feedback type stats
       const byFeedbackType = { THUMBS_UP: 0, THUMBS_DOWN: 0 }
       let withReason = 0
-      
+
       for (const stat of feedbackTypeStats) {
         if (stat._id === "THUMBS_UP" || stat._id === "THUMBS_DOWN") {
           byFeedbackType[stat._id] = stat.count
@@ -209,7 +213,7 @@ export class AIResponseFeedbackService {
       // Count feedback with reasons
       withReason = await collection.countDocuments({
         deletedAt: { $exists: false },
-        reason: { $exists: true, $ne: "", $ne: null }
+        reason: { $exists: true, $ne: "", $ne: null },
       })
 
       // Process organization stats
@@ -231,8 +235,8 @@ export class AIResponseFeedbackService {
         recentActivity: {
           today: recentStats[0],
           thisWeek: recentStats[1],
-          thisMonth: recentStats[2]
-        }
+          thisMonth: recentStats[2],
+        },
       }
     } catch (error) {
       logger.error("Error fetching AI response feedback stats", { error })

@@ -17,27 +17,27 @@ export const GET: RequestHandler = async ({ locals }) => {
       requestId,
       total: stats.total,
       thumbsUp: stats.thumbsUp,
-      thumbsDown: stats.thumbsDown
+      thumbsDown: stats.thumbsDown,
     })
 
     return json({
       status: "success",
       data: stats,
-      message: "AI response feedback statistics retrieved successfully"
+      message: "AI response feedback statistics retrieved successfully",
     })
   } catch (error) {
     logger.error("Failed to fetch AI response feedback statistics", {
       requestId,
-      error: error instanceof Error ? error.message : String(error)
+      error: error instanceof Error ? error.message : String(error),
     })
 
     return json(
       {
         status: "error",
         message: "Failed to fetch AI response feedback statistics",
-        error: error instanceof Error ? error.message : String(error)
+        error: error instanceof Error ? error.message : String(error),
       },
-      { status: 500 }
+      { status: 500 },
     )
   }
 }

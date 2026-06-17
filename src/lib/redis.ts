@@ -1,5 +1,5 @@
-import { createClient, type RedisClientType } from 'redis'
-import { getServerEnv } from './env'
+import { createClient, type RedisClientType } from "redis"
+import { getServerEnv } from "./env"
 
 class RedisClient {
   private client: RedisClientType | null = null
@@ -16,7 +16,7 @@ class RedisClient {
       // Try local Redis first if REDIS_URL is set
       if (env.REDIS_URL) {
         this.client = createClient({
-          url: env.REDIS_URL
+          url: env.REDIS_URL,
         })
 
         await this.client.connect()
@@ -29,17 +29,19 @@ class RedisClient {
       if (env.UPSTASH_REDIS_REST_URL && env.UPSTASH_REDIS_REST_TOKEN) {
         // For Upstash, we'll use HTTP requests instead of Redis client
         // since the admin interface doesn't need real-time performance
-        console.log(`✅ Using Upstash Redis REST API: ${env.UPSTASH_REDIS_REST_URL}`)
+        console.log(
+          `✅ Using Upstash Redis REST API: ${env.UPSTASH_REDIS_REST_URL}`,
+        )
         this.isConnected = true
         return
       }
 
       throw new Error(
-        'No Redis configuration found. Set REDIS_URL for local Redis or ' +
-        'UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN for Upstash Redis.'
+        "No Redis configuration found. Set REDIS_URL for local Redis or " +
+          "UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN for Upstash Redis.",
       )
     } catch (error) {
-      console.error('❌ Failed to connect to Redis:', error)
+      console.error("❌ Failed to connect to Redis:", error)
       throw error
     }
   }
@@ -49,7 +51,7 @@ class RedisClient {
       await this.client.disconnect()
       this.client = null
       this.isConnected = false
-      console.log('✅ Redis disconnected')
+      console.log("✅ Redis disconnected")
     }
   }
 
@@ -63,16 +65,16 @@ class RedisClient {
     const env = getServerEnv()
 
     if (!env.UPSTASH_REDIS_REST_URL || !env.UPSTASH_REDIS_REST_TOKEN) {
-      throw new Error('Upstash Redis configuration not found')
+      throw new Error("Upstash Redis configuration not found")
     }
 
     const response = await fetch(env.UPSTASH_REDIS_REST_URL, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Authorization': `Bearer ${env.UPSTASH_REDIS_REST_TOKEN}`,
-        'Content-Type': 'application/json'
+        Authorization: `Bearer ${env.UPSTASH_REDIS_REST_TOKEN}`,
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(command)
+      body: JSON.stringify(command),
     })
 
     if (!response.ok) {
@@ -93,10 +95,10 @@ class RedisClient {
       return await this.client.get(key)
     } else if (env.UPSTASH_REDIS_REST_URL) {
       // Use Upstash REST API
-      return await this.makeUpstashRequest(['GET', key])
+      return await this.makeUpstashRequest(["GET", key])
     }
 
-    throw new Error('No Redis connection available')
+    throw new Error("No Redis connection available")
   }
 
   async set(key: string, value: string, expireSeconds?: number): Promise<void> {
@@ -114,12 +116,18 @@ class RedisClient {
     } else if (env.UPSTASH_REDIS_REST_URL) {
       // Use Upstash REST API
       if (expireSeconds) {
-        await this.makeUpstashRequest(['SET', key, value, 'EX', expireSeconds.toString()])
+        await this.makeUpstashRequest([
+          "SET",
+          key,
+          value,
+          "EX",
+          expireSeconds.toString(),
+        ])
       } else {
-        await this.makeUpstashRequest(['SET', key, value])
+        await this.makeUpstashRequest(["SET", key, value])
       }
     } else {
-      throw new Error('No Redis connection available')
+      throw new Error("No Redis connection available")
     }
   }
 
@@ -133,10 +141,10 @@ class RedisClient {
       return await this.client.del(key)
     } else if (env.UPSTASH_REDIS_REST_URL) {
       // Use Upstash REST API
-      return await this.makeUpstashRequest(['DEL', key])
+      return await this.makeUpstashRequest(["DEL", key])
     }
 
-    throw new Error('No Redis connection available')
+    throw new Error("No Redis connection available")
   }
 
   async deleteByPattern(pattern: string): Promise<void> {
@@ -152,58 +160,76 @@ class RedisClient {
       }
     } else if (env.UPSTASH_REDIS_REST_URL) {
       // Use Upstash REST API
-      const keys = await this.makeUpstashRequest(['KEYS', pattern])
+      const keys = await this.makeUpstashRequest(["KEYS", pattern])
       if (keys && Array.isArray(keys) && keys.length > 0) {
-        await this.makeUpstashRequest(['DEL', ...keys])
+        await this.makeUpstashRequest(["DEL", ...keys])
       }
     } else {
-      throw new Error('No Redis connection available')
+      throw new Error("No Redis connection available")
     }
   }
 
   // AI-specific methods matching the ai-inference Redis client
-  async getTechnicalSystemPrompt(locale: string = 'en'): Promise<string | null> {
+  async getTechnicalSystemPrompt(
+    locale: string = "en",
+  ): Promise<string | null> {
     const key = `technical-system-prompt:default:${locale}`
     return await this.get(key)
   }
 
-  async setTechnicalSystemPrompt(prompt: string, locale: string = 'en'): Promise<void> {
+  async setTechnicalSystemPrompt(
+    prompt: string,
+    locale: string = "en",
+  ): Promise<void> {
     const key = `technical-system-prompt:default:${locale}`
     await this.set(key, prompt)
   }
 
-  async getAdminBehaviorSystemPrompt(locale: string = 'en'): Promise<string | null> {
+  async getAdminBehaviorSystemPrompt(
+    locale: string = "en",
+  ): Promise<string | null> {
     const key = `admin-behavior-system-prompt:default:${locale}`
     return await this.get(key)
   }
 
-  async setAdminBehaviorSystemPrompt(prompt: string, locale: string = 'en'): Promise<void> {
+  async setAdminBehaviorSystemPrompt(
+    prompt: string,
+    locale: string = "en",
+  ): Promise<void> {
     const key = `admin-behavior-system-prompt:default:${locale}`
     await this.set(key, prompt)
   }
 
-  async getBusinessBehaviorSystemPrompt(businessId: string): Promise<string | null> {
+  async getBusinessBehaviorSystemPrompt(
+    businessId: string,
+  ): Promise<string | null> {
     const key = `business-behavior-system-prompt:${businessId}`
     return await this.get(key)
   }
 
-  async setBusinessBehaviorSystemPrompt(businessId: string, prompt: string, expireSeconds?: number): Promise<void> {
+  async setBusinessBehaviorSystemPrompt(
+    businessId: string,
+    prompt: string,
+    expireSeconds?: number,
+  ): Promise<void> {
     const key = `business-behavior-system-prompt:${businessId}`
     await this.set(key, prompt, expireSeconds)
   }
 
-  async deleteBusinessBehaviorSystemPrompt(businessId: string): Promise<boolean> {
+  async deleteBusinessBehaviorSystemPrompt(
+    businessId: string,
+  ): Promise<boolean> {
     const key = `business-behavior-system-prompt:${businessId}`
     const result = await this.delete(key)
     return result > 0
   }
 
   async getLlmModel(): Promise<string | null> {
-    return await this.get('config:llm_model')
+    return await this.get("config:llm_model")
   }
 
   async setLlmModel(model: string): Promise<void> {
-    await this.set('config:llm_model', model)
+    await this.set("config:llm_model", model)
   }
 }
 

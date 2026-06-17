@@ -134,13 +134,15 @@ class ApiService {
 
   // Configurator
   async getLlmModel(): Promise<ApiResponse<{ model: string | null }>> {
-    return this.request('/configurator')
+    return this.request("/configurator")
   }
 
-  async updateLlmModel(model: string): Promise<ApiResponse<{ message: string }>> {
-    return this.request('/configurator', {
-      method: 'PUT',
-      body: JSON.stringify({ model })
+  async updateLlmModel(
+    model: string,
+  ): Promise<ApiResponse<{ message: string }>> {
+    return this.request("/configurator", {
+      method: "PUT",
+      body: JSON.stringify({ model }),
     })
   }
 }

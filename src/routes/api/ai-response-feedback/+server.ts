@@ -1,7 +1,10 @@
 import { json, type RequestHandler } from "@sveltejs/kit"
 import { getAIResponseFeedbackService } from "$lib/services/ai-response-feedback"
 import { logger } from "$lib/logger"
-import type { AIResponseFeedbackQuery, FeedbackType } from "$lib/types/ai-response-feedback"
+import type {
+  AIResponseFeedbackQuery,
+  FeedbackType,
+} from "$lib/types/ai-response-feedback"
 
 // GET /api/ai-response-feedback - List AI response feedback with filtering and pagination
 export const GET: RequestHandler = async ({ url, locals }) => {
@@ -23,7 +26,12 @@ export const GET: RequestHandler = async ({ url, locals }) => {
     if (search) query.search = search
 
     const feedbackType = url.searchParams.get("feedbackType")
-    if (feedbackType && (feedbackType === "THUMBS_UP" || feedbackType === "THUMBS_DOWN" || feedbackType === "all")) {
+    if (
+      feedbackType &&
+      (feedbackType === "THUMBS_UP" ||
+        feedbackType === "THUMBS_DOWN" ||
+        feedbackType === "all")
+    ) {
       query.feedbackType = feedbackType as FeedbackType | "all"
     }
 
@@ -63,27 +71,27 @@ export const GET: RequestHandler = async ({ url, locals }) => {
       requestId,
       total: result.total,
       page: result.page,
-      itemCount: result.items.length
+      itemCount: result.items.length,
     })
 
     return json({
       status: "success",
       data: result,
-      message: "AI response feedback list retrieved successfully"
+      message: "AI response feedback list retrieved successfully",
     })
   } catch (error) {
     logger.error("Failed to fetch AI response feedback list", {
       requestId,
-      error: error instanceof Error ? error.message : String(error)
+      error: error instanceof Error ? error.message : String(error),
     })
 
     return json(
       {
         status: "error",
         message: "Failed to fetch AI response feedback list",
-        error: error instanceof Error ? error.message : String(error)
+        error: error instanceof Error ? error.message : String(error),
       },
-      { status: 500 }
+      { status: 500 },
     )
   }
 }

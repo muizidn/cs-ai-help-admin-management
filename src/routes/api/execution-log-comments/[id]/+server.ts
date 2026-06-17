@@ -1,8 +1,8 @@
-import { json } from '@sveltejs/kit'
-import type { RequestHandler } from './$types'
-import { executionLogCommentService } from '$lib/services/execution-log-comments'
-import { logger } from '$lib/logger'
-import type { UpdateExecutionLogCommentRequest } from '$lib/types/execution-log-comments'
+import { json } from "@sveltejs/kit"
+import type { RequestHandler } from "./$types"
+import { executionLogCommentService } from "$lib/services/execution-log-comments"
+import { logger } from "$lib/logger"
+import type { UpdateExecutionLogCommentRequest } from "$lib/types/execution-log-comments"
 
 export const PUT: RequestHandler = async ({ params, request }) => {
   try {
@@ -12,25 +12,32 @@ export const PUT: RequestHandler = async ({ params, request }) => {
     if (!id) {
       return json(
         {
-          status: 'error',
-          message: 'Comment ID is required',
-          errors: ['Comment ID is required'],
+          status: "error",
+          message: "Comment ID is required",
+          errors: ["Comment ID is required"],
         },
-        { status: 400 }
+        { status: 400 },
       )
     }
 
     // Validate reviewStatus if provided
     if (body.reviewStatus) {
-      const validStatuses = ['NEEDS_REVIEW', 'REVIEWED_GOOD', 'REVIEWED_ISSUES', 'REVIEWED_CRITICAL']
+      const validStatuses = [
+        "NEEDS_REVIEW",
+        "REVIEWED_GOOD",
+        "REVIEWED_ISSUES",
+        "REVIEWED_CRITICAL",
+      ]
       if (!validStatuses.includes(body.reviewStatus)) {
         return json(
           {
-            status: 'error',
-            message: 'Invalid review status',
-            errors: ['reviewStatus must be one of: ' + validStatuses.join(', ')],
+            status: "error",
+            message: "Invalid review status",
+            errors: [
+              "reviewStatus must be one of: " + validStatuses.join(", "),
+            ],
           },
-          { status: 400 }
+          { status: 400 },
         )
       }
     }
@@ -42,29 +49,37 @@ export const PUT: RequestHandler = async ({ params, request }) => {
     }
 
     // For now, use a default user. In a real app, this would come from authentication
-    const updatedBy = body.updatedBy || 'admin'
+    const updatedBy = body.updatedBy || "admin"
 
-    logger.info({ updateRequest, updatedBy }, 'PUT /api/execution-log-comments/[id]')
+    logger.info(
+      { updateRequest, updatedBy },
+      "PUT /api/execution-log-comments/[id]",
+    )
 
-    const result = await executionLogCommentService.updateComment(updateRequest, updatedBy)
+    const result = await executionLogCommentService.updateComment(
+      updateRequest,
+      updatedBy,
+    )
 
-    if (result.status === 'success') {
+    if (result.status === "success") {
       return json(result)
     } else {
-      return json(result, { status: result.message === 'Comment not found' ? 404 : 400 })
+      return json(result, {
+        status: result.message === "Comment not found" ? 404 : 400,
+      })
     }
   } catch (error) {
     logger.error(
       { error: error instanceof Error ? error.message : error, id: params.id },
-      'Error in PUT /api/execution-log-comments/[id]'
+      "Error in PUT /api/execution-log-comments/[id]",
     )
     return json(
       {
-        status: 'error',
-        message: 'Internal server error',
-        errors: ['Internal server error'],
+        status: "error",
+        message: "Internal server error",
+        errors: ["Internal server error"],
       },
-      { status: 500 }
+      { status: 500 },
     )
   }
 }
@@ -76,44 +91,46 @@ export const DELETE: RequestHandler = async ({ params, request }) => {
     if (!id) {
       return json(
         {
-          status: 'error',
-          message: 'Comment ID is required',
-          errors: ['Comment ID is required'],
+          status: "error",
+          message: "Comment ID is required",
+          errors: ["Comment ID is required"],
         },
-        { status: 400 }
+        { status: 400 },
       )
     }
 
     // Get deletedBy from request body or use default
-    let deletedBy = 'admin'
+    let deletedBy = "admin"
     try {
       const body = await request.json()
-      deletedBy = body.deletedBy || 'admin'
+      deletedBy = body.deletedBy || "admin"
     } catch {
       // If no body or invalid JSON, use default
     }
 
-    logger.info({ id, deletedBy }, 'DELETE /api/execution-log-comments/[id]')
+    logger.info({ id, deletedBy }, "DELETE /api/execution-log-comments/[id]")
 
     const result = await executionLogCommentService.deleteComment(id, deletedBy)
 
-    if (result.status === 'success') {
+    if (result.status === "success") {
       return json(result)
     } else {
-      return json(result, { status: result.message === 'Comment not found' ? 404 : 400 })
+      return json(result, {
+        status: result.message === "Comment not found" ? 404 : 400,
+      })
     }
   } catch (error) {
     logger.error(
       { error: error instanceof Error ? error.message : error, id: params.id },
-      'Error in DELETE /api/execution-log-comments/[id]'
+      "Error in DELETE /api/execution-log-comments/[id]",
     )
     return json(
       {
-        status: 'error',
-        message: 'Internal server error',
-        errors: ['Internal server error'],
+        status: "error",
+        message: "Internal server error",
+        errors: ["Internal server error"],
       },
-      { status: 500 }
+      { status: 500 },
     )
   }
 }

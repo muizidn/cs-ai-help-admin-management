@@ -114,12 +114,15 @@ export const PUT: RequestHandler = async ({ params, request, locals }) => {
     const updateData: TransactionUpdateInput = await request.json()
 
     if (!updateData.reason || !updateData.reason.trim()) {
-      return json({
-        status: "error",
-        message: "A reason is required for any manual transaction update",
-        errors: ["Reason is required"],
-        requestId,
-      }, { status: 400 })
+      return json(
+        {
+          status: "error",
+          message: "A reason is required for any manual transaction update",
+          errors: ["Reason is required"],
+          requestId,
+        },
+        { status: 400 },
+      )
     }
 
     logger.info(

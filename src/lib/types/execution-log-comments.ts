@@ -14,9 +14,9 @@ export interface ExecutionLogComment {
   updatedBy?: string
 }
 
-export type ReviewStatus = 
+export type ReviewStatus =
   | "NEEDS_REVIEW"
-  | "REVIEWED_GOOD" 
+  | "REVIEWED_GOOD"
   | "REVIEWED_ISSUES"
   | "REVIEWED_CRITICAL"
 

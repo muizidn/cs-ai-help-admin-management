@@ -211,13 +211,13 @@ export interface LibraryTemplateListState {
 
 // Constants
 export const LIBRARY_TEMPLATE_TYPE_LABELS: Record<LibraryTemplateType, string> =
-{
-  message_template: "Message Template",
-  ai_rule: "AI Rule",
-  datasource: "Datasource",
-  tool: "Tool",
-  knowledge_base: "Knowledge Base",
-}
+  {
+    message_template: "Message Template",
+    ai_rule: "AI Rule",
+    datasource: "Datasource",
+    tool: "Tool",
+    knowledge_base: "Knowledge Base",
+  }
 
 export const BUSINESS_CATEGORY_LABELS: Record<BusinessCategory, string> = {
   "customer-service": "Customer Service",

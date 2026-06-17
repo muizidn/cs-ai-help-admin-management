@@ -7,7 +7,7 @@ function getEnvConfig() {
   logEnvVars()
   return {
     MONGODB_URI: env.MONGODB_URI,
-    DATABASE_NAME: env.MONGODB_DATABASE
+    DATABASE_NAME: env.MONGODB_DATABASE,
   }
 }
 
@@ -17,7 +17,6 @@ class MongoDB {
   get db() {
     return this._db
   }
-
 
   async connect(): Promise<void> {
     if (this.client && this._db) {
@@ -50,7 +49,7 @@ class MongoDB {
     }
   }
 
-  private async createIndexes(): Promise<void> { }
+  private async createIndexes(): Promise<void> {}
 
   async ensureConnection(): Promise<void> {
     if (!this.client || !this._db) {

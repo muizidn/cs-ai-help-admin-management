@@ -91,7 +91,15 @@ export interface TransactionQuery {
   metadata?: Record<string, any>
 
   // Sorting
-  sortBy?: "name" | "email" | "createdAt" | "billingExpiresAt" | "creditBalance" | "amount" | "status" | "type"
+  sortBy?:
+    | "name"
+    | "email"
+    | "createdAt"
+    | "billingExpiresAt"
+    | "creditBalance"
+    | "amount"
+    | "status"
+    | "type"
   sortOrder?: "asc" | "desc"
 }
 

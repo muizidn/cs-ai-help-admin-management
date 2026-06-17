@@ -6,9 +6,9 @@ import { libraryTemplateService } from "$lib/services/library-templates"
 export const POST: RequestHandler = async ({ params }) => {
   try {
     const { id } = params
-    
+
     const result = await libraryTemplateService.incrementDownloadCount(id)
-    
+
     if (result.status === "error") {
       return json(result, { status: 400 })
     }
@@ -20,9 +20,9 @@ export const POST: RequestHandler = async ({ params }) => {
       {
         status: "error",
         message: "Internal server error",
-        errors: ["internal_error"]
+        errors: ["internal_error"],
       },
-      { status: 500 }
+      { status: 500 },
     )
   }
 }

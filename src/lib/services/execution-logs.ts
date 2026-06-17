@@ -341,36 +341,44 @@ export class ExecutionLogService {
 
   async getLlmModel(): Promise<ApiResponse<{ model: string | null }>> {
     try {
-      logger.info('Getting LLM model from Redis')
+      logger.info("Getting LLM model from Redis")
       const model = await redisClient.getLlmModel()
       return {
-        status: 'success',
-        data: { model }
+        status: "success",
+        data: { model },
       }
     } catch (error) {
-      logger.error({ error: error instanceof Error ? error.message : error }, 'Failed to get LLM model')
+      logger.error(
+        { error: error instanceof Error ? error.message : error },
+        "Failed to get LLM model",
+      )
       return {
-        status: 'error',
-        message: 'Failed to retrieve LLM model',
-        errors: [error instanceof Error ? error.message : 'Unknown error']
+        status: "error",
+        message: "Failed to retrieve LLM model",
+        errors: [error instanceof Error ? error.message : "Unknown error"],
       }
     }
   }
 
-  async updateLlmModel(model: string): Promise<ApiResponse<{ message: string }>> {
+  async updateLlmModel(
+    model: string,
+  ): Promise<ApiResponse<{ message: string }>> {
     try {
-      logger.info({ model }, 'Updating LLM model in Redis')
+      logger.info({ model }, "Updating LLM model in Redis")
       await redisClient.setLlmModel(model)
       return {
-        status: 'success',
-        data: { message: 'LLM model updated successfully' }
+        status: "success",
+        data: { message: "LLM model updated successfully" },
       }
     } catch (error) {
-      logger.error({ error: error instanceof Error ? error.message : error, model }, 'Failed to update LLM model')
+      logger.error(
+        { error: error instanceof Error ? error.message : error, model },
+        "Failed to update LLM model",
+      )
       return {
-        status: 'error',
-        message: 'Failed to update LLM model',
-        errors: [error instanceof Error ? error.message : 'Unknown error']
+        status: "error",
+        message: "Failed to update LLM model",
+        errors: [error instanceof Error ? error.message : "Unknown error"],
       }
     }
   }

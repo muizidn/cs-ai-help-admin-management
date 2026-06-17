@@ -1,6 +1,6 @@
-import { getDatabase } from '../mongodb'
-import { logger } from '../logger'
-import { nanoid } from 'nanoid'
+import { getDatabase } from "../mongodb"
+import { logger } from "../logger"
+import { nanoid } from "nanoid"
 import type {
   ExecutionLogComment,
   CreateExecutionLogCommentRequest,
@@ -9,18 +9,18 @@ import type {
   ExecutionLogCommentResponse,
   ExecutionLogCommentStats,
   ReviewStatus,
-  ApiResponse
-} from '../types/execution-log-comments'
+  ApiResponse,
+} from "../types/execution-log-comments"
 
 export class ExecutionLogCommentService {
-  private readonly collectionName = 'execution-log-comments'
+  private readonly collectionName = "execution-log-comments"
 
   async createComment(
     request: CreateExecutionLogCommentRequest,
-    createdBy: string
+    createdBy: string,
   ): Promise<ApiResponse<ExecutionLogComment>> {
     try {
-      logger.info({ request, createdBy }, 'Creating execution log comment')
+      logger.info({ request, createdBy }, "Creating execution log comment")
 
       const db = await getDatabase()
       const collection = db.collection(this.collectionName)
@@ -41,32 +41,32 @@ export class ExecutionLogCommentService {
 
       logger.info(
         { commentId: comment.id, executionId: request.executionId },
-        'Execution log comment created successfully'
+        "Execution log comment created successfully",
       )
 
       return {
-        status: 'success',
+        status: "success",
         data: comment,
       }
     } catch (error) {
       logger.error(
         { error: error instanceof Error ? error.message : error, request },
-        'Failed to create execution log comment'
+        "Failed to create execution log comment",
       )
       return {
-        status: 'error',
-        message: 'Failed to create comment',
-        errors: [error instanceof Error ? error.message : 'Unknown error'],
+        status: "error",
+        message: "Failed to create comment",
+        errors: [error instanceof Error ? error.message : "Unknown error"],
       }
     }
   }
 
   async updateComment(
     request: UpdateExecutionLogCommentRequest,
-    updatedBy: string
+    updatedBy: string,
   ): Promise<ApiResponse<ExecutionLogComment>> {
     try {
-      logger.info({ request, updatedBy }, 'Updating execution log comment')
+      logger.info({ request, updatedBy }, "Updating execution log comment")
 
       const db = await getDatabase()
       const collection = db.collection(this.collectionName)
@@ -87,44 +87,44 @@ export class ExecutionLogCommentService {
       const result = await collection.findOneAndUpdate(
         { id: request.id, isActive: true },
         { $set: updateData },
-        { returnDocument: 'after' }
+        { returnDocument: "after" },
       )
 
       if (!result) {
         return {
-          status: 'error',
-          message: 'Comment not found',
-          errors: ['Comment not found'],
+          status: "error",
+          message: "Comment not found",
+          errors: ["Comment not found"],
         }
       }
 
       logger.info(
         { commentId: request.id },
-        'Execution log comment updated successfully'
+        "Execution log comment updated successfully",
       )
 
       return {
-        status: 'success',
+        status: "success",
         data: result as ExecutionLogComment,
       }
     } catch (error) {
       logger.error(
         { error: error instanceof Error ? error.message : error, request },
-        'Failed to update execution log comment'
+        "Failed to update execution log comment",
       )
       return {
-        status: 'error',
-        message: 'Failed to update comment',
-        errors: [error instanceof Error ? error.message : 'Unknown error'],
+        status: "error",
+        message: "Failed to update comment",
+        errors: [error instanceof Error ? error.message : "Unknown error"],
       }
     }
   }
 
   async getCommentsByExecutionId(
-    executionId: string
+    executionId: string,
   ): Promise<ApiResponse<ExecutionLogComment[]>> {
     try {
-      logger.info({ executionId }, 'Getting comments for execution log')
+      logger.info({ executionId }, "Getting comments for execution log")
 
       const db = await getDatabase()
       const collection = db.collection(this.collectionName)
@@ -136,31 +136,31 @@ export class ExecutionLogCommentService {
 
       logger.info(
         { executionId, count: comments.length },
-        'Execution log comments retrieved successfully'
+        "Execution log comments retrieved successfully",
       )
 
       return {
-        status: 'success',
+        status: "success",
         data: comments as ExecutionLogComment[],
       }
     } catch (error) {
       logger.error(
         { error: error instanceof Error ? error.message : error, executionId },
-        'Failed to get execution log comments'
+        "Failed to get execution log comments",
       )
       return {
-        status: 'error',
-        message: 'Failed to retrieve comments',
-        errors: [error instanceof Error ? error.message : 'Unknown error'],
+        status: "error",
+        message: "Failed to retrieve comments",
+        errors: [error instanceof Error ? error.message : "Unknown error"],
       }
     }
   }
 
   async getComments(
-    query: ExecutionLogCommentQuery
+    query: ExecutionLogCommentQuery,
   ): Promise<ApiResponse<ExecutionLogCommentResponse>> {
     try {
-      logger.info({ query }, 'Getting execution log comments')
+      logger.info({ query }, "Getting execution log comments")
 
       const db = await getDatabase()
       const collection = db.collection(this.collectionName)
@@ -174,9 +174,9 @@ export class ExecutionLogCommentService {
 
       if (query.search) {
         filter.$or = [
-          { comment: { $regex: query.search, $options: 'i' } },
-          { executionId: { $regex: query.search, $options: 'i' } },
-          { createdBy: { $regex: query.search, $options: 'i' } },
+          { comment: { $regex: query.search, $options: "i" } },
+          { executionId: { $regex: query.search, $options: "i" } },
+          { createdBy: { $regex: query.search, $options: "i" } },
         ]
       }
 
@@ -188,12 +188,12 @@ export class ExecutionLogCommentService {
         filter.executionId = query.executionId
       }
 
-      if (query.reviewStatus && query.reviewStatus !== 'all') {
+      if (query.reviewStatus && query.reviewStatus !== "all") {
         filter.reviewStatus = query.reviewStatus
       }
 
       if (query.createdBy) {
-        filter.createdBy = { $regex: query.createdBy, $options: 'i' }
+        filter.createdBy = { $regex: query.createdBy, $options: "i" }
       }
 
       if (query.start_date || query.end_date) {
@@ -207,8 +207,8 @@ export class ExecutionLogCommentService {
       }
 
       // Build sort
-      const sortField = query.sort_by || 'createdAt'
-      const sortOrder = query.sort_order === 'asc' ? 1 : -1
+      const sortField = query.sort_by || "createdAt"
+      const sortOrder = query.sort_order === "asc" ? 1 : -1
       const sort = { [sortField]: sortOrder }
 
       // Execute queries
@@ -229,29 +229,29 @@ export class ExecutionLogCommentService {
 
       logger.info(
         { total, page, limit },
-        'Execution log comments retrieved successfully'
+        "Execution log comments retrieved successfully",
       )
 
       return {
-        status: 'success',
+        status: "success",
         data: response,
       }
     } catch (error) {
       logger.error(
         { error: error instanceof Error ? error.message : error, query },
-        'Failed to get execution log comments'
+        "Failed to get execution log comments",
       )
       return {
-        status: 'error',
-        message: 'Failed to retrieve comments',
-        errors: [error instanceof Error ? error.message : 'Unknown error'],
+        status: "error",
+        message: "Failed to retrieve comments",
+        errors: [error instanceof Error ? error.message : "Unknown error"],
       }
     }
   }
 
   async getCommentStats(): Promise<ApiResponse<ExecutionLogCommentStats>> {
     try {
-      logger.info('Getting execution log comment stats')
+      logger.info("Getting execution log comment stats")
 
       const db = await getDatabase()
       const collection = db.collection(this.collectionName)
@@ -272,13 +272,34 @@ export class ExecutionLogCommentService {
         monthCount,
       ] = await Promise.all([
         collection.countDocuments({ isActive: true }),
-        collection.countDocuments({ isActive: true, reviewStatus: 'NEEDS_REVIEW' }),
-        collection.countDocuments({ isActive: true, reviewStatus: 'REVIEWED_GOOD' }),
-        collection.countDocuments({ isActive: true, reviewStatus: 'REVIEWED_ISSUES' }),
-        collection.countDocuments({ isActive: true, reviewStatus: 'REVIEWED_CRITICAL' }),
-        collection.countDocuments({ isActive: true, createdAt: { $gte: today } }),
-        collection.countDocuments({ isActive: true, createdAt: { $gte: thisWeek } }),
-        collection.countDocuments({ isActive: true, createdAt: { $gte: thisMonth } }),
+        collection.countDocuments({
+          isActive: true,
+          reviewStatus: "NEEDS_REVIEW",
+        }),
+        collection.countDocuments({
+          isActive: true,
+          reviewStatus: "REVIEWED_GOOD",
+        }),
+        collection.countDocuments({
+          isActive: true,
+          reviewStatus: "REVIEWED_ISSUES",
+        }),
+        collection.countDocuments({
+          isActive: true,
+          reviewStatus: "REVIEWED_CRITICAL",
+        }),
+        collection.countDocuments({
+          isActive: true,
+          createdAt: { $gte: today },
+        }),
+        collection.countDocuments({
+          isActive: true,
+          createdAt: { $gte: thisWeek },
+        }),
+        collection.countDocuments({
+          isActive: true,
+          createdAt: { $gte: thisMonth },
+        }),
       ])
 
       const stats: ExecutionLogCommentStats = {
@@ -300,31 +321,34 @@ export class ExecutionLogCommentService {
         },
       }
 
-      logger.info({ stats }, 'Execution log comment stats retrieved successfully')
+      logger.info(
+        { stats },
+        "Execution log comment stats retrieved successfully",
+      )
 
       return {
-        status: 'success',
+        status: "success",
         data: stats,
       }
     } catch (error) {
       logger.error(
         { error: error instanceof Error ? error.message : error },
-        'Failed to get execution log comment stats'
+        "Failed to get execution log comment stats",
       )
       return {
-        status: 'error',
-        message: 'Failed to retrieve comment statistics',
-        errors: [error instanceof Error ? error.message : 'Unknown error'],
+        status: "error",
+        message: "Failed to retrieve comment statistics",
+        errors: [error instanceof Error ? error.message : "Unknown error"],
       }
     }
   }
 
   async deleteComment(
     id: string,
-    deletedBy: string
+    deletedBy: string,
   ): Promise<ApiResponse<{ message: string }>> {
     try {
-      logger.info({ id, deletedBy }, 'Deleting execution log comment')
+      logger.info({ id, deletedBy }, "Deleting execution log comment")
 
       const db = await getDatabase()
       const collection = db.collection(this.collectionName)
@@ -338,32 +362,32 @@ export class ExecutionLogCommentService {
             updatedBy: deletedBy,
             updatedAt: new Date(),
           },
-        }
+        },
       )
 
       if (!result) {
         return {
-          status: 'error',
-          message: 'Comment not found',
-          errors: ['Comment not found'],
+          status: "error",
+          message: "Comment not found",
+          errors: ["Comment not found"],
         }
       }
 
-      logger.info({ id }, 'Execution log comment deleted successfully')
+      logger.info({ id }, "Execution log comment deleted successfully")
 
       return {
-        status: 'success',
-        data: { message: 'Comment deleted successfully' },
+        status: "success",
+        data: { message: "Comment deleted successfully" },
       }
     } catch (error) {
       logger.error(
         { error: error instanceof Error ? error.message : error, id },
-        'Failed to delete execution log comment'
+        "Failed to delete execution log comment",
       )
       return {
-        status: 'error',
-        message: 'Failed to delete comment',
-        errors: [error instanceof Error ? error.message : 'Unknown error'],
+        status: "error",
+        message: "Failed to delete comment",
+        errors: [error instanceof Error ? error.message : "Unknown error"],
       }
     }
   }

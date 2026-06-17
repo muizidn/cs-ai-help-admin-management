@@ -149,7 +149,11 @@ export class ExecutionLogRepository {
       const total = await collection.countDocuments(filter)
 
       // Get paginated results
-      const cursor = collection.find(filter).sort(sort as any).skip(skip).limit(limit)
+      const cursor = collection
+        .find(filter)
+        .sort(sort as any)
+        .skip(skip)
+        .limit(limit)
 
       const docs = await cursor.toArray()
 
@@ -224,12 +228,12 @@ export class ExecutionLogRepository {
                     in: {
                       $ifNull: [
                         "$$step.response.usage.cost_details.upstream_inference_cost",
-                        { $ifNull: ["$$step.response.usage.cost", 0] }
-                      ]
-                    }
-                  }
-                }
-              }
+                        { $ifNull: ["$$step.response.usage.cost", 0] },
+                      ],
+                    },
+                  },
+                },
+              },
             },
           },
         },
@@ -240,23 +244,23 @@ export class ExecutionLogRepository {
       const stats: ExecutionLogStats =
         result.length > 0
           ? {
-            total: result[0].total || 0,
-            running: result[0].running || 0,
-            completed: result[0].completed || 0,
-            failed: result[0].failed || 0,
-            avgDurationMs: Math.round(result[0].avgDurationMs || 0),
-            totalDurationMs: result[0].totalDurationMs || 0,
-            totalCost: Number((result[0].totalCost || 0).toFixed(6)),
-          }
+              total: result[0].total || 0,
+              running: result[0].running || 0,
+              completed: result[0].completed || 0,
+              failed: result[0].failed || 0,
+              avgDurationMs: Math.round(result[0].avgDurationMs || 0),
+              totalDurationMs: result[0].totalDurationMs || 0,
+              totalCost: Number((result[0].totalCost || 0).toFixed(6)),
+            }
           : {
-            total: 0,
-            running: 0,
-            completed: 0,
-            failed: 0,
-            avgDurationMs: 0,
-            totalDurationMs: 0,
-            totalCost: 0,
-          }
+              total: 0,
+              running: 0,
+              completed: 0,
+              failed: 0,
+              avgDurationMs: 0,
+              totalDurationMs: 0,
+              totalCost: 0,
+            }
 
       const duration = Date.now() - start
       logDbOperation("getStats", COLLECTION_NAME, duration)

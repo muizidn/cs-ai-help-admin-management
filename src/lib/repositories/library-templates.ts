@@ -7,7 +7,7 @@ import type {
   LibraryTemplateUpdateInput,
   LibraryTemplateFilter,
   LibraryTemplateListResponse,
-  LibraryTemplateStats
+  LibraryTemplateStats,
 } from "../types/library-templates"
 
 const COLLECTION_NAME = "library_templates"
@@ -35,7 +35,9 @@ export class LibraryTemplateRepository {
     }
   }
 
-  async findAll(filter: LibraryTemplateFilter = {}): Promise<LibraryTemplateListResponse> {
+  async findAll(
+    filter: LibraryTemplateFilter = {},
+  ): Promise<LibraryTemplateListResponse> {
     try {
       const collection = await this.getCollection()
       const {
@@ -47,7 +49,7 @@ export class LibraryTemplateRepository {
         sortBy = "createdAt",
         sortOrder = "desc",
         limit = 20,
-        offset = 0
+        offset = 0,
       } = filter
 
       // Build MongoDB filter
@@ -63,7 +65,7 @@ export class LibraryTemplateRepository {
         mongoFilter.$or = [
           { title: { $regex: search, $options: "i" } },
           { description: { $regex: search, $options: "i" } },
-          { tags: { $regex: search, $options: "i" } }
+          { tags: { $regex: search, $options: "i" } },
         ]
       }
 
@@ -79,15 +81,15 @@ export class LibraryTemplateRepository {
           .skip(offset)
           .limit(limit)
           .toArray(),
-        collection.countDocuments(mongoFilter)
+        collection.countDocuments(mongoFilter),
       ])
 
       // Map _id to id for each item
       let cleanedItems: LibraryTemplate[] = []
       for (const item of items) {
         if (item._id) {
-          const {_id, ...rest} =item
-          cleanedItems.push({ ...rest})
+          const { _id, ...rest } = item
+          cleanedItems.push({ ...rest })
         }
       }
 
@@ -96,7 +98,7 @@ export class LibraryTemplateRepository {
         total,
         limit,
         offset,
-        hasMore: offset + limit < total
+        hasMore: offset + limit < total,
       }
     } catch (error) {
       console.error("Error finding library templates:", error)
@@ -118,32 +120,35 @@ export class LibraryTemplateRepository {
         createdAt: now,
         updatedAt: now,
         version: data.version || "1.0.0",
-        createdBy: "system" // TODO: Get from auth context
+        createdBy: "system", // TODO: Get from auth context
       }
 
       await collection.insertOne(template)
       const duration = Date.now() - start
-      logDbOperation('create', COLLECTION_NAME, duration)
+      logDbOperation("create", COLLECTION_NAME, duration)
       return template
     } catch (error) {
       const duration = Date.now() - start
-      logDbOperation('create', COLLECTION_NAME, duration, error)
+      logDbOperation("create", COLLECTION_NAME, duration, error)
       throw error
     }
   }
 
-  async update(id: string, data: LibraryTemplateUpdateInput): Promise<LibraryTemplate | null> {
+  async update(
+    id: string,
+    data: LibraryTemplateUpdateInput,
+  ): Promise<LibraryTemplate | null> {
     try {
       const collection = await this.getCollection()
       const updateData = {
         ...data,
-        updatedAt: new Date()
+        updatedAt: new Date(),
       }
 
       const result = await collection.findOneAndUpdate(
         { id },
         { $set: updateData },
-        { returnDocument: "after" }
+        { returnDocument: "after" },
       )
 
       return result || null
@@ -167,10 +172,7 @@ export class LibraryTemplateRepository {
   async incrementDownloadCount(id: string): Promise<void> {
     try {
       const collection = await this.getCollection()
-      await collection.updateOne(
-        { id },
-        { $inc: { downloadCount: 1 } }
-      )
+      await collection.updateOne({ id }, { $inc: { downloadCount: 1 } })
     } catch (error) {
       console.error("Error incrementing download count:", error)
       throw error
@@ -182,7 +184,7 @@ export class LibraryTemplateRepository {
       const collection = await this.getCollection()
       await collection.updateOne(
         { id },
-        { $set: { rating, updatedAt: new Date() } }
+        { $set: { rating, updatedAt: new Date() } },
       )
     } catch (error) {
       console.error("Error updating rating:", error)
@@ -201,23 +203,25 @@ export class LibraryTemplateRepository {
         typeStats,
         categoryStats,
         downloadStats,
-        ratingStats
+        ratingStats,
       ] = await Promise.all([
         collection.countDocuments({}),
         collection.countDocuments({ isActive: true }),
         collection.countDocuments({ isActive: false }),
-        collection.aggregate([
-          { $group: { _id: "$type", count: { $sum: 1 } } }
-        ]).toArray(),
-        collection.aggregate([
-          { $group: { _id: "$category", count: { $sum: 1 } } }
-        ]).toArray(),
-        collection.aggregate([
-          { $group: { _id: null, total: { $sum: "$downloadCount" } } }
-        ]).toArray(),
-        collection.aggregate([
-          { $group: { _id: null, average: { $avg: "$rating" } } }
-        ]).toArray()
+        collection
+          .aggregate([{ $group: { _id: "$type", count: { $sum: 1 } } }])
+          .toArray(),
+        collection
+          .aggregate([{ $group: { _id: "$category", count: { $sum: 1 } } }])
+          .toArray(),
+        collection
+          .aggregate([
+            { $group: { _id: null, total: { $sum: "$downloadCount" } } },
+          ])
+          .toArray(),
+        collection
+          .aggregate([{ $group: { _id: null, average: { $avg: "$rating" } } }])
+          .toArray(),
       ])
 
       const byType: any = {}
@@ -237,7 +241,7 @@ export class LibraryTemplateRepository {
         byType,
         byCategory,
         totalDownloads: downloadStats[0]?.total || 0,
-        averageRating: ratingStats[0]?.average || 0
+        averageRating: ratingStats[0]?.average || 0,
       }
     } catch (error) {
       console.error("Error getting library template stats:", error)
@@ -255,8 +259,8 @@ export class LibraryTemplateRepository {
           { title: { $regex: query, $options: "i" } },
           { description: { $regex: query, $options: "i" } },
           { tags: { $regex: query, $options: "i" } },
-          { "metadata.keywords": { $regex: query, $options: "i" } }
-        ]
+          { "metadata.keywords": { $regex: query, $options: "i" } },
+        ],
       }
 
       const results = await collection

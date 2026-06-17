@@ -1,6 +1,6 @@
 export interface GenericComment {
   id: string
-  entityType: 'execution-log' | 'ai-response-feedback'
+  entityType: "execution-log" | "ai-response-feedback"
   entityId: string
   entityLogId?: string
   comment: string
@@ -13,14 +13,14 @@ export interface GenericComment {
   updatedBy?: string
 }
 
-export type ReviewStatus = 
+export type ReviewStatus =
   | "NEEDS_REVIEW"
-  | "REVIEWED_GOOD" 
+  | "REVIEWED_GOOD"
   | "REVIEWED_ISSUES"
   | "REVIEWED_CRITICAL"
 
 export interface CreateGenericCommentRequest {
-  entityType: 'execution-log' | 'ai-response-feedback'
+  entityType: "execution-log" | "ai-response-feedback"
   entityId: string
   entityLogId?: string
   comment: string

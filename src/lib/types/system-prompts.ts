@@ -111,23 +111,25 @@ export const SYSTEM_PROMPT_TYPE_LABELS: Record<SystemPromptType, string> = {
 }
 
 export function stringAsSystemPromptType(type: string): SystemPromptType {
-  return Object.values(SystemPromptType).find((t) => t === type) ||
+  return (
+    Object.values(SystemPromptType).find((t) => t === type) ||
     SystemPromptType.CUSTOM
+  )
 }
 
 export const SYSTEM_PROMPT_TYPE_DESCRIPTIONS: Record<SystemPromptType, string> =
-{
-  [SystemPromptType.QUERY_EXPANSION]:
-    "Prompts that expand or enhance user queries before processing",
-  [SystemPromptType.INDUSTRY_SPECIFIC]:
-    "Prompts tailored for specific industries or domains",
-  [SystemPromptType.GENERAL_INSTRUCTION]:
-    "General instructions for AI behavior and responses",
-  [SystemPromptType.CONTEXT_ENHANCEMENT]:
-    "Prompts that add context to improve response quality",
-  [SystemPromptType.RESPONSE_FORMATTING]:
-    "Prompts that control response format and structure",
-  [SystemPromptType.SAFETY_FILTER]:
-    "Prompts for content safety and moderation",
-  [SystemPromptType.CUSTOM]: "Custom prompts for specific use cases",
-}
+  {
+    [SystemPromptType.QUERY_EXPANSION]:
+      "Prompts that expand or enhance user queries before processing",
+    [SystemPromptType.INDUSTRY_SPECIFIC]:
+      "Prompts tailored for specific industries or domains",
+    [SystemPromptType.GENERAL_INSTRUCTION]:
+      "General instructions for AI behavior and responses",
+    [SystemPromptType.CONTEXT_ENHANCEMENT]:
+      "Prompts that add context to improve response quality",
+    [SystemPromptType.RESPONSE_FORMATTING]:
+      "Prompts that control response format and structure",
+    [SystemPromptType.SAFETY_FILTER]:
+      "Prompts for content safety and moderation",
+    [SystemPromptType.CUSTOM]: "Custom prompts for specific use cases",
+  }

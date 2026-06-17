@@ -7,21 +7,23 @@ export const GET: RequestHandler = async ({ url }) => {
   try {
     const searchParams = url.searchParams
     const query = searchParams.get("q") || searchParams.get("query")
-    const limit = searchParams.get("limit") ? parseInt(searchParams.get("limit")!) : 20
-    
+    const limit = searchParams.get("limit")
+      ? parseInt(searchParams.get("limit")!)
+      : 20
+
     if (!query) {
       return json(
         {
           status: "error",
           message: "Search query is required",
-          errors: ["query_required"]
+          errors: ["query_required"],
         },
-        { status: 400 }
+        { status: 400 },
       )
     }
 
     const result = await libraryTemplateService.search(query, limit)
-    
+
     if (result.status === "error") {
       return json(result, { status: 400 })
     }
@@ -33,9 +35,9 @@ export const GET: RequestHandler = async ({ url }) => {
       {
         status: "error",
         message: "Internal server error",
-        errors: ["internal_error"]
+        errors: ["internal_error"],
       },
-      { status: 500 }
+      { status: 500 },
     )
   }
 }

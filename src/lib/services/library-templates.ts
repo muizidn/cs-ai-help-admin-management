@@ -6,7 +6,7 @@ import type {
   LibraryTemplateFilter,
   LibraryTemplateListResponse,
   LibraryTemplateStats,
-  ApiResponse
+  ApiResponse,
 } from "../types/library-templates"
 
 export class LibraryTemplateService {
@@ -16,7 +16,7 @@ export class LibraryTemplateService {
         return {
           status: "error",
           message: "Template ID is required",
-          errors: ["id_required"]
+          errors: ["id_required"],
         }
       }
 
@@ -26,43 +26,47 @@ export class LibraryTemplateService {
         return {
           status: "error",
           message: "Template not found",
-          errors: ["template_not_found"]
+          errors: ["template_not_found"],
         }
       }
 
       return {
         status: "success",
-        data: template
+        data: template,
       }
     } catch (error) {
       console.error("Error getting library template:", error)
       return {
         status: "error",
         message: "Failed to get template",
-        errors: ["internal_error"]
+        errors: ["internal_error"],
       }
     }
   }
 
-  async getAll(filter: LibraryTemplateFilter = {}): Promise<ApiResponse<LibraryTemplateListResponse>> {
+  async getAll(
+    filter: LibraryTemplateFilter = {},
+  ): Promise<ApiResponse<LibraryTemplateListResponse>> {
     try {
       const result = await libraryTemplateRepository.findAll(filter)
 
       return {
         status: "success",
-        data: result
+        data: result,
       }
     } catch (error) {
       console.error("Error getting library templates:", error)
       return {
         status: "error",
         message: "Failed to get templates",
-        errors: ["internal_error"]
+        errors: ["internal_error"],
       }
     }
   }
 
-  async create(data: LibraryTemplateCreateInput): Promise<ApiResponse<LibraryTemplate>> {
+  async create(
+    data: LibraryTemplateCreateInput,
+  ): Promise<ApiResponse<LibraryTemplate>> {
     try {
       // Validate required fields
       const errors = this.validateCreateInput(data)
@@ -70,7 +74,7 @@ export class LibraryTemplateService {
         return {
           status: "error",
           message: "Validation failed",
-          errors
+          errors,
         }
       }
 
@@ -79,25 +83,28 @@ export class LibraryTemplateService {
       return {
         status: "success",
         data: template,
-        message: "Template created successfully"
+        message: "Template created successfully",
       }
     } catch (error) {
       console.error("Error creating library template:", error)
       return {
         status: "error",
         message: "Failed to create template",
-        errors: ["internal_error"]
+        errors: ["internal_error"],
       }
     }
   }
 
-  async update(id: string, data: LibraryTemplateUpdateInput): Promise<ApiResponse<LibraryTemplate>> {
+  async update(
+    id: string,
+    data: LibraryTemplateUpdateInput,
+  ): Promise<ApiResponse<LibraryTemplate>> {
     try {
       if (!id) {
         return {
           status: "error",
           message: "Template ID is required",
-          errors: ["id_required"]
+          errors: ["id_required"],
         }
       }
 
@@ -107,7 +114,7 @@ export class LibraryTemplateService {
         return {
           status: "error",
           message: "Validation failed",
-          errors
+          errors,
         }
       }
 
@@ -117,21 +124,21 @@ export class LibraryTemplateService {
         return {
           status: "error",
           message: "Template not found",
-          errors: ["template_not_found"]
+          errors: ["template_not_found"],
         }
       }
 
       return {
         status: "success",
         data: template,
-        message: "Template updated successfully"
+        message: "Template updated successfully",
       }
     } catch (error) {
       console.error("Error updating library template:", error)
       return {
         status: "error",
         message: "Failed to update template",
-        errors: ["internal_error"]
+        errors: ["internal_error"],
       }
     }
   }
@@ -142,7 +149,7 @@ export class LibraryTemplateService {
         return {
           status: "error",
           message: "Template ID is required",
-          errors: ["id_required"]
+          errors: ["id_required"],
         }
       }
 
@@ -152,21 +159,21 @@ export class LibraryTemplateService {
         return {
           status: "error",
           message: "Template not found",
-          errors: ["template_not_found"]
+          errors: ["template_not_found"],
         }
       }
 
       return {
         status: "success",
         data: true,
-        message: "Template deleted successfully"
+        message: "Template deleted successfully",
       }
     } catch (error) {
       console.error("Error deleting library template:", error)
       return {
         status: "error",
         message: "Failed to delete template",
-        errors: ["internal_error"]
+        errors: ["internal_error"],
       }
     }
   }
@@ -177,40 +184,46 @@ export class LibraryTemplateService {
 
       return {
         status: "success",
-        data: stats
+        data: stats,
       }
     } catch (error) {
       console.error("Error getting library template stats:", error)
       return {
         status: "error",
         message: "Failed to get stats",
-        errors: ["internal_error"]
+        errors: ["internal_error"],
       }
     }
   }
 
-  async search(query: string, limit: number = 20): Promise<ApiResponse<LibraryTemplate[]>> {
+  async search(
+    query: string,
+    limit: number = 20,
+  ): Promise<ApiResponse<LibraryTemplate[]>> {
     try {
       if (!query || query.trim().length === 0) {
         return {
           status: "error",
           message: "Search query is required",
-          errors: ["query_required"]
+          errors: ["query_required"],
         }
       }
 
-      const results = await libraryTemplateRepository.search(query.trim(), limit)
+      const results = await libraryTemplateRepository.search(
+        query.trim(),
+        limit,
+      )
 
       return {
         status: "success",
-        data: results
+        data: results,
       }
     } catch (error) {
       console.error("Error searching library templates:", error)
       return {
         status: "error",
         message: "Failed to search templates",
-        errors: ["internal_error"]
+        errors: ["internal_error"],
       }
     }
   }
@@ -221,7 +234,7 @@ export class LibraryTemplateService {
         return {
           status: "error",
           message: "Template ID is required",
-          errors: ["id_required"]
+          errors: ["id_required"],
         }
       }
 
@@ -230,25 +243,28 @@ export class LibraryTemplateService {
       return {
         status: "success",
         data: true,
-        message: "Download count updated"
+        message: "Download count updated",
       }
     } catch (error) {
       console.error("Error incrementing download count:", error)
       return {
         status: "error",
         message: "Failed to update download count",
-        errors: ["internal_error"]
+        errors: ["internal_error"],
       }
     }
   }
 
-  async updateRating(id: string, rating: number): Promise<ApiResponse<boolean>> {
+  async updateRating(
+    id: string,
+    rating: number,
+  ): Promise<ApiResponse<boolean>> {
     try {
       if (!id) {
         return {
           status: "error",
           message: "Template ID is required",
-          errors: ["id_required"]
+          errors: ["id_required"],
         }
       }
 
@@ -256,7 +272,7 @@ export class LibraryTemplateService {
         return {
           status: "error",
           message: "Rating must be between 0 and 5",
-          errors: ["invalid_rating"]
+          errors: ["invalid_rating"],
         }
       }
 
@@ -265,14 +281,14 @@ export class LibraryTemplateService {
       return {
         status: "success",
         data: true,
-        message: "Rating updated"
+        message: "Rating updated",
       }
     } catch (error) {
       console.error("Error updating rating:", error)
       return {
         status: "error",
         message: "Failed to update rating",
-        errors: ["internal_error"]
+        errors: ["internal_error"],
       }
     }
   }
@@ -310,11 +326,17 @@ export class LibraryTemplateService {
   private validateUpdateInput(data: LibraryTemplateUpdateInput): string[] {
     const errors: string[] = []
 
-    if (data.title !== undefined && (!data.title || data.title.trim().length === 0)) {
+    if (
+      data.title !== undefined &&
+      (!data.title || data.title.trim().length === 0)
+    ) {
       errors.push("title_required")
     }
 
-    if (data.description !== undefined && (!data.description || data.description.trim().length === 0)) {
+    if (
+      data.description !== undefined &&
+      (!data.description || data.description.trim().length === 0)
+    ) {
       errors.push("description_required")
     }
 

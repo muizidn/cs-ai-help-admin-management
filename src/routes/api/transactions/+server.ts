@@ -23,22 +23,28 @@ export const GET: RequestHandler = async ({ url, locals }) => {
       dateTo: searchParams.get("dateTo") || undefined,
     }
 
-    logger.info({
-      requestId,
-      type: "transactions_list_request",
-      query,
-    }, "Processing transactions list request")
+    logger.info(
+      {
+        requestId,
+        type: "transactions_list_request",
+        query,
+      },
+      "Processing transactions list request",
+    )
 
     const service = new TransactionService()
     const result = await service.getTransactions(query)
 
     if (result.success) {
-      logger.info({
-        requestId,
-        type: "transactions_list_success",
-        totalTransactions: result.data?.pagination.total,
-        page: result.data?.pagination.page,
-      }, "Transactions list retrieved successfully")
+      logger.info(
+        {
+          requestId,
+          type: "transactions_list_success",
+          totalTransactions: result.data?.pagination.total,
+          page: result.data?.pagination.page,
+        },
+        "Transactions list retrieved successfully",
+      )
 
       return json({
         status: "success",
@@ -46,31 +52,43 @@ export const GET: RequestHandler = async ({ url, locals }) => {
         requestId,
       })
     } else {
-      logger.warn({
-        requestId,
-        type: "transactions_list_failed",
-        errors: result.error,
-      }, "Failed to retrieve transactions list")
+      logger.warn(
+        {
+          requestId,
+          type: "transactions_list_failed",
+          errors: result.error,
+        },
+        "Failed to retrieve transactions list",
+      )
 
-      return json({
-        status: "error",
-        message: "Failed to retrieve transactions",
-        errors: result.error,
-        requestId,
-      }, { status: 400 })
+      return json(
+        {
+          status: "error",
+          message: "Failed to retrieve transactions",
+          errors: result.error,
+          requestId,
+        },
+        { status: 400 },
+      )
     }
   } catch (error) {
-    logger.error({
-      requestId,
-      type: "transactions_list_error",
-      error: error instanceof Error ? error.message : String(error),
-    }, "Error in transactions list endpoint")
+    logger.error(
+      {
+        requestId,
+        type: "transactions_list_error",
+        error: error instanceof Error ? error.message : String(error),
+      },
+      "Error in transactions list endpoint",
+    )
 
-    return json({
-      status: "error",
-      message: "Internal server error",
-      errors: ["An unexpected error occurred"],
-      requestId,
-    }, { status: 500 })
+    return json(
+      {
+        status: "error",
+        message: "Internal server error",
+        errors: ["An unexpected error occurred"],
+        requestId,
+      },
+      { status: 500 },
+    )
   }
 }

@@ -11,16 +11,19 @@ export const GET: RequestHandler = async ({ params, locals }) => {
     return json(
       {
         status: "error",
-        message: "Feedback ID is required"
+        message: "Feedback ID is required",
       },
-      { status: 400 }
+      { status: 400 },
     )
   }
 
   try {
     const service = await getAIResponseFeedbackService()
 
-    logger.info("Fetching AI response feedback details", { requestId, feedbackId })
+    logger.info("Fetching AI response feedback details", {
+      requestId,
+      feedbackId,
+    })
 
     const feedback = await service.getFeedbackById(feedbackId)
 
@@ -29,37 +32,37 @@ export const GET: RequestHandler = async ({ params, locals }) => {
       return json(
         {
           status: "error",
-          message: "AI response feedback not found"
+          message: "AI response feedback not found",
         },
-        { status: 404 }
+        { status: 404 },
       )
     }
 
     logger.info("Successfully fetched AI response feedback details", {
       requestId,
       feedbackId,
-      feedbackType: feedback.feedbackType
+      feedbackType: feedback.feedbackType,
     })
 
     return json({
       status: "success",
       data: feedback,
-      message: "AI response feedback details retrieved successfully"
+      message: "AI response feedback details retrieved successfully",
     })
   } catch (error) {
     logger.error("Failed to fetch AI response feedback details", {
       requestId,
       feedbackId,
-      error: error instanceof Error ? error.message : String(error)
+      error: error instanceof Error ? error.message : String(error),
     })
 
     return json(
       {
         status: "error",
         message: "Failed to fetch AI response feedback details",
-        error: error instanceof Error ? error.message : String(error)
+        error: error instanceof Error ? error.message : String(error),
       },
-      { status: 500 }
+      { status: 500 },
     )
   }
 }

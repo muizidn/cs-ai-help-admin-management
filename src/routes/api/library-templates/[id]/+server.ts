@@ -6,39 +6,54 @@ import { logger, createChildLogger } from "$lib/logger"
 
 // GET /api/library-templates/[id] - Get a specific library template
 export const GET: RequestHandler = async ({ params, locals }) => {
-  const requestLogger = createChildLogger({ requestId: locals.requestId, endpoint: 'GET /api/library-templates/[id]' })
+  const requestLogger = createChildLogger({
+    requestId: locals.requestId,
+    endpoint: "GET /api/library-templates/[id]",
+  })
 
   try {
     const { id } = params
 
-    requestLogger.debug({ templateId: id }, "Processing library template get request")
+    requestLogger.debug(
+      { templateId: id },
+      "Processing library template get request",
+    )
 
     const result = await libraryTemplateService.getById(id)
 
     if (result.status === "error") {
       const status = result.errors?.includes("template_not_found") ? 404 : 400
-      requestLogger.warn({ templateId: id, result }, "Library template get request failed")
+      requestLogger.warn(
+        { templateId: id, result },
+        "Library template get request failed",
+      )
       return json(result, { status })
     }
 
-    requestLogger.info({
-      templateId: id,
-      title: result.data?.title
-    }, "Library template retrieved successfully")
+    requestLogger.info(
+      {
+        templateId: id,
+        title: result.data?.title,
+      },
+      "Library template retrieved successfully",
+    )
 
     return json(result)
   } catch (error) {
-    requestLogger.error({
-      templateId: params.id,
-      error: error instanceof Error ? error.message : String(error)
-    }, "Error in GET /api/library-templates/[id]")
+    requestLogger.error(
+      {
+        templateId: params.id,
+        error: error instanceof Error ? error.message : String(error),
+      },
+      "Error in GET /api/library-templates/[id]",
+    )
     return json(
       {
         status: "error",
         message: "Internal server error",
-        errors: ["internal_error"]
+        errors: ["internal_error"],
       },
-      { status: 500 }
+      { status: 500 },
     )
   }
 }
@@ -66,9 +81,9 @@ export const PUT: RequestHandler = async ({ params, request }) => {
         {
           status: "error",
           message: "Invalid JSON in request body",
-          errors: ["invalid_json"]
+          errors: ["invalid_json"],
         },
-        { status: 400 }
+        { status: 400 },
       )
     }
 
@@ -76,9 +91,9 @@ export const PUT: RequestHandler = async ({ params, request }) => {
       {
         status: "error",
         message: "Internal server error",
-        errors: ["internal_error"]
+        errors: ["internal_error"],
       },
-      { status: 500 }
+      { status: 500 },
     )
   }
 }
@@ -102,9 +117,9 @@ export const DELETE: RequestHandler = async ({ params }) => {
       {
         status: "error",
         message: "Internal server error",
-        errors: ["internal_error"]
+        errors: ["internal_error"],
       },
-      { status: 500 }
+      { status: 500 },
     )
   }
 }
