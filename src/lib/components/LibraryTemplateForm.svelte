@@ -24,6 +24,8 @@
   import { createEventDispatcher } from "svelte"
   import KnowledgeBaseContentEditor from "./library-templates/KnowledgeBaseContent.svelte"
   import MonacoEditor from "./MonacoEditor.svelte"
+  import { z } from "zod"
+  import { KnowledgeBaseContentSchema } from "$lib/schemas/library-template.schema"
 
   export let template: LibraryTemplate | null = null
 
@@ -59,6 +61,11 @@
       exampleUseCases: [] as string[],
     },
   }
+
+  const languages = [
+    { value: "en", label: "English", flag: "🇬🇧" },
+    { value: "id", label: "Indonesia", flag: "🇮🇩" },
+  ]
 
   // Tag input
   let newTag = ""
@@ -157,12 +164,27 @@
     contentJson = JSON.stringify(formData.content, null, 2)
   }
 
+  function formatZodErrors(error: z.ZodError): string {
+    return error.issues
+      .map((e) => {
+        const path = e.path.length > 0 ? e.path.join(".") + ": " : ""
+        return path + e.message
+      })
+      .join("; ")
+  }
+
   // Effect to sync JSON to content when JSON changes (if in JSON mode)
   function handleJsonChange() {
     try {
-      formData.content = JSON.parse(contentJson)
-      errors.content = ""
-    } catch (e) {
+      const parsed = JSON.parse(contentJson)
+      const result = KnowledgeBaseContentSchema.safeParse(parsed)
+      if (result.success) {
+        formData.content = result.data as any
+        delete errors.content
+      } else {
+        errors.content = formatZodErrors(result.error)
+      }
+    } catch (e: unknown) {
       // Don't update content if JSON is invalid, just show error
       errors.content = "Invalid JSON"
     }
@@ -222,10 +244,15 @@
 
     if (activeTab === "json") {
       try {
-        formData.content = JSON.parse(contentJson)
-      } catch (e) {
+        const parsed = JSON.parse(contentJson)
+        const result = KnowledgeBaseContentSchema.safeParse(parsed)
+        if (result.success) {
+          formData.content = result.data as any
+        } else {
+          errors.content = formatZodErrors(result.error)
+        }
+      } catch (e: unknown) {
         errors.content = "Content must be valid JSON"
-        console.error("error json validation content", e)
       }
     }
 
@@ -304,18 +331,24 @@
 
     <!-- Language -->
     <div>
-      <label for="language" class="block text-sm font-medium text-gray-700"
+      <label class="block text-sm font-medium text-gray-700 mb-2"
         >Language</label
       >
-      <select
-        id="language"
-        bind:value={formData.language}
-        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-      >
-        <option value="en">English (en)</option>
-        <option value="id">Indonesian (id)</option>
-        <!-- Add more languages as needed -->
-      </select>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+        {#each languages as lang}
+          <button
+            type="button"
+            class="flex items-center gap-2 px-3 py-2 rounded-lg border text-sm transition-all {formData.language === lang.value
+              ? 'border-blue-500 bg-blue-50 text-blue-700 shadow-sm ring-1 ring-blue-500'
+              : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300 hover:bg-gray-50'}"
+            on:click={() => (formData.language = lang.value)}
+          >
+            <span class="text-lg leading-none">{lang.flag}</span>
+            <span class="font-medium">{lang.label}</span>
+            <span class="text-xs text-gray-400 ml-auto">{lang.value}</span>
+          </button>
+        {/each}
+      </div>
     </div>
 
     <!-- Description -->
@@ -442,7 +475,12 @@
             'form'
               ? 'bg-white text-blue-600 shadow-sm'
               : 'text-gray-500 hover:text-gray-700'}"
-            on:click={() => (activeTab = "form")}
+            on:click={() => {
+              if (activeTab === "json") {
+                handleJsonChange()
+              }
+              activeTab = "form"
+            }}
           >
             <div class="flex items-center space-x-1">
               <FileText class="w-3 h-3" />
@@ -491,6 +529,14 @@
             >
               Switch to JSON view
             </button>
+          </div>
+        {/if}
+        {#if errors.content}
+          <div
+            class="mt-3 p-3 bg-red-50 border border-red-200 rounded-md"
+          >
+            <p class="text-sm text-red-700 font-medium">Content Validation Errors:</p>
+            <p class="mt-1 text-sm text-red-600">{errors.content}</p>
           </div>
         {/if}
       {:else}
