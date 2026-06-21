@@ -114,6 +114,7 @@ export class LibraryTemplateRepository {
 
       const template: LibraryTemplate = {
         ...data,
+        id: data.id || crypto.randomUUID(),
         isActive: true,
         downloadCount: 0,
         rating: 0,
